@@ -3,3 +3,4 @@ language:
   ui:
     chapter_name: "Chapter "
 delete_merged_file: true
+repo: https://github.com/eliaseythorsson/phd_thesis
