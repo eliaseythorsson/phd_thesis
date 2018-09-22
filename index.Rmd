@@ -12,7 +12,9 @@ github-repo: eliaseythorsson/phd_thesis
 description: "This is a PhD thesis written in real-time in Rstudio"
 ---
 
-# 
+# Preamble
+
+I am currently writing my PhD thesis on the impact of pneumococcal vaccination in Iceland. I decided to host the thesis on github and distribute on social media. I am doing this for mostly selfish reasons. I believe I will be more motivated if my productiveness -- or lack thereof, is held accountable to anyone who wishes to check. I would be grateful for any and all comments on any aspect of the thesis under construction.
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages

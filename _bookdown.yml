@@ -1,7 +1,7 @@
 book_filename: "bookdown-demo"
 language:
   ui:
-    chapter_name: "Chapter "
+    chapter_name: ""
 output_dir: "docs"
 delete_merged_file: true
 repo: https://github.com/eliaseythorsson/phd_thesis
