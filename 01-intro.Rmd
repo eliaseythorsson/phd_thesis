@@ -3,10 +3,10 @@
 *Streptococcus pneumoniae* is a commensal bacterium found in the nasopharynx of humans where it plays an integral role in the normal upper respiratory flora.
 It is also a common pathogen and is one of the most common bacterial causes of disease in humans.
 In classical medical texts pneumococcus is described as a Gram-positive lancet-shaped coccus that is usually found in pairs.
+Infact, pneumococcus is *the* Gram-positive coccus, in that it was the first bacteria that Christian Gram noted to retain the dark aniline-gentian violet stain that now bears his name [@Gram1884].
 Pneumococcus was first isolated in 1881 by two microbiologist, George M. Sternberg in the United States and Loius Pasteur in France [@Pasteur1881; @Sternberg1881; @Watson1993].
 In both cases the sample from which the bacterium was isolated originated from healthy carriers, rather than ill patients.
-The causal association between this newly discovered bacterium and pneumonia was firmly established in 1886 [@Weichselbaum1886].
-In the following decade, all clinical presentations of pneumococcal infection were rapidly described [@Austrian1981].
+The causal association between this newly discovered bacterium and pneumonia was firmly established only five years later [@Weichselbaum1886], and in the following decade, all clinical presentations of pneumococcal infection had been described [@Austrian1981].
 Pneumococcus is encapsulated by a polysaccharide coating that protects it from environmental factors.
 The polysaccharide capsule acts as an invisibility cloak in regard to the human immune system which is rendered unable to detect pneumococcus except through certain patterns in the oligosaccharides contained within the capsule.
 Based on these patterns, pneumococcus has been classified into over 90 different serotypes as of the writing of this thesis. Additionally, as the capsule only contains polysaccharides and not proteins, the immune response is T cell independent and therefore poorly immunogenic even after identification by the immune system.
