@@ -9,10 +9,10 @@ bibliography: [library.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: eliaseythorsson/phd_thesis
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+description: "This is a PhD thesis written in real-time in Rstudio"
 ---
 
-# Prerequisites
+# 
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
