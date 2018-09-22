@@ -3,7 +3,7 @@
 *Streptococcus pneumoniae* is a commensal bacterium found in the nasopharynx of humans where it plays an integral part in the normal upper respiratory flora.
 It is also a common pathogen and is one of the most common bacterial causes of disease in humans.
 In classical medical texts pneumococcus is described as a Gram-positive lancet-shaped coccus that is usually found in pairs.
-It was first described by two microbiologist in 1881, George M. Sternberg and Loius Pasteur. [@Pasteur1881, @Sternberg1881, @Watson1993]
+It was first described by two microbiologist in 1881, George M. Sternberg and Loius Pasteur. [@Pasteur1881; @Sternberg1881; @Watson1993]
 Pneumococcus is encapsulated by a polysaccharide coating that protects it from environmental factors.
 The polysaccharide capsule acts as an invisibility cloak in regard to the human immune system which is rendered unable to detect pneumococcus except through certain patterns in the oligosaccharides contained within the capsule.
 Based on these patterns, pneumococcus has been classified into over 90 different serotypes as of the writing of this thesis. Additionally, as the capsule only contains polysaccharides and not proteins, the immune response is T cell independent and therefore poorly immunogenic even after identification by the immune system.
