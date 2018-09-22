@@ -1,3 +1,35 @@
 # Introduction {#intro}
 
+## Clinical manifestations of *Streptococcus pneumoniae
 
+### Carriage
+
+### Acute otitis media
+
+### Pneumonia
+
+### Invasive pneumococcal disease
+
+## Pneumococcal conjugate vaccines
+
+## Impact of pneumococcal conjugate vaccines
+
+### Acute otitis media
+
+### Pneumonia
+
+### Invasive pneumococcal disease
+
+## Cost-effectiveness of pneumococcal conjugate vaccination
+
+### Measurement of effectiveness and choice of health outcomes
+
+#### Health outcomes considered
+
+#### Effectiveness of PCV7
+
+#### Effectiveness of PCV10
+
+#### Effectiveness of PCV13
+
+### Estimating resources and cost
