@@ -45,11 +45,27 @@ These infectious manifestations are grouped together as invasive pneumococcal di
 Whilst IPD is extremely uncommon the consequences can be disastrous.
 The case fatality ratio from pneumococcal meningitis in Iceland is estimated at 15.3%. 
 
-Pneumococcus became an early target for vaccine development because of this broad range of disease caused by pneumococcus
-
+Pneumococcus became an early target for vaccine development because of this broad range of disease caused by pneumococcus.
 The vaccine benefit can be quantified in two different ways.
 On one hand it can prevent uncommon but serious manifestations of disease and has the potential to prevent death and serious disability.
-On the other hand, it prevents common infections that cumulatively present a large healthcare burden due to frequent physician visits, antimicrobial prescriptions and days of work lost by parents and caregivers. 
+On the other hand, it prevents common infections that cumulatively present a large healthcare burden due to frequent physician visits, antimicrobial prescriptions and days of work lost by parents and caregivers.
+The earliest attempts to use vaccination to lessen the morbidity and mortality associated with pneumococcus date back to 1914 when Wright used whole cell innoculi to vaccinated miners in South Africa [@Wright1914].
+In 1934, armed with the knowledge of different pneumococcal serotypes and serotype specific immunogenicity, Lister and Ordman demonstrated the effectiveness of polyvalent whole-cell vaccines against pneumococcal pneumonia. 
+In the following decades, repeated animal studies showed that injection of the pneumococcal polysaccharide coating in animals protected against subsequent pneumococcal infections.
+On the basis of these findings, the first polysaccharide vaccine was demonstrated to be effective [@Macleod1945].
+This lay the foundation for modern polysaccharide pneumococcal vaccines. 
+Unfortuneatly, it soon became apparent that the polysaccharide vaccines were not addequetly immunogenic in young children, the ill and the elderly.
+This lead to the development of pneumococcal conjugate vaccines.
+The first such vaccine to be mass produced was the heptavalent Prevenar developed by Pfizer pharmacouticals.
+
+Iceland is an independent island nation located in the mid-Atlantic.
+It has a homogenous populuation of roughly 330,000 individuals.
+The first systamatic vaccination against pneumococcus in Iceland began in April 2011 when the 10-valent pneumococcal *Haemophilus influnzae* protein-D conjugate vaccine (Synflorix, PHiD-CV10) was introduced into the national Paediatric vaccination program.
+The vaccine program entailed two primary doses at three and five months of age and a booster dose at twelve months.
+No catch-up program was undertaken.
+Prior to the introduction, no systamatic vaccination effort had been undertaken in Iceland.
+Like the other Nordic countries, Iceland has a rich history of national health related registers.
+This allowed for a unique whole population ecological study to examine the impact of systamatic pneumococcal vaccination. 
 
 
 ## Clinical manifestations of *Streptococcus pneumoniae*

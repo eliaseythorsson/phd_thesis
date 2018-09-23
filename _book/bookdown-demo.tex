@@ -31,46 +31,6 @@
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage{natbib}
 \bibliographystyle{apalike}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
 \usepackage{longtable,booktabs}
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -124,7 +84,7 @@
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2018-09-20}
+  \date{2018-09-23}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -156,129 +116,314 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter{Prerequisites}\label{prerequisites}
+\chapter{Preamble}\label{preamble}
 
-This is a \emph{sample} book written in \textbf{Markdown}. You can use
-anything that Pandoc's Markdown supports, e.g., a math equation
-\(a^2 + b^2 = c^2\).
-
-The \textbf{bookdown} package can be installed from CRAN or Github:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{)}
-\CommentTok{# or the development version}
-\CommentTok{# devtools::install_github("rstudio/bookdown")}
-\end{Highlighting}
-\end{Shaded}
-
-Remember each Rmd file contains one and only one chapter, and a chapter
-is defined by the first-level heading \texttt{\#}.
-
-To compile this example to PDF, you need XeLaTeX. You are recommended to
-install TinyTeX (which includes XeLaTeX):
-\url{https://yihui.name/tinytex/}.
+I am currently writing my PhD thesis on the impact of pneumococcal
+vaccination in Iceland. I decided to host the thesis on github and
+distribute on social media. I am doing this for mostly selfish reasons.
+I believe I will be more motivated if my productiveness -- or lack
+thereof, is held accountable to anyone who wishes to check. I would be
+grateful for any and all comments on any aspect of the thesis under
+construction.
 
 \chapter{Introduction}\label{intro}
 
-You can label chapter and section titles using \texttt{\{\#label\}}
-after them, e.g., we can reference Chapter \ref{intro}. If you do not
-manually label them, there will be automatic labels anyway, e.g.,
-Chapter \ref{methods}.
+\emph{Streptococcus pneumoniae} is a commensal bacterium found in the
+nasopharynx of humans where it plays an integral role in the normal
+upper respiratory flora. It is also a common pathogen and is one of the
+most common bacterial causes of disease in humans. In classical medical
+texts pneumococcus is described as a Gram-positive lancet-shaped coccus
+that is usually found in pairs. In fact, pneumococcus is \emph{the}
+Gram-positive coccus, in that it was the first bacteria that Christian
+Gram noted to retain the dark aniline-gentian violet stain that now
+bears his name \citep{Gram1884}. Pneumococcus was first isolated in 1881
+by two microbiologist, George M. Sternberg in the United States and
+Loius Pasteur in France \citep{Pasteur1881, Sternberg1881, Watson1993}.
+In both cases the sample from which the bacterium was isolated
+originated from healthy carriers, rather than ill patients. The causal
+association between this newly discovered bacterium and pneumonia was
+firmly established only five years later \citep{Weichselbaum1886}, and
+in the following decade, all clinical presentations of pneumococcal
+infection had been described \citep{Austrian1981}. Pneumococcus has gone
+by many names from its first isolation in 1881. Originally named
+\emph{Micrococcus pasteuri} by Sternberg \citep{Sternberg1881}, a
+scientific consensus was reached in 1920 whereupon it was agreed that
+the official name should be \emph{Diplococcus pneumoniae}
+\citep{Winslow1920}. It was not until 1974 when pneumococcus received
+its current name, \emph{Streptococcus pneumoniae} \citep{Deibel1974}.
 
-Figures and tables with captions will be placed in \texttt{figure} and
-\texttt{table} environments, respectively.
+Pneumococcus is encapsulated by a polysaccharide coating that protects
+it from environmental factors. The polysaccharide capsule acts as an
+invisibility cloak in regard to the human immune system which is
+rendered unable to detect pneumococcus except through certain patterns
+in the oligosaccharides contained within the capsule
+\citep{Epstein1995}. Based on these patterns, pneumococcus has been
+classified into over 97 different serotypes as of the writing of this
+thesis. Additionally, as the capsule only contains polysaccharides and
+not proteins, the immune response is T cell independent and therefore
+poorly immunogenic even after identification by the immune system
+\citep{Geno2015b}. These are the fundamental problems faced by
+scientists when engineering new pneumococcal vaccines. The significance
+of serotypes on the development of vaccines should not be understated.
+Lack of knowledge about serotype-specific immunogenicity was the main
+reason for the failure of the original attempts at preventing
+pneumococcal pneumonia by Wright in South Africa \citep{Wright1914}.
+Because of this, the feasibility of pneumococcal vaccination wasn't
+definitively demonstrated until 1945 \citep{Macleod1945}.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, .}\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{))}
-\KeywordTok{plot}\NormalTok{(pressure, }\DataTypeTok{type =} \StringTok{'b'}\NormalTok{, }\DataTypeTok{pch =} \DecValTok{19}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+All serotypes of pneumococcus have the potential to cause disease in
+humans. However, some are more virulent than others. The prevalence of
+asymptomatic carriage in the nasopharynx varies greatly by serotype as
+does the prevalence of serotypes causing clinical infections.
+Quantifying the pathogenic potential of serotypes can be difficult as
+both need to be considered. With few exemptions, acquisition of a new
+serotype into the nasopharyngeal flora proceeds clinical disease caused
+by that serotype. Pneumococcal epidemiology is dominated by this effect,
+wherein children act as a reservoir of asymptomatic pneumococcal
+carriage from which other children and adults acquire serotypes that may
+lead to symptomatic disease. Vaccinations that decrease the pneumococcal
+carriage in children do therefore have the potential to reduce the
+incidence of disease in both other unvaccinated children and adults.
+This phenomenon is called a herd-effect and is integral to the
+development of vaccination strategies to combat pneumococcal disease.
 
-\begin{figure}
+The infectious manifestations of pneumococcal disease are broadly
+speaking local infections of the respiratory tract and infections of
+previously sterile sites. They range from common to uncommon and from
+benign to serious. The most common infectious manifestation of
+pneumococcus in acute otitis media (AOM) -- an infection of the middle
+ear. AOM is the most common reason for physician visit and antimicrobial
+prescription in the pediatric population. However, the disease course is
+benign and rarely results in permanent disability. The pathogenesis of
+AOM is complex and can both be caused by viral and bacterial pathogens.
+Bacterial AOM is most often caused by pneumococcus and Haemophilus
+influnzae. Acute sinusitis is another common but benign manifestation of
+pneumococcal disease. Pneumococcus is also a common cause of pneumonia
+-- from which it gets its name. Pneumonia often requires hospitalization
+and intravenous antimicrobial treatment and can uncommonly lead to
+permanent disability and death. Finally, if pneumococcus gains access to
+normally sterile sites it may cause invasive infections. This includes
+bacteremia - an infection of the blood, and meningitis -- an infection
+of the meninges. These infectious manifestations are grouped together as
+invasive pneumococcal disease (IPD). Whilst IPD is extremely uncommon
+the consequences can be disastrous. The case fatality ratio from
+pneumococcal meningitis in Iceland is estimated at 15.3\%.
 
-{\centering \includegraphics[width=0.8\linewidth]{bookdown-demo_files/figure-latex/nice-fig-1} 
+Pneumococcus became an early target for vaccine development because of
+this broad range of disease caused by pneumococcus. The vaccine benefit
+can be quantified in two different ways. On one hand it can prevent
+uncommon but serious manifestations of disease and has the potential to
+prevent death and serious disability. On the other hand, it prevents
+common infections that cumulatively present a large healthcare burden
+due to frequent physician visits, antimicrobial prescriptions and days
+of work lost by parents and caregivers. The earliest attempts to use
+vaccination to lessen the morbidity and mortality associated with
+pneumococcus date back to 1914 when Wright used whole cell innoculi to
+vaccinated miners in South Africa \citep{Wright1914}. In 1934, armed
+with the knowledge of different pneumococcal serotypes and serotype
+specific immunogenicity, Lister and Ordman demonstrated the
+effectiveness of polyvalent whole-cell vaccines against pneumococcal
+pneumonia. In the following decades, repeated animal studies showed that
+injection of the pneumococcal polysaccharide coating in animals
+protected against subsequent pneumococcal infections. On the basis of
+these findings, the first polysaccharide vaccine was demonstrated to be
+effective \citep{Macleod1945}. This lay the foundation for modern
+polysaccharide pneumococcal vaccines. Unfortuneatly, it soon became
+apparent that the polysaccharide vaccines were not addequetly
+immunogenic in young children, the ill and the elderly. This lead to the
+development of pneumococcal conjugate vaccines. The first such vaccine
+to be mass produced was the heptavalent Prevenar developed by Pfizer
+pharmacouticals.
 
-}
+Iceland is an independent island nation located in the mid-Atlantic. It
+has a homogenous populuation of roughly 330,000 individuals. The first
+systamatic vaccination against pneumococcus in Iceland began in April
+2011 when the 10-valent pneumococcal \emph{Haemophilus influnzae}
+protein-D conjugate vaccine (Synflorix, PHiD-CV10) was introduced into
+the national Paediatric vaccination program. The vaccine program
+entailed two primary doses at three and five months of age and a booster
+dose at twelve months. No catch-up program was undertaken. Prior to the
+introduction, no systamatic vaccination effort had been undertaken in
+Iceland. Like the other Nordic countries, Iceland has a rich history of
+national health related registers. This allowed for a unique whole
+population ecological study to examine the impact of systamatic
+pneumococcal vaccination.
 
-\caption{Here is a nice figure!}\label{fig:nice-fig}
-\end{figure}
+\section{\texorpdfstring{Clinical manifestations of \emph{Streptococcus
+pneumoniae}}{Clinical manifestations of Streptococcus pneumoniae}}\label{clinical-manifestations-of-streptococcus-pneumoniae}
 
-Reference a figure by its code chunk label with the \texttt{fig:}
-prefix, e.g., see Figure \ref{fig:nice-fig}. Similarly, you can
-reference tables generated from \texttt{knitr::kable()}, e.g., see Table
-\ref{tab:nice-tab}.
+\textasciitilde{} 2 pages - Build transmission dynamics, carriage and
+disease mentioned in introduction - Short overview of mechanism by which
+individuals become colonized - Asymptomatic carriage the predecessor of
+infections - Non-invasive vs.~invasive infections - Explain relevance of
+differentiating the two - list manifestations in each category building
+on introduction - Explain that vaccines have variable impact on
+different manifestations - Use examples from the two large RCTs
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{(}
-  \KeywordTok{head}\NormalTok{(iris, }\DecValTok{20}\NormalTok{), }\DataTypeTok{caption =} \StringTok{'Here is a nice table!'}\NormalTok{,}
-  \DataTypeTok{booktabs =} \OtherTok{TRUE}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+The relationship between pneumococcus and humans is complex. Most
+children are colonized by pneumococcus within the first months of life.
+The serotype distribution of the initial colonization is influenced by
+the distribution of serotypes within the family. Over the course of the
+child's lifetime, they will be colonized by many different serotypes.
+The child's immune system will learn to recognize the serotype and will
+either clear the colonization or maintain a equilibrium in which the
+serotype is kept within a certain limit of reproduction. Consequently,
+the contribution of pneumococcus to the human upper respiratory flora is
+in a state of constant flux. New serotypes enter while old exit, and the
+relative density of serotypes changes. In some cases the equilibrium
+between pneumococcus and the host is destabilized resulting in rapid
+growth of pneumococcus which results in clinical manifestations. This
+most commonly occurs in the upper respiratory tract where pneumococcus
+is generally located. This results in the common clinical manifestations
+of pneumococcal infections, i.e.~AOM, acute sinusitis and
+conjunctivitis. The pathogenesis of pneumococcal pneumonia is thought to
+occur through micro-aspiration of upper respiratory secretions with
+subsequent rapid proliferation of pneumococcus in the lower respiratory
+tract. Invasive disease occurs when pneumococcus penetrates the host
+immunological defenses and proliferates in normally sterile tissue.
 
-\begin{table}
+\subsection{Carriage}\label{carriage}
 
-\caption{\label{tab:nice-tab}Here is a nice table!}
-\centering
-\begin{tabular}[t]{rrrrl}
-\toprule
-Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
-\midrule
-5.1 & 3.5 & 1.4 & 0.2 & setosa\\
-4.9 & 3.0 & 1.4 & 0.2 & setosa\\
-4.7 & 3.2 & 1.3 & 0.2 & setosa\\
-4.6 & 3.1 & 1.5 & 0.2 & setosa\\
-5.0 & 3.6 & 1.4 & 0.2 & setosa\\
-\addlinespace
-5.4 & 3.9 & 1.7 & 0.4 & setosa\\
-4.6 & 3.4 & 1.4 & 0.3 & setosa\\
-5.0 & 3.4 & 1.5 & 0.2 & setosa\\
-4.4 & 2.9 & 1.4 & 0.2 & setosa\\
-4.9 & 3.1 & 1.5 & 0.1 & setosa\\
-\addlinespace
-5.4 & 3.7 & 1.5 & 0.2 & setosa\\
-4.8 & 3.4 & 1.6 & 0.2 & setosa\\
-4.8 & 3.0 & 1.4 & 0.1 & setosa\\
-4.3 & 3.0 & 1.1 & 0.1 & setosa\\
-5.8 & 4.0 & 1.2 & 0.2 & setosa\\
-\addlinespace
-5.7 & 4.4 & 1.5 & 0.4 & setosa\\
-5.4 & 3.9 & 1.3 & 0.4 & setosa\\
-5.1 & 3.5 & 1.4 & 0.3 & setosa\\
-5.7 & 3.8 & 1.7 & 0.3 & setosa\\
-5.1 & 3.8 & 1.5 & 0.3 & setosa\\
-\bottomrule
-\end{tabular}
-\end{table}
+\textasciitilde{} 3-4 pages - Define carriage; age-specific prevalence,
+serotype distribution - Explain that most are born carriage free -
+Evidence for co-carriage of different serotypes - Age at which most
+children acquire carriage - Risk factor: daycare, siblings, smoking etc.
+- Children are the main vectors of pneumococcus - Rate of clearance
+dependent on age - With increasing age -\textgreater{} increasing
+immunity, decreasing prevalence - Senescence and carriage in the elderly
+- Evidence for carriage being the predecessor infections - Evidence of
+asymptomatic carriage -\textgreater{} main spread of disease - Variable
+propensity of serotypes to cause disease, attack-rates - Review the
+Icelandic literature and changing epidemiology - Carriage prevalence -
+Serotype distribution - Risk factors - Describe mathematical method to
+estimate adult carriage from observed carriage in children.
 
-You can write citations, too. For example, we are using the
-\textbf{bookdown} package \citep{R-bookdown} in this sample book, which
-was built on top of R Markdown and \textbf{knitr} \citep{xie2015}.
+\subsection{Acute otitis media}\label{acute-otitis-media}
 
-\chapter{Literature}\label{literature}
+\textasciitilde{} 3 - 4 pages - Define different types of otitis media;
+acute otitis media - Pathogens, estimated \% caused by pneumococcus -
+Proposed mechanism by which carriage -\textgreater{} AOM - Epidemiology,
+both serotype and age - Risk factors - Burden of disease caused by AOM;
+health care utilization, cost - Incidence and prevalence - GP visits,
+antibacterial consumption, hospitalization (?) - Days of work-lost by
+parents - Sequelae; multiple infections, effusion, tympanostomies -
+Evidence of benefit of delaying 1st presentation - Review of Icelandic
+literature and changing epidemiology - AOM prevalence and serotype
+distribution - Risk factors - Associated healthcare consumption, cost -
+Rate of sequelae
 
-Here is a review of existing methods.
+\subsection{Pneumonia}\label{pneumonia}
 
-\chapter{Methods}\label{methods}
+\textasciitilde{} 4 -- 5 pages - Define: CAP, nosocomial, PP, NBPP and
+IPP. - Pathogens, estimated \% caused by pneumococcus - Proposed
+mechanism by which carriage -\textgreater{} pneumonia - Epidemiology,
+both serotype and age - Risk factors - Burden of disease caused by
+pneumonia, health care utilization - Ways of defining severity; CURB-65
+etc. - GP visits, antibacterial consumption, Hospitalization rates -
+Days of work lost - Mortality, sequelae - Review of Icelandic literature
+and changing epidemiology - Pneumococcal pneumonia prevalence and
+serotype distribution - Rate of hospitalization, healthcare consumption
+- Rate of sequelae - Risk factors
+
+\subsection{Invasive pneumococcal
+disease}\label{invasive-pneumococcal-disease}
+
+\textasciitilde{} 3 -5 pages - Define different presentations of IPD:
+meningitis, bacteremia, etc. - Epidemiology, both serotype and age -
+Risk factors - Burden of disease, health care utilization - Severity -
+Hospitalization rates, ICU rates - Sequelae - Review of Icelandic
+literature and changing epidemiology - Meningitis, bacteremia, empyema,
+joint infection prevalence and serotype distribution - Rate of sequelae
+
+\section{Pneumococcal conjugate
+vaccines}\label{pneumococcal-conjugate-vaccines}
+
+\textasciitilde{} 1 -2 pages - PPSV23 original studies, downsides,
+immunogenicity - Development of protein conjugate vaccines, reasons -
+PCV7 - Higher valency PCVs
+
+\section{Impact of pneumococcal conjugate
+vaccines}\label{impact-of-pneumococcal-conjugate-vaccines}
+
+\textasciitilde{} 3 pages - Present evidence of magnitude of effect on
+VT carriage - Serotype distribution vs.~carriage prevalence - Serotype
+replacement - Herd-effect, i.e.~effect on carriage of adults and
+non-vaccinated
+
+\subsection{Acute otitis media}\label{acute-otitis-media-1}
+
+\textasciitilde{} 1-2 pages \textless{}- much fewer studies - Present
+evidence of magnitude of effect on all-cause AOM - VT vs.~NVT serotypes
+- Serotype replacement (?)\\
+- Herd-effect in non-vaccinated
+
+\subsection{Pneumonia}\label{pneumonia-1}
+
+\textasciitilde{} 2-3 pages - Present evidence of effect on all-cause
+pneumonia - VT vs.~NVT serotypes - Serotype replacement (?) -
+Herd-effect in adults and non-vaccinated
+
+\subsection{Invasive pneumococcal
+disease}\label{invasive-pneumococcal-disease-1}
+
+\textasciitilde{} 4-6 pages \textless{}- largest amount of studies -
+Present evidence of effect on IPD and subgroups; meningitis, bacteremia
+etc. - VT vs.~NVT - Serotype replacement - Herd-effect
+
+\section{Cost-effectiveness of pneumococcal conjugate
+vaccination}\label{cost-effectiveness-of-pneumococcal-conjugate-vaccination}
+
+\textasciitilde{} 3-4 pages - Present overview of literature review and
+critical analysis. - Recommendations of ISPOR and WHO presented, discuss
+importance of assumptions and methodology - Introduction to sub-chapters
+of lit. rev. - Explain how they will be tied in to ISPOR/WHO
+recommendations
+
+\subsection{Measurement of effectiveness and choice of health
+outcomes}\label{measurement-of-effectiveness-and-choice-of-health-outcomes}
+
+\textasciitilde{} 1 page - Shortly explain what is meant by
+effectiveness and health outcomes - Tie in to ISPOR/WHO
+
+\subsubsection{Health outcomes
+considered}\label{health-outcomes-considered}
+
+\textasciitilde{} 2-3 pages - Describe what health outcomes were
+considered - Tie into actual disease burden known to be caused by
+pneumococcus
+
+\subsubsection{Effectiveness of PCV7}\label{effectiveness-of-pcv7}
+
+\textasciitilde{} 3-4 pages - What effectiveness rationale is used,
+methods and rationale: critique - Carriage - AOM - Pneumonia - IPD
+
+\subsubsection{Effectiveness of PCV10}\label{effectiveness-of-pcv10}
+
+\textasciitilde{}2-3 pages - What effectiveness rationale is used,
+methods and rationale: critique - Carriage - AOM - Pneumonia - IPD
+
+\subsubsection{Effectiveness of PCV13}\label{effectiveness-of-pcv13}
+
+\textasciitilde{} 2- 3 pages - What effectiveness rationale is used,
+methods and rationale: critique - Carriage - AOM - Pneumonia - IPD
+
+\subsection{Estimating resources and
+cost}\label{estimating-resources-and-cost}
+
+\textasciitilde{}1 page - Shortly explain what resources and costs mean
+- Direct vs.~indirect - Tie in to ISPOR/WHO
+
+\chapter{Aims}\label{aims}
+
+\chapter{Materials and methods}\label{methods}
 
 We describe our methods in this chapter.
 
-\chapter{Applications}\label{applications}
+\chapter{Results}\label{results}
 
-Some \emph{significant} applications are demonstrated in this chapter.
+\chapter{Discussion}\label{discussion}
 
-\section{Example one}\label{example-one}
-
-\section{Example two}\label{example-two}
-
-\chapter{Final Words}\label{final-words}
-
-We have finished a nice book.
-
-\bibliography{book.bib,packages.bib}
+\bibliography{library.bib,packages.bib}
 
 
 \end{document}
