@@ -17,7 +17,7 @@ Based on these patterns, pneumococcus has been classified into over 97 different
 Additionally, as the capsule contains only polysaccharides and not proteins, the immune response is T-cell independent and therefore poorly immunogenic, even after identification by the immune system [@Geno2015b].
 These characteristics are the fundamental challenges faced by scientists engineering new pneumococcal vaccines.
 The significance of serotypes on the development of vaccines should not be understated.
-The failure of the original attempt of Wright and colleagues to prevent pneumococcal pneumonia with vaccination was indeed due to lack of knowledge about serotype-specific immunogenicity [@Wright1914].
+The failure of the original attempt of Wright and colleagues in 1911 to prevent pneumococcal pneumonia with vaccination was indeed due to lack of knowledge about serotype-specific immunogenicity [@Wright1914].
 
 All serotypes of pneumococcus have the potential to cause disease in humans.
 However, some are more virulent than others.
@@ -48,8 +48,7 @@ Pneumococcus became an early target for vaccine development because of the broad
 The vaccine benefit can be quantified in two different ways.
 On one hand it can prevent uncommon but serious manifestations of disease and has the potential to prevent death and serious disability.
 On the other hand, it also prevents common infections that cumulatively present a large healthcare burden due to frequent physician visits, antimicrobial prescriptions as well as work hours lost by parents and caregivers.
-The earliest attempts to use vaccination to lessen the morbidity and mortality associated with pneumococcus date back to 1914 when Wright used whole cell innoculi to vaccinated miners in South Africa [@Wright1914].
-In 1934, armed with the knowledge of different pneumococcal serotypes and serotype specific immunogenicity, Lister and Ordman demonstrated the effectiveness of polyvalent whole-cell vaccines against pneumococcal pneumonia. 
+The earliest attempts to use vaccination to lessen the morbidity and mortality associated with pneumococcus date back to 1911 when Wright used whole cell innoculi to vaccinated miners in South Africa [@Wright1914].
 In the following decades, multiple animal studies showed that injection of the pneumococcal polysaccharide coating in animals protected against subsequent pneumococcal infections.
 On the basis of these findings, the first polysaccharide vaccine was shown to be effective [@Macleod1945].
 This lay the foundation for modern polysaccharide pneumococcal vaccines. 
@@ -175,6 +174,45 @@ Invasive disease occurs when pneumococcus penetrates the host immunological defe
 - PCV7
 - Higher valency PCVs 
 
+The history of pneumococcal vaccination begins in 1911 when Wright and colleagues attempted to use whole killed bacteria to vaccinate South African miners against pneumococcal pneumonia [@Wright1914].
+It should however be noted that in his original description of pneumococcus in 1881, George Sternberg observed that rabbits who were injected with his saliva mixed with alcohol and quinine did not ubiquitously die and were later resistant to re-injection with saliva [@Austrian1999a, @Sternberg1881].
+Sternberg had inadvertently immunized the laboratory animals against subsequent infection by injecting killed pneumococci, proving the concept 30 years before it was first attempted.
+The 1911 trial by Wright failed to show efficacy due to lack of knowledge of the significance of serotypes and serotype specific immunogenicity.
+Several trials using whole killed bacteria were published in the following two decades [@Cecil1918; @Lister1916; @Lister1936; @Maynard1913]
+The researchers benefited from the knowledge of serotypes which had been discovered in 1910 and used multivalent vaccines.
+They were however victims of underdeveloped epidemiological methodology for vaccine field trials.
+Due to inconsistencies in study design, the efficacy of whole bacteria pneumococcal vaccines remained fiercely debated though there seemed to be a suggestion of benefit [@Austrian1999a].
+Vaccines based on whole killed bacteria were soon replaced with polysaccharide vaccines, following discoveries in the 1920s and 1930 of the immunogenicity of the polysaccharide capsule [@Dochez1917; @Finland1931; @Francis1930; @Heidelberger1923; @Schiemann1927].
+The first such trial tested a bivalent polysaccharide vaccine on 29,000 adult males in the American Civilian Conservation Corps in iterations in the 1930s [@Ekwurzel1938].
+It suffered from the same methodological problems as did the previous trials of the whole killed bacteria and its results were debated.
+A second large trial was conducted in the late 1930s using a tetravalent vaccine [@Macleod1945].
+This trial built upon the experience of the previous trials and was able to show convincing efficacy against pneumococcal pneumonia.
+The results of this trial led to the licensure of two hexavalent polysaccharide pneumococcal vaccines in the 1940s.
+One was formulated for adults and the other for children, each optimized to the serotype distribution within the respective age-group.
+Alas, these early vaccines fell victim to unfortunate timing.
+Because in 1944, Tillet and colleagues showed that bacteraemic pneumococcal pneumonia could be cured by parenteral administration of benzylpenicillin [@Tillett1943].
+Following this discovery, the medical community was stricken with a kind of nonchalance.
+The mortality rate of pneumococcal disease decreased sufficiently that there was no longer a perceived need for preventative vaccination.
+The licenses for the polysaccharide vaccines were withdrawn by the manufacturer due to lack of their use [@Austrian1999a]
+Interest in pneumococcal vaccination re-emerged in the 1950s when it was noted that the mortality benefit of penicillin was not ubiquitous.
+The elderly and those who had underlying disease did not experience a decrease in their case fatality ratio [@Austrian1964].
+This led to a redoubled effort to create a new polysaccharide vaccine.
+Several large randomized controlled trials were conducted in South Africa in the 1970s [@Austrian1976, @Smit1977] and on the basis of these, a 14-valent pneumococcal vaccine was licensed in the United States in 1977.
+Its valency was increased to 23 polysaccharides in 1983 [@Austrian1999a].
+Early in the development of pneumococcal vaccinations there was an interested in vaccinating children.
+Two trials were conducted in the early 1980s which attempted to use polysaccharide vaccines in young children. 
+Neither showed benefit [@Makela1981; @Sloyer1981].
+This is perhaps unsurprising in light of previous trials.
+The first polysaccharide trial that was conducted in children in 1937 failed to detect any immunological response [@Davies1937].
+Laboratory studies in the 1930s and 1940s revealed that the reason for this lack of efficacy was due to the thymus independent immunse response to purely sacharide antigens.
+These same studies showed that this could be remedied by adding a protein adjuvant, thus inducing a T-cell response.
+The strategy of protein conjugation saw its first success in the development of the *Haemophilus influenzae* type b vaccine.
+Subsequently, several different pneumococcal conjugate vaccines entered phase II and phase III clinical trials in the late 1990s.
+The first of which to recieve licensure was the heptavalent preparation.
+Higher valancy conjugated vaccined were developed and recived licensure in the new millenium. 
+
+
+    
 ## Impact of pneumococcal conjugate vaccines
 
 ~ 3 pages
