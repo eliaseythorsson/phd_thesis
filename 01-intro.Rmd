@@ -1,5 +1,12 @@
 # Introduction {#intro}
 
+```{r echo = FALSE, warning = FALSE, error = FALSE}
+library(knitr)
+library(tidyverse)
+library(kableExtra)
+```
+
+
 *Streptococcus pneumoniae* is a commensal bacterium found in the nasopharynx of humans where it plays an integral role in the normal upper respiratory flora.
 It is also a common pathogen and is one of the most common bacterial causes of disease in humans.
 In classical medical texts pneumococcus is described as a Gram-positive lancet-shaped coccus that is usually found in pairs.
@@ -22,8 +29,7 @@ The failure of the original attempt of Wright and colleagues in 1911 to prevent 
 All serotypes of pneumococcus have the potential to cause disease in humans.
 However, some are more virulent than others.
 The prevalence of asymptomatic carriage in the nasopharynx varies greatly by serotype as does the propensity of serotypes to cause clinical infections.
-Quantifying the pathogenic potential of serotypes is difficult as both their prevalence and propensity to cause disease need to be considered. 
-With few exceptions, acquisition of a new serotype into the nasopharyngeal flora proceeds the onset of clinical disease caused by that serotype.
+Quantifying the pathogenic potential of serotypes is difficult as both their prevalence and propensity to cause disease need to be considered. With few exceptions, acquisition of a new serotype into the nasopharyngeal flora proceeds the onset of clinical disease caused by that serotype.
 Pneumococcal epidemiology is dominated by this effect - children act as a reservoir of asymptomatic pneumococcal carriage from which other children and adults acquire serotypes that may lead to symptomatic disease. 
 Because of this, vaccinations that decrease the pneumococcal carriage in children have the potential of reducing the incidence of disease both in other unvaccinated children and in adults. 
 This phenomenon is called a herd-effect, and is integral to the development of vaccination strategies to combat pneumococcal disease.
@@ -67,28 +73,33 @@ With a wealth of medical documentation, a unique whole-population ecological stu
 
 ## Clinical manifestations of *Streptococcus pneumoniae*
 
-~ 2 pages
-- Build transmission dynamics, carriage and disease mentioned in introduction
-	- Short overview of mechanism by which individuals become colonized
-	- Asymptomatic carriage the predecessor of infections
-	- Non-invasive vs. invasive infections
-		- Explain relevance of differentiating the two
-		- list manifestations in each category building on introduction
-	- Explain that vaccines have variable impact on different manifestations
-		- Use examples from the two large RCTs
-
 The relationship between pneumococcus and humans is complex. 
 Most children are colonized by pneumococcus within the first months of life. 
 The serotype distribution of the initial colonization is influenced by the distribution of serotypes within the family. 
 Over the course of the child's lifetime, they will be colonized by many different serotypes.
-The child's immune system will learn to recognize the serotype and will either clear the colonization or maintain a equilibrium in which the serotype is kept within a certain limit of reproduction.
+The child's immune system will learn to recognize the currently colonizing serotypes and will either clear the colonization or maintain a equilibrium in which the serotype is kept within a certain limit of reproduction.
 Consequently, the contribution of pneumococcus to the human upper respiratory flora is in a state of constant flux.
 New serotypes enter while old exit, and the relative density of serotypes changes.
 In some cases the equilibrium between pneumococcus and the host is destabilized resulting in rapid growth of pneumococcus which results in clinical manifestations.
-This most commonly occurs in the upper respiratory tract where pneumococcus is generally located. 
-This results in the common clinical manifestations of pneumococcal infections, i.e. AOM, acute sinusitis and conjunctivitis.
+It is thought that this is most likely to occur immidietly following the acquisition of new serotype into the nasopharyngeal flora. 
+This most commonly occurs in the upper respiratory tract where pneumococcus is generally located and results in the common clinical manifestations of pneumococcal infections, i.e. AOM, acute sinusitis and conjunctivitis.
 The pathogenesis of pneumococcal pneumonia is thought to occur through micro-aspiration of upper respiratory secretions with subsequent rapid proliferation of pneumococcus in the lower respiratory tract.
-Invasive disease occurs when pneumococcus penetrates the host immunological defenses and proliferates in normally sterile tissue. 
+Invasive disease occurs when pneumococcus penetrates the host immunological defenses and proliferates in normally sterile tissue.
+This can be secondary to infections of the upper or lower respiratory tract, or can occur as a primary event.
+Generally, IPD is considered to encompass meningitis, bacteraemia and septic arthritis.
+While some may argue that the middle ear is normally sterile, AOM is not considered invasive disease.
+
+It has been known from the first pneumococcal vaccine trials that vaccination has different efficacy against the different manifestations of pneumococcal disease.
+The largest effects are consistently seen in the prevention of IPD and pneumococcal lobar pneumonia.
+The effects on carriage and AOM are often lesser in magnitude. 
+This may be a true biological gradient or a consequence of the accuracy with which disease is measured. 
+The more serious the illness is the more testing is performed resulting in a more accurate diagnosis.
+Much of the AOM attributed to pneumococcus may be caused by other pathogens, while by definition IPD is always caused by pneumococcus.
+Furthermore, it wasn't until the advent of pneumococcal conjugate vaccines that vaccines started to become efficacious in children and it is precisely in children that AOM occurs. 
+The largest trials of modern pneumococcal vaccines have fit the above narrative.
+The 23-valent pneumococcal polysaccharide vaccine was trialed in 12,000 adults and showed an efficacy of 75% in preventing IPD and a 50% efficacy against radiologically confirmed pneumonia.
+The heptavalent pneumococcal conjugate vaccine was trialed in children and produced a 97% efficacy in preventing IPD. 
+
 
 
 ### Carriage
@@ -110,7 +121,6 @@ Invasive disease occurs when pneumococcus penetrates the host immunological defe
 	- Carriage prevalence
 	- Serotype distribution
 	- Risk factors
-- Describe mathematical method to estimate adult carriage from observed carriage in children.
 
 ### Acute otitis media
 
@@ -168,12 +178,6 @@ Invasive disease occurs when pneumococcus penetrates the host immunological defe
 
 ## Pneumococcal conjugate vaccines
 
-~ 1 -2 pages
-- PPSV23 original studies, downsides, immunogenicity
-- Development of protein conjugate vaccines, reasons
-- PCV7
-- Higher valency PCVs 
-
 The history of pneumococcal vaccination begins in 1911 when Wright and colleagues attempted to use whole killed bacteria to vaccinate South African miners against pneumococcal pneumonia [@Wright1914].
 It should however be noted that in his original description of pneumococcus in 1881, George Sternberg observed that rabbits who were injected with his saliva mixed with alcohol and quinine did not ubiquitously die and were later resistant to re-injection with saliva [@Austrian1999a, @Sternberg1881].
 Sternberg had inadvertently immunized the laboratory animals against subsequent infection by injecting killed pneumococci, proving the concept 30 years before it was first attempted.
@@ -207,12 +211,14 @@ The first polysaccharide trial that was conducted in children in 1937 failed to 
 Laboratory studies in the 1930s and 1940s revealed that the reason for this lack of efficacy was due to the thymus independent immunse response to purely sacharide antigens.
 These same studies showed that this could be remedied by adding a protein adjuvant, thus inducing a T-cell response.
 The strategy of protein conjugation saw its first success in the development of the *Haemophilus influenzae* type b vaccine.
-Subsequently, several different pneumococcal conjugate vaccines entered phase II and phase III clinical trials in the late 1990s.
-The first of which to recieve licensure was the heptavalent preparation.
-Higher valancy conjugated vaccined were developed and recived licensure in the new millenium. 
+Subsequently, several different pneumococcal conjugate vaccines entered phase II and phase III clinical trials in the late 1990s [@Austrian1999a].
+The first of which to recieve licensure was the 7-valent pneumococcal conjugate vaccine (PCV7) which was licensed in 2000 in the United States.
+It included purified polysaccharides for seven serotypes of pneumococcus (4, 9V, 14, 19F, 23F, 18C and 6B) conjugated to CRM197, a nontoxic variant of the diptheria toxin.
+It was shown to be efficacious for IPD, pneumococcal pneumonia and AOM in several randomized trials [@Black2000].
+Higher valancy conjugated vaccined were developed and recived licensure in the new millenium based on the randomized trials conducted for the heptavalent conjugated vaccine.
+They have however been shown to be effective in several cluster randomized trials and observational studies. 
 
 
-    
 ## Impact of pneumococcal conjugate vaccines
 
 ~ 3 pages
@@ -220,6 +226,9 @@ Higher valancy conjugated vaccined were developed and recived licensure in the n
 	- Serotype distribution vs. carriage prevalence
 		- Serotype replacement 
 	- Herd-effect, i.e. effect on carriage of adults and non-vaccinated
+
+From their inception, dozens of randomised controlled trials evaluating the efficacy of differenct pneumococcal conjugate vaccines have been performed.
+
 
 
 ### Acute otitis media
@@ -229,6 +238,42 @@ Higher valancy conjugated vaccined were developed and recived licensure in the n
 	- VT vs. NVT serotypes
 		- Serotype replacement (?)	
 	- Herd-effect in non-vaccinated
+	
+Acute otitis media is still most often caused by *Streptococcus pneumoniae* and *Haemophilus influenzae* despite changes in otopathogens.
+Prevention of IPD in children and the associated morbidity and mortality was the driving force in the development of pneumococcal conjugate vaccines.
+However, the public most often associates them with AOM.
+Most children experience AOM and the dramatic decrease in incidence following pneumococcal conjugate vaccination is what families noticed.
+Despite this, AOM is a difficult outcome for trialist.
+AOM exists on a continuum.
+It does not have universally adhered to diagnostic criteria and its signs and symptoms greatly overlap with those of other common diseases. 
+Because AOM is benign and most often self-limited, the probability that a child with AOM is even seen by a physician varies greatly with parental health seeking behavior.
+Even when AOM is accurately diagnosed it is not possible to ascertain the causative pathogen without invasive sampling, which is not warranted given the benign nature of the disease.
+This percludes measuring the serotype specific effect of vaccination for most studies - and more importantly, it percludes measuring the effect on pneumococcal AOM. 
+Thus any estimation of an effect of pneumococcal vaccination will necessarily by diluted by the subjectiveness of AOM diagnosis and the continued lack of protection against other otopathogens. 
+
+Despite these difficulties, AOM has been associated with pneumococcal vaccination in children from the beginning.
+It was used as an outcome measure in the earliest trials of the pneumococcal polysaccharide vaccines [@Makela1981; @Sloyer1981].
+The first published randomized controlled trial of a pneumococcal conjugate vaccine reported, among other outcomes, the efficacy against AOM [@Black2000].
+The study obtained data on visits for AOM from routine electronic health records.
+The assessors were not specifically trained as these were simply routine visits. 
+The outcome measure AOM was defined in at least eight different ways to account for the difficulties in measurement.
+Only per protocol effects will be presented here though none of the intention to treat results were divergent from them.
+The vaccine efficacy against otitis media 
+
+```{r Table 1, echo = F}
+kable(
+    data.frame(
+        study = c("Black, 2000", "Eskola, 2001"),
+        vaccine = c("PCV7 (CRM197)", "PCV7 (CRM197)"),
+        no_child = c(37868, 1662),
+        efficacy = c("8.9 (5.8-11.8", "6 (-4-16)")
+    ),
+    col.names = c("Study", "Vaccine", "No. of children", "Efficacy against Otitis media episodes"),
+    booktab = T
+)
+```
+
+
 
 
 ### Pneumonia
