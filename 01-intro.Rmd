@@ -6,7 +6,6 @@ library(tidyverse)
 library(kableExtra)
 ```
 
-
 *Streptococcus pneumoniae* is a commensal bacterium found in the nasopharynx of humans where it plays an integral role in the normal upper respiratory flora.
 It is also a common pathogen and is one of the most common bacterial causes of disease in humans.
 In classical medical texts pneumococcus is described as a Gram-positive lancet-shaped coccus that is usually found in pairs.
@@ -62,7 +61,7 @@ However, it soon became apparent that the polysaccharide vaccines were not adequ
 In response, pneumococcal conjugate vaccines were developed.
 The first such vaccine to be mass produced was the heptavalent Prevenar developed by Pfizer Pharmaceuticals.
 
-Iceland is an independent island nation, isolated in the mid-Atlantic, with a homogenous populuation of roughly 330,000 individuals.
+Iceland is an independent island nation, isolated in the mid-Atlantic, with a homogeneous population of roughly 330,000 individuals.
 The first systematic program of vaccination against pneumococcus in Iceland began in April 2011, when the 10-valent pneumococcal *Haemophilus influnzae* protein-D conjugate vaccine (Synflorix, PHiD-CV10) was introduced into the national paediatric vaccination program.
 The vaccine program entailed two primary doses given at three and five months of age, and a booster dose at twelve months.
 No catch-up program was undertaken.
@@ -212,33 +211,27 @@ Laboratory studies in the 1930s and 1940s revealed that the reason for this lack
 These same studies showed that this could be remedied by adding a protein adjuvant, thus inducing a T-cell response.
 The strategy of protein conjugation saw its first success in the development of the *Haemophilus influenzae* type b vaccine.
 Subsequently, several different pneumococcal conjugate vaccines entered phase II and phase III clinical trials in the late 1990s [@Austrian1999a].
-The first of which to recieve licensure was the 7-valent pneumococcal conjugate vaccine (PCV7) which was licensed in 2000 in the United States.
-It included purified polysaccharides for seven serotypes of pneumococcus (4, 9V, 14, 19F, 23F, 18C and 6B) conjugated to CRM197, a nontoxic variant of the diptheria toxin.
-It was shown to be efficacious for IPD, pneumococcal pneumonia and AOM in several randomized trials [@Black2000].
-Higher valancy conjugated vaccined were developed and recived licensure in the new millenium based on the randomized trials conducted for the heptavalent conjugated vaccine.
+The first of which to receive licensure was the seven valent pneumococcal conjugate vaccine which was licensed in 2000 in the United States.
+It included purified polysaccharides for seven serotypes of pneumococcus (4, 9V, 14, 19F, 23F, 18C and 6B) conjugated to CRM197 (PCV7~CRM197~), a nontoxic variant of the diptheria toxin.
+It was shown to be efficacious for IPD, pneumococcal pneumonia and AOM in several randomized trials [@Black2000; @Black2002c; @Eskola2001; @Fireman2003; @Kilpi2003].
+Higher valancy conjugated vaccines were developed and recieved licensure in the new millennium based on the randomized trials conducted for the heptavalent conjugated vaccine.
 They have however been shown to be effective in several cluster randomized trials and observational studies. 
 
 
 ## Impact of pneumococcal conjugate vaccines
 
 ~ 3 pages
-- Present evidence of magnitude of effect on VT carriage
+- Present evidence of magnitude of effect on VT carriage **The three Dagan studies mentioned in [@Eskola2001]**
 	- Serotype distribution vs. carriage prevalence
 		- Serotype replacement 
 	- Herd-effect, i.e. effect on carriage of adults and non-vaccinated
 
-From their inception, dozens of randomised controlled trials evaluating the efficacy of differenct pneumococcal conjugate vaccines have been performed.
+From their inception, dozens of randomized controlled trials evaluating the efficacy of different pneumococcal conjugate vaccines have been performed.
 
 
 
 ### Acute otitis media
 
-~ 1-2 pages <- much fewer studies
-- Present evidence of magnitude of effect on all-cause AOM
-	- VT vs. NVT serotypes
-		- Serotype replacement (?)	
-	- Herd-effect in non-vaccinated
-	
 Acute otitis media is still most often caused by *Streptococcus pneumoniae* and *Haemophilus influenzae* despite changes in otopathogens.
 Prevention of IPD in children and the associated morbidity and mortality was the driving force in the development of pneumococcal conjugate vaccines.
 However, the public most often associates them with AOM.
@@ -248,27 +241,77 @@ AOM exists on a continuum.
 It does not have universally adhered to diagnostic criteria and its signs and symptoms greatly overlap with those of other common diseases. 
 Because AOM is benign and most often self-limited, the probability that a child with AOM is even seen by a physician varies greatly with parental health seeking behavior.
 Even when AOM is accurately diagnosed it is not possible to ascertain the causative pathogen without invasive sampling, which is not warranted given the benign nature of the disease.
-This percludes measuring the serotype specific effect of vaccination for most studies - and more importantly, it percludes measuring the effect on pneumococcal AOM. 
+This precludes measuring the serotype specific effect of vaccination for most studies - and more importantly, it precludes measuring the effect on pneumococcal AOM. 
 Thus any estimation of an effect of pneumococcal vaccination will necessarily by diluted by the subjectiveness of AOM diagnosis and the continued lack of protection against other otopathogens. 
+
+#### Randomised controlled trials
 
 Despite these difficulties, AOM has been associated with pneumococcal vaccination in children from the beginning.
 It was used as an outcome measure in the earliest trials of the pneumococcal polysaccharide vaccines [@Makela1981; @Sloyer1981].
 The first published randomized controlled trial of a pneumococcal conjugate vaccine reported, among other outcomes, the efficacy against AOM [@Black2000].
-The study obtained data on visits for AOM from routine electronic health records.
-The assessors were not specifically trained as these were simply routine visits. 
+The study recruited 37,868 children between October 1995 and August 1998 and randomized them to the either PCV7~CRM197~ or the meningococcus C CRM197 conjugate vaccine.
+On the basis of a planned interim analysis in August of 1998 the study met predefined efficacy criteria and the Study Advisory Group recommended termination of the trial.
+Blinded follow-up continued until April 20, 1999.
+However, for the AOM portion of the paper, the data had only been analysed until April 1998
+A seperate publication from the same trial was published in 2003, and examined the effect of PCV7~CRM197~ on AOM in more detail using the full data until study completion in April 1999 [@Fireman2003].
+Median follow-up time was not reported in either publication, but 89% children were reported to have completed the primary series of vaccination in the Fireman et al paper. 
+The data on AOM was obtained from routine electronic health records.
+The assessors were not specifically trained to evaluate AOM as these were simply routine visits. 
 The outcome measure AOM was defined in at least eight different ways to account for the difficulties in measurement.
-Only per protocol effects will be presented here though none of the intention to treat results were divergent from them.
-The vaccine efficacy against otitis media 
+Visits and episodes were defined separately. 
+A visit was considered to be due to the same episode of AOM if the child presented within 21 days of a previous AOM associated visit.
+Frequent otitis media was then defined as either three episodes within a six month period, or four episodes within a twelve month period. 
+It is unclear exactly which statistical procedures were used for which outcomes.
+Both the Andersen-Gill extension of the Cox proportional hazards model with robust variance estimation and the binomial test with Klopper-Pearson confidence intervals were used and efficacy was reported as $(1 - ratio\ measure) *100\%$.
+The study presented both per-protocol and intention-to-treat estimates.
+Only the per-protocol effects will be examined in this thesis though none of the intention to treat results diverged from them.
+The estimated vaccine efficacy against otitis media visits was 7.8% (95%CI 5.4%-10.2%).
+Slightly higher point estimates were found for otitis media episodes, frequent otitis media and ventilatory tube placements [@Black2000; @Fireman2003]
+
+The following year the results of another randomized controlled trial were reported [@Eskola2001].
+This study compared two heptavalent pnuemococcal vaccines to a hepatitis B vaccine control.
+The two heptavalent pneumococcal vaccines differed in their use of carrier protein. 
+One was the same vaccine as in the Black et al. study (PCV7~CRM197~), and the other was a conjugated to meningococcal outer membrane protein complex (PCV7~MOMPC~).
+This publication only reported the comparison of the PCV7~CRM197~ to the hepatitis B vaccine.
+The analogous comparison of the (PCV7~MOMPC~) was reported in a seperate publication [@Kilpi2003].
+No head-to-head comparison of the two heptavalent vaccines was ever reported.
+The study methodology was identical between the two publications as they report different arms of the same study [@Eskola2001; @Kilpi2003].
+The study was specifically designed to address the difficulties associated with estimating the effect of pneumococcal vaccination on AOM.
+A total of 2,497 children were enrolled between December 1995 and April 1997, of which 835 received the (PCV7~MOMPC~) vaccine and were therefore not reported in the Eskola et al. paper.
+Children were followed until their last visit at 24 months of age.
+Of the enrolled children, 95.1% completed full follow-up time and there was no evidence of differential dropout. 
+The study defined beforehand the criteria for what constituted AOM and employed a trained study nurse and physician at each study site.
+Children were seen at enrollment at two months of age, and periodically assessed thereafter at four, six, seven, twelve, thirteen and 24 months of age.
+Parents were encouraged to present with their child to one of the study clinics for assessment of any symptoms suggesting respiratory infection or AOM. 
+If AOM was diagnosed as defined by the study criteria, myringotomy and aspiration of middle-ear fluid were performed and samples sent for culture.
+In this way, the study was able to deduce the causative otopathogen.
+Episodes of AOM were classified as all-cause AOM; culture-confirmed and otopathogen specific AOM; and AOM due to serotypes included in the vaccine.
+The statistical analysis was again conducted using the Andersen-Gill extension of the Cox proportional hazards model with robust variance estimates and efficacy was reported as $(1 - hazard\ ratio) *100\%$.
+The results were most consistent with a 6% efficacy against all-cause AOM with 95% confidence limits of -4% and 16%.
+In this case the negative lower confidence limit indicates the data could be consistent with the possibility of a 4% increase in all-cause AOM, given the specified model.
+The PCV~CRM197~ efficacy against culture-confirmed pneumococcal AOM was 35% (95%CI 21%-45%) and was 57% (95%CI 44%-67%) for the seven serotypes included in the vaccine.
+Similarly, the study demonstrated 57% (95%CI 27%-76%) efficacy against AOM caused by serotype 6A, which is considered a cross-reactive pneumococcal serotype.
+The study was also one of the first to demonstrate clinically relevant serotype replacement, showing a 33% (95%CI -1%-80%) increase in pneumococcal AOM caused by serotypes not included in the vaccine.
+
+The effect estimates for the PCV7~MOMPC~ against culture-confirmed pneumococcal AOM was 25% (95%CI 11%-37%) and was 56% (95%CI 44%-66%) for the seven serotypes included in the vaccine.
+However, unlike PCV~CRM197~, it did not seem to confer protection against cross-reactive serotypes.
+Interestingly, virtually no effect was seen on all-cause AOM with this vaccine preperation. 
+The effect estimate was -1% (95%CI -12%-10%).
+These suprising results were not presented in the main text and no explanation given in the discussion chapter [@Kilpi2003].
+
+
 
 ```{r Table 1, echo = F}
 kable(
     data.frame(
-        study = c("Black, 2000", "Eskola, 2001"),
-        vaccine = c("PCV7 (CRM197)", "PCV7 (CRM197)"),
-        no_child = c(37868, 1662),
-        efficacy = c("8.9 (5.8-11.8", "6 (-4-16)")
+        study = c("Black, 2000 & Fireman, 2003", "Eskola, 2001", "Kilpi, 2003"),
+        vaccine = c("PCV7 (CRM197)", "PCV7 (CRM197)", "PCV7 (MOMPC)"),
+        study_ascertain = c("Oct 1995-Aug 1998", "Dec 1995-Apr 1997", "Dec 1995-Apr 1997"),
+        country = c("United States", "Finland", "Finland"),
+        no_child = c(37868, 1662, 1666),
+        efficacy = c("7.8% (5.4%-10.2%)", "6% (-4%-16%)", "-1% (-12%-10%")
     ),
-    col.names = c("Study", "Vaccine", "No. of children", "Efficacy against Otitis media episodes"),
+    col.names = c("Study", "Vaccine", "Enrollment period", "Country", "No. of children", "Efficacy against Otitis media episodes"),
     booktab = T
 )
 ```
