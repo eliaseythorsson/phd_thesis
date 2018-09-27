@@ -73,34 +73,37 @@ This wealth of medical documentation enabled a unique whole-population ecologica
 
 ## Clinical manifestations of *Streptococcus pneumoniae*
 
+In this chapter the clinical manifestations of pneumococcal disesase will be reviewed.
+The mechanism by which individuals accquire pneumococcus into their normal upper respiratory flora will be discussed and the association between pneumococcal carriage and disease will be described.
+Throughout this thesis, attention will be focused on three common clinical presentations of pneumococcal infections; AOM, pneumonia and IPD.
+The overview will include the pathophysiology, natural disease course, and health care burden of each of the presentations.
+
 The relationship between pneumococcus and humans is complex. 
 Most children are colonized by pneumococcus within the first months of life. 
-The serotype distribution of the initial colonization is influenced by the distribution of serotypes within the family. 
-Over the course of the child's lifetime, they will be colonized by many different serotypes.
-The child's immune system will learn to recognize the currently colonizing serotypes and will either clear the colonization or maintain a equilibrium in which the serotype is kept within a certain limit of reproduction.
-Consequently, the contribution of pneumococcus to the human upper respiratory flora is in a state of constant flux.
+The serotype distribution of the initial colonization in a child is influenced by the distribution of serotypes within the child's family. 
+Over the course of the their lifetime, a child will be colonized by many different serotypes.
+Their immune system will learn to recognize newly accquired serotypes and will either clear the colonization or maintain an equilibrium in which the serotype is kept within a certain limit of reproduction.
+In this manner, the contribution of pneumococcus to the human upper respiratory flora is in a state of constant flux.
 New serotypes enter while old exit, and the relative density of serotypes changes.
-In some cases the equilibrium between pneumococcus and the host is destabilized resulting in rapid growth of pneumococcus which results in clinical manifestations.
+In some cases, the equilibrium between pneumococcus and the host is destabilized, triggering a rapid growth of pneumococcus and resulting in clinical manifestations.
 It is thought that this is most likely to occur immidietly following the acquisition of new serotype into the nasopharyngeal flora. 
-This most commonly occurs in the upper respiratory tract where pneumococcus is generally located and results in the common clinical manifestations of pneumococcal infections, i.e. AOM, acute sinusitis and conjunctivitis.
-The pathogenesis of pneumococcal pneumonia is thought to occur through micro-aspiration of upper respiratory secretions with subsequent rapid proliferation of pneumococcus in the lower respiratory tract.
-Invasive disease occurs when pneumococcus penetrates the host immunological defenses and proliferates in normally sterile tissue.
-This can be secondary to infections of the upper or lower respiratory tract, or can occur as a primary event.
+As this occurs most commonly in the upper respiratory tract where pneumococcus is generally located, it results in the common clinical manifestations of pneumococcal infections, i.e. AOM, acute sinusitis and conjunctivitis.
+The pathogenesis of pneumococcal pneumonia is thought to occur through micro-aspiration of upper respiratory secretions, provoking a subsequent rapid proliferation of pneumococcus in the lower respiratory tract.
+Invasive disease occurs when pneumococcus penetrates the host's immunological defenses and proliferates in normally sterile tissue.
+This can occur as a primary event, or can be secondary to infections of the upper or lower respiratory tract.
 Generally, IPD is considered to encompass meningitis, bacteraemia and septic arthritis.
 While some may argue that the middle ear is normally sterile, AOM is not considered invasive disease.
 
 It has been known from the first pneumococcal vaccine trials that vaccination has different efficacy against the different manifestations of pneumococcal disease.
-The largest effects are consistently seen in the prevention of IPD and pneumococcal lobar pneumonia.
+The greatest effect is consistently seen in the prevention of IPD and pneumococcal lobar pneumonia.
 The effects on carriage and AOM are often lesser in magnitude. 
-This may be a true biological gradient or a consequence of the accuracy with which disease is measured. 
-The more serious the illness is the more testing is performed resulting in a more accurate diagnosis.
-Much of the AOM attributed to pneumococcus may be caused by other pathogens, while by definition IPD is always caused by pneumococcus.
-Furthermore, it wasn't until the advent of pneumococcal conjugate vaccines that vaccines started to become efficacious in children and it is precisely in children that AOM occurs. 
+This may be either a true biological gradient or a consequence of the accuracy by which the outcome is measured. 
+The more serious the illness, is the more testing is performed.
+The result is a more accurate diagnosis.
+Much of the AOM attributed to pneumococcus may be caused by other pathogens, while IPD is, by definition, always caused by pneumococcus.
 The largest trials of modern pneumococcal vaccines have fit the above narrative.
 The 23-valent pneumococcal polysaccharide vaccine was trialed in 12,000 adults and showed an efficacy of 75% in preventing IPD and a 50% efficacy against radiologically confirmed pneumonia.
 The heptavalent pneumococcal conjugate vaccine was trialed in children and produced a 97% efficacy in preventing IPD. 
-
-
 
 ### Carriage
 
@@ -178,48 +181,54 @@ The heptavalent pneumococcal conjugate vaccine was trialed in children and produ
 
 ## Pneumococcal conjugate vaccines
 
-The history of pneumococcal vaccination begins in 1911 when Wright and colleagues attempted to use whole killed bacteria to vaccinate South African miners against pneumococcal pneumonia [@Wright1914].
-It should however be noted that in his original description of pneumococcus in 1881, George Sternberg observed that rabbits who were injected with his saliva mixed with alcohol and quinine did not ubiquitously die and were later resistant to re-injection with saliva [@Austrian1999a, @Sternberg1881].
-Sternberg had inadvertently immunized the laboratory animals against subsequent infection by injecting killed pneumococci, proving the concept 30 years before it was first attempted.
-The 1911 trial by Wright failed to show efficacy due to lack of knowledge of the significance of serotypes and serotype specific immunogenicity.
-Several trials using whole killed bacteria were published in the following two decades [@Cecil1918; @Lister1916; @Lister1936; @Maynard1913]
-The researchers benefited from the knowledge of serotypes which had been discovered in 1910 and used multivalent vaccines.
-They were however victims of underdeveloped epidemiological methodology for vaccine field trials.
-Due to inconsistencies in study design, the efficacy of whole bacteria pneumococcal vaccines remained fiercely debated though there seemed to be a suggestion of benefit [@Austrian1999a].
-Vaccines based on whole killed bacteria were soon replaced with polysaccharide vaccines, following discoveries in the 1920s and 1930 of the immunogenicity of the polysaccharide capsule [@Dochez1917; @Finland1931; @Francis1930; @Heidelberger1923; @Schiemann1927].
-The first such trial tested a bivalent polysaccharide vaccine on 29,000 adult males in the American Civilian Conservation Corps in iterations in the 1930s [@Ekwurzel1938].
-It suffered from the same methodological problems as did the previous trials of the whole killed bacteria and its results were debated.
-A second large trial was conducted in the late 1930s using a tetravalent vaccine [@Macleod1945].
-This trial built upon the experience of the previous trials and was able to show convincing efficacy against pneumococcal pneumonia.
-The results of this trial led to the licensure of two hexavalent polysaccharide pneumococcal vaccines in the 1940s.
+In this chapter we will review the history of pneumococcal vaccination to better understand the current vaccine climate.
+Special attention will be paid to the scientific discourse that led to the recognition of the need for conjugating pneumococcal polysaccharides to a protein carrier.
+Several key concepts in pneumococcal vaccine epidemiology will be discussed, e.g. herd-effect and serotype-replacement.
+Randomized controlled trials of pneumococcal conjugate vaccines will be presented and their methodology and results reviewed and discussed.
+Observational studies will also be reviewed and critiqued.
+
+### A brief history of pneumococcal vaccination
+
+The history of pneumococcal vaccination can be roughly divided into three phases; the inactivated (killed) whole-cell vaccines; the polysaccharide vaccines and the conjugated vaccines.
+It begins in 1911 when Wright and colleagues attempted to use an innoculation of heat-killed pneumococcus to vaccinate South African miners against pneumococcal pneumonia [@Wright1914].
+It should be noted however, that in George Sternberg's original description of pneumococcus in 1881, he observed that rabbits who were injected with saliva mixed with alcohol and quinine died less frequently than those injected with saliva alone, and were later resistant to re-injection with saliva [@Austrian1999a; @Sternberg1881].
+Sternberg had inadvertently immunized the laboratory animals against subsequent infection by injecting killed pneumococci, thus proving the concept 30 years before it was first attempted.
+The 1911 trial by Wright failed to demonstrate efficacy because the significance of serotypes and serotype specific immunogenicity was not known.
+In the following two decades, several trials using inactivated whole-cell pneumococcal vaccines were published [@Cecil1918; @Lister1916; @Lister1936; @Maynard1913]
+Due to inconsistencies in study design, the efficacy of whole bacteria pneumococcal vaccines remained fiercely debated at the time, despite some evidence of benefit [@Austrian1999a].
+
+Following discoveries of the immunogenicity of the polysaccharide capsule in the 1920s and 1930 [@Dochez1917; @Finland1931; @Francis1930; @Heidelberger1923; @Schiemann1927], inactivated whole-cell pneumococcal vaccines were soon replaced with polysaccharide vaccines.
+The first clinical trial of a pneumococcal polysaccharide vaccine was conducted in the 1930s on 29,000 adult males in the American Civilian Conservation Corps using a bivalent vaccine [@Ekwurzel1938].
+With similar methodological problems of previous trials of the inactivated vaccines, the results were debated.
+A second large trial was conducted in the late 1930s, using a tetravalent polysaccharide vaccine [@Macleod1945].
+This trial built upon the experience of the previous trials, and was able to show convincing efficacy against pneumococcal pneumonia, leading to the licensure of two hexavalent polysaccharide pneumococcal vaccines in the 1940s.
 One was formulated for adults and the other for children, each optimized to the serotype distribution within the respective age-group.
-Alas, these early vaccines fell victim to unfortunate timing.
-Because in 1944, Tillet and colleagues showed that bacteraemic pneumococcal pneumonia could be cured by parenteral administration of benzylpenicillin [@Tillett1943].
-Following this discovery, the medical community was stricken with a kind of nonchalance.
+Unfortunatly, these early vaccines fell victim to unfavourable timing; in 1944, Tillet and colleagues showed that bacteraemic pneumococcal pneumonia could be cured by parenteral administration of benzylpenicillin [@Tillett1943].
+With this discovery, the medical community became complacent.
 The mortality rate of pneumococcal disease decreased sufficiently that there was no longer a perceived need for preventative vaccination.
-The licenses for the polysaccharide vaccines were withdrawn by the manufacturer due to lack of their use [@Austrian1999a]
+The licenses for the polysaccharide vaccines were withdrawn by the manufacturer due to lack of use [@Austrian1999a].
 Interest in pneumococcal vaccination re-emerged in the 1950s when it was noted that the mortality benefit of penicillin was not ubiquitous.
 The elderly and those who had underlying disease did not experience a decrease in their case fatality ratio [@Austrian1964].
 This led to a redoubled effort to create a new polysaccharide vaccine.
-Several large randomized controlled trials were conducted in South Africa in the 1970s [@Austrian1976, @Smit1977] and on the basis of these, a 14-valent pneumococcal vaccine was licensed in the United States in 1977.
+Several large randomized controlled trials were conducted in South Africa in the 1970s [@Austrian1976, @Smit1977] and, on the basis of these, a 14-valent pneumococcal vaccine was licensed in the United States in 1977.
 Its valency was increased to 23 polysaccharides in 1983 [@Austrian1999a].
-Early in the development of pneumococcal vaccinations there was an interested in vaccinating children.
-Two trials were conducted in the early 1980s which attempted to use polysaccharide vaccines in young children. 
+
+Early in the development of pneumococcal vaccines, there was an interested in vaccinating children.
+Two trials were conducted in the early 1980s which tested the use of polysaccharide vaccines in young children. 
 Neither showed benefit [@Makela1981; @Sloyer1981].
-This is perhaps unsurprising in light of previous trials.
-The first polysaccharide trial that was conducted in children in 1937 failed to detect any immunological response [@Davies1937].
-Laboratory studies in the 1930s and 1940s revealed that the reason for this lack of efficacy was due to the thymus independent immunse response to purely sacharide antigens.
+This result was not entirely unexpected.
+In 1937, The first polysaccharide trial conducted in children failed to detect any immunological response [@Davies1937].
+Laboratory studies in the 1930s and 1940s revealed that the reason for this lack of efficacy was due to the thymus independent immune response to purely sacharide antigens.
 These same studies showed that this could be remedied by adding a protein adjuvant, thus inducing a T-cell response.
 The strategy of protein conjugation saw its first success in the development of the *Haemophilus influenzae* type b vaccine.
 Subsequently, several different pneumococcal conjugate vaccines entered phase II and phase III clinical trials in the late 1990s [@Austrian1999a].
-The first of which to receive licensure was the seven valent pneumococcal conjugate vaccine which was licensed in 2000 in the United States.
-It included purified polysaccharides for seven serotypes of pneumococcus (4, 9V, 14, 19F, 23F, 18C and 6B) conjugated to CRM197 (PCV7~CRM197~), a nontoxic variant of the diptheria toxin.
+The first of these to receive licensure was the seven valent pneumococcal conjugate vaccine, licensed in 2000 in the United States.
+It included the purified polysaccharides of seven serotypes of pneumococcus (4, 9V, 14, 19F, 23F, 18C and 6B) conjugated to CRM197 (PCV7~CRM197~), a nontoxic variant of the diptheria toxin.
 It was shown to be efficacious for IPD, pneumococcal pneumonia and AOM in several randomized trials [@Black2000; @Black2002c; @Eskola2001; @Fireman2003; @OBrien2003; @OBrien2008].
-Higher valancy conjugated vaccines were developed and recieved licensure in the new millennium based on the randomized trials conducted for the heptavalent conjugated vaccine.
+In the 2000s, higher valency conjugated vaccines were developed and recieved licensure, based on the randomized trials conducted for the heptavalent conjugated vaccine.
 They have however been shown to be effective in several cluster randomized trials and observational studies. 
 
-
-## Impact of pneumococcal conjugate vaccines {#impact}
+### Key concepts in pneumococcal vaccine epidemiology
 
 From their inception, dozens of randomized controlled trials evaluating the efficacy of different pneumococcal conjugate vaccines have been performed.
 Most evaluated the efficacy against IPD - the most serious presentation of pneumoccocal infection.
@@ -227,7 +236,7 @@ Other outcome measures include impact on carriage, AOM and pneumonia.
 The earliest randomized controlled trial examining pneumococcal conjugate vaccines was published in 2000 [@Black2000].
 
 
-### Carriage 
+### The impact of pneumococcal conjugate vaccines on carriage {#carriageimpact}
 
 - Present evidence of magnitude of effect on VT carriage **The three Dagan studies mentioned in [@Eskola2001], also [@Prymula2006; @OBrien2007a]**
 
@@ -236,7 +245,7 @@ Pneumococcal carriage can be easily ascertained with a non-invasive nasopharynge
 This makes carriage an attractive proxy outcome when assessing the impact of pneumococcal 
 
 
-### Acute otitis media
+### The impact of pneumococcal conjugate vaccines on Acute otitis media
 
 Acute otitis media is still most often caused by *Streptococcus pneumoniae* and *Haemophilus influenzae* despite changes in otopathogens.
 Prevention of IPD in children and the associated morbidity and mortality was the driving force in the development of pneumococcal conjugate vaccines.
@@ -309,7 +318,7 @@ Interestingly, virtually no effect was seen on all-cause AOM with this vaccine p
 The effect estimate was -1% (95%CI -12%-10%).
 These surprising results were not presented in the main text and no explanation was given in the discussion chapter of the paper.
 
-The cluster randomized controlled trial of PCV7~CRM197~ among the Navajo and White Mountain Apache infants has previously been described in chapter \@ref(impact) [@OBrien2003].
+The cluster randomized controlled trial of PCV7~CRM197~ among the Navajo and White Mountain Apache infants has previously been described in chapter \@ref(carriageimpact) [@OBrien2003].
 In 2008, a retrospective chart review of AOM visits among the participating children was published [@OBrien2008].
 The study population was defined as children who had adhered to the study protocol, i.e. a per-protocol analysis.
 From this population, 944 of the 4,476 eligible children were randomly sampled for chart review.
@@ -361,7 +370,7 @@ kable(
 	- Serotype replacement
 	- Herd-effect
 
-## Cost-effectiveness of pneumococcal conjugate vaccination
+## Cost-effectiveness in the context of pneumococcal conjugate vaccination
 
 ~ 3-4 pages
 - Present overview of literature review and critical analysis. 
