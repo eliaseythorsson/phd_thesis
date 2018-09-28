@@ -11,56 +11,58 @@ It is also a common pathogen and is one of the most common bacterial causes of d
 In classical medical texts pneumococcus is described as a Gram-positive lancet-shaped coccus, usually found in pairs.
 In fact, pneumococcus is *the* Gram-positive coccus, being the first bacteria noted by Christian Gram that retained the dark aniline-gentian violet stain that now bears his name [@Gram1884].
 Pneumococcus was first isolated in 1881 by two microbiologist, George M. Sternberg in the United States and Louis Pasteur in France [@Pasteur1881; @Sternberg1881; @Watson1993].
-In both cases the sample from which the bacterium was isolated originated from healthy carriers, rather than ill patients.
 The causal association between this newly discovered bacterium and pneumonia was firmly established only five years later [@Weichselbaum1886], and in the following decade, all clinical presentations of pneumococcal infection had been described [@Austrian1981].
-Pneumococcus has gone by many names since its first isolation in 1881.
-Originally it was named *Micrococcus pasteuri* by Sternberg [@Sternberg1881] but by 1920, a scientific consensus was reached that the official name should be *Diplococcus pneumoniae* [@Winslow1920].
-It was not until 1974 that pneumococcus received its current name, *Streptococcus pneumoniae* [@Deibel1974].
 
 Pneumococcus is encapsulated by a polysaccharide coating that protects it from environmental factors.
 The polysaccharide capsule acts as an "invisibility cloak" to the human immune system, rendering it unable to detect pneumococcus except through certain patterns in the oligosaccharides contained within the capsule [@Epstein1995].
 Based on these patterns, pneumococcus has been classified into over 97 different serotypes to date.
 Additionally, as the capsule contains only polysaccharides and not proteins, the immune response is T-cell independent and therefore poorly immunogenic, even after being identified by the immune system [@Geno2015b].
+The epidemiology is pneumococcus is dominated by person-to-person transmission of asymptomatic carriage.
+Because children do not have previous immunity to any serotype, they are colonized more frequently and each colonization lasts longer.
+This effect is augmented by daycare center attendance where multiple immune naive children congregate.
+Because of this, children act as a pneumococcal reservoir for the population without having clinical disease.
 These characteristics are the fundamental challenges faced by scientists in engineering new pneumococcal vaccines.
 The significance of serotypes in the development of vaccines should not be understated.
 Indeed the failure of Wright and colleagues' original attempt to develop a vaccination against pneumococcal pneumonia was due to lack of knowledge about serotype-specific immunogenicity [@Wright1914].
 
-All serotypes of pneumococcus have the potential to cause disease in humans.
-Some are, however, more virulent than others.
-The prevalence of asymptomatic carriage in the nasopharynx varies greatly by serotype, as does the propensity of serotypes to cause clinical infections.
-Quantifying the pathogenic potential of serotypes is difficult as both their prevalence and propensity to cause disease must be considered.
-With few exceptions, the acquisition of a new serotype into the nasopharyngeal flora proceeds the onset of clinical disease caused by that serotype.
-Pneumococcal epidemiology is dominated by this effect - children act as reservoirs of asymptomatic pneumococcal carriage from which other children and adults acquire serotypes that may lead to symptomatic disease. 
-Because of this, vaccinations which decrease the pneumococcal carriage in children have the potential of reducing the incidence of disease both in other unvaccinated children and in adults. 
-This phenomenon is called the herd-effect, and is integral to the development of vaccination strategies to combat pneumococcal disease.
-
 The infectious manifestations of pneumococcal disease are, broadly speaking, local infections of the respiratory tract and infections of previously sterile tissue.
 They range from common to uncommon, and from benign to serious.
-The most common infectious manifestation of pneumococcus in acute otitis media (AOM) – an infection of the middle ear.
-AOM is the most common reason for physician visit and for antimicrobial prescription in the paediatric population.
-The pathogenesis of AOM is complex and can both be caused by both viral and bacterial pathogens.
-Bacterial AOM is most often caused by pneumococcus and *Haemophilus influenzae*.
-However, the disease course is benign and rarely results in permanent disability.
-Acute sinusitis is another common, though benign, manifestation of pneumococcal disease.
-A potentially more serious one is pneumonia, the disease from which pneumococcus gets its name.
-Pneumonia often requires hospitalization and intravenous antimicrobial treatment, and rarely can lead to permanent disability and death.
+The most common infectious manifestation of pneumococcus is acute otitis media (AOM) – an infection of the middle ear.
+The disease course is benign and rarely results in permanent disability.
+However, AOM is the most common reason for physician visit and for antimicrobial prescription in the paediatric population.
+Antimicrobial consumption is causally related to antimicrobial resistance, which is a major threat to public health. 
+Recurrent or persistent otitis media is sometimes treated with the surgical placement of tympanic tubes, which is consequently the most common surgical procedure in children.
+Indeed, AOM is a benign disease that is associated with a large healthcare burden. 
+A potentially more serious manifestation of penumococcal disease is pneumonia, the disease from which pneumococcus gets its name.
+Pneumonia often requires hospitalization and intravenous antimicrobial treatment, and can lead to permanent disability and death.
 Finally, pneumococcus can cause invasive infections if it gains access to normally sterile tissue.
 These includes bacteremia, an infection of the blood, and meningitis, an infection of the meninges.
 These infectious manifestations are grouped together as invasive pneumococcal disease (IPD).
 Whilst IPD is extremely uncommon, the consequences can be disastrous.
-The case-fatality ratio from pneumococcal meningitis in Iceland is estimated at 15.3%. 
+The case-fatality ratio from pneumococcal meningitis in Iceland is estimated at 15.3%.
+Pneumococcal infections are responsible for a large healthcare burden that span the range of outpatient to inpatient treatment.
 
-Pneumococcus became an early target for vaccine development because of the broad range of diseases it can cause.
-Vaccine benefit can be quantified in two different ways.
-On one hand, it can prevent uncommon but serious manifestations of disease, and has the potential to prevent death and serious disability.
-On the other hand, it prevents common infections which cumulatively pose a substantial healthcare burden due to frequent physician visits, antimicrobial prescriptions as well as work hours lost by parents and caregivers.
 The earliest attempts to use vaccination to lessen the morbidity and mortality associated with pneumococcus date back to 1911 when Wright used whole cell innoculi to vaccinated miners in South Africa [@Wright1914].
 In the following decades, multiple animal studies demonstrated that by injecting the polysaccharide coating of pneumococcus, animals were protected against subsequent pneumococcal infections.
 On the basis of these findings, the first polysaccharide vaccine was shown to be effective [@Macleod1945].
 This lay the foundation for modern polysaccharide pneumococcal vaccines [@Austrian1976, @Smit1977]. 
 It soon became apparent that the polysaccharide vaccines were not adequately immunogenic in young children, the ill or the elderly [@Makela1981; @Sloyer1981].
-In response, pneumococcal conjugate vaccines were developed [@Austrian1999a].
-The first such vaccine to be licensed and mass produced was the heptavalent pneumococcal CRM197-conjugate vaccine developed by Wyeth Lederle [@Austrian1999a; @Black2000].
+In response, protein conjugated vaccines were developed.
+In 2000, the first such vaccine was licensed in the United States.
+It contained purified polysaccharides from seven pneumococcal serotypes conjugated to CRM197, a nontoxic variant of the diphtheria toxin [@Austrian1999a].
+Several randomized controlled trials demonstrated its efficacy in preventing IPD, pneumonia and AOM [@Black2000; @Black2002; @Eskola2001] and observational studies corroborated the impact in the real world setting [@Whitney2003; @Grijalva2007].
+In the years that followed, the frequency increased of disease caused by previously rare serotypes in many of the populations were systematic vaccination had been undertaken.
+New conjugate vaccines were developed that contained polysaccharides from additional serotypes.
+Two such vaccines received licensure in 2009 and 2010; a ten valent vaccine conjugated to *Haemophilus influnzae* Protein D and a thirteen valent vaccine conjugated to the same CRM197 diphtheria toxin. 
+Demonstrating the efficacy and impact of the higher valent vaccines was slightly more complicated, as most countries had already initiated systematic vaccination programs using the seven valent vaccine. 
+
+Health systems operate under constraints on budgets and resources.
+Demonstrating vaccine benefit is essential, but not the only factor under consideration when health policy decisions are made.
+Cost and resource allocation are also important variables to consider.
+This can be complicated in the case of vaccines because the benefit is not seen immediately but over time, and can occur in both  vaccinated and unvaccinated members of the population.
+The diseases prevented by vaccines also have associated costs and these cost-savings must be taken into account.
+Cost-effectiveness analysis and cost-benefit analysis are methods developed to measure the ratio between costs and benefit as a tool to assist in health policy decisions.
+To adequately perform such an analysis, detailed data on disease incidence and associated costs must be available for the whole population being considered.
 
 Iceland is an independent island nation, isolated in the mid-Atlantic, with a homogeneous population of roughly 330,000 individuals.
 The first systematic program of vaccination against pneumococcus in Iceland began in April 2011, when the 10-valent pneumococcal *Haemophilus influnzae* protein-D conjugate vaccine (Synflorix, PHiD-CV10) was introduced into the national paediatric vaccination program.
@@ -68,25 +70,32 @@ The vaccine program entailed two primary doses given at three and five months of
 No catch-up program was undertaken.
 Prior to the introduction, no systematic vaccination effort had been undertaken in Iceland.
 As the other Nordic countries, Iceland has a rich legacy of national health-related registers.
+Detailed individual-level information on vaccine status, outpatient primary care visits, antimicrobial consumption, tympanic tube procedures and hospitalizations are available and linkable between registries using national identification numbers.
+All healthcare costs are available on the individual-level from Icelandic Health Insurance, which is the insurer of all permanent Icelandic residents.
 This wealth of medical documentation enabled a unique whole-population ecological study examining the impact of systematic pneumococcal vaccination. 
 
 
 ## Clinical manifestations of *Streptococcus pneumoniae*
 
-In this chapter the clinical manifestations of pneumococcal disesase will be reviewed.
-The mechanism by which individuals accquire pneumococcus into their normal upper respiratory flora will be discussed and the association between pneumococcal carriage and disease will be described.
+In this chapter the clinical manifestations of pneumococcal disease will be reviewed.
+The mechanism by which individuals acquire pneumococcus into their normal upper respiratory flora will be discussed and the association between pneumococcal carriage and disease will be described.
 Throughout this thesis, attention will be focused on three common clinical presentations of pneumococcal infections; AOM, pneumonia and IPD.
 The overview will include the pathophysiology, natural disease course, and health care burden of each of the presentations.
+
+Pneumococcus has gone by many names since its first isolation in 1881.
+Originally it was named *Micrococcus pasteuri* by Sternberg [@Sternberg1881] but by 1920, a scientific consensus was reached that the official name should be *Diplococcus pneumoniae* [@Winslow1920].
+It was not until 1974 that pneumococcus received its current name, *Streptococcus pneumoniae* [@Deibel1974].
+
 
 The relationship between pneumococcus and humans is complex. 
 Most children are colonized by pneumococcus within the first months of life. 
 The serotype distribution of the initial colonization in a child is influenced by the distribution of serotypes within the child's family. 
 Over the course of the their lifetime, a child will be colonized by many different serotypes.
-Their immune system will learn to recognize newly accquired serotypes and will either clear the colonization or maintain an equilibrium in which the serotype is kept within a certain limit of reproduction.
+Their immune system will learn to recognize newly acquired serotypes and will either clear the colonization or maintain an equilibrium in which the serotype is kept within a certain limit of reproduction.
 In this manner, the contribution of pneumococcus to the human upper respiratory flora is in a state of constant flux.
 New serotypes enter while old exit, and the relative density of serotypes changes.
 In some cases, the equilibrium between pneumococcus and the host is destabilized, triggering a rapid growth of pneumococcus and resulting in clinical manifestations.
-It is thought that this is most likely to occur immidietly following the acquisition of new serotype into the nasopharyngeal flora. 
+It is thought that this is most likely to occur imminently following the acquisition of new serotype into the nasopharyngeal flora. 
 As this occurs most commonly in the upper respiratory tract where pneumococcus is generally located, it results in the common clinical manifestations of pneumococcal infections, i.e. AOM, acute sinusitis and conjunctivitis.
 The pathogenesis of pneumococcal pneumonia is thought to occur through micro-aspiration of upper respiratory secretions, provoking a subsequent rapid proliferation of pneumococcus in the lower respiratory tract.
 Invasive disease occurs when pneumococcus penetrates the host's immunological defenses and proliferates in normally sterile tissue.
@@ -105,6 +114,15 @@ The largest trials of modern pneumococcal vaccines have fit the above narrative.
 The 23-valent pneumococcal polysaccharide vaccine was trialed in 12,000 adults and showed an efficacy of 75% in preventing IPD and a 50% efficacy against radiologically confirmed pneumonia.
 The heptavalent pneumococcal conjugate vaccine was trialed in children and produced a 97% efficacy in preventing IPD. 
 
+
+All serotypes of pneumococcus have the potential to cause disease in humans.
+Some are, however, more virulent than others.
+The prevalence of asymptomatic carriage in the nasopharynx varies greatly by serotype, as does the propensity of serotypes to cause clinical infections.
+Quantifying the pathogenic potential of serotypes is difficult as both their prevalence and propensity to cause disease must be considered.
+With few exceptions, the acquisition of a new serotype into the nasopharyngeal flora proceeds the onset of clinical disease caused by that serotype.
+Pneumococcal epidemiology is dominated by this effect - children act as reservoirs of asymptomatic pneumococcal carriage from which other children and adults acquire serotypes that may lead to symptomatic disease. 
+Because of this, vaccinations which decrease the pneumococcal carriage in children have the potential of reducing the incidence of disease both in other unvaccinated children and in adults. 
+This phenomenon is called the herd-effect, and is integral to the development of vaccination strategies to combat pneumococcal disease.
 ### Acute otitis media
 
 ~ 3-4 pages
@@ -184,13 +202,13 @@ Special attention will be paid to the scientific discourse that led to the recog
 Several key concepts in pneumococcal vaccine epidemiology will be discussed, e.g. herd-effect and serotype-replacement.
 The scientific literature on the impact of pneumococcal conjugate vaccines on AOM, pneumonia and IPD will be reviewed and discussed.
 Special attention will be paid to issues of study design and statistical methodology and their effect on study interpretation.
-Randomized controlled trials and observational studies will be reviewed seperatly.
+Randomized controlled trials and observational studies will be reviewed separately.
 Finally, the evidence will be summarized.
 
 ### A brief history of pneumococcal vaccination
 
 The history of pneumococcal vaccination can be roughly divided into three phases; the inactivated (killed) whole-cell vaccines; the polysaccharide vaccines and the conjugated vaccines.
-It begins in 1911 when Wright and colleagues attempted to use an innoculation of heat-killed pneumococcus to vaccinate South African miners against pneumococcal pneumonia [@Wright1914].
+It begins in 1911 when Wright and colleagues attempted to use an inoculation of heat-killed pneumococcus to vaccinate South African miners against pneumococcal pneumonia [@Wright1914].
 It should be noted however, that in George Sternberg's original description of pneumococcus in 1881, he observed that rabbits who were injected with saliva mixed with alcohol and quinine died less frequently than those injected with saliva alone, and were later resistant to re-injection with saliva [@Austrian1999a; @Sternberg1881].
 Sternberg had inadvertently immunized the laboratory animals against subsequent infection by injecting killed pneumococci, thus proving the concept 30 years before it was first attempted.
 The 1911 trial by Wright failed to demonstrate efficacy because the significance of serotypes and serotype specific immunogenicity was not known.
@@ -203,7 +221,7 @@ With similar methodological problems of previous trials of the inactivated vacci
 A second large trial was conducted in the late 1930s, using a tetravalent polysaccharide vaccine [@Macleod1945].
 This trial built upon the experience of the previous trials, and was able to show convincing efficacy against pneumococcal pneumonia, leading to the licensure of two hexavalent polysaccharide pneumococcal vaccines in the 1940s.
 One was formulated for adults and the other for children, each optimized to the serotype distribution within the respective age-group.
-Unfortunatly, these early vaccines fell victim to unfavourable timing; in 1944, Tillet and colleagues showed that bacteraemic pneumococcal pneumonia could be cured by parenteral administration of benzylpenicillin [@Tillett1943].
+Unfortunately, these early vaccines fell victim to unfavorable timing; in 1944, Tillet and colleagues showed that bacteraemic pneumococcal pneumonia could be cured by parenteral administration of benzylpenicillin [@Tillett1943].
 With this discovery, the medical community became complacent.
 The mortality rate of pneumococcal disease decreased sufficiently that there was no longer a perceived need for preventative vaccination.
 The licenses for the polysaccharide vaccines were withdrawn by the manufacturer due to lack of use [@Austrian1999a].
@@ -223,13 +241,20 @@ These same studies showed that this could be remedied by adding a protein adjuva
 The strategy of protein conjugation saw its first success in the development of the *Haemophilus influenzae* type b vaccine.
 Subsequently, several different pneumococcal conjugate vaccines entered phase II and phase III clinical trials in the late 1990s [@Austrian1999a].
 The first of these to receive licensure was the seven valent pneumococcal conjugate vaccine, licensed in 2000 in the United States.
-It included the purified polysaccharides of seven serotypes of pneumococcus (4, 9V, 14, 19F, 23F, 18C and 6B) conjugated to CRM197 (PCV7~CRM197~), a nontoxic variant of the diptheria toxin.
+It included the purified polysaccharides of seven serotypes of pneumococcus (4, 9V, 14, 19F, 23F, 18C and 6B) conjugated to CRM197 (PCV7~CRM197~), a nontoxic variant of the diphtheria toxin.
 It was shown to be efficacious for IPD, pneumococcal pneumonia and AOM in several randomized trials [@Black2000; @Black2002c;  @Eskola2001; @Fireman2003; @OBrien2003; @OBrien2008].
-In the 2000s, higher valency conjugated vaccines were developed and recieved licensure, based on the randomized trials conducted for the heptavalent conjugated vaccine.
+In the 2000s, higher valency conjugated vaccines were developed and received licensure, based on the randomized trials conducted for the heptavalent conjugated vaccine.
 They have however been shown to be effective in several cluster randomized trials and observational studies. 
 
 ### Key concepts in pneumococcal vaccine epidemiology
 
+The epidemiology of pneumococcus is complicated by its relationship with humans.
+It is both a component of the normal flora of the upper respiratory tract and a common pathogen.
+Because of the polysaccharide coat, protection against one serotype does not necessarily confer protection against another.
+If one serotype disappears due to immune recognition, an ecological niche is created which can be filled by different serotype.
+This process takes place on both the individual and community level.
+Systematic vaccination programs greatly reduce the prevalence of carriage and disease of the serotypes contained within the vaccine among the vaccinated.
+If the vaccinated individuals compromise a large enough portion of the population.
 
 
 ### The impact of pneumococcal conjugate vaccines on Acute otitis media
@@ -279,8 +304,8 @@ The study's primary endpoint was vaccine-type nasopharyngeal carriage and the se
 Monthly questionnaires were submitted to parents for one year starting one month after the last per-protocol vaccine dose, and bimonthly thereafter for a total of 18 encounters.
 Respiratory infections were split into four different categories (Upper respiratory infections, lower respiratory problems, otitis media and other illnesses) and the results were measured in two different ways; episodes per 100 child-months and the proportion of antimicrobial days during the study period.
 Finally, each category and measurement was compared in children <36 months of age, 36 months of age and older, and overall, resulting in $4\ *\ 2\ *\ 3=16$ comparisons between the intervention and control. 
-The statistical analysis used $\chi^2$ and Fischer's exact contigency table methods but did not account for multiple testing.
-The study reported an efficacy of 17% (95%CI -2%-33%) for otitis media episodes and 20% (95%CI 14%-26%) antimicrobally treated otitis media, as measured by days spent on antimicrobials.
+The statistical analysis used $\chi^2$ and Fischer's exact contingency table methods but did not account for multiple testing.
+The study reported an efficacy of 17% (95%CI -2%-33%) for otitis media episodes and 20% (95%CI 14%-26%) antimicrobial treated otitis media, as measured by days spent on antimicrobial.
 The later does remain statistically significant when the result has been corrected for multiple testing using any standard method.
 
 ```{r, include=FALSE}
@@ -300,7 +325,7 @@ p.adjust(p = c(
 The later study published in 2001 compared two heptavalent pneumococcal vaccines to a hepatitis B vaccine control [@Eskola2001].
 The two heptavalent pneumococcal vaccines differed in their use of carrier protein. 
 One was the same vaccine as in the Black et al. study (PCV7~CRM197~), and the other was a conjugated to meningococcal outer membrane protein complex (PCV7~MOMPC~).
-This publication only reported the comparison of the PCV7~CRM197~ to the hepatitis B vaccine.
+The Eskola et al. paper reported comparison of the PCV7~CRM197~ to the hepatitis B vaccine.
 The analogous comparison of the PCV7~MOMPC~ was reported in a separate publication [@Kilpi2003].
 No head-to-head comparison of the two heptavalent vaccines was ever reported.
 The study methodology was identical between the two publications as they report different arms of the same study [@Eskola2001; @Kilpi2003].
@@ -330,6 +355,11 @@ However, unlike PCV~CRM197~, it did not seem to confer protection against cross-
 Interestingly, virtually no effect was seen on all-cause AOM with this vaccine preparation. 
 The effect estimate was -1% (95%CI -12%-10%).
 These surprising results were not presented in the main text and no explanation was given in the discussion chapter of the paper.
+
+In 2006, Prymula et al. reported a randomized study of an eleven valent pneumococcal conjugate vaccine in 4,968 children recruited from paediatric centers in the Czech Republic and Slovakia [@Prymula2006].
+A strict case definition of otitis media was used and all cases were reviewed by an otolaryngologist.
+If confirmed, a middle ear fluid sample was obtained by aspiration and sent for culturing.
+Statistical analysis was completed using Cox proportional hazards models and the Anderson-Gill extension for repeated events.
 
 In 2003, the first paper from a cluster randomized controlled trial of PCV7~CRM197~ among the Navajo and White Mountain Apache infants was published [@OBrien2003].
 In 2008, a retrospective chart review of AOM visits among the participating children was published [@OBrien2008].
