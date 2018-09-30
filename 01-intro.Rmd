@@ -54,8 +54,8 @@ Health systems operate under constraints on budgets and resources.
 Demonstrating vaccine benefit is essential, but not the only factor to consider when making health policy decisions.
 Cost and resource allocation are also of crucial importance.
 This is especially complicated in the case of vaccines, because benefits are not seen immediately but rather over time. Benefits occur in both vaccinated and unvaccinated members of the population.
-The diseases prevented by vaccines have associated costs which must be accounted for when the cost of the vaccine program is evaluated.
-Cost-effectiveness analysis and cost-benefit analysis are methods developed to measure the ratio between costs and benefit, and are used as a tool in making health policy decisions.
+The diseases prevented by vaccines have associated expenses which must be accounted for when the expenditures for a vaccine program are evaluated.
+Cost-effectiveness analysis and cost-benefit analysis are methods developed to measure the ratio between expenditure and benefit, and are used as a tool in making health policy decisions.
 To adequately perform such an analyses, detailed data on disease incidence and associated costs for the whole population must be available.
 
 Iceland is an independent island nation, isolated in the mid-Atlantic, with a homogeneous population of roughly 330,000 individuals.
