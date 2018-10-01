@@ -78,7 +78,7 @@ The overview will include the pathophysiology, natural disease course, and healt
 Pneumococcus has gone by many names since its first isolation in 1881.
 Originally it was named *Micrococcus pasteuri* by Sternberg [@Sternberg1881] but by 1920, a scientific consensus was reached that the official name should be *Diplococcus pneumoniae* [@Winslow1920].
 It was not until 1974 that pneumococcus received its current name, *Streptococcus pneumoniae* [@Deibel1974].
-Because pneumococcus is both a commensal bacterium and a pathogen, the relationship between pneumococcus and humans is complex. 
+Because pneumococcus is both a commensal bacterium and a pathogen, its relationship with humans is complex.
 Most children are colonized by pneumococcus within the first months of life [@Leino2001a]. 
 The serotype distribution of the initial colonization in a child is influenced by the distribution of serotypes within the child's family . 
 Over the course of the their lifetime, a child will be colonized by many different serotypes.
@@ -92,7 +92,7 @@ All serotypes of pneumococcus have the potential to cause disease in humans.
 Some are, however, more virulent than others.
 The prevalence of asymptomatic carriage in the nasopharynx varies greatly by serotype, as does the propensity of serotypes to cause clinical infections.
 Quantifying the pathogenic potential of serotypes is difficult as both their prevalence and propensity to cause disease must be considered.
-With few exceptions, the acquisition of a new serotype into the nasopharyngeal flora proceeds the onset of clinical disease caused by that serotype.
+With few exceptions, the acquisition of a new serotype into the nasopharyngeal flora proceeds the onset of clinical disease caused by that serotype [@Casey2010].
 As this occurs most commonly in the upper respiratory tract where pneumococcus is generally located, it results in the common clinical manifestations of pneumococcal infections, i.e. AOM, acute sinusitis and conjunctivitis.
 The pathogenesis of pneumococcal pneumonia is thought to occur through micro-aspiration of upper respiratory secretions, provoking a subsequent rapid proliferation of pneumococcus in the lower respiratory tract.
 Invasive disease occurs when pneumococcus penetrates the host's immunological defenses and proliferates in normally sterile tissue.
@@ -150,14 +150,19 @@ Paragraph describing the microbiology of the middle ear
  ~ Pathogens, estimated % caused by pneumococcus
  ~ Epidemiology, serotype
 
-It should be clear from the above that any pathogen that is able to gain access to the middle ear, disrupt the normal function of the Eustachian tube and replicate within the resulting fluid is able to cause otitis media. 
+It should be clear from the above that any pathogen that is able to gain access to the middle ear, disrupt the normal function of the Eustachian tube and replicate within the resulting fluid is likely to be able to cause otitis media. 
 It is therefore not surprising that the microbiology of otitis media is complex.
 Otitis media can be caused by many different pathogens, both viral and bacterial.
 Several pathogens can act in unison to produce clinical disease.
-The most common bacterial causes of otitis media are *Haemophilus influenzae*, *Streptococcus pneumoniae* and *Moraxella catarrhalis*.
+The most common bacterial causes of otitis media are *Haemophilus influenzae*, *Streptococcus pneumoniae* and *Moraxella catarrhalis* [@Bluestone1992; @Casey2004; @Casey2010].
 The relative contribution of these three pathogens is remarkably stable between countries and over time.
 This is most likely a consequence of how common they are in the nasopharyngeal flora of children.
-Pneumococcal otitis media is slightly more likely than other otopathogens to lead to recurrent otitis media and chronic suppurative otitis media, but is otherwise indistinguishable from otitis media caused by other otopathogens. 
+In upwards of 90% of otitis media cases, the bacteria aspirated from the middle ear fluid will also be found in the nasopharynx [@Casey2010].
+Children with otitis media who experience spontanous rupture of the tympanic membrane have a slightly different distribution of pathogens, with a higher proportion of *Streptococcus pyogenes* and *Staphylococcus aureus* [@Chen2013; @Sonsuwan2016].
+This could be explained by these pathogens causing a more aggressive infection, or possibly by contamination by bacteria located in the external ear canal.
+Similarly, coagulase negative staphylococci and *Staphylococcus aureus* are more common in otitis media with effusion [@Kim2013]. 
+Pneumococcal otitis media is slightly more likely to lead to recurrent otitis media and chronic suppurative otitis media, but is otherwise clinically indistinguishable from otitis media caused by other otopathogens.
+
 
 Paragraph focusing on incidence of AOM; age; healthcare burden: must emphasize physician visits, antimicrobial and tympanostomy
 - Burden of disease caused by AOM; health care utilization, cost
