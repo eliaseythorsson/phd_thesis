@@ -43,12 +43,11 @@ The polysaccharide capsule acts as an "invisibility cloak" to the human immune s
 Based on these patterns, pneumococcus has been classified into over 97 different serotypes to date.
 As the capsule contains only polysaccharides and not proteins, the immune response is T-cell independent and therefore poorly immunogenic, even after being identified by the immune system [@Geno2015b].
 The epidemiology of pneumococcus is dominated by person-to-person transmission of asymptomatic carriage.
-Because children have no previous immunity to any serotype, they are colonized by pneumococcus more frequently, and each colonization lasts longer.
-This phenomenon is further augmented when multiple immune-naive children congregate, such as in daycare centers and pre-schools. 
-Thus children act as a pneumococcal reservoir for the population, without actually having any clinical disease.
+Because children have no previous immunity to any serotype, they are colonized by pneumococcus more frequently, and each colonization lasts longer [@Melegaro2004].
+This phenomenon is further augmented when multiple immune-naive children congregate, such as in daycare centers and pre-schools [@Yagupsky1998]. 
+Thus children act as a pneumococcal reservoir for the population, without actually having any clinical disease [@Hoshino2002; @LePolaindeWaroux2014; @Mosser2014].
 Vaccinating children against certain serotypes may therefore lead to a decrease in pneumococcal disease caused by those serotypes in adults.
-In vaccine epidemiology, this is referred to as herd-effect and is an important consideration for pneumococcal vaccine development. 
-Serotype replacement can also occur, where previously rare serotypes appear and fill the ecological niche vacated by the vaccine serotypes. 
+In vaccine epidemiology, this is referred to as herd-effect and is an important consideration for pneumococcal vaccine development. Serotype replacement can also occur, where previously rare serotypes appear and fill the ecological niche vacated by the vaccine serotypes. 
 
 Health systems operate under constraints on budgets and resources.
 Demonstrating vaccine benefit is essential, but not the only factor to consider when making health policy decisions.
@@ -79,17 +78,21 @@ The overview will include the pathophysiology, natural disease course, and healt
 Pneumococcus has gone by many names since its first isolation in 1881.
 Originally it was named *Micrococcus pasteuri* by Sternberg [@Sternberg1881] but by 1920, a scientific consensus was reached that the official name should be *Diplococcus pneumoniae* [@Winslow1920].
 It was not until 1974 that pneumococcus received its current name, *Streptococcus pneumoniae* [@Deibel1974].
-
-
-The relationship between pneumococcus and humans is complex. 
-Most children are colonized by pneumococcus within the first months of life. 
-The serotype distribution of the initial colonization in a child is influenced by the distribution of serotypes within the child's family. 
+Because pneumococcus is both a commensal bacterium and a pathogen, the relationship between pneumococcus and humans is complex. 
+Most children are colonized by pneumococcus within the first months of life [@Leino2001a]. 
+The serotype distribution of the initial colonization in a child is influenced by the distribution of serotypes within the child's family . 
 Over the course of the their lifetime, a child will be colonized by many different serotypes.
-Their immune system will learn to recognize newly acquired serotypes and will either clear the colonization or maintain an equilibrium in which the serotype is kept within a certain limit of reproduction.
+Their immune system will learn to recognize newly acquired serotypes and will either clear the colonization or maintain an equilibrium in which the serotype is kept within a certain limit of reproduction [@Dowling1971; @Melegaro2004].
 In this manner, the contribution of pneumococcus to the human upper respiratory flora is in a state of constant flux.
 New serotypes enter while old exit, and the relative density of serotypes changes.
 In some cases, the equilibrium between pneumococcus and the host is destabilized, triggering a rapid growth of pneumococcus and resulting in clinical manifestations.
-It is thought that this is most likely to occur imminently following the acquisition of new serotype into the nasopharyngeal flora. 
+It is thought that this is most likely to occur imminently following the acquisition of new serotype into the nasopharyngeal flora.
+
+All serotypes of pneumococcus have the potential to cause disease in humans.
+Some are, however, more virulent than others.
+The prevalence of asymptomatic carriage in the nasopharynx varies greatly by serotype, as does the propensity of serotypes to cause clinical infections.
+Quantifying the pathogenic potential of serotypes is difficult as both their prevalence and propensity to cause disease must be considered.
+With few exceptions, the acquisition of a new serotype into the nasopharyngeal flora proceeds the onset of clinical disease caused by that serotype.
 As this occurs most commonly in the upper respiratory tract where pneumococcus is generally located, it results in the common clinical manifestations of pneumococcal infections, i.e. AOM, acute sinusitis and conjunctivitis.
 The pathogenesis of pneumococcal pneumonia is thought to occur through micro-aspiration of upper respiratory secretions, provoking a subsequent rapid proliferation of pneumococcus in the lower respiratory tract.
 Invasive disease occurs when pneumococcus penetrates the host's immunological defenses and proliferates in normally sterile tissue.
@@ -97,64 +100,79 @@ This can occur as a primary event, or can be secondary to infections of the uppe
 Generally, IPD is considered to encompass meningitis, bacteraemia and septic arthritis.
 While some may argue that the middle ear is normally sterile, AOM is not considered invasive disease.
 
-It has been known from the first pneumococcal vaccine trials that vaccination has different efficacy against the different manifestations of pneumococcal disease.
-The greatest effect is consistently seen in the prevention of IPD and pneumococcal lobar pneumonia.
-The effects on carriage and AOM are often lesser in magnitude. 
-This may be either a true biological gradient or a consequence of the accuracy by which the outcome is measured. 
-The more serious the illness, is the more testing is performed.
-The result is a more accurate diagnosis.
-Much of the AOM attributed to pneumococcus may be caused by other pathogens, while IPD is, by definition, always caused by pneumococcus.
-The largest trials of modern pneumococcal vaccines have fit the above narrative.
-The 23-valent pneumococcal polysaccharide vaccine was trialed in 12,000 adults and showed an efficacy of 75% in preventing IPD and a 50% efficacy against radiologically confirmed pneumonia.
-The heptavalent pneumococcal conjugate vaccine was trialed in children and produced a 97% efficacy in preventing IPD. 
-
-
-All serotypes of pneumococcus have the potential to cause disease in humans.
-Some are, however, more virulent than others.
-The prevalence of asymptomatic carriage in the nasopharynx varies greatly by serotype, as does the propensity of serotypes to cause clinical infections.
-Quantifying the pathogenic potential of serotypes is difficult as both their prevalence and propensity to cause disease must be considered.
-With few exceptions, the acquisition of a new serotype into the nasopharyngeal flora proceeds the onset of clinical disease caused by that serotype.
-Pneumococcal epidemiology is dominated by this effect - children act as reservoirs of asymptomatic pneumococcal carriage from which other children and adults acquire serotypes that may lead to symptomatic disease. 
-Because of this, vaccinations which decrease the pneumococcal carriage in children have the potential of reducing the incidence of disease both in other unvaccinated children and in adults. 
-This phenomenon is called the herd-effect, and is integral to the development of vaccination strategies to combat pneumococcal disease.
-
 ### Acute otitis media
 
-~ 3-4 pages
-- Define carriage; age-specific prevalence, serotype distribution
-	- Explain that most are born carriage free
-	- Evidence for co-carriage of different serotypes
-	- Age at which most children acquire carriage
-		- Risk factor: daycare, siblings, smoking etc.
-	- Children are the main vectors of pneumococcus
-	- Rate of clearance dependent on age
-	- With increasing age -> increasing immunity, decreasing prevalence
-	- Senescence and carriage in the elderly
-- Evidence for carriage being the predecessor infections
-	- Evidence of asymptomatic carriage -> main spread of disease
-	- Variable propensity of serotypes to cause disease, attack-rates
-- Review the Icelandic literature and changing epidemiology
-	- Carriage prevalence
-	- Serotype distribution
-	- Risk factors
-	
-~ 3 - 4 pages
-- Define different types of otitis media; acute otitis media
-	- Pathogens, estimated % caused by pneumococcus
-	- Proposed mechanism by which carriage -> AOM
-	- Epidemiology, both serotype and age
-	- Risk factors
-- Burden of disease caused by AOM; health care utilization, cost
-	- Incidence and prevalence
-	- GP visits, antibacterial consumption, hospitalization (?)
-	- Days of work-lost by parents
-	- Sequelae; multiple infections, effusion, tympanostomies 
-	- Evidence of benefit of delaying 1st presentation
+
+
 -  Review of Icelandic literature and changing epidemiology
 	- AOM prevalence and serotype distribution
 	- Risk factors
 	- Associated healthcare consumption, cost
 	- Rate of sequelae
+	
+	
+Paragraph introducing the concept of AOM
+~ Define different types of otitis media; acute otitis media
+
+Otitis media is an inflammatory state of the middle ear.
+It is most often caused by a viral or bacterial infection.
+The clinical presentation of otitis media is variable.
+Its onset ranges from abrupt to gradual and its duration from short to protracted.
+Several categories have been defined to simplify this variability, but should not be interpreted as mutually exclusive.
+Rather, categories are created to facilitate communication and it is understood that they represent a continuum disease processes.
+Otitis media can take the form of an acute inflammatory event, which is the classical AOM with which most parents are familiar, or a chronic low-grade process.
+The later category includes otitis media with effusion and chronic suppurative otitis media.
+Otitis media with effusion is defined as the protracted collection of serous fluid in the middle ear.
+By convention, it is considered to be present if middle ear effusion has been documented to have lasted for three months or longer.
+It may follow AOM, or be discovered without an obvious inciting event.
+Chronic suppurative otitis media may be thought of as a protracted case of AOM. 
+The child remains sickly and the middle ear is filled with puss.
+The tympanic membrane often ruptures as a result. 
+
+Paragraph describing middle ear anatomy
+ ~ Proposed mechanism by which carriage -> AOM
+ ~ age epidemiology
+ 
+The anatomy of the middle ear is instrumental in the epidemiology of otitis media and sheds light on the variable presentations described above. 
+The middle ear is located within a recess in the tympanic bone, medially to the tympanic membrane.
+It communicates with the nasopharynx by means of the Eustachian tube, a thin muscular canal that acts to equalize pressure within the middle ear to that of the external ear.
+This communication allows viruses and bacteria in the nasopharynx to gain access to the middle ear which explains the association between nasopharyngeal carriage and AOM.
+The Eustachian tube is anatomically shorter and straighter in children, which partly explains the much higher risk of middle ear infections in children compared to adults.
+It is also much thinner.
+Because of this, inflammation in the nasopharynx from any cause can lead to a spasm of the Eustachian tube in children, resulting in the build up of secretions in the middle ear.
+These secretions represent perfect conditions for bacterial growth and can lead to subsequent otitis media.
+They can also remain uninfected and would then be categorized as otitis media with effusion if the build up lasted long enough.
+The cycle of Eustachian tube dysfunction, effusion and increased risk of infection described above is what lead to the development of tympanic tube placements as a treatment for middle ear infections in children.
+The rationale was that by providing a secondary mechanism by which the middle ear could drain and equalize pressure, the propensity towards infection would decrease. 
+
+Paragraph describing the microbiology of the middle ear
+ ~ Risk factors
+ ~ Pathogens, estimated % caused by pneumococcus
+ ~ Epidemiology, serotype
+
+It should be clear from the above that any pathogen that is able to gain access to the middle ear, disrupt the normal function of the Eustachian tube and replicate within the resulting fluid is able to cause otitis media. 
+It is therefore not surprising that the microbiology of otitis media is complex.
+Otitis media can be caused by many different pathogens, both viral and bacterial.
+Several pathogens can act in unison to produce clinical disease.
+The most common bacterial causes of otitis media are *Haemophilus influenzae*, *Streptococcus pneumoniae* and *Moraxella catarrhalis*.
+The relative contribution of these three pathogens is remarkably stable between countries and over time.
+This is most likely a consequence of how common they are in the nasopharyngeal flora of children.
+Pneumococcal otitis media is slightly more likely than other otopathogens to lead to recurrent otitis media and chronic suppurative otitis media, but is otherwise indistinguishable from otitis media caused by other otopathogens. 
+
+Paragraph focusing on incidence of AOM; age; healthcare burden: must emphasize physician visits, antimicrobial and tympanostomy
+- Burden of disease caused by AOM; health care utilization, cost
+	- Incidence and prevalence
+	- GP visits, antibacterial consumption, hospitalization (?)
+	- Days of work-lost by parents
+	- Sequelae; multiple infections, effusion, tympanostomies 
+
+The healthcare burden caused by otitis media is disproportionate to its severity.
+Acute otitis media is the most common reason for physician visit among children.
+This has been repeatedly shown in several different countries.
+It is also responsible for the majority of antimicrobial prescriptions and thus contributes significantly to antimicrobial resistance. 
+Tympanic tube procedures are the most common surgical procedure in the paediatric population. 
+
+Paragraph focusing on the situation in Iceland for all of the above
 
 ### Pneumonia
 
