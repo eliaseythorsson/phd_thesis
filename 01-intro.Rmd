@@ -71,12 +71,11 @@ This wealth of medical documentation enabled a unique whole-population ecologica
 ## Clinical manifestations of *Streptococcus pneumoniae*
 
 In this chapter the clinical manifestations of pneumococcal disease will be reviewed.
-The mechanism by which individuals acquire pneumococcus into their normal upper respiratory flora will be discussed and the association between pneumococcal carriage and disease will be described.
-Throughout this thesis, attention will be focused on three common clinical presentations of pneumococcal infections; AOM, pneumonia and IPD.
-The overview will include the pathophysiology, natural disease course, and health care burden of each of the presentations.
+The mechanism by which individuals acquire pneumococcus into their normal upper respiratory flora will be discussed, and the association between pneumococcal carriage and disease will be described.
+Throughout this thesis, attention will be focused on three common clinical presentations of pneumococcal infections; AOM, pneumonia and IPD, including the pathophysiology, natural disease course, and health care burden of each of the presentations.
 
-Pneumococcus has gone by many names since its first isolation in 1881.
-Originally it was named *Micrococcus pasteuri* by Sternberg [@Sternberg1881] but by 1920, a scientific consensus was reached that the official name should be *Diplococcus pneumoniae* [@Winslow1920].
+Pneumococcus has gone by many names since it was first isolated in 1881.
+It was originally named *Micrococcus pasteuri* by Sternberg [@Sternberg1881], but by 1920, a scientific consensus was reached that the official name should be *Diplococcus pneumoniae* [@Winslow1920].
 It was not until 1974 that pneumococcus received its current name, *Streptococcus pneumoniae* [@Deibel1974].
 Because pneumococcus is both a commensal bacterium and a pathogen, its relationship with humans is complex.
 Most children are colonized by pneumococcus within the first months of life [@Leino2001a]. 
@@ -84,16 +83,10 @@ The serotype distribution of the initial colonization in a child is influenced b
 Over the course of the their lifetime, a child will be colonized by many different serotypes.
 Their immune system will learn to recognize newly acquired serotypes and will either clear the colonization or maintain an equilibrium in which the serotype is kept within a certain limit of reproduction [@Dowling1971; @Melegaro2004].
 In this manner, the contribution of pneumococcus to the human upper respiratory flora is in a state of constant flux.
-New serotypes enter while old exit, and the relative density of serotypes changes.
+New serotypes enter while the old exit, and the relative density of serotypes changes.
 In some cases, the equilibrium between pneumococcus and the host is destabilized, triggering a rapid growth of pneumococcus and resulting in clinical manifestations.
-It is thought that this is most likely to occur imminently following the acquisition of new serotype into the nasopharyngeal flora.
-
-All serotypes of pneumococcus have the potential to cause disease in humans.
-Some are, however, more virulent than others.
-The prevalence of asymptomatic carriage in the nasopharynx varies greatly by serotype, as does the propensity of serotypes to cause clinical infections.
-Quantifying the pathogenic potential of serotypes is difficult as both their prevalence and propensity to cause disease must be considered.
-With few exceptions, the acquisition of a new serotype into the nasopharyngeal flora proceeds the onset of clinical disease caused by that serotype [@Casey2010].
-As this occurs most commonly in the upper respiratory tract where pneumococcus is generally located, it results in the common clinical manifestations of pneumococcal infections, i.e. AOM, acute sinusitis and conjunctivitis.
+It is thought that this is most likely to occur directly following the acquisition of new serotype into the nasopharyngeal flora [@Casey2010].
+Because pneumococcus is carried in the nasopharynx, this overgrowth results in infections of adjacent tissue; the sinuses, middle ear and conjunctiva.
 The pathogenesis of pneumococcal pneumonia is thought to occur through micro-aspiration of upper respiratory secretions, provoking a subsequent rapid proliferation of pneumococcus in the lower respiratory tract.
 Invasive disease occurs when pneumococcus penetrates the host's immunological defenses and proliferates in normally sterile tissue.
 This can occur as a primary event, or can be secondary to infections of the upper or lower respiratory tract.
@@ -102,82 +95,74 @@ While some may argue that the middle ear is normally sterile, AOM is not conside
 
 ### Acute otitis media
 
-
-
--  Review of Icelandic literature and changing epidemiology
-	- AOM prevalence and serotype distribution
-	- Risk factors
-	- Associated healthcare consumption, cost
-	- Rate of sequelae
-	
-	
-Paragraph introducing the concept of AOM
-~ Define different types of otitis media; acute otitis media
-
 Otitis media is an inflammatory state of the middle ear.
 It is most often caused by a viral or bacterial infection.
 The clinical presentation of otitis media is variable.
-Its onset ranges from abrupt to gradual and its duration from short to protracted.
-Several categories have been defined to simplify this variability, but should not be interpreted as mutually exclusive.
-Rather, categories are created to facilitate communication and it is understood that they represent a continuum disease processes.
-Otitis media can take the form of an acute inflammatory event, which is the classical AOM with which most parents are familiar, or a chronic low-grade process.
-The later category includes otitis media with effusion and chronic suppurative otitis media.
+Its onset ranges from abrupt to gradual, and its duration from short to protracted.
+Several categories have been defined to facilitate communication concerning this variability.
+They are not mutually exclusive, but rather represent a continuum of the disease process.
+Otitis media can manifest as a acute inflammatory event.
+This is the classical AOM with which most parents are familiar.
+AOM can be recurrent, which is defined as AOM occurring three times over a six month period, or four or more times over a twelve month period.
+Conversely, it can take the form of a chronic low-grade process.
+The later phenotype includes otitis media with effusion and chronic suppurative otitis media.
 Otitis media with effusion is defined as the protracted collection of serous fluid in the middle ear.
 By convention, it is considered to be present if middle ear effusion has been documented to have lasted for three months or longer.
-It may follow AOM, or be discovered without an obvious inciting event.
+It may follow AOM, or be detected without an obvious inciting event.
 Chronic suppurative otitis media may be thought of as a protracted case of AOM. 
 The child remains sickly and the middle ear is filled with puss.
 The tympanic membrane often ruptures as a result. 
-
-Paragraph describing middle ear anatomy
- ~ Proposed mechanism by which carriage -> AOM
- ~ age epidemiology
  
-The anatomy of the middle ear is instrumental in the epidemiology of otitis media and sheds light on the variable presentations described above. 
+The anatomy of the middle ear is intrinsic to the epidemiology of otitis media, and can elucidate the wide range of presentations described above. 
 The middle ear is located within a recess in the tympanic bone, medially to the tympanic membrane.
-It communicates with the nasopharynx by means of the Eustachian tube, a thin muscular canal that acts to equalize pressure within the middle ear to that of the external ear.
-This communication allows viruses and bacteria in the nasopharynx to gain access to the middle ear which explains the association between nasopharyngeal carriage and AOM.
-The Eustachian tube is anatomically shorter and straighter in children, which partly explains the much higher risk of middle ear infections in children compared to adults.
+It communicates with the nasopharynx by means of the Eustachian tube, a thin muscular canal that acts to equalize pressure between the middle ear and the external ear.
+This communication allows viruses and bacteria in the nasopharynx to gain access to the middle ear which clarifies the association between nasopharyngeal carriage and AOM.
+The Eustachian tube is anatomically shorter and straighter in children, partly accounting for the much higher risk of middle ear infections in children as compared to adults.
 It is also much thinner.
-Because of this, inflammation in the nasopharynx from any cause can lead to a spasm of the Eustachian tube in children, resulting in the build up of secretions in the middle ear.
-These secretions represent perfect conditions for bacterial growth and can lead to subsequent otitis media.
-They can also remain uninfected and would then be categorized as otitis media with effusion if the build up lasted long enough.
-The cycle of Eustachian tube dysfunction, effusion and increased risk of infection described above is what lead to the development of tympanic tube placements as a treatment for middle ear infections in children.
-The rationale was that by providing a secondary mechanism by which the middle ear could drain and equalize pressure, the propensity towards infection would decrease. 
+Because of this, any cause of inflammation in the nasopharynx can lead to a spasm of a child's Eustachian tube, resulting in the build up of secretions in the middle ear.
+These secretions provide optimal conditions for bacterial growth and can lead to subsequent otitis media.
+They can also remain macroscopically uninfected, which, if lasting long enough, would be categorized as otitis media with effusion.
+The anatomic view also helps to explain the mechanism of the contribution of different risk factors.
+The cycle of Eustachian tube dysfunction, effusion and increased risk of infection was the catalyst for the development of tympanic tube placements as a treatment for middle ear infections in children.
+By providing a secondary mechanism by which the middle ear could drain and equalize pressure, the rationale was that propensity for infection would decrease. 
 
-Paragraph describing the microbiology of the middle ear
- ~ Risk factors
- ~ Pathogens, estimated % caused by pneumococcus
- ~ Epidemiology, serotype
-
-It should be clear from the above that any pathogen that is able to gain access to the middle ear, disrupt the normal function of the Eustachian tube and replicate within the resulting fluid is likely to be able to cause otitis media. 
-It is therefore not surprising that the microbiology of otitis media is complex.
-Otitis media can be caused by many different pathogens, both viral and bacterial.
-Several pathogens can act in unison to produce clinical disease.
-The most common bacterial causes of otitis media are *Haemophilus influenzae*, *Streptococcus pneumoniae* and *Moraxella catarrhalis* [@Bluestone1992; @Casey2004; @Casey2010].
-The relative contribution of these three pathogens is remarkably stable between countries and over time.
-This is most likely a consequence of how common they are in the nasopharyngeal flora of children.
+Any pathogen that is able to gain access to the middle ear, disrupt the normal function of the Eustachian tube and replicate within the resulting fluid, has the potential to cause otitis media.
 In upwards of 90% of otitis media cases, the bacteria aspirated from the middle ear fluid will also be found in the nasopharynx [@Casey2010].
-Children with otitis media who experience spontanous rupture of the tympanic membrane have a slightly different distribution of pathogens, with a higher proportion of *Streptococcus pyogenes* and *Staphylococcus aureus* [@Chen2013; @Sonsuwan2016].
+The most common bacterial causes of otitis media are *Haemophilus influenzae*, *Streptococcus pneumoniae* and *Moraxella catarrhalis* [@Bluestone1992; @Casey2004; @Casey2010; @Ngo2016; @Pumarola2013].
+The relative contribution of these three pathogens is remarkably stable between countries and over time.
+This is likely a consequence of how common they are in the nasopharyngeal flora of children.
+A systematic review of studies from 1970-2014 which reported the etiology of otitis media, found that *Streptococcus pneumoniae* caused 30.2% of AOM in Europe [@Ngo2016].
+In countries that have introduced systematic pneumococcal vaccination, there is evidence to suggest that the microbiology of otitis media has shifted from being predominantly due to pneumococcus to *Haemophilus influenzae* [@Block2004; @VanDyke2017].
+Of the pneumococcal AOM, the prevalance of vaccine serotypes has decreased and non-vaccine serotypes now predominate.
+Children with otitis media who experience spontaneous rupture of the tympanic membrane have a slightly different distribution of pathogens, with a higher proportion of *Streptococcus pyogenes* and *Staphylococcus aureus* [@Chen2013; @Sonsuwan2016].
 This could be explained by these pathogens causing a more aggressive infection, or possibly by contamination by bacteria located in the external ear canal.
 Similarly, coagulase negative staphylococci and *Staphylococcus aureus* are more common in otitis media with effusion [@Kim2013]. 
 Pneumococcal otitis media is slightly more likely to lead to recurrent otitis media and chronic suppurative otitis media, but is otherwise clinically indistinguishable from otitis media caused by other otopathogens.
 
-
-Paragraph focusing on incidence of AOM; age; healthcare burden: must emphasize physician visits, antimicrobial and tympanostomy
-- Burden of disease caused by AOM; health care utilization, cost
-	- Incidence and prevalence
-	- GP visits, antibacterial consumption, hospitalization (?)
-	- Days of work-lost by parents
-	- Sequelae; multiple infections, effusion, tympanostomies 
-
 The healthcare burden caused by otitis media is disproportionate to its severity.
-Acute otitis media is the most common reason for physician visit among children.
-This has been repeatedly shown in several different countries.
-It is also responsible for the majority of antimicrobial prescriptions and thus contributes significantly to antimicrobial resistance. 
-Tympanic tube procedures are the most common surgical procedure in the paediatric population. 
+Acute otitis media is the most common reason for physician visit among children, a fact which has been frequently documented in multiple countries.
+Only focusing on physician visits understimates the impact of AOM, as some episodes are not reported to physicians but still result in distressing symptoms in children and parental missed days of work.
+By a child's third birthday, 60%-80% will have experienced at least one episode of AOM [@Kaur2017; @Teele1989].
+Likewise, otitis media is also responsible for the majority of antimicrobial prescriptions, and thus contributes significantly to antimicrobial resistance.
+Though often benign and self-limiting, AOM can progress to recurrent or chronic infection and require more invasive treatment.
+Mastoiditis develops in XXX% of cases and will require hospital admission and administration of intravenous antimicrobials.
+Severe AOM can result in hearing loss and has been estimated to occur XXX%.
+For various reasons, parents and clinicans may opt to treat recurrent or chronic otitis media with the placement of a tympanic tube.
+Tympanic tube procedures are consequently the most common surgical procedure in the paediatric population.
+The incidence of tympanic tube placement varies greatly between countries.
 
-Paragraph focusing on the situation in Iceland for all of the above
+The incidence AOM, its microbiology, treatment and complications have been evaluated in Iceland.
+In 1990, a retrospective analysis of two birth-cohorts in a small village in Iceland showed a 66% cumulative incidence of AOM by 24 months of age [@Bjarnason1991].
+A larger study conducted in 1998 used parental questionaires to estimate the incidence of upper respiratory infections that resulted in antimicrobial treatment and tympanic tube placements among children ages one to six years old [@Arason2002].
+A total of 1030 children were randomly sampled from four geographically seperated areas of Iceland and the study achieved a 78% response rate.
+The study demonstrated high incidence rates of antimicrobially treated AOM for all age-groups, ranging from 1.79 treatment episodes among children one year of age to 0.25 treatment episodes in children six years of age.
+In this random sample, 58% of all antimicrobial prescriptions were due to AOM.
+The cumulative incidence of tympanic tube placements was alarmingly high.
+By one year of age, 23% (95%CI 16%-31%) had already recieved at least one tympanostomy tube.
+This proportion exceeded 30% by age two and remained fairly stable thereafter.
+The study was repeated by the same investigators in 2003 using the exact same cross-sectional random sampling [@Arason2005].
+The proportion of all antimicrobial prescriptions that were due to AOM was almost exactly the same, 57%. 
+Surprisingly, the cumulative incidence of tympanostomy tube placement had slightly increased and was now estimated to be 34%, 
 
 ### Pneumonia
 
