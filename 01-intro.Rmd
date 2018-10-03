@@ -169,7 +169,6 @@ Surprisingly, the cumulative incidence of tympanostomy tube placement had slight
 Paragraph defining pneumonia, proposed mechanism by which carriage -> pneumonia
 - Define: CAP, nosocomial, PP, NBPP and IPP.
 
-
 Pneumonia is defined as the infectious infiltration of the lung parenchyma.
 Several different classification schemes have been proposed.
 Some are based on the anatomical distribution of infectious infiltrates on radiographs, others on the symptomotology or the distribution of risk factors in those being diagnosed with the disease.
@@ -179,10 +178,6 @@ Unfortunately, information on the causative pathogen is rarely available when tr
 The most common classification scheme for pneumonia approximates this information by dividing pneumonia based upon the situation in which it was diagnosed.
 Any pneumonia diagnosed in people with limited contact with the healthcare system in the weeks prior to diagnosis is classified as community acquired pneumonia, and this is the most common type of pneumonia.
 The remaining pneumonia cases are classified as Healthcare associated pneumonia, which is also referred to as hospital acquired pneumonia. This simple classification scheme is a remarkably good predictor of antimicrobial resistance in the causative pathogen, and informs the choice of antimicrobial agents.
-
-Paragraph reviewing the lung anatomy and risk factors
-- Proposed mechanism by which carriage -> pneumonia
-- Risk factors
 
 The mechanism by which pathogens gain access to the lung and are able to replicate there to cause infection is best understood by reviewing the pulmonary anatomy. 
 The pulmonary system has an inverted tree configuration.
@@ -204,9 +199,13 @@ The amount of protective tissue increases with every division of the respiratory
 The risk factors for pneumonia are best understood with reference to the defensive mechanisms employed by the respiratory tree.
 Processes which interfere with the cough reflex will result in a higher risk of pneumonia.
 This includes sensory deficiencies resulting in the lack of cough initiation and muscular weakness seen in certain diseases and the extremes of age.
-Pain secondary to rib fractures may lead to volentary supression of the cough reflex and icnreases the risk of pneumonia.
+Pain secondary to rib fractures may lead to voluntary suppression of the cough reflex and increases the risk of pneumonia.
+Damage to the respiratory cilia and the resulting stasis of mucus will also increase the risk of pneumonia. 
+This can happen secondary to viral infection, or be secondary to the inhalation of toxic particles, such as pollution or cigarette smoke.
+Both viral and inhaled toxic particles can also cause local immune suppression which further compromises the lungs defenses.
 
-
+Any pathogen that is able to gain access to the lung and replicate has the potential to cause pneumonia.
+As is the case with otitis media, the most common 
 
 Paragraph about microbiology of pneumonia 
 - Pathogens, estimated % caused by pneumococcus
