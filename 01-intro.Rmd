@@ -133,7 +133,7 @@ The relative contribution of these three pathogens is remarkably stable between 
 This is likely a consequence of how common they are in the nasopharyngeal flora of children.
 A systematic review of studies from 1970-2014 which reported the etiology of otitis media, found that *Streptococcus pneumoniae* caused 30.2% of AOM in Europe [@Ngo2016].
 In countries that have introduced systematic pneumococcal vaccination, there is evidence to suggest that the microbiology of otitis media has shifted from being predominantly due to pneumococcus to *Haemophilus influenzae* [@Block2004; @VanDyke2017].
-Of the pneumococcal AOM, the prevalance of vaccine serotypes has decreased and non-vaccine serotypes now predominate.
+Of the pneumococcal AOM, the prevalence of vaccine serotypes has decreased and non-vaccine serotypes now predominate.
 Children with otitis media who experience spontaneous rupture of the tympanic membrane have a slightly different distribution of pathogens, with a higher proportion of *Streptococcus pyogenes* and *Staphylococcus aureus* [@Chen2013; @Sonsuwan2016].
 This could be explained by these pathogens causing a more aggressive infection, or possibly by contamination by bacteria located in the external ear canal.
 Similarly, coagulase negative staphylococci and *Staphylococcus aureus* are more common in otitis media with effusion [@Kim2013]. 
@@ -141,24 +141,24 @@ Pneumococcal otitis media is slightly more likely to lead to recurrent otitis me
 
 The healthcare burden caused by otitis media is disproportionate to its severity.
 Acute otitis media is the most common reason for physician visit among children, a fact which has been frequently documented in multiple countries.
-Only focusing on physician visits understimates the impact of AOM, as some episodes are not reported to physicians but still result in distressing symptoms in children and parental missed days of work.
+Only focusing on physician visits underestimates the impact of AOM, as some episodes are not reported to physicians but still result in distressing symptoms in children and parental missed days of work.
 By a child's third birthday, 60%-80% will have experienced at least one episode of AOM [@Kaur2017; @Teele1989].
 Likewise, otitis media is also responsible for the majority of antimicrobial prescriptions, and thus contributes significantly to antimicrobial resistance.
 Though often benign and self-limiting, AOM can progress to recurrent or chronic infection and require more invasive treatment.
 Mastoiditis develops in XXX% of cases and will require hospital admission and administration of intravenous antimicrobials.
 Severe AOM can result in hearing loss and has been estimated to occur XXX%.
-For various reasons, parents and clinicans may opt to treat recurrent or chronic otitis media with the placement of a tympanic tube.
+For various reasons, parents and clinicians may opt to treat recurrent or chronic otitis media with the placement of a tympanic tube.
 Tympanic tube procedures are consequently the most common surgical procedure in the paediatric population.
 The incidence of tympanic tube placement varies greatly between countries.
 
 The incidence AOM, its microbiology, treatment and complications have been evaluated in Iceland.
 In 1990, a retrospective analysis of two birth-cohorts in a small village in Iceland showed a 66% cumulative incidence of AOM by 24 months of age [@Bjarnason1991].
-A larger study conducted in 1998 used parental questionaires to estimate the incidence of upper respiratory infections that resulted in antimicrobial treatment and tympanic tube placements among children ages one to six years old [@Arason2002].
-A total of 1030 children were randomly sampled from four geographically seperated areas of Iceland and the study achieved a 78% response rate.
+A larger study conducted in 1998 used parental questionnaires to estimate the incidence of upper respiratory infections that resulted in antimicrobial treatment and tympanic tube placements among children ages one to six years old [@Arason2002].
+A total of 1030 children were randomly sampled from four geographically separated areas of Iceland and the study achieved a 78% response rate.
 The study demonstrated high incidence rates of antimicrobially treated AOM for all age-groups, ranging from 1.79 treatment episodes among children one year of age to 0.25 treatment episodes in children six years of age.
 In this random sample, 58% of all antimicrobial prescriptions were due to AOM.
 The cumulative incidence of tympanic tube placements was alarmingly high.
-By one year of age, 23% (95%CI 16%-31%) had already recieved at least one tympanostomy tube.
+By one year of age, 23% (95%CI 16%-31%) had already received at least one tympanostomy tube.
 This proportion exceeded 30% by age two and remained fairly stable thereafter.
 The study was repeated by the same investigators in 2003 using the exact same cross-sectional random sampling [@Arason2005].
 The proportion of all antimicrobial prescriptions that were due to AOM was almost exactly the same, 57%. 
@@ -166,22 +166,63 @@ Surprisingly, the cumulative incidence of tympanostomy tube placement had slight
 
 ### Pneumonia
 
-~ 4 – 5 pages
-- Define: CAP, nosocomial, PP, NBPP and IPP. 
-	- Pathogens, estimated % caused by pneumococcus
-	- Proposed mechanism by which carriage -> pneumonia
-	- Epidemiology, both serotype and age
-	- Risk factors
-- Burden of disease caused by pneumonia, health care utilization
-	- Ways of defining severity; CURB-65 etc. 
-	- GP visits, antibacterial consumption, Hospitalization rates
-	- Days of work lost	
-	- Mortality, sequelae
--  Review of Icelandic literature and changing epidemiology
-	- Pneumococcal pneumonia prevalence and serotype distribution
-	- Rate of hospitalization, healthcare consumption
-	- Rate of sequelae
-	- Risk factors
+Paragraph defining pneumonia, proposed mechanism by which carriage -> pneumonia
+- Define: CAP, nosocomial, PP, NBPP and IPP.
+
+
+Pneumonia is defined as the infectious infiltration of the lung parenchyma.
+Several different classification schemes have been proposed.
+Some are based on the anatomical distribution of infectious infiltrates on radiographs, others on the symptomotology or the distribution of risk factors in those being diagnosed with the disease.
+They all attempt to use readily available information to assist in the selection of treatment and predict prognosis. 
+A perfect classification scheme would use data on the antimicrobial susceptibility of the causative pathogen to make these predictions. 
+Unfortunately, information on the causative pathogen is rarely available when treatment decisions are being made.
+The most common classification scheme for pneumonia approximates this information by dividing pneumonia based upon the situation in which it was diagnosed.
+Any pneumonia diagnosed in people with limited contact with the healthcare system in the weeks prior to diagnosis is classified as community acquired pneumonia, and this is the most common type of pneumonia.
+The remaining pneumonia cases are classified as Healthcare associated pneumonia, which is also referred to as hospital acquired pneumonia. This simple classification scheme is a remarkably good predictor of antimicrobial resistance in the causative pathogen, and informs the choice of antimicrobial agents.
+
+Paragraph reviewing the lung anatomy and risk factors
+- Proposed mechanism by which carriage -> pneumonia
+- Risk factors
+
+The mechanism by which pathogens gain access to the lung and are able to replicate there to cause infection is best understood by reviewing the pulmonary anatomy. 
+The pulmonary system has an inverted tree configuration.
+The trachea acts as the trunk and subdivides into the main-stem bronchi, which lead to the right and left lung respectively.
+The respiratory tree further subdivides into lobar and segmental bronchi, each of which supplies an independent anatomical segment of the lung that is separated by connective tissue.
+Each compartment is known as a bronchopulmonary segment, and can be individually infected.
+Within each bronchopulmonary segment the branches divide 18-20 more times, and the diameter decreases with every division.
+The final 16-22 divisions compromise the respiratory bronchioles which lead to the alveoli.
+
+To infect the lung the pathogen must first get there.
+Though this may at first seem like an easy task, given that gravity would seem to aid the aspiration of upper respiratory secretions, it is in fact not.
+As anyone who has had "food go down the wrong way" knows, the respiratory tree does not readily tolerate backwards flow into the lungs.
+Irritation of the bronchi results in a cough, which is a powerful coordinated neuromuscular response which propels any aspirated material up the respiratory tree. 
+A more insidious creep of pathogenic spread is dealt with by producing a constant flow of mucus, which flows from the the terminal bronchioles to the upper respiratory tract.
+The epithelial lining is covered with cilia, which are tiny hair-like structures that constantly sweep the mucus upwards.
+If the pathogen were to overcome this and arrive further done the respiratory tree, it would be met with a heavy concentration of defensive immune tissue.
+The amount of protective tissue increases with every division of the respiratory tree.
+
+The risk factors for pneumonia are best understood with reference to the defensive mechanisms employed by the respiratory tree.
+Processes which interfere with the cough reflex will result in a higher risk of pneumonia.
+This includes sensory deficiencies resulting in the lack of cough initiation and muscular weakness seen in certain diseases and the extremes of age.
+Pain secondary to rib fractures may lead to volentary supression of the cough reflex and icnreases the risk of pneumonia.
+
+
+
+Paragraph about microbiology of pneumonia 
+- Pathogens, estimated % caused by pneumococcus
+- Epidemiology, both serotype and age
+
+Paragraph about Healthcare burden of pneumonia
+
+- GP visits, antibacterial consumption, Hospitalization rates
+- Days of work lost	
+- Mortality, sequelae
+
+Paragraph about Icelandic literature and changing epidemiology
+- Pneumococcal pneumonia prevalence and serotype distribution
+- Rate of hospitalization, healthcare consumption
+- Rate of sequelae
+- Risk factors
 
 ### Invasive pneumococcal disease
 
