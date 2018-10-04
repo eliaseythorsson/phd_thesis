@@ -204,12 +204,17 @@ Damage to the respiratory cilia and the resulting stasis of mucus will also incr
 This can happen secondary to viral infection, or be secondary to the inhalation of toxic particles, such as pollution or cigarette smoke.
 Both viral and inhaled toxic particles can also cause local immune suppression which further compromises the lungs defenses.
 
-Any pathogen that is able to gain access to the lung and replicate has the potential to cause pneumonia.
-As is the case with otitis media, the most common 
-
 Paragraph about microbiology of pneumonia 
 - Pathogens, estimated % caused by pneumococcus
 - Epidemiology, both serotype and age
+
+Any pathogen that is able to gain access to the lung and replicate there has the potential to cause pneumonia.
+As is the case with otitis media, the most common pathogens causing community acquired pneumonia are *Streptococcus pneumoniae*, *Haemophilus influnzae* and *Moraxella catarrhalis*.
+This is again most likely a function of how common they are in the upper respiratory flora.
+Unlike otitis media, pneumonia is a fairly common clinical problem in all age-groups.
+The relative contribution of pathogens varies greatly between different age-groups 
+
+
 
 Paragraph about Healthcare burden of pneumonia
 
