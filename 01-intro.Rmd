@@ -1,6 +1,6 @@
 # Introduction {#intro}
 
-```{r echo = FALSE, warning = FALSE, error = FALSE}
+```{r echo = FALSE, message = FALSE, warning = FALSE, error = FALSE}
 library(knitr)
 library(tidyverse)
 library(kableExtra)
@@ -166,9 +166,6 @@ Surprisingly, the cumulative incidence of tympanostomy tube placement had slight
 
 ### Pneumonia
 
-Paragraph defining pneumonia, proposed mechanism by which carriage -> pneumonia
-- Define: CAP, nosocomial, PP, NBPP and IPP.
-
 Pneumonia is defined as the infectious infiltration of the lung parenchyma.
 Several different classification schemes have been proposed.
 Some are based on the anatomical distribution of infectious infiltrates on radiographs, others on the symptomotology or the distribution of risk factors in those being diagnosed with the disease.
@@ -204,16 +201,46 @@ Damage to the respiratory cilia and the resulting stasis of mucus will also incr
 This can happen secondary to viral infection, or be secondary to the inhalation of toxic particles, such as pollution or cigarette smoke.
 Both viral and inhaled toxic particles can also cause local immune suppression which further compromises the lungs defenses.
 
-Paragraph about microbiology of pneumonia 
-- Pathogens, estimated % caused by pneumococcus
-- Epidemiology, both serotype and age
-
 Any pathogen that is able to gain access to the lung and replicate there has the potential to cause pneumonia.
-As is the case with otitis media, the most common pathogens causing community acquired pneumonia are *Streptococcus pneumoniae*, *Haemophilus influnzae* and *Moraxella catarrhalis*.
+As is the case with otitis media, the most common bacterial pathogens causing community acquired pneumonia are *Streptococcus pneumoniae*, *Haemophilus influnzae* and *Moraxella catarrhalis* [@Rodrigues2017].
 This is again most likely a function of how common they are in the upper respiratory flora.
-Unlike otitis media, pneumonia is a fairly common clinical problem in all age-groups.
-The relative contribution of pathogens varies greatly between different age-groups 
+Unlike otitis media, there is great difficulty in determining the causative pathogen in the case of pneumonia [@Cilloniz2016].
+Ideally, a sample would be obtained from the lung itself.
+This is however unfeasible as the sampling procedure would be dangerous and would require highly trained personnel and technical resources.
+Therefore, most studies have used proxy measures such as sputum and nasopharyngeal swabs.
+This must be taken into account when evaluating the etiology of pneumonia as many potential pathogens are also colonizers of the upper respiratory tract.
+This problem is exacerbated by the inability of children to produce a quality sputum sample [@Rodrigues2017].
 
+The relative contribution of pathogens varies greatly with the age and risk factor profile.
+Few studies have evaluated the distribution of pathogens causing pneumonia in children.
+Those that have, consistently show the importance of viruses in paediatric pneumonia. 
+This may be because viruses are the etiological factor, or because viruses are needed to weaken the respiratory defenses which allows bacterial disease to develop. 
+The considerable heterogeneity in the proportion of pneumonias found to caused be various pathogens underscores the importance of study population, time-period and most importantly the methods used to determine the caustaive pathogen.
+Among the first prospective studies of paediatric pneumonia was done at Chapel Hill, North Carolina from 1963-1971.
+The study looked at all lower respiratory infections in children, and found most to be caused by respiratory syncytial virus, parainfluenza virus and *Mycoplasma pneumoniae* [@Glezen1973].
+The predominance of viruses is likely due to the methods available at the time to detect etiology.
+Following the advent of pneumococcal antibody testing, pneumococcus started to be recognized as an important pathogen.
+Using pneumococcal antigens, Paisley et al. found pneumococcus to be a contributer to 19% of paediatric pneumonias from 1978-1979 [@PAISLEY1984].
+In a study conducted in Göteborg, Sweden from 1982-1983, primitive enzyme-linked immunosorbent assay was used to determine etiology and determined 13% of paediatric pneumonias to be due to *Streptococcus pneumoniae* [@CLAESSON1989].
+However, they only performed antibody testing for pneumococcus on those who were found to be pneumococcal carriers on nasopharyngeal swap.
+A prospective study of paediatric pneumonia in Turku, Finland in 1989 demonstrated pneumococcus to be a causative pathogen in 38% of cases [@Ruuskanen1992].
+From 1992-1994, 104 consecutive children presenting to a single hospital in Paris with pneumonia were enrolled in an etiological study and 14% were found to have pneumococcal pneumonia [@Gendrel1997].
+Two studies on the etiology of paediatric pneumonia have been published in populations were pneumococcal vaccination is ubiquitous.
+A study from the United Kingdom done in 2009-2011 found pneumococcus to be causative in 17.4% of cases [@Elemraid2013].
+A large prospective study of 2,358 children conducted in 2011-2012 in the United states using variety of different sampling methods only detected pneumococcus in 4% of cases [@Jain2015].
+This result is considerably different than all other studies in the paediatric population.
+The authors discuss possible reasons and speculate that the decrease might be due to universal vaccination against pneumococcus.
+All of the above studies indentified respiratory syncytial virus to be the most common causative pathogen.
+Of the bacterial pneumonias, all but one found pneumococcus to be the most common. 
+
+Adult pneumonia has been more extensively studies with regards to etiology, though the same problems exist.
+Beause of the difficulty in confirming the etiology of community acquired pneumonia, there are large variations in the proportions estimated to be caused be different pathogens.
+These may be true differences due to different distributions of pathogens in populations of different age and risk factors, or introduced by study design and methodology.
+A recent meta-analysis evaluated all published studies of the etiology of community acquired pneumonia in Europe from 1990-2011, and estimated the proportion caused by pneumococcus [@Rozenbaum2013].
+The inclusion critera was strict and included only radiologically confirmed pneumonia.
+Seventy-seven studies were included.
+The crude estimate of the proportion of pneumonia caused by *Streptococcus pneumoniae* was 19.3%.
+After adjusting for several variables using a fixed-effects meta-regression model, the estimated proportion of pneumococcal pneumonia in the average Northern European country was 15%.
 
 
 Paragraph about Healthcare burden of pneumonia
@@ -305,7 +332,7 @@ Systematic vaccination programs greatly reduce the prevalence of carriage and di
 If the vaccinated individuals compromise a large enough portion of the population.
 
 
-### The impact of pneumococcal conjugate vaccines on Acute otitis media
+### The impact of pneumococcal conjugate vaccines on otitis media
 
 Acute otitis media is still most often caused by *Streptococcus pneumoniae* and *Haemophilus influenzae* despite changes in otopathogens.
 Prevention of IPD in children and the associated morbidity and mortality was the driving force in the development of pneumococcal conjugate vaccines.
@@ -425,8 +452,8 @@ It is debatable whether this should be considered a randomized controlled trial 
 Even if the study were to be considered randomized, it is unclear how to interpret a study that does not even have 80% power to detect a difference twice as large as the the estimates presented by previous randomized controlled trials. 
 
 
-```{r Table 1, echo = F}
-kable(
+```{r Table 1, tidy = FALSE, echo = FALSE}
+knitr::kable(
     data.frame(
         study = c("Black, 2000 & Fireman, 2003", "Dagan, 2001", "Eskola, 2001", "Kilpi, 2003", "Prymula, 2006", "O'Brien, 2008"),
         vaccine = c("PCV7 (CRM197)", "PCV9 (CRM197)", "PCV7 (CRM197)", "PCV7 (MOMPC)", "PCV9 (HiD)", "PCV7 (CRM197"),
@@ -436,14 +463,13 @@ kable(
         efficacy = c("7.8% (5.4%-10.2%)", "17% (-2%-33%)", "6% (-4%-16%)", "-1% (-12%-10%", "33.6% (20.8%-44.3%", "-0.4% (-19.4%-15.6%")
     ),
     col.names = c("Study", "Vaccine", "Enrollment period", "Country", "No. of children", "Efficacy against Otitis media episodes"),
-    booktab = T
+    booktab = TRUE
 )
 ```
 
 #### Observational studies
 
-
-### Pneumonia
+### The impact of pneumococcal conjugate vaccines on pneumonia
 
 ~ 2-3 pages
 - Present evidence of effect on all-cause pneumonia
@@ -453,8 +479,7 @@ kable(
 
 [@Kilpi2018]
 
-
-### Invasive pneumococcal disease
+### The impact of pneumococcal conjugate vaccines on Invasive pneumococcal disease
 
 ~ 4-6 pages <- largest amount of studies
 - Present evidence of effect on IPD and subgroups; meningitis, bacteremia etc. 
@@ -483,7 +508,7 @@ kable(
 - Describe what health outcomes were considered
 	- Tie into actual disease burden known to be caused by pneumococcus
 	
-#### Effectiveness of PCV7
+#### Effectiveness of pneumococcal conjugate vaccines
 
 ~ 3-4 pages
 - What effectiveness rationale is used, methods and rationale: critique
@@ -492,28 +517,7 @@ kable(
 		- Pneumonia
 		- IPD
 
-
-#### Effectiveness of PCV10
-
-~2-3 pages
-- What effectiveness rationale is used, methods and rationale: critique
-		- Carriage
-		- AOM
-		- Pneumonia
-		- IPD
-
-#### Effectiveness of PCV13
-
-~ 2- 3 pages
-- What effectiveness rationale is used, methods and rationale: critique
-		- Carriage
-		- AOM
-		- Pneumonia
-		- IPD
-
-
 ### Estimating resources and cost
-
 
 ~1 page
 - Shortly explain what resources and costs mean
