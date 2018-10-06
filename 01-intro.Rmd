@@ -13,6 +13,15 @@ library(kableExtra)
 # )
 ```
 
+```{r echo = FALSE}
+data_frame(
+  Term = c("Acute otitis media", "Community-acquired pneumonia", "Hospital-aquired pneumonia", "Respiratory syncytial virus", "Enzyme-linked immunosorbent assay"),
+  Abbreviation = c("AOM", "CAP", "HAP", "RSV", "ELISA")) %>%
+  arrange(Term) %>% # i.e. alphabetical order by Term
+  kable(booktab = T)
+```
+
+
 *Streptococcus pneumoniae* is a commensal bacterium found in the nasopharynx of humans where it plays an integral role in normal upper respiratory flora.
 It is also a common pathogen, and one of the most common bacterial causes of disease in humans.
 In classical medical texts, pneumococcus is described as a Gram-positive lancet-shaped coccus, usually found in pairs.
@@ -167,78 +176,71 @@ Surprisingly, the cumulative incidence of tympanostomy tube placement had slight
 ### Pneumonia
 
 Pneumonia is defined as the infectious infiltration of the lung parenchyma.
-Several different classification schemes have been proposed.
-Some are based on the anatomical distribution of infectious infiltrates on radiographs, others on the symptomotology or the distribution of risk factors in those being diagnosed with the disease.
-They all attempt to use readily available information to assist in the selection of treatment and predict prognosis. 
-A perfect classification scheme would use data on the antimicrobial susceptibility of the causative pathogen to make these predictions. 
-Unfortunately, information on the causative pathogen is rarely available when treatment decisions are being made.
-The most common classification scheme for pneumonia approximates this information by dividing pneumonia based upon the situation in which it was diagnosed.
-Any pneumonia diagnosed in people with limited contact with the healthcare system in the weeks prior to diagnosis is classified as community acquired pneumonia, and this is the most common type of pneumonia.
-The remaining pneumonia cases are classified as Healthcare associated pneumonia, which is also referred to as hospital acquired pneumonia. This simple classification scheme is a remarkably good predictor of antimicrobial resistance in the causative pathogen, and informs the choice of antimicrobial agents.
+Several different classification systems have been proposed to aid in the treatment of pneumonia [@Mackenzie2016]. 
+Some are based on the anatomical distribution of infectious infiltrates on radiographs, others on the symptomotology and still others on the distribution of risk factors in those being diagnosed with the disease.
+Each attempts to utilize readily available information to assist in selecting among treatment options and in predicting prognosis. 
+While the ideal classification system would be based on the antimicrobial susceptibility of the causative pathogen, this information is rarely available when treatment decisions are being made.
+Most commonly, pneumonia is classified by assigning cases based upon the circumstances under which it was diagnosed. Pneumonia is classified as community acquired pneumonia if it is detected in people with limited contact with the healthcare system in the weeks prior to diagnosis.
+This is the most common type of pneumonia. 
+Remaining pneumonia cases are classified as healthcare associated pneumonia, or hospital-acquired pneumonia if diagnosed during a hospital admission.
+This simple classification system is a remarkably good predictor of antimicrobial resistance in the causative pathogen, and informs the choice of antimicrobial agents.
 
-The mechanism by which pathogens gain access to the lung and are able to replicate there to cause infection is best understood by reviewing the pulmonary anatomy. 
+The mechanism by which pathogens gain access to the lung and replicate there causing infection, is best understood by reviewing the pulmonary anatomy. 
 The pulmonary system has an inverted tree configuration.
-The trachea acts as the trunk and subdivides into the main-stem bronchi, which lead to the right and left lung respectively.
-The respiratory tree further subdivides into lobar and segmental bronchi, each of which supplies an independent anatomical segment of the lung that is separated by connective tissue.
+The trachea acts as the trunk and subdivides into the main-stem bronchi, which lead to the right and left lung, respectively.
+The respiratory tree further subdivides into lobar and segmental bronchi, each of which supplies an independent anatomical segment of the lung, separated by connective tissue.
 Each compartment is known as a bronchopulmonary segment, and can be individually infected.
-Within each bronchopulmonary segment the branches divide 18-20 more times, and the diameter decreases with every division.
+Within each bronchopulmonary segment, these branches divide 18-20 more times, their diameter decreasing with every division.
 The final 16-22 divisions compromise the respiratory bronchioles which lead to the alveoli.
+To infect the lung, a pathogen must first arrive there.
+While this may seem like an easy task as gravity aids in the aspiration of upper respiratory secretions, it is, in fact, not a simple matter.
+As anyone who has experienced "food going down the wrong way" knows, the respiratory tree does not readily tolerate backward flow into the lungs.
+Irritation of the bronchi results in a cough, a powerful, coordinated neuromuscular response which propels any aspirated material up the respiratory tree. 
+Pathogens are prevented from spreading downwards in a more insidious manner, by a constant flow of mucus from the the terminal bronchioles to the upper respiratory tract.
+The epithelial lining is covered with cilia, which are tiny hair-like structures that relentlessly sweep the mucus upwards.
+Even when pathogens overcome this obstacle and progress down the respiratory tree, they are met with a heavy concentration of defensive immune tissue, the amount of which increases with every division of the respiratory tree.
 
-To infect the lung the pathogen must first get there.
-Though this may at first seem like an easy task, given that gravity would seem to aid the aspiration of upper respiratory secretions, it is in fact not.
-As anyone who has had "food go down the wrong way" knows, the respiratory tree does not readily tolerate backwards flow into the lungs.
-Irritation of the bronchi results in a cough, which is a powerful coordinated neuromuscular response which propels any aspirated material up the respiratory tree. 
-A more insidious creep of pathogenic spread is dealt with by producing a constant flow of mucus, which flows from the the terminal bronchioles to the upper respiratory tract.
-The epithelial lining is covered with cilia, which are tiny hair-like structures that constantly sweep the mucus upwards.
-If the pathogen were to overcome this and arrive further done the respiratory tree, it would be met with a heavy concentration of defensive immune tissue.
-The amount of protective tissue increases with every division of the respiratory tree.
-
-The risk factors for pneumonia are best understood with reference to the defensive mechanisms employed by the respiratory tree.
+Risk factors of pneumonia are also best explained by referring to the defensive mechanisms employed by the respiratory tree.
 Processes which interfere with the cough reflex will result in a higher risk of pneumonia.
-This includes sensory deficiencies resulting in the lack of cough initiation and muscular weakness seen in certain diseases and the extremes of age.
-Pain secondary to rib fractures may lead to voluntary suppression of the cough reflex and increases the risk of pneumonia.
-Damage to the respiratory cilia and the resulting stasis of mucus will also increase the risk of pneumonia. 
-This can happen secondary to viral infection, or be secondary to the inhalation of toxic particles, such as pollution or cigarette smoke.
-Both viral and inhaled toxic particles can also cause local immune suppression which further compromises the lungs defenses.
-
-Any pathogen that is able to gain access to the lung and replicate there has the potential to cause pneumonia.
-As is the case with otitis media, the most common bacterial pathogens causing community acquired pneumonia are *Streptococcus pneumoniae*, *Haemophilus influnzae* and *Moraxella catarrhalis* [@Rodrigues2017].
-This is again most likely a function of how common they are in the upper respiratory flora.
-Unlike otitis media, there is great difficulty in determining the causative pathogen in the case of pneumonia [@Cilloniz2016].
-Ideally, a sample would be obtained from the lung itself.
-This is however unfeasible as the sampling procedure would be dangerous and would require highly trained personnel and technical resources.
-Therefore, most studies have used proxy measures such as sputum and nasopharyngeal swabs.
-This must be taken into account when evaluating the etiology of pneumonia as many potential pathogens are also colonizers of the upper respiratory tract.
-This problem is exacerbated by the inability of children to produce a quality sputum sample [@Rodrigues2017].
+These includes sensory deficiencies present in certain diseases and in the extremes of age, which result in the absence of cough initiation and muscular weakness.
+Pain associated with fractured ribs can also lead to voluntary suppression of the cough reflex and increases the risk of pneumonia.
+Another process increases the risk of pneumonia is damage to the respiratory cilia and the resulting stasis of mucus.
+Cilia damage can result from viral infection or from the inhalation of toxic particles, such as pollution or cigarette smoke, both of which can also cause local immune suppression, further compromising the lung's defences.
+Any pathogen that is able to gain access to the lung and replicate there, has the potential to cause pneumonia.
+As is the case of otitis media, the most common bacterial pathogens causing community acquired pneumonia are *Streptococcus pneumoniae*, *Haemophilus influnzae* and *Moraxella catarrhalis* [@Rodrigues2017].
+Here agein, this is most likely to be a function of how common these pathogens are in the upper respiratory flora.
+Unlike otitis media however, it is exceedingly difficult to determine the causative pathogen in the case of pneumonia [@Cilloniz2016].
+Ideally, a sample would be taken from the lung itself, but the dagners of such procedures which moreover require highly trained personnel and technical resources, render this option unfeasible.
+Most studies, therefore, use proxy measures such as sputum, blood cultures and nasopharyngeal swabs.
+In addition, the inability of children to produce a quality sputum sample exacerbates the difficulties of elucidating the causative pathogen [@Rodrigues2017].
 
 The relative contribution of pathogens varies greatly with the age and risk factor profile.
-Few studies have evaluated the distribution of pathogens causing pneumonia in children.
-Those that have, consistently show the importance of viruses in paediatric pneumonia. 
-This may be because viruses are the etiological factor, or because viruses are needed to weaken the respiratory defenses which allows bacterial disease to develop. 
-The considerable heterogeneity in the proportion of pneumonias found to caused be various pathogens underscores the importance of study population, time-period and most importantly the methods used to determine the caustaive pathogen.
-Among the first prospective studies of paediatric pneumonia was done at Chapel Hill, North Carolina from 1963-1971.
-The study looked at all lower respiratory infections in children, and found most to be caused by respiratory syncytial virus, parainfluenza virus and *Mycoplasma pneumoniae* [@Glezen1973].
-The predominance of viruses is likely due to the methods available at the time to detect etiology.
-Following the advent of pneumococcal antibody testing, pneumococcus started to be recognized as an important pathogen.
-Using pneumococcal antigens, Paisley et al. found pneumococcus to be a contributer to 19% of paediatric pneumonias from 1978-1979 [@PAISLEY1984].
-In a study conducted in Göteborg, Sweden from 1982-1983, primitive enzyme-linked immunosorbent assay was used to determine etiology and determined 13% of paediatric pneumonias to be due to *Streptococcus pneumoniae* [@CLAESSON1989].
-However, they only performed antibody testing for pneumococcus on those who were found to be pneumococcal carriers on nasopharyngeal swap.
-A prospective study of paediatric pneumonia in Turku, Finland in 1989 demonstrated pneumococcus to be a causative pathogen in 38% of cases [@Ruuskanen1992].
-From 1992-1994, 104 consecutive children presenting to a single hospital in Paris with pneumonia were enrolled in an etiological study and 14% were found to have pneumococcal pneumonia [@Gendrel1997].
-Two studies on the etiology of paediatric pneumonia have been published in populations were pneumococcal vaccination is ubiquitous.
-A study from the United Kingdom done in 2009-2011 found pneumococcus to be causative in 17.4% of cases [@Elemraid2013].
-A large prospective study of 2,358 children conducted in 2011-2012 in the United states using variety of different sampling methods only detected pneumococcus in 4% of cases [@Jain2015].
-This result is considerably different than all other studies in the paediatric population.
-The authors discuss possible reasons and speculate that the decrease might be due to universal vaccination against pneumococcus.
+Only a few studies have evaluated the distribution of pathogens which cause pneumonia in children, but they consistently demonstrate the importances of viruses in paediatric pneumonia. 
+These results may either indicate that viruses are either the primary etiological factor, or that virueses weaken the respiratory defences and allow bacterial disease to develop. 
+The considerable heterogeneity in the proportion of pneumonias found to be caused by various pathogens, underscores the importance of study population, time-period and, most importantly, the methods used in determining the causative pathogen.
+One of the first prospective studies of paediatric pneumonia was undertaken in Chapel Hill, North Carolina, from 1963 to 1971.
+The study investigated all lower respiratory infections in children, and found most to be caused by respiratory syncytial virus, parainfluenza virus and *Mycoplasma pneumoniae* [@Glezen1973].
+The predominance of causative viruses is likely due to the methods, current at the time, used to detect etiology.
+Following the advent of pneumococcal antibody testing, the recognition of pneumococcus as an important pathogen increased.
+Using pneumococcal antigens, Paisley et al. found pneumococcus to be a contributor to 19% of paediatric pneumonias from 1978-1979 [@PAISLEY1984].
+In a study conducted in Göteborg, Sweden from 1982-1983, a primitive enzyme-linked immunosorbent assay was used to determine etiology, and found that 13% of paediatric pneumonias were due to *Streptococcus pneumoniae* [@CLAESSON1989].
+In that study, however, antibody testing for pneumococcus was only performed on those who were found to be pneumococcal carriers by nasopharyngeal swap.
+A few years later, in 1989, a prospective study of paediatric pneumonia in Turku, Finland demonstrated pneumococcus to be a causative pathogen in 38% of cases [@Ruuskanen1992].
+Another etiological study in Paris in 1992-1994, enrolled 104 consecutive children who presented with pneumonia to a single hospital.
+Of those, 14% were found to have pneumococcal pneumonia [@Gendrel1997].
+In populations where pneumococcal vaccination is universal, two studies on the etiology of paediatric pneumonia have been published.
+One of these, conducted in the United Kingdom in 2009-2011, found pneumococcus to be causative in 17.4% of cases [@Elemraid2013].
+Another is a large prospective study of 2,358 children conducted in 2011-2012 in the United states, which utilized a variety of sampling methods, and detected pneumococcus in only 4% of cases, a result considerably different than all other etiological studies of paediatric pneumonia [@Jain2015].
+The authors' discussion of possible reasons for this included speculation that low proportion of pneumococcal pneumonia might be due to universal pneumococcal vaccination.
 All of the above studies indentified respiratory syncytial virus to be the most common causative pathogen.
-Of the bacterial pneumonias, all but one found pneumococcus to be the most common. 
-
-Adult pneumonia has been more extensively studies with regards to etiology, though the same problems exist.
-Beause of the difficulty in confirming the etiology of community acquired pneumonia, there are large variations in the proportions estimated to be caused be different pathogens.
-These may be true differences due to different distributions of pathogens in populations of different age and risk factors, or introduced by study design and methodology.
-A recent meta-analysis evaluated all published studies of the etiology of community acquired pneumonia in Europe from 1990-2011, and estimated the proportion caused by pneumococcus [@Rozenbaum2013].
-The inclusion critera was strict and included only radiologically confirmed pneumonia.
-Seventy-seven studies were included.
+Of the bacterial pneumonias, all but one found pneumococcus to be the most common.
+Their interpretation in complicated by the lack of direct sampling of from the lungs.
+    
+While the etiology of adult pneumonia has been more extensively studied, the same challanges are encountered as in the study of children.
+The estimated proportion of pneumonia cases caused by different pathogens varies between studies.
+This may represent a true difference in the underlying study populations or may be a result of different study design and methodology.
+A recent meta-analysis evaluated all published studies of pneumonia etiology in Europe from 1990-2011, and estimated the crude proportion caused by pneumococcus to be 19.3% [@Rozenbaum2013].
+Seventy-seven studies were included, and inclusion critera were strict, considering only radiologically confirmed pneumonia.
 The crude estimate of the proportion of pneumonia caused by *Streptococcus pneumoniae* was 19.3%.
 After adjusting for several variables using a fixed-effects meta-regression model, the estimated proportion of pneumococcal pneumonia in the average Northern European country was 15%.
 
