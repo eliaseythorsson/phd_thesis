@@ -215,9 +215,11 @@ Most studies, therefore, use proxy measures such as sputum, blood cultures and n
 In addition, the inability of children to produce a quality sputum sample exacerbates the difficulties of elucidating the causative pathogen [@Rodrigues2017].
 
 The relative contribution of pathogens varies greatly with the age and risk factor profile.
-Only a few studies have evaluated the distribution of pathogens which cause pneumonia in children, but they consistently demonstrate the importances of viruses in paediatric pneumonia. 
+Only a few studies in developed countries have evaluated the distribution of pathogens which cause pneumonia in children, but they consistently demonstrate the importances of viruses in paediatric pneumonia. 
 These results may either indicate that viruses are either the primary etiological factor, or that virueses weaken the respiratory defences and allow bacterial disease to develop. 
 The considerable heterogeneity in the proportion of pneumonias found to be caused by various pathogens, underscores the importance of study population, time-period and, most importantly, the methods used in determining the causative pathogen [@Feikin2017].
+A large multicenter study, The Pneumonia Etiology Research for Child Health (PERCH), is underway to clarify the etiology of paediatric pneumonia [@Levine2012].
+Its results have not yet been published.
 One of the first prospective studies of paediatric pneumonia was undertaken in Chapel Hill, North Carolina, from 1963 to 1971.
 The study investigated all lower respiratory infections in children, and found most to be caused by respiratory syncytial virus, parainfluenza virus and *Mycoplasma pneumoniae* [@Glezen1973].
 The predominance of causative viruses is likely due to the methods, current at the time, used to detect etiology.
@@ -235,6 +237,7 @@ The authors' discussion of possible reasons for this included speculation that l
 All of the above studies indentified respiratory syncytial virus to be the most common causative pathogen.
 Of the bacterial pneumonias, all but one found pneumococcus to be the most common.
 Their interpretation in complicated by the lack of direct sampling from the lungs.
+In studies that used strict radiological inclusion criteria and used lung aspiration to determine the etiology, pneumococcal pneumonia was by far the most common pathogen [@Gilani2012; @WorldHealthOrganization2001].
     
 While the etiology of adult pneumonia has been more extensively studied, the same challanges are encountered as in the study of children.
 The estimated proportion of pneumonia cases caused by different pathogens varies between studies.
@@ -249,13 +252,7 @@ Of those deaths, 652,572 (95%CI 586,475-720,612) were estimated to occur among c
 Large variations exist in the incidence, morbidity and mortality of pneumonia between countries.
 Pneumonia disproportionately affects developing countries, which experience over half of the pneumonia associated mortality.
 Yet pneumonia is still a large healthcare burden in developed countries, and accounts for 3%-18% of all childhood hospital admissions [@Madhi2013].
-The incidence of pneumonia in developed countries in children under five years of age is 34-40 cases per 1000 person-years. 
-
-
-
-- GP visits, antibacterial consumption, Hospitalization rates
-- Days of work lost	
-- Mortality, sequelae
+In developed countries, the incidence of pneumonia in children under five years of age is 34-40 cases per 1000 person-years.
 
 Paragraph about Icelandic literature and changing epidemiology
 - Pneumococcal pneumonia prevalence and serotype distribution
@@ -264,9 +261,6 @@ Paragraph about Icelandic literature and changing epidemiology
 - Risk factors
 
 ### Invasive pneumococcal disease
-
-
-
 
 ~ 3 -5 pages
 - Define different presentations of IPD: meningitis, bacteremia, etc.
