@@ -244,9 +244,12 @@ Seventy-seven studies were included, and inclusion critera were strict, consider
 The crude estimate of the proportion of pneumonia caused by *Streptococcus pneumoniae* was 19.3%.
 After adjusting for several variables using a fixed-effects meta-regression model, the estimated proportion of pneumococcal pneumonia in the average Northern European country was 15%.
 
-Lower respiratory infections were, in 2016, estimated to cause 2,38 million deaths worldwide and was the sixth leading cause of death [@Troeger2018].
+Lower respiratory infections were, in 2016, estimated to cause 2,38 million deaths worldwide and were the sixth leading cause of death [@Troeger2018].
 Of those deaths, 652,572 (95%CI 586,475-720,612) were estimated to occur among children under five years of age, making lower respiratory infections the leading cause of death in this age-group.
-Among both children and adults in high income countries, pneumonia is the most commmon reason for hospital admission.
+Large variations exist in the incidence, morbidity and mortality of pneumonia between countries.
+Pneumonia disproportionately affects developing countries, which experience over half of the pneumonia associated mortality.
+Yet pneumonia is still a large healthcare burden in developed countries, and accounts for 3%-18% of all childhood hospital admissions [@Madhi2013].
+The incidence of pneumonia in developed countries in children under five years of age is 34-40 cases per 1000 person-years. 
 
 
 
