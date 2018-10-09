@@ -5,12 +5,12 @@ library(knitr)
 library(tidyverse)
 library(kableExtra)
 
-# bookdown::preview_chapter("01-intro.Rmd",
-# output_format = "bookdown::word_document2",
-# output_file = paste0("thesis-intro-", format(Sys.Date(), ("%d-%m-%y")), ".docx"),
-# output_dir = "chapter-previews",
-# output_options = list(reference_docx = "sniðmát doktorsritgerða.docx")
-# )
+bookdown::preview_chapter("01-intro.Rmd",
+output_format = "bookdown::word_document2",
+output_file = paste0("thesis-intro-", format(Sys.Date(), ("%d-%m-%y")), ".docx"),
+output_dir = "chapter-previews",
+output_options = list(reference_docx = "sniðmát doktorsritgerða.docx")
+)
 ```
 
 ```{r echo = FALSE}
