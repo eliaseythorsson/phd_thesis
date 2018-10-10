@@ -158,7 +158,14 @@ Mastoiditis develops in XXX% of cases and will require hospital admission and ad
 Severe AOM can result in hearing loss and has been estimated to occur XXX%.
 For various reasons, parents and clinicians may opt to treat recurrent or chronic otitis media with the placement of a tympanic tube.
 Tympanic tube procedures are consequently the most common surgical procedure in the paediatric population.
-The incidence of tympanic tube placement varies greatly between countries.
+The incidence of tympanic tube placement varies greatly between countries. 
+Even within the United States, there are large variations in the incidence. 
+In 1988, the prevalence rate of tympanostomy tube placements among children younger than eighteen in the United States was estimated to be 13% (95%CI 11%-14%) [@Bright1993].
+In Northern New England alone, the incidence varied between different paediatric surgical areas, from 3.79 to 13.15 procedures per 1000 person-years [@Parker2018].
+The variation can possibly be explained by different thresholds for performing the procedure.
+By carefully examining the medical records of all children who underwent tympanic tube procedures in five hospitals in New York, Keyhani et al. were able to show that 92% of the procedures would not have been recommended according to the guidelines in force at the time of surgery [@Keyhani2008].
+
+
 
 The incidence AOM, its microbiology, treatment and complications have been evaluated in Iceland.
 In 1990, a retrospective analysis of two birth-cohorts in a small village in Iceland showed a 66% cumulative incidence of AOM by 24 months of age [@Bjarnason1991].
