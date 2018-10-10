@@ -156,9 +156,13 @@ Likewise, otitis media is also responsible for the majority of antimicrobial pre
 Though often benign and self-limiting, AOM can progress to recurrent or chronic infection and require more invasive treatment.
 Mastoiditis develops in XXX% of cases and will require hospital admission and administration of intravenous antimicrobials.
 Severe AOM can result in hearing loss and has been estimated to occur XXX%.
+
 For various reasons, parents and clinicians may opt to treat recurrent or chronic otitis media with the placement of a tympanic tube.
-Tympanic tube procedures are consequently the most common surgical procedure in the paediatric population.
-The incidence of tympanic tube placement varies greatly between countries. 
+Tympanic tube procedures are consequently the most common surgical procedure in the paediatric population [@Black1984; @Cullen2009].
+Despite their popularity, there is little evidence for the use of tympanostomy tubes for their two most common indications; recurrent otitis media and hearing loss associated with otitis media with effusion [@Venekamp2018; @Browning2010].
+The incidence of tympanic tube placement varies greatly between countries.
+In Sweden, the incidence of procedures is low, and was in 1996, estimated to be 10 per 1000 person-years [@Florentzson2012].
+
 Even within the United States, there are large variations in the incidence. 
 In 1988, the prevalence rate of tympanostomy tube placements among children younger than eighteen in the United States was estimated to be 13% (95%CI 11%-14%) [@Bright1993].
 In Northern New England alone, the incidence varied between different paediatric surgical areas, from 3.79 to 13.15 procedures per 1000 person-years [@Parker2018].
