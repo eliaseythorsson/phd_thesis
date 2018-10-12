@@ -195,7 +195,7 @@ While the ideal classification system would be based on the antimicrobial suscep
 Most commonly, pneumonia is classified by assigning cases based upon the circumstances under which it was diagnosed. Pneumonia is classified as community acquired pneumonia if it is detected in people with limited contact with the healthcare system in the weeks prior to diagnosis.
 This is the most common type of pneumonia. 
 Remaining pneumonia cases are classified as healthcare associated pneumonia, or hospital-acquired pneumonia if diagnosed during a hospital admission.
-This simple classification system is a remarkably good predictor of antimicrobial resistance in the causative pathogen, and informs the choice of antimicrobial agents.
+This simple classification system is remarkably good at predicting antimicrobial resistance in the causative pathogen, and informs the choice of antimicrobial agents.
 
 The mechanism by which pathogens gain access to the lung and replicate there causing infection, is best understood by reviewing the pulmonary anatomy. 
 The pulmonary system has an inverted tree configuration.
