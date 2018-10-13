@@ -270,7 +270,6 @@ Paragraph about Icelandic literature and changing epidemiology
 - Pneumococcal pneumonia prevalence and serotype distribution
 - Rate of hospitalization, healthcare consumption
 - Rate of sequelae
-- Risk factors
 
 ### Invasive pneumococcal disease
 
