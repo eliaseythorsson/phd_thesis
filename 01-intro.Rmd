@@ -162,7 +162,6 @@ Mastoiditis develops in XXX% of cases and will require hospital admission and ad
 Severe AOM can result in hearing loss and has been estimated to occur XXX%.
 
 #### Tympanostomy tube procedures
-
 For various reasons, parents and clinicians may opt to treat recurrent or chronic otitis media with the placement of a tympanic tube.
 Tympanic tube procedures are consequently the most common surgical procedure in the paediatric population [@Black1984; @Cullen2009].
 Despite their popularity, there is little evidence for the use of tympanostomy tubes for their two most common indications; recurrent otitis media and hearing loss associated with otitis media with effusion [@Venekamp2018; @Browning2010].
