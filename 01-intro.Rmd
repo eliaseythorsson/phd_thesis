@@ -170,7 +170,6 @@ Inconsistent evidence regarding the efficacy of tympanostomy tube procedures is 
 
 In Sweden, the incidence of procedures is low, and was in 1996, estimated to be 10 per 1000 person-years [@Florentzson2012].
 The incidence was 5.6-6.7 procedures per 1000 person-years in Australia [@Spilsbury2006].
-
 Even within the United States, there are large variations in the incidence. 
 In 1988, the prevalence rate of tympanostomy tube placements among children younger than eighteen in the United States was estimated to be 13% (95%CI 11%-14%) [@Bright1993].
 In Northern New England alone, the incidence varied between different paediatric surgical areas, from 3.79 to 13.15 procedures per 1000 person-years [@Parker2018].
