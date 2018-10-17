@@ -25,7 +25,7 @@
 <meta name="author" content="Elías Sæbjörn Eyþórsson">
 
 
-<meta name="date" content="2018-10-10">
+<meta name="date" content="2018-10-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -87,7 +87,11 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="aims.html"><a href="aims.html"><i class="fa fa-check"></i><b>3</b> Aims</a></li>
 <li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Materials and methods</a><ul>
-<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#data-collection-and-sources"><i class="fa fa-check"></i><b>4.1</b> Data collection and sources</a></li>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#data-collection-and-sources"><i class="fa fa-check"></i><b>4.1</b> Data collection and sources</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="methods.html"><a href="methods.html#landspitali-university-hospital-inpatient-registry"><i class="fa fa-check"></i><b>4.1.1</b> Landspitali University Hospital inpatient registry</a></li>
+<li class="chapter" data-level="4.1.2" data-path="methods.html"><a href="methods.html#the-national-drug-prescription-database"><i class="fa fa-check"></i><b>4.1.2</b> The National Drug Prescription Database</a></li>
+<li class="chapter" data-level="4.1.3" data-path="methods.html"><a href="methods.html#the-primary-care-database"><i class="fa fa-check"></i><b>4.1.3</b> The Primary Care Database</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
 <li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a></li>
@@ -116,15 +120,275 @@
 <h1><span class="header-section-number">4</span> Materials and methods</h1>
 <div id="data-collection-and-sources" class="section level2">
 <h2><span class="header-section-number">4.1</span> Data collection and sources</h2>
-<p>Data was collected from multiple whole population registries and a single hospital registry for the study period from the 1st of January 2005 to the 31st of December 2017. All data was identifiable to the individual level based on governmental issued national identification numbers. Every Icelandic resident is issued a national indentification number at birth or when granted residency. The national indentification number is a ten-digit numerical sequence. The first six numbers represent the individual’s date of birth in the form dd/mm/yy. The tenth digit represents the century in which the individual was born, e.g. the national indentification number for a person born in 1970 would end in nine. Digits seven through nine are generated individually through a random sequence. A national indentification number is not reused upon the death of the individual, and each individual receives one and only one number over the course of their lifetime. The national indentification number can therefore be used to accurately identify a unique individual through different administrative databases and through time. Though the national indentification number was used as the basis to identify unique individuals and link across multiple data sets, the researchers did not receive the numbers directly. Rather, all datasets were first sent to the Directorate of Health where staff anonymized the data and created unique study identification numbers. The data was then released to the researchers. These unique study identification numbers will be referred to as study IDs in all further chapters of this thesis.</p>
-<p>The data used in this study benefits from the stability of its sources. Electronic medical records have been used ubiquitously in Iceland from the beginning of the period. The same electronic medical record software, Saga, was used by all health-care providers and institutions during the whole study period. One diagnostic coding system, The International Classification of Diseases version 10, has been in use during the whole study period and procedures have always been classified using the NOMESCO Classification of Surgical Procedures. Drugs are classified using the Anatomical-Therapeutic-Chemical (ATC) classification system of the World Health Organization.</p>
-<p>Each database included the same demographic data with few exceptions. The common demographic data will be described here and discrepancies from this will be noted in the relevant subchapter for the specific dataset. Common demographic data included the following; gender, date of birth, and age and legal residence at the time of the recorded observation. Legal residence was aggregated to the postal code. Hereafter, each administrative data set will be described in detail.</p>
-<p>The Directorate of Health</p>
-<p>The Icelandic Directorate of Health is responsible for the collection and maintenance of several whole population registries used in this thesis. They are; the National Drug Prescription Database (NDPD), the National Vaccine Registry (NVR) and the Primary Care Database (PCD). Furthermore, staff of the Directorate of Health were responsible for the anonymization of all the study data and the creation of study IDs.</p>
-<p>The National Drug Prescription Database</p>
+<p>Data was collected from multiple whole population registries and a single hospital registry. The study period was from January 1, 2005 until December 31, 2017. All data was identifiable down to the individual level based on national identification numbers, which are issued to every Icelandic resident at birth or when granted residency. A national identification number is not reused upon the death, and each individual receives one and only one number over the course of their lifetime. Data was collected from different sources and sent to the Directorate of Health for processing. There, the data was linked using national identification numbers, before being anonymized and subsequently released to the research team. A new study identification number was created in the cleaning process, which is unique to the study participant. These unique study identification numbers will be referred to as study IDs in all further chapters of this thesis.</p>
+<p>The data used in this study benefits from the stability of its sources. Electronic medical records have been ubiquitous in Iceland during the study period. The same electronic medical record software, Saga, was used by all health-care providers and institutions throughout. The International Classification of Diseases, 10th revision (ICD-10), is the only diagnostic coding system which has been in use during the whole study period. All procedures have been coded with the NOMESCO Classification of Surgical Procedures (NCSP). Drugs are classified using the Anatomical-Therapeutic-Chemical (ATC) classification system of the World Health Organization.</p>
+<p>In the following sub-chapters, each of the registries providing study data will be reviewed.</p>
+<div id="landspitali-university-hospital-inpatient-registry" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Landspitali University Hospital inpatient registry</h3>
+<p>Landspitali University Hospital is the only tertiary hospital in Iceland. It also functions as a primary and secondary hospital for the capital area, serving 65% of the Icelandic population. Children’s Hospital Iceland, which is a component hospital of Landspitali, is the only paediatric hospital in Iceland. In 2017, the total number of hospital beds in Iceland was 1,050 <span class="citation">(Gobierno de España, Ministerio de Industria, and Instituto para la Diversificación y Ahorro de Energía IDAE <a href="#ref-OECD2017">2017</a>)</span>. Of those, 687 were at Landspitali University Hospital. The inpatient registry contains information on all emergency department and outpatient visits, and all hospital admissions to Landspitali University Hospital. For the period of January 1, 2005 to December 31, 2017, data were extracted on all unplanned acute-care visits and hospital admissions with ICD-10 discharge diagnoses compatible with respiratory infections (see Table <a href="methods.html#tab:icd10list">4.1</a>). Additionally, any visit or hospital admission associated with NCSP procedural codes in Table <a href="methods.html#tab:ncsplist">4.2</a>) was also extracted.</p>
+<table>
+<caption><span id="tab:icd10list">Table 4.1: </span>The International Classification of Diseases, 10th revision codes used in the current study</caption>
+<thead>
+<tr class="header">
+<th align="left">ICD-10 code</th>
+<th align="left">Disease</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A40</td>
+<td align="left">Streptococcal sepsis</td>
+</tr>
+<tr class="even">
+<td align="left">A41</td>
+<td align="left">Other sepsis</td>
+</tr>
+<tr class="odd">
+<td align="left">A48</td>
+<td align="left">Other bacterial diseases, not elsewhere classified</td>
+</tr>
+<tr class="even">
+<td align="left">A49</td>
+<td align="left">Bacterial infection of unspecified site</td>
+</tr>
+<tr class="odd">
+<td align="left">B00</td>
+<td align="left">Herpesviral [herpes simplex] infections</td>
+</tr>
+<tr class="even">
+<td align="left">B08</td>
+<td align="left">Other viral infections characterized by skin and mucous membrane lesions, not elsewhere classified</td>
+</tr>
+<tr class="odd">
+<td align="left">B33</td>
+<td align="left">Other viral diseases, not elsewhere classified</td>
+</tr>
+<tr class="even">
+<td align="left">B34</td>
+<td align="left">Viral infection of unspecified site</td>
+</tr>
+<tr class="odd">
+<td align="left">B95</td>
+<td align="left">Streptococcus, Staphylococcus, and Enterococcus as the cause of diseases classified elsewhere</td>
+</tr>
+<tr class="even">
+<td align="left">B96</td>
+<td align="left">Other bacterial agents as the cause of diseases classified elsewhere</td>
+</tr>
+<tr class="odd">
+<td align="left">G00</td>
+<td align="left">Bacterial meningitis,not elsewhere classified</td>
+</tr>
+<tr class="even">
+<td align="left">H65</td>
+<td align="left">Nonsuppurative otitis media</td>
+</tr>
+<tr class="odd">
+<td align="left">H66</td>
+<td align="left">Suppurative and unspecified otitis media</td>
+</tr>
+<tr class="even">
+<td align="left">H70</td>
+<td align="left">Mastoiditis and related conditions</td>
+</tr>
+<tr class="odd">
+<td align="left">H72</td>
+<td align="left">Perforation of tympanic membrane</td>
+</tr>
+<tr class="even">
+<td align="left">H73</td>
+<td align="left">Other disorders of tympanic membrane</td>
+</tr>
+<tr class="odd">
+<td align="left">J00</td>
+<td align="left">Acute nasopharyngitis [common cold]</td>
+</tr>
+<tr class="even">
+<td align="left">J01</td>
+<td align="left">Acute sinusitis</td>
+</tr>
+<tr class="odd">
+<td align="left">J02</td>
+<td align="left">Acute pharyngitis</td>
+</tr>
+<tr class="even">
+<td align="left">J03</td>
+<td align="left">Acute tonsillitis</td>
+</tr>
+<tr class="odd">
+<td align="left">J04</td>
+<td align="left">Acute laryngitis and tracheitis</td>
+</tr>
+<tr class="even">
+<td align="left">J05</td>
+<td align="left">Acute obstructive laryngitis [croup] and epiglottitis</td>
+</tr>
+<tr class="odd">
+<td align="left">J06</td>
+<td align="left">Acute upper respiratory infections of multiple and unspecified sites</td>
+</tr>
+<tr class="even">
+<td align="left">J09</td>
+<td align="left">Influenza due to certain identified influenza viruses</td>
+</tr>
+<tr class="odd">
+<td align="left">J10</td>
+<td align="left">Influenza due to other identified influenza virus</td>
+</tr>
+<tr class="even">
+<td align="left">J11</td>
+<td align="left">Influenza due to unidentified influenza virus</td>
+</tr>
+<tr class="odd">
+<td align="left">J12</td>
+<td align="left">Viral pneumonia, not elsewhere classified</td>
+</tr>
+<tr class="even">
+<td align="left">J13</td>
+<td align="left">Pneumonia due to Streptococcus pneumoniae</td>
+</tr>
+<tr class="odd">
+<td align="left">J14</td>
+<td align="left">Pneumonia due to Hemophilus influenzae</td>
+</tr>
+<tr class="even">
+<td align="left">J15</td>
+<td align="left">Bacterial pneumonia, not elsewhere classified</td>
+</tr>
+<tr class="odd">
+<td align="left">J16</td>
+<td align="left">Pneumonia due to other infectious organisms, not elsewhere classified</td>
+</tr>
+<tr class="even">
+<td align="left">J17</td>
+<td align="left">Pneumonia in diseases classified elsewhere</td>
+</tr>
+<tr class="odd">
+<td align="left">J18</td>
+<td align="left">Pneumonia, unspecified organism</td>
+</tr>
+<tr class="even">
+<td align="left">J20</td>
+<td align="left">Acute bronchitis</td>
+</tr>
+<tr class="odd">
+<td align="left">J21</td>
+<td align="left">Acute bronchiolitis</td>
+</tr>
+<tr class="even">
+<td align="left">J22</td>
+<td align="left">Unspecified acute lower respiratory infection</td>
+</tr>
+<tr class="odd">
+<td align="left">J32</td>
+<td align="left">Chronic sinusitis</td>
+</tr>
+<tr class="even">
+<td align="left">J36</td>
+<td align="left">Peritonsillar abscess</td>
+</tr>
+<tr class="odd">
+<td align="left">J40</td>
+<td align="left">Bronchitis, not specified as acute or chronic</td>
+</tr>
+<tr class="even">
+<td align="left">J85</td>
+<td align="left">Abscess of lung and mediastinum</td>
+</tr>
+<tr class="odd">
+<td align="left">J86</td>
+<td align="left">Pyothorax</td>
+</tr>
+<tr class="even">
+<td align="left">J90</td>
+<td align="left">Pleural effusion, not elsewhere classified</td>
+</tr>
+<tr class="odd">
+<td align="left">N30</td>
+<td align="left">Cystitis</td>
+</tr>
+<tr class="even">
+<td align="left">N39</td>
+<td align="left">Other disorders of urinary system</td>
+</tr>
+<tr class="odd">
+<td align="left">R05</td>
+<td align="left">Cough</td>
+</tr>
+<tr class="even">
+<td align="left">R50</td>
+<td align="left">Fever of other and unknown origin</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:ncsplist">Table 4.2: </span>NOMESCO Classification of Surgical Procedures codes used in the current study</caption>
+<thead>
+<tr class="header">
+<th align="left">NCSP code</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">EMB 00</td>
+<td align="left">Excision of lesion of tonsil or adenoid</td>
+</tr>
+<tr class="even">
+<td align="left">EMB 10</td>
+<td align="left">Tonsillectomy</td>
+</tr>
+<tr class="odd">
+<td align="left">EMB 15</td>
+<td align="left">Intracapsular destruction of tonsils</td>
+</tr>
+<tr class="even">
+<td align="left">EMB 20</td>
+<td align="left">Adenotonsillectomy</td>
+</tr>
+<tr class="odd">
+<td align="left">EMB 30</td>
+<td align="left">Adenotomy</td>
+</tr>
+<tr class="even">
+<td align="left">EMB 99</td>
+<td align="left">Other excision on tonsils and adenoids</td>
+</tr>
+<tr class="odd">
+<td align="left">EMW 99</td>
+<td align="left">Other operation on tonsil or adenoids</td>
+</tr>
+<tr class="even">
+<td align="left">DCA 10</td>
+<td align="left">Paracentesis of tympanic membrane</td>
+</tr>
+<tr class="odd">
+<td align="left">DCA 20</td>
+<td align="left">Insertion of ventilating tube through tympanic membrane</td>
+</tr>
+<tr class="even">
+<td align="left">DCW 00</td>
+<td align="left">Removal of ventilating tube from tympanic membrane</td>
+</tr>
+</tbody>
+</table>
+<p>The data included information on date of the visit, hospital length of stay, which departments were involved and a detailed breakdown of costs associated with the visit.</p>
+<p>Data from the inpatient registry was used in papers I, IV, V and VI.</p>
+</div>
+<div id="the-national-drug-prescription-database" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> The National Drug Prescription Database</h3>
 <p>The NDPD is a whole population database collected and maintained by the Icelandic Directorate of Health from the 1st of January 2005. It contains information on all filled drug prescriptions in Iceland. All pharmacies are required by law to collect data on each filled prescription and submit this to the NDPD. An important distinction must be made between a filled prescription and a prescription. The NDPD receives information if and when a prescription is filled. This means that the NDPD does not contain information on prescriptions that were never filled by the patient. This also means that all prescriptions contained within the NDPD were bought and received by the patient. Extensive validation and error testing has been performed by the Directorate of Health to ensure the robustness and coverage of the NDPD. The submission to the NDPD has been automated electronically and coupled with the process by which drugs are dispensed at the pharmacies, essentially excluding the possibility of a filled prescription not being registered. The NDPD included demographic data as previously described.</p>
-<p>The Primary Care Database</p>
+</div>
+<div id="the-primary-care-database" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> The Primary Care Database</h3>
 
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-OECD2017">
+<p>Gobierno de España, Turismo y Comercio Ministerio de Industria, and Instituto para la Diversificación y Ahorro de Energía IDAE. 2017. <em>Health at a Glance 2017</em>. Health at a Glance. OECD. doi:<a href="https://doi.org/10.1787/health_glance-2017-en">10.1787/health_glance-2017-en</a>.</p>
 </div>
 </div>
             </section>

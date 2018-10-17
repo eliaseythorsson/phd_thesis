@@ -3,7 +3,6 @@
 ```{r echo = FALSE, message = FALSE, warning = FALSE, error = FALSE}
 library(knitr)
 library(tidyverse)
-library(kableExtra)
 
 # bookdown::preview_chapter("01-intro.Rmd",
 # output_format = "bookdown::word_document2",
@@ -13,12 +12,22 @@ library(kableExtra)
 # )
 ```
 
-```{r echo = FALSE}
+```{r abbreviations}
 data_frame(
-  Term = c("Acute otitis media", "Community-acquired pneumonia", "Hospital-aquired pneumonia", "Respiratory syncytial virus", "Enzyme-linked immunosorbent assay"),
-  Abbreviation = c("AOM", "CAP", "HAP", "RSV", "ELISA")) %>%
-  arrange(Term) %>% # i.e. alphabetical order by Term
-  kable(booktab = T)
+    Term = c(
+        "Acute otitis media",
+        "Community-acquired pneumonia",
+        "Hospital-aquired pneumonia",
+        "Respiratory syncytial virus",
+        "Enzyme-linked immunosorbent assay",
+        "International Classification of Diseases, 10th revision",
+        "NOMESCO Classification of Surgical Procedures",
+        "Anatomical-Therapeutic-Chemical"
+        ),
+    Abbreviation = c("AOM", "CAP", "HAP", "RSV", "ELISA", "ICD-10", "NCSP", "ATC")
+    ) %>%
+    arrange(Term) %>% # i.e. alphabetical order by Term
+    kable(booktab = T, caption = "List of abbreviations")
 ```
 
 
@@ -88,11 +97,12 @@ It was originally named *Micrococcus pasteuri* by Sternberg [@Sternberg1881], bu
 It was not until 1974 that pneumococcus received its current name, *Streptococcus pneumoniae* [@Deibel1974].
 Because pneumococcus is both a commensal bacterium and a pathogen, its relationship with humans is complex.
 Most children are colonized by pneumococcus within the first months of life [@Leino2001a]. 
-The serotype distribution of the initial colonization in a child is influenced by the distribution of serotypes within the child's family . 
+The serotype distribution of the initial colonization in a child is influenced by the distribution of serotypes within the child's family.
 Over the course of the their lifetime, a child will be colonized by many different serotypes.
 Their immune system will learn to recognize newly acquired serotypes and will either clear the colonization or maintain an equilibrium in which the serotype is kept within a certain limit of reproduction [@Dowling1971; @Melegaro2004].
 In this manner, the contribution of pneumococcus to the human upper respiratory flora is in a state of constant flux.
 New serotypes enter while the old exit, and the relative density of serotypes changes.
+
 In some cases, the equilibrium between pneumococcus and the host is destabilized, triggering a rapid growth of pneumococcus and resulting in clinical manifestations.
 It is thought that this is most likely to occur directly following the acquisition of new serotype into the nasopharyngeal flora [@Casey2010].
 Because pneumococcus is carried in the nasopharynx, this overgrowth results in infections of adjacent tissue; the sinuses, middle ear and conjunctiva.
@@ -162,6 +172,7 @@ Mastoiditis develops in XXX% of cases and will require hospital admission and ad
 Severe AOM can result in hearing loss and has been estimated to occur XXX%.
 
 #### Tympanostomy tube procedures
+
 For various reasons, parents and clinicians may opt to treat recurrent or chronic otitis media with the placement of a tympanic tube.
 Tympanic tube procedures are consequently the most common surgical procedure in the paediatric population [@Black1984; @Cullen2009].
 Despite their popularity, there is little evidence for the use of tympanostomy tubes for their two most common indications; recurrent otitis media and hearing loss associated with otitis media with effusion [@Venekamp2018; @Browning2010].
@@ -171,9 +182,11 @@ In Sweden, the incidence of procedures is low, and was in 1996, estimated to be 
 The incidence was 5.6-6.7 procedures per 1000 person-years in Australia [@Spilsbury2006].
 Even within the United States, there are large variations in the incidence. 
 In 1988, the prevalence rate of tympanostomy tube placements among children younger than eighteen in the United States was estimated to be 13% (95%CI 11%-14%) [@Bright1993].
-In Northern New England alone, the incidence varied between different paediatric surgical areas, from 3.79 to 13.15 procedures per 1000 person-years [@Parker2018].
+In Northern New England alone, the incidence varied between different paediatric surgical areas, from 3.79 to 13.15 procedures per 1000 person-years [@Parker2016].
 The variation can possibly be explained by different thresholds for performing the procedure.
 By carefully examining the medical records of all children who underwent tympanic tube procedures in five hospitals in New York, Keyhani et al. were able to show that 92% of the procedures would not have been recommended according to the guidelines in force at the time of surgery [@Keyhani2008].
+
+#### Acute otitis media in Iceland
 
 The incidence AOM, its microbiology, treatment and complications have been evaluated in Iceland.
 In 1990, a retrospective analysis of two birth-cohorts in a small village in Iceland showed a 66% cumulative incidence of AOM by 24 months of age [@Bjarnason1991].
@@ -220,18 +233,21 @@ Processes which interfere with the cough reflex will result in a higher risk of 
 These includes sensory deficiencies present in certain diseases and in the extremes of age, which result in the absence of cough initiation and muscular weakness.
 Pain associated with fractured ribs can also lead to voluntary suppression of the cough reflex and increases the risk of pneumonia.
 Another process increases the risk of pneumonia is damage to the respiratory cilia and the resulting stasis of mucus.
-Cilia damage can result from viral infection or from the inhalation of toxic particles, such as pollution or cigarette smoke, both of which can also cause local immune suppression, further compromising the lung's defences.
+Cilia damage can result from viral infection or from the inhalation of toxic particles, such as pollution or cigarette smoke, both of which can also cause local immune suppression, further compromising the lung's defenses.
+
+#### Pathogens causing pneumonia
+
 Any pathogen that is able to gain access to the lung and replicate there, has the potential to cause pneumonia.
 As is the case of otitis media, the most common bacterial pathogens causing community acquired pneumonia are *Streptococcus pneumoniae*, *Haemophilus influnzae* and *Moraxella catarrhalis* [@Rodrigues2017].
-Here agein, this is most likely to be a function of how common these pathogens are in the upper respiratory flora.
+Here again, this is most likely to be a function of how common these pathogens are in the upper respiratory flora.
 Unlike otitis media however, it is exceedingly difficult to determine the causative pathogen in the case of pneumonia [@Cilloniz2016; @Feikin2017].
-Ideally, a sample would be taken from the lung itself, but the dagners of such procedures which moreover require highly trained personnel and technical resources, render this option unfeasible.
+Ideally, a sample would be taken from the lung itself, but the dangers of such procedures which moreover require highly trained personnel and technical resources, render this option unfeasible.
 Most studies, therefore, use proxy measures such as sputum, blood cultures and nasopharyngeal swabs.
 In addition, the inability of children to produce a quality sputum sample exacerbates the difficulties of elucidating the causative pathogen [@Rodrigues2017].
 
 The relative contribution of pathogens varies greatly with the age and risk factor profile.
-Only a few studies in developed countries have evaluated the distribution of pathogens which cause pneumonia in children, but they consistently demonstrate the importances of viruses in paediatric pneumonia. 
-These results may either indicate that viruses are either the primary etiological factor, or that virueses weaken the respiratory defences and allow bacterial disease to develop. 
+Only a few studies in developed countries have evaluated the distribution of pathogens which cause pneumonia in children, but they consistently demonstrate the importance of viruses in paediatric pneumonia. 
+These results may either indicate that viruses are either the primary etiological factor, or that viruses weaken the respiratory defenses and allow bacterial disease to develop. 
 The considerable heterogeneity in the proportion of pneumonias found to be caused by various pathogens, underscores the importance of study population, time-period and, most importantly, the methods used in determining the causative pathogen [@Feikin2017].
 A large multicenter study, The Pneumonia Etiology Research for Child Health (PERCH), is underway to clarify the etiology of paediatric pneumonia [@Levine2012].
 Its results have not yet been published.
@@ -249,16 +265,16 @@ In populations where pneumococcal vaccination is universal, two studies on the e
 One of these, conducted in the United Kingdom in 2009-2011, found pneumococcus to be causative in 17.4% of cases [@Elemraid2013].
 Another is a large prospective study of 2,358 children conducted in 2011-2012 in the United states, which utilized a variety of sampling methods, and detected pneumococcus in only 4% of cases, a result considerably different than all other etiological studies of paediatric pneumonia [@Jain2015].
 The authors' discussion of possible reasons for this included speculation that low proportion of pneumococcal pneumonia might be due to universal pneumococcal vaccination.
-All of the above studies indentified respiratory syncytial virus to be the most common causative pathogen.
+All of the above studies identified respiratory syncytial virus to be the most common causative pathogen.
 Of the bacterial pneumonias, all but one found pneumococcus to be the most common.
 Their interpretation in complicated by the lack of direct sampling from the lungs.
 In studies that used strict radiological inclusion criteria and used lung aspiration to determine the etiology, pneumococcal pneumonia was by far the most common pathogen [@Gilani2012; @WorldHealthOrganization2001].
     
-While the etiology of adult pneumonia has been more extensively studied, the same challanges are encountered as in the study of children.
+While the etiology of adult pneumonia has been more extensively studied, the same challenges are encountered as in the study of children.
 The estimated proportion of pneumonia cases caused by different pathogens varies between studies.
 This may represent a true difference in the underlying study populations or may be a result of different study design and methodology.
 A recent meta-analysis evaluated all published studies of pneumonia etiology in Europe from 1990-2011, and estimated the crude proportion caused by pneumococcus to be 19.3% [@Rozenbaum2013].
-Seventy-seven studies were included, and inclusion critera were strict, considering only radiologically confirmed pneumonia.
+Seventy-seven studies were included, and inclusion criteria were strict, considering only radiologically confirmed pneumonia.
 The crude estimate of the proportion of pneumonia caused by *Streptococcus pneumoniae* was 19.3%.
 After adjusting for several variables using a fixed-effects meta-regression model, the estimated proportion of pneumococcal pneumonia in the average Northern European country was 15%.
 
@@ -471,7 +487,7 @@ It is debatable whether this should be considered a randomized controlled trial 
 Even if the study were to be considered randomized, it is unclear how to interpret a study that does not even have 80% power to detect a difference twice as large as the the estimates presented by previous randomized controlled trials. 
 
 
-```{r Table 1, tidy = FALSE, echo = FALSE}
+```{r rctaom}
 knitr::kable(
     data.frame(
         study = c("Black, 2000 & Fireman, 2003", "Dagan, 2001", "Eskola, 2001", "Kilpi, 2003", "Prymula, 2006", "O'Brien, 2008"),
@@ -482,7 +498,8 @@ knitr::kable(
         efficacy = c("7.8% (5.4%-10.2%)", "17% (-2%-33%)", "6% (-4%-16%)", "-1% (-12%-10%", "33.6% (20.8%-44.3%", "-0.4% (-19.4%-15.6%")
     ),
     col.names = c("Study", "Vaccine", "Enrollment period", "Country", "No. of children", "Efficacy against Otitis media episodes"),
-    booktab = TRUE
+    booktab = TRUE,
+    caption = "Randomized controlled trials evaluating the efficacy of Pneumococcal conjugate vaccines on otitis media"
 )
 ```
 

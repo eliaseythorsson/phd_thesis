@@ -2,39 +2,125 @@
 
 ## Data collection and sources
 
-Data was collected from multiple whole population registries and a single hospital registry for the study period from the 1st of January 2005 to the 31st of December 2017.
-All data was identifiable to the individual level based on governmental issued national identification numbers. 
-Every Icelandic resident is issued a national indentification number at birth or when granted residency.
-The national indentification number is a ten-digit numerical sequence.
-The first six numbers represent the individual’s date of birth in the form dd/mm/yy.
-The tenth digit represents the century in which the individual was born, e.g. the national indentification number for a person born in 1970 would end in nine.
-Digits seven through nine are generated individually through a random sequence.
-A national indentification number is not reused upon the death of the individual, and each individual receives one and only one number over the course of their lifetime.
-The national indentification number can therefore be used to accurately identify a unique individual through different administrative databases and through time.
-Though the national indentification number was used as the basis to identify unique individuals and link across multiple data sets, the researchers did not receive the numbers directly.
-Rather, all datasets were first sent to the Directorate of Health where staff anonymized the data and created unique study identification numbers.
-The data was then released to the researchers.
+Data was collected from multiple whole population registries and a single hospital registry.
+The study period was from January 1, 2005 until December 31, 2017.
+All data was identifiable down to the individual level based on national identification numbers, which are issued to every Icelandic resident at birth or when granted residency.
+A national identification number is not reused upon the death, and each individual receives one and only one number over the course of their lifetime.
+Data was collected from different sources and sent to the Directorate of Health for processing. 
+There, the data was linked using national identification numbers, before being anonymized and subsequently released to the research team.
+A new study identification number was created in the cleaning process, which is unique to the study participant.
 These unique study identification numbers will be referred to as study IDs in all further chapters of this thesis. 
 
 The data used in this study benefits from the stability of its sources.
-Electronic medical records have been used ubiquitously in Iceland from the beginning of the period.
-The same electronic medical record software, Saga, was used by all health-care providers and institutions during the whole study period.
-One diagnostic coding system, The International Classification of Diseases version 10, has been in use during the whole study period and procedures have always been classified using the NOMESCO Classification of Surgical Procedures. 
+Electronic medical records have been ubiquitous in Iceland during the study period.
+The same electronic medical record software, Saga, was used by all health-care providers and institutions throughout.
+The International Classification of Diseases, 10th revision (ICD-10), is the only diagnostic coding system which has been in use during the whole study period.
+All procedures have been coded with the NOMESCO Classification of Surgical Procedures (NCSP). 
 Drugs are classified using the Anatomical-Therapeutic-Chemical (ATC) classification system of the World Health Organization. 
 
-Each database included the same demographic data with few exceptions.
-The common demographic data will be described here and discrepancies from this will be noted in the relevant subchapter for the specific dataset.
-Common demographic data included the following; gender, date of birth, and age and legal residence at the time of the recorded observation. 
-Legal residence was aggregated to the postal code.
-Hereafter, each administrative data set will be described in detail.
+In the following sub-chapters, each of the registries providing study data will be reviewed. 
 
-The Directorate of Health
+### Landspitali University Hospital inpatient registry
 
-The Icelandic Directorate of Health is responsible for the collection and maintenance of several whole population registries used in this thesis.
-They are; the National Drug Prescription Database (NDPD), the National Vaccine Registry (NVR) and the Primary Care Database (PCD).
-Furthermore, staff of the Directorate of Health were responsible for the anonymization of all the study data and the creation of study IDs. 
+Landspitali University Hospital is the only tertiary hospital in Iceland.
+It also functions as a primary and secondary hospital for the capital area, serving 65% of the Icelandic population.
+Children's Hospital Iceland, which is a component hospital of Landspitali, is the only paediatric hospital in Iceland.
+In 2017, the total number of hospital beds in Iceland was 1,050 [@OECD2017].
+Of those, 687 were at Landspitali University Hospital.
+The inpatient registry contains information on all emergency department and outpatient visits, and all hospital admissions to Landspitali University Hospital. 
+For the period of January 1, 2005 to December 31, 2017, data were extracted on all unplanned acute-care visits and hospital admissions with ICD-10 discharge diagnoses compatible with respiratory infections (see Table \@ref(tab:icd10list)).
+Additionally, any visit or hospital admission associated with NCSP procedural codes in Table \@ref(tab:ncsplist)) was also extracted. 
 
-The National Drug Prescription Database
+```{r icd10list}
+kable(
+x = data.frame(
+    stringsAsFactors=FALSE,
+    icd = c("A40", "A41", "A48", "A49", "B00", "B08", "B33", "B34",
+           "B95", "B96", "G00", "H65", "H66", "H70", "H72",
+           "H73", "J00", "J01", "J02", "J03", "J04", "J05", "J06",
+           "J09", "J10", "J11", "J12", "J13", "J14", "J15", "J16",
+           "J17", "J18", "J20", "J21", "J22", "J32", "J36",
+           "J40", "J85", "J86", "J90", "N30", "N39", "R05", "R50"),
+    Disease = c("Streptococcal sepsis", "Other sepsis",
+               "Other bacterial diseases, not elsewhere classified", 
+               "Bacterial infection of unspecified site",
+               "Herpesviral [herpes simplex] infections",
+               "Other viral infections characterized by skin and mucous membrane lesions, not elsewhere classified",
+               "Other viral diseases, not elsewhere classified",
+               "Viral infection of unspecified site",
+               "Streptococcus, Staphylococcus, and Enterococcus as the cause of diseases classified elsewhere",
+               "Other bacterial agents as the cause of diseases classified elsewhere",
+               "Bacterial meningitis,not elsewhere classified",
+               "Nonsuppurative otitis media",
+               "Suppurative and unspecified otitis media",
+               "Mastoiditis and related conditions",
+               "Perforation of tympanic membrane",
+               "Other disorders of tympanic membrane",
+               "Acute nasopharyngitis [common cold]",
+               "Acute sinusitis",
+               "Acute pharyngitis",
+               "Acute tonsillitis",
+               "Acute laryngitis and tracheitis",
+               "Acute obstructive laryngitis [croup] and epiglottitis",
+               "Acute upper respiratory infections of multiple and unspecified sites",
+               "Influenza due to certain identified influenza viruses",
+               "Influenza due to other identified influenza virus",
+               "Influenza due to unidentified influenza virus",
+               "Viral pneumonia, not elsewhere classified",
+               "Pneumonia due to Streptococcus pneumoniae",
+               "Pneumonia due to Hemophilus influenzae",
+               "Bacterial pneumonia, not elsewhere classified",
+               "Pneumonia due to other infectious organisms, not elsewhere classified",
+               "Pneumonia in diseases classified elsewhere",
+               "Pneumonia, unspecified organism",
+               "Acute bronchitis",
+               "Acute bronchiolitis",
+               "Unspecified acute lower respiratory infection",
+               "Chronic sinusitis",
+               "Peritonsillar abscess",
+               "Bronchitis, not specified as acute or chronic",
+               "Abscess of lung and mediastinum",
+               "Pyothorax",
+               "Pleural effusion, not elsewhere classified",
+               "Cystitis",
+               "Other disorders of urinary system",
+               "Cough",
+               "Fever of other and unknown origin")
+    ),
+col.names = c("ICD-10 code", "Disease"),
+caption = "The International Classification of Diseases, 10th revision codes used in the current study"
+)
+
+        
+```
+
+```{r ncsplist}
+kable(
+    x = data.frame(stringsAsFactors=FALSE,
+     NCSP.code = c("EMB 00", "EMB 10", "EMB 15", "EMB 20", "EMB 30", "EMB 99",
+                   "EMW 99", "DCA 10", "DCA 20", "DCW 00"),
+   Description = c("Excision of lesion of tonsil or adenoid",
+                   "Tonsillectomy",
+                   "Intracapsular destruction of tonsils",
+                   "Adenotonsillectomy", "Adenotomy",
+                   "Other excision on tonsils and adenoids",
+                   "Other operation on tonsil or adenoids",
+                   "Paracentesis of tympanic membrane",
+                   "Insertion of ventilating tube through tympanic membrane",
+                   "Removal of ventilating tube from tympanic membrane")
+        ),
+   col.names = c("NCSP code", "Description"),
+   caption = "NOMESCO Classification of Surgical Procedures codes used in the current study"
+
+)
+```
+
+
+The data included information on date of the visit, hospital length of stay, which departments were involved and a detailed breakdown of costs associated with the visit.
+
+Data from the inpatient registry was used in papers I, IV, V and VI.
+
+### The National Drug Prescription Database
 
 The NDPD is a whole population database collected and maintained by the Icelandic Directorate of Health from the 1st of January 2005.
 It contains information on all filled drug prescriptions in Iceland.
@@ -46,5 +132,5 @@ This also means that all prescriptions contained within the NDPD were bought and
 Extensive validation and error testing has been performed by the Directorate of Health to ensure the robustness and coverage of the NDPD.
 The submission to the NDPD has been automated electronically and coupled with the process by which drugs are dispensed at the pharmacies, essentially excluding the possibility of a filled prescription not being registered. The NDPD included demographic data as previously described.
 
-The Primary Care Database
+### The Primary Care Database
 

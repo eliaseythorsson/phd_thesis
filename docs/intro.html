@@ -25,7 +25,7 @@
 <meta name="author" content="Elías Sæbjörn Eyþórsson">
 
 
-<meta name="date" content="2018-10-10">
+<meta name="date" content="2018-10-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -87,7 +87,11 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="aims.html"><a href="aims.html"><i class="fa fa-check"></i><b>3</b> Aims</a></li>
 <li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Materials and methods</a><ul>
-<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#data-collection-and-sources"><i class="fa fa-check"></i><b>4.1</b> Data collection and sources</a></li>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#data-collection-and-sources"><i class="fa fa-check"></i><b>4.1</b> Data collection and sources</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="methods.html"><a href="methods.html#landspitali-university-hospital-inpatient-registry"><i class="fa fa-check"></i><b>4.1.1</b> Landspitali University Hospital inpatient registry</a></li>
+<li class="chapter" data-level="4.1.2" data-path="methods.html"><a href="methods.html#the-national-drug-prescription-database"><i class="fa fa-check"></i><b>4.1.2</b> The National Drug Prescription Database</a></li>
+<li class="chapter" data-level="4.1.3" data-path="methods.html"><a href="methods.html#the-primary-care-database"><i class="fa fa-check"></i><b>4.1.3</b> The Primary Care Database</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
 <li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a></li>
@@ -115,56 +119,45 @@
 <div id="intro" class="section level1">
 <h1><span class="header-section-number">2</span> Introduction</h1>
 <table>
+<caption><span id="tab:abbreviations">Table 2.1: </span>List of abbreviations</caption>
 <thead>
-<tr>
-<th style="text-align:left;">
-Term
-</th>
-<th style="text-align:left;">
-Abbreviation
-</th>
+<tr class="header">
+<th align="left">Term</th>
+<th align="left">Abbreviation</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Acute otitis media
-</td>
-<td style="text-align:left;">
-AOM
-</td>
+<tr class="odd">
+<td align="left">Acute otitis media</td>
+<td align="left">AOM</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Community-acquired pneumonia
-</td>
-<td style="text-align:left;">
-CAP
-</td>
+<tr class="even">
+<td align="left">Anatomical-Therapeutic-Chemical</td>
+<td align="left">ATC</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Enzyme-linked immunosorbent assay
-</td>
-<td style="text-align:left;">
-ELISA
-</td>
+<tr class="odd">
+<td align="left">Community-acquired pneumonia</td>
+<td align="left">CAP</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Hospital-aquired pneumonia
-</td>
-<td style="text-align:left;">
-HAP
-</td>
+<tr class="even">
+<td align="left">Enzyme-linked immunosorbent assay</td>
+<td align="left">ELISA</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Respiratory syncytial virus
-</td>
-<td style="text-align:left;">
-RSV
-</td>
+<tr class="odd">
+<td align="left">Hospital-aquired pneumonia</td>
+<td align="left">HAP</td>
+</tr>
+<tr class="even">
+<td align="left">International Classification of Diseases, 10th revision</td>
+<td align="left">ICD-10</td>
+</tr>
+<tr class="odd">
+<td align="left">NOMESCO Classification of Surgical Procedures</td>
+<td align="left">NCSP</td>
+</tr>
+<tr class="even">
+<td align="left">Respiratory syncytial virus</td>
+<td align="left">RSV</td>
 </tr>
 </tbody>
 </table>
@@ -176,26 +169,44 @@ RSV
 <div id="clinical-manifestations-of-streptococcus-pneumoniae" class="section level2">
 <h2><span class="header-section-number">2.1</span> Clinical manifestations of <em>Streptococcus pneumoniae</em></h2>
 <p>In this chapter the clinical manifestations of pneumococcal disease will be reviewed. The mechanism by which individuals acquire pneumococcus into their normal upper respiratory flora will be discussed, and the association between pneumococcal carriage and disease will be described. Throughout this thesis, attention will be focused on three common clinical presentations of pneumococcal infections; AOM, pneumonia and IPD, including the pathophysiology, natural disease course, and health care burden of each of the presentations.</p>
-<p>Pneumococcus has gone by many names since it was first isolated in 1881. It was originally named <em>Micrococcus pasteuri</em> by Sternberg <span class="citation">(Sternberg <a href="#ref-Sternberg1881">1882</a>)</span>, but by 1920, a scientific consensus was reached that the official name should be <em>Diplococcus pneumoniae</em> <span class="citation">(Winslow et al. <a href="#ref-Winslow1920">1920</a>)</span>. It was not until 1974 that pneumococcus received its current name, <em>Streptococcus pneumoniae</em> <span class="citation">(Deibel and Seeley <a href="#ref-Deibel1974">1974</a>)</span>. Because pneumococcus is both a commensal bacterium and a pathogen, its relationship with humans is complex. Most children are colonized by pneumococcus within the first months of life <span class="citation">(Leino et al. <a href="#ref-Leino2001a">2001</a>)</span>. The serotype distribution of the initial colonization in a child is influenced by the distribution of serotypes within the child’s family . Over the course of the their lifetime, a child will be colonized by many different serotypes. Their immune system will learn to recognize newly acquired serotypes and will either clear the colonization or maintain an equilibrium in which the serotype is kept within a certain limit of reproduction <span class="citation">(Dowling, Sheehe, and Feldman <a href="#ref-Dowling1971">1971</a>; MELEGARO, GAY, and MEDLEY <a href="#ref-Melegaro2004">2004</a>)</span>. In this manner, the contribution of pneumococcus to the human upper respiratory flora is in a state of constant flux. New serotypes enter while the old exit, and the relative density of serotypes changes. In some cases, the equilibrium between pneumococcus and the host is destabilized, triggering a rapid growth of pneumococcus and resulting in clinical manifestations. It is thought that this is most likely to occur directly following the acquisition of new serotype into the nasopharyngeal flora <span class="citation">(Janet R Casey, Adlowitz, and Pichichero <a href="#ref-Casey2010">2009</a>)</span>. Because pneumococcus is carried in the nasopharynx, this overgrowth results in infections of adjacent tissue; the sinuses, middle ear and conjunctiva. The pathogenesis of pneumococcal pneumonia is thought to occur through micro-aspiration of upper respiratory secretions, provoking a subsequent rapid proliferation of pneumococcus in the lower respiratory tract. Invasive disease occurs when pneumococcus penetrates the host’s immunological defenses and proliferates in normally sterile tissue. This can occur as a primary event, or can be secondary to infections of the upper or lower respiratory tract. Generally, IPD is considered to encompass meningitis, bacteraemia and septic arthritis. While some may argue that the middle ear is normally sterile, AOM is not considered invasive disease.</p>
+<p>Pneumococcus has gone by many names since it was first isolated in 1881. It was originally named <em>Micrococcus pasteuri</em> by Sternberg <span class="citation">(Sternberg <a href="#ref-Sternberg1881">1882</a>)</span>, but by 1920, a scientific consensus was reached that the official name should be <em>Diplococcus pneumoniae</em> <span class="citation">(Winslow et al. <a href="#ref-Winslow1920">1920</a>)</span>. It was not until 1974 that pneumococcus received its current name, <em>Streptococcus pneumoniae</em> <span class="citation">(Deibel and Seeley <a href="#ref-Deibel1974">1974</a>)</span>. Because pneumococcus is both a commensal bacterium and a pathogen, its relationship with humans is complex. Most children are colonized by pneumococcus within the first months of life <span class="citation">(Leino et al. <a href="#ref-Leino2001a">2001</a>)</span>. The serotype distribution of the initial colonization in a child is influenced by the distribution of serotypes within the child’s family. Over the course of the their lifetime, a child will be colonized by many different serotypes. Their immune system will learn to recognize newly acquired serotypes and will either clear the colonization or maintain an equilibrium in which the serotype is kept within a certain limit of reproduction <span class="citation">(Dowling, Sheehe, and Feldman <a href="#ref-Dowling1971">1971</a>; MELEGARO, GAY, and MEDLEY <a href="#ref-Melegaro2004">2004</a>)</span>. In this manner, the contribution of pneumococcus to the human upper respiratory flora is in a state of constant flux. New serotypes enter while the old exit, and the relative density of serotypes changes.</p>
+<p>In some cases, the equilibrium between pneumococcus and the host is destabilized, triggering a rapid growth of pneumococcus and resulting in clinical manifestations. It is thought that this is most likely to occur directly following the acquisition of new serotype into the nasopharyngeal flora <span class="citation">(Janet R Casey, Adlowitz, and Pichichero <a href="#ref-Casey2010">2009</a>)</span>. Because pneumococcus is carried in the nasopharynx, this overgrowth results in infections of adjacent tissue; the sinuses, middle ear and conjunctiva. The pathogenesis of pneumococcal pneumonia is thought to occur through micro-aspiration of upper respiratory secretions, provoking a subsequent rapid proliferation of pneumococcus in the lower respiratory tract. Invasive disease occurs when pneumococcus penetrates the host’s immunological defenses and proliferates in normally sterile tissue. This can occur as a primary event, or can be secondary to infections of the upper or lower respiratory tract. Generally, IPD is considered to encompass meningitis, bacteraemia and septic arthritis. While some may argue that the middle ear is normally sterile, AOM is not considered invasive disease.</p>
 <div id="acute-otitis-media" class="section level3">
 <h3><span class="header-section-number">2.1.1</span> Acute otitis media</h3>
 <p>Otitis media is an inflammatory state of the middle ear. It is most often caused by a viral or bacterial infection. The clinical presentation of otitis media is variable. Its onset ranges from abrupt to gradual, and its duration from short to protracted. Several categories have been defined to facilitate communication concerning this variability. They are not mutually exclusive, but rather represent a continuum of the disease process. Otitis media can manifest as a acute inflammatory event. This is the classical AOM with which most parents are familiar. AOM can be recurrent, which is defined as AOM occurring three times over a six month period, or four or more times over a twelve month period. Conversely, it can take the form of a chronic low-grade process. The later phenotype includes otitis media with effusion and chronic suppurative otitis media. Otitis media with effusion is defined as the protracted collection of serous fluid in the middle ear. By convention, it is considered to be present if middle ear effusion has been documented to have lasted for three months or longer. It may follow AOM, or be detected without an obvious inciting event. Chronic suppurative otitis media may be thought of as a protracted case of AOM. The child remains sickly and the middle ear is filled with puss. The tympanic membrane often ruptures as a result.</p>
 <p>The anatomy of the middle ear is intrinsic to the epidemiology of otitis media, and can elucidate the wide range of presentations described above. The middle ear is located within a recess in the tympanic bone, medially to the tympanic membrane. It communicates with the nasopharynx by means of the Eustachian tube, a thin muscular canal that acts to equalize pressure between the middle ear and the external ear. This communication allows viruses and bacteria in the nasopharynx to gain access to the middle ear which clarifies the association between nasopharyngeal carriage and AOM. The Eustachian tube is anatomically shorter and straighter in children, partly accounting for the much higher risk of middle ear infections in children as compared to adults. It is also much thinner. Because of this, any cause of inflammation in the nasopharynx can lead to a spasm of a child’s Eustachian tube, resulting in the build up of secretions in the middle ear. These secretions provide optimal conditions for bacterial growth and can lead to subsequent otitis media. They can also remain macroscopically uninfected, which, if lasting long enough, would be categorized as otitis media with effusion. The anatomic view also helps to explain the mechanism of the contribution of different risk factors. The cycle of Eustachian tube dysfunction, effusion and increased risk of infection was the catalyst for the development of tympanic tube placements as a treatment for middle ear infections in children. By providing a secondary mechanism by which the middle ear could drain and equalize pressure, the rationale was that propensity for infection would decrease.</p>
-<p>Any pathogen that is able to gain access to the middle ear, disrupt the normal function of the Eustachian tube and replicate within the resulting fluid, has the potential to cause otitis media. In upwards of 90% of otitis media cases, the bacteria aspirated from the middle ear fluid will also be found in the nasopharynx <span class="citation">(Janet R Casey, Adlowitz, and Pichichero <a href="#ref-Casey2010">2009</a>)</span>. The most common bacterial causes of otitis media are <em>Haemophilus influenzae</em>, <em>Streptococcus pneumoniae</em> and <em>Moraxella catarrhalis</em> <span class="citation">(Bluestone, Stephenson, and Martin <a href="#ref-Bluestone1992">1992</a>; Janet R. Casey and Pichichero <a href="#ref-Casey2004">2004</a>; Janet R Casey, Adlowitz, and Pichichero <a href="#ref-Casey2010">2009</a>; Ngo et al. <a href="#ref-Ngo2016">2016</a>; Pumarola et al. <a href="#ref-Pumarola2013">2013</a>)</span>. The relative contribution of these three pathogens is remarkably stable between countries and over time. This is likely a consequence of how common they are in the nasopharyngeal flora of children. A systematic review of studies from 1970-2014 which reported the etiology of otitis media, found that <em>Streptococcus pneumoniae</em> caused 30.2% of AOM in Europe <span class="citation">(Ngo et al. <a href="#ref-Ngo2016">2016</a>)</span>. In countries that have introduced systematic pneumococcal vaccination, there is evidence to suggest that the microbiology of otitis media has shifted from being predominantly due to pneumococcus to <em>Haemophilus influenzae</em> <span class="citation">(Block et al. <a href="#ref-Block2004">2004</a>; Van Dyke et al. <a href="#ref-VanDyke2017">2017</a>)</span>. Of the pneumococcal AOM, the prevalence of vaccine serotypes has decreased and non-vaccine serotypes now predominate. Children with otitis media who experience spontaneous rupture of the tympanic membrane have a slightly different distribution of pathogens, with a higher proportion of <em>Streptococcus pyogenes</em> and <em>Staphylococcus aureus</em> <span class="citation">(Chen et al. <a href="#ref-Chen2013">2013</a>; Sonsuwan, Watcharinyanon, and Sawanyawisuth <a href="#ref-Sonsuwan2016">2016</a>)</span>. This could be explained by these pathogens causing a more aggressive infection, or possibly by contamination by bacteria located in the external ear canal. Similarly, coagulase negative staphylococci and <em>Staphylococcus aureus</em> are more common in otitis media with effusion <span class="citation">(Kim et al. <a href="#ref-Kim2013">2013</a>)</span>. Pneumococcal otitis media is slightly more likely to lead to recurrent otitis media and chronic suppurative otitis media, but is otherwise clinically indistinguishable from otitis media caused by other otopathogens.</p>
+<div id="pathogens-implicated-in-acute-otitis-media" class="section level4">
+<h4><span class="header-section-number">2.1.1.1</span> Pathogens implicated in acute otitis media</h4>
+<p>Any pathogen that is able to gain access to the middle ear, disrupt the normal function of the Eustachian tube and replicate within the resulting fluid, has the potential to cause otitis media. In upwards of 90% of otitis media cases, the bacteria aspirated from the middle ear fluid will also be found in the nasopharynx <span class="citation">(Janet R Casey, Adlowitz, and Pichichero <a href="#ref-Casey2010">2009</a>)</span>. The most common bacterial causes of otitis media are <em>Haemophilus influenzae</em>, <em>Streptococcus pneumoniae</em> and <em>Moraxella catarrhalis</em> <span class="citation">(Bluestone, Stephenson, and Martin <a href="#ref-Bluestone1992">1992</a>; Janet R. Casey and Pichichero <a href="#ref-Casey2004">2004</a>; Janet R Casey, Adlowitz, and Pichichero <a href="#ref-Casey2010">2009</a>; Ngo et al. <a href="#ref-Ngo2016">2016</a>; Pumarola et al. <a href="#ref-Pumarola2013">2013</a>)</span>. The relative contribution of these three pathogens is remarkably stable between countries and over time. This is likely a consequence of how common they are in the nasopharyngeal flora of children.</p>
+<p>A systematic review of studies from 1970-2014 which reported the etiology of otitis media, found that <em>Streptococcus pneumoniae</em> caused 30.2% of AOM in Europe <span class="citation">(Ngo et al. <a href="#ref-Ngo2016">2016</a>)</span>. In countries that have introduced systematic pneumococcal vaccination, there is evidence to suggest that the microbiology of otitis media has shifted from being predominantly due to pneumococcus to <em>Haemophilus influenzae</em> <span class="citation">(Block et al. <a href="#ref-Block2004">2004</a>; Van Dyke et al. <a href="#ref-VanDyke2017">2017</a>)</span>. Of the pneumococcal AOM, the prevalence of vaccine serotypes has decreased and non-vaccine serotypes now predominate. Children with otitis media who experience spontaneous rupture of the tympanic membrane have a slightly different distribution of pathogens, with a higher proportion of <em>Streptococcus pyogenes</em> and <em>Staphylococcus aureus</em> <span class="citation">(Chen et al. <a href="#ref-Chen2013">2013</a>; Sonsuwan, Watcharinyanon, and Sawanyawisuth <a href="#ref-Sonsuwan2016">2016</a>)</span>. This could be explained by these pathogens causing a more aggressive infection, or possibly by contamination by bacteria located in the external ear canal. Similarly, coagulase negative staphylococci and <em>Staphylococcus aureus</em> are more common in otitis media with effusion <span class="citation">(Kim et al. <a href="#ref-Kim2013">2013</a>)</span>. Pneumococcal otitis media is slightly more likely to lead to recurrent otitis media and chronic suppurative otitis media, but is otherwise clinically indistinguishable from otitis media caused by other otopathogens.</p>
+</div>
+<div id="healthcare-burden-of-otitis-media" class="section level4">
+<h4><span class="header-section-number">2.1.1.2</span> Healthcare burden of otitis media</h4>
 <p>The healthcare burden caused by otitis media is disproportionate to its severity. Acute otitis media is the most common reason for physician visit among children, a fact which has been frequently documented in multiple countries. Only focusing on physician visits underestimates the impact of AOM, as some episodes are not reported to physicians but still result in distressing symptoms in children and parental missed days of work. By a child’s third birthday, 60%-80% will have experienced at least one episode of AOM <span class="citation">(Kaur, Morris, and Pichichero <a href="#ref-Kaur2017">2017</a>; Teele, Klein, and Rosner <a href="#ref-Teele1989">1989</a>)</span>. Likewise, otitis media is also responsible for the majority of antimicrobial prescriptions, and thus contributes significantly to antimicrobial resistance. Though often benign and self-limiting, AOM can progress to recurrent or chronic infection and require more invasive treatment. Mastoiditis develops in XXX% of cases and will require hospital admission and administration of intravenous antimicrobials. Severe AOM can result in hearing loss and has been estimated to occur XXX%.</p>
-<p>For various reasons, parents and clinicians may opt to treat recurrent or chronic otitis media with the placement of a tympanic tube. Tympanic tube procedures are consequently the most common surgical procedure in the paediatric population <span class="citation">(N. Black <a href="#ref-Black1984">1984</a>; Cullen, Hall, and Golosinskiy <a href="#ref-Cullen2009">2009</a>)</span>. Despite their popularity, there is little evidence for the use of tympanostomy tubes for their two most common indications; recurrent otitis media and hearing loss associated with otitis media with effusion <span class="citation">(Venekamp et al. <a href="#ref-Venekamp2018">2018</a>; Browning et al. <a href="#ref-Browning2010">2010</a>)</span>. The incidence of tympanic tube placement varies greatly between countries. In Sweden, the incidence of procedures is low, and was in 1996, estimated to be 10 per 1000 person-years <span class="citation">(Florentzson and Finizia <a href="#ref-Florentzson2012">2012</a>)</span>.</p>
-<p>Even within the United States, there are large variations in the incidence. In 1988, the prevalence rate of tympanostomy tube placements among children younger than eighteen in the United States was estimated to be 13% (95%CI 11%-14%) <span class="citation">(Bright et al. <a href="#ref-Bright1993">1993</a>)</span>. In Northern New England alone, the incidence varied between different paediatric surgical areas, from 3.79 to 13.15 procedures per 1000 person-years <span class="citation">(<span class="citeproc-not-found" data-reference-id="Parker2018"><strong>???</strong></span>)</span>. The variation can possibly be explained by different thresholds for performing the procedure. By carefully examining the medical records of all children who underwent tympanic tube procedures in five hospitals in New York, Keyhani et al. were able to show that 92% of the procedures would not have been recommended according to the guidelines in force at the time of surgery <span class="citation">(Keyhani et al. <a href="#ref-Keyhani2008">2008</a>)</span>.</p>
+</div>
+<div id="tympanostomy-tube-procedures" class="section level4">
+<h4><span class="header-section-number">2.1.1.3</span> Tympanostomy tube procedures</h4>
+<p>For various reasons, parents and clinicians may opt to treat recurrent or chronic otitis media with the placement of a tympanic tube. Tympanic tube procedures are consequently the most common surgical procedure in the paediatric population <span class="citation">(N. Black <a href="#ref-Black1984">1984</a>; Cullen, Hall, and Golosinskiy <a href="#ref-Cullen2009">2009</a>)</span>. Despite their popularity, there is little evidence for the use of tympanostomy tubes for their two most common indications; recurrent otitis media and hearing loss associated with otitis media with effusion <span class="citation">(Venekamp et al. <a href="#ref-Venekamp2018">2018</a>; Browning et al. <a href="#ref-Browning2010">2010</a>)</span>. Inconsistent evidence regarding the efficacy of tympanostomy tube procedures is mirrored in the large variation in incidence that is seen both within and between different countries.</p>
+<p>In Sweden, the incidence of procedures is low, and was in 1996, estimated to be 10 per 1000 person-years <span class="citation">(Florentzson and Finizia <a href="#ref-Florentzson2012">2012</a>)</span>. The incidence was 5.6-6.7 procedures per 1000 person-years in Australia <span class="citation">(Spilsbury et al. <a href="#ref-Spilsbury2006">2006</a>)</span>. Even within the United States, there are large variations in the incidence. In 1988, the prevalence rate of tympanostomy tube placements among children younger than eighteen in the United States was estimated to be 13% (95%CI 11%-14%) <span class="citation">(Bright et al. <a href="#ref-Bright1993">1993</a>)</span>. In Northern New England alone, the incidence varied between different paediatric surgical areas, from 3.79 to 13.15 procedures per 1000 person-years <span class="citation">(Parker et al. <a href="#ref-Parker2016">2016</a>)</span>. The variation can possibly be explained by different thresholds for performing the procedure. By carefully examining the medical records of all children who underwent tympanic tube procedures in five hospitals in New York, Keyhani et al. were able to show that 92% of the procedures would not have been recommended according to the guidelines in force at the time of surgery <span class="citation">(Keyhani et al. <a href="#ref-Keyhani2008">2008</a>)</span>.</p>
+</div>
+<div id="acute-otitis-media-in-iceland" class="section level4">
+<h4><span class="header-section-number">2.1.1.4</span> Acute otitis media in Iceland</h4>
 <p>The incidence AOM, its microbiology, treatment and complications have been evaluated in Iceland. In 1990, a retrospective analysis of two birth-cohorts in a small village in Iceland showed a 66% cumulative incidence of AOM by 24 months of age <span class="citation">(Bjarnason, Friðriksson, and Benediktsson <a href="#ref-Bjarnason1991">1991</a>)</span>. A larger study conducted in 1998 used parental questionnaires to estimate the incidence of upper respiratory infections that resulted in antimicrobial treatment and tympanic tube placements among children ages one to six years old <span class="citation">(Vilhjalmur A Arason et al. <a href="#ref-Arason2002">2002</a>)</span>. A total of 1030 children were randomly sampled from four geographically separated areas of Iceland and the study achieved a 78% response rate. The study demonstrated high incidence rates of antimicrobially treated AOM for all age-groups, ranging from 1.79 treatment episodes among children one year of age to 0.25 treatment episodes in children six years of age. In this random sample, 58% of all antimicrobial prescriptions were due to AOM. The cumulative incidence of tympanic tube placements was alarmingly high. By one year of age, 23% (95%CI 16%-31%) had already received at least one tympanostomy tube. This proportion exceeded 30% by age two and remained fairly stable thereafter. The study was repeated by the same investigators in 2003 using the exact same cross-sectional random sampling <span class="citation">(Vilhjalmur A. Arason et al. <a href="#ref-Arason2005">2005</a>)</span>. The proportion of all antimicrobial prescriptions that were due to AOM was almost exactly the same, 57%. Surprisingly, the cumulative incidence of tympanostomy tube placement had slightly increased and was now estimated to be 34%,</p>
+</div>
 </div>
 <div id="pneumonia" class="section level3">
 <h3><span class="header-section-number">2.1.2</span> Pneumonia</h3>
-<p>Pneumonia is defined as the infectious infiltration of the lung parenchyma. Several different classification systems have been proposed to aid in the treatment of pneumonia <span class="citation">(Mackenzie <a href="#ref-Mackenzie2016">2016</a>)</span>. Some are based on the anatomical distribution of infectious infiltrates on radiographs, others on the symptomotology and still others on the distribution of risk factors in those being diagnosed with the disease. Each attempts to utilize readily available information to assist in selecting among treatment options and in predicting prognosis. While the ideal classification system would be based on the antimicrobial susceptibility of the causative pathogen, this information is rarely available when treatment decisions are being made. Most commonly, pneumonia is classified by assigning cases based upon the circumstances under which it was diagnosed. Pneumonia is classified as community acquired pneumonia if it is detected in people with limited contact with the healthcare system in the weeks prior to diagnosis. This is the most common type of pneumonia. Remaining pneumonia cases are classified as healthcare associated pneumonia, or hospital-acquired pneumonia if diagnosed during a hospital admission. This simple classification system is a remarkably good predictor of antimicrobial resistance in the causative pathogen, and informs the choice of antimicrobial agents.</p>
+<p>Pneumonia is defined as the infectious infiltration of the lung parenchyma. Several different classification systems have been proposed to aid in the treatment of pneumonia <span class="citation">(Mackenzie <a href="#ref-Mackenzie2016">2016</a>)</span>. Some are based on the anatomical distribution of infectious infiltrates on radiographs, others on the symptomotology and still others on the distribution of risk factors in those being diagnosed with the disease. Each attempts to utilize readily available information to assist in selecting among treatment options and in predicting prognosis. While the ideal classification system would be based on the antimicrobial susceptibility of the causative pathogen, this information is rarely available when treatment decisions are being made. Most commonly, pneumonia is classified by assigning cases based upon the circumstances under which it was diagnosed. Pneumonia is classified as community acquired pneumonia if it is detected in people with limited contact with the healthcare system in the weeks prior to diagnosis. This is the most common type of pneumonia. Remaining pneumonia cases are classified as healthcare associated pneumonia, or hospital-acquired pneumonia if diagnosed during a hospital admission. This simple classification system is remarkably good at predicting antimicrobial resistance in the causative pathogen, and informs the choice of antimicrobial agents.</p>
 <p>The mechanism by which pathogens gain access to the lung and replicate there causing infection, is best understood by reviewing the pulmonary anatomy. The pulmonary system has an inverted tree configuration. The trachea acts as the trunk and subdivides into the main-stem bronchi, which lead to the right and left lung, respectively. The respiratory tree further subdivides into lobar and segmental bronchi, each of which supplies an independent anatomical segment of the lung, separated by connective tissue. Each compartment is known as a bronchopulmonary segment, and can be individually infected. Within each bronchopulmonary segment, these branches divide 18-20 more times, their diameter decreasing with every division. The final 16-22 divisions compromise the respiratory bronchioles which lead to the alveoli. To infect the lung, a pathogen must first arrive there. While this may seem like an easy task as gravity aids in the aspiration of upper respiratory secretions, it is, in fact, not a simple matter. As anyone who has experienced “food going down the wrong way” knows, the respiratory tree does not readily tolerate backward flow into the lungs. Irritation of the bronchi results in a cough, a powerful, coordinated neuromuscular response which propels any aspirated material up the respiratory tree. Pathogens are prevented from spreading downwards in a more insidious manner, by a constant flow of mucus from the the terminal bronchioles to the upper respiratory tract. The epithelial lining is covered with cilia, which are tiny hair-like structures that relentlessly sweep the mucus upwards. Even when pathogens overcome this obstacle and progress down the respiratory tree, they are met with a heavy concentration of defensive immune tissue, the amount of which increases with every division of the respiratory tree.</p>
-<p>Risk factors of pneumonia are also best explained by referring to the defensive mechanisms employed by the respiratory tree. Processes which interfere with the cough reflex will result in a higher risk of pneumonia. These includes sensory deficiencies present in certain diseases and in the extremes of age, which result in the absence of cough initiation and muscular weakness. Pain associated with fractured ribs can also lead to voluntary suppression of the cough reflex and increases the risk of pneumonia. Another process increases the risk of pneumonia is damage to the respiratory cilia and the resulting stasis of mucus. Cilia damage can result from viral infection or from the inhalation of toxic particles, such as pollution or cigarette smoke, both of which can also cause local immune suppression, further compromising the lung’s defences. Any pathogen that is able to gain access to the lung and replicate there, has the potential to cause pneumonia. As is the case of otitis media, the most common bacterial pathogens causing community acquired pneumonia are <em>Streptococcus pneumoniae</em>, <em>Haemophilus influnzae</em> and <em>Moraxella catarrhalis</em> <span class="citation">(Rodrigues and Groves <a href="#ref-Rodrigues2017">2017</a>)</span>. Here agein, this is most likely to be a function of how common these pathogens are in the upper respiratory flora. Unlike otitis media however, it is exceedingly difficult to determine the causative pathogen in the case of pneumonia <span class="citation">(Cilloniz et al. <a href="#ref-Cilloniz2016">2016</a>; Feikin et al. <a href="#ref-Feikin2017">2017</a>)</span>. Ideally, a sample would be taken from the lung itself, but the dagners of such procedures which moreover require highly trained personnel and technical resources, render this option unfeasible. Most studies, therefore, use proxy measures such as sputum, blood cultures and nasopharyngeal swabs. In addition, the inability of children to produce a quality sputum sample exacerbates the difficulties of elucidating the causative pathogen <span class="citation">(Rodrigues and Groves <a href="#ref-Rodrigues2017">2017</a>)</span>.</p>
-<p>The relative contribution of pathogens varies greatly with the age and risk factor profile. Only a few studies in developed countries have evaluated the distribution of pathogens which cause pneumonia in children, but they consistently demonstrate the importances of viruses in paediatric pneumonia. These results may either indicate that viruses are either the primary etiological factor, or that virueses weaken the respiratory defences and allow bacterial disease to develop. The considerable heterogeneity in the proportion of pneumonias found to be caused by various pathogens, underscores the importance of study population, time-period and, most importantly, the methods used in determining the causative pathogen <span class="citation">(Feikin et al. <a href="#ref-Feikin2017">2017</a>)</span>. A large multicenter study, The Pneumonia Etiology Research for Child Health (PERCH), is underway to clarify the etiology of paediatric pneumonia <span class="citation">(O. S. Levine et al. <a href="#ref-Levine2012">2012</a>)</span>. Its results have not yet been published. One of the first prospective studies of paediatric pneumonia was undertaken in Chapel Hill, North Carolina, from 1963 to 1971. The study investigated all lower respiratory infections in children, and found most to be caused by respiratory syncytial virus, parainfluenza virus and <em>Mycoplasma pneumoniae</em> <span class="citation">(Glezen and Denny <a href="#ref-Glezen1973">1973</a>)</span>. The predominance of causative viruses is likely due to the methods, current at the time, used to detect etiology. Following the advent of pneumococcal antibody testing, the recognition of pneumococcus as an important pathogen increased. Using pneumococcal antigens, Paisley et al. found pneumococcus to be a contributor to 19% of paediatric pneumonias from 1978-1979 <span class="citation">(PAISLEY et al. <a href="#ref-PAISLEY1984">1984</a>)</span>. In a study conducted in Göteborg, Sweden from 1982-1983, a primitive enzyme-linked immunosorbent assay was used to determine etiology, and found that 13% of paediatric pneumonias were due to <em>Streptococcus pneumoniae</em> <span class="citation">(CLAESSON et al. <a href="#ref-CLAESSON1989">1989</a>)</span>. In that study, however, antibody testing for pneumococcus was only performed on those who were found to be pneumococcal carriers by nasopharyngeal swap. A few years later, in 1989, a prospective study of paediatric pneumonia in Turku, Finland demonstrated pneumococcus to be a causative pathogen in 38% of cases <span class="citation">(Ruuskanen et al. <a href="#ref-Ruuskanen1992">1992</a>)</span>. Another etiological study in Paris in 1992-1994, enrolled 104 consecutive children who presented with pneumonia to a single hospital. Of those, 14% were found to have pneumococcal pneumonia <span class="citation">(Gendrel et al. <a href="#ref-Gendrel1997">1997</a>)</span>. In populations where pneumococcal vaccination is universal, two studies on the etiology of paediatric pneumonia have been published. One of these, conducted in the United Kingdom in 2009-2011, found pneumococcus to be causative in 17.4% of cases <span class="citation">(Elemraid et al. <a href="#ref-Elemraid2013">2013</a>)</span>. Another is a large prospective study of 2,358 children conducted in 2011-2012 in the United states, which utilized a variety of sampling methods, and detected pneumococcus in only 4% of cases, a result considerably different than all other etiological studies of paediatric pneumonia <span class="citation">(Jain et al. <a href="#ref-Jain2015">2015</a>)</span>. The authors’ discussion of possible reasons for this included speculation that low proportion of pneumococcal pneumonia might be due to universal pneumococcal vaccination. All of the above studies indentified respiratory syncytial virus to be the most common causative pathogen. Of the bacterial pneumonias, all but one found pneumococcus to be the most common. Their interpretation in complicated by the lack of direct sampling from the lungs. In studies that used strict radiological inclusion criteria and used lung aspiration to determine the etiology, pneumococcal pneumonia was by far the most common pathogen <span class="citation">(Gilani et al. <a href="#ref-Gilani2012">2012</a>; World Health Organization Pneumonia Vaccine Trial Investigators’ Group <a href="#ref-WorldHealthOrganization2001">2001</a>)</span>.</p>
-<p>While the etiology of adult pneumonia has been more extensively studied, the same challanges are encountered as in the study of children. The estimated proportion of pneumonia cases caused by different pathogens varies between studies. This may represent a true difference in the underlying study populations or may be a result of different study design and methodology. A recent meta-analysis evaluated all published studies of pneumonia etiology in Europe from 1990-2011, and estimated the crude proportion caused by pneumococcus to be 19.3% <span class="citation">(Rozenbaum et al. <a href="#ref-Rozenbaum2013">2013</a>)</span>. Seventy-seven studies were included, and inclusion critera were strict, considering only radiologically confirmed pneumonia. The crude estimate of the proportion of pneumonia caused by <em>Streptococcus pneumoniae</em> was 19.3%. After adjusting for several variables using a fixed-effects meta-regression model, the estimated proportion of pneumococcal pneumonia in the average Northern European country was 15%.</p>
+<p>Risk factors of pneumonia are also best explained by referring to the defensive mechanisms employed by the respiratory tree. Processes which interfere with the cough reflex will result in a higher risk of pneumonia. These includes sensory deficiencies present in certain diseases and in the extremes of age, which result in the absence of cough initiation and muscular weakness. Pain associated with fractured ribs can also lead to voluntary suppression of the cough reflex and increases the risk of pneumonia. Another process increases the risk of pneumonia is damage to the respiratory cilia and the resulting stasis of mucus. Cilia damage can result from viral infection or from the inhalation of toxic particles, such as pollution or cigarette smoke, both of which can also cause local immune suppression, further compromising the lung’s defenses.</p>
+<div id="pathogens-causing-pneumonia" class="section level4">
+<h4><span class="header-section-number">2.1.2.1</span> Pathogens causing pneumonia</h4>
+<p>Any pathogen that is able to gain access to the lung and replicate there, has the potential to cause pneumonia. As is the case of otitis media, the most common bacterial pathogens causing community acquired pneumonia are <em>Streptococcus pneumoniae</em>, <em>Haemophilus influnzae</em> and <em>Moraxella catarrhalis</em> <span class="citation">(Rodrigues and Groves <a href="#ref-Rodrigues2017">2017</a>)</span>. Here again, this is most likely to be a function of how common these pathogens are in the upper respiratory flora. Unlike otitis media however, it is exceedingly difficult to determine the causative pathogen in the case of pneumonia <span class="citation">(Cilloniz et al. <a href="#ref-Cilloniz2016">2016</a>; Feikin et al. <a href="#ref-Feikin2017">2017</a>)</span>. Ideally, a sample would be taken from the lung itself, but the dangers of such procedures which moreover require highly trained personnel and technical resources, render this option unfeasible. Most studies, therefore, use proxy measures such as sputum, blood cultures and nasopharyngeal swabs. In addition, the inability of children to produce a quality sputum sample exacerbates the difficulties of elucidating the causative pathogen <span class="citation">(Rodrigues and Groves <a href="#ref-Rodrigues2017">2017</a>)</span>.</p>
+<p>The relative contribution of pathogens varies greatly with the age and risk factor profile. Only a few studies in developed countries have evaluated the distribution of pathogens which cause pneumonia in children, but they consistently demonstrate the importance of viruses in paediatric pneumonia. These results may either indicate that viruses are either the primary etiological factor, or that viruses weaken the respiratory defenses and allow bacterial disease to develop. The considerable heterogeneity in the proportion of pneumonias found to be caused by various pathogens, underscores the importance of study population, time-period and, most importantly, the methods used in determining the causative pathogen <span class="citation">(Feikin et al. <a href="#ref-Feikin2017">2017</a>)</span>. A large multicenter study, The Pneumonia Etiology Research for Child Health (PERCH), is underway to clarify the etiology of paediatric pneumonia <span class="citation">(O. S. Levine et al. <a href="#ref-Levine2012">2012</a>)</span>. Its results have not yet been published. One of the first prospective studies of paediatric pneumonia was undertaken in Chapel Hill, North Carolina, from 1963 to 1971. The study investigated all lower respiratory infections in children, and found most to be caused by respiratory syncytial virus, parainfluenza virus and <em>Mycoplasma pneumoniae</em> <span class="citation">(Glezen and Denny <a href="#ref-Glezen1973">1973</a>)</span>. The predominance of causative viruses is likely due to the methods, current at the time, used to detect etiology. Following the advent of pneumococcal antibody testing, the recognition of pneumococcus as an important pathogen increased. Using pneumococcal antigens, Paisley et al. found pneumococcus to be a contributor to 19% of paediatric pneumonias from 1978-1979 <span class="citation">(PAISLEY et al. <a href="#ref-PAISLEY1984">1984</a>)</span>. In a study conducted in Göteborg, Sweden from 1982-1983, a primitive enzyme-linked immunosorbent assay was used to determine etiology, and found that 13% of paediatric pneumonias were due to <em>Streptococcus pneumoniae</em> <span class="citation">(CLAESSON et al. <a href="#ref-CLAESSON1989">1989</a>)</span>. In that study, however, antibody testing for pneumococcus was only performed on those who were found to be pneumococcal carriers by nasopharyngeal swap. A few years later, in 1989, a prospective study of paediatric pneumonia in Turku, Finland demonstrated pneumococcus to be a causative pathogen in 38% of cases <span class="citation">(Ruuskanen et al. <a href="#ref-Ruuskanen1992">1992</a>)</span>. Another etiological study in Paris in 1992-1994, enrolled 104 consecutive children who presented with pneumonia to a single hospital. Of those, 14% were found to have pneumococcal pneumonia <span class="citation">(Gendrel et al. <a href="#ref-Gendrel1997">1997</a>)</span>. In populations where pneumococcal vaccination is universal, two studies on the etiology of paediatric pneumonia have been published. One of these, conducted in the United Kingdom in 2009-2011, found pneumococcus to be causative in 17.4% of cases <span class="citation">(Elemraid et al. <a href="#ref-Elemraid2013">2013</a>)</span>. Another is a large prospective study of 2,358 children conducted in 2011-2012 in the United states, which utilized a variety of sampling methods, and detected pneumococcus in only 4% of cases, a result considerably different than all other etiological studies of paediatric pneumonia <span class="citation">(Jain et al. <a href="#ref-Jain2015">2015</a>)</span>. The authors’ discussion of possible reasons for this included speculation that low proportion of pneumococcal pneumonia might be due to universal pneumococcal vaccination. All of the above studies identified respiratory syncytial virus to be the most common causative pathogen. Of the bacterial pneumonias, all but one found pneumococcus to be the most common. Their interpretation in complicated by the lack of direct sampling from the lungs. In studies that used strict radiological inclusion criteria and used lung aspiration to determine the etiology, pneumococcal pneumonia was by far the most common pathogen <span class="citation">(Gilani et al. <a href="#ref-Gilani2012">2012</a>; World Health Organization Pneumonia Vaccine Trial Investigators’ Group <a href="#ref-WorldHealthOrganization2001">2001</a>)</span>.</p>
+<p>While the etiology of adult pneumonia has been more extensively studied, the same challenges are encountered as in the study of children. The estimated proportion of pneumonia cases caused by different pathogens varies between studies. This may represent a true difference in the underlying study populations or may be a result of different study design and methodology. A recent meta-analysis evaluated all published studies of pneumonia etiology in Europe from 1990-2011, and estimated the crude proportion caused by pneumococcus to be 19.3% <span class="citation">(Rozenbaum et al. <a href="#ref-Rozenbaum2013">2013</a>)</span>. Seventy-seven studies were included, and inclusion criteria were strict, considering only radiologically confirmed pneumonia. The crude estimate of the proportion of pneumonia caused by <em>Streptococcus pneumoniae</em> was 19.3%. After adjusting for several variables using a fixed-effects meta-regression model, the estimated proportion of pneumococcal pneumonia in the average Northern European country was 15%.</p>
 <p>Lower respiratory infections were, in 2016, estimated to cause 2,38 million deaths worldwide and were the sixth leading cause of death <span class="citation">(Troeger et al. <a href="#ref-Troeger2018">2018</a>)</span>. Of those deaths, 652,572 (95%CI 586,475-720,612) were estimated to occur among children under five years of age, making lower respiratory infections the leading cause of death in this age-group. Large variations exist in the incidence, morbidity and mortality of pneumonia between countries. Pneumonia disproportionately affects developing countries, which experience over half of the pneumonia associated mortality. Yet pneumonia is still a large healthcare burden in developed countries, and accounts for 3%-18% of all childhood hospital admissions <span class="citation">(S. a Madhi et al. <a href="#ref-Madhi2013">2012</a>)</span>. In developed countries, the incidence of pneumonia in children under five years of age is 34-40 cases per 1000 person-years.</p>
-<p>Paragraph about Icelandic literature and changing epidemiology - Pneumococcal pneumonia prevalence and serotype distribution - Rate of hospitalization, healthcare consumption - Rate of sequelae - Risk factors</p>
+<p>Paragraph about Icelandic literature and changing epidemiology - Pneumococcal pneumonia prevalence and serotype distribution - Rate of hospitalization, healthcare consumption - Rate of sequelae</p>
+</div>
 </div>
 <div id="invasive-pneumococcal-disease" class="section level3">
 <h3><span class="header-section-number">2.1.3</span> Invasive pneumococcal disease</h3>
@@ -227,148 +238,65 @@ RSV
 <p>In 2006, Prymula et al. reported a randomized study of an eleven valent pneumococcal conjugate vaccine in 4,968 children recruited from paediatric centers in the Czech Republic and Slovakia <span class="citation">(Prymula et al. <a href="#ref-Prymula2006">2006</a>)</span>. A strict case definition of otitis media was used and all cases were reviewed by an otolaryngologist. If confirmed, a middle ear fluid sample was obtained by aspiration and sent for culturing. Statistical analysis was completed using Cox proportional hazards models and the Anderson-Gill extension for repeated events.</p>
 <p>In 2003, the first paper from a cluster randomized controlled trial of PCV7<sub>CRM197</sub> among the Navajo and White Mountain Apache infants was published <span class="citation">(K. L. O’Brien et al. <a href="#ref-OBrien2003">2003</a>)</span>. In 2008, a retrospective chart review of AOM visits among the participating children was published <span class="citation">(O’Brien et al. <a href="#ref-OBrien2008">2008</a>)</span>. The study population was defined as children who had adhered to the study protocol, i.e. a per-protocol analysis. From this population, 944 of the 4,476 eligible children were randomly sampled for chart review. The sample size was restricted for logistical reasons. A rough power analysis which assumed 1.5 years of follow-up time per chart and a baseline incidence of one AOM visit per person-year suggested that a sample of 1,000 children would give 80% power to detect a 15% reduction in the incidence of AOM visits. It is unclear why only 944 children were sampled, given that the power calculation assumed 1,000. Furthermore, it should be noted that the investigators performing the chart review were not blinded to vaccine allocation. This becomes significant when considering that the reviewers had significant leeway in deciding what constituted an AOM visit, and how to categorize the multitude of subjective subgroups considered in the study. Of the 944 children reviewed, only 803 were included for various reasons further limiting the study’s sample. A Poisson regression model was used to estimate the incidence rate ratio between the study arms, and sandwich variance estimates were used to account for the block-randomized design. No difference was found between the PCV7<sub>CRM197</sub> arm and the control, with an estimated vaccine efficacy of -0.4% (95%CI -19.4%-15.6%). It is debatable whether this should be considered a randomized controlled trial in light of the methodological flaws discussed above. Even if the study were to be considered randomized, it is unclear how to interpret a study that does not even have 80% power to detect a difference twice as large as the the estimates presented by previous randomized controlled trials.</p>
 <table>
+<caption><span id="tab:rctaom">Table 2.2: </span>Randomized controlled trials evaluating the efficacy of Pneumococcal conjugate vaccines on otitis media</caption>
 <thead>
-<tr>
-<th style="text-align:left;">
-Study
-</th>
-<th style="text-align:left;">
-Vaccine
-</th>
-<th style="text-align:left;">
-Enrollment period
-</th>
-<th style="text-align:left;">
-Country
-</th>
-<th style="text-align:right;">
-No. of children
-</th>
-<th style="text-align:left;">
-Efficacy against Otitis media episodes
-</th>
+<tr class="header">
+<th align="left">Study</th>
+<th align="left">Vaccine</th>
+<th align="left">Enrollment period</th>
+<th align="left">Country</th>
+<th align="right">No. of children</th>
+<th align="left">Efficacy against Otitis media episodes</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Black, 2000 &amp; Fireman, 2003
-</td>
-<td style="text-align:left;">
-PCV7 (CRM197)
-</td>
-<td style="text-align:left;">
-Oct 1995-Aug 1998
-</td>
-<td style="text-align:left;">
-United States
-</td>
-<td style="text-align:right;">
-37868
-</td>
-<td style="text-align:left;">
-7.8% (5.4%-10.2%)
-</td>
+<tr class="odd">
+<td align="left">Black, 2000 &amp; Fireman, 2003</td>
+<td align="left">PCV7 (CRM197)</td>
+<td align="left">Oct 1995-Aug 1998</td>
+<td align="left">United States</td>
+<td align="right">37868</td>
+<td align="left">7.8% (5.4%-10.2%)</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Dagan, 2001
-</td>
-<td style="text-align:left;">
-PCV9 (CRM197)
-</td>
-<td style="text-align:left;">
-Unclear
-</td>
-<td style="text-align:left;">
-Isreal
-</td>
-<td style="text-align:right;">
-264
-</td>
-<td style="text-align:left;">
-17% (-2%-33%)
-</td>
+<tr class="even">
+<td align="left">Dagan, 2001</td>
+<td align="left">PCV9 (CRM197)</td>
+<td align="left">Unclear</td>
+<td align="left">Isreal</td>
+<td align="right">264</td>
+<td align="left">17% (-2%-33%)</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Eskola, 2001
-</td>
-<td style="text-align:left;">
-PCV7 (CRM197)
-</td>
-<td style="text-align:left;">
-Dec 1995-Apr 1997
-</td>
-<td style="text-align:left;">
-Finland
-</td>
-<td style="text-align:right;">
-1662
-</td>
-<td style="text-align:left;">
-6% (-4%-16%)
-</td>
+<tr class="odd">
+<td align="left">Eskola, 2001</td>
+<td align="left">PCV7 (CRM197)</td>
+<td align="left">Dec 1995-Apr 1997</td>
+<td align="left">Finland</td>
+<td align="right">1662</td>
+<td align="left">6% (-4%-16%)</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Kilpi, 2003
-</td>
-<td style="text-align:left;">
-PCV7 (MOMPC)
-</td>
-<td style="text-align:left;">
-Dec 1995-Apr 1997
-</td>
-<td style="text-align:left;">
-Finland
-</td>
-<td style="text-align:right;">
-1666
-</td>
-<td style="text-align:left;">
--1% (-12%-10%
-</td>
+<tr class="even">
+<td align="left">Kilpi, 2003</td>
+<td align="left">PCV7 (MOMPC)</td>
+<td align="left">Dec 1995-Apr 1997</td>
+<td align="left">Finland</td>
+<td align="right">1666</td>
+<td align="left">-1% (-12%-10%</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Prymula, 2006
-</td>
-<td style="text-align:left;">
-PCV9 (HiD)
-</td>
-<td style="text-align:left;">
-Oct 2000-Sep 2002
-</td>
-<td style="text-align:left;">
-Czech Republic &amp; Slovakia
-</td>
-<td style="text-align:right;">
-4968
-</td>
-<td style="text-align:left;">
-33.6% (20.8%-44.3%
-</td>
+<tr class="odd">
+<td align="left">Prymula, 2006</td>
+<td align="left">PCV9 (HiD)</td>
+<td align="left">Oct 2000-Sep 2002</td>
+<td align="left">Czech Republic &amp; Slovakia</td>
+<td align="right">4968</td>
+<td align="left">33.6% (20.8%-44.3%</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-O’Brien, 2008
-</td>
-<td style="text-align:left;">
-PCV7 (CRM197
-</td>
-<td style="text-align:left;">
-Apr 1997-Aug 2000
-</td>
-<td style="text-align:left;">
-United States
-</td>
-<td style="text-align:right;">
-856
-</td>
-<td style="text-align:left;">
--0.4% (-19.4%-15.6%
-</td>
+<tr class="even">
+<td align="left">O’Brien, 2008</td>
+<td align="left">PCV7 (CRM197</td>
+<td align="left">Apr 1997-Aug 2000</td>
+<td align="left">United States</td>
+<td align="right">856</td>
+<td align="left">-0.4% (-19.4%-15.6%</td>
 </tr>
 </tbody>
 </table>
@@ -513,8 +441,14 @@ United States
 <div id="ref-Florentzson2012">
 <p>Florentzson, Rut, and Caterina Finizia. 2012. “Transmyringeal ventilation tube treatment: a 10-year cohort study.” <em>International Journal of Pediatric Otorhinolaryngology</em> 76 (8). Elsevier Ireland Ltd: 1117–22. doi:<a href="https://doi.org/10.1016/j.ijporl.2012.04.013">10.1016/j.ijporl.2012.04.013</a>.</p>
 </div>
+<div id="ref-Spilsbury2006">
+<p>Spilsbury, Katrina, Abdul Latif Kadhim, James B Semmens, Francis J Lannigan, Spilsbury K., Kadhim A.L., Semmens J.B., et al. 2006. “Decreasing rates of middle ear surgery in Western Australian children.” <em>Archives of Otolaryngology - Head and Neck Surgery</em> 132 (11): 1216–20. doi:<a href="https://doi.org/10.1001/archotol.132.11.1216">10.1001/archotol.132.11.1216</a>.</p>
+</div>
 <div id="ref-Bright1993">
 <p>Bright, R A, R M Moore, L L Jeng, C M Sharkness, S E Hamburger, and P M Hamilton. 1993. “The prevalence of tympanostomy tubes in children in the United States, 1988.” <em>American Journal of Public Health</em> 83 (7): 1026–8. <a href="http://www.ncbi.nlm.nih.gov/pubmed/8328599 http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC1694786" class="uri">http://www.ncbi.nlm.nih.gov/pubmed/8328599 http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC1694786</a>.</p>
+</div>
+<div id="ref-Parker2016">
+<p>Parker, Devin M., Laura Schang, Jared R. Wasserman, Weston D. Viles, Gwyn Bevan, and David C. Goodman. 2016. “Variation in Utilization and Need for Tympanostomy Tubes across England and New England.” <em>The Journal of Pediatrics</em> 179 (December). Elsevier Inc.: 178–184.e4. doi:<a href="https://doi.org/10.1016/j.jpeds.2016.08.093">10.1016/j.jpeds.2016.08.093</a>.</p>
 </div>
 <div id="ref-Keyhani2008">
 <p>Keyhani, Salomeh, Lawrence C Kleinman, Michael Rothschild, Joseph M Bernstein, Rebecca Anderson, and Mark Chassin. 2008. “Overuse of tympanostomy tubes in New York metropolitan area: evidence from five hospital cohort.” <em>BMJ (Clinical Research Ed.)</em> 337 (5). British Medical Journal Publishing Group: a1607. doi:<a href="https://doi.org/10.1136/bmj.a1607">10.1136/bmj.a1607</a>.</p>
