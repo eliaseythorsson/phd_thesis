@@ -29,7 +29,7 @@ In 2017, the total number of hospital beds in Iceland was 1,050 [@OECD2017].
 Of those, 687 were at Landspitali University Hospital.
 The inpatient registry contains information on all emergency department and outpatient visits, and all hospital admissions to Landspitali University Hospital. 
 For the period of January 1, 2005 to December 31, 2017, data were extracted on all unplanned acute-care visits and hospital admissions with ICD-10 discharge diagnoses compatible with respiratory infections (see Table \@ref(tab:icd10list)).
-Additionally, any visit or hospital admission associated with NCSP procedural codes in Table \@ref(tab:ncsplist)) was also extracted. 
+
 
 ```{r icd10list}
 kable(
@@ -94,6 +94,8 @@ caption = "The International Classification of Diseases, 10th revision codes use
         
 ```
 
+Additionally, any visit or hospital admission associated with NCSP procedural codes in Table \@ref(tab:ncsplist)) were also extracted. 
+
 ```{r ncsplist}
 kable(
     x = data.frame(stringsAsFactors=FALSE,
@@ -117,8 +119,14 @@ kable(
 
 
 The data included information on date of the visit, hospital length of stay, which departments were involved and a detailed breakdown of costs associated with the visit.
+The inpatient registry uses national identification numbers to identify unique individuals, which were used to merge the data with other registries before being anonynomized and released to the study authors. 
+A seperate identification number is generated for each individual visit or hospital admission.
 
 Data from the inpatient registry was used in papers I, IV, V and VI.
+Additional to the above data, five datasets were generated from the inpatient registry which were not linked to the other study data.
+These included 
+
+
 
 ### The National Drug Prescription Database
 
