@@ -123,6 +123,7 @@ A seperate identification number is generated for each individual visit or hospi
 
 Data from the inpatient registry was used in papers I, IV, V and VI.
 Additional to the above data, five datasets were generated from the inpatient registry which were not linked to the other study data.
+
 These included 
 
 
