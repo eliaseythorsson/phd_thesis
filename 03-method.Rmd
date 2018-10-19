@@ -95,7 +95,6 @@ caption = "The International Classification of Diseases, 10th revision codes use
 ```
 
 Additionally, any visit or hospital admission associated with NCSP procedural codes in Table \@ref(tab:ncsplist)) were also extracted. 
-
 ```{r ncsplist}
 kable(
     x = data.frame(stringsAsFactors=FALSE,
