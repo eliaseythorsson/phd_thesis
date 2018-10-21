@@ -120,13 +120,7 @@ kable(
 The data included information on date of the visit, hospital length of stay, which departments were involved and a detailed breakdown of costs associated with the visit.
 The inpatient registry uses national identification numbers to identify unique individuals, which were used to merge the data with other registries before being anonynomized and released to the study authors. 
 A seperate identification number is generated for each individual visit or hospital admission.
-
 Data from the inpatient registry was used in papers I, IV, V and VI.
-Additional to the above data, five datasets were generated from the inpatient registry which were not linked to the other study data.
-
-These included 
-
-
 
 ### The National Drug Prescription Database
 

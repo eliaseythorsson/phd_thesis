@@ -23,9 +23,11 @@ data_frame(
         "International Classification of Diseases, 10th revision",
         "NOMESCO Classification of Surgical Procedures",
         "Anatomical-Therapeutic-Chemical",
-        "National Drug Prescription Database"
+        "National Drug Prescription Database",
+        "Incidence rate",
+        "Incidence rate ratio"
         ),
-    Abbreviation = c("AOM", "CAP", "HAP", "RSV", "ELISA", "ICD-10", "NCSP", "ATC", "NDPD")
+    Abbreviation = c("AOM", "CAP", "HAP", "RSV", "ELISA", "ICD-10", "NCSP", "ATC", "NDPD", "IR", "IRR")
     ) %>%
     arrange(Term) %>% # i.e. alphabetical order by Term
     kable(booktab = T, caption = "List of abbreviations")

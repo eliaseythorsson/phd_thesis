@@ -1,0 +1,45 @@
+## Paper 1
+
+The aim was to evaluate whether the introduction of PHiD-CV10 was associated with a reduction in the incidence of otitis media with treatment failure. 
+Treatment of otitis media with ceftriaxone was used as proxy for treatment failure.
+Ceftriaxone use for other diagnosis and in older children were used as comparators.
+
+All children under eighteen years of age who visited Children's Hospital Iceland between January 1, 2008 and December 31, 2015 were included.
+Data were extracted from Landspitali University Hospital's inpatient registry.
+A visit was included if an ICD-10 code of Nonsuppurative otitis media (H65) or Suppurative and unspecified otitis media (H66) was recorded in the medical record, or if a child received one or more doses of ceftriaxone.
+Ceftriaxone use was systematically extracted from the hospital's medication administration system using the ATC code J01DD04.
+All associated ICD-10 diagnoses were then obtained from the inpatient registry.
+The total number of visits per calendar year regardless of diagnosis was provided by the hospital.
+Children's Hospital Iceland's referral area was defined as a 100km driving distance from the hospital.
+Population demographic data for the referral area was obtained from Statistics Iceland (www.statice.is).
+
+Pre-vaccine (2008-2011) and post-vaccine (2012-2015) periods were defined based on the year of vaccine introduction.
+Because hospital visits for otitis media are uncommon in older children, the primary analysis was restricted to children under four years of age. 
+Ceftriaxone use was analysed in three separate diagnostic groups  
+A visit was considered to be due to otitis media if an ICD-10 code of Nonsuppurative otitis media (H65) or Suppurative and unspecified otitis media (H66) was recorded.
+Pneumonia visits were defined based on ICD-10 codes Bacterial pneumonia, not elsewhere classified (J15) or Pneumonia, unspecified organism (J18).
+Finally, visits associated with ceftriaxone administration that did not fall into either of the above categories were classified together.
+
+The number of ceftriaxone treatment episodes per diagnostic group were aggregated by calendar month.
+An episode was considered distinct if no ceftriaxone administration was documented in the previous fourteen days.
+Incidence rates (IR) per 1,000 person-years were calculated by dividing the monthly number of ceftriaxone episodes per diagnostic group by the person-time of children in the referral area.
+
+Statistical analysis was performed in R version 3.4.4. [@R-base] using the epiR package [@R-epiR].
+Incidence rate ratios (IRR) between the pre- and post-vaccine periods were calculated using the formula
+
+$$
+Incidence\ rate\ ratio =
+\frac{Incidence\ rate_{post-vaccine}}{Incidence\ rate_{pre-vaccine}} =
+\frac{d_{post}/T_{post}}{d_{pre}/T_{pre}}
+$$
+where $d_{pre}$ and $d_{post}$ are the number of visits in the pre- and post-vaccine periods respectively, and $T_{pre}$ and $T_{post}$ are the number of person-years.
+The Mantel-Haenszel method was used 
+
+To calculate the 95% confidence interval of the IRR, the standard error of the natural logarithm of the IRR was first calculated and the intervals then constructed using the delta method
+
+$$
+95\%\ CI = [\frac{IRR}{\exp{(1.96*SE)}},\ IRR * \exp(1.96*SE)]
+$$
+where $SE = standard\ error\ of\ \ln(IRR) = \sqrt{1/d_{post} + 1/d_{pre}}$. 
+The 
+

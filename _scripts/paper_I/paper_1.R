@@ -2,6 +2,12 @@
 
 library(tidyverse)
 library(lubridate)
+library(zoo)
+library(epiR)
+
+############################
+#### Importing the data ####
+############################
 
 # read dataframe of all visits with study ICD-10 diagnoses
 diagnosis <- read_delim(
@@ -57,8 +63,14 @@ ceftriaxone <- ceftriaxone %>%
     transmute(
         id = Kennitala,
         obs = paste(row.names(ceftriaxone), "ceftriaxone", sep = "_"),
-        age_y = Aldur, 
+        age_y = Aldur,
         date = round_date(Komudagur, unit = "day"), 
+        DIA_1 = DIA_1,
+        DIA_2 = DIA_2, 
+        DIA_3 = DIA_3,
+        DIA_4 = DIA_4,
+        DIA_5 = DIA_5,
+        DIA_6 = DIA_6,
         departm = Deild, 
         visit_type = `Heiti lotu`,
         im = `LYFJAGJÖF Í VÖ_VA (IM)`,
@@ -97,6 +109,12 @@ komur <- komur %>%
         obs = paste(row.names(komur), "komur", sep = "_"),
         age_y = ALDUR, 
         date = round_date(KOMUDAGUR, unit = "day"),
+        DIA_1 = DIA_1,
+        DIA_2 = DIA_2, 
+        DIA_3 = DIA_3,
+        DIA_4 = DIA_4,
+        DIA_5 = DIA_5,
+        DIA_6 = DIA_6,
         departm = Deild
     )
 
@@ -109,3 +127,71 @@ komur <-
     group_by(id) %>%
     mutate(days_since_last =  difftime(date, lag(date), unit = "days")) %>%
     ungroup()
+
+# read dataframe of all hospital admissions with study ICD-10 diagnoses
+
+# lsh_legur <- read_delim(
+#     file = "_data/paper_I/lsh_legur_0515.txt", 
+#     delim = ";",
+#     escape_double = FALSE,
+#     col_types = cols(
+#         Aldur = col_integer(), `Allar greiningar` = col_character(), 
+#          Dia_1 = col_character(), Dia_10 = col_character(), 
+#          Dia_2 = col_character(), Dia_3 = col_character(), 
+#          Dia_4 = col_character(), Dia_5 = col_character(), 
+#          Dia_6 = col_character(), Dia_7 = col_character(), 
+#          Dia_8 = col_character(), Dia_9 = col_character(), 
+#          Dánardagur = col_character(), `Inn á LSH` = col_datetime(format = "%d.%m.%Y %H:%M"), 
+#          KENNITALA = col_character(), Kyn = col_character(), 
+#          Nafn = col_character(), SERGREIN = col_character(), 
+#          `Út af LSH` = col_datetime(format = "%d.%m.%Y %H:%M")), 
+#     locale = locale(decimal_mark = ","), 
+#     trim_ws = TRUE)
+# 
+# lsh_legur <- lsh_legur %>%
+#     select(-Nafn) %>%
+#     transmutate(
+#         id = KENNITALA,
+#         gender = Kyn,
+#         age_y = Aldur, 
+#         specialty = SERGREIN,
+#         diagnosis = `Allar greiningar`, 
+#         date_in = round_date(`Inn á LSH`, unit = "day"),
+#         date_out = round_date(`Út af LSH`, unit = "day"),
+#         death = as.Date(Dánardagur, format = "%d.%m.%Y")
+#     )
+
+# All visits to the paediatric emergency department regardless of diagnosis
+bmb_komur <- read_csv2(file = "_data/paper_I/bmb_komur.csv")
+
+bmb_komur <- bmb_komur %>%
+    filter(X1 != "ALLS") %>%
+    select(X1:`2016`) %>%
+    gather(key = year, value = n, -X1) %>%
+    mutate(month = rep(month.abb, 2016-2002 +1)) %>%
+    select(-X1) %>%
+    mutate(ym = as.yearmon(paste(.$month, .$year, sep = "/"), format = "%b/%Y"), year = as.integer(year))
+
+# Number of children within a 100km radius of Children's Hospital Iceland
+born_100km <- read_delim("_data/paper_I/born_100km.csv", ";", escape_double = FALSE, trim_ws = TRUE)
+born_100km <- born_100km %>% gather(key = year, value = n, `2008`:`2015`)
+colnames(born_100km) <- c("area", "age_y", "year", "n")
+
+born_0811 <- read_csv2("_data/paper_I/born_100_km_0811.csv")
+born_0811 <- born_0811 %>% gather(key = year, value = n, `2008`:`2011`)
+colnames(born_0811) <- c("area", "age_y", "year", "n")
+born_0811 <- born_0811 %>% filter(area %in% born_100km$area)
+
+born_1216 <- read_csv2("_data/paper_I/born_100_km_1216.csv")
+born_1216 <- born_1216 %>% gather(key = year, value = n, `2012`:`2016`)
+colnames(born_1216) <- c("area", "age_y", "year", "n")
+born_1216 <- born_1216 %>% filter(area %in% born_100km$area)
+
+born_100km <- born_0811 %>% full_join(born_1216) %>% mutate(year = as.integer(year))
+rm(born_0811, born_1216)
+
+#######################
+#### Data analysis ####
+#######################
+
+# The effect of 
