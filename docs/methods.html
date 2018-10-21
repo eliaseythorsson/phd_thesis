@@ -392,15 +392,52 @@
 <p>Pre-vaccine (2008-2011) and post-vaccine (2012-2015) periods were defined based on the year of vaccine introduction. Because hospital visits for otitis media are uncommon in older children, the primary analysis was restricted to children under four years of age. Ceftriaxone use was analysed in three separate diagnostic groups<br />
 A visit was considered to be due to otitis media if an ICD-10 code of Nonsuppurative otitis media (H65) or Suppurative and unspecified otitis media (H66) was recorded. Pneumonia visits were defined based on ICD-10 codes Bacterial pneumonia, not elsewhere classified (J15) or Pneumonia, unspecified organism (J18). Finally, visits associated with ceftriaxone administration that did not fall into either of the above categories were classified together.</p>
 <p>The number of ceftriaxone treatment episodes per diagnostic group were aggregated by calendar month. An episode was considered distinct if no ceftriaxone administration was documented in the previous fourteen days. Incidence rates (IR) per 1,000 person-years were calculated by dividing the monthly number of ceftriaxone episodes per diagnostic group by the person-time of children in the referral area.</p>
+<p>The IR of OM visits were similarly defined and calculated. If a decrease were to be observed in the number of ceftriaxone treated OM episodes, it could be due to a decrease in the number of OM visits or a decrease in the use of ceftriaxone. To evaluate this, the incidence risk of ceftriaxone treatment per 1,000 OM visits was calculated for the pre- and post-vaccine periods.</p>
 <p>Statistical analysis was performed in R version 3.4.4. <span class="citation">(R Core Team <a href="#ref-R-base">2018</a>)</span> using the epiR package <span class="citation">(Stevenson et al. <a href="#ref-R-epiR">2017</a>)</span>. Incidence rate ratios (IRR) between the pre- and post-vaccine periods were calculated using the formula</p>
 <p><span class="math display">\[
-Incidence\ rate\ ratio =
-\frac{Incidence\ rate_{post-vaccine}}{Incidence\ rate_{pre-vaccine}} =
+IRR =
+\frac{IR_{post-vaccine}}{IR_{pre-vaccine}} =
 \frac{d_{post}/T_{post}}{d_{pre}/T_{pre}}
-\]</span> where <span class="math inline">\(d_{pre}\)</span> and <span class="math inline">\(d_{post}\)</span> are the number of visits in the pre- and post-vaccine periods respectively, and <span class="math inline">\(T_{pre}\)</span> and <span class="math inline">\(T_{post}\)</span> are the number of person-years. To calculate the 95% confidence interval of the IRR, the standard error of the natural logarithm of the IRR was first calculated and the intervals then constructed using the delta method</p>
+\]</span> where <span class="math inline">\(d_{pre}\)</span> and <span class="math inline">\(d_{post}\)</span> are the number of visits or ceftriaxone treatment episodes in the pre- and post-vaccine periods respectively, and <span class="math inline">\(T_{pre}\)</span> and <span class="math inline">\(T_{post}\)</span> are the number of person-years.</p>
+<p>The IRR was estimated independently for each age-strata and the stratum-specific estimates were combined (when appropriate) using the Mantel-Haenszel method <span class="citation">(Kirkwood and Sterne <a href="#ref-Kirkwood2003">2003</a>)</span>. The Mantel-Haenszel estimate of the IRR is the weighted mean of the IRR in each stratum. The weight <span class="math inline">\(w\)</span> for each stratum <span class="math inline">\(age\)</span> is</p>
 <p><span class="math display">\[
-95\%\ CI = [\frac{IRR}{\exp{(1.96*SE)}},\ IRR * \exp(1.96*SE)]
-\]</span> where <span class="math inline">\(SE = \sqrt{1/d_{post} + 1/d_{pre}}\)</span></p>
+w_{age} = \frac{d_{(pre,\ age})\ *\ T_{(post,\ age)}}{T_{(pre,\ age)}\ +\ T_{(post,\ age)}}
+\]</span> and the resulting Mantel-Haenszel adjusted IRR is therefore</p>
+<p><span class="math display">\[
+IRR_{MH} = 
+\frac{\sum(w_{age}\ *\ IRR_{age})}{\sum w_{age}} = 
+\frac{\sum \frac{d_{(post,\ age)}\ *\ T_{(pre,\ age)}}{T_{(pre,\ age)}\ +\ T_{(post,\ age)}}}
+{\sum \frac{d_{(pre,\ age)}\ *\ T_{(post,\ age)}}{T_{(pre,\ age)}\ +\ T_{(post,\ age)}}} =
+\frac{Q}{R}
+\]</span> The 95% confidence interval is derived using the delta method, and has range</p>
+<p><span class="math display">\[
+[IRR_{MH}\ *\ \frac{1}{EF}\ ;\ IRR_{MH}\ *\ EF]
+\]</span> where the error factor is <span class="math inline">\(EF = \exp(1.96\ *\ s.e. \ln IRR_{MH})\)</span> and the standard error of the natural logarithm of the <span class="math inline">\(IRR_{MH}\)</span> is</p>
+<p><span class="math display">\[
+s.e. \ln IRR_{MH} = 
+\sqrt{\frac{\sum V_{age}}{Q*R}}
+\]</span></p>
+<p>in which the variance <span class="math inline">\(V\)</span> of strata <span class="math inline">\(age\)</span> is <span class="math display">\[
+V_{age} = 
+\frac{(d_{pre,\ age}\ + d_{post,\ age})\ *\ T_{pre,\ age}\ *\ T_{post,\ age}}
+{(T_{pre,\ age}\ +\ T_{post,\ age})^2}
+\]</span></p>
+<p>Finally, the null hypthesis that <span class="math inline">\(IRR_{MH} = 1\)</span> was tested by calculating the Mantel-Haenszel <span class="math inline">\(\chi^2\)</span> test statistic</p>
+<p><span class="math display">\[
+\chi^2_{MH} = 
+\frac{(\sum d_{post,\ age} - \sum E_{post,\ age})^2}{\sum V_{age}};\ d.f.  =1
+\]</span> from which the <em>P</em>-value was derived.</p>
+<p>Combining sratum-specific estimates is appropriate when the exposure-outcome association is the same in each of the strata, i.e. <span class="math inline">\(IRR_{age} = IRR_{MH}\)</span> If true, it follows that <span class="math display">\[
+(d_{post,\ age} * T_{pre,\ age} - IRR_{MH} * d_{pre,\ age} * T_{post,\ age}) = 0
+\]</span></p>
+<p>The <span class="math inline">\(\chi^2\)</span> test of heterogeneity is based on the weighted sum of squares of the above differences, and is calculated as</p>
+<p><span class="math display">\[
+\chi^2 =
+\sum \frac{d_{post,\ age} * T_{pre,\ age} - IRR_{MH} * d_{pre,\ age} * T_{post,\ age}}
+{IRR_{MH}*V_{age}*(T_{pre,\ age}+T_{post,\ age})^2}
+\ , d.f. = c-1
+\]</span></p>
+<p>where <span class="math inline">\(c\)</span> is the number of strata. It tests whether the data is congruent with the null hypothesis of no effect modification of the exposure-outcome relationship by strata. The greater the differences is between <span class="math inline">\(IRR_{age}\)</span> and <span class="math inline">\(IRR_{MH}\)</span>, the larger the <span class="math inline">\(\chi^2\)</span> statistic. If the null hypothesis is rejected, the <span class="math inline">\(IRR_{MH}\)</span> is not calculated and only the stratum-specific IRR are presented.</p>
 
 </div>
 </div>
@@ -414,6 +451,9 @@ Incidence\ rate\ ratio =
 </div>
 <div id="ref-R-epiR">
 <p>Stevenson, Mark, Telmo Nunes, Cord Heuer, Jonathon Marshall, Javier Sanchez, Ron Thornton, Jeno Reiczigel, Jim Robison-Cox, Paola Sebastiani, and Peter Solymos. 2017. <em>EpiR: Tools for the Analysis of Epidemiological Data</em>. <a href="https://CRAN.R-project.org/package=epiR" class="uri">https://CRAN.R-project.org/package=epiR</a>.</p>
+</div>
+<div id="ref-Kirkwood2003">
+<p>Kirkwood, BR, and JAC Sterne. 2003. <em>Essential medical statistics</em>. Edited by Fiona Goodgame. 2nd ed. Oxford: Blackwell Science. doi:<a href="https://doi.org/10.1002/sim.1961">10.1002/sim.1961</a>.</p>
 </div>
 </div>
             </section>
