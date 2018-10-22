@@ -128,39 +128,6 @@ komur <-
     mutate(days_since_last =  difftime(date, lag(date), unit = "days")) %>%
     ungroup()
 
-# read dataframe of all hospital admissions with study ICD-10 diagnoses
-
-# lsh_legur <- read_delim(
-#     file = "_data/paper_I/lsh_legur_0515.txt", 
-#     delim = ";",
-#     escape_double = FALSE,
-#     col_types = cols(
-#         Aldur = col_integer(), `Allar greiningar` = col_character(), 
-#          Dia_1 = col_character(), Dia_10 = col_character(), 
-#          Dia_2 = col_character(), Dia_3 = col_character(), 
-#          Dia_4 = col_character(), Dia_5 = col_character(), 
-#          Dia_6 = col_character(), Dia_7 = col_character(), 
-#          Dia_8 = col_character(), Dia_9 = col_character(), 
-#          Dánardagur = col_character(), `Inn á LSH` = col_datetime(format = "%d.%m.%Y %H:%M"), 
-#          KENNITALA = col_character(), Kyn = col_character(), 
-#          Nafn = col_character(), SERGREIN = col_character(), 
-#          `Út af LSH` = col_datetime(format = "%d.%m.%Y %H:%M")), 
-#     locale = locale(decimal_mark = ","), 
-#     trim_ws = TRUE)
-# 
-# lsh_legur <- lsh_legur %>%
-#     select(-Nafn) %>%
-#     transmutate(
-#         id = KENNITALA,
-#         gender = Kyn,
-#         age_y = Aldur, 
-#         specialty = SERGREIN,
-#         diagnosis = `Allar greiningar`, 
-#         date_in = round_date(`Inn á LSH`, unit = "day"),
-#         date_out = round_date(`Út af LSH`, unit = "day"),
-#         death = as.Date(Dánardagur, format = "%d.%m.%Y")
-#     )
-
 # All visits to the paediatric emergency department regardless of diagnosis
 bmb_komur <- read_csv2(file = "_data/paper_I/bmb_komur.csv")
 
@@ -194,4 +161,79 @@ rm(born_0811, born_1216)
 #### Data analysis ####
 #######################
 
-# The effect of 
+
+ceftriaxone %>%
+    filter(date <= as.Date("2015-12-31")) %>%
+    mutate(ym = as.yearqtr(date)) %>%
+    filter(age_y <= 3) %>%
+    expand(ym, age_y) %>% # Creates grid for each combination of date and age
+    left_join( # Adds otits media episodes per year-quarter and age
+        ceftriaxone %>%
+            unite(col = all_diagnoses, DIA_1:DIA_6) %>%
+            filter(
+                str_detect(string = all_diagnoses, pattern = "H65|H66"), # only otitis media
+                is.na(days_since_last) | days_since_last > 14, # only "new episodes"
+                age_y <= 3 
+            ) %>%
+            mutate(ym = as.yearqtr(date)) %>%
+            group_by(ym, age_y) %>%
+            summarise(n_aom = n_distinct(obs))
+    ) %>%
+    left_join( # Adds pneumonia episodes per year-quarter and age
+        ceftriaxone %>%
+            unite(col = all_diagnoses, DIA_1:DIA_6) %>%
+            filter(
+                str_detect(string = all_diagnoses, pattern = "J15|J18"), # only pneumonia
+                is.na(days_since_last) | days_since_last > 14, # only "new episodes"
+                age_y <= 3 
+            ) %>%
+            mutate(ym = as.yearqtr(date)) %>%
+            group_by(ym, age_y) %>%
+            summarise(n_pneumonia = n_distinct(obs))
+    ) %>%
+    left_join( # Adds all episodes other than otitis media and pneumonia
+        ceftriaxone %>%
+            unite(col = all_diagnoses, DIA_1:DIA_6) %>%
+            filter(
+                !str_detect(string = all_diagnoses, pattern = "H65|H66|J15|J18"), # Everything except OM/Pneumonia
+                is.na(days_since_last) | days_since_last > 14, # only "new episodes"
+                age_y <= 3 
+            ) %>%
+            mutate(ym = as.yearqtr(date)) %>%
+            group_by(ym, age_y) %>%
+            summarise(n_other = n_distinct(obs))
+    ) %>%
+    left_join(
+        ceftriaxone %>%
+            mutate(year = year(date)) %>%
+            left_join(
+                born_100km %>%
+                    group_by(age_y, year) %>%
+                    summarise(n_total = sum(n, na.rm = T))
+                ) %>%
+            mutate(ym = as.yearqtr(date),
+                   n_total = n_total / 4) %>%
+            select(ym, age_y, n_total) %>%
+            distinct()
+    ) %>%
+    transmute(
+        "Otitis~media" = ((n_aom/n_total) * 1000),
+        "Pneumonia" = ((n_pneumonia/n_total) *1000),
+        "Other" = ((n_other/n_total) * 1000),
+        age_y = age_y, 
+        ym = ym
+    ) %>%
+    gather(key = indication, value = n, -ym, -age_y) %>%
+    mutate(
+        n = if_else(is.na(n), 0, n),
+        indication = factor(indication, levels = c("Otitis~media", "Pneumonia", "Other"))
+    ) %>%
+    ggplot(aes(x = ym, y = n, lty = factor(age_y))) +
+    geom_line() +
+    facet_wrap(~indication, labeller = label_parsed, nrow = 3, scales = "free_y") +
+    scale_y_continuous(limits = c(0, NA)) +
+    scale_x_yearqtr(format = "%Y", n = 9) +
+    labs(x = NULL, y = "Ceftriaxone treatment episodes per 1000 person-years") +
+    theme_bw(base_size = 12) +
+    theme(legend.title = element_blank(), legend.position = "bottom")
+    
