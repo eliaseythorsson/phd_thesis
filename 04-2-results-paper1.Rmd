@@ -1,2 +1,13 @@
 ## Paper 1
 
+```{r}
+load("_analyses/paper_I/2018-10-23-04-2-results-paper1.RData")
+```
+
+A total of 117,250 visits to the Children’s Hospital for any indication were recorded from 2008 to 2015. S
+easonal variation in the number of these visits was apparent, with an increase in visits during the winter months of October through March compared with that in April through September. 
+The total number of visits grew steadily from 12,229 in 2008 to 14,502 in 2015.
+During the same period, 4,624 children <4 years of age visited the Children’s Hospital 6,232 times for the treatment of 4,994 distinct episodes of AOM, of which 531 episodes were treated with ceftriaxone.
+The number of children <18 years of age living within the Children’s Hospital’s referral region was stable during the study period decreasing from 62,067 in 2008 to 61,798 in 2015.
+The number of children <4 years of age in the same region increased from 13,562 in 2008 to 14,644 in 2011 and then decreased again to 13,272 in 2015.
+Raw incidence rates of total visits, visits for AOM and parenteral ceftriaxone use are shown.

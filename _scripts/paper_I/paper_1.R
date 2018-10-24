@@ -236,4 +236,5 @@ ceftriaxone %>%
     labs(x = NULL, y = "Ceftriaxone treatment episodes per 1000 person-years") +
     theme_bw(base_size = 12) +
     theme(legend.title = element_blank(), legend.position = "bottom")
-    
+
+save.image(file = paste0("_analyses/paper_I/", Sys.Date(), "-04-2-results-paper1", ".RData"))
