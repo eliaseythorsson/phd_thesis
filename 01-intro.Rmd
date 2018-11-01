@@ -25,9 +25,10 @@ data_frame(
         "Anatomical-Therapeutic-Chemical",
         "National Drug Prescription Database",
         "Incidence rate",
-        "Incidence rate ratio"
+        "Incidence rate ratio",
+        "National Vaccine Registry"
         ),
-    Abbreviation = c("AOM", "CAP", "HAP", "RSV", "ELISA", "ICD-10", "NCSP", "ATC", "NDPD", "IR", "IRR")
+    Abbreviation = c("AOM", "CAP", "HAP", "RSV", "ELISA", "ICD-10", "NCSP", "ATC", "NDPD", "IR", "IRR", "NVR")
     ) %>%
     arrange(Term) %>% # i.e. alphabetical order by Term
     kable(booktab = T, caption = "List of abbreviations")
@@ -43,7 +44,7 @@ The causal association between this newly discovered bacterium and pneumonia was
 
 The infectious manifestations of pneumococcal disease are, broadly speaking, local infections of the respiratory tract and infections of previously sterile tissue.
 They range from common to uncommon, and from benign to serious.
-The most common infectious manifestation of pneumococcus is acute otitis media (AOM) – an infection of the middle ear.
+The most common infectious manifestation of pneumococcus is otitis media (AOM) – an infection of the middle ear.
 The disease course is benign and rarely results in permanent disability.
 On the other hand, AOM is the most common reason for physician visit and for antimicrobial prescription in the paediatric population.
 Antimicrobial consumption is causally related to antimicrobial resistance, a major threat to public health. 
@@ -87,7 +88,6 @@ As the other Nordic countries, Iceland has a rich legacy of national health-rela
 Detailed individual-level information on vaccine status, outpatient primary care visits, antimicrobial consumption, tympanic tube procedures and hospitalizations are accessible, and linked between registries using national identification numbers.
 All healthcare costs are available on the individual-level from Icelandic Health Insurance, which is the insurer of all permanent Icelandic residents.
 This wealth of medical documentation enabled a unique whole-population ecological study examining the impact of systematic pneumococcal vaccination. 
-
 
 ## Clinical manifestations of *Streptococcus pneumoniae*
 
@@ -281,12 +281,16 @@ Seventy-seven studies were included, and inclusion criteria were strict, conside
 The crude estimate of the proportion of pneumonia caused by *Streptococcus pneumoniae* was 19.3%.
 After adjusting for several variables using a fixed-effects meta-regression model, the estimated proportion of pneumococcal pneumonia in the average Northern European country was 15%.
 
+#### Healthcare burden of pneumonia
+
 Lower respiratory infections were, in 2016, estimated to cause 2,38 million deaths worldwide and were the sixth leading cause of death [@Troeger2018].
 Of those deaths, 652,572 (95%CI 586,475-720,612) were estimated to occur among children under five years of age, making lower respiratory infections the leading cause of death in this age-group.
 Large variations exist in the incidence, morbidity and mortality of pneumonia between countries.
 Pneumonia disproportionately affects developing countries, which experience over half of the pneumonia associated mortality.
 Yet pneumonia is still a large healthcare burden in developed countries, and accounts for 3%-18% of all childhood hospital admissions [@Madhi2013].
 In developed countries, the incidence of pneumonia in children under five years of age is 34-40 cases per 1000 person-years.
+
+#### Pneumonia in Iceland
 
 Paragraph about Icelandic literature and changing epidemiology
 - Pneumococcal pneumonia prevalence and serotype distribution
@@ -308,7 +312,7 @@ Paragraph about Icelandic literature and changing epidemiology
 	- Rate of sequelae
 
 
-## Pneumococcal conjugate vaccines
+## Pneumococcal vaccines
 
 In this chapter we will review the history of pneumococcal vaccination to better understand the current vaccine climate.
 Special attention will be paid to the scientific discourse that led to the recognition of the need for conjugating pneumococcal polysaccharides to a protein carrier.
@@ -368,7 +372,6 @@ If one serotype disappears due to immune recognition, an ecological niche is cre
 This process takes place on both the individual and community level.
 Systematic vaccination programs greatly reduce the prevalence of carriage and disease of the serotypes contained within the vaccine among the vaccinated.
 If the vaccinated individuals compromise a large enough portion of the population.
-
 
 ### The impact of pneumococcal conjugate vaccines on otitis media
 

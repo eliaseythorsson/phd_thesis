@@ -17,14 +17,13 @@ The same electronic medical record software, Saga, was used by all health-care p
 The International Classification of Diseases, 10th revision (ICD-10), is the only diagnostic coding system which has been in use during the whole study period.
 All procedures have been coded with the NOMESCO Classification of Surgical Procedures (NCSP). 
 Drugs are classified using the Anatomical-Therapeutic-Chemical (ATC) classification system of the World Health Organization. 
-
 In the following sub-chapters, each of the registries providing study data will be reviewed. 
 
 ### Landspitali University Hospital inpatient registry
 
 Landspitali University Hospital is the only tertiary hospital in Iceland.
 It also functions as a primary and secondary hospital for the capital area, serving 65% of the Icelandic population.
-Children's Hospital Iceland, which is a component hospital of Landspitali, is the only paediatric hospital in Iceland.
+Children's Hospital Iceland, which is a component hospital of Landspitali, is the only pediatric hospital in Iceland.
 In 2017, the total number of hospital beds in Iceland was 1,050 [@OECD2017].
 Of those, 687 were at Landspitali University Hospital.
 The inpatient registry contains information on all emergency department and outpatient visits, and all hospital admissions to Landspitali University Hospital. 
@@ -95,6 +94,7 @@ caption = "The International Classification of Diseases, 10th revision codes use
 ```
 
 Additionally, any visit or hospital admission associated with NCSP procedural codes in Table \@ref(tab:ncsplist)) were also extracted. 
+
 ```{r ncsplist}
 kable(
     x = data.frame(stringsAsFactors=FALSE,
@@ -118,21 +118,130 @@ kable(
 
 
 The data included information on date of the visit, hospital length of stay, which departments were involved and a detailed breakdown of costs associated with the visit.
+
 The inpatient registry uses national identification numbers to identify unique individuals, which were used to merge the data with other registries before being anonynomized and released to the study authors. 
-A seperate identification number is generated for each individual visit or hospital admission.
+A separate identification number is generated for each individual visit or hospital admission.
+
+Several smaller data sets were extracted from the inpatient registry for specific papers.
+For paper I, all doses of ceftriaxone administered at the Children's Hospital Iceland between January 2009 and December 2015 were extracted from the hospital's medication administration system using the ATC code J01DD04.
+Any ICD-10 diagnostic code associated with the visit or hospital admission in which ceftriaxone was administered, was extracted from the inpatient registry.
+Importantly, this included ICD-10 codes which are not in Table \@ref(tab:icd10list).
+The aggregate number of yearly visits to the the pediatric emergency department of Children's Hospital Iceland 2008-2015 was also obtained.
+Paper VI required synthetic controls used within a time-series analysis framework. 
+The aggregate monthly number acute-care visits and hospital admissions for several sub-chapters of the ICD-10 diagnostic coding system were obtained for 22 different age-groups. 
+
 Data from the inpatient registry was used in papers I, IV, V and VI.
 
 ### The National Drug Prescription Database
 
-The NDPD is a whole population database collected and maintained by the Icelandic Directorate of Health from the 1st of January 2005.
+The National Drug Prescription Database (NDPD) is a whole population registry collected and maintained by the Icelandic Directorate of Health from January 1, 2005.
 It contains information on all filled drug prescriptions in Iceland.
-All pharmacies are required by law to collect data on each filled prescription and submit this to the NDPD.
+All pharmacies are required by law to collect data on each filled prescription and submit to the NDPD.
 An important distinction must be made between a filled prescription and a prescription.
 The NDPD receives information if and when a prescription is filled.
 This means that the NDPD does not contain information on prescriptions that were never filled by the patient.
-This also means that all prescriptions contained within the NDPD were bought and received by the patient.
+This also means that all prescriptions contained within the NDPD were paid for and received by the patient.
 Extensive validation and error testing has been performed by the Directorate of Health to ensure the robustness and coverage of the NDPD.
-The submission to the NDPD has been automated electronically and coupled with the process by which drugs are dispensed at the pharmacies, essentially excluding the possibility of a filled prescription not being registered. The NDPD included demographic data as previously described.
+The submission to the NDPD has been automated electronically and coupled with the process by which drugs are dispensed at the pharmacies, essentially excluding the possibility of a filled prescription not being registered.
+
+All prescriptions within the ATC therapeutic subgroup "J01" (Antibacterials for systemic use), "J07" (Vaccines), "S01" (Opthalmologicals) and "S02" (Otologicals) were extracted for the period from January 1, 2005 to December 31, 2017.
+The chemical subgroups used in the study are shown in Table \@ref(tab:druglist))
+
+```{r druglist}
+kable(
+    x = data.frame(stringsAsFactors=FALSE,
+     ATC.code = c(
+         "J01A", "J01B", "J01C", "J01D", "J01E", "J01F", "J01G", "J01M", "J01R", "J01X",
+         "J07A", "J07B", "J07C", "J07X",
+         "S01A, S02A", "S01C, S02C"),
+   Description = c(
+       "Tetracyclines",
+       "Amphenicols",
+       "Beta-lactam antibacterials, penicillins",
+       "Other beta-lactam antibacterials",
+       "Sulfonamides and trimethoprim",
+       "Macrolides, lincosamides and streptogramins",
+       "Aminoglycoside antibacterials",
+       "Quinolone antibacterials",
+       "Combinations of antibacterials",
+       "Other antibacterials",
+       "Bacterial vaccines",
+       "Viral vaccines",
+       "Bacterial and viral vaccines",
+       "Other vaccines",
+       "Anti-infectives",
+       "Anti-inflammatory agents and anti-infectives in combination")
+        ),
+   col.names = c("ATC chemical subgroup code", "Description"),
+   caption = "Anatomical Therapeutic Chemical codes used in the current study"
+)
+```
 
 ### The Primary Care Database
+
+In the Icelandic healthcare system, primary care is provided by family medicine physicians at neighborhood based centers (*Heilsugæsla*).
+Primary care centers use the same electronic medical record system and use the ICD-10 diagnostic coding system. 
+The Directorate of Health maintains a registry on all primary care visits within the Icelandic healthcare system.
+Extensive maintenance and restructuring has been ongoing since early 2016, with no new data added to the registry since December 31, 2015.
+From this registry the all visits and phone-calls with diagnostic codes compatible with respiratory tract infections were extracted for the period January 1, 2005 to December 31, 2015 (Table \@ref(tab:icd10list)).
+
+### The National Vaccine Registry
+
+The Icelandic Directorate of Health maintains the National Vaccine Registry (NVR). 
+All vaccine doses administered within the healthcare system are systematically recorded in the electronic health record at the time of administration.
+This record is reviewed and updated regularly, and vaccinations received elswhere included.
+The NVR collects this information from all electronic health records in the country.
+All administered vaccine doses with ATC codes "J07AL" (Pneumococcal vaccines) were extracted for the period of January 1, 2005 to December 31, 2017.
+
+### Reimburcement database of the Icelandic Health Insurance
+
+The Icelandic healthcare system is a single-payer system with a single goverment run healthcare insurance.
+All permenant citizens are covered. 
+Each healthcare visit is associated with a nominal out-of-pocket fee, with the rest of the visit covered by the insurance.
+Healthcare providers are either salaried governmental employees or independent practitioners who are reimbursed on a per case basis, according to pre-determined negotiations with Icelandic Health Insurance.
+To receive pay for services, physicians must submit a reimbursement form detailing the nature of the visit and any procedures performed using pre-specified procedural codes.
+Icelandic Health Insurance maintains a reimbursement database which details the nature and number of procedures performed.
+All otolaryngological procedures performed on the middle ear and tonsills were extracted from the reimbursement database for the period from January 1, 2005 to December 31, 2017 using the procedural codes in Table \@ref(tab:reimblist))
+
+```{r reimblist}
+kable(
+    x = data.frame(
+    stringsAsFactors = FALSE,
+    reimbursement.code = c(
+    "5500601",
+    "5500602/55Q0602+55Z0602",
+    "5500603/55Q0603+55Z0603",
+    "5500604/55Q0604+55Z0604",
+    "5501001/55Q1001+55Z1001",
+    "5501002/55Q1002+55Z1002",
+    "5501201/55Q1201+55Z1201",
+    "5501301/55Q1301+55Z1301",
+    "5501801/55Q1801+55Z1801",
+    "5501802/55Q1802+55Z1802",
+    "5501901/55Q1901+55Z1901",
+    "5501902/55Q1902+55Z1902",
+    "5502002/55Q2002+55Z2002"
+    ),
+    Description = c(
+    "Myringotomy, one or both ears, under local anesthetic",
+    "Placement of tympanostomy, one ear (local anesthetic/general anesthesia)",
+    "Placement of tympanostomy tube, one ear, and myringotomy, both ears (local anesthetic/general anesthesia)",
+    "Removal of tympanostomy tube, one ear (local anesthetic/general anesthesia)",
+    "Placement of tympanostomy tube, both ears (local anesthetic/general anesthesia)",
+    "Removal of tympanostomy tube, both ears (local anesthetic/general anesthesia)",
+    "Adenoidectomy (local anesthetic/general anesthesia)",
+    "Adenoidectomy and placement of tymponstomy tube or myringotomy, one or both ears (local anesthetic/general anesthesia)",
+    "Tonsillectomy with or without adenoidectomy (local anesthetic/general anesthesia)",
+    "Tonsillectomy with or without adenoidectomy - performed with laser (local anesthetic/general anesthesia)",
+    "Tonsillectomy, with or without adenoidectomy, and tympanostomy or myringotomy (local anesthetic/general anesthesia)",
+    "Tonsillectomy, with or without adenoidectomy, and tympanostomy or myringotomy - performed with laser (local anesthetic/general anesthesia)",
+    "Myringoplasty with patch (local anesthetic/general anesthesia)"
+    
+    )
+    ),
+    col.names = c("Reimbursement code", "Description"),
+    caption = "Reimbursement codes used in the current study"
+    )
+```
+
 
