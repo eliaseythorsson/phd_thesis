@@ -6,24 +6,22 @@ Data was collected from multiple whole population registries and a single hospit
 The study period was from January 1, 2005 until December 31, 2017.
 All data was identifiable down to the individual level based on national identification numbers, which are issued to every Icelandic resident at birth or when granted residency.
 A national identification number is not reused upon the death, and each individual receives one and only one number over the course of their lifetime.
-Data was collected from different sources and sent to the Directorate of Health for processing. 
-There, the data was linked using national identification numbers, before being anonymized and subsequently released to the research team.
-A new study identification number was created in the cleaning process, which is unique to the study participant.
-These unique study identification numbers will be referred to as study IDs in all further chapters of this thesis. 
+Data was sent from the various registries to the Directorate of Health for processing, where it was linked using national identification numbers, before being anonymized and subsequently released to the study group. 
+Anonymization was accomplished by creating a study identification number during the linking process, which is generated directly from the national identification number in a reproducible fashion.
+The mapping key is kept by the Directorate of Health, and not accessible by the study authors. 
 
-The data used in this study benefits from the stability of its sources.
+The data underlying this study is observational in nature, but benefits from several factors. 
 Electronic medical records have been ubiquitous in Iceland during the study period.
-The same electronic medical record software, Saga, was used by all health-care providers and institutions throughout.
+The same electronic medical record software, Saga, has been used by all health-care providers and institutions throughout the study period. 
 The International Classification of Diseases, 10th revision (ICD-10), is the only diagnostic coding system which has been in use during the whole study period.
-All procedures have been coded with the NOMESCO Classification of Surgical Procedures (NCSP). 
+All medical procedures have been coded with the NOMESCO Classification of Surgical Procedures (NCSP). 
 Drugs are classified using the Anatomical-Therapeutic-Chemical (ATC) classification system of the World Health Organization. 
-In the following sub-chapters, each of the registries providing study data will be reviewed. 
+In the following sub-chapters, each registry providing study data will be reviewed. 
 
 ### Landspitali University Hospital inpatient registry
 
-Landspitali University Hospital is the only tertiary hospital in Iceland.
+Landspitali University Hospital is the only tertiary hospital in Iceland, and encompasses Children's Hospital Iceland -- the only paediatric hospital in Iceland.  
 It also functions as a primary and secondary hospital for the capital area, serving 65% of the Icelandic population.
-Children's Hospital Iceland, which is a component hospital of Landspitali, is the only pediatric hospital in Iceland.
 In 2017, the total number of hospital beds in Iceland was 1,050 [@OECD2017].
 Of those, 687 were at Landspitali University Hospital.
 The inpatient registry contains information on all emergency department and outpatient visits, and all hospital admissions to Landspitali University Hospital. 
@@ -93,7 +91,7 @@ caption = "The International Classification of Diseases, 10th revision codes use
         
 ```
 
-Additionally, any visit or hospital admission associated with NCSP procedural codes in Table \@ref(tab:ncsplist)) were also extracted. 
+Additionally, any visit or hospital admission associated with NCSP procedural codes in Table \@ref(tab:ncsplist)) were extracted. 
 
 ```{r ncsplist}
 kable(
@@ -117,18 +115,71 @@ kable(
 ```
 
 
-The data included information on date of the visit, hospital length of stay, which departments were involved and a detailed breakdown of costs associated with the visit.
+The data included the date of the visit, date of hospital discharge, hospital length of stay, the departments involved and a detailed breakdown of costs associated with the visit.
+A separate unique identification number was provided for each individual visit or hospital admission. 
 
-The inpatient registry uses national identification numbers to identify unique individuals, which were used to merge the data with other registries before being anonynomized and released to the study authors. 
-A separate identification number is generated for each individual visit or hospital admission.
-
-Several smaller data sets were extracted from the inpatient registry for specific papers.
+Several smaller datasets were extracted from the inpatient registry for specific papers.
+These smaller datasets were delivered directly to the study authors and were not linked to the main study data. 
 For paper I, all doses of ceftriaxone administered at the Children's Hospital Iceland between January 2009 and December 2015 were extracted from the hospital's medication administration system using the ATC code J01DD04.
 Any ICD-10 diagnostic code associated with the visit or hospital admission in which ceftriaxone was administered, was extracted from the inpatient registry.
-Importantly, this included ICD-10 codes which are not in Table \@ref(tab:icd10list).
-The aggregate number of yearly visits to the the pediatric emergency department of Children's Hospital Iceland 2008-2015 was also obtained.
+Importantly, this included all ICD-10 codes, not only those in Table \@ref(tab:icd10list).
+The aggregate number of yearly visits to the the pediatric emergency department of Children's Hospital Iceland 2008-2015 was also obtained for use in paper I.
 Paper VI required synthetic controls used within a time-series analysis framework. 
 The aggregate monthly number acute-care visits and hospital admissions for several sub-chapters of the ICD-10 diagnostic coding system were obtained for 22 different age-groups. 
+
+```{r}
+
+kable(
+    x = data.frame(
+    stringsAsFactors = FALSE,
+    icd.code = c(
+    "A10-B99",
+    "C00-D48",
+    "D50-89",
+    "E00-99",
+    "G00-G99",
+    "H00-99",
+    "I00-99",
+    "K00-99",
+    "L00-99",
+    "M00-99",
+    "N00-99",
+    "P00-99",
+    "Q00-99",
+    "R00-99",
+    "S00-T99",
+    "U00-99",
+    "V00-Y99",
+    "Z00-99"
+    ),
+    Description = c(
+    "Certain infectious and parasitic diseases",
+    "Neoplasms",
+    "Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism",
+    "Endocrine, nutritional and metabolic diseases",
+    "Diseases of the nervous system",
+    "Diseases of the eye and adnexa, Diseases of the ear and mastoid process",
+    "Diseases of the circulatory system",
+    "Diseases of the digestive system",
+    "Diseases of the skin and subcutaneous tissue",
+    "Diseases of the musculoskeletal system and connective tissue",
+    "Diseases of the genitourinary system",
+    "Certain conditions originating in the perinatal period",
+    "Congenital malformations, deformations and chromosomal abnormalities",
+    "Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",
+    "Provisional assignment of new diseases of uncertain etiology",
+    "Injury, poisoning and certain other consequences of external causes",
+    "External causes of morbidity",
+    "Factors influencing health status and contact with health services"
+    )
+    ),
+    col.names = c("NCSP code", "Description"),
+    caption = "NOMESCO Classification of Surgical Procedures codes used in the current study"
+    
+    )
+
+```
+
 
 Data from the inpatient registry was used in papers I, IV, V and VI.
 
