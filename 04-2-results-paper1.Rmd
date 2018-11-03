@@ -8,10 +8,29 @@ library(epiR)
 load("_analyses/paper_I/2018-10-23-04-2-results-paper1.RData")
 ```
 
-A total of 117,250 visits to the Children’s Hospital for any indication were recorded from 2008 to 2015. S
-easonal variation in the number of these visits was apparent, with an increase in visits during the winter months of October through March compared with that in April through September. 
+During the period January 1, 2008 to December 31, 2015, 103,220 visits were recorded to the Children’s Hospital. 
+The number of visits showed marked seasonal variation.
+More visits were recorded during the winter months than during the summer months.
+
+```{r figure_monthly_visits, fig.cap = "Monthly number of visits to Children's Hospital Iceland"}
+include_graphics(path = "_figures/paper_I/2018-11-03-monthly-visits.png")
+```
+
+
 The total number of visits grew steadily from 12,229 in 2008 to 14,502 in 2015.
 During the same period, 4,624 children <4 years of age visited the Children’s Hospital 6,232 times for the treatment of 4,994 distinct episodes of AOM, of which 531 episodes were treated with ceftriaxone.
 The number of children <18 years of age living within the Children’s Hospital’s referral region was stable during the study period decreasing from 62,067 in 2008 to 61,798 in 2015.
 The number of children <4 years of age in the same region increased from 13,562 in 2008 to 14,644 in 2011 and then decreased again to 13,272 in 2015.
 Raw incidence rates of total visits, visits for AOM and parenteral ceftriaxone use are shown.
+
+The percentage of children <4 years of age who had received ≥2 doses of PHiD-CV10 by December of each year was 0.4% in 2008, 0.9% in 2009, 2.3% in 2010, 8.6% in 2011, 38% in 2012, 68% in 2013, 93% in 2014 and 97% in 2015. A total of 97% of children born in Iceland in 2011 later received at least 2 doses of PHiD-CV10.
+Rate
+
+Visits for distinct episodes of AOM decreased significantly
+after vaccination from an incidence rate of 47.5 per 1000 person- years in the prevaccine period to an incidence rate of 33.9 per 1000 person-years postvaccine. The effect of vaccine period varied sig- nificantly across age strata precluding Mantel–Haenzel adjustment. The crude overall IRR was 0.86 (95% CI: 0.81–0.91; P < 0.001). A significant decrease in visits was observed only in children 2–3 years of age (IRR 0.71; 95% CI: 0.63–0.80; P < 0.001. A nonsig- nificant trend toward a decrease was observed in other age strata. Children 0–1 and 3–4 years of age visited the Children’s Hospital because of episodes of AOM for a total of only 481 and 396 times, respectively,
+
+Significantly fewer episodes of AOM were treated with ceftriaxone in the postvaccine period compared with those in the prevaccine period (Table 1). The effect was consistent across age strata with an overall Mantel–Haenzel adjusted IRR 0.45 (95% CI: 0.37–0.54; P < 0.001). During the entire study period, only 16 epi- sodes of AOM in children 0–1 year of age, and 20 episodes in chil- dren 3–4 years of age, were treated with ceftriaxone. Age-specific incidence rates and incidence rate ratios are shown in Table 2. The relative risk of treatment with ceftriaxone if presenting to the Chil- dren’s Hospital with AOM decreased significantly after vaccination. The effect was consistent across age strata with a Mantel–Haenzel adjusted relative risk ratio of 0.53 (95% CI: 0.44–0.63; P < 0.001. Episodes of pneumonia treated with ceftriaxone also
+decreased overall, from 251 treatment episodes in the prevaccine period to 90 in the postvaccine period, with a Mantel–Haenzel adjusted IRR 0.36 (95% CI: 0.28–0.45; P < 0.001. This signifi- cant decrease was observed in all age strata. Ceftriaxone use for other indications in children <4 years of age did not decrease sig- nificantly, with an IRR of 0.92 (95% CI: 0.84–1.02; P = 0.13. Age- specific incidence rates and incidence rate ratios by indication for each vaccine period are shown in Table 2. Quarterly incidence of ceftriaxone treatment episodes by indication is shown in Figure 1.
+
+An overall decrease in incidence rate of ceftriaxone use in
+children <18 years of age regardless of indication was noted at the Children’s Hospital Iceland after PHiD-CV10 introduction, from 0.93 treatment episodes per 1000 person-years in the prevaccine period to 0.80 in the postvaccine period with a crude overall IRR 0.86 (95% CI: 0.81–0.91; P < 0.001). However, when analyzed by age group, this is exclusively because of a significant decrease in incidence rate of ceftriaxone use in children 0–3 years of age (IRR 0.73; 95% CI: 0.67–0.79; P < 0.001). Ceftriaxone use did not decrease significantly in other age groups, and there was a trend toward increasing use in children 12–17 years of age (Figure 2).

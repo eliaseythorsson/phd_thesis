@@ -5,6 +5,9 @@ library(lubridate)
 library(zoo)
 library(epiR)
 
+# set theme for ggplot2 figures
+theme_set(theme_bw(base_size = 10, base_family = "sans"))
+
 ############################
 #### Importing the data ####
 ############################
@@ -161,8 +164,29 @@ rm(born_0811, born_1216)
 #### Data analysis ####
 #######################
 
+# Figure of number of visits
+monthly_visits <- bmb_komur %>%
+    ggplot(aes(x = ym, y = n)) +
+    geom_line() +
+    geom_vline(aes(xintercept = as.yearmon("2008-01-01")), lty = 2) +
+    geom_vline(aes(xintercept = as.yearmon("2015-01-01")), lty = 2) +
+    ylim(0, NA) +
+    scale_x_yearmon(format = "%Y", n = length(2002:2016)) +
+    labs(y = "Monthly number of visits", x = NULL) +
+    theme(axis.text.x = element_text(angle = 90))
 
-ceftriaxone %>%
+ggsave(
+    filename = paste0("_figures/paper_I/", Sys.Date(), "-monthly-visits.pdf"), 
+    plot = monthly_visits,
+    width = 12, height = 8, units = "cm", dpi = 600)
+
+ggsave(
+    filename = paste0("_figures/paper_I/", Sys.Date(), "-monthly-visits.png"), 
+    plot = monthly_visits,
+    width = 12, height = 8, units = "cm", dpi = 600)
+
+# Figure 1 in publication
+ceftriaxone_fig1 <- ceftriaxone %>%
     filter(date <= as.Date("2015-12-31")) %>%
     mutate(ym = as.yearqtr(date)) %>%
     filter(age_y <= 3) %>%
@@ -233,8 +257,17 @@ ceftriaxone %>%
     facet_wrap(~indication, labeller = label_parsed, nrow = 3, scales = "free_y") +
     scale_y_continuous(limits = c(0, NA)) +
     scale_x_yearqtr(format = "%Y", n = 9) +
-    labs(x = NULL, y = "Ceftriaxone treatment episodes per 1000 person-years") +
-    theme_bw(base_size = 12) +
+    labs(x = NULL, y = "Ceftriaxone treatment episodes \nper 1000 person-years") +
     theme(legend.title = element_blank(), legend.position = "bottom")
+
+ggsave(
+    filename = paste0("_figures/paper_I/", Sys.Date(), "-figure1-ceftriaxone-2008-2015.pdf"), 
+    plot = ceftriaxone_fig1,
+    width = 12, height = 8, units = "cm", dpi = 600)
+
+ggsave(
+    filename = paste0("_figures/paper_I/", Sys.Date(), "-figure1-ceftriaxone-2008-2015.png"), 
+    plot = ceftriaxone_fig1,
+    width = 12, height = 8, units = "cm", dpi = 600)
 
 save.image(file = paste0("_analyses/paper_I/", Sys.Date(), "-04-2-results-paper1", ".RData"))

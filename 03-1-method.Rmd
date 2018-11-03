@@ -25,110 +25,166 @@ It also functions as a primary and secondary hospital for the capital area, serv
 In 2017, the total number of hospital beds in Iceland was 1,050 [@OECD2017].
 Of those, 687 were at Landspitali University Hospital.
 The inpatient registry contains information on all emergency department and outpatient visits, and all hospital admissions to Landspitali University Hospital. 
-For the period of January 1, 2005 to December 31, 2017, data were extracted on all unplanned acute-care visits and hospital admissions with ICD-10 discharge diagnoses compatible with respiratory infections (see Table \@ref(tab:icd10list)).
+For the period of January 1, 2005 to December 31, 2017, data were extracted on all unplanned acute-care visits and hospital admissions with ICD-10 discharge diagnoses compatible with respiratory infections (see Table \@ref(tab:table_icd)).
 
 
-```{r icd10list}
+```{r table_icd}
 kable(
-x = data.frame(
-    stringsAsFactors=FALSE,
-    icd = c("A40", "A41", "A48", "A49", "B00", "B08", "B33", "B34",
-           "B95", "B96", "G00", "H65", "H66", "H70", "H72",
-           "H73", "J00", "J01", "J02", "J03", "J04", "J05", "J06",
-           "J09", "J10", "J11", "J12", "J13", "J14", "J15", "J16",
-           "J17", "J18", "J20", "J21", "J22", "J32", "J36",
-           "J40", "J85", "J86", "J90", "N30", "N39", "R05", "R50"),
-    Disease = c("Streptococcal sepsis", "Other sepsis",
-               "Other bacterial diseases, not elsewhere classified", 
-               "Bacterial infection of unspecified site",
-               "Herpesviral [herpes simplex] infections",
-               "Other viral infections characterized by skin and mucous membrane lesions, not elsewhere classified",
-               "Other viral diseases, not elsewhere classified",
-               "Viral infection of unspecified site",
-               "Streptococcus, Staphylococcus, and Enterococcus as the cause of diseases classified elsewhere",
-               "Other bacterial agents as the cause of diseases classified elsewhere",
-               "Bacterial meningitis,not elsewhere classified",
-               "Nonsuppurative otitis media",
-               "Suppurative and unspecified otitis media",
-               "Mastoiditis and related conditions",
-               "Perforation of tympanic membrane",
-               "Other disorders of tympanic membrane",
-               "Acute nasopharyngitis [common cold]",
-               "Acute sinusitis",
-               "Acute pharyngitis",
-               "Acute tonsillitis",
-               "Acute laryngitis and tracheitis",
-               "Acute obstructive laryngitis [croup] and epiglottitis",
-               "Acute upper respiratory infections of multiple and unspecified sites",
-               "Influenza due to certain identified influenza viruses",
-               "Influenza due to other identified influenza virus",
-               "Influenza due to unidentified influenza virus",
-               "Viral pneumonia, not elsewhere classified",
-               "Pneumonia due to Streptococcus pneumoniae",
-               "Pneumonia due to Hemophilus influenzae",
-               "Bacterial pneumonia, not elsewhere classified",
-               "Pneumonia due to other infectious organisms, not elsewhere classified",
-               "Pneumonia in diseases classified elsewhere",
-               "Pneumonia, unspecified organism",
-               "Acute bronchitis",
-               "Acute bronchiolitis",
-               "Unspecified acute lower respiratory infection",
-               "Chronic sinusitis",
-               "Peritonsillar abscess",
-               "Bronchitis, not specified as acute or chronic",
-               "Abscess of lung and mediastinum",
-               "Pyothorax",
-               "Pleural effusion, not elsewhere classified",
-               "Cystitis",
-               "Other disorders of urinary system",
-               "Cough",
-               "Fever of other and unknown origin")
+    x = data.frame(
+    stringsAsFactors = FALSE,
+    icd = c(
+    "A40",
+    "A41",
+    "A48",
+    "A49",
+    "B00",
+    "B08",
+    "B33",
+    "B34",
+    "B95",
+    "B96",
+    "G00",
+    "H65",
+    "H66",
+    "H70",
+    "H72",
+    "H73",
+    "J00",
+    "J01",
+    "J02",
+    "J03",
+    "J04",
+    "J05",
+    "J06",
+    "J09",
+    "J10",
+    "J11",
+    "J12",
+    "J13",
+    "J14",
+    "J15",
+    "J16",
+    "J17",
+    "J18",
+    "J20",
+    "J21",
+    "J22",
+    "J32",
+    "J36",
+    "J40",
+    "J85",
+    "J86",
+    "J90",
+    "N30",
+    "N39",
+    "R05",
+    "R50"
     ),
-col.names = c("ICD-10 code", "Disease"),
-caption = "The International Classification of Diseases, 10th revision codes used in the current study"
-)
-
-        
+    Disease = c(
+    "Streptococcal sepsis",
+    "Other sepsis",
+    "Other bacterial diseases, not elsewhere classified",
+    "Bacterial infection of unspecified site",
+    "Herpesviral [herpes simplex] infections",
+    "Other viral infections characterized by skin and mucous membrane lesions, not elsewhere classified",
+    "Other viral diseases, not elsewhere classified",
+    "Viral infection of unspecified site",
+    "Streptococcus, Staphylococcus, and Enterococcus as the cause of diseases classified elsewhere",
+    "Other bacterial agents as the cause of diseases classified elsewhere",
+    "Bacterial meningitis,not elsewhere classified",
+    "Nonsuppurative otitis media",
+    "Suppurative and unspecified otitis media",
+    "Mastoiditis and related conditions",
+    "Perforation of tympanic membrane",
+    "Other disorders of tympanic membrane",
+    "Acute nasopharyngitis [common cold]",
+    "Acute sinusitis",
+    "Acute pharyngitis",
+    "Acute tonsillitis",
+    "Acute laryngitis and tracheitis",
+    "Acute obstructive laryngitis [croup] and epiglottitis",
+    "Acute upper respiratory infections of multiple and unspecified sites",
+    "Influenza due to certain identified influenza viruses",
+    "Influenza due to other identified influenza virus",
+    "Influenza due to unidentified influenza virus",
+    "Viral pneumonia, not elsewhere classified",
+    "Pneumonia due to Streptococcus pneumoniae",
+    "Pneumonia due to Hemophilus influenzae",
+    "Bacterial pneumonia, not elsewhere classified",
+    "Pneumonia due to other infectious organisms, not elsewhere classified",
+    "Pneumonia in diseases classified elsewhere",
+    "Pneumonia, unspecified organism",
+    "Acute bronchitis",
+    "Acute bronchiolitis",
+    "Unspecified acute lower respiratory infection",
+    "Chronic sinusitis",
+    "Peritonsillar abscess",
+    "Bronchitis, not specified as acute or chronic",
+    "Abscess of lung and mediastinum",
+    "Pyothorax",
+    "Pleural effusion, not elsewhere classified",
+    "Cystitis",
+    "Other disorders of urinary system",
+    "Cough",
+    "Fever of other and unknown origin"
+    )
+    ),
+    col.names = c("ICD-10 code", "Disease"),
+    caption = "The International Classification of Diseases, 10th revision codes used in the current study"
+    )
 ```
 
-Additionally, any visit or hospital admission associated with NCSP procedural codes in Table \@ref(tab:ncsplist)) were extracted. 
+Additionally, any visit or hospital admission associated with NCSP procedural codes in Table \@ref(tab:table_ncsp)) were extracted. 
 
-```{r ncsplist}
+```{r table_ncsp}
 kable(
-    x = data.frame(stringsAsFactors=FALSE,
-     NCSP.code = c("EMB 00", "EMB 10", "EMB 15", "EMB 20", "EMB 30", "EMB 99",
-                   "EMW 99", "DCA 10", "DCA 20", "DCW 00"),
-   Description = c("Excision of lesion of tonsil or adenoid",
-                   "Tonsillectomy",
-                   "Intracapsular destruction of tonsils",
-                   "Adenotonsillectomy", "Adenotomy",
-                   "Other excision on tonsils and adenoids",
-                   "Other operation on tonsil or adenoids",
-                   "Paracentesis of tympanic membrane",
-                   "Insertion of ventilating tube through tympanic membrane",
-                   "Removal of ventilating tube from tympanic membrane")
-        ),
-   col.names = c("NCSP code", "Description"),
-   caption = "NOMESCO Classification of Surgical Procedures codes used in the current study"
-
-)
+    x = data.frame(
+    stringsAsFactors = FALSE,
+    NCSP.code = c(
+    "EMB 00",
+    "EMB 10",
+    "EMB 15",
+    "EMB 20",
+    "EMB 30",
+    "EMB 99",
+    "EMW 99",
+    "DCA 10",
+    "DCA 20",
+    "DCW 00"
+    ),
+    Description = c(
+    "Excision of lesion of tonsil or adenoid",
+    "Tonsillectomy",
+    "Intracapsular destruction of tonsils",
+    "Adenotonsillectomy",
+    "Adenotomy",
+    "Other excision on tonsils and adenoids",
+    "Other operation on tonsil or adenoids",
+    "Paracentesis of tympanic membrane",
+    "Insertion of ventilating tube through tympanic membrane",
+    "Removal of ventilating tube from tympanic membrane"
+    )
+    ),
+    col.names = c("NCSP code", "Description"),
+    caption = "NOMESCO Classification of Surgical Procedures codes used in the current study"
+    
+    )
 ```
 
 
 The data included the date of the visit, date of hospital discharge, hospital length of stay, the departments involved and a detailed breakdown of costs associated with the visit.
 A separate unique identification number was provided for each individual visit or hospital admission. 
 
-Several smaller datasets were extracted from the inpatient registry for specific papers.
-These smaller datasets were delivered directly to the study authors and were not linked to the main study data. 
+Several smaller data-sets were extracted from the inpatient registry for specific papers.
+These smaller data-sets were delivered directly to the study authors and were not linked to the main study data. 
 For paper I, all doses of ceftriaxone administered at the Children's Hospital Iceland between January 2009 and December 2015 were extracted from the hospital's medication administration system using the ATC code J01DD04.
 Any ICD-10 diagnostic code associated with the visit or hospital admission in which ceftriaxone was administered, was extracted from the inpatient registry.
-Importantly, this included all ICD-10 codes, not only those in Table \@ref(tab:icd10list).
+Importantly, this included all ICD-10 codes, not only those in Table \@ref(tab:table_icd).
 The aggregate number of yearly visits to the the pediatric emergency department of Children's Hospital Iceland 2008-2015 was also obtained for use in paper I.
 Paper VI required synthetic controls used within a time-series analysis framework. 
-The aggregate monthly number acute-care visits and hospital admissions for several sub-chapters of the ICD-10 diagnostic coding system were obtained for 22 different age-groups. 
+The aggregate monthly number acute-care visits and hospital admissions for several sub-chapters of the ICD-10 diagnostic coding system (Table \@ref(tab:table_icd_synthetic))) were obtained for 22 different age-groups. 
 
-```{r}
-
+```{r table_icd_synthetic}
 kable(
     x = data.frame(
     stringsAsFactors = FALSE,
@@ -173,88 +229,103 @@ kable(
     "Factors influencing health status and contact with health services"
     )
     ),
-    col.names = c("NCSP code", "Description"),
+    col.names = c("ICD-10 code", "Description"),
     caption = "NOMESCO Classification of Surgical Procedures codes used in the current study"
-    
     )
-
+    
 ```
 
 
 Data from the inpatient registry was used in papers I, IV, V and VI.
 
-### The National Drug Prescription Database
+### The national drug prescription registry
 
-The National Drug Prescription Database (NDPD) is a whole population registry collected and maintained by the Icelandic Directorate of Health from January 1, 2005.
+The national drug prescription registry (NDPR) is a whole population registry collected and maintained by the Icelandic Directorate of Health from January 1, 2005.
 It contains information on all filled drug prescriptions in Iceland.
-All pharmacies are required by law to collect data on each filled prescription and submit to the NDPD.
+All pharmacies are required by law to collect data on each filled prescription and submit to the NDPR.
 An important distinction must be made between a filled prescription and a prescription.
-The NDPD receives information if and when a prescription is filled.
-This means that the NDPD does not contain information on prescriptions that were never filled by the patient.
-This also means that all prescriptions contained within the NDPD were paid for and received by the patient.
-Extensive validation and error testing has been performed by the Directorate of Health to ensure the robustness and coverage of the NDPD.
-The submission to the NDPD has been automated electronically and coupled with the process by which drugs are dispensed at the pharmacies, essentially excluding the possibility of a filled prescription not being registered.
+The NDPR receives information if and when a prescription is filled.
+This means that the NDPR does not contain information on prescriptions that were never filled by the patient.
+This also means that all prescriptions contained within the NDPR were paid for and received by the patient.
+Extensive validation and error testing has been performed by the Directorate of Health to ensure the robustness and coverage of the NDPR.
+The submission to the NDPR has been automated electronically and coupled with the process by which drugs are dispensed at the pharmacies, essentially excluding the possibility of a filled prescription not being registered.
 
 All prescriptions within the ATC therapeutic subgroup "J01" (Antibacterials for systemic use), "J07" (Vaccines), "S01" (Opthalmologicals) and "S02" (Otologicals) were extracted for the period from January 1, 2005 to December 31, 2017.
-The chemical subgroups used in the study are shown in Table \@ref(tab:druglist))
+The chemical subgroups used in the study are shown in Table \@ref(tab:table_atc))
 
-```{r druglist}
+```{r table_atc}
 kable(
-    x = data.frame(stringsAsFactors=FALSE,
-     ATC.code = c(
-         "J01A", "J01B", "J01C", "J01D", "J01E", "J01F", "J01G", "J01M", "J01R", "J01X",
-         "J07A", "J07B", "J07C", "J07X",
-         "S01A, S02A", "S01C, S02C"),
-   Description = c(
-       "Tetracyclines",
-       "Amphenicols",
-       "Beta-lactam antibacterials, penicillins",
-       "Other beta-lactam antibacterials",
-       "Sulfonamides and trimethoprim",
-       "Macrolides, lincosamides and streptogramins",
-       "Aminoglycoside antibacterials",
-       "Quinolone antibacterials",
-       "Combinations of antibacterials",
-       "Other antibacterials",
-       "Bacterial vaccines",
-       "Viral vaccines",
-       "Bacterial and viral vaccines",
-       "Other vaccines",
-       "Anti-infectives",
-       "Anti-inflammatory agents and anti-infectives in combination")
-        ),
-   col.names = c("ATC chemical subgroup code", "Description"),
-   caption = "Anatomical Therapeutic Chemical codes used in the current study"
-)
+    x = data.frame(
+    stringsAsFactors = FALSE,
+    ATC.code = c(
+    "J01A",
+    "J01B",
+    "J01C",
+    "J01D",
+    "J01E",
+    "J01F",
+    "J01G",
+    "J01M",
+    "J01R",
+    "J01X",
+    "J07A",
+    "J07B",
+    "J07C",
+    "J07X",
+    "S01A, S02A",
+    "S01C, S02C"
+    ),
+    Description = c(
+    "Tetracyclines",
+    "Amphenicols",
+    "Beta-lactam antibacterials, penicillins",
+    "Other beta-lactam antibacterials",
+    "Sulfonamides and trimethoprim",
+    "Macrolides, lincosamides and streptogramins",
+    "Aminoglycoside antibacterials",
+    "Quinolone antibacterials",
+    "Combinations of antibacterials",
+    "Other antibacterials",
+    "Bacterial vaccines",
+    "Viral vaccines",
+    "Bacterial and viral vaccines",
+    "Other vaccines",
+    "Anti-infectives",
+    "Anti-inflammatory agents and anti-infectives in combination"
+    )
+    ),
+    col.names = c("ATC chemical subgroup code", "Description"),
+    caption = "Anatomical Therapeutic Chemical codes used in the current study"
+    )
 ```
 
-### The Primary Care Database
+### The Primary Care Registry
 
 In the Icelandic healthcare system, primary care is provided by family medicine physicians at neighborhood based centers (*Heilsugæsla*).
-Primary care centers use the same electronic medical record system and use the ICD-10 diagnostic coding system. 
+Primary care centers use the same electronic medical record system, and the same diagnostic coding systems (NCSP, ICD-10) as Landspitali University Hospital and Children's Hospital Iceland.
 The Directorate of Health maintains a registry on all primary care visits within the Icelandic healthcare system.
 Extensive maintenance and restructuring has been ongoing since early 2016, with no new data added to the registry since December 31, 2015.
-From this registry the all visits and phone-calls with diagnostic codes compatible with respiratory tract infections were extracted for the period January 1, 2005 to December 31, 2015 (Table \@ref(tab:icd10list)).
+From this registry, all visits and phone-calls with ICD-10 diagnostic codes compatible with respiratory tract infections were extracted for the period January 1, 2005 to December 31, 2015 (Table \@ref(tab:table_icd)).
 
 ### The National Vaccine Registry
 
 The Icelandic Directorate of Health maintains the National Vaccine Registry (NVR). 
 All vaccine doses administered within the healthcare system are systematically recorded in the electronic health record at the time of administration.
-This record is reviewed and updated regularly, and vaccinations received elswhere included.
+This record is reviewed and updated regularly, and vaccinations received elsewhere included.
 The NVR collects this information from all electronic health records in the country.
 All administered vaccine doses with ATC codes "J07AL" (Pneumococcal vaccines) were extracted for the period of January 1, 2005 to December 31, 2017.
 
 ### Reimburcement database of the Icelandic Health Insurance
 
-The Icelandic healthcare system is a single-payer system with a single goverment run healthcare insurance.
-All permenant citizens are covered. 
+The Icelandic healthcare system is a single-payer system with a single government run healthcare insurance.
+All permanent citizens are covered. 
 Each healthcare visit is associated with a nominal out-of-pocket fee, with the rest of the visit covered by the insurance.
 Healthcare providers are either salaried governmental employees or independent practitioners who are reimbursed on a per case basis, according to pre-determined negotiations with Icelandic Health Insurance.
 To receive pay for services, physicians must submit a reimbursement form detailing the nature of the visit and any procedures performed using pre-specified procedural codes.
 Icelandic Health Insurance maintains a reimbursement database which details the nature and number of procedures performed.
-All otolaryngological procedures performed on the middle ear and tonsills were extracted from the reimbursement database for the period from January 1, 2005 to December 31, 2017 using the procedural codes in Table \@ref(tab:reimblist))
+All otolaryngological procedures performed on the middle ear and tonsils were extracted from the reimbursement database for the period from January 1, 2005 to December 31, 2017 using the procedural codes in Table \@ref(tab:table_reimbursement))
 
-```{r reimblist}
+```{r table_reimbursement}
 kable(
     x = data.frame(
     stringsAsFactors = FALSE,
