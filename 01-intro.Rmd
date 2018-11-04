@@ -15,20 +15,41 @@ library(tidyverse)
 ```{r table-abbreviations}
 data_frame(
     Term = c(
-        "Acute otitis media",
-        "Community-acquired pneumonia",
-        "Hospital-aquired pneumonia",
-        "Respiratory syncytial virus",
-        "Enzyme-linked immunosorbent assay",
-        "International Classification of Diseases, 10th revision",
-        "NOMESCO Classification of Surgical Procedures",
-        "Anatomical-Therapeutic-Chemical",
-        "National Drug Prescription Registry",
-        "Incidence rate",
-        "Incidence rate ratio",
-        "National Vaccine Registry"
-        ),
-    Abbreviation = c("AOM", "CAP", "HAP", "RSV", "ELISA", "ICD-10", "NCSP", "ATC", "NDPR", "IR", "IRR", "NVR")
+    "Acute otitis media",
+    "Community-acquired pneumonia",
+    "Hospital-aquired pneumonia",
+    "Respiratory syncytial virus",
+    "Enzyme-linked immunosorbent assay",
+    "International Classification of Diseases, 10th revision",
+    "NOMESCO Classification of Surgical Procedures",
+    "Anatomical-Therapeutic-Chemical",
+    "National Drug Prescription Registry",
+    "Incidence rate",
+    "Incidence rate ratio",
+    "National Vaccine Registry",
+    "Vaccine non-eligible cohorts",
+    "Vaccine eligible cohorts",
+    "Confidence intervals",
+    "Hazard ratio"
+    ),
+    Abbreviation = c(
+    "AOM",
+    "CAP",
+    "HAP",
+    "RSV",
+    "ELISA",
+    "ICD-10",
+    "NCSP",
+    "ATC",
+    "NDPR",
+    "IR",
+    "IRR",
+    "NVR",
+    "VNEC",
+    "VEC",
+    "CI",
+    "HR"
+    )
     ) %>%
     arrange(Term) %>% # i.e. alphabetical order by Term
     kable(booktab = T, caption = "List of abbreviations")

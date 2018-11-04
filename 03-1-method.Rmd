@@ -246,7 +246,7 @@ Data from the inpatient registry was used in papers I, IV, V and VI.
 
 ### The Primary Care Registry
 
-In the Icelandic healthcare system, primary care is provided by family medicine physicians at neighborhood based centers (*Heilsugæsla*).
+In the Icelandic healthcare system, primary care is provided by family medicine physicians at 69 neighborhood based centers (*Heilsugæsla*).
 All primary care centers use the same electronic medical record system, and the same diagnostic coding systems (NCSP, ICD-10) as Landspitali University Hospital and Children's Hospital Iceland.
 The Directorate of Health maintains a registry on all primary care visits within the Icelandic healthcare system.
 Due to extensive maintenance and restructuring ongoing since early 2016, no new data has been added to the registry since December 31, 2015.

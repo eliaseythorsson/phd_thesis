@@ -1,0 +1,49 @@
+## Paper 2
+
+This study is a whole-population observational cohort study that followed all children born in Iceland between January 1, 2005 and December 31, 2015 from birth until three years of age, death or end of the study period.
+All primary care visits in which an ICD-10 diagnostic code of suppurative otitis media (H66) was recorded were included.
+Any visits occuring within 30 days of a previously documented visit by the same child were excluded from the main analysis.
+
+Data were obtained from the Primary Care Registry of the Icelandic Directorate of Health.
+Data included all ICD-10 codes associated with the visit, as well as the date of the visit, age and gender of the child, and physician identification number.
+The study identification number used to identify unique individuals is directly derived from the national indentification numbers issued to each individual by the government. 
+Individuals who had immigrated to Iceland after birth were excluded.
+Demographic population data was obtained from Statistics Iceland.
+
+Cohorts were defined based on year of birth, or vaccine eligibility.
+Birth-cohorts 2005–2010 were grouped as vaccine non-eligible cohorts (VNEC) and birth-cohorts 2011–2015 as vaccine eligible cohorts (VEC).
+Statistical analyses were performed in R version 3.4.4. [@R-base] using the R packages; survival [@R-survival], RMS [@-rms] and epiR [@R-epiR].
+
+Crude incidence rates (IR) were calculated per 100 person-years at risk for each birth cohort, stratified by four-month age brackets.
+The individual time at-risk was carefully constructed, and excluded the 30 days following each recorded otitis media visit, so as not to include time in which it was impossible for a visit to be recorded due to the study design.
+Crude incidence rate ratios (IRR) between VNEC and VEC were calculated using the formula 
+
+$$
+IRR =
+\frac{IR_{VEC}}{IR_{VNEC}} =
+\frac{d_{VEC}/T_{VEC}}{d_{VNEC}/T_{VNEC}}
+$$
+were $d$ represented the number of otitis media visits and $T$ the time at-risk for the VNEC and VEC respectively. 
+The confidence interval (CI) of the $IRR$ were estimated using the normal approximation of Poisson variance  
+
+$$
+\exp\left[\ln(\text{IRR}) \pm 1.96\sqrt{(1/d_{VEC})+(1/d_{VNEC})}\right]
+$$
+
+In the subset of children who had full follow-up time, the number of children who experienced $n = \{0, 1,...,12\}$ episodes of otitis media were tabulated and the distribution between VNEC and VEC compared using the $\chi^2$ test of homogeneity,
+
+$$
+\chi^2 = 
+\sum \frac{(O_{cohort,\ n} - E_{cohort,\ n})^2}{E_{cohort,\ n}}; d.f. = (cohort-1) * (n-1) = 12
+$$
+in which the observed counts ($O$) are compared to the expected counts ($E$) for each vaccine-eligibility cohort ($cohort$) and cumulative number of otitis media visits ($n$).
+Additionally, the crude risk ratio between the VEC and VNEC of experiencing 0, 1–4, or >5 episodes of otitis media before three years of age was calculated. 
+
+The Andersen-Gill extension of the Cox regression model for repeated events was used to model the data on the individual level and to account for censoring of follow-up time.
+Sandwich variance estimates were used to correct for correlation between successive visits by the same individual.
+The model was used to estimate the hazard ratio (HR) of AOM visits of each birth cohort compared to the last vaccine-noneligible cohort (2010 cohort, reference cohort), correcting for both gender and the number of previous AOM episodes.
+The overall vaccine impact of PHiD-CV10 on AOM was calculated using 1 – (HR between the last included vaccine-eligible birth cohort [2015 cohort] and the reference cohort) × 100%.
+To characterize the mechanism by which the vaccine reduces the risk of AOM, the HR between VNEC and VEC was calculated, stratified by the number of previous AOM episodes.
+Finally, the mean number of AOM episodes by age for both VNEC and VEC was calculated from the model using the generalized Nelson-Aalen estimator.
+The absolute number of AOM episodes prevented by the vaccination in the first 5 years of the intervention was determined by multiplying each child’s follow-up time by the corresponding mean number of episodes.
+The absolute IR reduction was then calculated by dividing the number of prevented episodes with the total person-time of the VEC.
