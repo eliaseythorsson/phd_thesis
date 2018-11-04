@@ -12,7 +12,7 @@ library(tidyverse)
 # )
 ```
 
-```{r abbreviations}
+```{r table-abbreviations}
 data_frame(
     Term = c(
         "Acute otitis media",
@@ -379,43 +379,36 @@ Acute otitis media is still most often caused by *Streptococcus pneumoniae* and 
 Prevention of IPD in children and the associated morbidity and mortality was the driving force in the development of pneumococcal conjugate vaccines.
 However, the public most often associates them with AOM.
 Most children experience AOM and the dramatic decrease in incidence following pneumococcal conjugate vaccination is what families noticed.
-Despite this, AOM is a difficult outcome for trialist.
-AOM exists on a continuum.
+
+Despite this, AOM is a difficult outcome for trialist as it exists on a continuum.
 It does not have universally adhered to diagnostic criteria and its signs and symptoms greatly overlap with those of other common diseases. 
 Because AOM is benign and most often self-limited, the probability that a child with AOM is even seen by a physician varies greatly with parental health seeking behavior.
 Even when AOM is accurately diagnosed it is not possible to ascertain the causative pathogen without invasive sampling, which is not warranted given the benign nature of the disease.
-This precludes measuring the serotype specific effect of vaccination for most studies - and more importantly, it precludes measuring the effect on pneumococcal AOM. 
+This precludes measuring the serotype specific effect of vaccination for most studies - and more importantly, it precludes measuring the effect on pneumococcal AOM.
+
 Thus any estimation of an effect of pneumococcal vaccination will necessarily by diluted by the subjectiveness of AOM diagnosis and the continued lack of protection against other otopathogens.
 Despite these difficulties, AOM has been associated with pneumococcal vaccination in children from the beginning.
 It was used as an outcome measure in the earliest trials of the pneumococcal polysaccharide vaccines [@Makela1981; @Sloyer1981].
+In the following sub-chapters, the evidence regarding the efficacy and impact of PCV on the otitis media will be reviewed.
+Randomized controlled trials will be reviewed in greater depth, as they represented the highest quality of evidence of true efficacy.
+Observational studies will be reviewed more generally. 
 
 #### Randomized controlled trials
 
 The first published randomized controlled trial of a pneumococcal conjugate vaccine reported, among other outcomes, the efficacy against AOM [@Black2000].
 The study recruited 37,868 children between October 1995 and August 1998 and randomized them to the either PCV7~CRM197~ or the meningococcus C CRM197 conjugate vaccine.
-On the basis of a planned interim analysis in August of 1998 the study met predefined efficacy criteria and the Study Advisory Group recommended termination of the trial.
-Blinded follow-up was continued until April 20, 1999.
-However, for the AOM portion of the paper, the data had only been analysed until April 1998.
 A separate publication from the same trial was published in 2003, and examined the effect of PCV7~CRM197~ on AOM in more detail using the full data until study completion in April 1999 [@Fireman2003].
-Median follow-up time was not reported in either publication, but 89% children were reported to have completed the primary series of vaccination in the Fireman et al paper. 
-The data on AOM was obtained from routine electronic health records.
-The assessors were not specifically trained to evaluate AOM as these were simply routine visits. 
-The outcome measure AOM was defined in at least eight different ways to account for the difficulties in measurement.
-Visits and episodes were defined separately. 
 A visit was considered to be due to the same episode of AOM if the child presented within 21 days of a previous AOM associated visit.
 Frequent otitis media was then defined as either three episodes within a six month period, or four episodes within a twelve month period. 
-It is unclear exactly which statistical procedures were used for which outcomes.
 Both the Andersen-Gill extension of the Cox proportional hazards model with robust variance estimation and the binomial test with Klopper-Pearson confidence intervals were used and efficacy was reported as $(1 - ratio\ measure) *100\%$.
-The study presented both per-protocol and intention-to-treat estimates.
-Only the per-protocol effects will be examined in this thesis though none of the intention to treat results diverged from them.
 The estimated vaccine efficacy against otitis media visits was 7.8% (95%CI 5.4%-10.2%).
 Slightly higher point estimates were found for otitis media episodes, frequent otitis media and ventilatory tube placements [@Black2000; @Fireman2003]
 
 The following year the results of two more randomized controlled trials were published [@Dagan2001; @Eskola2001].
-Dagan et al. enrolled 264 children ages 12-35 months of age attending eight daycare centers in Beer-Sheva, Isreal.
+@Dagan2001 enrolled 264 children ages 12-35 months of age attending eight daycare centers in Beer-Sheva, Isreal.
 The study employed a block randomized design which stratified the children according to daycare center and age-group.
 Within each stratified group, children were randomized in blocks of six.
-The study examined a nine valent pneumococcal CRM197 conjugate vaccine produced by Wyeth-Lederle Vaccines and used the same meningococcal C CRM197 conjugate vaccine as the Black et al study as a control.
+The study examined a nine valent pneumococcal CRM197 conjugate vaccine produced by Wyeth-Lederle Vaccines and used the same meningococcal C CRM197 conjugate vaccine as the @Black2000 study as a control.
 The study's primary endpoint was vaccine-type nasopharyngeal carriage and the secondary endpoint was parent reported respiratory infections.
 Monthly questionnaires were submitted to parents for one year starting one month after the last per-protocol vaccine dose, and bimonthly thereafter for a total of 18 encounters.
 Respiratory infections were split into four different categories (Upper respiratory infections, lower respiratory problems, otitis media and other illnesses) and the results were measured in two different ways; episodes per 100 child-months and the proportion of antimicrobial days during the study period.
@@ -440,28 +433,30 @@ p.adjust(p = c(
 
 The later study published in 2001 compared two heptavalent pneumococcal vaccines to a hepatitis B vaccine control [@Eskola2001].
 The two heptavalent pneumococcal vaccines differed in their use of carrier protein. 
-One was the same vaccine as in the Black et al. study (PCV7~CRM197~), and the other was a conjugated to meningococcal outer membrane protein complex (PCV7~MOMPC~).
-The Eskola et al. paper reported comparison of the PCV7~CRM197~ to the hepatitis B vaccine.
+One was the same vaccine as in the @Black2000 study (PCV7~CRM197~), and the other was a conjugated to meningococcal outer membrane protein complex (PCV7~MOMPC~).
+The @Eskola2001 paper reported comparison of the PCV7~CRM197~ to the hepatitis B vaccine.
 The analogous comparison of the PCV7~MOMPC~ was reported in a separate publication [@Kilpi2003].
 No head-to-head comparison of the two heptavalent vaccines was ever reported.
 The study methodology was identical between the two publications as they report different arms of the same study [@Eskola2001; @Kilpi2003].
+
 The study was specifically designed to address the difficulties associated with estimating the effect of pneumococcal vaccination on AOM.
-A total of 2,497 children were enrolled between December 1995 and April 1997, of which 835 received the PCV7~MOMPC~ vaccine and were therefore not reported in the Eskola et al. paper.
+A total of 2,497 children were enrolled between December 1995 and April 1997, of which 835 received the PCV7~MOMPC~ vaccine and were therefore not reported in the @Eskola2001 paper.
 Children were followed until their last visit at 24 months of age.
 Of the enrolled children, 95.1% completed full follow-up time and there was no evidence of differential dropout. 
 The study defined beforehand the criteria for what constituted AOM and employed a trained study nurse and physician at each study site.
 Children were seen at enrollment at two months of age, and periodically assessed thereafter at four, six, seven, twelve, thirteen and 24 months of age.
-Parents were encouraged to present with their child to one of the study clinics for assessment of any symptoms suggesting respiratory infection or AOM. 
 If AOM was diagnosed as defined by the study criteria, myringotomy and aspiration of middle-ear fluid were performed and samples sent for culture.
 In this way, the study was able to deduce the causative otopathogen.
 Episodes of AOM were classified as all-cause AOM; culture-confirmed and otopathogen specific AOM; and AOM due to serotypes included in the vaccine.
 The statistical analysis was again conducted using the Andersen-Gill extension of the Cox proportional hazards model with robust variance estimates and efficacy was reported as $(1 - hazard\ ratio) *100\%$.
 The results were most consistent with a 6% efficacy against all-cause AOM with 95% confidence limits of -4% and 16%.
 In this case the negative lower confidence limit indicates the data could be consistent with the possibility of a 4% increase in all-cause AOM, given the specified model.
+
 The PCV~CRM197~ efficacy against culture-confirmed pneumococcal AOM was 35% (95%CI 21%-45%) and was 57% (95%CI 44%-67%) for the seven serotypes included in the vaccine.
 Similarly, the study demonstrated 57% (95%CI 27%-76%) efficacy against AOM caused by serotype 6A, which is considered a cross-reactive pneumococcal serotype.
 The study was also one of the first to demonstrate clinically relevant serotype replacement, showing a 33% (95%CI -1%-80%) increase in pneumococcal AOM caused by serotypes not included in the vaccine.
-Children who completed the Eskola et al. trial and were still living in the study area were invited for a follow-up interview when they were four to five years of age [@Palmu2004].
+
+Children who completed the @Eskola2001 trial and were still living in the study area were invited for a follow-up interview when they were four to five years of age [@Palmu2004].
 In the extended follow-up trial, the vaccine effectiveness against all tympanostomy tube placements was estimated to be 39% (95%CI 4%-61%).
 However, this was unblinded study following the unmasking of the original study and there was differential recruitment between the placebo and PCV7~CRM197~ arms.
 There was therefore a substantial risk of bias in the study.    
@@ -472,7 +467,7 @@ Interestingly, virtually no effect was seen on all-cause AOM with this vaccine p
 The effect estimate was -1% (95%CI -12%-10%).
 These surprising results were not presented in the main text and no explanation was given in the discussion chapter of the paper.
 
-In 2006, Prymula et al. reported a randomized study of an eleven valent pneumococcal conjugate vaccine in 4,968 children recruited from paediatric centers in the Czech Republic and Slovakia [@Prymula2006].
+In 2006, @Prymula2006 reported a randomized study of an eleven valent pneumococcal conjugate vaccine in 4,968 children recruited from paediatric centers in the Czech Republic and Slovakia [@Prymula2006].
 A strict case definition of otitis media was used and all cases were reviewed by an otolaryngologist.
 If confirmed, a middle ear fluid sample was obtained by aspiration and sent for culturing.
 Statistical analysis was completed using Cox proportional hazards models and the Anderson-Gill extension for repeated events.
@@ -493,7 +488,7 @@ It is debatable whether this should be considered a randomized controlled trial 
 Even if the study were to be considered randomized, it is unclear how to interpret a study that does not even have 80% power to detect a difference twice as large as the the estimates presented by previous randomized controlled trials. 
 
 
-```{r rctaom}
+```{r table-rct-aom}
 knitr::kable(
     data.frame(
         study = c("Black, 2000 & Fireman, 2003", "Dagan, 2001", "Eskola, 2001", "Kilpi, 2003", "Prymula, 2006", "O'Brien, 2008"),
