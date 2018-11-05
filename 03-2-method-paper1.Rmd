@@ -1,103 +1,40 @@
 ## Paper 1
 
-The aim was to evaluate whether the introduction of PHiD-CV10 was associated with a reduction in the incidence of otitis media with treatment failure. 
-Treatment of otitis media with ceftriaxone was used as proxy for treatment failure.
-Ceftriaxone use for other diagnosis and in older children were used as comparators.
+The objective of Paper 1 was to evaluate whether the introduction of PHiD-CV10 was associated with a reduction in the incidence of otitis media with treatment failure. 
+Treatment of otitis media with ceftriaxone was used as a proxy for treatment failure.
+Ceftriaxone use for other diagnoses and in older children was used as a comparator.
 
 All children under eighteen years of age who visited Children's Hospital Iceland between January 1, 2008 and December 31, 2015 were included.
-Data were extracted from Landspitali University Hospital's inpatient registry.
-A visit was included if an ICD-10 code of Nonsuppurative otitis media (H65) or Suppurative and unspecified otitis media (H66) was recorded in the medical record, or if a child received one or more doses of ceftriaxone.
-Ceftriaxone use was systematically extracted from the hospital's medication administration system using the ATC code J01DD04.
-All associated ICD-10 diagnoses were then obtained from the inpatient registry.
-The total number of visits per calendar year regardless of diagnosis was provided by the hospital.
 Children's Hospital Iceland's referral area was defined as a 100km driving distance from the hospital.
 Population demographic data for the referral area was obtained from Statistics Iceland (www.statice.is).
 
+Data were extracted from Landspitali University Hospital's inpatient registry.
+A visit was included in the study if an ICD-10 code of Nonsuppurative otitis media (H65) or Suppurative and unspecified otitis media (H66) was documented in the medical record, or if a child received one or more doses of ceftriaxone.
+All administered doses of ceftriaxone were systematically extracted from the hospital's medication administration system using the ATC code J01DD04.
+The ICD-10 diagnoses associated with the ceftriaxone administrations were then obtained from the inpatient registry.
+The total number of visits per calendar year and month regardless of diagnosis was provided by the hospital.
+
 Pre-vaccine (2008-2011) and post-vaccine (2012-2015) periods were defined based on the year of vaccine introduction.
 Because hospital visits for otitis media are uncommon in older children, the primary analysis was restricted to children under four years of age. 
-Ceftriaxone use was analysed in three separate diagnostic groups  
-A visit was considered to be due to otitis media if an ICD-10 code of Nonsuppurative otitis media (H65) or Suppurative and unspecified otitis media (H66) was recorded.
-Pneumonia visits were defined based on ICD-10 codes Bacterial pneumonia, not elsewhere classified (J15) or Pneumonia, unspecified organism (J18).
-Finally, visits associated with ceftriaxone administration that did not fall into either of the above categories were classified together.
+Ceftriaxone use was analysed in three separate diagnostic groups; otitis media, pneumonia and other , based on the associated ICD-10 diagnostic codes. 
+Ceftriaxone was considered to be due to otitis media, if an ICD-10 code of Nonsuppurative otitis media (H65) or Suppurative and unspecified otitis media (H66) were recorded, and due to pneumonia if ICD-10 codes Bacterial pneumonia, not elsewhere classified (J15) or Pneumonia, unspecified organism (J18) were recorded.
+Visits associated with ceftriaxone administration that did not fall into either of the above categories were classified together as "Other".
 
 The number of ceftriaxone treatment episodes per diagnostic group were aggregated by calendar month.
 An episode was considered distinct if no ceftriaxone administration was documented in the previous fourteen days.
 Incidence rates (IR) per 1,000 person-years were calculated by dividing the monthly number of ceftriaxone episodes per diagnostic group by the person-time of children in the referral area.
-
 The IR of OM visits were similarly defined and calculated.
-If a decrease were to be observed in the number of ceftriaxone treated OM episodes, it could be due to a decrease in the number of OM visits or a decrease in the use of ceftriaxone.
+If a decrease were to be observed in the number of ceftriaxone treated OM episodes, it could be due to either a decrease in the number of OM visits or a decrease in the use of ceftriaxone.
 To evaluate this, the incidence risk of ceftriaxone treatment per 1,000 OM visits was calculated for the pre- and post-vaccine periods. 
 
 Statistical analysis was performed in R version 3.4.4. [@R-base] using the epiR package [@R-epiR].
-Incidence rate ratios (IRR) between the pre- and post-vaccine periods were calculated using the formula
-
-$$
-IRR =
-\frac{IR_{post-vaccine}}{IR_{pre-vaccine}} =
-\frac{d_{post}/T_{post}}{d_{pre}/T_{pre}}
-$$
-where $d_{pre}$ and $d_{post}$ are the number of visits or ceftriaxone treatment episodes in the pre- and post-vaccine periods respectively, and $T_{pre}$ and $T_{post}$ are the number of person-years.
-
-The IRR was estimated independently for each age-strata and the stratum-specific estimates were combined (when appropriate) using the Mantel-Haenszel method [@Kirkwood2003].
-The Mantel-Haenszel estimate of the IRR is the weighted mean of the IRR in each stratum.
-The weight $w$ for each stratum $age$ is 
-
-$$
-w_{age} = \frac{d_{(pre,\ age})\ *\ T_{(post,\ age)}}{T_{(pre,\ age)}\ +\ T_{(post,\ age)}}
-$$
-and the resulting Mantel-Haenszel adjusted IRR is therefore
-
-$$
-IRR_{MH} = 
-\frac{\sum(w_{age}\ *\ IRR_{age})}{\sum w_{age}} = 
-\frac{\sum \frac{d_{(post,\ age)}\ *\ T_{(pre,\ age)}}{T_{(pre,\ age)}\ +\ T_{(post,\ age)}}}
-{\sum \frac{d_{(pre,\ age)}\ *\ T_{(post,\ age)}}{T_{(pre,\ age)}\ +\ T_{(post,\ age)}}} =
-\frac{Q}{R}
-$$
-The 95% confidence interval is derived using the delta method, and has range 
-
-$$
-[IRR_{MH}\ *\ \frac{1}{EF}\ ;\ IRR_{MH}\ *\ EF]
-$$ 
-where the error factor is $EF = \exp(1.96\ *\ s.e. \ln IRR_{MH})$ and the standard error of the natural logarithm of the $IRR_{MH}$ is 
-
-$$
-s.e. \ln IRR_{MH} = 
-\sqrt{\frac{\sum V_{age}}{Q*R}}
-$$
-
-in which the variance $V$ of strata $age$ is
-$$
-V_{age} = 
-\frac{(d_{pre,\ age}\ + d_{post,\ age})\ *\ T_{pre,\ age}\ *\ T_{post,\ age}}
-{(T_{pre,\ age}\ +\ T_{post,\ age})^2}
-$$
-
-Finally, the null hypthesis that $IRR_{MH} = 1$ was tested by calculating the Mantel-Haenszel $\chi^2$ test statistic 
-
-$$
-\chi^2_{MH} = 
-\frac{(\sum d_{post,\ age} - \sum E_{post,\ age})^2}{\sum V_{age}};\ d.f.  =1
-$$
-from which the *P*-value was derived. 
+Incidence rate ratios ($IRR$) were calculated between the pre- and post-vaccine periods and were estimated independently for each age-strata. 
+The stratum-specific estimates were combined (when appropriate) using the Mantel-Haenszel method and 95% confidence intervals calculated using the delta procedure [@Kirkwood2003].
+The Mantel-Haenszel estimate of the incidence rate ratio ($IRR_{MH}$) is the weighted mean of the $IRR$ in each stratum.
+The null-hypothesis that $IRR_{MH} = 1$ was tested by calculating the Mantel-Haenszel $\chi^2$ test statistic, from which the *P*-value was derived.
 
 Combining sratum-specific estimates is appropriate when the exposure-outcome association is the same in each of the strata, i.e. $IRR_{age} = IRR_{MH}$ 
-If true, it follows that 
-$$
-(d_{post,\ age} * T_{pre,\ age} - IRR_{MH} * d_{pre,\ age} * T_{post,\ age}) = 0
-$$
-
-The $\chi^2$ test of heterogeneity is based on the weighted sum of squares of the above differences, and is calculated as
-
-$$
-\chi^2 =
-\sum \frac{d_{post,\ age} * T_{pre,\ age} - IRR_{MH} * d_{pre,\ age} * T_{post,\ age}}
-{IRR_{MH}*V_{age}*(T_{pre,\ age}+T_{post,\ age})^2}
-\ , d.f. = c-1
-$$
-
-where $c$ is the number of strata. 
-It tests whether the data is congruent with the null hypothesis of no effect modification of the exposure-outcome relationship by strata.
+The $\chi^2$ test of heterogeneity tests whether the data is congruent with the null hypothesis of no effect modification of the exposure-outcome relationship by strata.
 The greater the differences is between $IRR_{age}$ and $IRR_{MH}$, the larger the $\chi^2$ statistic.
-If the null hypothesis is rejected, the $IRR_{MH}$ is not calculated and only the stratum-specific IRR are presented. 
+If the null hypothesis is rejected, the $IRR_{MH}$ is not calculated and only the stratum-specific $IRR$ are presented. 
 

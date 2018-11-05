@@ -19,7 +19,18 @@ I am currently writing my PhD thesis on the impact of pneumococcal vaccination i
 ```{r include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, error = FALSE, message = FALSE, warning = FALSE)
 # automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
+knitr::write_bib(
+    c(
+    .packages(),
+    'tidyverse',
+    'bookdown',
+    'knitr',
+    'rmarkdown',
+    'epiR',
+    'survival',
+    'rms',
+    'survminer'
+    ),
+    'packages.bib'
+    )
 ```
