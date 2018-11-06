@@ -1,0 +1,41 @@
+## Paper 3
+
+Paper 3 is a whole population observational cohort study of antimicrobial prescriptions among children under three years of age in Iceland.
+Eleven consecutive Icelandic birth-cohorts 2005–2015 were followed from birth until three years of age. 
+Children who imigrated to Iceland after birth were excluded.
+Follow-up time was censored on death, emigration, or end of the study period (December 31, 2016).
+Due to short follow-up time, the 2016 birth-cohort was not included in the analysis. 
+
+Data regarding outpatient antimicrobial prescriptions was obtained from the National Drug Prescription Registry, which has been previously described (Table \@ref(tab:table-atc)).
+Data on primary care visits for respiratory tract infections was collected from the Primary Care Registry using the ICD-10 codes shown in Table \@ref(tab:table-icd).
+If a prescription was filled within three days of a documented physician visit by the same child, then the prescription and the visit were linked. 
+Because data from the Primary Care Registry was only available through December 31, 2015, the portion of the analysis partaining to the linked data was restricted to that date. 
+Population demographical data was acquired from Statistics Iceland (https://www.statice.is/).
+
+Birth-cohorts were compared individually or grouped by vaccine eligibility. 
+Individual birth-cohorts were each compared to the last vaccine non-eligible cohort.
+Birth-cohorts 2011–2015 were grouped as the vaccine-eligible cohorts (VEC) and birth-cohorts 2005–2010 as the vaccine non-eligible cohorts (VNEC).
+Aggregate analyses by calendar year were performed for all children under three years of age.
+Antimicrobials were classified into six classes; first and second line penicillins, first and second generation macrolides, cephalosporins and others.
+The proportion of antimicrobial prescriptions in each class was calculated by calendar year. Similarly, the proportion of primary care visits resulting in antimicrobial prescription in each calendar year was calculated by indication.
+Five groups were defined based on ICD-10 discharge diagnosis; Acute upper respiratory infections (J00-J06), Influenza and pneumonia (J09-J18), Other acute lower respiratory infections (J20-J22), AOM (H65, H66 and H72) and Other viral infections (B34).
+Incidence rates (IR) per 100 person-years at risk for each of the study birth-cohorts were calculated in six-month age-groups and 95% confidence intervals estimated using the Wald method.
+Incidence rate ratios (IRR) between the VNEC and the VEC were estimated and 95% confidence intervals calculated assuming Poisson variance.
+The cumulative proportion of outpatient antimicrobial prescriptions by three years of age was compared between VNEC and VEC using the Chi-squared test of homogeneity.
+For this analysis, the 2014 and 2015-cohorts were excluded as they did not have the full three-year follow-up time.
+The cumulative number of outpatient antimicrobial prescriptions per child was stratified into brackets < 1, 1–4, 5–9, 10–14 and ≥ 15 and the incidence risk ratio between VNEC and VEC was calculated for each bracket.
+
+The Andersen-Gill extension of the Cox regression model for repeated events was used to model the individual level data and allow for censored follow-up times.
+The model included age as the underlying measure of time to directly correct for age and was stratified allowing different baseline-hazards for each gender.
+The cumulative number of previous antimicrobial prescriptions was included as a covariate and modelled using a restricted cubic spline relationship.
+Finally, birth-cohort membership was included as a categorical variable.
+Robust sandwich variance estimates were included to account for correlation between successive observations of the same child.
+The model was used to estimate the hazard ratio (HR) of antimicrobial prescription between each of the study birth-cohorts and the reference birth-cohort.
+The vaccine impact of PHiD-CV10 in reducing outpatient antimicrobial prescriptions was then estimated as 1 – (the hazard ratio between the last vac- cine eligible cohort and the reference cohort) × 100%.
+The vaccine impact against each successive prescription was estimated by calculating the hazard ratio of antimicrobial prescription between VEC and VNEC for each number of previous prescriptions. 
+Finally, the mean number of antimicrobial prescriptions for each gender and vaccine-cohort was calculated as a function of age using the generalized Nelson-Aalen estimate.
+This was used to estimate the absolute number of prevented antimicrobial prescriptions during the first seven years of the intervention by adding together the expected number of prescriptions per child using the VNEC estimate of the mean and subtracting the expected number of prescriptions per child using the VEC estimate of the mean.
+The absolute rate reduction was calculated by dividing this estimate with the number of person-years at-risk in the VEC.
+A sub-analysis was performed to estimate the vaccine impact against AOM-associated antimicrobial prescriptions.
+The same regression methodology was applied to a subset of the prescriptions which were linked to a primary care physician visit with a diagnosis of AOM.
+Vaccine impact was similarly estimated as 1 – (the hazard ratio between the last vaccine eligible cohort and the reference cohort) × 100%
