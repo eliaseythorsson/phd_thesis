@@ -11,7 +11,7 @@ Demographic population data was obtained from Statistics Iceland.
 
 Cohorts were defined based on year of birth, or vaccine eligibility.
 Birth-cohorts 2005–2010 were grouped as vaccine non-eligible cohorts (VNEC) and birth-cohorts 2011–2015 as vaccine eligible cohorts (VEC).
-Statistical analyses were performed in R version 3.4.4. [@R-base] using the R packages; survival [@R-survival], RMS [@-rms] and epiR [@R-epiR].
+Statistical analyses were performed in R version 3.4.4. [@R-base] using the R packages; survival [@R-survival], RMS [@R-rms] and epiR [@R-epiR].
 
 Crude incidence rates ($IR$) were calculated per 100 person-years at risk for each birth cohort, stratified by four-month age brackets.
 The individual time at-risk was carefully constructed to exclude the 30 days following each recorded otitis media visit.
