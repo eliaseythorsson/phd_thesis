@@ -3,6 +3,7 @@
 Paper 4 is an individual level observational cohort study of all outpatient tymapanostomy tube placements (TTP) in Iceland. 
 The study period is from January 1, 2005 to December 31, 2016.
 Eleven consecutive birth-cohorts, 2005-2015, were included and followed until five years of age or end of the study period.
+Data included in this study were 
 The four registries were merged with Statistic Iceland’s population registry, using unique national identification numbers.
 The population register contains demographic information, including gender, date of birth, immigration, emigration and death for every permanent resident of Iceland.
 Children who immigrated to Iceland after birth were excluded from the analysis.
