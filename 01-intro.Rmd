@@ -31,7 +31,11 @@ data_frame(
     "Vaccine eligible cohorts",
     "Confidence intervals",
     "Hazard ratio",
-    "Tympanostomy tube placement"
+    "Tympanostomy tube placement",
+    "Upper respiratory tract infection",
+    "Lower respiratory tract infection",
+    "Invasive pneumococcal disease",
+    "Intensive care unit"
     ),
     Abbreviation = c(
     "AOM",
@@ -50,7 +54,11 @@ data_frame(
     "VEC",
     "CI",
     "HR",
-    "TTP"
+    "TTP",
+    "URTI",
+    "LRTI",
+    "IPD",
+    "ICU"
     )
     ) %>%
     arrange(Term) %>% # i.e. alphabetical order by Term

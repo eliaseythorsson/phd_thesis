@@ -1,0 +1,69 @@
+## Paper 5
+
+Paper 5 is a single-centre, individual-level, observational cohort study of paediatric hospitalizations due diseases commonly caused by *Streptococcus pneumonae*. 
+Eleven consecutive Icelandic birth-cohorts 2005-2015 were followed from birth until three years of age.
+Immigration and emigration data obtained from Statistics Iceland was used to exclude children who had immigrated to Iceland after birth. 
+Included were all hospital admissions to the Children’s Hospital Iceland from January 1st, 2005 to December 31st, 2016.
+The Children’s Hospital Iceland is the primary paediatric hospital for approximately 90% of the Icelandic population (www.statice.is) and serves as a secondary and tertiary paediatric hospital for the entire country.
+Data on admissions were collected from Landspitali University Hospital's patient registry and microbiological data were extracted from a database maintained by the Department of Clinical Microbiology at Landspitali University Hospital.
+
+Seven diagnostic groups were defined for the present paper.
+Five groups represent diseases commonly caused by *Streptococcus pneumoniae*; Invasive pneumococcal disease (IPD), meningitis, sepsis, pneumonia and otitis media. 
+The remaining two groups, upper respiratory tract infections (URTI) and other lower respiratory tract infections (LRTI) were included as comparators. 
+A hospitalization was categorised as one of the paper’s diagnostic groups, if a relevant ICD-10 diagnostic code was recorded on the discharge chart, or if the admission was associated with microbiologically-confirmed IPD.
+Admissions with ICD-10 discharge diagnoses compatible with meningitis (G00) were grouped as meningitis, (A40 and A41) were grouped as sepsis, (J09-J18) as pneumonia, (J20-J22) as LRTI, (H65, H66, H70 and H72) as OM and (J01-J06) as URTI (Table \@ref(tab:table-paper5-diagnostic-groups)).
+A hospitalization was considered to be due to IPD, if associated with culture or PCR confirmed *Streptococcus pneumoniae* sampled from joint fluid, bone, cerebrospinal fluid or blood, regardless of ICD-10 discharge diagnosis.
+
+```{r table-paper5-diagnostic-groups}
+kable(
+    x = data.frame(
+    stringsAsFactors = FALSE,
+    diagnostic.group = c(
+    "Meningitis",
+    "Sepsis",
+    "Pneumonia",
+    "Otitis media and complications",
+    "Acute upper respiratory tract infections",
+    "Acute lower respiratory tract infections",
+    "Invasive pneumococcal disease"
+    ),
+    abbreviation = c("-",
+    "-",
+    "-",
+    "OM",
+    "URTI",
+    "LRTI",
+    "IPD"),
+    definition = c(
+    "ICD-10 discharge diagnosis of G00",
+    "ICD-10 discharge diagnosis of A41 or A42",
+    "ICD-10 discharge diagnosis of J09-J18",
+    "ICD-10 discharge diagnosis of H65, H66, H70 or H72",
+    "ICD-10 discharge diagnosis of J00-J06",
+    "ICD-10 discharge diagnosis of J20-J22",
+    "Microbiologically confirmed pneumococcal infection from normally sterile site, regardless of ICD-10 diagnosis"
+    )
+    ),
+    col.names = c("Diagnostic group", "Abbreviation", "Definition"),
+    caption = "Definitions of the paper's diagnostic groups"
+    )
+```
+
+Birth-cohorts were compared either individually, or grouped by vaccine eligibility. 
+In the individual birth-cohort analysis, each birth-cohort was compared to the last vaccine non-eligible cohort, i.e. the 2010 birth-cohort. 
+Birth-cohorts 2011–2015 were grouped as vaccine-eligible cohorts (VEC), and birth-cohorts 2005–2010 as vaccine non-eligible cohorts (VNEC).
+Statistical analyses were performed in R version 3.4.4. [@R-base] using the R packages; survival [@R-survival], RMS [@R-rms] and epiR [@R-epiR].
+
+Mean age at hospitalization was calculated for each birth-cohort and diagnostic group.
+Analysis of variance was used to test whether significant difference existed between cohorts, which was followed by Tukey's honest significant difference, procedure if an overall difference was identified.
+Median hospital length of stay was calculated for each diagnostic group, and compared between between cohorts using the Wilcoxon rank sum test.
+Crude incidence rates ($IR$) of hospital admissions were calculated for each birth-cohort, diagnostic group and age group, and incidence rate ratios ($IRR$) were calculated between the VNEC and VEC assuming Poisson variance.
+The proportion of hospitalizations leading to admission to the intensive care unit (ICU) stay was calculated by birth-cohort and diagnostic group. 
+
+The Kaplan-Meier product limit estimator was used to calculate both event-free survival as well as the event-free survival difference of the VNEC compared to the VEC for each of the diagnostic groups.
+Subsequent hospitalizations of the same child with the same discharge diagnosis were excluded from this portion of the analysis.
+Follow-up time was censored on emigration and death.
+Cox regression was used to estimate the hazard ratio of admission between the VNEC and VEC.
+To elucidate whether potential differences between VNEC and VEC were likely to be due to direct effects of the vaccine, the Cox regression was repeated for two restricted age-ranges; 0-90 days of age and 90 days and older.
+A sensitivity analysis with regards to potential unmeasured confounding of the hazard ratio was calculated using E-values.
+An E-value represents the minimum association an unmeasured confounder would need to have with both the exposure and the outcome, to completely explain away the observed association.
