@@ -2,38 +2,40 @@
 
 Paper 4 is an individual level observational cohort study of all outpatient tymapanostomy tube placements (TTP) in Iceland. 
 The study period is from January 1, 2005 to December 31, 2016.
-Eleven consecutive birth-cohorts, 2005-2015, were included and followed until five years of age or end of the study period.
-Data included in this study were 
-The four registries were merged with Statistic Iceland’s population registry, using unique national identification numbers.
-The population register contains demographic information, including gender, date of birth, immigration, emigration and death for every permanent resident of Iceland.
+Eleven consecutive birth-cohorts 2005-2015, were followed from birth until five years of age, or end of the study period.
+Immigration and emigration data for all Icelandic children were obtained from Statistics Iceland. 
 Children who immigrated to Iceland after birth were excluded from the analysis.
-The observation time of children who emigrated was censored on the date of emigration.
+Those children who emigrated were censored from the study on the date of emigration. 
 This allowed for accurate person-year at risk calculations.  
-Data on TTP were extracted from the Icelandic Health Insurance reimbursement database, using the reimbursement codes for TTP.
-The data included the calendar year and month of the procedure, the specific subtype of procedure and the surgeon’s identification number.
-Additionally, information on all TTPs performed at Landspitali University Hospital was systematically extracted from the patient registry using procedural codes. 
-Data on primary care visits was obtained from the Primary Care Database of the Icelandic Directorate of Health, which covers all Primary Health Care Centres in Iceland.
-These data was only available until December 31, 2015.
-The Primary Care Database contains information on all primary care visits in Iceland.
-A visit was defined to be due to otitis media (OM) if an International Classification of Diseases, 10th Revision (ICD-10) diagnostic code for Non-suppurative otitis media (H65), Suppurative otitis media (H66), Mastoiditis (H70) or Perforation of tympanic membrane (H72) was recorded by the physician.
-Repeat visits within 30 days of the initial visit were assumed to be due to the same episode and were excluded from the analysis.
-Data on urgent care visits to the paediatric emergency department of the Children’s Hospital Iceland during the same period were extracted from Landspitali University Hospital’s patient registry using the same methodology.
-Data on all filled prescriptions with the anatomical therapeutic chemical (ATC) classification code J01 (antibacterials for systemic use) and subgroups were extracted from the National Drug Prescription Database of the Directorate of Health, which contains information on all outpatient drug prescriptions in the country.
 
-Statistical analysis was stratified by birth-cohorts and aggregate cohorts based on vaccine eligibility.
+Data on outpatient TTP were obtained from the Icelandic Health Insurance reimbursement database, using reimbursement codes compatible with TTP (Table \@ref(tab:table-reimbursement)).
+Information regarding Inpatient TTP was extracted from Landspitali University Hospital's patient registry using NCSP codes (Table \@ref(tab:table-ncsp)).
+These data were linked with data on primary care and emergency department visits for otitis media (OM). 
+Data on primary care visits was obtained from the Primary Care Registry and information regarding emergency department visits was extracted from the hospital's patient registry. 
+The primary care data was only available until December 31, 2015.
+A visit was considered to be due to OM if an ICD-10 diagnostic code of Non-suppurative otitis media (H65), Suppurative otitis media (H66), Mastoiditis (H70) or Perforation of tympanic membrane (H72) was recorded.
+A repeat visit within 30 days was assumed to represent the same episode and was excluded.
+Data regarding filled antimicrobial prescriptions were extracted from the National Drug Prescription Registry using ATC code J01 (antibacterials for systemic use). 
+
+Cohorts were defined based on year of birth, or vaccine eligibility.
 Birth-cohorts 2005-2010 were classified as vaccine non-eligible cohorts (VNEC) and birth-cohorts 2011-2015 as vaccine-eligible cohorts (VEC).
-Statistical analysis was performed in R statistics version 3.3.3. using the survival package.
+Statistical analyses were performed in R version 3.4.4. [@R-base] using the R packages; survival [@R-survival], RMS [@R-rms] and epiR [@R-epiR].
+Crude incidence rates ($IR$) of TTP per 100 person-years were caclulated for each birth-cohort in 6-month age-groups.
+Crude incidence rate ratios ($IRR$) between the VEC and VNEC were calculated, and 95% confidence intervals estimated assuming Poisson variance.
+The Kaplan-Meier product limit estimate was used to calculate the cumulative proportion of TTP procedures for each birth-cohort and confidence intervals calculated using the log delta method.
 
-Crude incidence rates of TTP per 100 person-years were estimated for each birth-cohort by 6-month age-groups and crude incidence rate ratios between the VEC and VNEC were calculated assuming Poisson variance.
-The cumulative proportion of TTP procedures in each birth-cohort was assessed using the Kaplan-Meier estimator and confidence intervals calculated using the log delta method.
-The risk of TTP was compared between birth-cohorts with respect to two measures of risk; the number of previous diagnoses of OM and the number of previous antimicrobial prescriptions.
-In the subset of children who had undergone a TTP procedure and had full follow-up time (birth-cohorts 2011 and earlier), the distribution in the count of previous visits and number of prescriptions were compared between VNEC and VEC using an overall Chi-Squared Test of Independence.
-When assessing the previous visits, the observation age was four years of age due to restricted data.
-If a significant overall difference was detected, the risk ratio (RR) and absolute risk reduction (ARR) within each level of the risk factor was estimated and tested using Chi-squared Tests of Independence.
+The comparison of the risk of TTP between birth-cohorts was adjusted for two confounders; the number of prior OM diagnoses and the number of prior antimicrobial prescriptions.
+Among children who had undergone TTP and had full five year follow-up time, the distribution in the number of previous visits and prescriptions was compared between VNEC and VEC using the $\chi^2$ test of independence.
+When adjusting for the number of previous visits, four years was considered full follow-up time due to due to restricted data.
+If significant difference was detected, the risk ratio and absolute risk difference between VEC and VNEC was calculated, stratified by the prior number of visits or antimicrobial prescriptions. 
+Confidence intervals were estimated with the $\chi^2$ of independence.
 
-A Cox regression model was applied to the individual level data to accurately account for the influence of age and censored follow-up time. 
-The hazard ratio (HR) of TTP was estimated between each of the study’s birth-cohorts and the last VNEC (2010), which was used as a reference.
-The vaccine impact of PHiD-CV against TTP was then estimated as 1 – (the hazard ratio between the last vaccine eligible cohort and the reference cohort) x 100%.
-Additional Cox regression models that incorporated the number of previous OM visits and antimicrobial prescriptions as time dependent covariates were fitted to further correct the vaccine impact estimate for confounding.
+A Cox regression model was constructed to accurately account for the influence of age and censored follow-up time. 
+Three seperate models were estimated.
+The first did not adjust for prior OM visits or antimicrobial prescriptions, while the later two did.
 The Cox regression model using the number of previous OM visits was censored at December 31, 2015 due to restricted data.
-Each Cox model was stratified by gender and accounted for the correlation between repeated observations of the same child with sandwich variance estimates.
+Each Cox model was stratified by gender. 
+Correlation between repeated observations of the same child was adjusted for using @Lin1989's sandwich variance estimates.
+The hazard ratio ($HR$) of TTP was estimated between each of the study’s birth-cohorts. 
+The vaccine impact of PHiD-CV against TTP was estimated as 1 – (the hazard ratio between the last vaccine eligible cohort and the last vaccine non-eligible cohort) x 100%.
+
