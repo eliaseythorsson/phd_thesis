@@ -29,7 +29,8 @@ knitr::write_bib(
     'epiR',
     'survival',
     'rms',
-    'survminer'
+    'survminer',
+    'pogit'
     ),
     'packages.bib'
     )

@@ -35,7 +35,10 @@ data_frame(
     "Upper respiratory tract infection",
     "Lower respiratory tract infection",
     "Invasive pneumococcal disease",
-    "Intensive care unit"
+    "Intensive care unit",
+    "Principal component analysis",
+    "Seasonal and trend decompisition using LOESS",
+    "Leave-one-out cross-validation"
     ),
     Abbreviation = c(
     "AOM",
@@ -58,7 +61,10 @@ data_frame(
     "URTI",
     "LRTI",
     "IPD",
-    "ICU"
+    "ICU",
+    "PCA",
+    "STL",
+    "LOOCV"
     )
     ) %>%
     arrange(Term) %>% # i.e. alphabetical order by Term
