@@ -1,4 +1,4 @@
-## Paper 5
+## Impact on respiratory associated hospitalizations (Paper V){#paper5}
 
 Paper 5 is a single-centre, individual-level, observational cohort study of paediatric hospitalizations due to diseases commonly caused by *Streptococcus pneumonae*. 
 Eleven consecutive Icelandic birth-cohorts 2005-2015 were followed from birth until three years of age.

@@ -1,10 +1,10 @@
-## Paper 2
+## Impact on primary care visits for otitis media (Paper II){#paper2}
 
 Paper 2 is a whole-population observational cohort study that followed all children born in Iceland between January 1, 2005 and December 31, 2015, from birth until three years of age, death or end of the study period.
 All primary care visits in which an ICD-10 diagnostic code of suppurative otitis media (H66) was recorded were included.
 Any visits occuring within 30 days of a previously documented visit by the same child were excluded from the main analysis.
 
-Data were obtained from the Primary Care Registry of the Icelandic Directorate of Health, and included all ICD-10 codes associated with the visit, as well as the date of the visit, age and gender of the child, and physician identification number.
+Data were obtained from the [Primary Care Registry](primarycareregistry) of the Icelandic Directorate of Health, and included all ICD-10 codes associated with the visit, as well as the date of the visit, age and gender of the child, and physician identification number.
 The study identification number used to identify unique individuals is directly derived from the national indentification numbers issued to each individual by the government. 
 Individuals who had immigrated to Iceland after birth were excluded.
 Demographic population data was obtained from Statistics Iceland.
@@ -13,19 +13,19 @@ Cohorts were defined based on year of birth, or vaccine eligibility.
 Birth-cohorts 2005–2010 were grouped as vaccine non-eligible cohorts (VNEC) and birth-cohorts 2011–2015 as vaccine eligible cohorts (VEC).
 Statistical analyses were performed in R version 3.4.4. [@R-base] using the R packages; survival [@R-survival], RMS [@R-rms] and epiR [@R-epiR].
 
-Crude incidence rates ($IR$) were calculated per 100 person-years at risk for each birth cohort, stratified by four-month age brackets.
+Crude $IR$ of OM visits were calculated per 100 person-years at risk for each birth cohort, stratified by four-month age brackets.
 The individual time at-risk was carefully constructed to exclude the 30 days following each recorded otitis media visit.
 This avoided including the period in which it was impossible for a visit to be recorded due to the study design.
-Crude incidence rate ratios ($IRR$) between VNEC and VEC were calculated and confidence intervals estimated assuming Poisson variance.
+Crude $IRR$ between VNEC and VEC were calculated and confidence intervals estimated assuming Poisson variance.
 
-In the subset of children who had full follow-up time, the number of children who experienced $k = \{0, 1,...,12\}$ episodes of otitis media were tabulated and the distribution between VNEC and VEC compared using the $\chi^2$ test of homogeneity,
-Additionally, the crude risk ratio between the VEC and VNEC of experiencing 0, 1–4, or >5 episodes of otitis media before three years of age was calculated. 
+In the subset of children who had full follow-up time, the number of children who experienced $k = \{0, 1,...,12\}$ episodes of OM were tabulated and the distribution between VNEC and VEC compared using the $\chi^2$ test of homogeneity,
+Additionally, the crude risk ratio between the VEC and VNEC of experiencing 0, 1–4, or >5 episodes of OM before three years of age was calculated. 
 
 The Andersen-Gill extension of the Cox regression model for repeated events was used to model data on the individual level and to account for censoring of follow-up time [@Andersen1982].
 To correct for successive visits by the same individual, Lin and Wei's sandwich variance estimates were used [@Lin1989].
-From this model, the hazard ratio (HR) of otitis media visits between each birth-cohort and the last vaccine non-eligible cohort was caclulated.
-The impact of PHiD-CV10 on otitis media visits was calculated using 1 – (HR between the last vaccine-eligible birth cohort and the last vaccine non-eligible cohort). 
+From this model, the hazard ratio ($HR$) of OM visits between each birth-cohort and the last vaccine non-eligible cohort was caclulated.
+The impact of PHiD-CV10 on OM visits was calculated using 1 – ($HR$ between the last vaccine-eligible birth cohort and the last vaccine non-eligible cohort). 
 
-The HR between VNEC and VEC was calculated for each number of previous otitis media visits, and the mean number of episodes as a function of age was estimated from the model using the generalized Nelson-Aalen estimator [@Cook2007].
-To determine the number of otitis media episodes prevented in the first five years of the vaccination, each child’s follow-up time was multiplied by the Nelson-Aelen estimate of the mean number of episodes. 
+The $HR$ between VNEC and VEC was calculated for each number of previous OM visits, and the mean number of episodes as a function of age was estimated from the model using the generalized Nelson-Aalen estimator [@Cook2007].
+To determine the number of OM episodes prevented in the first five years of the vaccination, each child’s follow-up time was multiplied by the Nelson-Aelen estimate of the mean number of episodes. 
 The absolute reduction in the incidence rate was then calculated by dividing the estimated number of prevented episodes with the total person-time of the VEC.

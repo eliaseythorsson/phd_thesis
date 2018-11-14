@@ -1,37 +1,42 @@
 # Materials and methods {#methods}
 
-## Data collection and sources
+## Data collection and sources {#datasources}
 
-During the study period from Jaunary 1, 2005 to December 31, 2017, data were collected from multiple whole population registries, and from a single hospital registry. 
-All data were identifiable to an individual level using national identification numbers, which are issued Each individual receives one and only one number over the course of their lifetime, and the identification number is permeanently retired at the time of death.
-The Directorate of Health processed all data from the various registries, linking them on the basis of national indentification numbers, and then anonymizing before releasing the linked data to the study group. 
-Anonymization was accomplished by creating a study identification number during the linking process, which was generated directly from the national identification number in a reproducible fashion.
-The mapping key is kept by the Directorate of Health, and is not accessible to the study authors. 
+During the study period from Jaunary 1, 2005 to December 31, 2017, data was collected from multiple whole population registries, and from a single hospital registry. 
+All data was identifiable to an individual level using national identification numbers, which are issued by the government. Each individual receives one and only one number over the course of their lifetime, and the identification number is permeanently retired at the time of death.
+The Icelandic Directorate of Health processed and anonymized all data from the various registries, before releasing it to the study group. 
+Anonymization was accomplished by creating a study identifier based on the national identification number, which was then removed from the data.
+The mapping key is kept by the Directorate of Health, and is not accessible to the study group.
+The study group linked the data from the various registries using the study identifier, and event dates. 
 
-The data underlying this study are observational in nature, but their quality is enhanced by several factors. 
-Not only are all medical records in Iceland stored electronically, but the same software, *Saga*, has been used by all health-care providers and instituitions throughout the study period.
+The data underlying this study is observational in nature, and its quality is enhanced by several factors. Not only are all medical records in Iceland stored electronically, but the same software, *Saga*, has been used by all health-care providers and instituitions throughout the study period.
 Likewise, the International Classification of Diseases, 10th revision (ICD-10), is the only diagnostic coding system in use in Iceland during the study period.
-Furthermore, all medical procedures have been coded with the NOMESCO Classification of Surgical Procedures (NCSP), and dugs are classified using the Anatomical-Therapeutic-Chemical (ATC) classification system of the World Health Organization. 
+Furthermore, all medical procedures have been coded with the NOMESCO Classification of Surgical Procedures (NCSP), and drugs classified using the Anatomical-Therapeutic-Chemical (ATC) classification system of the World Health Organization. 
 
-In the following sub-chapters, each registry providing study data will be reviewed.
-Statistics Iceland provided data on immigration and emigration, demographic indices and salary.
-Clinical data was obtained from Landspitali University Hospital's inpatient registry and the Primary Care Registry of the Directorate of Health. 
+In the following sub-chapters, each registry providing study data is reviewed.
+Statistics Iceland provided data on immigration and emigration, demographic indices and salaries.
+Diagnostic data was obtained from Landspitali University Hospital's inpatient registry and the Primary Care Registry of the Directorate of Health. 
 Pneumococcal vaccination status was collected from the National Vaccine Registry (NVR) and augmented with information on privately purchased vaccine doses obtained from the National Drug Prescription Registry (NDPR).
-Data regarding antimicrobial prescriptions were also extraced from the NDPR.
-Finally, reimbursement data for outpatient otolaryngological procedures were obtained from Icelandic Health Insurance. 
+Data regarding antimicrobial prescriptions was also extraced from the NDPR.
+Finally, reimbursement data for outpatient otolaryngological procedures was obtained from Icelandic Health Insurance. 
 
-### Statistics Iceland
+### Statistics Iceland {#statisticsiceland}
 
-Statistic Iceland collects and maintains a large array of economical, social and demographic indices and provides aggregate data freely at www.statice.com.
+Statistics Iceland collects and maintains a large array of economical, social and demographic indices and provides aggregate data at www.statice.is.
+For each calendar-year 2005-2017, the number of invididuals living in Iceland by postal-code, gender and age in years, was collected from Statistics Iceland.
+This data was used for the denominator in incidence calculations in all papers.
+The deciles of salary from 2005-2017 were obtained from Statistics Iceland and used to inform a sensitivity analysis on the cost-benefit of PHiD-CV10 (Paper VI).
+Costs were adjusted for inflation using National Wage Index of Statistics Iceland. 
+In addition to the aggregate data presented above, individual level information on the immigration and emigration of children zero to four years of age was obtained, anonymized and linked to the other study data.  
 
-### Landspitali University Hospital inpatient registry
+### Landspitali University Hospital inpatient registry {#inpatientregistry}
 
 Landspitali University Hospital is the sole tertiary hospital in Iceland, and encompasses Children's Hospital Iceland -- Iceland's only paediatric hospital. 
-It also functions as a primary and secondary hospital for the capital area, serving 65% of the Icelandic population.
-In 2017, the total number of hospital beds in Iceland was 1,050 [@OECD2017].
-Of those, 687 were at Landspitali University Hospital.
+It also serves as a primary and secondary hospital for the capital area, providing care for approximately 65% of the Icelandic population.
+In 2017, the total number of non-psyciatric curative care hospital beds in Iceland was 732 (www.statice.is)
+Of those, 669 (91%) were at Landspitali University Hospital.
 The inpatient registry contains information on all emergency department and outpatient visits, and all hospital admissions to Landspitali University Hospital. 
-For the period of January 1, 2005 to December 31, 2017, data were extracted on all unplanned acute-care visits and hospital admissions with ICD-10 discharge diagnoses compatible with respiratory infections (see Table \@ref(tab:table-icd)).
+For the period of January 1, 2005 to December 31, 2017, data was extracted on all unplanned acute-care visits and hospital admissions with ICD-10 discharge diagnoses compatible with respiratory infections (see Table \@ref(tab:table-icd)).
 
 
 ```{r table-icd}
@@ -140,7 +145,7 @@ kable(
     )
 ```
 
-Additionally, any visit or hospital admission associated with NCSP procedural codes in Table \@ref(tab:table-ncsp)) were extracted. 
+Additionally, any visit or hospital admission associated with NCSP procedural codes in Table \@ref(tab:table-ncsp) were extracted the patient registry. 
 
 ```{r table-ncsp}
 kable(
@@ -178,17 +183,19 @@ kable(
 ```
 
 
-The data included the date of the visit, date of hospital discharge, hospital length of stay, the departments involved and a detailed breakdown of costs associated with the visit.
+The data included the date of visit or hospital admission, date of hospital discharge, hospital length of stay, the departments involved (including the intensive care unit), and a detailed breakdown of costs associated with the visit.
 A separate unique identification number was provided for each individual visit or hospital admission. 
 
-Several smaller data-sets pertaining to specific papers were extracted from the inpatient registry.
-These smaller data-sets were not linked to the main study data. 
-For paper I, all doses of ceftriaxone administered at the Children's Hospital Iceland between January 2009 and December 2015 were extracted from the hospital's medication administration system using the ATC code J01DD04.
+Several smaller independent data-sets pertaining to specific papers were extracted from the inpatient registry.
+These data-sets were not linked to the main study data. 
+
+For [paper I](#paper1), describing the impact of PHiD-CV10 on otitis media with treatment failure, all doses of ceftriaxone administered at the Children's Hospital Iceland between January 2009 and December 2015 were extracted from the hospital's medication administration system using the ATC code J01DD04.
 Any ICD-10 diagnostic code associated with the visit or hospital admission in which ceftriaxone was administered, was extracted from the inpatient registry.
 Importantly, this included all ICD-10 codes, not only those in Table \@ref(tab:table-icd).
-The aggregate number of yearly visits to the paediatric emergency department of Children's Hospital Iceland 2008-2015 was also obtained for use in paper I.
-Paper VI required synthetic controls used within a time-series analysis framework. 
-The aggregate monthly number of acute-care visits and hospital admissions for several sub-chapters of the ICD-10 diagnostic coding system (Table \@ref(tab:table-icd_synthetic))) were obtained for 22 different age-groups. 
+The aggregate number of yearly visits to the paediatric emergency department of Children's Hospital Iceland 2008-2015 was also obtained for use in [paper I](#paper1)
+
+[Paper VI](#paper6) -- a cost-benefit analysis of PHiD-CV10 introduction into the paediatric vaccination program, required synthetic controls used within a time-series analysis framework. 
+The aggregate monthly number of acute-care visits and hospital admissions for several sub-chapters of the ICD-10 diagnostic coding system (Table \@ref(tab:table-icd-synthetic))) were obtained for 22 different age-groups. 
 
 ```{r table-icd-synthetic}
 kable(
@@ -242,30 +249,34 @@ kable(
 ```
 
 
-Data from the inpatient registry was used in papers I, IV, V and VI.
+Data from the inpatient registry was used in [paper I](#paper1), [paper IV](#paper4), [paper V](#paper5) and [paper VI](#paper6).
 
-### The Primary Care Registry
+### The Primary Care Registry {#primarycareregistry}
 
 In the Icelandic healthcare system, primary care is provided by family medicine physicians at 69 neighborhood based centers (*Heilsugæsla*).
 All primary care centers use the same electronic medical record system, and the same diagnostic coding systems (NCSP, ICD-10) as Landspitali University Hospital and Children's Hospital Iceland.
 The Directorate of Health maintains a registry on all primary care visits within the Icelandic healthcare system.
 Due to extensive maintenance and restructuring ongoing since early 2016, no new data has been added to the registry since December 31, 2015.
-From this registry, all visits and phone-calls with ICD-10 diagnostic codes compatible with respiratory tract infections were extracted for the period January 1, 2005 to December 31, 2015 (Table \@ref(tab:table-icd)).
+From this registry, all physician visits and phone-calls with ICD-10 diagnostic codes compatible with respiratory tract infections were extracted for the period January 1, 2005 to December 31, 2015 (Table \@ref(tab:table-icd)).
 
-### The National Vaccine Registry
+Data from the Primary Care Registry was used in [paper II](#paper2), [paper III](#paper3), [paper IV](#paper4) and [paper VI](#paper6).
+
+### The National Vaccine Registry {#vaccineregistry}
 
 The Icelandic Directorate of Health also maintains the National Vaccine Registry (NVR). 
 All vaccine doses administered within the healthcare system are systematically recorded in an individual's electronic health record at the time of administration.
-This record is reviewed and updated regularly, and vaccinations received elsewhere are included.
+This record is reviewed and updated regularly, and vaccinations given in other healthcare facilities are included.
 The NVR collects this information from all electronic health records in the country.
 All administered vaccine doses with ATC codes "J07AL" (Pneumococcal vaccines) were extracted for the period of January 1, 2005 to December 31, 2017.
 
-### The National Drug Prescription Registry
+Data from the NVR are used in all papers. 
+
+### The National Drug Prescription Registry {#prescriptionregistry}
 
 The national drug prescription registry (NDPR) is a whole population registry, collected and maintained by the Icelandic Directorate of Health since January 1, 2005.
 It contains information on all filled drug prescriptions in Iceland.
 All pharmacies are required by law to collect data on each filled prescription and submit to the NDPR.
-An important distinction must be made between a filled prescription and a prescription.
+An important distinction must be made between a written prescription and a filled prescription.
 The NDPR receives information if and when a prescription is filled.
 It does not contain information on prescriptions that were never filled by the patient.
 All prescriptions contained within the NDPR were paid for and received by the patient.
@@ -321,11 +332,13 @@ kable(
     )
 ```
 
+Data from the NDPR was used in [paper II](#paper2), [paper III](#paper3) and [paper4](#paper4).
 
-### Reimbursement database of Icelandic Health Insurance
+### Reimbursement database of Icelandic Health Insurance {#reimbursementdatabase}
 
 The healthcare system in Iceland is a single-payer system with one government-run health insurance provider, under which all permanent citizens are covered. 
-Each healthcare visit requires a nominal out-of-pocket fee, with the rest of the visit covered by the insurance.
+Most healthcare visits require a nominal out-of-pocket fee, with the rest of the visit covered by the insurance.
+There are exceptions to this -- e.g. visits for children under two years of age are completely covered by the insurance. 
 Healthcare providers are either salaried governmental employees, or independent practitioners who are reimbursed on a per case basis, according to pre-determined negotiations with Icelandic Health Insurance.
 To receive pay for services, physicians must submit a reimbursement form detailing the nature of the visit and any procedures performed using pre-specified procedural codes.
 Icelandic Health Insurance maintains a reimbursement database which details the nature and number of procedures performed.
@@ -372,4 +385,4 @@ kable(
     )
 ```
 
-
+Data from the reimbursement database was used in [paper IV](#paper4).

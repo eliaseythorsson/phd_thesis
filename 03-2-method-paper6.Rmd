@@ -1,4 +1,4 @@
-## Paper 6
+## Impact and cost-benefit analysis (Paper VI){#paper6}
 
 Paper 6 is a cost-benefit analysis of PHiD-CV10 based on whole population observational data.
 The study period is from January 1, 2005 to December 31, 2017.

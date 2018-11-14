@@ -1,4 +1,4 @@
-## Paper 3
+## Impact on outpatient antimicrobial prescriptions (Paper III){#paper3}
 
 Paper 3 is a whole population observational cohort study of antimicrobial prescriptions of children under three years of age in Iceland.
 Eleven consecutive Icelandic birth-cohorts 2005–2015 were followed from birth until three years of age. 
@@ -6,7 +6,7 @@ Children who imigrated to Iceland after birth were excluded.
 Follow-up time was censored on death, emigration, or the end of the study period (December 31, 2016).
 Because of shortened follow-up time, the 2016 birth-cohort was not included in the analysis. 
 
-Data regarding outpatient antimicrobial prescriptions were obtained from the National Drug Prescription Registry, previously described in Table \@ref(tab:table-atc).
+Data regarding outpatient antimicrobial prescriptions were obtained from the National Drug Prescription Registry, as previously described in \@ref(prescriptionregistry).
 Data on primary care visits for respiratory tract infections were collected from the Primary Care Registry using the ICD-10 codes in Table \@ref(tab:table-icd).
 Prescriptions filled within three days of a documented physician visit by the same child were linked.
 Because data from the Primary Care Registry were only available through December 31, 2015, the portion of the analysis pertaining to the linked data was restricted to that date. 
