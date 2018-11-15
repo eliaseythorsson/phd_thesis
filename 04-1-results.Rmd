@@ -1,1 +1,232 @@
 # Results {#results}
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(zoo)
+load("_analyses/results/2018-11-15-04-1-results.RData")
+```
+
+The results of papers I-VI are summarized in their respective subchapters. 
+Because data was collected over a four year period from 2013-2017, and the papers that form this thesis were written and published at different times, the study period and population described in each paper varies slightly. 
+They however differ only marginally from the final data summary described below. 
+
+When data from all registries are taken together, individual level information was available for 372,641 Icelandic citizens, of which 183,233 were female and 181,048 were male.
+Gender was unknown for 8,360 individuals. 
+The full date of birth was known for 363,456 and the birth-year was available for the rest.
+The median birth-year for the whole study population was 1979 (IQR 1958-1997).
+Death was registered for 12,308 individuals during the study period. 
+
+### Statistics Iceland
+
+Statistics Iceland provided data on immigration and emigration of Icelandic children zero to four years of age.
+Of the 57,695 Icelandic children born 2005 or later, 5,577 moved to or from the country 6,847 times from 2005-2017.
+The proportion of children in each birth-cohort who ever moved before five years of age, was consistently 9%-12% among those birth-cohorts who had full follow-up time (birth-cohorts 2005-2012).
+
+### Landspitali University Hospital patient registry
+
+All visits and hospitalizations with ICD-10 diagnostic codes compatible with respiratory infections (Table \@ref(tab:table-icd)) and procedural codes compatible with tympanostomy tube procedures (Table \@ref(tab:table-ncsp)) were extracted from the patient registry. 
+A total of 169,585 observations (74,740 individuals) were available, of which 135,841 (64,090) were visits to outpatient clinics or emergency departments and 33,744 (20,318) were hospital admissions.
+The number of visits and hospitalizations with each of the study's ICD-10 diagnosis listed as the first diagnosis are shown in Table \@ref(tab:table-icd10-results).
+
+```{r table-icd10-results}
+kable(
+    x = data.frame(
+    stringsAsFactors = FALSE,
+    icd = c(
+    "A40",
+    "A41",
+    "A48",
+    "A49",
+    "B00",
+    "B08",
+    "B33",
+    "B34",
+    "B95",
+    "B96",
+    "G00",
+    "H65",
+    "H66",
+    "H70",
+    "H72",
+    "H73",
+    "J00",
+    "J01",
+    "J02",
+    "J03",
+    "J04",
+    "J05",
+    "J06",
+    "J09",
+    "J10",
+    "J11",
+    "J12",
+    "J13",
+    "J14",
+    "J15",
+    "J16",
+    "J17",
+    "J18",
+    "J20",
+    "J21",
+    "J22",
+    "J32",
+    "J36",
+    "J40",
+    "J85",
+    "J86",
+    "J90",
+    "N30",
+    "N39",
+    "R05",
+    "R50"
+    ),
+    Disease = c(
+    "Streptococcal sepsis",
+    "Other sepsis",
+    "Other bacterial diseases, not elsewhere classified",
+    "Bacterial infection of unspecified site",
+    "Herpesviral [herpes simplex] infections",
+    "Other viral infections characterized by skin and mucous membrane lesions, not elsewhere classified",
+    "Other viral diseases, not elsewhere classified",
+    "Viral infection of unspecified site",
+    "Streptococcus, Staphylococcus, and Enterococcus as the cause of diseases classified elsewhere",
+    "Other bacterial agents as the cause of diseases classified elsewhere",
+    "Bacterial meningitis,not elsewhere classified",
+    "Nonsuppurative otitis media",
+    "Suppurative and unspecified otitis media",
+    "Mastoiditis and related conditions",
+    "Perforation of tympanic membrane",
+    "Other disorders of tympanic membrane",
+    "Acute nasopharyngitis [common cold]",
+    "Acute sinusitis",
+    "Acute pharyngitis",
+    "Acute tonsillitis",
+    "Acute laryngitis and tracheitis",
+    "Acute obstructive laryngitis [croup] and epiglottitis",
+    "Acute upper respiratory infections of multiple and unspecified sites",
+    "Influenza due to certain identified influenza viruses",
+    "Influenza due to other identified influenza virus",
+    "Influenza due to unidentified influenza virus",
+    "Viral pneumonia, not elsewhere classified",
+    "Pneumonia due to Streptococcus pneumoniae",
+    "Pneumonia due to Hemophilus influenzae",
+    "Bacterial pneumonia, not elsewhere classified",
+    "Pneumonia due to other infectious organisms, not elsewhere classified",
+    "Pneumonia in diseases classified elsewhere",
+    "Pneumonia, unspecified organism",
+    "Acute bronchitis",
+    "Acute bronchiolitis",
+    "Unspecified acute lower respiratory infection",
+    "Chronic sinusitis",
+    "Peritonsillar abscess",
+    "Bronchitis, not specified as acute or chronic",
+    "Abscess of lung and mediastinum",
+    "Pyothorax",
+    "Pleural effusion, not elsewhere classified",
+    "Cystitis",
+    "Other disorders of urinary system",
+    "Cough",
+    "Fever of other and unknown origin"
+    )
+    ) %>%
+    left_join(
+    lsh %>%
+    count(first_diagnosis, lotu_teg) %>%
+    mutate(icd = str_extract(first_diagnosis, "^.{3}")) %>%
+    group_by(icd, lotu_teg) %>%
+    summarise(n = sum(n, na.rm = T)) %>%
+    spread(lotu_teg, n)
+    ) %>%
+    left_join(
+    hg %>%
+    filter(staff_type == "Læ") %>%
+    count(main_diagnosis) %>%
+    mutate(icd = str_extract(main_diagnosis, "^.{3}")) %>%
+    group_by(icd) %>%
+    summarise(n = sum(n, na.rm = T))
+    ),
+    col.names = c(
+    "ICD-10 code",
+    "Disease",
+    "Hospital visits",
+    "Hospitailzations",
+    "Primary care visits"
+    ),
+    caption = "Number of visits or hospitalizations with International Classification of Diseases, 10th revision codes used in the current study as the primary diagnosis",
+    format.args = list(big.mark = ",")
+    )
+```
+
+The number of study procedures performed at Landspitali University Hospital is shown in Table \@ref(tab:table-ncsp-results).
+
+```{r table-ncsp-results}
+kable(
+    x = data.frame(
+    stringsAsFactors = FALSE,
+    NCSP.code = c(
+    "EMSB00",
+    "EMSB10",
+    "EMSB15",
+    "EMSB20",
+    "EMSB30",
+    "EMSB99",
+    "EMSW99",
+    "DCSA10",
+    "DCSA20",
+    "DCSW00"
+    ),
+    Description = c(
+    "Excision of lesion of tonsil or adenoid",
+    "Tonsillectomy",
+    "Intracapsular destruction of tonsils",
+    "Adenotonsillectomy",
+    "Adenotomy",
+    "Other excision on tonsils and adenoids",
+    "Other operation on tonsil or adenoids",
+    "Paracentesis of tympanic membrane",
+    "Insertion of ventilating tube through tympanic membrane",
+    "Removal of ventilating tube from tympanic membrane"
+    )
+    ) %>%
+    left_join(
+    lsh %>%
+    select(obs, id, ncsp) %>%
+    separate(
+    col = ncsp,
+    into = as.character(1:5),
+    extra = "drop",
+    fill = "right",
+    sep = " "
+    ) %>%
+    gather(procedure, code,-obs,-id) %>%
+    filter(!is.na(code)) %>%
+    mutate(NCSP.code =
+    str_extract(
+    string = str_remove(string =  code, pattern = "[:punct:]|[:space:]"),
+    pattern = "^.{6}"
+    )) %>%
+    count(NCSP.code)
+    ) %>%
+    mutate(n = if_else(is.na(n), 0L, n)),
+    col.names = c("NCSP code", "Description", "Number of procedures"),
+    caption = "Number of study NOMESCO Classification of Surgical Procedures performed in the current study",
+    format.args = list(big.mark = ",")
+    )
+```
+
+### The Primary Care Registry 
+
+The Primary Care Registry recorded all primary care health contacts for the period 2005-2015.
+All physician contacts with diagnostic codes \@ref(tab:table-icd)) were extracted for the available period. 
+A total of 1,963,439 seperate contacts between 298,307 individual patients and 1,266 unique physicians were recorded.
+The numer of contacts by age can be seen in Figure \@ref(fig:hg-density-age).
+
+```{r hg-density-age, fig.cap = "Total number of contacts to primary care physicians by age"}
+include_graphics(path = "_figures/results/2018-11-15-density-age.png")
+```
+### The National Vaccine Registry
+
+### The National Drug Prescription Registry
+
+### Reimbursement database of Icelandic Health Insurance

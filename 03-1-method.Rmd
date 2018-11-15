@@ -15,7 +15,7 @@ Furthermore, all medical procedures have been coded with the NOMESCO Classificat
 
 In the following sub-chapters, each registry providing study data is reviewed.
 Statistics Iceland provided data on immigration and emigration, demographic indices and salaries.
-Diagnostic data was obtained from Landspitali University Hospital's inpatient registry and the Primary Care Registry of the Directorate of Health. 
+Diagnostic data was obtained from Landspitali University Hospital's patient registry and the Primary Care Registry of the Directorate of Health. 
 Pneumococcal vaccination status was collected from the National Vaccine Registry (NVR) and augmented with information on privately purchased vaccine doses obtained from the National Drug Prescription Registry (NDPR).
 Data regarding antimicrobial prescriptions was also extraced from the NDPR.
 Finally, reimbursement data for outpatient otolaryngological procedures was obtained from Icelandic Health Insurance. 
@@ -29,13 +29,13 @@ The deciles of salary from 2005-2017 were obtained from Statistics Iceland and u
 Costs were adjusted for inflation using National Wage Index of Statistics Iceland. 
 In addition to the aggregate data presented above, individual level information on the immigration and emigration of children zero to four years of age was obtained, anonymized and linked to the other study data.  
 
-### Landspitali University Hospital inpatient registry {#inpatientregistry}
+### Landspitali University Hospital patient registry {#patientregistry}
 
 Landspitali University Hospital is the sole tertiary hospital in Iceland, and encompasses Children's Hospital Iceland -- Iceland's only paediatric hospital. 
 It also serves as a primary and secondary hospital for the capital area, providing care for approximately 65% of the Icelandic population.
 In 2017, the total number of non-psyciatric curative care hospital beds in Iceland was 732 (www.statice.is)
 Of those, 669 (91%) were at Landspitali University Hospital.
-The inpatient registry contains information on all emergency department and outpatient visits, and all hospital admissions to Landspitali University Hospital. 
+The patient registry contains information on all emergency department and outpatient visits, and all hospital admissions to Landspitali University Hospital. 
 For the period of January 1, 2005 to December 31, 2017, data was extracted on all unplanned acute-care visits and hospital admissions with ICD-10 discharge diagnoses compatible with respiratory infections (see Table \@ref(tab:table-icd)).
 
 
@@ -152,16 +152,16 @@ kable(
     x = data.frame(
     stringsAsFactors = FALSE,
     NCSP.code = c(
-    "EMB 00",
-    "EMB 10",
-    "EMB 15",
-    "EMB 20",
-    "EMB 30",
-    "EMB 99",
-    "EMW 99",
-    "DCA 10",
-    "DCA 20",
-    "DCW 00"
+    "EMSB00",
+    "EMSB10",
+    "EMSB15",
+    "EMSB20",
+    "EMSB30",
+    "EMSB99",
+    "EMSW99",
+    "DCSA10",
+    "DCSA20",
+    "DCSW00"
     ),
     Description = c(
     "Excision of lesion of tonsil or adenoid",
@@ -186,11 +186,11 @@ kable(
 The data included the date of visit or hospital admission, date of hospital discharge, hospital length of stay, the departments involved (including the intensive care unit), and a detailed breakdown of costs associated with the visit.
 A separate unique identification number was provided for each individual visit or hospital admission. 
 
-Several smaller independent data-sets pertaining to specific papers were extracted from the inpatient registry.
+Several smaller independent data-sets pertaining to specific papers were extracted from the patient registry.
 These data-sets were not linked to the main study data. 
 
 For [paper I](#paper1), describing the impact of PHiD-CV10 on otitis media with treatment failure, all doses of ceftriaxone administered at the Children's Hospital Iceland between January 2009 and December 2015 were extracted from the hospital's medication administration system using the ATC code J01DD04.
-Any ICD-10 diagnostic code associated with the visit or hospital admission in which ceftriaxone was administered, was extracted from the inpatient registry.
+Any ICD-10 diagnostic code associated with the visit or hospital admission in which ceftriaxone was administered, was extracted from the patient registry.
 Importantly, this included all ICD-10 codes, not only those in Table \@ref(tab:table-icd).
 The aggregate number of yearly visits to the paediatric emergency department of Children's Hospital Iceland 2008-2015 was also obtained for use in [paper I](#paper1)
 
@@ -249,7 +249,7 @@ kable(
 ```
 
 
-Data from the inpatient registry was used in [paper I](#paper1), [paper IV](#paper4), [paper V](#paper5) and [paper VI](#paper6).
+Data from the patient registry was used in [paper I](#paper1), [paper IV](#paper4), [paper V](#paper5) and [paper VI](#paper6).
 
 ### The Primary Care Registry {#primarycareregistry}
 
