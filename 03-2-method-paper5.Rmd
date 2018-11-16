@@ -1,17 +1,17 @@
 ## Impact on respiratory associated hospitalizations (Paper V){#paper5}
 
-Paper 5 is a single-centre, individual-level, observational cohort study of paediatric hospitalizations due to diseases commonly caused by *Streptococcus pneumonae*. 
+Paper 5 is a single-center, individual-level, observational cohort study of pediatric hospitalizations due to diseases commonly caused by *Streptococcus pneumonae*. 
 Eleven consecutive Icelandic birth-cohorts 2005-2015 were followed from birth until three years of age.
 Immigration and emigration data obtained from Statistics Iceland was used to exclude children who had immigrated to Iceland after birth. 
-Included were all hospital admissions to the Children’s Hospital Iceland from January 1st, 2005 to December 31st, 2016.
-The Children’s Hospital Iceland is the primary paediatric hospital for approximately 90% of Iceland's population (www.statice.is), and serves as a secondary and tertiary paediatric hospital for the entire country.
-Data on admissions were collected from Landspitali University Hospital's patient registry.
-Microbiological data were extracted from a database maintained by the Department of Clinical Microbiology at Landspitali University Hospital.
+Included were all hospital admissions to the Children’s Hospital Iceland January 1st, 2005 to December 31st, 2016.
+The Children’s Hospital Iceland is the primary pediatric hospital for approximately 90% of Iceland's population (www.statice.is), and serves as a secondary and tertiary pediatric hospital for the entire country.
+Data on admissions was collected from Landspitali University Hospital's patient registry.
+Microbiological data was extracted from a database maintained by the Department of Clinical Microbiology at Landspitali University Hospital.
 
 Seven diagnostic groups were defined in this paper.
 Five of these represent diseases commonly caused by *Streptococcus pneumoniae*; Invasive pneumococcal disease (IPD), meningitis, sepsis, pneumonia and otitis media. 
 The remaining two groups, upper respiratory tract infections (URTI) and other lower respiratory tract infections (LRTI), were included as comparators. 
-Hospitalization was categorised in one of the paper’s diagnostic groups, if the relevant ICD-10 diagnostic code was recorded on the discharge chart, or if the admission was associated with microbiologically-confirmed IPD.
+Hospitalization was categorized in a diagnostic group, if the relevant ICD-10 diagnostic code was recorded on the discharge chart, or if the admission was associated with microbiologically-confirmed IPD.
 Admissions with ICD-10 discharge diagnoses compatible with meningitis (G00) were grouped as meningitis.
 Those with A40 or A41 diagnoses were grouped as sepsis; with J09-J18, as pneumonia; J20-J22 as LRTI; H65, H66, H70 and H72 as OM; and J01-J06 as URTI (Table \@ref(tab:table-paper5-diagnostic-groups)).
 A hospitalization was considered to be due to IPD if associated with culture or PCR confirmed *Streptococcus pneumoniae* sampled from joint fluid, bone, cerebrospinal fluid or blood, regardless of ICD-10 discharge diagnosis.

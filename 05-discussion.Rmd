@@ -1,2 +1,3 @@
 # Discussion {#discussion}
 
+- discuss the completeness of the data, the number of Icelanders in the study data vs. the total number of icelanders. 

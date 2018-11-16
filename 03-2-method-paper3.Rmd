@@ -1,18 +1,18 @@
 ## Impact on outpatient antimicrobial prescriptions (Paper III){#paper3}
 
-Paper 3 is a whole population observational cohort study of antimicrobial prescriptions of children under three years of age in Iceland.
+Paper 3 is a whole population observational cohort study of antimicrobial prescriptions in children under three years of age in Iceland.
 Eleven consecutive Icelandic birth-cohorts 2005–2015 were followed from birth until three years of age. 
-Children who imigrated to Iceland after birth were excluded.
+Children who immigrated to Iceland after birth were excluded.
 Follow-up time was censored on death, emigration, or the end of the study period (December 31, 2016).
 Because of shortened follow-up time, the 2016 birth-cohort was not included in the analysis. 
 
-Data regarding outpatient antimicrobial prescriptions were obtained from the National Drug Prescription Registry, as previously described in \@ref(prescriptionregistry).
-Data on primary care visits for respiratory tract infections were collected from the Primary Care Registry using the ICD-10 codes in Table \@ref(tab:table-icd).
+Data regarding outpatient antimicrobial prescriptions was obtained from the National Drug Prescription Registry, as previously described in \@ref(prescriptionregistry).
+Data on primary care visits for respiratory tract infections was collected from the Primary Care Registry using the ICD-10 codes in Table \@ref(tab:table-icd).
 Prescriptions filled within three days of a documented physician visit by the same child were linked.
-Because data from the Primary Care Registry were only available through December 31, 2015, the portion of the analysis pertaining to the linked data was restricted to that date. 
-Demographical populatoin data were acquired from Statistics Iceland (https://www.statice.is/).
+Because data from the Primary Care Registry was only available through December 31, 2015, the portion of the analysis pertaining to the linked data was restricted to that date. 
+Demographic population data was acquired from Statistics Iceland (https://www.statice.is/).
 
-Data were analysed both descriptively and from a cohort perspective.
+Data was analysed both descriptively and from a cohort perspective.
 Descriptive analysis included all Icelandic children under three years of age during the study period.
 Statistical analyses were performed in R version 3.4.4. [@R-base] using the R packages survival [@R-survival], RMS [@R-rms] and epiR [@R-epiR].
 Based on a previously published study, all filled antimicrobial prescriptions were classified into one of six categories; first and second line penicillins, first and second generation macrolides, cephalosporins, and finally, others [@Youngster2017].
@@ -34,14 +34,14 @@ The 2014 and 2015-cohorts were excluded from the cumulative analyses, as they di
 The Andersen-Gill time-to-event model was fitted to the individual level data [@Andersen1982].
 It was used to estimate the hazard ratio ($HR$) of antimicrobial prescription between the study birth-cohorts, which were included in the model as a categorical variable. 
 Age was accounted for by defining it as the model's underlying measurement of time.
-The model was stratified by gender to allow for Independent baseline hazards.
+The model was stratified by gender to allow for independent baseline hazards.
 The number of previous antimicrobial prescriptions was included in the model, and its effect allowed to be non-linear by means of restricted cubic splines. 
 @Lin1989 robust sandwich variance estimates were applied to account for the correlation between successive prescriptions filled by the same child.
 
 The impact of PHiD-CV10 on outpatient antimicrobial prescriptions was estimated as 1 – (the hazard ratio between the last vaccine eligible and last vaccine non-eligible cohorts) × 100%.
 The impact on each successive prescription was also estimated.
 Finally, the generalized Nelson-Aalen estimate of the mean number of antimicrobial prescriptions for each gender and vaccine-cohort was calculated [@Cook2007].
-To estimate the absolute number of prevented antimicrobial prescriptions during the first seven years of the intervention, the following formula was utilized; first, the expected number of prescriptions per child was added together by multiplying each child's follow-up time with the VNEC estimate of the mean number of precriptions per child.
+To estimate the absolute number of prevented antimicrobial prescriptions during the first seven years of the intervention, the following formula was utilized; first, the expected number of prescriptions per child was added together by multiplying each child's follow-up time with the VNEC estimate of the mean number of prescriptions per child.
 Next, the expected number of prescriptions per child was estimated using the VEC estimate of the mean.
 Finally, the absolute number prevented was calculated by subtracting the VEC total from the VNEC total. 
 The absolute rate reduction was then calculated by dividing the absolute number prevented, with the number of person-years at-risk in the VEC.
