@@ -1,6 +1,7 @@
 # Results {#results}
 
 ```{r}
+library(knitr)
 library(tidyverse)
 library(lubridate)
 library(zoo)
@@ -215,17 +216,68 @@ kable(
     )
 ```
 
+The age distribution of visits and hospital admissions are shown in Figure \@ref(fig:density-age).
+Though children and young adults contribute the most number of visits due to study diagnoses, older adults contribue the largest number of hospitalizations. 
+
+```{r density-age, fig.cap = "Total number of contacts to Landspitali University Hospital and Primary Care Centers"}
+include_graphics(path = "_figures/results/2018-11-16-density-age.png")
+```
+
 ### The Primary Care Registry 
 
 The Primary Care Registry recorded all primary care health contacts for the period 2005-2015.
 All physician contacts with diagnostic codes \@ref(tab:table-icd)) were extracted for the available period. 
 A total of 1,963,439 seperate contacts between 298,307 individual patients and 1,266 unique physicians were recorded.
-The numer of contacts by age can be seen in Figure \@ref(fig:hg-density-age).
+The numer of contacts by age can be seen in Figure \@ref(fig:density-age).
 
-```{r hg-density-age, fig.cap = "Total number of contacts to primary care physicians by age"}
-include_graphics(path = "_figures/results/2018-11-15-density-age.png")
-```
 ### The National Vaccine Registry
+
+The National Vaccine Registry recorded all administered vaccine doses for the period 2005-2017.
+All recorded pneumococcal vaccine doses were extracted.
+A total of 110,712 doses of pneumococcal vaccines were administered to 51,601 individuals during the study period.
+The monthly number of administered doses per age-group and vaccine is shown in Figure \@ref(fig:vaccine-time).
+
+```{r vaccine-time, fig.cap = "Monthly number of administered pneumococcal vaccine doses by type and age-group"}
+include_graphics(path = "_figures/results/2018-11-16-vaccine-time.png")
+```
+
+Table \@ref(tab:vaccine-doses) shows the number of children in each birth-cohort who had received zero, one, two, and three doses of a pneumococcal conjugate vaccine by four years of age. 
+Children who moved to or from the country before four years of age were excluded from the table. 
+
+```{r vaccine-doses}
+knitr::kable(
+    x = ids %>%
+    filter(birth_y >= 2005, birth_y <= 2015) %>%
+    left_join(hs) %>%
+    filter(is.na(to_from)) %>%
+    left_join(bs %>%
+    filter(
+    !str_detect(code_text, "Hafnað"),
+    str_detect(atc, "J07AL02|J07AL52"),
+    age_y <= 3
+    )) %>%
+    group_by(id) %>%
+    mutate(
+    dose = dense_rank(date_vacc),
+    dose = case_when(is.na(dose) ~ 0,
+    dose == 1 ~ 1,
+    dose == 2 ~ 2,
+    dose >= 3 ~ 3)
+    ) %>%
+    filter(dose == max(dose)) %>%
+    ungroup() %>%
+    count(birth_y, dose) %>%
+    spread(key = birth_y, value = n),
+    col.names = c("No. of doses", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"),
+    caption = "The number of children in each birth-cohort who has received from zero to three pneumococcal conjugate vaccine doses",
+    format.args = list(big.mark = ",")
+)
+```
+Some children in vaccine non-eligible cohorts received one, two or three doses of pneumococcal conjugate vaccines before four years of age, but generally did so inconsistently and at an older age Figure \@ref(fig:vaccine-age).
+
+```{r vaccine-age, fig.cap = "Age at the time of administered pneumococcal vaccine dose by birth date"}
+include_graphics(path = "_figures/results/2018-11-16-vaccine-age.png")
+```
 
 ### The National Drug Prescription Registry
 

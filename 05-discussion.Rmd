@@ -1,3 +1,5 @@
 # Discussion {#discussion}
 
-- discuss the completeness of the data, the number of Icelanders in the study data vs. the total number of icelanders. 
+- discuss the completeness of the data, the number of Icelanders in the study data vs. the total number of icelanders.
+- discuss the age distribution regarding the number of visits vs hospitalizations. 
+- discuss the vaccine registry, how no difference is occurring in pneumococcal vaccinations of adults
