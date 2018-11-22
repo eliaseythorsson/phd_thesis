@@ -9,6 +9,8 @@ library(zoo)
 load("_analyses/results/2018-11-15-04-1-results.RData")
 ```
 
+## Data collection and sources {#datasourcesresults}
+
 The results of papers I-VI are summarized in their respective subchapters. 
 Because data was collected over a four year period from 2013-2017, and the papers that form this thesis were written and published at different times, the study period and population described in each paper varies slightly. 
 They differ however only marginally from the final data summary described below. 

@@ -47,6 +47,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 
@@ -103,13 +104,15 @@
 <li class="chapter" data-level="4.7" data-path="methods.html"><a href="methods.html#paper6"><i class="fa fa-check"></i><b>4.7</b> Impact and cost-benefit analysis (Paper VI)</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
-<li class="chapter" data-level="5.0.1" data-path="results.html"><a href="results.html#statistics-iceland"><i class="fa fa-check"></i><b>5.0.1</b> Statistics Iceland</a></li>
-<li class="chapter" data-level="5.0.2" data-path="results.html"><a href="results.html#landspitali-university-hospital-patient-registry"><i class="fa fa-check"></i><b>5.0.2</b> Landspitali University Hospital patient registry</a></li>
-<li class="chapter" data-level="5.0.3" data-path="results.html"><a href="results.html#the-primary-care-registry"><i class="fa fa-check"></i><b>5.0.3</b> The Primary Care Registry</a></li>
-<li class="chapter" data-level="5.0.4" data-path="results.html"><a href="results.html#the-national-vaccine-registry"><i class="fa fa-check"></i><b>5.0.4</b> The National Vaccine Registry</a></li>
-<li class="chapter" data-level="5.0.5" data-path="results.html"><a href="results.html#the-national-drug-prescription-registry"><i class="fa fa-check"></i><b>5.0.5</b> The National Drug Prescription Registry</a></li>
-<li class="chapter" data-level="5.0.6" data-path="results.html"><a href="results.html#reimbursement-database-of-icelandic-health-insurance"><i class="fa fa-check"></i><b>5.0.6</b> Reimbursement database of Icelandic Health Insurance</a></li>
-<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#paper-1"><i class="fa fa-check"></i><b>5.1</b> Paper 1</a></li>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#datasourcesresults"><i class="fa fa-check"></i><b>5.1</b> Data collection and sources</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#statistics-iceland"><i class="fa fa-check"></i><b>5.1.1</b> Statistics Iceland</a></li>
+<li class="chapter" data-level="5.1.2" data-path="results.html"><a href="results.html#landspitali-university-hospital-patient-registry"><i class="fa fa-check"></i><b>5.1.2</b> Landspitali University Hospital patient registry</a></li>
+<li class="chapter" data-level="5.1.3" data-path="results.html"><a href="results.html#the-primary-care-registry"><i class="fa fa-check"></i><b>5.1.3</b> The Primary Care Registry</a></li>
+<li class="chapter" data-level="5.1.4" data-path="results.html"><a href="results.html#the-national-vaccine-registry"><i class="fa fa-check"></i><b>5.1.4</b> The National Vaccine Registry</a></li>
+<li class="chapter" data-level="5.1.5" data-path="results.html"><a href="results.html#the-national-drug-prescription-registry"><i class="fa fa-check"></i><b>5.1.5</b> The National Drug Prescription Registry</a></li>
+<li class="chapter" data-level="5.1.6" data-path="results.html"><a href="results.html#reimbursement-database-of-icelandic-health-insurance"><i class="fa fa-check"></i><b>5.1.6</b> Reimbursement database of Icelandic Health Insurance</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#paper1results"><i class="fa fa-check"></i><b>5.2</b> Impact on otitis media with treatment failure (Paper I)</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>6</b> Discussion</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -136,109 +139,211 @@
 <div id="intro" class="section level1">
 <h1><span class="header-section-number">2</span> Introduction</h1>
 <table>
-<caption><span id="tab:table-abbreviations">Table 2.1: </span>List of abbreviations</caption>
+<caption>
+<span id="tab:table-abbreviations">Table 2.1: </span>List of abbreviations
+</caption>
 <thead>
-<tr class="header">
-<th align="left">Term</th>
-<th align="left">Abbreviation</th>
+<tr>
+<th style="text-align:left;">
+Term
+</th>
+<th style="text-align:left;">
+Abbreviation
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">Acute otitis media</td>
-<td align="left">AOM</td>
+<tr>
+<td style="text-align:left;">
+Acute otitis media
+</td>
+<td style="text-align:left;">
+AOM
+</td>
 </tr>
-<tr class="even">
-<td align="left">Anatomical-Therapeutic-Chemical</td>
-<td align="left">ATC</td>
+<tr>
+<td style="text-align:left;">
+Anatomical-Therapeutic-Chemical
+</td>
+<td style="text-align:left;">
+ATC
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Community-acquired pneumonia</td>
-<td align="left">CAP</td>
+<tr>
+<td style="text-align:left;">
+Community-acquired pneumonia
+</td>
+<td style="text-align:left;">
+CAP
+</td>
 </tr>
-<tr class="even">
-<td align="left">Confidence intervals</td>
-<td align="left">CI</td>
+<tr>
+<td style="text-align:left;">
+Confidence intervals
+</td>
+<td style="text-align:left;">
+CI
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Enzyme-linked immunosorbent assay</td>
-<td align="left">ELISA</td>
+<tr>
+<td style="text-align:left;">
+Enzyme-linked immunosorbent assay
+</td>
+<td style="text-align:left;">
+ELISA
+</td>
 </tr>
-<tr class="even">
-<td align="left">Hazard ratio</td>
-<td align="left">HR</td>
+<tr>
+<td style="text-align:left;">
+Hazard ratio
+</td>
+<td style="text-align:left;">
+HR
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Hospital-aquired pneumonia</td>
-<td align="left">HAP</td>
+<tr>
+<td style="text-align:left;">
+Hospital-aquired pneumonia
+</td>
+<td style="text-align:left;">
+HAP
+</td>
 </tr>
-<tr class="even">
-<td align="left">Incidence rate</td>
-<td align="left">IR</td>
+<tr>
+<td style="text-align:left;">
+Incidence rate
+</td>
+<td style="text-align:left;">
+IR
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Incidence rate ratio</td>
-<td align="left">IRR</td>
+<tr>
+<td style="text-align:left;">
+Incidence rate ratio
+</td>
+<td style="text-align:left;">
+IRR
+</td>
 </tr>
-<tr class="even">
-<td align="left">Intensive care unit</td>
-<td align="left">ICU</td>
+<tr>
+<td style="text-align:left;">
+Intensive care unit
+</td>
+<td style="text-align:left;">
+ICU
+</td>
 </tr>
-<tr class="odd">
-<td align="left">International Classification of Diseases, 10th revision</td>
-<td align="left">ICD-10</td>
+<tr>
+<td style="text-align:left;">
+International Classification of Diseases, 10th revision
+</td>
+<td style="text-align:left;">
+ICD-10
+</td>
 </tr>
-<tr class="even">
-<td align="left">Invasive pneumococcal disease</td>
-<td align="left">IPD</td>
+<tr>
+<td style="text-align:left;">
+Invasive pneumococcal disease
+</td>
+<td style="text-align:left;">
+IPD
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Leave-one-out cross-validation</td>
-<td align="left">LOOCV</td>
+<tr>
+<td style="text-align:left;">
+Leave-one-out cross-validation
+</td>
+<td style="text-align:left;">
+LOOCV
+</td>
 </tr>
-<tr class="even">
-<td align="left">Lower respiratory tract infection</td>
-<td align="left">LRTI</td>
+<tr>
+<td style="text-align:left;">
+Lower respiratory tract infection
+</td>
+<td style="text-align:left;">
+LRTI
+</td>
 </tr>
-<tr class="odd">
-<td align="left">National Drug Prescription Registry</td>
-<td align="left">NDPR</td>
+<tr>
+<td style="text-align:left;">
+National Drug Prescription Registry
+</td>
+<td style="text-align:left;">
+NDPR
+</td>
 </tr>
-<tr class="even">
-<td align="left">National Vaccine Registry</td>
-<td align="left">NVR</td>
+<tr>
+<td style="text-align:left;">
+National Vaccine Registry
+</td>
+<td style="text-align:left;">
+NVR
+</td>
 </tr>
-<tr class="odd">
-<td align="left">NOMESCO Classification of Surgical Procedures</td>
-<td align="left">NCSP</td>
+<tr>
+<td style="text-align:left;">
+NOMESCO Classification of Surgical Procedures
+</td>
+<td style="text-align:left;">
+NCSP
+</td>
 </tr>
-<tr class="even">
-<td align="left">Principal component analysis</td>
-<td align="left">PCA</td>
+<tr>
+<td style="text-align:left;">
+Principal component analysis
+</td>
+<td style="text-align:left;">
+PCA
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Respiratory syncytial virus</td>
-<td align="left">RSV</td>
+<tr>
+<td style="text-align:left;">
+Respiratory syncytial virus
+</td>
+<td style="text-align:left;">
+RSV
+</td>
 </tr>
-<tr class="even">
-<td align="left">Seasonal and trend decompisition using LOESS</td>
-<td align="left">STL</td>
+<tr>
+<td style="text-align:left;">
+Seasonal and trend decompisition using LOESS
+</td>
+<td style="text-align:left;">
+STL
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Tympanostomy tube placement</td>
-<td align="left">TTP</td>
+<tr>
+<td style="text-align:left;">
+Tympanostomy tube placement
+</td>
+<td style="text-align:left;">
+TTP
+</td>
 </tr>
-<tr class="even">
-<td align="left">Upper respiratory tract infection</td>
-<td align="left">URTI</td>
+<tr>
+<td style="text-align:left;">
+Upper respiratory tract infection
+</td>
+<td style="text-align:left;">
+URTI
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Vaccine eligible cohorts</td>
-<td align="left">VEC</td>
+<tr>
+<td style="text-align:left;">
+Vaccine eligible cohorts
+</td>
+<td style="text-align:left;">
+VEC
+</td>
 </tr>
-<tr class="even">
-<td align="left">Vaccine non-eligible cohorts</td>
-<td align="left">VNEC</td>
+<tr>
+<td style="text-align:left;">
+Vaccine non-eligible cohorts
+</td>
+<td style="text-align:left;">
+VNEC
+</td>
 </tr>
 </tbody>
 </table>
@@ -330,65 +435,151 @@
 <p>In 2006, <span class="citation">Prymula et al. (<a href="#ref-Prymula2006">2006</a>)</span> reported a randomized study of an eleven valent pneumococcal conjugate vaccine in 4,968 children recruited from paediatric centers in the Czech Republic and Slovakia <span class="citation">(Prymula et al. <a href="#ref-Prymula2006">2006</a>)</span>. A strict case definition of otitis media was used and all cases were reviewed by an otolaryngologist. If confirmed, a middle ear fluid sample was obtained by aspiration and sent for culturing. Statistical analysis was completed using Cox proportional hazards models and the Anderson-Gill extension for repeated events.</p>
 <p>In 2003, the first paper from a cluster randomized controlled trial of PCV7<sub>CRM197</sub> among the Navajo and White Mountain Apache infants was published <span class="citation">(O’Brien et al. <a href="#ref-OBrien2003">2003</a>)</span>. In 2008, a retrospective chart review of AOM visits among the participating children was published <span class="citation">(O’Brien et al. <a href="#ref-OBrien2008">2008</a>)</span>. The study population was defined as children who had adhered to the study protocol, i.e. a per-protocol analysis. From this population, 944 of the 4,476 eligible children were randomly sampled for chart review. The sample size was restricted for logistical reasons. A rough power analysis which assumed 1.5 years of follow-up time per chart and a baseline incidence of one AOM visit per person-year suggested that a sample of 1,000 children would give 80% power to detect a 15% reduction in the incidence of AOM visits. It is unclear why only 944 children were sampled, given that the power calculation assumed 1,000. Furthermore, it should be noted that the investigators performing the chart review were not blinded to vaccine allocation. This becomes significant when considering that the reviewers had significant leeway in deciding what constituted an AOM visit, and how to categorize the multitude of subjective subgroups considered in the study. Of the 944 children reviewed, only 803 were included for various reasons further limiting the study’s sample. A Poisson regression model was used to estimate the incidence rate ratio between the study arms, and sandwich variance estimates were used to account for the block-randomized design. No difference was found between the PCV7<sub>CRM197</sub> arm and the control, with an estimated vaccine efficacy of -0.4% (95%CI -19.4%-15.6%). It is debatable whether this should be considered a randomized controlled trial in light of the methodological flaws discussed above. Even if the study were to be considered randomized, it is unclear how to interpret a study that does not even have 80% power to detect a difference twice as large as the the estimates presented by previous randomized controlled trials.</p>
 <table>
-<caption><span id="tab:table-rct-aom">Table 2.2: </span>Randomized controlled trials evaluating the efficacy of Pneumococcal conjugate vaccines on otitis media</caption>
+<caption>
+<span id="tab:table-rct-aom">Table 2.2: </span>Randomized controlled trials evaluating the efficacy of Pneumococcal conjugate vaccines on otitis media
+</caption>
 <thead>
-<tr class="header">
-<th align="left">Study</th>
-<th align="left">Vaccine</th>
-<th align="left">Enrollment period</th>
-<th align="left">Country</th>
-<th align="right">No. of children</th>
-<th align="left">Efficacy against Otitis media episodes</th>
+<tr>
+<th style="text-align:left;">
+Study
+</th>
+<th style="text-align:left;">
+Vaccine
+</th>
+<th style="text-align:left;">
+Enrollment period
+</th>
+<th style="text-align:left;">
+Country
+</th>
+<th style="text-align:right;">
+No. of children
+</th>
+<th style="text-align:left;">
+Efficacy against Otitis media episodes
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">Black, 2000 &amp; Fireman, 2003</td>
-<td align="left">PCV7 (CRM197)</td>
-<td align="left">Oct 1995-Aug 1998</td>
-<td align="left">United States</td>
-<td align="right">37868</td>
-<td align="left">7.8% (5.4%-10.2%)</td>
+<tr>
+<td style="text-align:left;">
+Black, 2000 &amp; Fireman, 2003
+</td>
+<td style="text-align:left;">
+PCV7 (CRM197)
+</td>
+<td style="text-align:left;">
+Oct 1995-Aug 1998
+</td>
+<td style="text-align:left;">
+United States
+</td>
+<td style="text-align:right;">
+37868
+</td>
+<td style="text-align:left;">
+7.8% (5.4%-10.2%)
+</td>
 </tr>
-<tr class="even">
-<td align="left">Dagan, 2001</td>
-<td align="left">PCV9 (CRM197)</td>
-<td align="left">Unclear</td>
-<td align="left">Isreal</td>
-<td align="right">264</td>
-<td align="left">17% (-2%-33%)</td>
+<tr>
+<td style="text-align:left;">
+Dagan, 2001
+</td>
+<td style="text-align:left;">
+PCV9 (CRM197)
+</td>
+<td style="text-align:left;">
+Unclear
+</td>
+<td style="text-align:left;">
+Isreal
+</td>
+<td style="text-align:right;">
+264
+</td>
+<td style="text-align:left;">
+17% (-2%-33%)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Eskola, 2001</td>
-<td align="left">PCV7 (CRM197)</td>
-<td align="left">Dec 1995-Apr 1997</td>
-<td align="left">Finland</td>
-<td align="right">1662</td>
-<td align="left">6% (-4%-16%)</td>
+<tr>
+<td style="text-align:left;">
+Eskola, 2001
+</td>
+<td style="text-align:left;">
+PCV7 (CRM197)
+</td>
+<td style="text-align:left;">
+Dec 1995-Apr 1997
+</td>
+<td style="text-align:left;">
+Finland
+</td>
+<td style="text-align:right;">
+1662
+</td>
+<td style="text-align:left;">
+6% (-4%-16%)
+</td>
 </tr>
-<tr class="even">
-<td align="left">Kilpi, 2003</td>
-<td align="left">PCV7 (MOMPC)</td>
-<td align="left">Dec 1995-Apr 1997</td>
-<td align="left">Finland</td>
-<td align="right">1666</td>
-<td align="left">-1% (-12%-10%</td>
+<tr>
+<td style="text-align:left;">
+Kilpi, 2003
+</td>
+<td style="text-align:left;">
+PCV7 (MOMPC)
+</td>
+<td style="text-align:left;">
+Dec 1995-Apr 1997
+</td>
+<td style="text-align:left;">
+Finland
+</td>
+<td style="text-align:right;">
+1666
+</td>
+<td style="text-align:left;">
+-1% (-12%-10%
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Prymula, 2006</td>
-<td align="left">PCV9 (HiD)</td>
-<td align="left">Oct 2000-Sep 2002</td>
-<td align="left">Czech Republic &amp; Slovakia</td>
-<td align="right">4968</td>
-<td align="left">33.6% (20.8%-44.3%</td>
+<tr>
+<td style="text-align:left;">
+Prymula, 2006
+</td>
+<td style="text-align:left;">
+PCV9 (HiD)
+</td>
+<td style="text-align:left;">
+Oct 2000-Sep 2002
+</td>
+<td style="text-align:left;">
+Czech Republic &amp; Slovakia
+</td>
+<td style="text-align:right;">
+4968
+</td>
+<td style="text-align:left;">
+33.6% (20.8%-44.3%
+</td>
 </tr>
-<tr class="even">
-<td align="left">O’Brien, 2008</td>
-<td align="left">PCV7 (CRM197</td>
-<td align="left">Apr 1997-Aug 2000</td>
-<td align="left">United States</td>
-<td align="right">856</td>
-<td align="left">-0.4% (-19.4%-15.6%</td>
+<tr>
+<td style="text-align:left;">
+O’Brien, 2008
+</td>
+<td style="text-align:left;">
+PCV7 (CRM197
+</td>
+<td style="text-align:left;">
+Apr 1997-Aug 2000
+</td>
+<td style="text-align:left;">
+United States
+</td>
+<td style="text-align:right;">
+856
+</td>
+<td style="text-align:left;">
+-0.4% (-19.4%-15.6%
+</td>
 </tr>
 </tbody>
 </table>

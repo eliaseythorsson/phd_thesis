@@ -29,7 +29,8 @@ knitr::write_bib(
     'survival',
     'rms',
     'survminer',
-    'pogit'
+    'pogit',
+    'kableExtra'
     ),
     'packages.bib'
     )
