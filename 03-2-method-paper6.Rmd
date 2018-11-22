@@ -1,6 +1,7 @@
 ## Impact and cost-benefit analysis (Paper VI){#paper6}
 
-Paper 6 is a cost-benefit analysis of PHiD-CV10 based on whole population observational data.
+The objective of Paper VI was estimate the impact of PHiD-CV10 on pneumonia and invasive pneumococcal disease (IPD) hospitalizations in all age-groups, and calculate the cost-benefit of PHiD-CV10 introduction.
+Paper VI is a cost-benefit analysis of PHiD-CV10 based on whole population observational data.
 The study period is from January 1, 2005 to December 31, 2017.
 The study population included all permanent Icelandic citizens.
 Cost-benefit was estimated for three disease categories; invasive pneumococcal disease (IPD), pneumonia and otitis media, and was stratified by age-groups; 0-4 years of age, 5-19, 20-39, 40-64, 65-79 and 80+.

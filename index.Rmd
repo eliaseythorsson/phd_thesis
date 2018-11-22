@@ -3,7 +3,6 @@ title: "PhD thesis"
 author: "Elías Sæbjörn Eyþórsson"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
-output: bookdown::gitbook
 documentclass: book
 bibliography: [library.bib, packages.bib]
 biblio-style: apalike

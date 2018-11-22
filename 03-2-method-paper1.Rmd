@@ -23,10 +23,10 @@ Visits associated with ceftriaxone administration that did not fall into either 
 
 The number of ceftriaxone treatment episodes per diagnostic group was aggregated by calendar month.
 An episode was considered distinct if no ceftriaxone administration was documented in the previous fourteen days.
-Incidence rates ($IR$) per 1,000 person-years were calculated by dividing the monthly number of ceftriaxone episodes per diagnostic group by the person-time of children in the referral area.
-The $IR$ of OM visits were similarly defined and calculated.
+Incidence rates (IR) per 1,000 person-years were calculated by dividing the monthly number of ceftriaxone episodes per diagnostic group by the number of person-years accrued by children in the referral area.
+The IR of OM visits were similarly defined and calculated.
 If a decrease were to be observed in the number of ceftriaxone treated OM episodes, it could be due to either a decrease in the number of OM visits or a decrease in the use of ceftriaxone.
-To evaluate this, the incidence risk of ceftriaxone treatment per 1,000 OM visits was calculated for the pre- and post-vaccine periods. 
+To evaluate this, the incidence risk of ceftriaxone treated OM episodes was calculated per 1,000 OM episodes presenting to Children's Hospital Iceland for both the pre- and post-vaccine periods. 
 
 Statistical analysis was performed in R version 3.4.4. [@R-base] using the epiR package [@R-epiR].
 Incidence rate ratios ($IRR$) were calculated between the pre- and post-vaccine periods, and were estimated independently for each age-strata. 

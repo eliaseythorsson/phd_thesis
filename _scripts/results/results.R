@@ -166,4 +166,50 @@ ggsave(
     plot = vaccine_age,
     width = 12, height = 10, units = "cm", dpi = 600)
 
+prescriptions_age <- lg %>%
+    filter(str_detect(atc, "J01")) %>%
+    mutate(atc = str_extract(atc, "^.{4}")) %>%
+    filter(!(atc %in% c("J01B", "J01G", "J01X"))) %>%
+    left_join(data.frame(
+        atc = c("J01A", "J01C", "J01D", "J01E", "J01F", "J01M"),
+        names = c(
+            "Tetracyclines",
+            "Beta-lactam antibacterials, penicillins",
+            "Other beta-lactam antibacterials",
+            "Sulfonamides and trimethoprim",
+            "Macrolides, lincosamides and streptogramins",
+            "Quinolone antibacterials"
+        )
+    )) %>%
+    mutate(names = factor(
+        names,
+        levels =  c(
+            "Tetracyclines",
+            "Beta-lactam antibacterials, penicillins",
+            "Other beta-lactam antibacterials",
+            "Sulfonamides and trimethoprim",
+            "Macrolides, lincosamides and streptogramins",
+            "Quinolone antibacterials"
+        )
+    )) %>%
+    count(age_y, names) %>%
+    ggplot(aes(x = age_y, y = n, fill = names)) +
+    geom_area(alpha = 0.8) +
+    scale_color_brewer(palette = "Set1") +
+    scale_y_continuous(labels = scales::comma) +
+    scale_x_continuous(limits = c(0, 100), breaks = scales::pretty_breaks(n = 9)) +
+    facet_wrap( ~ names, ncol = 1, scales = "free_y") +
+    labs(x = "Age (years)", y = "Number of prescriptions") +
+    theme(legend.position = "none")
+
+ggsave(
+    filename = paste0("_figures/results/", Sys.Date(), "-prescriptions-age.pdf"), 
+    plot = prescriptions_age,
+    width = 12, height = 12, units = "cm", dpi = 600)
+
+ggsave(
+    filename = paste0("_figures/results/", Sys.Date(), "-prescriptions-age.png"), 
+    plot = prescriptions_age,
+    width = 12, height = 12, units = "cm", dpi = 600)
+
 save.image(file = paste0("_analyses/results/", Sys.Date(), "-04-1-results", ".RData"))

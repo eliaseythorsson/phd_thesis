@@ -1,6 +1,7 @@
 ## Impact on respiratory associated hospitalizations (Paper V){#paper5}
 
-Paper 5 is a single-center, individual-level, observational cohort study of pediatric hospitalizations due to diseases commonly caused by *Streptococcus pneumonae*. 
+The objective of Paper V was to estimate the impact of PHiD-CV10 on the incidence of pediatric hospitalizations due to diseases commonly caused by *Streptococcus pneumonae*. 
+Paper V is a single-center, individual-level, observational cohort study of pediatric hospitalizations.
 Eleven consecutive Icelandic birth-cohorts 2005-2015 were followed from birth until three years of age.
 Immigration and emigration data obtained from Statistics Iceland was used to exclude children who had immigrated to Iceland after birth. 
 Included were all hospital admissions to the Children’s Hospital Iceland January 1st, 2005 to December 31st, 2016.
@@ -47,7 +48,7 @@ kable(
     )
     ),
     col.names = c("Diagnostic group", "Abbreviation", "Definition"),
-    caption = "Definitions of the paper's diagnostic groups"
+    caption = "Definitions of the Paper V's diagnostic groupings"
     )
 ```
 
@@ -59,7 +60,7 @@ Statistical analyses were performed in R version 3.4.4. [@R-base] using the R pa
 Mean age at hospitalization was calculated for each birth-cohort and diagnostic group.
 Analysis of variance was used to test whether significant difference existed between cohorts.
 If an overall difference was identified, the analysis was followed by Tukey's honest significant difference procedure.
-The median hospital length of stay was calculated for each diagnostic group, and compared between between cohorts using the Wilcoxon rank sum test.
+The median hospital length of stay was calculated for each diagnostic group, and compared between cohorts using the Wilcoxon rank sum test.
 Crude incidence rates ($IR$) of hospital admissions were calculated for each birth-cohort, diagnostic group and age group, and incidence rate ratios ($IRR$) were calculated between the VNEC and VEC assuming Poisson variance.
 The proportion of hospitalizations which led to admission to the intensive care unit (ICU) was calculated by birth-cohort and diagnostic group. 
 

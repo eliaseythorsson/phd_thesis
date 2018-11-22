@@ -1,6 +1,7 @@
 # Results {#results}
 
-```{r}
+```{r echo = FALSE, error = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = FALSE, error = FALSE, message = FALSE, warning = FALSE)
 library(knitr)
 library(tidyverse)
 library(lubridate)
@@ -10,7 +11,7 @@ load("_analyses/results/2018-11-15-04-1-results.RData")
 
 The results of papers I-VI are summarized in their respective subchapters. 
 Because data was collected over a four year period from 2013-2017, and the papers that form this thesis were written and published at different times, the study period and population described in each paper varies slightly. 
-They however differ only marginally from the final data summary described below. 
+They differ however only marginally from the final data summary described below. 
 
 When data from all registries are taken together, individual level information was available for 372,641 Icelandic citizens, of which 183,233 were female and 181,048 were male.
 Gender was unknown for 8,360 individuals. 
@@ -20,15 +21,14 @@ Death was registered for 12,308 individuals during the study period.
 
 ### Statistics Iceland
 
-Statistics Iceland provided data on immigration and emigration of Icelandic children zero to four years of age.
-Of the 57,695 Icelandic children born 2005 or later, 5,577 moved to or from the country 6,847 times from 2005-2017.
-The proportion of children in each birth-cohort who ever moved before five years of age, was consistently 9%-12% among those birth-cohorts who had full follow-up time (birth-cohorts 2005-2012).
+Statistics Iceland provided data on the immigration and emigration of all Icelandic children zero to four years of age from 2005-2017.
+Of the 57,695 Icelandic children born 2005 or later, 5,577 moved to or from the country 6,847 times.
+The proportion of children in each birth-cohort who moved at least once before five years of age, was consistently 9%-12% of those birth-cohorts who had full follow-up time (birth-cohorts 2005-2012).
 
 ### Landspitali University Hospital patient registry
 
-All visits and hospitalizations with ICD-10 diagnostic codes compatible with respiratory infections (Table \@ref(tab:table-icd)) and procedural codes compatible with tympanostomy tube procedures (Table \@ref(tab:table-ncsp)) were extracted from the patient registry. 
-A total of 169,585 observations (74,740 individuals) were available, of which 135,841 (64,090) were visits to outpatient clinics or emergency departments and 33,744 (20,318) were hospital admissions.
-The number of visits and hospitalizations with each of the study's ICD-10 diagnosis listed as the first diagnosis are shown in Table \@ref(tab:table-icd10-results).
+All visits and hospitalizations with ICD-10 diagnostic codes compatible with respiratory infections (Table \@ref(tab:table-icd)) and procedural codes compatible with tympanostomy tube procedures (Table \@ref(tab:table-ncsp)), were extracted from Landspitali's patient registry. 
+The number of visits and hospitalizations with each of the study's ICD-10 diagnoses recorded as the first diagnosis, are shown in Table \@ref(tab:table-icd10-results).
 
 ```{r table-icd10-results}
 kable(
@@ -151,7 +151,7 @@ kable(
     "ICD-10 code",
     "Disease",
     "Hospital visits",
-    "Hospitailzations",
+    "Hospitalizations",
     "Primary care visits"
     ),
     caption = "Number of visits or hospitalizations with International Classification of Diseases, 10th revision codes used in the current study as the primary diagnosis",
@@ -159,6 +159,8 @@ kable(
     )
 ```
 
+A total of 169,585 records (of 74,740 individuals) were available, of which 135,841 (64,090) were visits to outpatient clinics or emergency departments and 33,744 (20,318) were hospital admissions.
+The most visits of a single individual was 170 and the most admissions, 31. 
 The number of study procedures performed at Landspitali University Hospital is shown in Table \@ref(tab:table-ncsp-results).
 
 ```{r table-ncsp-results}
@@ -217,7 +219,7 @@ kable(
 ```
 
 The age distribution of visits and hospital admissions are shown in Figure \@ref(fig:density-age).
-Though children and young adults contribute the most number of visits due to study diagnoses, older adults contribue the largest number of hospitalizations. 
+Though children and young adults comprise most of the visits due to study diagnoses, older adults make up the largest number of hospitalizations. 
 
 ```{r density-age, fig.cap = "Total number of contacts to Landspitali University Hospital and Primary Care Centers"}
 include_graphics(path = "_figures/results/2018-11-16-density-age.png")
@@ -226,9 +228,10 @@ include_graphics(path = "_figures/results/2018-11-16-density-age.png")
 ### The Primary Care Registry 
 
 The Primary Care Registry recorded all primary care health contacts for the period 2005-2015.
-All physician contacts with diagnostic codes \@ref(tab:table-icd)) were extracted for the available period. 
-A total of 1,963,439 seperate contacts between 298,307 individual patients and 1,266 unique physicians were recorded.
-The numer of contacts by age can be seen in Figure \@ref(fig:density-age).
+All physician contacts associated with the diagnostic codes listed in Table \@ref(tab:table-icd) were extracted for the given period. 
+A total of 1,963,439 separate contacts were recorded between 298,307 individual patients and 1,266 different physicians.
+The movst visits for a single individual was 212. 
+The distribution in the number of contacts by age can be seen in Figure \@ref(fig:density-age).
 
 ### The National Vaccine Registry
 
@@ -242,7 +245,7 @@ include_graphics(path = "_figures/results/2018-11-16-vaccine-time.png")
 ```
 
 Table \@ref(tab:vaccine-doses) shows the number of children in each birth-cohort who had received zero, one, two, and three doses of a pneumococcal conjugate vaccine by four years of age. 
-Children who moved to or from the country before four years of age were excluded from the table. 
+Children who moved to or from the country before four years of age, were excluded from the table. 
 
 ```{r vaccine-doses}
 knitr::kable(
@@ -267,13 +270,15 @@ knitr::kable(
     filter(dose == max(dose)) %>%
     ungroup() %>%
     count(birth_y, dose) %>%
-    spread(key = birth_y, value = n),
-    col.names = c("No. of doses", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"),
+    spread(key = dose, value = n) %>%
+    mutate(birth_y = factor(birth_y)),
+    col.names = c("Birth-cohort", "Zero doses", "One dose", "Two doses", "Three doses"),
     caption = "The number of children in each birth-cohort who has received from zero to three pneumococcal conjugate vaccine doses",
     format.args = list(big.mark = ",")
 )
 ```
-Some children in vaccine non-eligible cohorts received one, two or three doses of pneumococcal conjugate vaccines before four years of age, but generally did so inconsistently and at an older age Figure \@ref(fig:vaccine-age).
+
+Some children in vaccine non-eligible cohorts received one, two or three doses of pneumococcal conjugate vaccines before four years of age. This generally occured at an older age than children in the vaccine eligible cohorts Figure \@ref(fig:vaccine-age).
 
 ```{r vaccine-age, fig.cap = "Age at the time of administered pneumococcal vaccine dose by birth date"}
 include_graphics(path = "_figures/results/2018-11-16-vaccine-age.png")
@@ -281,4 +286,79 @@ include_graphics(path = "_figures/results/2018-11-16-vaccine-age.png")
 
 ### The National Drug Prescription Registry
 
+The National Drug Prescription Registry (NDPR) recorded all filled prescriptions from 2005-2017. 
+From this registry, all antibacterials for systemic use (J01), vaccines (J07), opthalmologicals (S01) and otologicals (S02) were extracted. 
+A total of 4,020,624 prescriptions were recorded among 360,560 individuals.
+The number of prescriptions by therapeutic subgroup of the ATC classification system is shown in Table \@ref(tab:table-atc-results).
+The highest number of antimicrobial prescriptions filled by a single individual was 336 during the study period. 
+
+```{r table-atc-results}
+kable(
+    x = data.frame(
+    stringsAsFactors = FALSE,
+    ATC.code = c(
+    "J01A",
+    "J01B",
+    "J01C",
+    "J01D",
+    "J01E",
+    "J01F",
+    "J01G",
+    "J01M",
+    "J01R",
+    "J01X",
+    "J07A",
+    "J07B",
+    "J07C",
+    "J07X",
+    "S01A",
+    "S02A",
+    "S01C",
+    "S02C"
+    ),
+    Description = c(
+    "Tetracyclines",
+    "Amphenicols",
+    "Beta-lactam antibacterials, penicillins",
+    "Other beta-lactam antibacterials",
+    "Sulfonamides and trimethoprim",
+    "Macrolides, lincosamides and streptogramins",
+    "Aminoglycoside antibacterials",
+    "Quinolone antibacterials",
+    "Combinations of antibacterials",
+    "Other antibacterials",
+    "Bacterial vaccines",
+    "Viral vaccines",
+    "Bacterial and viral vaccines",
+    "Other vaccines",
+    "Anti-infective opthalmologicals",
+    "Anti-infective otologicals",
+    "Anti-inflammatory agents and anti-infectives opthalmologicals",
+    "Anti-inflammatory agents and anti-infectives otologicals"
+    )
+    ) %>% 
+        left_join(
+            lg %>%
+                mutate(ATC.code = str_extract(atc, "^.{4}")) %>%
+                count(ATC.code)
+        ) %>%
+        mutate(n = if_else(is.na(n), 0L, n))
+        ,
+    col.names = c("ATC chemical subgroup code", "Description", "No of prescriptions"),
+    caption = "Number of prescriptions by Anatomical Therapeutic Chemical codes used in the current study",
+    format.args = list(big.mark = ",")
+    )
+```
+
+The distribution of antimicrobial prescriptions by age is shown in Figure \@ref(fig:prescriptions-age).
+
+
+```{r prescriptions-age, fig.cap = "Antimicrobial prescriptions by age"}
+include_graphics(path = "_figures/results/2018-11-18-prescriptions-age.png")
+```
+
 ### Reimbursement database of Icelandic Health Insurance
+
+All interactions with independent health care practitioners were recorded in Icelandic Health Insurance's reimbursement database. 
+From this database, all records of otolaryngological procedures were extracted.
+A total of 51,814 procedures were recorded among 34,084 individuals.

@@ -3,3 +3,4 @@
 - discuss the completeness of the data, the number of Icelanders in the study data vs. the total number of icelanders.
 - discuss the age distribution regarding the number of visits vs hospitalizations. 
 - discuss the vaccine registry, how no difference is occurring in pneumococcal vaccinations of adults
+- discuss how the 2009 and 2010 cohorts received vaccination late, almost like a catch-up. 

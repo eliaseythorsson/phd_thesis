@@ -1,6 +1,7 @@
 ## Impact on tympanostomy tube procedures (Paper IV){#paper4}
 
-Paper 4 is an individual level observational cohort study of all outpatient tymapanostomy tube placements (TTP) in Iceland. 
+The objective of Paper IV was to estimate the impact of PHiD-CV10 on the incidence of tympanostomy tube placements (TTP) among children in Iceland. 
+Paper IV is an individual level observational cohort study of all outpatient TTP procedures in Iceland. 
 The study period is from January 1, 2005 to December 31, 2016.
 Eleven consecutive birth-cohorts 2005-2015, were followed from birth until five years of age, or end of the study period.
 Children who immigrated to Iceland after birth were excluded from the analysis.
@@ -16,16 +17,16 @@ A visit was considered to be due to OM if an ICD-10 diagnostic code of Non-suppu
 A repeat visit within 30 days was assumed to represent the same episode, and was excluded.
 Data regarding filled antimicrobial prescriptions was extracted from the National Drug Prescription Registry using ATC code J01 (antibacterials for systemic use). 
 
-Cohorts were defined based on year of birth, or vaccine eligibility.
+Cohorts were defined based on year of birth or vaccine eligibility.
 Birth-cohorts 2005-2010 were classified as vaccine non-eligible cohorts (VNEC) and birth-cohorts 2011-2015 as vaccine-eligible cohorts (VEC).
 Statistical analyses were performed in R version 3.4.4. [@R-base] using the R packages; survival [@R-survival], RMS [@R-rms] and epiR [@R-epiR].
-Crude incidence rates ($IR$) of TTP per 100 person-years were calculated for each birth-cohort in 6-month age-groups.
-Crude incidence rate ratios ($IRR$) between the VEC and VNEC were calculated, and 95% confidence intervals estimated assuming Poisson variance.
+Crude incidence rates (IR) of TTP per 100 person-years were calculated for each birth-cohort in 6-month age-groups.
+Crude incidence rate ratios (IRR) between the VEC and VNEC were calculated, and 95% confidence intervals estimated assuming Poisson variance.
 The Kaplan-Meier product limit estimate was used to calculate the cumulative proportion of TTP procedures for each birth-cohort, and confidence intervals calculated using the log delta method.
 
 The comparison of the risk of TTP between birth-cohorts was adjusted for two confounders; the number of prior OM diagnoses and the number of prior antimicrobial prescriptions.
 Among children who had undergone TTP and had the full five year follow-up time, the distribution in the number of previous visits and prescriptions was compared between VNEC and VEC using the $\chi^2$ test of independence.
-When adjusting for the number of previous visits, four years was considered full follow-up time due to due to restricted data.
+When adjusting for the number of previous visits, four years was considered full follow-up time due to restricted data.
 If a significant difference was detected, the risk ratio and absolute risk difference between VEC and VNEC were calculated, stratified by the prior number of visits or antimicrobial prescriptions. 
 Confidence intervals were estimated with the $\chi^2$ of independence.
 
@@ -35,6 +36,6 @@ The first did not adjust for prior OM visits or antimicrobial prescriptions, whi
 The Cox regression model using the number of previous OM visits was censored at December 31, 2015 due to restricted data.
 Each Cox model was stratified by gender. 
 Correlation between repeated observations of the same child was adjusted, using @Lin1989 sandwich variance estimates.
-The hazard ratio ($HR$) of TTP was estimated between each of the study’s birth-cohorts. 
-The vaccine impact of PHiD-CV against TTP was estimated as 1 – (the hazard ratio between the last vaccine eligible cohort and the last vaccine non-eligible cohort) x 100%.
+The hazard ratio (HR) of TTP was estimated between each of the study’s birth-cohorts. 
+The vaccine impact of PHiD-CV against TTP was estimated as 1 – (the hazard ratio between the last vaccine eligible cohort and the last vaccine non-eligible cohort) * 100%.
 
