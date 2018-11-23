@@ -270,4 +270,259 @@ ggsave(
     plot = ceftriaxone_fig1,
     width = 12, height = 8, units = "cm", dpi = 600)
 
+### AOM visits ###
+
+komur_2by2 <- komur %>%
+    filter(
+        is.na(days_since_last) | days_since_last > 14,
+        age_y >= 0, age_y <= 3,
+        date <= as.Date("2015-12-31")) %>%
+    mutate(group = if_else(date <= as.Date("2011-12-31"), "Pre-vaccine", "Post-vaccine")) %>%
+    count(age_y, group) %>%
+    left_join(
+        born_100km %>%
+            filter(year >= 2008, year <= 2015) %>%
+            mutate(group = if_else(year <= 2011, "Pre-vaccine", "Post-vaccine")) %>%
+            group_by(age_y, group) %>%
+            summarise(n_kom = sum(n, na.rm = T))) %>%
+    gather(key = type, value = count, n, n_kom) %>%
+    xtabs(count ~ group + type + age_y, data = .) %>%
+    epi.2by2(dat = ., method = "cohort.time")
+
+### Ceftriaxone treatment episodes for AOM ###
+
+cef_aom_2by2 <- ceftriaxone %>%
+    filter(date <= as.Date("2015-12-31"), age_y <= 3) %>%
+    mutate(group = if_else(date <= as.Date("2011-12-31"), "Pre-vaccine", "Post-vaccine")) %>%
+    unite(col = all_diagnoses, DIA_1:DIA_6) %>%
+    filter(
+        str_detect(string = all_diagnoses, pattern = "H65|H66"), # only AOM
+        !str_detect(string = all_diagnoses, pattern = "J15|J18"), # no pneumonia
+        is.na(days_since_last) | days_since_last > 14) %>% # only "new episodes"
+    group_by(group, age_y) %>%
+    summarise(n_aom = n_distinct(obs)) %>%
+    left_join(
+        born_100km %>%
+            filter(year >= 2008, year <= 2015) %>%
+            mutate(group = if_else(year <= 2011, "Pre-vaccine", "Post-vaccine")) %>%
+            group_by(age_y, group) %>%
+            summarise(n_kom = sum(n, na.rm = T))) %>%
+    gather(key = type, value = count, n_aom, n_kom) %>%
+    xtabs(count ~ group + type + age_y, data = .) %>%
+    epi.2by2(dat = ., method = "cohort.time")
+
+### Risk of ceftriaxone if presenting to Childrens Hospital Iceland with AOM ###
+
+cef_risk_aom_2by2 <- ceftriaxone %>%
+    filter(date <= as.Date("2015-12-31"), age_y <= 3) %>%
+    mutate(group = if_else(date <= as.Date("2011-12-31"), "Pre-vaccine", "Post-vaccine")) %>%
+    unite(col = all_diagnoses, DIA_1:DIA_6) %>%
+    filter(
+        str_detect(string = all_diagnoses, pattern = "H65|H66"), # only AOM
+        !str_detect(string = all_diagnoses, pattern = "J15|J18"), # no pneumonia
+        is.na(days_since_last) | days_since_last > 14) %>% # only "new episodes"
+    group_by(group, age_y) %>%
+    summarise(n_aom = n_distinct(obs)) %>%
+    left_join(
+        komur %>%
+            filter(
+                is.na(days_since_last) | days_since_last > 14,
+                age_y >= 0, age_y <= 3,
+                date <= as.Date("2015-12-31")) %>%
+            mutate(group = if_else(date <= as.Date("2011-12-31"), "Pre-vaccine", "Post-vaccine")) %>%
+            count(age_y, group) %>%
+            rename(zn = n) # to secure its position alphabetically secondary to n_aom
+    ) %>%
+    gather(key = type, value = count, n_aom, zn) %>%
+    xtabs(count ~ group + type + age_y, data = .) %>%
+    epi.2by2(dat = ., method = "cohort.count")
+
+### Ceftriaxone treatment episodes for pneumonia ###
+
+cef_pneum_2by2 <- ceftriaxone %>%
+    filter(date <= as.Date("2015-12-31"), age_y <= 3) %>%
+    mutate(group = if_else(date <= as.Date("2011-12-31"), "Pre-vaccine", "Post-vaccine")) %>%
+    unite(col = all_diagnoses, DIA_1:DIA_6) %>%
+    filter(
+        str_detect(string = all_diagnoses, pattern = "J15|J18"), # only pneumonia
+        is.na(days_since_last) | days_since_last > 14) %>% # only "new episodes"
+    group_by(group, age_y) %>%
+    summarise(n_pneum = n_distinct(obs)) %>%
+    left_join(
+        born_100km %>%
+            filter(year >= 2008, year <= 2015) %>%
+            mutate(group = if_else(year <= 2011, "Pre-vaccine", "Post-vaccine")) %>%
+            group_by(age_y, group) %>%
+            summarise(zn = sum(n, na.rm = T))) %>% # to secure its position alphabetically secondary to n_pneum
+    gather(key = type, value = count, n_pneum, zn) %>%
+    xtabs(count ~ group + type + age_y, data = .) %>%
+    epi.2by2(dat = ., method = "cohort.time")
+
+### Ceftriaxone treatment episodes for other indications ###
+
+cef_other_2by2 <- ceftriaxone %>%
+    filter(date <= as.Date("2015-12-31"), age_y <= 3) %>%
+    mutate(group = if_else(date <= as.Date("2011-12-31"), "Pre-vaccine", "Post-vaccine")) %>%
+    unite(col = all_diagnoses, DIA_1:DIA_6) %>%
+    filter(
+        !str_detect(string = all_diagnoses, pattern = "H65|H66|J15|J18"), # not aom or pneumonia
+        is.na(days_since_last) | days_since_last > 14) %>% # only "new episodes"
+    group_by(group, age_y) %>%
+    summarise(n_pneum = n_distinct(obs)) %>%
+    left_join(
+        born_100km %>%
+            filter(year >= 2008, year <= 2015) %>%
+            mutate(group = if_else(year <= 2011, "Pre-vaccine", "Post-vaccine")) %>%
+            group_by(age_y, group) %>%
+            summarise(zn = sum(n, na.rm = T))) %>% # to secure its position alphabetically secondary to n_pneum
+    gather(key = type, value = count, n_pneum, zn) %>%
+    xtabs(count ~ group + type + age_y, data = .) %>%
+    epi.2by2(dat = ., method = "cohort.time")
+
+### Ceftriaxone treatment episodes regardless of age for children of all ages ###
+
+cef_all_ages_2by2 <- ceftriaxone %>%
+    filter(date <= as.Date("2015-12-31")) %>%
+    mutate(
+        group = if_else(date <= as.Date("2011-12-31"), "Pre-vaccine", "Post-vaccine"),
+        age_group = factor(case_when(
+            age_y >= 0 & age_y <= 3 ~ "0-3 years of age",
+            age_y >= 4 & age_y <= 7 ~ "4-7 years of age",
+            age_y >= 8 & age_y <= 11 ~ "8-11 years of age",
+            age_y >= 12 & age_y <= 17 ~ "12-17 years of age",
+            TRUE ~ NA_character_
+        ), levels = c("0-3 years of age", "4-7 years of age", "8-11 years of age", "12-17 years of age"))) %>%
+    filter(!is.na(age_group), is.na(days_since_last) | days_since_last > 14) %>%
+    count(age_group, group) %>%
+    left_join(
+        born_100km %>%
+            filter(year >= 2008, year <= 2015) %>%
+            mutate(
+                group = if_else(year <= 2011, "Pre-vaccine", "Post-vaccine"),
+                age_group = factor(case_when(
+                    age_y >= 0 & age_y <= 3 ~ "0-3 years of age",
+                    age_y >= 4 & age_y <= 7 ~ "4-7 years of age",
+                    age_y >= 8 & age_y <= 11 ~ "8-11 years of age",
+                    age_y >= 12 & age_y <= 17 ~ "12-17 years of age",
+                    TRUE ~ NA_character_
+                ), levels = c("0-3 years of age", "4-7 years of age", "8-11 years of age", "12-17 years of age"))) %>%
+            group_by(age_group, group) %>%
+            summarise(zn = sum(n, na.rm = T)) 
+    ) %>%
+    gather(key = type, value = count, n, zn) %>%
+    xtabs(count ~ group + type + age_group, data = .) %>%
+    epi.2by2(dat = ., method = "cohort.time")
+
+### Figure 2 in article ####
+
+temp_ggtext <- 
+    data.frame(
+        ym = as.yearmon(rep("2014-03-01", 4)),
+        y = rep(35, 4),
+        label = c(
+            paste0(
+                "IRR ",
+                round(cef_all_ages_2by2$massoc$IRR.strata.wald$est[1], 2),
+                " (",
+                round(cef_all_ages_2by2$massoc$IRR.strata.wald$lower[1], 2),
+                "-",
+                round(cef_all_ages_2by2$massoc$IRR.strata.wald$upper[1], 2),
+                ")"),
+            paste0(
+                "IRR ",
+                round(cef_all_ages_2by2$massoc$IRR.strata.wald$est[2], 2),
+                " (",
+                round(cef_all_ages_2by2$massoc$IRR.strata.wald$lower[2], 2),
+                "-",
+                round(cef_all_ages_2by2$massoc$IRR.strata.wald$upper[2], 2),
+                ")"),
+            paste0(
+                "IRR ",
+                round(cef_all_ages_2by2$massoc$IRR.strata.wald$est[3], 2),
+                " (",
+                round(cef_all_ages_2by2$massoc$IRR.strata.wald$lower[3], 2),
+                "-",
+                round(cef_all_ages_2by2$massoc$IRR.strata.wald$upper[3], 2),
+                ")"),
+            paste0(
+                "IRR ",
+                round(cef_all_ages_2by2$massoc$IRR.strata.wald$est[4], 2),
+                " (",
+                round(cef_all_ages_2by2$massoc$IRR.strata.wald$lower[4], 2),
+                "-",
+                round(cef_all_ages_2by2$massoc$IRR.strata.wald$upper[4], 2),
+                ")")),
+        age_group = c("0-3 years of age", "4-7 years of age", "8-11 years of age", "12-17 years of age"))
+
+age_group_figure <- ceftriaxone %>%
+    filter(date <= as.Date("2015-12-31")) %>%
+    mutate(
+        ym = as.yearmon(date),
+        age_group = case_when(
+            age_y >= 0 & age_y <= 3 ~ "0-3 years of age",
+            age_y >= 4 & age_y <= 7 ~ "4-7 years of age",
+            age_y >= 8 & age_y <= 11 ~ "8-11 years of age",
+            age_y >= 12 & age_y <= 17 ~ "12-17 years of age",
+            TRUE ~ NA_character_ )) %>%
+    filter(!is.na(age_group)) %>%
+    expand(age_group, ym) %>%
+    left_join(
+        ceftriaxone %>%
+            mutate(
+                ym = as.yearmon(date),
+                age_group = case_when(
+                    age_y >= 0 & age_y <= 3 ~ "0-3 years of age",
+                    age_y >= 4 & age_y <= 7 ~ "4-7 years of age",
+                    age_y >= 8 & age_y <= 11 ~ "8-11 years of age",
+                    age_y >= 12 & age_y <= 17 ~ "12-17 years of age",
+                    TRUE ~ NA_character_)) %>%
+    filter(!is.na(age_group), is.na(days_since_last) | days_since_last > 14) %>%
+    count(age_group, ym)
+    ) %>%
+    left_join(
+        expand.grid(
+            year = 2008:2015,
+            month = 1:12,
+            age_group = c("0-3 years of age", "4-7 years of age", "8-11 years of age", "12-17 years of age")) %>%
+            mutate(ym = as.yearmon(paste0(year, "-", month, "-01"))) %>%
+            select(-month) %>%
+            left_join(
+                born_100km %>%
+                    filter(year >= 2008, year <= 2015) %>%
+                    mutate(age_group = case_when(
+                            age_y >= 0 & age_y <= 3 ~ "0-3 years of age",
+                            age_y >= 4 & age_y <= 7 ~ "4-7 years of age",
+                            age_y >= 8 & age_y <= 11 ~ "8-11 years of age",
+                            age_y >= 12 & age_y <= 17 ~ "12-17 years of age",
+                            TRUE ~ NA_character_ )) %>%
+                    group_by(age_group, year) %>%
+                    summarise(zn = floor(sum(n, na.rm = T)/12))) %>%
+            select(-year)) %>%
+    left_join(temp_ggtext) %>%
+    mutate(
+        age_group = factor(age_group, levels = c("0-3 years of age", "4-7 years of age", "8-11 years of age", "12-17 years of age")),
+        group = if_else(ym <= as.yearmon("2011-12-01"), "Pre-vaccine", "Post-vaccine"),
+        n = if_else(is.na(n), 0L, n),
+        incidence = n/zn * 1000) %>%
+    group_by(age_group, group) %>%
+    mutate(mean = mean(incidence)) %>%
+    ggplot(aes(x = ym, y = incidence)) +
+    geom_line() +
+    geom_line(aes(y = mean, group = group)) +
+    geom_vline(aes(xintercept = as.yearmon("2012-01-01")), lty = 2) +
+    geom_text(aes(y = y, label = label, group = age_group), size = 2.7) +
+    facet_wrap(~ age_group) +
+    scale_y_continuous(limits = c(0, NA)) +
+    labs(x = NULL, y = "Incidence per 1000 person-years")
+
+ggsave(
+    filename = paste0("_figures/paper_I/", Sys.Date(), "-age-group-figure.pdf"), 
+    plot = age_group_figure,
+    width = 12, height = 10, units = "cm", dpi = 600)
+
+ggsave(
+    filename = paste0("_figures/paper_I/", Sys.Date(), "-age-group-figure.png"), 
+    plot = age_group_figure,
+    width = 12, height = 10, units = "cm", dpi = 600)
+
 save.image(file = paste0("_analyses/paper_I/", Sys.Date(), "-04-2-results-paper1", ".RData"))
