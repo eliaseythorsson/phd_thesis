@@ -1,4 +1,9 @@
 
+library(knitr)
+library(tidyverse)
+library(lubridate)
+library(zoo)
+
 theme_set(theme_bw(base_size = 10, base_family = "sans"))
 
 ############################
@@ -68,6 +73,15 @@ ggsave(
     filename = paste0("_figures/results/", Sys.Date(), "-density-age.png"), 
     plot = density_age,
     width = 12, height = 10, units = "cm", dpi = 600)
+
+bs <- ids %>%
+    left_join(bs) %>%
+    mutate(age_y = case_when(
+        !is.na(age_y) ~ age_y,
+        is.na(age_y) ~ abs(as.integer(difftime(birth_date, date_vacc, units = "days")/365.25)),
+        TRUE ~ NA_integer_
+        )) %>%
+    filter(!is.na(date_vacc))
 
 vaccine_df <- bs %>% 
     filter(!str_detect(code_text, "Hafnað")) %>% 

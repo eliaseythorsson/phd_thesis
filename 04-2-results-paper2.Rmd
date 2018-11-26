@@ -1,0 +1,105 @@
+## Impact on primary care visits for otitis media (Paper II){#paper2results}
+
+```{r echo = F, error = F, message = F, warning = F}
+knitr::opts_chunk$set(echo = FALSE, error = FALSE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(lubridate)
+library(zoo)
+library(epiR)
+library(survival)
+library(rms)
+load("_analyses/paper_2/2018-11-26-04-2-results-paper2.RData")
+```
+
+The demographics of the study birth-cohorts are described in chapter \@ref(#datasourcesresults) and Table \@ref(tab:table-cohort-results).
+A total of 92,935 primary care visits due to AOM were recorded among birth-cohorts 2005-2015 during the study period. 
+The crude incidence rate of AOM visits to primary care per 100 person-years in the VNEC and VEC was 45.3 and 39.8 respectively. 
+The incidence rate and number of AOM visits by birth-cohort, and gender is shown in Table \@ref(tab:table-paper2-incidence-results).
+
+```{r table-paper2-incidence-results}
+kable(
+    x = hg_ag %>%
+        filter(!is.na(gender)) %>%
+        mutate(time = tstop - tstart) %>%
+        group_by(birth_y, gender) %>%
+        summarise(
+            time = sum(time)/365.25,
+            visits = sum(visit)) %>%
+        mutate(
+            incidence = format(signif(visits/time * 100, 3), nsmall = 1),
+            ir_n = paste0(incidence, " (", format(visits, big.mark = ","), ")")) %>%
+        select(-time, -incidence, -visits) %>%
+        spread(gender, ir_n),
+    col.names = c("Birth-cohort", "Females", "Males"),
+    caption = "Incidence rate and number of visits by birth-cohort and gender"
+)
+```
+
+The lowest incidence was observed in children zero to three months of age.
+The incidence increased sharply thereafter and peaked in children eight to eleven and twelve to fifteeen months of age, after which it decreased again.
+The crude IR decreased significantly in all age-groups, with incidence rate ratios ranging from 0.60-0.94.
+The largest and visually most consistent decrease in incidence was noted among children zero to three months of age, IRR 0.6 (95%CI 0.51-0.69), Figure \@ref(fig:figure-results-paper2-incidence)
+
+```{r figure-results-paper2-incidence, fig.cap = "Incidence of acute otitis media visits to primary care by age-group and birth-cohort"}
+include_graphics(path = "_figures/paper_2/2018-11-26-incidence.png")
+```
+
+When tabulated by the cumulative number of AOM episodes experienced by each child, the proportion of children experiencing zero episodes of AOM increased in the VEC compared to the VNEC, while the proportion experiencing one to four episodes and five or more decreased, Table \@ref(tab:table-paper2-proportion-results).
+
+```{r table-paper2-proportion-results}
+kable(
+    x = data.frame(
+        n = c("0", "1-4", "5-12"),
+        vnec = c(epi_null$tab$`       Inc risk *`[2], epi_14$tab$`       Inc risk *`[2], epi_512$tab$`       Inc risk *`[2]),
+        vec = c(epi_null$tab$`       Inc risk *`[1], epi_14$tab$`       Inc risk *`[1], epi_512$tab$`       Inc risk *`[1]),
+        risk = c(
+            paste0(format(signif(epi_null$res$IRR.strata.wald[1], 2), nsmall = 2),
+                   " (",
+                   format(signif(epi_null$res$IRR.strata.wald[2], 2), nsmall = 2),
+                   "-",
+                   format(signif(epi_null$res$IRR.strata.wald[3], 2), nsmall = 2),
+                   ")"),
+            paste0(format(signif(epi_14$res$IRR.strata.wald[1], 2), nsmall = 2),
+                   " (",
+                   format(signif(epi_14$res$IRR.strata.wald[2], 2), nsmall = 2),
+                   "-",
+                   format(signif(epi_14$res$IRR.strata.wald[3], 2), nsmall = 2),
+                   ")"),
+            paste0(format(signif(epi_512$res$IRR.strata.wald[1], 2), nsmall = 2),
+                   " (",
+                   format(signif(epi_512$res$IRR.strata.wald[2], 2), nsmall = 2),
+                   "-",
+                   format(signif(epi_512$res$IRR.strata.wald[3], 2), nsmall = 2),
+                   ")")
+    )),
+    col.names = c("No. prescriptions", "VNEC (%)", "VEC (%)", "Incidence risk (95%CI)"),
+    caption = "Incidence rate and number of visits by birth-cohort and gender"
+)
+```
+
+Discrimination indices for the Andersen-Gill multiple event model were adequate, Nagelkerke's $R^2$ = 0.110 and Somer's $D_{xy}$ = 0.238.
+A diagnostic plot of Schoenfeld residuals was used to visually assess the proportional hazard assumption for each covariate and no systematic deviations were detected.
+The model was used to estimate the hazard ratio between each of the study's birth-cohorts and the last vaccine non-eligible cohort, 2010.
+There was little variation in the hazard of AOM between the VNEC. 
+Only the 2007 birth-cohort differed significantly, with a hazard ratio of 1.06 (95%CI 1.01-1.12) compared to the 2010 birth-cohort. 
+An abbrupt and significant decrease in the hazard of AOM was noted in the first vaccine eligible cohort, which continued for all remaining VEC (Figure \@ref(fig:figure-results-paper2-hazard)).
+The estimated impact of PHiD-CV10 on AOM visits to primary care among children under three years of age was 21% (95%CI 11%-30%). 
+
+```{r figure-results-paper2-hazard, fig.cap = "Estimated hazard ratio between each of the study's birth-cohorts and the last vaccine non-eligible birth-cohort"}
+include_graphics(path = "_figures/paper_2/2018-11-26-hazardratio.png")
+```
+
+When the hazard ratio of AOM visits between VEC and VNEC was stratified by the number of previous primary care visits for AOM, the vaccine impact was descernable for children who had no or only one previous AOM visit, after which the no effect was found (Figure \@ref(fig:figure-results-paper2-previous)).
+
+```{r figure-results-paper2-previous, fig.cap = "Estimated hazard ratio of AOM between VEC and VNEC stratified by the number of previous visits"}
+include_graphics(path = "_figures/paper_2/2018-11-25-hr-previous.png")
+```
+
+The mean number of AOM visits to primary care as a function of age was caclulated using the generalized Nelson-Aalen estimate on the underlying Andersen-Gill model. 
+By their fourth birthday, the average child in the VNEC had experienced 1.61 episodes of AOM. 
+The average child in the VEC had experienced 1.37. 
+The mean number of AOM episodes by age is shown in Figure \@ref(fig:figure-results-paper2-nelsonaalen).
+
+```{r figure-results-paper2-nelsonaalen, fig.cap = "Mean number of AOM episodes by age in the vaccine eligible and vaccine non-eligible cohorts"}
+include_graphics(path = "_figures/paper_2/2018-11-26-nelsonaalen.png")
+```

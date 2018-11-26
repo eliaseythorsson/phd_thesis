@@ -6,20 +6,52 @@ library(knitr)
 library(tidyverse)
 library(lubridate)
 library(zoo)
-load("_analyses/results/2018-11-15-04-1-results.RData")
+load("_analyses/results/2018-11-25-04-1-results.RData")
 ```
 
 ## Data collection and sources {#datasourcesresults}
 
-The results of papers I-VI are summarized in their respective subchapters. 
+The results of papers I-VI are summarized in their respective sub-chapters. 
 Because data was collected over a four year period from 2013-2017, and the papers that form this thesis were written and published at different times, the study period and population described in each paper varies slightly. 
 They differ however only marginally from the final data summary described below. 
 
-When data from all registries are taken together, individual level information was available for 372,641 Icelandic citizens, of which 183,233 were female and 181,048 were male.
-Gender was unknown for 8,360 individuals. 
-The full date of birth was known for 363,456 and the birth-year was available for the rest.
+When data from all registries are taken together, individual level information was available for 375,383 Icelandic citizens, of which 183,544 were female and 181,316 were male.
+Gender was unknown for 10,523 individuals. 
+The full date of birth was known for 366,188 and the birth-year was available for the rest.
 The median birth-year for the whole study population was 1979 (IQR 1958-1997).
-Death was registered for 12,308 individuals during the study period. 
+Death was registered for 12,308 individuals during the study period.
+
+Several papers examined the data stratified by birth-cohort.
+The number of children in each birth-cohort who contributed data to the present study are shown in Table \@ref(tab:table-cohort-results).
+
+```{r table-cohort-results}
+kable(
+    x = ids %>%
+        filter(birth_y >= 2005, birth_y <= 2016) %>%
+        group_by(birth_y) %>%
+        summarise(
+            n = n_distinct(id),
+            prop_male = mean(as.numeric(factor(gender))-1, na.rm =T)*100) %>%
+        left_join(
+            ids %>%
+                filter(birth_y >= 2005, birth_y <= 2016) %>%
+                left_join(hs) %>%
+                filter(!is.na(to_from)) %>%
+                group_by(birth_y) %>%
+                summarise(n_move = n_distinct(id))) %>%
+        mutate(birth_y = as.character(birth_y),
+               prop_male = signif(prop_male, 3)),
+    col.names = c(
+    "Birth-cohort",
+    "No. children",
+    "Proportion male (%)",
+    "No. moved"
+    ),
+    caption = "Demographic information regarding birth-cohorts used in the study",
+    format.args = list(big.mark = ",")
+)
+```
+
 
 ### Statistics Iceland
 
@@ -232,7 +264,7 @@ include_graphics(path = "_figures/results/2018-11-16-density-age.png")
 The Primary Care Registry recorded all primary care health contacts for the period 2005-2015.
 All physician contacts associated with the diagnostic codes listed in Table \@ref(tab:table-icd) were extracted for the given period. 
 A total of 1,963,439 separate contacts were recorded between 298,307 individual patients and 1,266 different physicians.
-The movst visits for a single individual was 212. 
+The most visits for a single individual was 212. 
 The distribution in the number of contacts by age can be seen in Figure \@ref(fig:density-age).
 
 ### The National Vaccine Registry
@@ -243,7 +275,7 @@ A total of 110,712 doses of pneumococcal vaccines were administered to 51,601 in
 The monthly number of administered doses per age-group and vaccine is shown in Figure \@ref(fig:vaccine-time).
 
 ```{r vaccine-time, fig.cap = "Monthly number of administered pneumococcal vaccine doses by type and age-group"}
-include_graphics(path = "_figures/results/2018-11-16-vaccine-time.png")
+include_graphics(path = "_figures/results/2018-11-25-vaccine-time.png")
 ```
 
 Table \@ref(tab:vaccine-doses) shows the number of children in each birth-cohort who had received zero, one, two, and three doses of a pneumococcal conjugate vaccine by four years of age. 
@@ -252,7 +284,7 @@ Children who moved to or from the country before four years of age, were exclude
 ```{r vaccine-doses}
 knitr::kable(
     x = ids %>%
-    filter(birth_y >= 2005, birth_y <= 2015) %>%
+    filter(birth_y >= 2005, birth_y <= 2016) %>%
     left_join(hs) %>%
     filter(is.na(to_from)) %>%
     left_join(bs %>%
@@ -280,10 +312,10 @@ knitr::kable(
 )
 ```
 
-Some children in vaccine non-eligible cohorts received one, two or three doses of pneumococcal conjugate vaccines before four years of age. This generally occured at an older age than children in the vaccine eligible cohorts Figure \@ref(fig:vaccine-age).
+Some children in vaccine non-eligible cohorts received one, two or three doses of pneumococcal conjugate vaccines before four years of age. This generally occurred at an older age than children in the vaccine eligible cohorts Figure \@ref(fig:vaccine-age).
 
 ```{r vaccine-age, fig.cap = "Age at the time of administered pneumococcal vaccine dose by birth date"}
-include_graphics(path = "_figures/results/2018-11-16-vaccine-age.png")
+include_graphics(path = "_figures/results/2018-11-25-vaccine-age.png")
 ```
 
 ### The National Drug Prescription Registry
