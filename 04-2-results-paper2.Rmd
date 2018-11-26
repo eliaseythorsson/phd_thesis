@@ -2,6 +2,7 @@
 
 ```{r echo = F, error = F, message = F, warning = F}
 knitr::opts_chunk$set(echo = FALSE, error = FALSE, message = FALSE, warning = FALSE)
+library(knitr)
 library(tidyverse)
 library(lubridate)
 library(zoo)
@@ -53,27 +54,27 @@ kable(
         vnec = c(epi_null$tab$`       Inc risk *`[2], epi_14$tab$`       Inc risk *`[2], epi_512$tab$`       Inc risk *`[2]),
         vec = c(epi_null$tab$`       Inc risk *`[1], epi_14$tab$`       Inc risk *`[1], epi_512$tab$`       Inc risk *`[1]),
         risk = c(
-            paste0(format(signif(epi_null$res$IRR.strata.wald[1], 2), nsmall = 2),
+            paste0(format(signif(epi_null$res$IRR.strata.wald[1], 3), nsmall = 2),
                    " (",
-                   format(signif(epi_null$res$IRR.strata.wald[2], 2), nsmall = 2),
+                   format(signif(epi_null$res$IRR.strata.wald[2], 3), nsmall = 2),
                    "-",
-                   format(signif(epi_null$res$IRR.strata.wald[3], 2), nsmall = 2),
+                   format(signif(epi_null$res$IRR.strata.wald[3], 3), nsmall = 2),
                    ")"),
-            paste0(format(signif(epi_14$res$IRR.strata.wald[1], 2), nsmall = 2),
+            paste0(format(signif(epi_14$res$IRR.strata.wald[1], 3), nsmall = 2),
                    " (",
-                   format(signif(epi_14$res$IRR.strata.wald[2], 2), nsmall = 2),
+                   format(signif(epi_14$res$IRR.strata.wald[2], 3), nsmall = 2),
                    "-",
-                   format(signif(epi_14$res$IRR.strata.wald[3], 2), nsmall = 2),
+                   format(signif(epi_14$res$IRR.strata.wald[3], 3), nsmall = 2),
                    ")"),
-            paste0(format(signif(epi_512$res$IRR.strata.wald[1], 2), nsmall = 2),
+            paste0(format(signif(epi_512$res$IRR.strata.wald[1], 3), nsmall = 2),
                    " (",
-                   format(signif(epi_512$res$IRR.strata.wald[2], 2), nsmall = 2),
+                   format(signif(epi_512$res$IRR.strata.wald[2], 3), nsmall = 2),
                    "-",
-                   format(signif(epi_512$res$IRR.strata.wald[3], 2), nsmall = 2),
+                   format(signif(epi_512$res$IRR.strata.wald[3], 3), nsmall = 2),
                    ")")
     )),
-    col.names = c("No. prescriptions", "VNEC (%)", "VEC (%)", "Incidence risk (95%CI)"),
-    caption = "Incidence rate and number of visits by birth-cohort and gender"
+    col.names = c("No. visits", "VNEC (%)", "VEC (%)", "Incidence risk (95%CI)"),
+    caption = "The proportion and 95% confidence interval for the vaccine non-eligible cohorts (VNEC, born: 2005–2010) and the vaccine eligible cohorts (VEC, born 2011–2013) that recorded 0, 1–4, and 5-12 cumulative visits for AOM at 36 months of age."
 )
 ```
 
