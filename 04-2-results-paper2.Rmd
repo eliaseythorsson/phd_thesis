@@ -12,7 +12,7 @@ library(rms)
 load("_analyses/paper_2/2018-11-26-04-2-results-paper2.RData")
 ```
 
-The demographics of the study birth-cohorts are described in chapter \@ref(#datasourcesresults) and Table \@ref(tab:table-cohort-results).
+The demographics of the study birth-cohorts are described in chapter \@ref(datasourcesresults) and Table \@ref(tab:table-cohort-results).
 A total of 92,935 primary care visits due to AOM were recorded among birth-cohorts 2005-2015 during the study period. 
 The crude incidence rate of AOM visits to primary care per 100 person-years in the VNEC and VEC was 45.3 and 39.8 respectively. 
 The incidence rate and number of AOM visits by birth-cohort, and gender is shown in Table \@ref(tab:table-paper2-incidence-results).

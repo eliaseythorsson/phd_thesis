@@ -1,0 +1,142 @@
+## Impact on tympanostomy tube procedures (Paper IV){#paper4results}
+
+```{r echo = F, error = F, message = F, warning = F}
+knitr::opts_chunk$set(echo = FALSE, error = FALSE, message = FALSE, warning = FALSE)
+library(knitr)
+library(tidyverse)
+library(lubridate)
+library(zoo)
+library(epiR)
+library(survival)
+library(rms)
+library(survminer)
+load("_analyses/paper_4/2018-11-28-04-2-results-paper4.RData")
+```
+
+Demographic data regarding the study birth-cohorts are summarized in chapter \@ref(datasourcesresults).
+In total during the study period, 14,351 children underwent 20,373 tympanostomy tube placements, 57% of whom were male. 
+The median age of children undergoing their first tympanostomy procedure was 17 months (IQR 13-24). 
+In the subset of children who underwent a tympanostomy tube placement during the study period, 10,248 (71%) only underwent one procedure, 2,902 (20%) underwent two, and 1201 (8%) underwent three or more. 
+Almost all (98%) of the procedures were performed in private outpatient clinics. 
+The number of otolaryngologists doing outpatient tympanostomy tube placements increased from 15 in 2005 to 23 in 2016.
+Each surgeon performed a median of 123 (IQR: 56.5-196) procedures each year.
+The study's population is summarized in Table \@ref(tab:table-paper4-demographics).
+
+```{r table-paper4-demographics}
+kable(
+    x = ids_surv %>%
+        left_join(
+            ids_surv %>%
+                group_by(birth_y) %>%
+                summarise(n = sum(age)/12)
+        ) %>%
+        left_join(
+            ids_surv %>%
+                select(id, birth_y) %>%
+                left_join(si_surv) %>% 
+                gather(key = n_proc, value = age, -id, -birth_y) %>%
+                filter(!is.na(age)) %>%
+                count(birth_y) %>%
+                rename(proc = n)
+        ) %>%
+        left_join(
+            ids_surv %>%
+                select(id, birth_y) %>%
+                right_join(si_surv) %>% 
+                count(birth_y) %>%
+                rename(child_proc = n)
+        ) %>%
+        group_by(birth_y) %>%
+        summarise(
+            id = n_distinct(id),
+            at_risk = median(n),
+            proc = median(proc),
+            child_proc = median(child_proc)
+        ) %>%
+        left_join(
+            si_surv %>%
+                select(id, `1`) %>%
+                filter(!is.na(`1`)) %>%
+                left_join(ids_surv) %>%
+                group_by(birth_y) %>%
+                summarise(age = paste0(quantile(`1`)[3],
+                    " (",
+                    quantile(`1`)[2],
+                    "-",
+                    quantile(`1`)[4],
+                    ")"
+                ))
+        ) %>%
+        mutate(
+            birth_y = as.character(birth_y),
+            proc = paste0(
+                format(proc, big.mark = ",", trim = T),
+                " (",
+                format(child_proc, big.mark = ",", trim = T),
+                ")"
+            )
+        ) %>%
+        select(-child_proc),
+    col.names = c("Birth-cohort", "Number of children", "Person-years", "Number of procedures (n children)", "Median age (months)"),
+    caption = "Demographic information regarding the study's birth-cohorts"
+)
+```
+
+The crude incidence rate of tympanostomy tube placements in the vaccine eligible cohorts was 10.6 procedures per 100 person-years, which was significantly higher than the crude incidence rate in the vaccine non-eligible cohorts, 8.7 procedures per 100 person-years (IRR 1.20, 95%CI 1.17-1.24).
+When stratified by age-groups, the crude incidence rate was highest among 12-17 month old children (Figure \@ref(fig:figure-results-paper4-incidence)). 
+
+```{r figure-results-paper4-incidence, fig.cap = "Incidence of tympanostomy tube procedures by age-group and birth-cohort"}
+include_graphics(path = "_figures/paper_4/2018-11-28-incidence.png")
+```
+
+The cumulative proportion of children who had undergone at least one tympanostomy tube placement by five years of age was higehst in birth-chort 2010 (31.7%) and lowest in birth-cohort 2006 (28.6%), Table \@ref(tab:table-paper4-proportion).
+The cumulative proportion of tympanostomy procedures significantly higher in the vaccine eligible birth-cohorts compared to vaccine non-eligible cohorts regardless of age (Figure \@ref(fig:figure-results-paper4-cumulative-event)).
+
+```{r table-paper4-proportion}
+options(knitr.kable.NA = '-')
+kable(
+    x= ggsurvplot(
+        survfit(Surv(tstop, proc) ~ birth_y, data = subset(ror_surv, cum_proc == 0))
+        )$data.survplot %>%
+        filter(time %in% c(6, 12, 18, 24, 30, 36, 42, 48, 54, 59)) %>%
+        select(time, surv, birth_y) %>%
+        mutate(birth_y = as.character(birth_y), surv = round((1 - surv) * 100, 1)) %>%
+        spread(key = birth_y, value = surv),
+    col.names = c("Age (months)", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"),
+    caption = "Demographic information regarding the study's birth-cohorts"
+)
+```
+
+```{r figure-results-paper4-cumulative-event, fig.cap = "Cumulative proportion of children who underwent at least one tympanostomy tube placement for the vaccine eligible (VEC) and vaccine non-eligible (VNEC) cohorts"}
+include_graphics(path = "_figures/paper_4/2018-11-28-cumulative-event.png")
+```
+
+In the subset of children who underwent tympanostomy tube placement, the mean (median) number of otitis media associated visits to primary care or the paediatric emergency department was 2.05 (2) visits in the vaccine non-eligible cohorts, compared to 1.72 (1) visits in the vaccine eligible cohorts. 
+The distribution in the number of previous visits was significantly different between the VNEC and VEC (Chi-Squared test statistic 63.8, P<.001).
+The proportion of children who did not have a single recorded visit prior to undergoing the procedure increased from 20.6% in the VNEC to 28.9% in the VEC, RR 1.40 (95%CI 1.28-1.54).
+Children in the vaccine eligible cohorts had received significantly fewer antimicrobial prescriptions prior to undergoing the procedure (Chi-Squared test statistic 53.6, P<.001). 
+The mean (median) number of previous antimicrobial prescriptions was 3.19 (4) in the vaccine eligible cohorts compared to 3.62 (4) in the vaccine non-eligible cohorts. 
+Children in the VEC were more likely to have never been prescribed antimicrobials prior to undergoing tympanostomy placement, RR 1.52, 95%CI 1.18-1.96).
+The comparison between VEC and VNEC is summarized in Table \@ref(tab:table-paper4-relative-risk-visits-presc).
+
+```{r table-paper4-relative-risk-visits-presc}
+kable(
+    x = full_join(rr_lg, rr_lsh) %>%
+        full_join(chi_lg) %>%
+        full_join(chi_lsh) %>%
+        select(cumulative, starts_with("presc"), starts_with("visit")),
+    col.names = c("Cumulative number", "VNEC % (n)", "VEC % (n)", "RR (95%CI)", "ARD (95%CI", 
+                  "VNEC % (n)", "VEC % (n)", "RR (95%CI)", "ARD (95%CI"),
+    caption = "Incidence rate and number of outpatient antimicrobial prescriptions by birth-cohort and gender"
+)
+```
+
+A diagnostic plot of Schoenfeld residuals was used to visually assess the proportional hazard assumption for all covariates in each Cox model and no systematic deviations were detected.
+The hazard of undergoing a tympanostomy tube procedure was considerably higher in children who had previously visited a physician for otitis media or received an antimicrobial prescription.
+Children who had one prior documented visit were considerably more likely to undergo a procedure than children who had no documented visits, HR of 3.12 (95%CI 2.93-3.32).
+Likewise, children who had filled one previous antimicrobial prescription were more likely to receive a tympanostomy tube than children who had recieved no prescription, 6.98 (95%CI 6.13-7.95). 
+The hazard of tympanostomy tube placement increased gradually from birth-cohort 2005 to 2015, \@ref(fig:figure-results-paper4-combined-hazard).
+
+```{r figure-results-paper4-combined-hazard, fig.cap = "The hazard ratio of undergoing a tympanostomy tube placement between each of the study's birth-cohorts and the last vaccine non-eligible birth-cohort"}
+include_graphics(path = "_figures/paper_4/2018-11-28-combined-hazard.png")
+```

@@ -3,7 +3,6 @@
 ```{r echo = F, error = F, message = F, warning = F}
 knitr::opts_chunk$set(echo = FALSE, error = FALSE, message = FALSE, warning = FALSE)
 library(knitr)
-#library(kableExtra)
 library(tidyverse)
 library(lubridate)
 library(zoo)
