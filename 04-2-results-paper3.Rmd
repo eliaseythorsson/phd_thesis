@@ -12,7 +12,7 @@ library(rms)
 load("_analyses/paper_3/2018-11-27-04-2-results-paper3.RData")
 ```
 
-Demographic data regarding the study birth-cohorts are summarized in chapter \@ref(datasourcesresults) and Table \@ref(tab:table-cohort-results).
+Demographic data regarding the study birth-cohorts are summarized in Chapter \@ref(datasourcesresults) and Table \@ref(tab:table-cohort-results).
 From 2005-2012, first-line penicillins were prescribed most commonly and represented between 41% and 47% of all antimicrobial prescriptions. Their use decreased suddenly in 2013 to 32%, and represented only 18% of all antimicrobial prescriptions in 2014 and 2015.
 During this same period, the use of second-line penicillins went from 35% to 40% 2005-2012, to 48%, 55% and 54% in 2013, 2014 and 2015. 
 Use of cephalosporins followed a simmilar trend -- it was between 5.2% and 7.8% 2005–2012, and increased to 10–15% between 2013–2016.

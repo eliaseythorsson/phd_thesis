@@ -13,7 +13,7 @@ library(survminer)
 load("_analyses/paper_4/2018-11-28-04-2-results-paper4.RData")
 ```
 
-Demographic data regarding the study birth-cohorts are summarized in chapter \@ref(datasourcesresults).
+Demographic data regarding the study birth-cohorts are summarized in Chapter \@ref(datasourcesresults).
 In total during the study period, 14,351 children underwent 20,373 tympanostomy tube placements, 57% of whom were male. 
 The median age of children undergoing their first tympanostomy procedure was 17 months (IQR 13-24). 
 In the subset of children who underwent a tympanostomy tube placement during the study period, 10,248 (71%) only underwent one procedure, 2,902 (20%) underwent two, and 1201 (8%) underwent three or more. 
@@ -49,7 +49,7 @@ kable(
         group_by(birth_y) %>%
         summarise(
             id = n_distinct(id),
-            at_risk = median(n),
+            at_risk = as.integer(median(n)),
             proc = median(proc),
             child_proc = median(child_proc)
         ) %>%
@@ -78,7 +78,8 @@ kable(
         ) %>%
         select(-child_proc),
     col.names = c("Birth-cohort", "Number of children", "Person-years", "Number of procedures (n children)", "Median age (months)"),
-    caption = "Demographic information regarding the study's birth-cohorts"
+    caption = "Demographic information regarding the study's birth-cohorts",
+    format.args = list(big.mark = ",")
 )
 ```
 
@@ -89,7 +90,7 @@ When stratified by age-groups, the crude incidence rate was highest among 12-17 
 include_graphics(path = "_figures/paper_4/2018-11-28-incidence.png")
 ```
 
-The cumulative proportion of children who had undergone at least one tympanostomy tube placement by five years of age was higehst in birth-chort 2010 (31.7%) and lowest in birth-cohort 2006 (28.6%), Table \@ref(tab:table-paper4-proportion).
+The cumulative proportion of children who had undergone at least one tympanostomy tube placement by five years of age was highest in birth-cohort 2010 (31.7%) and lowest in birth-cohort 2006 (28.6%), Table \@ref(tab:table-paper4-proportion).
 The cumulative proportion of tympanostomy procedures significantly higher in the vaccine eligible birth-cohorts compared to vaccine non-eligible cohorts regardless of age (Figure \@ref(fig:figure-results-paper4-cumulative-event)).
 
 ```{r table-paper4-proportion}
@@ -111,7 +112,7 @@ kable(
 include_graphics(path = "_figures/paper_4/2018-11-28-cumulative-event.png")
 ```
 
-In the subset of children who underwent tympanostomy tube placement, the mean (median) number of otitis media associated visits to primary care or the paediatric emergency department was 2.05 (2) visits in the vaccine non-eligible cohorts, compared to 1.72 (1) visits in the vaccine eligible cohorts. 
+In the subset of children who underwent tympanostomy tube placement, the mean (median) number of otitis media associated visits to primary care or the pediatric emergency department was 2.05 (2) visits in the vaccine non-eligible cohorts, compared to 1.72 (1) visits in the vaccine eligible cohorts. 
 The distribution in the number of previous visits was significantly different between the VNEC and VEC (Chi-Squared test statistic 63.8, P<.001).
 The proportion of children who did not have a single recorded visit prior to undergoing the procedure increased from 20.6% in the VNEC to 28.9% in the VEC, RR 1.40 (95%CI 1.28-1.54).
 Children in the vaccine eligible cohorts had received significantly fewer antimicrobial prescriptions prior to undergoing the procedure (Chi-Squared test statistic 53.6, P<.001). 
@@ -134,8 +135,8 @@ kable(
 A diagnostic plot of Schoenfeld residuals was used to visually assess the proportional hazard assumption for all covariates in each Cox model and no systematic deviations were detected.
 The hazard of undergoing a tympanostomy tube procedure was considerably higher in children who had previously visited a physician for otitis media or received an antimicrobial prescription.
 Children who had one prior documented visit were considerably more likely to undergo a procedure than children who had no documented visits, HR of 3.12 (95%CI 2.93-3.32).
-Likewise, children who had filled one previous antimicrobial prescription were more likely to receive a tympanostomy tube than children who had recieved no prescription, 6.98 (95%CI 6.13-7.95). 
-The hazard of tympanostomy tube placement increased gradually from birth-cohort 2005 to 2015, \@ref(fig:figure-results-paper4-combined-hazard).
+Likewise, children who had filled one previous antimicrobial prescription were more likely to receive a tympanostomy tube than children who had received no prescription, 6.98 (95%CI 6.13-7.95). 
+The hazard of tympanostomy tube placement increased gradually from birth-cohort 2005 to 2015, Figure \@ref(fig:figure-results-paper4-combined-hazard).
 
 ```{r figure-results-paper4-combined-hazard, fig.cap = "The hazard ratio of undergoing a tympanostomy tube placement between each of the study's birth-cohorts and the last vaccine non-eligible birth-cohort"}
 include_graphics(path = "_figures/paper_4/2018-11-28-combined-hazard.png")
