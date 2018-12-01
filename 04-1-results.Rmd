@@ -17,11 +17,11 @@ They differ however only marginally from the final data summary described below.
 
 When data from all registries are taken together, individual level information was available for 375,383 Icelandic citizens, of which 183,544 were female and 181,316 were male.
 Gender was unknown for 10,523 individuals. 
-The full date of birth was known for 366,188 and the birth-year was available for the rest.
+The full date of birth was known for 366,188 and birth-year was available for the rest.
 The median birth-year for the whole study population was 1979 (IQR 1958-1997).
 Death was registered for 12,308 individuals during the study period.
 
-Several papers examined the data stratified by birth-cohort.
+Several papers examined the data, stratified by birth-cohort.
 The number of children in each birth-cohort who contributed data to the present study are shown in Table \@ref(tab:table-cohort-results).
 
 ```{r table-cohort-results}
@@ -62,7 +62,7 @@ The proportion of children in each birth-cohort who moved at least once before f
 ### Landspitali University Hospital patient registry
 
 All visits and hospitalizations with ICD-10 diagnostic codes compatible with respiratory infections (Table \@ref(tab:table-icd)) and procedural codes compatible with tympanostomy tube procedures (Table \@ref(tab:table-ncsp)), were extracted from Landspitali's patient registry. 
-The number of visits and hospitalizations with each of the study's ICD-10 diagnoses recorded as the first diagnosis, are shown in Table \@ref(tab:table-icd10-results).
+The number of visits and hospitalizations corresponding to each of the study's ICD-10 codes recorded in the first diagnostic field, are shown in Table \@ref(tab:table-icd10-results).
 
 ```{r table-icd10-results}
 kable(
@@ -195,7 +195,7 @@ kable(
 
 A total of 169,585 records (of 74,740 individuals) were available, of which 135,841 (64,090) were visits to outpatient clinics or emergency departments and 33,744 (20,318) were hospital admissions.
 The most visits of a single individual was 170 and the most admissions, 31. 
-The number of study procedures performed at Landspitali University Hospital is shown in Table \@ref(tab:table-ncsp-results).
+The number of procedures performed at Landspitali University Hospital is shown in Table \@ref(tab:table-ncsp-results).
 
 ```{r table-ncsp-results}
 kable(
@@ -262,10 +262,10 @@ include_graphics(path = "_figures/results/2018-11-16-density-age.png")
 ### The Primary Care Registry 
 
 The Primary Care Registry recorded all primary care health contacts for the period 2005-2015.
-All physician contacts associated with the diagnostic codes listed in Table \@ref(tab:table-icd) were extracted for the given period. 
+All physician contacts associated with the diagnostic codes listed in Table \@ref(tab:table-icd) were extracted for that given period. 
 A total of 1,963,439 separate contacts were recorded between 298,307 individual patients and 1,266 different physicians.
 The most visits for a single individual was 212. 
-The distribution in the number of contacts by age can be seen in Figure \@ref(fig:density-age).
+The distribution of contacts by age can be seen in Figure \@ref(fig:density-age).
 
 ### The National Vaccine Registry
 
@@ -278,7 +278,7 @@ The monthly number of administered doses per age-group and vaccine is shown in F
 include_graphics(path = "_figures/results/2018-11-25-vaccine-time.png")
 ```
 
-Table \@ref(tab:vaccine-doses) shows the number of children in each birth-cohort who had received zero, one, two, and three doses of a pneumococcal conjugate vaccine by four years of age. 
+Table \@ref(tab:vaccine-doses) shows the number of children in each birth-cohort who had received zero, one, two, or three doses of a pneumococcal conjugate vaccine by four years of age. 
 Children who moved to or from the country before four years of age, were excluded from the table. 
 
 ```{r vaccine-doses}

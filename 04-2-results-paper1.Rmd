@@ -15,7 +15,7 @@ The variation was more pronounced in the number of children under four years of 
 
 During the period January 1, 2008 to December 31, 2015, 103,220 visits were recorded to the Children’s Hospital Iceland. 
 The visits varied over the calendar year, spiking in the winter months and troughing in the summer months. 
-The total number of visits increased steadily during the study period, from 12,229 in 2008 to 14,502 in 2015, Figure \@ref(fig:figure-paper1-monthly-visits).
+The total number of visits increased steadily during the study period, from 12,229 in 2008 to 14,502 in 2015, as shown in Figure \@ref(fig:figure-paper1-monthly-visits).
 
 ```{r figure-paper1-monthly-visits, fig.cap = "Monthly number of visits to Children's Hospital Iceland"}
 include_graphics(path = "_figures/paper_I/2018-11-03-monthly-visits.png")
@@ -85,11 +85,11 @@ knitr::kable(
 ```
 
 
-The incidence rate of AOM visits to Children's Hospital Iceland decreased significantly in the post-vaccine period compared to the pre-vaccine period; from 47.4 visits per 1000 person-years to 41.8 per 1000 person-years.
+The incidence rate of AOM visits to Children's Hospital Iceland decreased significantly in the post-vaccine period as compared to the pre-vaccine period; from 47.4 visits per 1000 person-years to 41.8 per 1000 person-years.
 The crude IRR was 0.88 (95% CI: 0.83–0.93; P < 0.001).
 Manel-Haenszel adjustment was not appropriate due to effect heterogeneity ($\chi^2$ = 15.2, P < 0.001). 
-When each age-group was examined separately, a significant decrease in AOM visits was observed among children between one and two years of age (IRR 0.89; 95% CI: 0.93-0.96; P = 0.00341) and two and three years of age (IRR 0.79; 95% CI: 0.71–0.88; P < 0.001), Table \@ref(tab:table-paper1-aomvisits-results). 
-Children under one year of age and children between three and four years of age, visited the Children’s Hospital Iceland because of AOM 471 times and 379 times respectively. 
+When each age-group was examined separately, a significant decrease in AOM visits was observed among children between one and two years of age (IRR 0.89; 95% CI: 0.93-0.96; P = 0.00341) and between two and three years of age (IRR 0.79; 95% CI: 0.71–0.88; P < 0.001), as shown in Table \@ref(tab:table-paper1-aomvisits-results). 
+Children under one year of age and children between three and four years of age, visited the Children’s Hospital Iceland because of AOM 471 times and 379 times, respectively. 
 
 ```{r table-paper1-aomvisits-results}
 knitr::kable(
@@ -109,8 +109,8 @@ x = data.frame(
     caption = "Incidence rate ratios of AOM visits between the pre- and post-vaccine periods")
 ```
 
-Independent of the decrease in visits, the incidence of ceftriaxone treatment episodes for AOM was also found to have decreased significantly in the post-vaccine period compared to the pre-vaccine period.
-The effect was heterogenous accross age-strata ($\chi^2$ = 57, P < 0.001) and the crude overall IRR was 0.48 (95% CI: 0.40–0.58; P < 0.001).
+Independent of this decrease in visits, the incidence of ceftriaxone treatment episodes for AOM was also found to decrease significantly in the post-vaccine period compared to the pre-vaccine period.
+The effect was heterogeneous across age-strata ($\chi^2$ = 57, P < 0.001) and the crude overall IRR was 0.48 (95% CI: 0.40–0.58; P < 0.001).
 The stratum specific results are shown in Table \@ref(tab:table-paper1-AOMtreatment-results).
 During study period, only 17 episodes of AOM were treated with ceftriaxone among children zero to one years of age and 19 episodes among children three to four years of age. 
 
@@ -132,9 +132,9 @@ x = data.frame(
     caption = "Incidence rate ratios of ceftriaxone treatment episodes of AOM between the pre- and post-vaccine periods")
 ```
 
-Some of the observed decrease of ceftriaxone treatment episodes for AOM could possibly be explained by a decrease in AOM cases presenting to the Children's Hospital Iceland. 
-Thus the risk of receiving ceftriaxone treatment if presenting to Children's Hospital Iceland with AOM was calculated and a significant decrease was noted.
-The risk decrease was not homogenous accross age-strata ($\chi^2$ = 33.8, P < 0.001) and the overall relative risk ratio of 0.58 (95% CI: 0.48-0.69; P < 0.001).
+Part of the observed decrease of ceftriaxone treatment episodes for AOM could conceivably be explained by a decrease in the number of AOM cases presenting to the Children's Hospital Iceland. 
+Because of this possibility, the risk of receiving ceftriaxone treatment if presenting to Children's Hospital Iceland with AOM was calculated and a significant decrease was noted.
+The risk decrease was not homogeneous across age-strata ($\chi^2$ = 33.8, P < 0.001) and the overall relative risk ratio of 0.58 (95% CI: 0.48-0.69; P < 0.001).
 The stratum specific effects are shown in Table \@ref(tab:table-paper1-AOMcefrisk-results)
 
 ```{r table-paper1-AOMcefrisk-results}
@@ -155,10 +155,10 @@ x = data.frame(
     caption = "Incidence risk ratio of ceftriaxone treatment episodes of AOM adjusted for the number of AOM visits between the pre- and post-vaccine periods")
 ```
 
-A decrease in the incidence of AOM visits, ceftriaxone treatment episodes of AOM and risk of ceftriaxone treatment if presenting to the Children's Hospital Iceland were noted.
+Decreases were noted in the incidence of AOM visits, in ceftriaxone treatment episodes of AOM and in risk of ceftriaxone treatment if presenting to the Children's Hospital Iceland.
 A similar decrease was noted in the ceftriaxone treatment episodes for pneumonia.
-In the pre-vaccine period, 251 treatment episodes were recorded but only 90 in the postvaccine period. 
-The effect was not consistent accross age-strata ($\chi^2$ = 72, P-value < 0.001).
+In the pre-vaccine period, 251 treatment episodes were recorded but in the post-vaccine period, only 90 were recorded.
+The effect was not consistent across age-strata ($\chi^2$ = 72, P-value < 0.001).
 The overall incidence rate ratio was 0.37 (95% CI: 0.29-0.47; P < 0.001).
 The stratum specific effects are shown in Table \@ref(tab:table-paper1-pneumonia-results). 
 
@@ -180,11 +180,10 @@ x = data.frame(
     caption = "Incidence risk ratio of ceftriaxone treatment episodes of pneumonia between the pre- and post-vaccine periods")
 ```
 
-To examine whether a decrease had occured in ceftriaxone use in vaccinated children for non-vaccine related indications, the incidence of ceftriaxone for all other indications was examined. 
-Ceftriaxone treatment episodes for all other indications in children under four years of age did not change significantly.
+To ascertain whether a decrease in ceftriaxone use had occurred in vaccinated children for non-vaccine related indications, the incidence of ceftriaxone for all other indications was examined, and was shown to have not decreased significantly.
 There was no heterogeneity across age-strata ($\chi^2$ = 0.56, P-value = 0.455). 
 The Mantel-Haenszel adjusted incidence rate ratio was 0.96 (95% CI: 0.87-1.06; P = 0.262).
-The number of treatment episodes by age and vaccine period ranged 117-295.
+The number of treatment episodes by age and vaccine period ranged from 117 to 295.
 The stratum specific incidence rate ratios are shown in Table \@ref(tab:table-paper1-other-results).
 
 ```{r table-paper1-other-results}
@@ -211,10 +210,11 @@ Quarterly incidence of ceftriaxone treatment episodes by indication are shown in
 include_graphics(path = "_figures/paper_I/2018-11-03-figure1-ceftriaxone-2008-2015.png")
 ```
 
-To further test whether a general decrease was ocurring in the overall use of ceftriaxone, rather than a specific decrease for vaccine-related indications in vaccinated children, ceftriaxone treatment episodes in all children regardless of age and indiciation was examined.
-An overall decrease in the incidence rate of ceftriaxone treatment episodes was noted in the post-vaccine period compared to the pre-vaccine period among children under eighteen years of age regardless of indication, from 11.11 treatment episodes per 1000 person-years to 9.55 episodes per 1000 person-years, IRR 0.86 (95% CI: 0.81-0.91; P < 0.001).
+To further test whether a general decrease was occurring in the overall use of ceftriaxone, rather than a specific decrease for vaccine-related indications in vaccinated children, an examination of ceftriaxone treatment episodes in all children regardless of age and indication was undertaken.
+An overall decrease in the incidence rate of ceftriaxone treatment episodes was noted in the post-vaccine period compared to the pre-vaccine period, among children under eighteen years of age regardless of indication.
+These rates declined from 11.11 treatment episodes per 1000 person-years to 9.55 episodes per 1000 person-years, IRR 0.86 (95% CI: 0.81-0.91; P < 0.001).
 The effect was not consistent across age-groups ($\chi^2$ = 23.6, P-value < 0.001).
-When examined by age-group, the overall decrease prooved to be driven be a decrease in the youngest age-group -- the children who were protected by the vaccination. 
+When examined by age-group, the overall decrease proved to be driven by a decrease in the youngest age-group -- i.e the children who were protected by the vaccination. 
 The incidence of ceftriaxone treatment episodes did not decrease significantly in other age groups (Figure \@ref(fig:figure-paper1-age-group)).
 
 ```{r figure-paper1-age-group, fig.cap = "Incidence of ceftriaxone treatment episodes by age-group and calendar time"}

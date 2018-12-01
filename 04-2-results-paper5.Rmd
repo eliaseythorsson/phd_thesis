@@ -73,7 +73,7 @@ The analogous crude incidence rate of hospitalizations for acute lower respirato
 Though the absolute number of admissions was similar between these two groups, the distribution of cases was different. 
 The crude incidence rate of hospital admissions for pneumonia was highest in children 12-17 months of age, while the incidence rate of hospitalizations for lower respiratory tract infections was highest in children <6 months of age (Figure \@ref(fig:figure-results-paper5-incidence-arranged)).
 Children admitted for acute lower respiratory tract infections were significantly younger than children admitted for pneumonia (mean age 8.0 months and 13.6 months respectively, P<.001).
-Using crude age-group stratified incidence rate ratios between the vaccine eligible and non-eligible cohorts, the incidence rate of pneumonia hospitalizations was only found to have decreased significantly among children 12-17 months of age, crude incidence rate ratio 0.52 (95%CI: 0.35-0.77).
+Using crude age-group stratified incidence rate ratios between the vaccine eligible and non-eligible cohorts, the incidence rate of pneumonia hospitalizations was found to have decreased significantly only among children 12-17 months of age, crude incidence rate ratio 0.52 (95%CI: 0.35-0.77).
 Using the same method, the incidence rate of hospital admissions for acute lower respiratory tract infections admissions was found to have increased significantly among children 0-5 months of age, crude incidence rate ratio 1.50 (95%CI 1.23-1.84). 
 
 ```{r figure-results-paper5-incidence-arranged, fig.cap = "Incidence of hospitalization per 1,000 person-years by age- and disease-group"}
@@ -82,20 +82,20 @@ include_graphics(path = "_figures/paper_5/2018-11-29-incidence-arranged.png")
 
 A significant difference was detected in the cumulative rate of hospital admissions for both pneumonia and acute lower respiratory tract infections between the vaccine eligible and non-eligible cohorts (Figure \@ref(fig:figure-results-paper5-kmplot)).
 The hazard ratio of hospital admission for pneumonia was 0.80 (95%CI:0.67-0.95), with an E-value of 1.81 and a lower bound of 1.29.
-When the risk-set was restricted to children younger than 90 days, and 90 days and older respectively, the hazard ratio was 1.22 (95%CI 0.81-1.85) and 0.73 (95%CI 0.60-0.89) respectively.
+When the risk-set was restricted to children younger than 90 days and 90 days and older, respectively, the hazard ratio was 1.22 (95%CI 0.81-1.85) and 0.73 (95%CI 0.60-0.89) respectively.
 The hazard ratio for hospital admission due to acute lower respiratory tract infection was 1.32 (95%CI:1.14-1.53), with an E-value of 1.97 and a lower bound of 1.54.
 The hazard ratio was augmented when children younger than 90 days were analysed separately, HR 1.54 (95%CI 1.23-1.94). 
 It was not significant in children 90 days and older, HR 1.18 (95%CI 0.97-1.44).
 
 A total of 131 hospitalizations for acute upper respiratory tract infections were recorded for 123 children. 
 During the same period, 256 children were admitted to hospital 280 times for otitis media and complications.
-The crude incidence rate of hospital admissions for otitis media was higher than the incidence rate of admissions for acute upper respiratory tract infections; 2.32 and 1.45 per 1,000 person-years in the vaccine eligible and vaccine non-eligible cohorts respectively compared to 0.78 and 1.13 per 1,000 person-years.
+The crude incidence rate of hospital admissions for otitis media was higher than the incidence rate of admissions for acute upper respiratory tract infections; 2.32 and 1.45 per 1,000 person-years in the vaccine eligible and vaccine non-eligible cohortsrespectively, compared to 0.78 and 1.13 per 1,000 person-years.
 The mean age of children admitted for acute upper respiratory tract infections was 13.5 months compared to 12.8 months for children admitted for otitis media and complications.
 The crude incidence rate by age-group is shown in Figure \@ref(fig:figure-results-paper5-incidence-arranged).
 The cumulative incidence rate of hospitalization per 1000 person-years for acute upper respiratory tract infections and otitis media and complications are shown in Figure \@ref(fig:figure-results-paper5-kmplot).
 The hazard ratio of otitis media hospitalizations between the vaccine eligible and non-eligible cohorts was 0.57 (95%CI:0.43-0.73) with an E-value of 2.9 .and a lower bound of 2.08.
 When restricted to children younger than 90 days of age, the hazard ratio was 0.72 (95%CI 0.33-1.57), and when evaluating children 90 days and older it was 0.55 (95%CI 0.42-0.72).
-The hazard ratio for hospital admission for acute upper respiratory tract infections was and 1.56 1.56 (95%CI:1.11-2.19), with an E-value of 2.49 and a lower bound of 1.46. 
+The hazard ratio for hospital admission for acute upper respiratory tract infections was 1.56 (95%CI:1.11-2.19), with an E-value of 2.49 and a lower bound of 1.46. 
 Among children younger than 90 days, and 90 days and older respectively, the hazard ratio was 3.4 (95%CI 1.72-6.90) and 1.13 (95%CI 0.75-1.71).
 
 ```{r figure-results-paper5-kmplot, fig.cap = "Cumulative incidence of hospitalization per 1,000 children by disease-group"}
@@ -105,11 +105,11 @@ include_graphics(path = "_figures/paper_5/2018-11-29-kmplot.png")
 
 A total of 15 children were admitted to hospital 19 times for meningitis, and 61 children were admitted 63 times for sepsis.
 The crude incidence rate of meningitis hospitalization was 16.5 and 8.7 per 100,000 person-years in the vaccine non-eligible and vaccine eligible cohorts respectively, and the analogous crude incidence rate for sepsis hospitalizations was 38.8 and 52.3.
-Culture confirmed invasive pneumococcal disease was diagnosed in 37 children in the study birth-cohorts before three years of age.
+Culture confirmed invasive pneumococcal disease was diagnosed in 37 children under three years of age in the study birth-cohorts.
 Of those, 23 (59%) were admitted for inpatient treatment.
 Of the admitted children, eight children had a primary discharge diagnosis of Sepsis due to Streptococcus pneumoniae (A40.3), eight were diagnosed with Pneumococcal meningitis (G00.1), two with Pneumonia due to Streptococcus pneumoniae (J13), two with Bacterial pneumonia, not elsewhere classified (J15) and the remaining three were diagnosed with Bacterial meningitis, unspecified (G00.9), Pyogenic arthritis, unspecified (M00.9) and Fever, unspecified (R50.9).
-The crude incidence of invasive pneumococcal disease regardless of whether the child was admitted to hospital was 24.7 per 100,000 person-years in the VNEC compared to 1.74 per 100,000 person-years in the VEC.
-When only considering hospitalized invasive pneumococcal disease the crude IR was 24.7 and 1.74 per 100,000 person-years.
+The crude incidence of invasive pneumococcal disease, regardless of whether the child was admitted to hospital, was 24.7 per 100,000 person-years in the VNEC compared to 1.74 per 100,000 person-years in the VEC.
+When only considering hospitalized invasive pneumococcal disease, the crude IR was 24.7 and 1.74 per 100,000 person-years.
 No vaccine-type invasive pneumococcal disease was diagnosed in the VEC.
 Crude incidence rates of hospitalization by age-group are shown in Figure \@ref(fig:figure-results-paper5-incidence-arranged).
 
@@ -166,10 +166,10 @@ kable(
 ```
 
 The mean age of children admitted for meningitis, sepsis and invasive pneumococcal disease was 9.7 months, 8.4 months and 14.4 months respectively. 
-The cumulative incidence rate of hospitalization per 1000 person-years for sepsis and invasive pneumococcal disease are depicted in Figure \@ref(fig:figure-results-paper5-kmplot). 
+The cumulative incidence rates of hospitalization per 1000 person-years for sepsis and invasive pneumococcal disease are depicted in Figure \@ref(fig:figure-results-paper5-kmplot). 
 The hazard ratio of hospitalization for meningitis between the vaccine eligible and non-eligible cohorts was 0.45 (95%CI 0.15-1.41).
 An E-value was not computed as the hazard ratio was not significant.
-The hazard ratio for hospital admissions due to invasive pneumococcal disease between the vaccine eligible and vaccine non-eligible cohorts was 0.07 (95%CI:0.01-0.50) with an E-value of 28.06. and a lower bound of 3.41.
+The hazard ratio for hospital admissions due to invasive pneumococcal disease between the vaccine eligible and vaccine non-eligible cohorts was 0.07 (95%CI:0.01-0.50), with an E-value of 28.06. and a lower bound of 3.41.
 The hazard ratio of a sepsis hospitalization between the vaccine eligibility cohorts was 1.26 (95%CI:0.75-2.13).
 No E-value was calculated as the ratio was not significant.
 Restricted analyses in these three diagnostic groups did not alter results significantly.
