@@ -360,7 +360,7 @@ doCausalImpact <-
 
 crossval.log.lik <- function(cv.impact) {
 	exclude.id <- cv.impact$exclude.indices # index of months excluded in LOOCV where one year is left out
-	pred.exclude <- cv.impact$reg.mean[exclude.id, drop = FALSE] #use predicted mean (which incorporates random effect)
+	pred.exclude <- cv.impact$reg.mean[exclude.id, , drop = FALSE] #use predicted mean (which incorporates random effect)
 	obs.exclude <- cv.impact$observed.y[exclude.id] # the true measured observations of the excluded months
 	point.ll1 <-
 		matrix(NA,

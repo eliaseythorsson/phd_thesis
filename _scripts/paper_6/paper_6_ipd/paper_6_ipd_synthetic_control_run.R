@@ -44,8 +44,8 @@ post_period       <- as.Date(c('2011-01-01', '2016-10-01')) # Range from the int
 eval_period       <- as.Date(c('2013-01-01', '2016-10-01')) # Range over which rate ratio calculation will be performed.
 year_def   <- 'cal_year'  #Can be cal_year to aggregate results by Jan-Dec; 'epi_year' to aggregate July-June
 
-sensitivity= TRUE
-crossval= FALSE #run cross validation? Note this takes time...adds ~40 min with 10 age groups, 7 cores
+sensitivity = TRUE
+crossval = TRUE #run cross validation? Note this takes time...adds ~40 min with 10 age groups, 7 cores
 
 #Run analysis and generate HTML report
 source('_scripts/paper_6/paper_6_ipd/paper_6_ipd_synthetic_control_report.R', local = TRUE)
