@@ -75,7 +75,7 @@ This places Iceland above most European countries in the incidence of otitis med
 The variability described is likely due to many different factors.
 Acute otitis media is often a benign, self-limiting condition.
 The propensity to seek medical care may be influenced by several different cultural and socio-economic factors.
-Access and cost of healthcare may influence whether parents seek care for their child and may result in measurable changes in incidence between countries [@Hadley2003, @Smolderen2010].
+Access and cost of healthcare may influence whether parents seek care for their child and may result in measurable changes in incidence between countries [@Hadley2003; @Smolderen2010].
 In Iceland, all permanent residents are provided health insurance by the government and there is excellent access to urgent care. 
 Children are provided healthcare free of charge.
 In Iceland, both parents are typically fully employed and the proportion of children attending daycare is high. 
@@ -139,25 +139,45 @@ There is nothing to suggest this.
 
 ### Impact on pediatric emergency department visits for acute otitis media (Paper I)
 
-Emergency department visits 
- Regrettably we do not have concurrent data on pneumonia-related hospital visits, and are therefore unable to evaluate the relationship between decreased ceftriaxone treatment episodes and pneumonia cases. Nevertheless, in previous studies, pneumonia-related visits to the Children's Hospital by children under 2 years of age were shown to have decreased from 42.2 to 32.9 visits per 1000 person-years in the 2-year period prior to and pursuant to the vaccination22.
-	Randomized controlled trials (RCT) have shown mixed results regarding the protective effect of PCV against AOM, with effect sizes ranging from 7.8% (95%CI, 5.4-10.2%)23, 6% (95%CI -4-16%)24, 17% (95%CI -2-33%) 25 and 0.4% (95%CI, -19.4-15.6%)26.  These studies evaluated the 7-valent pneumococcal conjugate vaccine. However, three RCTs have studied the effect of a higher valent vaccine conjugate with H. influenzae Protein D, and found a reduction in all cause AOM by 16.1% (95%CI -1.1-30.4%)27, 24% (95%CI 8.7-36.7%)28 and 33.6% (95%CI 20.8-44.3)29. Furthermore, observational studies have consistently shown a larger effect size when compared to RCT's, which is hypothesized to be due to indirect herd-effect among the non-vaccinated 3,30–32.
-	The study is strengthened by its long observation period. AOM visits and ceftriaxone use for AOM remained largely unchanged in the four years prior to vaccine introduction. Furthermore, there was immediate high vaccine uptake following introduction and a clear contrast in vaccination rates between the pre- and post-vaccine periods. This increases our confidence in the relationship between vaccine introduction and the observed decrease. Data was complete over the study period, and was systematically collected using unique personal identification numbers. 
-g reason to believe a priori that PHiD-CV10 would lead to a reduction of AOM with treatment failure.
-	The number of episodes of AOM treated with ceftriaxone in Iceland have decreased following introduction of PHiD-CV10 into the pediatric vaccination program. Visits to The Children's Hospital due to AOM have also decreased. The results strongly suggest a decrease in serious AOM with treatment failure due to antibiotic-resistant pneumococcus following vaccination.
+On average, emergency department visits for acute otitis media are likely to represent a subset of more serious cases than those that present to primary care centers.
+[Paper I](#paper1results) examined the impact of PHiD-CV10 introduction on the incidence of acute otitis media visits to the emergency department of Children's Hospital Iceland. 
+Following vaccine introduction, the incidence decreased significantly from 4.7 visits per 100 person-years in the pre-vaccine period to  to 4.1 visits per 100 person-years in the post-vaccine period.
+The estimated vaccine impact was 12%. 
 
+########## Paragraph comparing our results to the results of others ############
+
+This study employed a simple pre/post design, and was not able to adjust for secular trends due to the nature of the study data.
+The estimation of the incidence of acute otitis media visits, and impact of the introduction of PHiD-CV10 was a secondary objective.
+A robust time-series approach with synthetic controls is warranted to further investigate the impact of PHiD-CV10 on pediatric emergency department visits for acute otitis media. 
 
 ### Impact on outpatient antimicrobial prescriptions for otitis media (Paper III)
 
 ### Impact on acute otitis media with treatment failure (Paper I)
 
-In this study, we show a significant reduction in ceftriaxone use in the treatment of AOM at The Children's Hospital following introduction of PHiD-CV10 into the pediatric vaccination program in Iceland. When ceftriaxone is used in the treatment of AOM at the Children’s Hospital, it is done exclusively in cases of treatment failure, difficult recurrent infections or in culture proven antibiotic-resistant pneumococcus. The data suggests that this reduction is due to the effect of vaccination and is associated with a decrease in the prevalence of antibiotic-resistant pneumococcus. Before the introduction of PHiD-CV10 the proportion of PNSP isolates from middle ear was 48.7% of which 97.2% were serotypes covered by the vaccine20. Previous studies have shown a decrease in resistant clones of pneumococci following introduction of PCV18,19. This is mirrored in resistance rates published by the national reference laboratory, at the Department of Clinical Microbiology, Landspitali University Hospital. Of all pneumococcal isolates collected in 2015 only 22% were PNSP21.
+There exists a paucity of published studies that examine the impact of PHiD-CV10 on acute otitis media with treatment failure.
+Treatment failure is defined as the persistance of symptoms despite antimicrobial treatment.
+There is evidence to suggest that treatment failure occurs more commonly in acute otitis media caused by *Streptococcus pneumoniae* and *Haemophilius influenzae* than other pathogens [@Casey2004; @Pichichero2008]
+Otitis media with treatment failure represents an important subset of otitis media cases that is associated with a higher burden of disease.
+In [paper I](#paper1results), the impact of PHiD-CV10 on the incidence of acute otitis media episodes treated with parenteral ceftriaxone at Children's Hospital Iceland was examined. 
+The study demonstrated a statistically significant 42% vaccine impact. 
+
+To our knowledge, this is the first study to show a significant decrease in acute otitis media with treatment failure following introduction of a pneumococcal conjugate vaccine.
+Because acute otitis media with treatment failure is not consistantly defined in the literature, a proxy measurement such as ceftriaxone use is needed.
+Parenteral antimicrobial use is avoided unless absolutely necessary and is not administered at primary care clinics. 
+It is therefore an appropriate  and clinically relevant proxy measurement for the worst cases of otitis media with treatment failure.
+
+
+
+Another Proportion of PNSP decreased following vaccine introduction. However, these rates are also influenced by the rate at which physicians take samples for culture, which has been decreasing year by year from 2007 in Iceland. Our study mitigates such bias by measuring the treatment of AOM with treatment failure, most often due to resistant infections. There is therefore stron
+
+
+The data suggests that this reduction is due to the effect of vaccination and is associated with a decrease in the prevalence of antibiotic-resistant pneumococcus. Before the introduction of PHiD-CV10 the proportion of PNSP isolates from middle ear was 48.7% of which 97.2% were serotypes covered by the vaccine20. Previous studies have shown a decrease in resistant clones of pneumococci following introduction of PCV18,19. This is mirrored in resistance rates published by the national reference laboratory, at the Department of Clinical Microbiology, Landspitali University Hospital. Of all pneumococcal isolates collected in 2015 only 22% were PNSP21.
 Because this is a retrospective observational study, causation between vaccine introduction and the observed decrease in AOM visits and ceftriaxone use cannot be directly inferred. However, this conclusion is supported by several observations. Ceftriaxone use decreased only for indications that would be expected if associated with the introduction of PHiD-CV10. We show that there was a significant decrease in the use of ceftriaxone to treat AOM and pneumonia in children 0-3 years of age. We did not observe a similar significant decrease in ceftriaxone use for other diagnoses, although there was a trend towards decrease. Ceftriaxone is the empiric treatment of choice for septic infants in The Children’s Hospital Iceland. Therefore, the observed decrease in ceftriaxone use for other diagnoses may represent a decrease in the number of children with symptoms of sepsis who visit The Children's Hospital. 
 	No changes in institutional guidelines regarding the treatment of AOM with treatment failure or use of ceftriaxone were introduced during the study period. We tested whether significant change had occurred in ceftriaxone use by age group and found a significant decrease only in the youngest children 0-3 years of age. The rate of ceftriaxone use regardless of indication remained unchanged in children 4-7, 8-11 and 12-17 years of age. This supports the hypothesis that the observed decrease is associated with PHiD-CV10, and is not due to an independent shift in hospital practices. 
 		The Children's Hospital is Iceland's only pediatric referral hospital and also functions as a walk-in clinic for the capital area. To our knowledge, no change in guidelines or practices regarding referrals to The Children's Hospital occurred that could explain the observed decrease in AOM visits and ceftriaxone treatment. Even if this was the case, increased outpatient treatment of pediatric disease would likely cause an overall decrease in visits to The Children's Hospital and a higher proportion of complex cases. This would be expected to cause an increase in the relative use of ceftriaxone for AOM. In contrast, we show that there has been a steady increase in the total number of visits to The Children's Hospital over the study period, but both an absolute and relative decrease in the number of visits for AOM. Similar findings have previously been published by our research group22.The observed reduction in ceftriaxone use for AOM remains significant after correcting for an observed decrease in AOM visits.
 		Drug administration at The Children's Hospital was systematically documented with standardized procedural codes that did not change during the study period. This enabled us to retrieve exact data on AOM and ceftriaxone treatment on all individuals.  The observation that ceftriaxone use for other indications did not change significantly between vaccine periods is consistent with our expectations, as ceftriaxone remains the empirical treatment of choice for severe infections at the Children’s Hospital.
 		
-		To our knowledge, this is the first study to show a significant decrease in AOM with treatment failure. AOM with treatment failure is not exactly defined in the literature. Proxy measurements are therefore needed. Ceftriaxone is avoided unless absolutely required and is not administered at primary care clinics. It is therefore an appropriate and clinically relevant end-point, with regards to the worst cases of AOM with treatment failure. Proportion of PNSP decreased following vaccine introduction. However, these rates are also influenced by the rate at which physicians take samples for culture, which has been decreasing year by year from 2007 in Iceland. Our study mitigates such bias by measuring the treatment of AOM with treatment failure, most often due to resistant infections. There is therefore stron
+
 
 
 ### Impact on hospital admissions for otitis media (Paper V)
@@ -173,15 +193,14 @@ In [paper II](#paper2results), a large decrease in the incidence of acute otitis
 The incidence rate ratio between children in the vaccine eligible cohorts compared to children in the vaccine non-eligible cohorts was 0.60 (0.51-0.69), which translates to a 40% vaccine impact in this age-group. 
 Children three to four months of age may have already received the first dose of PHiD-CV10, but will not yet have received any direct benefit [@Nicholls2016]. 
 Thus the data strongly supports existence of a herd-effect for otitis media, and that vaccinating children at three, five and 12 months of age with PHiD-CV10 confers protection to children too young to be themselves directly protected.
+One previous study reported fewer positive pneumococcal cultures from samples taken from the middle ear of children younger than four months of age, following the introduction of pneumococcal conjugate vaccine in Isreal, suggesting a possible herd-effect [@Ben-Shimol2016].
 
 In [Paper VI](#paper6results), a time-series methodology with synthetic controls was applied to ascertain the PHiD-CV10 impact on otitis media visits in primary care.
-The study period was 2005-2015, at which point none of the vaccine eligible children had reached five years of age. 
+The study period was 2005-2015, during which none of the vaccine eligible children had reached five years of age. 
 The vaccine impact was estimated separately in children younger than one, one, two, three to four, five to nine, 10-14 and 15-19 years of age.
-
-
-
-
-A recent study reported fewer positive pneumococcal cultures from middle ear fluid samples in children <4 months of age after the introduction of PCV, suggesting a possible herd effect [21]. The results of our study strengthen that earlier suggestion.
+Among children five to nine years of age, the estimated vaccine impact was 11%, and was 17% in children 10-14 years of age.
+A statistically non-significant impact of 15% was noted among children 15-19 years of age. 
+This is consistent with a strong herd-effect of PHiD-CV10 against otitis media in unvaccinated older children. 
 
 ## Impact of PHiD-CV10 on tympanostomy tube placements (Paper IV)
 
