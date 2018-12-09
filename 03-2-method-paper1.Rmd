@@ -8,7 +8,7 @@ All children under eighteen years of age who visited Children's Hospital Iceland
 Children's Hospital Iceland's referral area was defined as a 100km driving distance from the hospital.
 Population demographic data for the referral area was obtained from Statistics Iceland (www.statice.is), as previously described in \@ref(statisticsiceland).
 
-Data was extracted from Landspitali University Hospital's [patient registry](patientregistry).
+Data was extracted from Landspitali University Hospital's [patient registry](#patientregistry).
 A visit was included in the study if an ICD-10 code of Nonsuppurative otitis media (H65) or Suppurative and unspecified otitis media (H66) was documented in the medical record, or if a child received one or more doses of ceftriaxone.
 All administered doses of ceftriaxone were systematically extracted from the hospital's medication administration system using the ATC code J01DD04.
 The ICD-10 diagnoses associated with the ceftriaxone administrations were then obtained from the patient registry.

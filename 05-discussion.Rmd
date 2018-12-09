@@ -1,6 +1,198 @@
 # Discussion {#discussion}
 
-- discuss the completeness of the data, the number of Icelanders in the study data vs. the total number of icelanders.
-- discuss the age distribution regarding the number of visits vs hospitalizations. 
+## Main findings
+
+* The pediatric pneumococcal vaccination program that was implemented in Iceland in 2011 achieved excellent coverage.
+Over 90% of all children in the vaccine eligible birth-cohorts received all three doses before 24 months of age.
+Prior to the introduction of the vaccination program, few children were vaccinated against pneumococcus and even fewer had received two or more doses of a pneumococcal conjugate vaccine. 
+
+* An impact of PHiD-CV10 introduction was detected on several different facets of otitis media incidence. 
+Pediatric primary care visits due to acute otitis media decreased by 21% and emergency department visits to Children's Hospital Iceland decreased by 12-21%.
+Hospital based treatment of otitis media with parenteral ceftriaxone decreased by 42%.
+
+* The incidence of outpatient antimicrobial prescriptions decreased by 8% following the introduction of PHiD-CV10.
+The cumulative incidence of antimicrobial prescription among Icelandic children was high. 
+Among children in the vaccine non-eligible cohorts, the incidence of antimicrobial prescriptions was 165 prescriptions per 100 person-years and over 88% of had filled at least one prescription before their fourth birthday.
+
+* The incidence of tympanostomy tube placements did not decrease following the introduction of PHiD-CV10, despite a measurable impact on otitis media visits to primary care and pediatric emergency departments and antimicrobial prescriptions.
+Approximately one-third of all Icelandic children undergo at least one tympanostomy tube procedure before five years of age.
+
+* Pediatric hospital admissions for pneumonia declined by 20% following PHiD-CV10 introduction.
+This happened within the context of a large increase in bronchiolitis cases in young children.
+Pneumonia hospitalizations declined among Icelanders 20-39 years of age, implying a strong herd-effect among adults likely to by the parents of young children.
+
+* Invasive pneumococcal disease requiring hospitalization decreased by 93% in the vaccine eligible cohorts compared to the vaccine non-eligible cohorts.
+No vaccine-type invasive disease was detected among the vaccinated cohorts.
+
+* The pediatric pneumococcal vaccination program was cost-effective and was associated with a direct net-savings of 2,000,000,000 ISK. 
+
+## Data collection and sources {#datasourcesdiscussion}
+
+The data used for the papers in this thesis were collected from several population based registries.
+Each record was associated with a unique study identification number that was created from the individual's national identification number by staff at the Icelandic Directorate of Health. 
+This allowed the data from the various registries to be reliably linked.
+
+The linkage between several large population based registries overcame a common limitation of epidemiological data. 
+Registries record information about an event that occurred, e.g. an antimicrobial prescription, a primary care visit or a hospital admission. 
+Because of this, they generally lack information about those individuals who did not experience the event.
+Epidemiological studies are therefore often forced to infer the number of individuals who did not experience an event, and the denominator for the total number of individuals at-risk -- individual level data on those who did not experience the event is missing. 
+
+Our data included the date of birth, date of death, as well as data on immigration and emigration of Icelandic children.
+Through linkage of the registries, individual level information of those who did not experience an event became available, and accurate time-based at-risk denominators could be constructed.
+This allowed the study data to be analysed using survival methods, and repeated events within the same individual taken into account.
+The study contains individual level information on 375,383 Icelandic citizens from 2005-2017.
+According to Statistics Iceland, the aggregate number of Icelandic citizens was 293,577 on the 1 January 2005, and 338,349 on the 1 January 2017. 
+
+Primary care and hospital visits associated with the study's ICD-10 diagnoses are discussed in more detail in the sub-chapters pertaining to the impact of PHiD-CV10.
+However, it is interesting to note the distribution of visits compared to hospitalizations.
+Children zero to five years of age are responsible for the vast majority of primary care and emergency department visits due to respiratory infections.
+However, adults 55 and older are responsible for a disproportionate number of hospitalizations (Figure \@ref(fig:density-age)).
+
 - discuss the vaccine registry, how no difference is occurring in pneumococcal vaccinations of adults
 - discuss how the 2009 and 2010 cohorts received vaccination late, almost like a catch-up. 
+
+## Epidemiology and impact of PHiD-CV10 on otitis media in Iceland (Papers I, II, III, V and VI)
+
+Following the introduction of PHiD-CV10, changes were noted in several facets of otitis media epidemiology.
+These changes were summarized in papers I, II, III, V and VI.
+
+### Epidemiology of acute otitis media in Iceland (Papers II and V)
+
+Acute otitis media is a common childhood disease.
+Its psychopathology and microbiology are discussed in chapter \@ref(acuteotitismediaintroduction).
+The epidemiology of acute otitis media visits to primary care was described in [paper II](#paper2).
+During the study period, the overall incidence of acute otitis media episodes among children zero to three years of age was 42 per 100 person-years.
+There was a large variation in the incidence rate between both gender, birth-cohort and age.
+The incidence was consistently higher in males than females, and was highest among children 8-11 and 12-15 months of age.
+
+The incidence of acute otitis media is highly variable between countries.
+In 2010, a multicenter study in Europe estimated the incidence rate among children under three years of age to be 31 per 100 person-years in Germany, 19 per 100 person-years in Italy, 39 per 100 person-years in Spain, 34 per 100 person-years in Sweden and 25 per 100 person-years in the United Kingdom [@Liese2014].
+Another study reported an incidence of 47 cases per 100 person-years in Sweden, prior to the introduction of pneumococcal conjugate vaccination [@Gisselsson-Solen2017].
+The highest published estimates of acute otitis media incidence come from the United States of America.
+From 2001-2011 the incidence rate was reported to be 80-125 episodes per 100 person-years [@Marom2014].
+This places Iceland above most European countries in the incidence of otitis media, but below the United States of America. 
+
+The variability described is likely due to many different factors.
+Acute otitis media is often a benign, self-limiting condition.
+The propensity to seek medical care may be influenced by several different cultural and socio-economic factors.
+Access and cost of healthcare may influence whether parents seek care for their child and may result in measurable changes in incidence between countries [@Hadley2003, @Smolderen2010].
+In Iceland, all permanent residents are provided health insurance by the government and there is excellent access to urgent care. 
+Children are provided healthcare free of charge.
+In Iceland, both parents are typically fully employed and the proportion of children attending daycare is high. 
+These factors may push parents to seek early care for otitis media.
+The employment rate of Icelandic adults 20-64 years of age is 91% and 84% for males and females respectively, which means that Iceland has the highest employment rate in Europe [@Eurostat2018].
+Iceland is ranked third in formal daycare attendance by The Organisation for Economic Co-operation and Development (OECD), with up to 60% of children under three years of age attending 38 hours per week or longer.
+This is compared to the OECD average of 35% attendance for 30 hours [@Organisationforeconomicco-operationanddevelopment2013].
+Both daycare attendance and the number of hours per week are known risk factors for acute otitis media [@Ramakrishnan2007] 
+These factors should result in a higher incidence of Iceland relative to other countries.
+
+However, certain factors in the study design are likely to decrease the observed incidence.
+A previous study in Iceland estimated the incidence of acute otitis media using a parental questionnaire and found the incidence rate to be 55-80 episodes per 100 person-years [@Gudnason2013]
+This suggests that not all otitis media cases are being brought to primary care physicians, and are therefore not counted in our study.
+Of those episodes of acute otitis media that present for physician consultation, some may be missed in our study due to not having access data regarding visits to specialists. 
+Additionally, many of the studies being compared to use the number of acute otitis media visits as the numerator, and therefore count visits for re-evaluations of the same otitis media episode. 
+Our study excludes visits within 30 days of the index visit to better approximate the number of acute otitis media episodes resulting in physician consultation.
+
+### Impact on primary care visits for otitis media (Papers II and VI)
+
+Two separate population based studies estimated the impact of PHiD-CV10 on otitis media visits in primary care.
+The studies used different methods and complemented each other with regards to underlying assumptions, weaknesses and strengths.
+
+In [paper II](#paper2results), the impact of PHiD-CV10 introduction was estimated as 1 - hazard ratio of otitis media visits between children in the last vaccine non-eligible cohort and last vaccine eligible cohort. 
+The hazard ratio was obtained from an Andersen-Gill regression model that incorporated individual level information on otitis media visits.
+Correlation between successive visits of the same child were accounted for using sandwich variance estimates.
+This approach allowed for accurate estimation of an individual child's hazard of otitis media and accounted for differences in follow-up time. 
+It accurately corrected for the effect of age, as age was the underlying time frame of the model.
+The estimated vaccine impact using this model was 21%.
+The vaccine impact was shown to protect against a child's first and second visit. 
+One criticism of this approach is that it does not account for trends in time.
+In Figure \@ref(fig:figure-results-paper2-hazard), there is a suggestion of a slight decreasing trend in the hazard of acute otitis media, among children in the vaccine non-eligible cohorts.
+Accounting for this is unlikely to affect the overall results, but may change the study's point-estimate. 
+
+In [paper VI](#paper6results), a time-series methodology was used to emphasize correction for secular trends.
+A synthetic control framework was used, in which the relationship between otitis media visits and visits for other indications was estimated in the pre-vaccine period, and this relationship was used to predict the number of otitis media visits which would have occurred in the post-vaccine period, had PHiD-CV10 not been introduced.
+This approach accurately accounts for secular trends, and gives a robust estimate of the vaccine impact.
+It also allows estimation of herd-effect in older children who were not vaccine eligible in the post-vaccine period. 
+However, unlike the individual based Andersen-Gill model, it is run on aggregate monthly data and is run separately for each age-group which cannot be more granular than one year intervals.
+The vaccine impact is estimated as 1 - rate ratio between the observed number of otitis media visits and the predicted number of otitis media visits.
+The vaccine impact was 18% among children younger than one year of age, 10% among one year olds, 9% among two year olds and 14% among children three to four years of age. 
+
+Despite the different methodologies, the results of [paper II](#paper2results) and [paper VI](#paper6results) are consistent.
+The point-estimated in both papers are similar and the diminishing vaccine impact seen in older children with the time-series methodology is mirrored in the incidence rate ratios between the vaccine eligible and vaccine non-eligible birth-cohorts displayed in Figure \@ref(fig:figure-results-paper2-incidence).
+
+########## Paragraph comparing our results to the results of others ############
+ 
+In any vaccine ecology study, one must be careful interpreting the observed effects, as confounding may have contributed to over- or underestimation of the estimated vaccine impact.
+The impact of PHiD-CV10 on acute otitis media in Iceland is quantified using two different methods that complement one another. 
+Both are informed by population based data on all otitis media visits to the primary care system in Iceland.
+A visit is defined to be associated with otitis media, based on the diagnostic codes that were recorded during the visit. 
+The same diagnostic coding system, ICD-10, has been in use in Iceland during the entire study period and clinical information has been documented in the same elctronic health record software, *Saga*.
+There does not seem to be any reason to suspect that a systematic drift has occurred in the diagnostic classification of children presenting to primary care physicians during the study period that could confound the observed vaccine impact. 
+
+To the authors' knowledge, no change in a child's access to urgent care within the primary care system has occurred during the study period.
+However, access to specialist paediatricians at private clinics has increased from 42,916 visits in 2005 to 58,048 visits in 2016 (www.statice.is). 
+These visits were not accessible to the study's authors and not included in the study's data. 
+This could be considered a confounder to the observed vaccine impact in [paper II](#paper2), as some of the observed decrease in otitis media cases could hypothetically be explained by children increaseingly seeking care outside the primary care system.
+This is unlikely, as urgent care provided by paediatricians has not increased during the study period, only appointments (personal correspondence with the head of the only private pediatrician clinic in Iceland providing urgent care).
+Even if urgent care visits had been diverted from primary care to private practice pediatricians, this would not confound the estimates of [paper VI](#paper6), unless children presenting with otitis media were preferentially diverted compared to children presenting with other diagnoses. 
+There is nothing to suggest this.
+
+### Impact on pediatric emergency department visits for acute otitis media (Paper I)
+
+Emergency department visits 
+ Regrettably we do not have concurrent data on pneumonia-related hospital visits, and are therefore unable to evaluate the relationship between decreased ceftriaxone treatment episodes and pneumonia cases. Nevertheless, in previous studies, pneumonia-related visits to the Children's Hospital by children under 2 years of age were shown to have decreased from 42.2 to 32.9 visits per 1000 person-years in the 2-year period prior to and pursuant to the vaccination22.
+	Randomized controlled trials (RCT) have shown mixed results regarding the protective effect of PCV against AOM, with effect sizes ranging from 7.8% (95%CI, 5.4-10.2%)23, 6% (95%CI -4-16%)24, 17% (95%CI -2-33%) 25 and 0.4% (95%CI, -19.4-15.6%)26.  These studies evaluated the 7-valent pneumococcal conjugate vaccine. However, three RCTs have studied the effect of a higher valent vaccine conjugate with H. influenzae Protein D, and found a reduction in all cause AOM by 16.1% (95%CI -1.1-30.4%)27, 24% (95%CI 8.7-36.7%)28 and 33.6% (95%CI 20.8-44.3)29. Furthermore, observational studies have consistently shown a larger effect size when compared to RCT's, which is hypothesized to be due to indirect herd-effect among the non-vaccinated 3,30–32.
+	The study is strengthened by its long observation period. AOM visits and ceftriaxone use for AOM remained largely unchanged in the four years prior to vaccine introduction. Furthermore, there was immediate high vaccine uptake following introduction and a clear contrast in vaccination rates between the pre- and post-vaccine periods. This increases our confidence in the relationship between vaccine introduction and the observed decrease. Data was complete over the study period, and was systematically collected using unique personal identification numbers. 
+g reason to believe a priori that PHiD-CV10 would lead to a reduction of AOM with treatment failure.
+	The number of episodes of AOM treated with ceftriaxone in Iceland have decreased following introduction of PHiD-CV10 into the pediatric vaccination program. Visits to The Children's Hospital due to AOM have also decreased. The results strongly suggest a decrease in serious AOM with treatment failure due to antibiotic-resistant pneumococcus following vaccination.
+
+
+### Impact on outpatient antimicrobial prescriptions for otitis media (Paper III)
+
+### Impact on acute otitis media with treatment failure (Paper I)
+
+In this study, we show a significant reduction in ceftriaxone use in the treatment of AOM at The Children's Hospital following introduction of PHiD-CV10 into the pediatric vaccination program in Iceland. When ceftriaxone is used in the treatment of AOM at the Children’s Hospital, it is done exclusively in cases of treatment failure, difficult recurrent infections or in culture proven antibiotic-resistant pneumococcus. The data suggests that this reduction is due to the effect of vaccination and is associated with a decrease in the prevalence of antibiotic-resistant pneumococcus. Before the introduction of PHiD-CV10 the proportion of PNSP isolates from middle ear was 48.7% of which 97.2% were serotypes covered by the vaccine20. Previous studies have shown a decrease in resistant clones of pneumococci following introduction of PCV18,19. This is mirrored in resistance rates published by the national reference laboratory, at the Department of Clinical Microbiology, Landspitali University Hospital. Of all pneumococcal isolates collected in 2015 only 22% were PNSP21.
+Because this is a retrospective observational study, causation between vaccine introduction and the observed decrease in AOM visits and ceftriaxone use cannot be directly inferred. However, this conclusion is supported by several observations. Ceftriaxone use decreased only for indications that would be expected if associated with the introduction of PHiD-CV10. We show that there was a significant decrease in the use of ceftriaxone to treat AOM and pneumonia in children 0-3 years of age. We did not observe a similar significant decrease in ceftriaxone use for other diagnoses, although there was a trend towards decrease. Ceftriaxone is the empiric treatment of choice for septic infants in The Children’s Hospital Iceland. Therefore, the observed decrease in ceftriaxone use for other diagnoses may represent a decrease in the number of children with symptoms of sepsis who visit The Children's Hospital. 
+	No changes in institutional guidelines regarding the treatment of AOM with treatment failure or use of ceftriaxone were introduced during the study period. We tested whether significant change had occurred in ceftriaxone use by age group and found a significant decrease only in the youngest children 0-3 years of age. The rate of ceftriaxone use regardless of indication remained unchanged in children 4-7, 8-11 and 12-17 years of age. This supports the hypothesis that the observed decrease is associated with PHiD-CV10, and is not due to an independent shift in hospital practices. 
+		The Children's Hospital is Iceland's only pediatric referral hospital and also functions as a walk-in clinic for the capital area. To our knowledge, no change in guidelines or practices regarding referrals to The Children's Hospital occurred that could explain the observed decrease in AOM visits and ceftriaxone treatment. Even if this was the case, increased outpatient treatment of pediatric disease would likely cause an overall decrease in visits to The Children's Hospital and a higher proportion of complex cases. This would be expected to cause an increase in the relative use of ceftriaxone for AOM. In contrast, we show that there has been a steady increase in the total number of visits to The Children's Hospital over the study period, but both an absolute and relative decrease in the number of visits for AOM. Similar findings have previously been published by our research group22.The observed reduction in ceftriaxone use for AOM remains significant after correcting for an observed decrease in AOM visits.
+		Drug administration at The Children's Hospital was systematically documented with standardized procedural codes that did not change during the study period. This enabled us to retrieve exact data on AOM and ceftriaxone treatment on all individuals.  The observation that ceftriaxone use for other indications did not change significantly between vaccine periods is consistent with our expectations, as ceftriaxone remains the empirical treatment of choice for severe infections at the Children’s Hospital.
+		
+		To our knowledge, this is the first study to show a significant decrease in AOM with treatment failure. AOM with treatment failure is not exactly defined in the literature. Proxy measurements are therefore needed. Ceftriaxone is avoided unless absolutely required and is not administered at primary care clinics. It is therefore an appropriate and clinically relevant end-point, with regards to the worst cases of AOM with treatment failure. Proportion of PNSP decreased following vaccine introduction. However, these rates are also influenced by the rate at which physicians take samples for culture, which has been decreasing year by year from 2007 in Iceland. Our study mitigates such bias by measuring the treatment of AOM with treatment failure, most often due to resistant infections. There is therefore stron
+
+
+### Impact on hospital admissions for otitis media (Paper V)
+
+### Evidence of herd-effect of PHiD-CV10 on the incidence of otitis media in the unvaccinated population (Papers II and VI)
+
+Vaccination decreases the susceptibility of vaccinated individuals to become infected, and later pass the pathogen to others. 
+Therefore, there is a strong theoretical reason to believe that introducing PHiD-CV10 into the population could confer indirect protection against pneumococcal disease to non-vaccinated members of the population.
+In vaccine studies, this indirect effect is termed herd-effect, and has been convincingly demonstrated for invasive pneumococcal disease following introduction of pneumococcal conjugate vaccines.
+There is a paucity of published literature demonstrating herd-effect against acute otitis media following pneumococcal conjugate vaccine introduction [@Loo2014].
+
+In [paper II](#paper2results), a large decrease in the incidence of acute otitis media was found among children under four months of age.
+The incidence rate ratio between children in the vaccine eligible cohorts compared to children in the vaccine non-eligible cohorts was 0.60 (0.51-0.69), which translates to a 40% vaccine impact in this age-group. 
+Children three to four months of age may have already received the first dose of PHiD-CV10, but will not yet have received any direct benefit [@Nicholls2016]. 
+Thus the data strongly supports existence of a herd-effect for otitis media, and that vaccinating children at three, five and 12 months of age with PHiD-CV10 confers protection to children too young to be themselves directly protected.
+
+In [Paper VI](#paper6results), a time-series methodology with synthetic controls was applied to ascertain the PHiD-CV10 impact on otitis media visits in primary care.
+The study period was 2005-2015, at which point none of the vaccine eligible children had reached five years of age. 
+The vaccine impact was estimated separately in children younger than one, one, two, three to four, five to nine, 10-14 and 15-19 years of age.
+
+
+
+
+A recent study reported fewer positive pneumococcal cultures from middle ear fluid samples in children <4 months of age after the introduction of PCV, suggesting a possible herd effect [21]. The results of our study strengthen that earlier suggestion.
+
+## Impact of PHiD-CV10 on tympanostomy tube placements (Paper IV)
+
+## Impact of PHiD-CV10 on pneumonia in Iceland (Papers V and VI)
+
+### Impact on pneumonia hospitalizations (Papers V and VI)
+
+### Evidence of herd-effect of PHiD-CV10 on the incidence of pneumonia hospitalization in the unvaccinated population (Papers V and VI)
+
+## Impact of PHiD-CV10 on invasive pneumococcal disease (Papers V and VI)
+
+## Cost-effectiveness of introduction of PHiD-CV10 into the Icelandic pediatric vaccination program (Paper VI)
+
+
