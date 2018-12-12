@@ -1,22 +1,37 @@
-## Impact and cost-benefit analysis (Paper VI){#paper6}
+## Impact and cost-effectiveness analysis (Paper VI){#paper6}
 
-The objective of Paper VI was estimate the impact of PHiD-CV10 on pneumonia and invasive pneumococcal disease (IPD) hospitalizations in all age-groups, and calculate the cost-benefit of PHiD-CV10 introduction.
-Paper VI is a cost-benefit analysis of PHiD-CV10 based on whole population observational data.
-The study period is from January 1, 2005 to December 31, 2017.
-The study population included all permanent Icelandic citizens.
-Cost-benefit was estimated for three disease categories; invasive pneumococcal disease (IPD), pneumonia and otitis media, and was stratified by age-groups; 0-4 years of age, 5-19, 20-39, 40-64, 65-79 and 80+.
+The objective of Paper VI was estimate the population impact of PHiD-CV10 on several aspects of pneumococcal disease and calculate the cost-effectiveness of PHiD-CV10 introduction. 
+Considered were otitis media visits to primary care among children 0-19 years of age, and hospitalizations due to pneumonia and invasive pneumococcal disease among the whole population. 
+The study period was from 1 January 2005 to 31 December 2017 and the study population included all Icelandic citizens.
 The data was analysed as a time-series, and incorporated synthetic controls. 
 
-Data were extracted from several registries.
-The impact on otitis media was estimated among children 0-19 years of age.
-Primary care visits with ICD-10 diagnoses compatible with otitis media (H65, H66, H70, H72) were extracted from the Primary Care Registry.
+### Data sources 
+
+Data were extracted from several population based registries.
+Primary care visits with ICD-10 diagnoses compatible with otitis media (H65, H66, H70, H72) were extracted from the Primary Care Registry. 
 The observation period was restricted to 2005-2015, as the Primary Care Registry has not been updated for 2016 and 2017.
-The impact on hospitalized pneumonia and IPD was estimated for all age-groups and for the whole study period. Hospitalizations with ICD-10 diagnoses compatible with pneumonia (J09-J18) were obtained from Landspitali University Hospital's patient registry.
+Data regarding hospitalized pneumonia and invasive pneumococcal disease were extracted from Landspitali University Hospital's patient registry.
 Microbiological data were extracted from a database maintained by the Department of Clinical Microbiology at Landspitali University Hospital and linked to the patient registry.
-A hospitalization was considered to be due to IPD if associated with culture or PCR confirmed *Streptococcus pneumoniae* sampled from joint fluid, bone, cerebrospinal fluid or blood, regardless of ICD-10 discharge diagnosis.
+A hospitalization was considered to be due to invasive pneumococcal disease if associated with culture or PCR confirmed *Streptococcus pneumoniae* sampled from joint fluid, bone, cerebrospinal fluid or blood, regardless of ICD-10 discharge diagnosis.
+Hospitalizations with ICD-10 diagnoses compatible with pneumonia (J09-J18) were obtained directly from the patient registry. 
 The aggregate number of visits and hospitalizations per calendar-month for diagnoses unrelated to *Streptococcus pneumoniae* infections were also extracted from both registries and used as synthetic controls (Table \@ref(tab:table-icd-synthetic)).
 
-The cost-benefit analysis was completed in two separate steps. 
+Data regarding the cost of hospitalization were obtained directly from the patient registry.
+For each hospitalization, a detailed breakdown of cost was available, which was extracted for each of the hospitalizations included in the study. 
+No cost data is available for primary care visits.
+Because Children's Hospital Iceland's pediatric emergency department serves as a walk-in clinic for the greater capital area, the distribution of costs for otitis media visits to the emergency department was assumed to mirror that of primary care visits.
+The cost of otitis media visits to Children's Hospital Iceland was extracted from the patient registry. 
+The consumer price index for medical care obtained from Statistics Iceland was used to convert all direct healthcare costs to constant 2011 ISK.
+
+The deciles of regular total wage for the calendar-year 2011, were obtained from Statistics Iceland.
+These were optimally fitted to a lognormal distribution to obtain a continoues distribution of wage. 
+The number of days of work lost were calculated using distributional assumptions. 
+For each case of otitis media in primary care, the days of work lost by a parent or guardian were assumed to follow a Poisson distribution with mean equalling one.
+For each pneumonia or invasive pneumococcal disease hospitalization, the days of work lost was assumed to equal the sum of the hospital length of stay, and a Poisson distribution with mean equalling one. 
+
+### Statistical analysis
+
+The cost-effectiveness analysis was completed in two separate steps. 
 First, the impact of PHiD-CV10 introduction into the pediatric vaccination program in Iceland was estimated.
 This was accomplished using a previously published Bayesian time-series methodology [@Bruhn2017; @Shioda2018a].
 The pre-vaccine period was defined as January 1, 2005 to December 31, 2010, and the post-vaccine period as April 1, 2013 to December 31, 2017. 
@@ -38,9 +53,16 @@ This relationship was used to predict the trend in the post-vaccine period, had 
 Finally, a two-step model was fitted, using a seasonal and trend decomposition (STL) and principal component analysis (PCA) [@Shioda2018a].
 STL was used to extract a smoothed trend for each of the synthetic controls.
 PCA was then used to extract the first principal component, which was used as a covariate in the final prediction model.
-
 Leave-one-out cross-validation (LOOCV) was used to calibrate the models, using data from the pre-vaccine period.
 The LOOCV was also used to calculate the average point-wise likelihood for each model, diagnostic category and age-group. 
-The average point-wise likelihoods were used as weights in a Bayesian model stacking procedure, which produced the final stacked model used in the analysis. 
+The average point-wise likelihoods were used as weights in a Bayesian model stacking procedure, which produced the final stacked model used in the analysis.
 
+The stacked model was used to generate a posterior distribution of the number of cases which would have occurred, had the vaccine not been introduced. 
+From this posterior distribution, 10,000 estimates of the number of cases per calendar-month in post-vaccine period were drawn, of which the first 2,000 were discarded for optimal burn-in. 
+The observed number of cases were subtracted from the remaining 8,000 draws, which produced 8,000 draws of the total number of cases prevented by the vaccine introduction. 
+For each draw, the cumulative sum of the number of prevented cases was calculated, and the median and 95% credible intervals extracted.
+
+The direct cumulative cost associated with the vaccination was calculated by bootstraping from the distribution of costs per case, and multiplying by the number of prevented cases.
+From this the cost of the vaccine was subtracted. 
+This resulted in 8,000 posterior draws of the estimated vaccine cost, from which the median and 95% credible intervals were extracted.
 

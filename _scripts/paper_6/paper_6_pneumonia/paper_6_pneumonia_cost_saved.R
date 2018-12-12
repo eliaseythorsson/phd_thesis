@@ -44,6 +44,31 @@ post_period       <- as.Date(c('2011-01-01', '2017-12-01')) # Range from the int
 eval_period       <- as.Date(c('2013-01-01', '2017-12-01')) # Range over which rate ratio calculation will be performed.
 year_def   <- 'cal_year'  #Can be cal_year to aggregate results by Jan-Dec; 'epi_year' to aggregate July-June
 
+### Consumer Price Index found at www.statice.is ### 
+
+consumer_price_index <- bind_cols( #consumer price index
+    date = as.character(seq.Date(from = as.Date("2005-01-01"), to = as.Date("2017-12-01"), by = "months")),
+    cpi =c(140.3, 141.9, 142.5, 142.9, 142.8, 142.5, 143.3, 143.6, 143.8, 144.6, 144.7, 144.4, 145, 145.1, 145.9, 146.7, 147.3, 148.5, 150.1, 150.2, 150, 149.7, 149.6, 150.4, 151.3, 151.7, 151.9, 152.1, 151.8, 152.3, 153.8, 154.2, 154.8, 154.7, 155.4, 155.6, 158, 158.2, 158.4, 162.6, 162.9, 164, 164.4, 163.3, 164.1, 167.2, 172.3, 178.6, 183.3, 183.2, 182.3, 180.4, 182.4, 184.2, 186.1, 186.5, 187.7, 189.5, 190.1, 190.4, 193.2, 193.5, 196.1, 196.4, 197, 198, 197.5, 197.4, 197.7, 197, 197.1, 197.1, 198.3, 196.3, 196.6, 197.2, 197, 199.9, 200.4, 198.2, 199.3, 199.5, 199.8, 200.9, 203.8, 204.5, 203.9, 204.8, 204.9, 205.6, 205, 204.4, 202.7, 205.3, 206.7, 207.6, 210.7, 213.3, 213.9, 213.7, 209.9, 210.4, 211.4, 212, 208.6, 210.2, 211.3, 211.8, 217.2, 217.9, 218.8, 221.4, 222.1, 222.1, 223.6, 223.6, 223.7, 224.1, 224.2, 224.5, 224.9, 225.6, 226.5, 227.5, 227, 226.7, 227.6, 227.9, 227.5, 228, 228.6, 228.7, 229.8, 230.4, 232.3, 232.7, 232.3, 233.1, 233.4, 233.3, 232.1, 232.2, 231.5, 232.2, 231, 230.7, 232.3, 232, 234, 232.2, 232.8, 233.9, 233.3, 234.6, 235.6, 235.6),
+    cpi_jan2011 = rep(198.3, 156)
+)
+
+### Cost of vaccine found in personal communication with Sóttvarnalæknir ### 
+
+cost_vaccine <- bind_cols(
+    price = c(rep(0, 72), rep(5505, 12), rep(5153, 12), rep(5064, 12), rep(5050, 12), rep(5202, 12), rep(4517, 12), rep(3739, 12)),
+    number_doses = c(rep(0, 72), rep(7447/12, 12), rep(12557/12, 12), rep(12887/12, 12), rep(12953/12, 12), rep(12569/12, 12), rep(12209/12, 12), rep(11957/12, 12)),
+    consumer_price_index) %>%
+    mutate(price = price * number_doses * cpi_jan2011/cpi) %>%
+    .$price
+
+### Parameters from lognormal distribution found by fitting decils of wage from www.statice.is ... ###
+### ... to lognormal distribution using the get.lnorm.par() function from the rriskDistributions package ###
+dist_wage <- rlnorm(n = 1000, meanlog = 12.85443, sdlog = 0.35430) 
+
+wage_per_day <- 0.010385 #standard devision of wage to get wage/day
+
+### Packages ###
+
 packages <-
     c(
         'parallel',
@@ -161,14 +186,6 @@ aes(x = date, y = `50%`)) +
     geom_ribbon(aes(ymin = `2.5%`, ymax = `97.5%`), alpha = 0.3) +
     scale_y_continuous(labels = scales::comma)
 
-### Consumer Price Index found at www.statice.is ### 
-
-consumer_price_index <- bind_cols( #consumer price index
-    date = as.character(seq.Date(from = as.Date("2005-01-01"), to = as.Date("2017-12-01"), by = "months")),
-    cpi =c(140.3, 141.9, 142.5, 142.9, 142.8, 142.5, 143.3, 143.6, 143.8, 144.6, 144.7, 144.4, 145, 145.1, 145.9, 146.7, 147.3, 148.5, 150.1, 150.2, 150, 149.7, 149.6, 150.4, 151.3, 151.7, 151.9, 152.1, 151.8, 152.3, 153.8, 154.2, 154.8, 154.7, 155.4, 155.6, 158, 158.2, 158.4, 162.6, 162.9, 164, 164.4, 163.3, 164.1, 167.2, 172.3, 178.6, 183.3, 183.2, 182.3, 180.4, 182.4, 184.2, 186.1, 186.5, 187.7, 189.5, 190.1, 190.4, 193.2, 193.5, 196.1, 196.4, 197, 198, 197.5, 197.4, 197.7, 197, 197.1, 197.1, 198.3, 196.3, 196.6, 197.2, 197, 199.9, 200.4, 198.2, 199.3, 199.5, 199.8, 200.9, 203.8, 204.5, 203.9, 204.8, 204.9, 205.6, 205, 204.4, 202.7, 205.3, 206.7, 207.6, 210.7, 213.3, 213.9, 213.7, 209.9, 210.4, 211.4, 212, 208.6, 210.2, 211.3, 211.8, 217.2, 217.9, 218.8, 221.4, 222.1, 222.1, 223.6, 223.6, 223.7, 224.1, 224.2, 224.5, 224.9, 225.6, 226.5, 227.5, 227, 226.7, 227.6, 227.9, 227.5, 228, 228.6, 228.7, 229.8, 230.4, 232.3, 232.7, 232.3, 233.1, 233.4, 233.3, 232.1, 232.2, 231.5, 232.2, 231, 230.7, 232.3, 232, 234, 232.2, 232.8, 233.9, 233.3, 234.6, 235.6, 235.6),
-    cpi_jan2011 = rep(198.3, 156)
-)
-
 lsh <- 
     lsh %>%
     filter(
@@ -193,47 +210,78 @@ lsh <-
 
 lsh <- data.frame(lsh)
 
-cost <- setNames(lapply(
-    X = groups,
-    FUN = function(group) {
-        sample(x = mean(sample(
-            lsh[lsh$age_group == group, "cost_total"],
-            size = 100,
+dist_absent_days <- setNames(lapply(
+    groups,
+    FUN = function(group, lsh) {
+        lsh <- lsh[lsh$age_group == group, "dur_stay_hours"]
+        sample(
+            x = ceiling(lsh/24 + rpois(n = length(lsh), lambda = 1)),
+            size = 8000,
             replace = T
-        )),
-        size = 156 * 8000,
-        replace = T)
-    }
-),
-groups)
+        )},
+    lsh = lsh), groups)
 
-### Cost of vaccine found in personal communication with Sóttvarnalæknir ### 
+indirect_cost_vector <- setNames(lapply(
+    groups,
+    FUN = function(group, dist_absent_days, dist_wage, wage_per_day) {
+        dist_absent_days[[group]] * dist_wage * wage_per_day
+    },
+    dist_absent_days = dist_absent_days,
+    dist_wage = dist_wage,
+    wage_per_day = wage_per_day), groups)
 
-cost_vaccine <- bind_cols(
-    price = c(rep(0, 72), rep(5505, 12), rep(5153, 12), rep(5064, 12), rep(5050, 12), rep(5202, 12), rep(4517, 12), rep(3739, 12)),
-    number_doses = c(rep(0, 72), rep(7447/12, 12), rep(12557/12, 12), rep(12887/12, 12), rep(12953/12, 12), rep(12569/12, 12), rep(12209/12, 12), rep(11957/12, 12)),
-    consumer_price_index) %>%
-    mutate(price = price * number_doses * cpi_jan2011/cpi) %>%
-    .$price
-
-cumsum_cost_func <- function(group, quantiles, cost) {
+cumsum_cost_func <- function(group, quantiles, direct_cost, indirect_cost_vector){
+    
     is_post_period <- which(time_points >= post_period[1])
     is_pre_period <- which(time_points < post_period[1])
-    
-    #Cumulative sum of prevented cases
+    direct_cost <- direct_cost[direct_cost$age_group == group, "cost_total"]
+    indirect_cost_vector <- indirect_cost_vector[[group]]
     cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
-    case_cost <- cost[[group]]
-    cost_saved <- cases_prevented * case_cost
-    cumsum_cost_saved_post <- apply(cost_saved[is_post_period,], 2, cumsum)
-    cumsum_cost_saved_pre <-
-        matrix(0,
-               nrow = nrow(cost_saved[is_pre_period,]),
-               ncol = ncol(cost_saved[is_pre_period,]))
     
-    cumsum_cost_saved <- rbind(cumsum_cost_saved_pre, cumsum_cost_saved_post)
-    cumsum_cost_saved <-
+    #Direct costs
+    direct_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, direct_cost){
+            sum(sample(
+                x = direct_cost,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        direct_cost = direct_cost), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    cumsum_direct_cost_saved_post <- apply(direct_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_direct_cost_saved_pre <- matrix(0,
+                                           nrow = nrow(direct_cost_saved[is_pre_period,]),
+                                           ncol = ncol(direct_cost_saved[is_pre_period,])
+    )
+    
+    cumsum_direct_cost_saved <- rbind(cumsum_direct_cost_saved_pre, cumsum_direct_cost_saved_post)
+    
+    #Indirect costs
+    indirect_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, indirect_cost_vector){
+            sum(sample(
+                x = indirect_cost_vector,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        indirect_cost_vector = indirect_cost_vector), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    cumsum_indirect_cost_saved_post <- apply(indirect_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_indirect_cost_saved_pre <- matrix(0,
+                                             nrow = nrow(indirect_cost_saved[is_pre_period,]),
+                                             ncol = ncol(indirect_cost_saved[is_pre_period,])
+    )
+    
+    cumsum_indirect_cost_saved <- rbind(cumsum_indirect_cost_saved_pre, cumsum_indirect_cost_saved_post)
+    cumsum_direct_cost_saved <- cumsum_direct_cost_saved + cumsum_indirect_cost_saved
+    
+    cumsum_direct_cost_saved <-
         t(apply(
-            cumsum_cost_saved,
+            cumsum_direct_cost_saved,
             1,
             quantile,
             probs = c(0.025, 0.5, 0.975),
@@ -245,31 +293,66 @@ cumsum_cost_saved <-
     sapply(groups,
            FUN = cumsum_cost_func,
            quantiles = quantiles_full,
-           cost = cost,
+           direct_cost = lsh, 
+           indirect_cost_vector = indirect_cost_vector,
            simplify = 'array')
 
-cumsum_cost_all_func <- function(group, quantiles, cost) {
+cumsum_cost_all_func <- function(group, quantiles, direct_cost, indirect_cost_vector){
     is_post_period <- which(time_points >= post_period[1])
     is_pre_period <- which(time_points < post_period[1])
     
-    #Cumulative sum of prevented cases
+    direct_cost <- direct_cost[direct_cost$age_group == group, "cost_total"]
+    indirect_cost_vector <- indirect_cost_vector[[group]]
     cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
-    case_cost <- cost[[group]]
-    cost_saved <- cases_prevented * case_cost
-    cumsum_cost_saved_post <- apply(cost_saved[is_post_period,], 2, cumsum)
-    cumsum_cost_saved_pre <-
-        matrix(0,
-               nrow = nrow(cost_saved[is_pre_period,]),
-               ncol = ncol(cost_saved[is_pre_period,]))
     
-    cumsum_cost_saved <- rbind(cumsum_cost_saved_pre, cumsum_cost_saved_post)
+    #Direct costs
+    direct_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, direct_cost){
+            sum(sample(
+                x = direct_cost,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        direct_cost = direct_cost), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    cumsum_direct_cost_saved_post <- apply(direct_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_direct_cost_saved_pre <- matrix(0,
+                                           nrow = nrow(direct_cost_saved[is_pre_period,]),
+                                           ncol = ncol(direct_cost_saved[is_pre_period,])
+    )
+    
+    cumsum_direct_cost_saved <- rbind(cumsum_direct_cost_saved_pre, cumsum_direct_cost_saved_post)
+    
+    #Indirect costs
+    indirect_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, indirect_cost_vector){
+            sum(sample(
+                x = indirect_cost_vector,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        indirect_cost_vector = indirect_cost_vector), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    cumsum_indirect_cost_saved_post <- apply(indirect_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_indirect_cost_saved_pre <- matrix(0,
+                                             nrow = nrow(indirect_cost_saved[is_pre_period,]),
+                                             ncol = ncol(indirect_cost_saved[is_pre_period,])
+    )
+    
+    cumsum_indirect_cost_saved <- rbind(cumsum_indirect_cost_saved_pre, cumsum_indirect_cost_saved_post)
+    cumsum_direct_cost_saved <- cumsum_direct_cost_saved + cumsum_indirect_cost_saved
 }
 
 cumsum_cost_all_saved <-
     setNames(lapply(groups,
            FUN = cumsum_cost_all_func,
            quantiles = quantiles_full,
-           cost = cost), groups)
+           direct_cost = lsh,
+           indirect_cost_vector = indirect_cost_vector), groups)
 
 cumsum_cost_all_saved <- Reduce("+", cumsum_cost_all_saved)
 
