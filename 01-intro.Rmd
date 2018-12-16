@@ -1,6 +1,7 @@
 # Introduction {#intro}
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE, error = FALSE}
+knitr::opts_chunk$set(echo = FALSE, error = FALSE, message = FALSE, warning = FALSE)
 library(knitr)
 library(tidyverse)
 
@@ -39,7 +40,20 @@ data_frame(
     "Principal component analysis",
     "Seasonal and trend decompisition using LOESS",
     "Leave-one-out cross-validation",
-    "Organisation for Economic Co-operation and Development"
+    "Organisation for Economic Co-operation and Development",
+    "Quality-adjusted life-years",
+    "International Society for Pharmacoeconomics and Outcome Research",
+    "Cost-benefit analysis",
+    "Cost-effectiveness analysis",
+    "Cost-utility analysis",
+    "23-valent pneumococcal polysaccharide vaccine",
+    "Pneumococcal conjugate vaccine",
+    "7-valent pneumococcal conjugate vaccine",
+    "10-valent pneumococcal conjugate vaccine",
+    "11-valent pneumococcal conjugate vaccine",
+    "13-valent pneumococcal conjugate vaccine",
+    "Cost-effectiveness acceptability curve",
+    "Probabilistic sensitivity analysis"
     ),
     Abbreviation = c(
     "AOM",
@@ -66,7 +80,20 @@ data_frame(
     "PCA",
     "STL",
     "LOOCV",
-    "OECD"
+    "OECD",
+    "QALY",
+    "ISPOR",
+    "CBA",
+    "CEA",
+    "CUA",
+    "PPV-23",
+    "PCV",
+    "PCV7",
+    "PCV10",
+    "PCV11",
+    "PCV13",
+    "CEAC",
+    "PSA"
     )
     ) %>%
     arrange(Term) %>% # i.e. alphabetical order by Term
@@ -530,16 +557,16 @@ Even if the study were to be considered randomized, it is unclear how to interpr
 ```{r table-rct-aom}
 knitr::kable(
     data.frame(
-        study = c("Black, 2000 & Fireman, 2003", "Dagan, 2001", "Eskola, 2001", "Kilpi, 2003", "Prymula, 2006", "O'Brien, 2008"),
+        study = c("[@Black2000; @Fireman2003]", "[@Dagan2001]", "[@Eskola2001]", "[@Kilpi2003]", "[@Prymula2006]", "[@OBrien2008]"),
         vaccine = c("PCV7 (CRM197)", "PCV9 (CRM197)", "PCV7 (CRM197)", "PCV7 (MOMPC)", "PCV9 (HiD)", "PCV7 (CRM197"),
         study_ascertain = c("Oct 1995-Aug 1998", "Unclear", "Dec 1995-Apr 1997", "Dec 1995-Apr 1997", "Oct 2000-Sep 2002", "Apr 1997-Aug 2000"),
         country = c("United States", "Isreal", "Finland", "Finland", "Czech Republic & Slovakia", "United States"),
         no_child = c(37868, 264, 1662, 1666, 4968, 856),
-        efficacy = c("7.8% (5.4%-10.2%)", "17% (-2%-33%)", "6% (-4%-16%)", "-1% (-12%-10%", "33.6% (20.8%-44.3%", "-0.4% (-19.4%-15.6%")
+        efficacy = c("7.8% (5.4% to 10.2%)", "17% (-2% to 33%)", "6% (-4% to 16%)", "-1% (-12% to 10%", "33.6% (20.8% to 44.3%", "-0.4% (-19.4% to 15.6%")
     ),
-    col.names = c("Study", "Vaccine", "Enrollment period", "Country", "No. of children", "Efficacy against Otitis media episodes"),
+    col.names = c("Study", "Vaccine", "Enrollment period", "Country", "No. of children", "Efficacy against otitis media episodes"),
     booktab = TRUE,
-    caption = "Randomized controlled trials evaluating the efficacy of Pneumococcal conjugate vaccines on otitis media"
+    caption = "Randomized controlled trials evaluating the efficacy of pneumococcal conjugate vaccines on otitis media. The specific pneumococcal conjugate vaccine under study is presented. The enrollment period may be considered the start of the study. @Dagan2001 did not present sufficient information to know the exact enrollment period. Vaccine efficacy is presented along with 95% confidence intervals."
 )
 ```
 
@@ -562,40 +589,425 @@ knitr::kable(
 	- VT vs. NVT
 	- Serotype replacement
 	- Herd-effect
-
-## Cost-effectiveness in the context of pneumococcal conjugate vaccination
-
-~ 3-4 pages
-- Present overview of literature review and critical analysis. 
-- Recommendations of ISPOR and WHO presented, discuss importance of assumptions and methodology
-- Introduction to sub-chapters of lit. rev. 
-	- Explain how they will be tied in to ISPOR/WHO recommendations
-
-
-### Measurement of effectiveness and choice of health outcomes
-
-~ 1 page
-- Shortly explain what is meant by effectiveness and health outcomes
-	- Tie in to ISPOR/WHO
-
-#### Health outcomes considered
-
-~ 2-3 pages
-- Describe what health outcomes were considered
-	- Tie into actual disease burden known to be caused by pneumococcus
 	
-#### Effectiveness of pneumococcal conjugate vaccines
+	
+@Palmu2013
 
-~ 3-4 pages
-- What effectiveness rationale is used, methods and rationale: critique
-		- Carriage
-		- AOM
-		- Pneumonia
-		- IPD
+## Cost-effectiveness in the context of pneumococcal conjugate vaccination {#cea-introduction}
 
-### Estimating resources and cost
+Healthcare operates under resource constraints.
+In this setting of scarcity, the decision to fund one project invariably results in another project remaining unfunded.
+Economic analyses are one of many tools that may aid decision-makers in allocating resources optimally.
+Interventions are contrasted with two or more alternatives, and costs and benefits are systematically compared.
+Economic analyses require data on the efficacy of the interventions being compared, the burden of disease and subgroups of the population which are affected [@Gray2011].
 
-~1 page
-- Shortly explain what resources and costs mean
-	- Direct vs. indirect
-	- Tie in to ISPOR/WHO
+All methods of economic analyses measure the monetary costs associated with the interventions being evaluated, but differ in how they measure the resultant benefits.
+Cost-benefit analysis translates the effect of an intervention into a monetary value, and calculates the total cost associated with the intervention once any potential savings have been accounted.
+In cost-effectiveness analysis, the effect of the intervention is measured in units of the condition being intervened upon, e.g. deaths prevented, life-years gained.
+The results of such an analysis are commonly presented as an incremental cost-effectiveness ratio, which represents the cost associated with one unit change in the effect measure.
+Cost-effectiveness analyses are preferred over cost-benefit analyses in the healthcare context, as placing a monetary value on a health-effect is both controversial and impractical. 
+One drawback however, is difficulty in comparing cost-effectiveness ratios between studies that use different measurements of effect.
+Cost-utility analyses remedy this by standardizing a combined effect that measures the quality and quantity of life gained.
+This combined effect is most often measured in units of quality-adjusted life-years (QALY) [@Gray2011].
+
+Quality-adjusted life-years are constructed by dividing each persons life into units of time.
+A unit of time lived in perfect health is assigned a value of one, while death is assigned a value of zero.
+Each disease is assigned a utility, which represents the health-related quality of life an individual is expected to have while suffering from the disease.
+Three methods are generally used to obtain utility values for a given health state.
+These are the rating scale method, time trade-off and standard gamble.
+Each method is intended to capture the preferences of the population in which the economic analysis is meant to inform, and they are not meant to be generalized to other populations except with extreme caution [@Petrou2009].
+Even then, some external criteria must be used for the results to be interpretable.
+Decision-makers must specify the threshold incremental cost-effectiveness ratio, below which an intervention is deemed cost-effective. 
+
+Measuring costs associated with an intervention is deceptively simple.
+The costs associated with an intervention depend on from what perspective the intervention is evaluated [@Byford1998].
+When examined from the societal perspective, an expensive medication may be cost-saving, if it allows individuals who would have otherwise required disability benefits to participate in the workforce .
+The same medication may be considered prohibitively costly when examined from the healthcare sector perspective.
+The choice of perspective should reflect the purpose of the analysis and the intended audience.
+For the health-economic analysis of vaccines, the general consensus is to choose the societal perspective but also include an analysis from the perspective of the healthcare sector [@Sanders2016].
+
+Interventions are compared at a single point in time but accrue costs and benefits over a variably long time period.
+The time horizon is the term used for the time period over which an intervention is evaluated.
+In general, the time horizon should be chosen to reflect the duration of the effect of the intervention.
+In the context of cost-effectiveness analyses of vaccines, the consensus is to use a lifetime horizon, unless there are compelling reasons otherwise [@Mauskopf2018; @Wilkinson2016].
+To accurately compare interventions with differential distributions in the timing of costs and benefits, it has become standard practice to discount future cost and benefit.
+The rationale is grounded in both the psychology of human behavior and economic principles [@Severens2004].
+Society tends to value current costs and benefits higher than those that occur in the future.
+The exact discount rate, whether it should be constant and whether costs and benefits should be discounted at the same rate are debated [@Claxton2011].
+However, the general consensus is to use a constant 3% discount rate for both costs and benefits [@Mauskopf2018; @Sanders2016; @Wilkinson2016].
+
+Economic analyses are built upon a set of assumptions that may influence the outcome.
+In the case of pneumococcal conjugate vaccines, the assumptions include the incidence of disease in the target population, the proportion caused by *Streptococcus pneumoniae*, the serotype distribution, the degree of vaccine uptake, the vaccine efficacy in vaccinated and unvaccinated members of the population, costs and utilities associated with disease states, cost of the vaccine, perspective, time horizon and discounting [@Wasserman2018].
+These assumptions are combined together in mathematical model which describes the result, given the input parameters.
+Decision analysis models are static scenario based models in which individuals are independently assumed to progress through a decision tree.
+The tree has one branch for each intervention being evaluated, and each branch contains an identical set of nodes that represent the health outcomes being considered. 
+However, the nodes on each branch are associated with a different set of costs, consequences and probabilities of occurring,
+The model is run and the number of individuals in each node are tallied along with the associated cost and consequence to produce the final result.
+This generally means that the model cannot incorporate different probabilities depending on age or time from the start of the intervention [@Gray2011].
+For example, a decision analysis model would assume that the difference in invasive pneumococcal disease with and without the vaccine were constant, regardless of how many years had passed since the vaccine introduction. 
+Markov models expand upon this framework, by removing the tree structure and allowing individuals to transition between nodes (which are termed health states in Markov models) in any direction.
+The transitions between health states occur in Markov cycles. 
+At the end of each cycle, the costs and consequences associated with the current health state are recorded, before the next cycle begins. 
+Thus an individual accumulates cost and benefit over time and may transition in and out of health states -- an improvement over the static once-only decision analysis models.
+The transition probabilities may be either constant or time-dependent.
+However, the Markovian assumption requires that all individuals within a given health state should be homogenous, regardless of their previous health states or the length of time that they have been in their current state.
+Thus the transition between health states may depend on the time that has elapsed from the start of the model but cannot depend on what has happened in a prior cycle [@Gray2011].
+A Markov model would assume that an individual who has previously been hospitalized twice for pneumonia, has the same probability of being hospitalized again as someone who has never been hospitalized. 
+Transmission dynamic models expand upon the Markov process by using a set of differential equations to remove the need for the Markovian assumption [@Pitman2012].
+
+Because of the subjective nature of many of the modeling assumptions, a sensitivity analysis that explores the cost-effectiveness outcome over a plausible range of each of the assumptions is necessary.
+Consensus statements from the World Health Organization and the International Society for Pharmacoeconomics and Outcome Research (ISPOR) require at minimum, a one-way sensitivity analysis of each of the assumptions [@Mauskopf2018; @Walker2010].
+One-way sensitivity analysis imply that each parameter is individually varied across its probability distribution, while other parameters are held constant.
+The results are often presented as a tornado plot.
+Scenario analyses show the result of specific combinations of parameter values, which are often based on common situations that 
+Both consensus statements strongly recommend the inclusion of a probabilistic sensitivity analysis, in which the analysis is repeatedly run and the assumptions simultaneously varied across their respective probability distributions [@Gray2011].
+The resulting spread of cost-effectiveness estimates reflects the uncertainty of the analysis.
+This can be paired with threshold analysis, which shows the proportion of the resulting spread that is above a stated cost-effectiveness threshold, or a generalization of a threshold analysis called the cost-effectiveness acceptability curve (CEAC) [@Gray2011].
+
+A large number of cost-effectiveness analyses of pneumococcal conjugate vaccines have been published [@Saokaew2016; @VandeVooren2014a; @Wu2015]. 
+They display great variation in their results, underlying assumptions and modeling choices.
+In this thesis, cost-effectiveness analyses of pneumococcal conjugate vaccines in high-income countries will be reviewed.
+The studies included in this review are summarized in Table \@ref(tab:table-cea-summary).
+This review focuses on studies published in 2009 and later, after the introduction of the higher-valent pneumococcal conjugate vaccines.
+Other published reviews have examined cost-effectiveness studies prior to 2006 [@Beutels2007] and studies in low- and middle income countries [@Saokaew2016].
+All of the included studies found pneumococcal conjugate vaccines to be cost-effective compared to no vaccine, but varied as to whether PCV7, PCV10 or PCV13 dominated as compared to the others.
+The aim of this review is to explore the studies' design and underlying assumptions, rather than the results.
+
+(ref:Wu2015) @Wu2015
+
+```{r table-cea-summary}
+kable(
+    x = data.frame(
+    study = c(
+    "[@OBrien2009a]",
+    "[@Chuck2010]",
+    "[@Rozenbaum2010]",
+    "[@Rubin2010]",
+    "[@Talbird2010]",
+    "[@Robberstad2011]",
+    "[@Newall2011]",
+    "[@Diez-Domingo2011]",
+    "[@Knerer2012]",
+    "[@Earnshaw2012b]",
+    "[@By2012]",
+    "[@Strutton2012]",
+    "[@Blank2012]",
+    "[@VanHoek2012]",
+    "[@Klok2013]",
+    "[@Zhou2014]",
+    "[@Delgleize2016]",
+    "[@Newall2016]",
+    "[@Castiglia2017]",
+    "[@Gouveia2017]",
+    "[@Kuhlmann2017]"
+    ),
+    country = c(
+    "United States",
+    "Canada",
+    "Netherlands",
+    "United States",
+    "Canada, Germany, Mexico, Norway",
+    "Norway",
+    "Australia",
+    "Spain",
+    "Canada, United Kingdom",
+    "Canada",
+    "Sweden",
+    "Germany, Greece, Netherlands",
+    "Switzerland",
+    "England",
+    "Denmark, Sweden",
+    "United States",
+    "United Kingdom",
+    "Australia",
+    "Italy",
+    "Portugual",
+    "Germany"
+    ),
+    study_type = c(
+        "CUA",
+        "CUA",
+        "CEA, CUA",
+        "CUA",
+        "CEA, CUA",
+        "CEA, CUA",
+        "CUA",
+        "CEA, CUA",
+        "CEA, CUA",
+        "CUA",
+        "CUA",
+        "CEA, CUA",
+        "CEA, CUA",
+        "CUA",
+        "CEA, CUA",
+        "CEA",
+        "CUA",
+        "CUA",
+        "CUA",
+        "CEA",
+        "CUA"
+        ), 
+    perspective = c("Societal", "Health sector", "Health sector, societal", "Socital", "Societal", "Societal", "Health sector", "Health sector", "Health sector, societal", "Health sector", "Societal", "Health sector", "Health sector", "Health sector", "Health sector", "Health sector, societal", "Health sector, societal", "Health sector", "Health sector", "Societal", "Health sector, societal"),
+    time_horizon = c("Lifetime", "1", "5", "10", "1", "Lifetime", "100", "Lifetime", "Lifetime", "Lifetime", "Lifetime", "1", "10", "30", "1", "Lifetime", "Lifetime", "-", "18", "Lifetime", "50"),
+    discount_rate_cost = c("3", "-", "4", "3", "-", "4", "5", "3", "3, 3.5", "Not specified", "3", "-", "3", "3.5", "3", "3", "3.5", "5", "3", "5", "3"),
+    discount_rate_ben = c("3", "-", "1.5", "3", "-", "4", "5", "3", "3, 3.5", "Not specified", "3", "-", "3", "3.5", "3", "3", "3.5", "5", "3", "5", "3")
+    ),
+    col.names = c("Study", "Country", "Study type", "Perspective", "Time horizon (years)", "Discount rate of costs (%)", "Discount rate of benefits (%)"),
+    booktab = TRUE,
+    caption = "A summary of the economic analyses of pneumococcal conjugate vaccines in high-income countries from 2009-2018. All analyses are either a cost-effectiveness analysis (CEA) or cost-utility analysis (CUA). Costs and benefit are either considered from the societal or health sector perspective, depending on whether indirect costs such as productivity loss are included in the analyses, The time horizon of the studies er presented in years. A lifetime horizon is based on the life-expectancy of the population, and is most commonly assumed to be 100 years. Discount rates are presented separately for costs and benefits. When the time horizon is one year or less, discount rates are not applicable and are presented with a hyphen (-). @Earnshaw2012b did not publish sufficent information to know what discount rate was used. The table is partially adapted from (ref:Wu2015). "
+    )
+```
+
+### Vaccine efficacy assumptions in economic analyses of pneumococcal conjugate vaccines
+
+Because *Streptococcus pneumoniae* causes a wide range of clinical infections, economic analyses that study the cost-effectiveness of pneumococcal conjugate vaccines must make choices regarding which health outcomes to include in the analysis.
+Most, but not all, include acute otitis media, pneumonia and invasive pneumococcal disease.
+The way in which each study measures these health outcomes differs, and the studies assume divergent vaccine efficacies for outcomes. 
+Each of the health outcomes considered may or may not be associated with further health care consumption and disease burden.
+Repeated acute otitis media may lead to a tympanostomy tube procedure, and invasive pneumococcal disease may cause death or long term disability. 
+If and how disease sequlae are taken into account is variable between studies.
+Finally, the studies differ in whether they consider health outcomes in unvaccinated members of the population [@Holubar2017; @Isaacman2008].
+
+Most of the cost-effectiveness analyses that were reviewed based their vaccine efficacy estimates for acute otitis media on the results of the Northern California Kaiser Permente trial [@Black2000; @Fireman2003].
+Others, [@Castiglia2017; @Delgleize2016; @Klok2013; @Knerer2012; @Robberstad2011; @Strutton2012; @Talbird2010] based the efficacy of PCV7 and PCV13 on @Eskola2001, and justified a higher vaccine efficacy estimate for PHiD-CV10 based on @Prymula2006 or @Tregnaghi2014, by also assuming efficacy against otitis media caused by non-typable *Haemophilus influenzae*.
+The validity of this assumption has been called into question [@Wasserman2018].
+Few studies did not base their efficacy estimates on data from randomized clinical trials.
+@Gouveia2017 based their otitis media efficacy estimates on observational data from the United Kingdom, which used a crude interrupted time series analysis to ascertain impact [@Lau2015].
+@VanHoek2012 assumed the otitis media efficacy to be a linear ratio of their estimated efficacy for invasive pneumococcal disease, which they based on a complex transmission dynamic model.
+@Chuck2010 also based the efficacy for otitis media on invasive pneumococcal disease, but used the observed change in invasive disease before and after vaccine introduction without any adjustments for secular trends in the pre-vaccine period.
+Similarly, @Zhou2014 did not use any efficacy estimates, but instead directly compared published incidence rates of otitis media before and after vaccine introduction and assumed any difference was due to the vaccine.
+
+The vaccine efficacy estimates for hospitalized and non-hospitalized pneumonia were generally based on @Black2002.
+As with otitis media, @Delgleize2016 and @Castiglia2017 based their estimates on @Tregnaghi2014.
+@Newall2016 based the efficacy against outpatient pneumonia on @Black2002, as did other studies. 
+However, the efficacy estimates for inpatient pneumonia and invasive disease was estimated using a novel time-series methodology. 
+They projected the rate of disease in the pre-vaccine period to the post-vaccine period using a Poisson regression, and corrected for changes in population demographics using an offset term.
+Because they only had access to three years of annual pre-vaccine incidence rates, they were unfortunately only able to correct for an intercept term and they acknowledge this in their discussion section [@Newall2016]. 
+Nevertheless, the methodology is interesting. 
+In the case of pneumonia, a larger proportion of studies based their estimates on either unadjusted observational studies from other populations or did not provide sufficient information to ascertain what estimates was used.
+@Chuck2010 and @VanHoek2012 again assumed the efficacy for pneumonia to be a fixed ratio of their invasive pneumococcal disease efficacy estimate.
+@Talbird2010 and @Gouveia2017 never explicitly state what their assumed vaccine efficacy is, and no rationale is provided.
+The estimate cannot be deduced from tables and references.
+@Diez-Domingo2011 assumed a 42% efficacy against hospitalized pneumonia cases but did not provide any rationale or reference for this assumption. 
+@Zhou2014 directly compared published incidence rates for pneumonia in the pre- and post-vaccine periods, and assumed any difference to be a direct result of vaccination. 
+Finally, @OBrien2009a did not consider pneumonia or invasive pneumococcal disease as health outcomes.
+
+Invasive pneumococcal disease vaccine efficacy estimates were most often based on @Black2000, and @Kuhlmann2017 based their estimate on @Palmu2013.
+@Newall2016 used a novel regression methodology as previously described, and @Chuck2010 used simple unadjusted pre- and post-vaccine observational data.
+The remaining studies based their efficacy estimates on non-randomized studies observational studies in different populations.
+@VanHoek2012 utilized a complex transmission dynamic model on meticulously collected prospective surveillance data to estimate the effect of PCV13, but did not provide any reference or rationale for the efficacy parameters used in the model.  
+@Castiglia2017 assumed that the vaccine efficacy of PCV10 and PCV13 were the average of two observational studies [@Palmu2015; @Waight2015].
+@By2012, @Delgleize2016, @Knerer2012, @Newall2011 and @Robberstad2011 based their efficacy estimate on a matched case-control study of PCV7, conducted in the United States in 2001-2002 [@Whitney2006].
+@Talbird2010 failed to provide any reference or rationale for their efficacy estimates.
+
+The included cost-effectiveness and cost-utility analyses base their efficacy estimates on many different studies.
+Critical appraisals of underlying assumptions have shown that they can have large effects on the study's outcomes [@Wasserman2018].
+An alarmingly large proportion of studies cite observational data from other time-periods and study populations that used a different formulation of pneumococcal conjugate vaccine.
+In most cases were randomized controlled trials are utilized, the most commonly referenced studies were conducted ten years prior in a completely vaccine naive population using PCV7.
+@Newall2016 introduced a thoughtful time-series approach were local pre-vaccine trends in disease were statistically extrapolated to the post-vaccine period to simulate what would have occurred, had the vaccine not been introduced. 
+This was ten subtracted from the observed rates of disease to estimate the true vaccine impact. 
+However, as the authors concede in their discussion, they did not have access to adequate pre-vaccine data and were thus unable to conduct a robust statistical extrapolation [@Newall2016].
+The care with which these data are incorporated also varies between studies, with only some considering vaccine coverage, waning vaccine protection and adjusting for local serotype distribution and herd effect \@ref(tab:table-cea-assumptions).
+Additionally, a large variation existed in how the pre-vaccine incidence of disease was defined, with some studies borrowing incidence estimates from other countries. 
+A review of the epidemiological rationale used in each of the studies is beyond the scope of this thesis. 
+
+(ref:modeling-types) \@ref(cea-introduction).
+
+```{r table-cea-assumptions}
+kable(
+    x = data.frame(
+    study = c(
+    "[@OBrien2009a]",
+    "[@Chuck2010]",
+    "[@Rozenbaum2010]",
+    "[@Rubin2010]",
+    "[@Talbird2010]",
+    "[@Robberstad2011]",
+    "[@Newall2011]",
+    "[@Diez-Domingo2011]",
+    "[@Knerer2012]",
+    "[@Earnshaw2012b]",
+    "[@By2012]",
+    "[@Strutton2012]",
+    "[@Blank2012]",
+    "[@VanHoek2012]",
+    "[@Klok2013]",
+    "[@Zhou2014]",
+    "[@Delgleize2016]",
+    "[@Newall2016]",
+    "[@Castiglia2017]",
+    "[@Gouveia2017]",
+    "[@Kuhlmann2017]"
+    ),
+    model = c(
+        "Markov",
+        "Steady-state population",
+        "Decision analysis",
+        "Markov state transition",
+        "Steady-state population",
+        "Markov cohort",
+        "Markov state transition",
+        "Markov cohort",
+        "Markov cohort",
+        "Markov cohort",
+        "Markov cohort",
+        "Markov cohort",
+        "Decision analysis",
+        "Transmission dynamic",
+        "Markov state transission",
+        "Decision analysis",
+        "Markov cohort",
+        "Markov state transition",
+        "Markov cohort",
+        "Markov cohort",
+        "Markov state transition"
+        ),
+    vaccine_protection = c(
+        "-",
+        "-",
+        "5",
+        "5",
+        "-",
+        "9",
+        "10",
+        "6",
+        "10",
+        "-",
+        "10",
+        "-",
+        "5",
+        "10",
+        "-",
+        "-",
+        "10",
+        "10",
+        "10",
+        "25",
+        "8"
+        ),
+    vaccine_coverage = c(
+        "-",
+        "83.8",
+        "-",
+        "90",
+        "80-91",
+        "80-95",
+        "75-95",
+        "95",
+        "100",
+        "-",
+        "100",
+        "80-95",
+        "83",
+        "-",
+        "-",
+        "-",
+        "100",
+        "-",
+        "87.46",
+        "60.8",
+        "90"
+        ), 
+    herd_effect = c(
+        "No",
+        "Yes, IPD only",
+        "Yes, IPD only",
+        "Yes",
+        "Yes",
+        "Yes, IPD only",
+        "Yes",
+        "Yes",
+        "Yes, IPD only",
+        "Yes",
+        "Yes, IPD only",
+        "Yes",
+        "No",
+        "Yes",
+        "Yes",
+        "No",
+        "Yes, IPD only",
+        "Yes, IPD only",
+        "Yes, IPD only",
+        "Yes, IPD only",
+        "Yes"
+        ),
+    serotype_replacement = c(
+        "No",
+        "No",
+        "Yes, herd effect only",
+        "Yes, ecological data",
+        "Yes, herd effect only",
+        "Yes, herd effect only",
+        "Yes, increased incidence",
+        "Yes, increased incidence",
+        "Yes, herd effect only",
+        "No",
+        "Yes, herd effect only",
+        "Yes, ecological data",
+        "No",
+        "Yes, directly",
+        "Yes, ecological data",
+        "No",
+        "Yes, herd effect only",
+        "Yes, ecological data",
+        "Yes, herd effect only",
+        "No",
+        "Yes"
+        ),
+    sensitivity_analyses = c(
+        "1-Way, 2-Way, threshold",
+        "PSA",
+        "1-Way, PSA, threshold, CEAC, scenario",
+        "-",
+        "1-Way, threshold",
+        "1-Way, 2-Way, PSA, CEAC, scenario",
+        "1-Way, PSA, CEAC, scenario",
+        "1-Way, scenario",
+        "1-Way, PSA",
+        "1-Way, threshold, scenario",
+        "1-Way, scenario",
+        "1-Way, scenario",
+        "1-Way",
+        "PSA, threshold, CEAC, scenario",
+        "1-Way, scenario",
+        "1-Way, scenario",
+        "1-Way, PSA, threshold, CEAC, scenario",
+        "PSA, threshold, CEAC, scenario",
+        "1-Way, PSA, threshold, scenario",
+        "1-Way, scenario",
+        "1-Way, PSA, threshold, CEAC, scenario"
+        )
+    ),
+    col.names = c("Study", "Model structure", "Vaccine protection (years)", "Vaccine uptake (%)", "Herd effect", "Serotype replacement", "Sensitivity analyses"),
+    booktab = TRUE,
+    caption = "A summary of modeling assumptions used in economic analyses of pneumococcal conjugate vaccines in high-income countries from 2009-2018. Several different modeling strategies were used, which are discussed in more detail in chapter (ref:modeling-types). Vaccine protection is known to wane over an unknown length of time. The assumed length of protection is presented with a hyphen (-) if the study assumed infinite protection or did not provide sufficient data to ascertain over which period the protection waned. Similarly, a hyphen indicates that assumed vaccine coverage was not specified. When herd effect was included in the model, it was often only included for invasive pneumococcal disease (IPD). Serotype replacement was often only incorporated for indirect effects (herd immunity, herd effect). When models are based on ecological data, they implicitly includ both herd effects and serotype replacement. Only @VanHoek2012 directly modelled the serotype replacement. Sensitivity analyses are can be either deterministic, such as 1-Way, 2-Way and scenario analyses, or stochastic, such as proabilistic sensitivity analyses (PSA) and cost-effectiveness acceptability curves (CEAC). Sensitivity analyses are discussed in more detail in chapter (ref:modeling-types). The table is partially adapted from (ref:Wu2015)."
+    )
+```
+
+### Assumptions regarding costs and utilities in economic analyses of pneumococcal vaccines
+
+Cost-utility analyses present their results as the cost of the intervention per additional quality-adjusted life-year gained.
+QALYs are a good universal measure of benefit, assuming the quality adjustment for given health outcomes accurately reflects the true preferences of the population for which the cost-utility analysis is supposed to inform decision making.
+Otherwise the cost-utility ratio is at best externally valid in comparison to other studies using the same incorrect weights, but has no intrinsic meaning in informing decision-makers.
+
+To date, only three studies have been published that estimate utility values for pneumococcal diseases in high-income countries by interviewing children or parents of children who have experienced the disease. 
+One study in the United States in 2001 used time trade-off and willingness-to-pay methods to estimate the utility values associated with simple and complex acute otitis media, moderate and severe pneumonia, meningitis and bacteremia [@Prosser2004].
+Another study from the United Kingdom used the health utility index to estimate utility values for pneumococcal meningitis [@Legood2009].
+It is unclear from the publication over which time period the study was conducted.
+Finally, the utility values for adult pneumococcal pneumonia were estimated using the EuroQoL five dimensional questionarie in France [@Andrade2018].
+Additionally, @Bennett2000 estimated utility values for meningitis sequlae; deafness and moderate and severe brain damage by interviewing parents of toddlers presenting to urgent care for unrelated illnesses. 
+@Oostenbrink2002 surveyed 28 pediatricians in the Netherlands using the health utility index and EuroQoL five dimensional questionnaires to ascertain utility weights for long term sequlae of bacterial meningitis. 
+
+With few exceptions, all of the reviewed cost-utility analyses referenced @Bennett2000 and @Oostenbrink2002 [@Herdman2016].
+Most did so indirectly, and instead cited a cost-utility analysis by @Melegaro2004a, which itself based it's estimates on the two studies. 
+These included @Kuhlmann2017. @Newall2011, @Newall2016, @Rozenbaum2010, @Rubin2010 and @Talbird2010.
+This is important as @Melegaro2004a incorrectly translated the utility values to QALYs [@Herdman2016].
+@Earnshaw2012b and @Knerer2012 take the extra step of citing @Morrow2007, which itself cites @Melegaro2004a and @By2012 cites both @Morrow2007 and @Melegaro2004a.
+@OBrien2009a base their utility values on @Prosser2004. 
+@Klok2013 uses utilities based on a @Maddigan2005 which is a study of the quality of life of diabetic adults in Canada, and provides no rationale for the how this could be relevant to pneumococcal disease in Danish and Swedish children. 
+@Strutton2012 claim to use country specific utilities for Germany, Greece and the Netherlands, but provide no reference for the utility values, which are the same for each country and identical to those in @Maddigan2005. 
+@Chuck2010 references the Canadian National advisory committee on immunization statement on recommended use of pneumococcal conjugate vaccine, which is not available online. 
+
+The costs associated with implementing pneumococcal conjugate vaccination [@DelaHoz-Restrepo2013]	
+
+
