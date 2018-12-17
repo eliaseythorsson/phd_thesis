@@ -650,7 +650,7 @@ The transitions between health states occur in Markov cycles.
 At the end of each cycle, the costs and consequences associated with the current health state are recorded, before the next cycle begins. 
 Thus an individual accumulates cost and benefit over time and may transition in and out of health states -- an improvement over the static once-only decision analysis models.
 The transition probabilities may be either constant or time-dependent.
-However, the Markovian assumption requires that all individuals within a given health state should be homogenous, regardless of their previous health states or the length of time that they have been in their current state.
+However, the Markovian assumption requires that all individuals within a given health state should be homogeneous, regardless of their previous health states or the length of time that they have been in their current state.
 Thus the transition between health states may depend on the time that has elapsed from the start of the model but cannot depend on what has happened in a prior cycle [@Gray2011].
 A Markov model would assume that an individual who has previously been hospitalized twice for pneumonia, has the same probability of being hospitalized again as someone who has never been hospitalized. 
 Transmission dynamic models expand upon the Markov process by using a set of differential equations to remove the need for the Markovian assumption [@Pitman2012].
@@ -740,7 +740,7 @@ kable(
         "CEA, CUA",
         "CUA",
         "CEA, CUA",
-        "CEA",
+        "CUA",
         "CUA",
         "CUA",
         "CUA",
@@ -800,8 +800,8 @@ The remaining studies based their efficacy estimates on non-randomized studies o
 @By2012, @Delgleize2016, @Knerer2012, @Newall2011 and @Robberstad2011 based their efficacy estimate on a matched case-control study of PCV7, conducted in the United States in 2001-2002 [@Whitney2006].
 @Talbird2010 failed to provide any reference or rationale for their efficacy estimates.
 
+Critical appraisals of cost-effectiveness assumptions have shown that they can have large effects on the study's outcomes [@Wasserman2018].
 The included cost-effectiveness and cost-utility analyses base their efficacy estimates on many different studies.
-Critical appraisals of underlying assumptions have shown that they can have large effects on the study's outcomes [@Wasserman2018].
 An alarmingly large proportion of studies cite observational data from other time-periods and study populations that used a different formulation of pneumococcal conjugate vaccine.
 In most cases were randomized controlled trials are utilized, the most commonly referenced studies were conducted ten years prior in a completely vaccine naive population using PCV7.
 @Newall2016 introduced a thoughtful time-series approach were local pre-vaccine trends in disease were statistically extrapolated to the post-vaccine period to simulate what would have occurred, had the vaccine not been introduced. 
@@ -986,28 +986,50 @@ kable(
 
 ### Assumptions regarding costs and utilities in economic analyses of pneumococcal vaccines
 
-Cost-utility analyses present their results as the cost of the intervention per additional quality-adjusted life-year gained.
-QALYs are a good universal measure of benefit, assuming the quality adjustment for given health outcomes accurately reflects the true preferences of the population for which the cost-utility analysis is supposed to inform decision making.
-Otherwise the cost-utility ratio is at best externally valid in comparison to other studies using the same incorrect weights, but has no intrinsic meaning in informing decision-makers.
+Cost-utility analyses present their results as the cost of an intervention per additional quality-adjusted life-year gained.
+QALYs are a good universal measure of benefit, provided that the quality adjustments for the included health outcomes accurately reflect the true preferences of the population for which the cost-utility analysis is supposed to inform decision making.
+Otherwise, the resulting cost-utility ratio is at best externally valid in comparison to other studies which use the same utility weights, but has no intrinsic meaning in informing decision-makers.
+Similarly, the costs associated with each vaccine and health outcome must necessarily be derived from accurate estimates from the population under study.
+If costs are measured imprecisly or obtained from other countries or time-periods, it becomes difficult to imagine what relevance the economic analysis has to the decision that needs to be made. 
 
 To date, only three studies have been published that estimate utility values for pneumococcal diseases in high-income countries by interviewing children or parents of children who have experienced the disease. 
 One study in the United States in 2001 used time trade-off and willingness-to-pay methods to estimate the utility values associated with simple and complex acute otitis media, moderate and severe pneumonia, meningitis and bacteremia [@Prosser2004].
 Another study from the United Kingdom used the health utility index to estimate utility values for pneumococcal meningitis [@Legood2009].
 It is unclear from the publication over which time period the study was conducted.
-Finally, the utility values for adult pneumococcal pneumonia were estimated using the EuroQoL five dimensional questionarie in France [@Andrade2018].
+Finally, the utility values for adult pneumococcal pneumonia were estimated using the EuroQoL five dimensional questionnaire in France [@Andrade2018].
 Additionally, @Bennett2000 estimated utility values for meningitis sequlae; deafness and moderate and severe brain damage by interviewing parents of toddlers presenting to urgent care for unrelated illnesses. 
 @Oostenbrink2002 surveyed 28 pediatricians in the Netherlands using the health utility index and EuroQoL five dimensional questionnaires to ascertain utility weights for long term sequlae of bacterial meningitis. 
 
-With few exceptions, all of the reviewed cost-utility analyses referenced @Bennett2000 and @Oostenbrink2002 [@Herdman2016].
-Most did so indirectly, and instead cited a cost-utility analysis by @Melegaro2004a, which itself based it's estimates on the two studies. 
-These included @Kuhlmann2017. @Newall2011, @Newall2016, @Rozenbaum2010, @Rubin2010 and @Talbird2010.
+With few exceptions, all of the reviewed cost-utility analyses used the same two references for utilities [@Bennett2000; @Herdman2016; @Oostenbrink2002].
+Most [@Kuhlmann2017; @Newall2011; @Newall2016; @Rozenbaum2010; @Rubin2010; @Talbird2010] did so indirectly, and instead cited a cost-utility analysis by @Melegaro2004a, which itself based it's estimates on the two studies. 
 This is important as @Melegaro2004a incorrectly translated the utility values to QALYs [@Herdman2016].
-@Earnshaw2012b and @Knerer2012 take the extra step of citing @Morrow2007, which itself cites @Melegaro2004a and @By2012 cites both @Morrow2007 and @Melegaro2004a.
+@Earnshaw2012b, @Knerer2012 and @By2012 took the extra step of citing @Morrow2007, which itself cites @Melegaro2004a.
 @OBrien2009a base their utility values on @Prosser2004. 
 @Klok2013 uses utilities based on a @Maddigan2005 which is a study of the quality of life of diabetic adults in Canada, and provides no rationale for the how this could be relevant to pneumococcal disease in Danish and Swedish children. 
 @Strutton2012 claim to use country specific utilities for Germany, Greece and the Netherlands, but provide no reference for the utility values, which are the same for each country and identical to those in @Maddigan2005. 
-@Chuck2010 references the Canadian National advisory committee on immunization statement on recommended use of pneumococcal conjugate vaccine, which is not available online. 
+@Chuck2010 references the Canadian National advisory committee on immunization statement on recommended use of pneumococcal conjugate vaccine, which is not available online.
+Desipite the considerable uncertainty associated with utilities, they were often not examined with sensitivity analyses [@Blank2012; @Chuck2010; @Earnshaw2012b; @Gouveia2017; @Klok2013; @Newall2016; @Strutton2012; @Talbird2010].
 
-The costs associated with implementing pneumococcal conjugate vaccination [@DelaHoz-Restrepo2013]	
+The costs that are included in the economic analyses are divided into direct and indirect costs.
+Direct costs include the cost of each vaccine dose, cost of hospitalized and outpatient health outcomes, and the cost of long-term sequelae.
+The reviewed studies invariably used the list price of pneumococcal conjugate vaccines currently available in the respective country during the time the cost-effectiveness analysis was undertaken.
+This would be considered a conservative estimate, as healthcare systems generally negotiate the purchase price of the vaccine considerably lower than the list price.
+Studies comparing two higher-valency pneumococcal conjugate vaccines most commonly used the list price of the available vaccine and assumed price parity, which negates the possibility of competition between the two vaccine manufacturers and seems like an unreasonable assumption.
+Ideally, such an assumption would be examined in sensitivity analyses.
+Some of the reviewed studies did not perform such an analysis for any of the cost components [@Chuck2010; @Earnshaw2012b; @Gouveia2017; @Klok2013; @Newall2016; @Strutton2012; @Talbird2010].
 
+The most common method employed to estimate the direct costs associated with hospitalized health outcomes, was to use official statistics of costs associated with diagnostic related groupings and unit costs from national tariffs.
+Expert opinion was then used to decide which resources would be used on average for each health outcome, to construct a hypothetical reference case used to calculate the direct cost.
+Outpatient health outcomes were often solely based on the assumptions of expert opinion, except for the studies conducted in the Netherlands, Germany and the United Kingdom, were official statistics on outpatient unit costs are available. 
+Rationale as to what was considered expert opinion was only stated in one case [@Knerer2012].
+Sometimes this resulted in suspect estimates, e.g. that each case of outpatient acute otitis media in Greece cost 3861 euros -- 30-300 times higher than the estimate for the two other countries included in the study [@Strutton2012].
+This is particularly unfortunate because costs were not included in the sensitivity analysis.
+@Diez-Domingo2011 and @VanHoek2012 obtained average costs and hospital length of stay for each health condition directly from medical records. 
+The direct cost of long-term sequale was with few exceptions based on assumptions and expert opinion.
 
+Indirect costs mainly compromises lost workdays, and were only included in few of the reviewed studies [@By2012; @Delgleize2016; @Gouveia2017; @Kuhlmann2017; @Robberstad2011; @Rozenbaum2010].
+@OBrien2009a included parental time spent for outpatient visit, but not lost workdays. 
+Generally, average wage and unemployment rates were extracted from official statistics and multiplied by the days of work lost to estimate the indirect cost. 
+The days of work lost were assumed to be equal to the hospital length of stay for hospitalized cases for both adults and parents of admitted children.
+The days of work lost for outpatient cases were assumed to be half of that of hospitalized cases. 
+In the case of outpatient acute otitis media, parents were assumed to lose from zero to three days depending on the study, and no rationale was provided in most studies. 
