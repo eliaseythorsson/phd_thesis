@@ -28,6 +28,6 @@ To correct for successive visits by the same individual, @Lin1989 sandwich varia
 From this model, the hazard ratio (HR) of OM visits between each birth-cohort and the last vaccine non-eligible cohort was calculated.
 The impact of PHiD-CV10 on OM visits was defined as 1 – ($HR$ between the last vaccine-eligible birth cohort and the last vaccine non-eligible cohort) * 100%. 
 
-The HR between VNEC and VEC was calculated for each number of previous OM visits, and the mean number of episodes as a function of age was estimated from the model using the generalized Nelson-Aalen estimator [@Cook2007].
+The HR between VNEC and VEC was calculated for each number of previous OM visits, and the mean number of episodes as a function of age was estimated from the model using the generalized Nelson-Aalen estimator [@Cook2007a].
 To determine the number of OM episodes prevented in the first five years of the vaccination, each child’s follow-up time was multiplied by the Nelson-Aalen estimate of the mean number of episodes. 
 The absolute reduction in the incidence rate was then calculated by dividing the estimated number of prevented episodes with the total person-time of the VEC.

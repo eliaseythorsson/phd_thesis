@@ -41,7 +41,7 @@ The number of previous antimicrobial prescriptions was included in the model, an
 
 The impact of PHiD-CV10 on outpatient antimicrobial prescriptions was estimated as 1 – (the hazard ratio between the last vaccine eligible and last vaccine non-eligible cohort) * 100%.
 The impact on each successive prescription was also estimated.
-Finally, the generalized Nelson-Aalen estimate of the mean number of antimicrobial prescriptions for each gender and vaccine-cohort was calculated [@Cook2007].
+Finally, the generalized Nelson-Aalen estimate of the mean number of antimicrobial prescriptions for each gender and vaccine-cohort was calculated [@Cook2007a].
 To estimate the absolute number of prevented antimicrobial prescriptions during the first seven years of the intervention, the following formula was utilized; first, the expected number of prescriptions per child was added together by multiplying each child's follow-up time with the VNEC estimate of the mean number of prescriptions per child.
 Next, the expected number of prescriptions per child was estimated using the VEC estimate of the mean.
 Finally, the absolute number prevented was calculated by subtracting the VEC total from the VNEC total. 
