@@ -66,6 +66,7 @@ There was a large variation in the incidence rate between both gender, birth-coh
 The incidence was consistently higher in males than females, and was highest among children 8-11 and 12-15 months of age.
 
 The incidence of acute otitis media is highly variable between countries.
+Published estimates of the incidence of otitis media prior to the introduction of pneumococcal conjugate vaccines were summarized in Table \@ref(tab:table-intro-aom-incidence).
 In 2010, a multicenter study in Europe estimated the incidence rate among children under three years of age to be 31 per 100 person-years in Germany, 19 per 100 person-years in Italy, 39 per 100 person-years in Spain, 34 per 100 person-years in Sweden and 25 per 100 person-years in the United Kingdom [@Liese2014].
 Another study reported an incidence of 47 cases per 100 person-years in Sweden, prior to the introduction of pneumococcal conjugate vaccination [@Gisselsson-Solen2017].
 The highest published estimates of acute otitis media incidence come from the United States of America.
