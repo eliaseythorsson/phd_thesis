@@ -588,7 +588,7 @@ The estimated efficacy for pneumococcal AOM was 55.7% (95%CI 21.5% to 75%) and t
 Unlike @Prymula2006, the study did not find a statistically significant efficacy against AOM caused by non-typable *Haemophilus influenzae*, though the point estimate was similar 21.5% (95%CI -43.4% to 57.0%) [@Tregnaghi2014].
 
 Finally, the results of a cluster-randomized controlled trial on AOM and tympanostomy tube placements conducted in Finland in 2009 was reported in two publications [@Palmu2015; @Vesikari2016].
-The details of the trial are reviewed in Chapter (ref:intro-ipd-impact), in which the efficacy of PCV for invasive pneumococcal disease is reviewed. 
+The details of the trial are reviewed in Chapter \@ref(intro-ipd-impact), in which the efficacy of PCV for invasive pneumococcal disease is reviewed. 
 Tympanic tube placements were evaluated in the main trial, while the efficacy against AOM was evaluated in a smaller trial, nested within the main trial.
 The vaccine efficacy for tympanic tube placements was 13% (955CI -2% to 26%) [@Palmu2015].
 The efficacy of parental reported, physician diagnosed AOM was assessed with active surveillance through means of text messaging, and was estimated as 6.4% (95%CI -5.5% to 17.2%) [@Vesikari2016].
@@ -633,7 +633,7 @@ Though radiographically confirmed pneumonia is less subjective, radiological int
 In 2005, the World Health Organization published a consensus statement defining WHO criteria for pneumonia [@Cherian2004].
 
 Four randomized controlled trials have evaluated the efficacy of pneumococcal conjugate vaccines for pneumonia [@Black2002c; @Cutts2005; @Kilpi2018; @Tregnaghi2014].
-@Black2002c, @Tregnaghi2014 and @Kilpi2018 are publications from randomized controlled trials that are extensively reviewed in Chapters (ref:intro-aom-rct) and (ref:intro-ipd-impact).
+@Black2002c, @Tregnaghi2014 and @Kilpi2018 are publications from randomized controlled trials that are extensively reviewed in Chapters \@ref(intro-aom-rct) and \@ref(intro-ipd-impact).
 @Black2002c reported the intention to treat efficacy estimate of the secondary end-point of clinically diagnosed pneumonia to be 6% (95%CI -1.5% to 11%).
 Following the development of the WHO-criteria [@Cherian2004], the data was re-analyzed and the efficacy against WHO-criteria radiographically confirmed pneumonia was 25.5% (95%CI 6.5% to 40.7%) [@Hansen2006].
 @Tregnaghi2014 reported the intention to treat analysis efficacy estimate of the primary outcome of bacterial community acquired pneumonia as 18.2% (95% 5.5% to 29.1%), and secondary end-points included clinically suspected pneumonia, 7.3% (95%CI 2.1% to 12.3%).
@@ -678,7 +678,7 @@ The meta-analysis concluded that in children aged 24 months and younger, the int
 
 Invasive pneumococcal disease represents an optimal outcome for trialists to evaluate with randomized controlled trials.
 It is diagnosed when *Streptococcus pnemoniae* is cultured from normally sterile bodily fluids -- there is little risk of subjectivity bias in the outcome. 
-Five randomized controlled trials evaluated the efficacy of PCV for IPD, of which four have been extensively reviewed in Chapters (ref:intro-aom-rct) and (ref:intro-pneumonia-impact) [@Black2000; @Cutts2005; @OBrien2003; @Palmu2013; @Tregnaghi2014].
+Five randomized controlled trials evaluated the efficacy of PCV for IPD, of which four have been extensively reviewed in Chapters \@ref(intro-aom-rct) and \@ref(intro-pneumonia-impact) [@Black2000; @Cutts2005; @OBrien2003; @Palmu2013; @Tregnaghi2014].
 @Black2000 reported the efficacy of PCV7 for vaccine-type IPD to be 93.9% (95%CI 79.6% to 98.5%).
 One fully vaccinated child was diagnosed with IPD caused by 19F. 
 The vaccine-efficacy against IPD regardless of serotype was 89.1% (73.7% to 95.85%).

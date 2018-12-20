@@ -98,7 +98,7 @@ include_graphics(path = "_figures/paper_2/2018-11-25-hr-previous.png")
 ```
 
 The mean number of AOM visits to primary care as a function of age was calculated using the generalized Nelson-Aalen estimate on the underlying Andersen-Gill model. 
-By their fourth birthday, the average child in the VNEC had experienced 1.61 episodes of AOM. 
+By their third birthday, the average child in the VNEC had experienced 1.61 episodes of AOM. 
 The average child in the VEC had experienced 1.37. 
 The mean number of AOM episodes by age is shown in Figure \@ref(fig:figure-results-paper2-nelsonaalen).
 
