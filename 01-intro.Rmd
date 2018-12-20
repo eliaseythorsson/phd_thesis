@@ -55,7 +55,8 @@ data_frame(
     "Cost-effectiveness acceptability curve",
     "Probabilistic sensitivity analysis", 
     "Meningococcal outer membrane protein complex",
-    "Case-fatality ratio"
+    "Case-fatality ratio",
+    "non-typable Haemophilus influenzae"
     ),
     Abbreviation = c(
     "AOM",
@@ -97,7 +98,8 @@ data_frame(
     "CEAC",
     "PSA", 
     "MOMPC",
-    "CFR"
+    "CFR",
+    "NTHi"
     )
     ) %>%
     arrange(Term) %>% # i.e. alphabetical order by Term
@@ -131,32 +133,32 @@ Pneumococcal infections are responsible for a large healthcare burden that spans
 
 For over a century, scientists have attempted to prevent pneumococcal disease using vaccines with varying results.
 Pneumococcal vaccine development is complicated by the polysaccharide coating that protects pneumococcus from environmental factors.
-The polysaccharide capsule acts as an "invisibility cloak" to the human immune system, rendering it unable to detect pneumococcus except through certain patterns in the oligosaccharides contained within the capsule [@Epstein1995].
+The polysaccharide capsule acts as an "invisibility cloak" to the human immune system, rendering it unable to detect pneumococcus except through defined patterns in the oligosaccharides contained within the capsule [@Epstein1995].
 Based on these patterns, pneumococcus has been classified into over 97 different serotypes to date [@Habib2014a].
-As the capsule contains only polysaccharides and not proteins, the immune response is T-cell independent and therefore poorly immunogenic, even after being identified by the immune system [@Geno2015b].
+As the capsule contains only polysaccharides and not proteins, the immune response is T-cell independent and therefore poorly immunogenic, especially in children, even after being identified by the immune system [@Geno2015b].
 The epidemiology of pneumococcus is dominated by person-to-person transmission of asymptomatic carriage [@Beutels2006].
 Because children have no previous immunity to any serotype, they are colonized by pneumococcus more frequently, and each colonization lasts longer [@Melegaro2004].
 This phenomenon is further augmented when multiple immune-naive children congregate, such as in daycare centers and pre-schools [@Yagupsky1998]. 
-Thus children act as a pneumococcal reservoir for the population, without actually having any clinical disease [@Hoshino2002; @LePolaindeWaroux2014; @Mosser2014].
+Thus children act as a pneumococcal reservoir for the population, often without having any clinical disease [@Hoshino2002; @LePolaindeWaroux2014; @Mosser2014].
 Vaccinating children against certain serotypes may therefore lead to a decrease in pneumococcal disease caused by those serotypes in adults.
 In vaccine epidemiology, this is referred to as herd-effect and is an important consideration for pneumococcal vaccine development [@Halloran2010; @Tsaban2017].
 Serotype replacement can also occur, where previously rare serotypes appear and fill the ecological niche vacated by the vaccine serotypes [@Weinberger2011a]. 
 
 Health systems operate under constraints on budgets and resources.
-Demonstrating vaccine benefit is essential, but not the only factor to consider when making health policy decisions.
-Cost and resource allocation are also of crucial importance.
+Demonstrating vaccine benefit for individuals is essential, but not the only factor to consider when making health policy decisions.
+Cost and resource allocation are also of great importance.
+The diseases prevented by an intervention have associated expenses which must be accounted for when the expenditures for the intervention are evaluated. 
 This is especially complicated in the case of vaccines, because benefits are not seen immediately but rather over time and occur in both vaccinated and unvaccinated members of the population [@Isaacman2008; @Kim2008].
-The diseases prevented by vaccines have associated expenses which must be accounted for when the expenditures for a vaccine program are evaluated.
 Cost-effectiveness analysis and cost-benefit analysis are methods developed to measure the ratio between expenditure and benefit, and are used as a tool in making health policy decisions [@Gray2011].
 To adequately perform such an analyses, detailed data on disease incidence and associated costs for the whole population must be available.
 
-Iceland is an independent island nation, isolated in the mid-Atlantic, with a homogeneous population of roughly 330,000 individuals.
+Iceland is an independent island nation, isolated in the mid-Atlantic, with a relatively homogeneous population of roughly 350,000 individuals.
 The first systematic program of vaccination against pneumococcus in Iceland began in April 2011, when the 10-valent pneumococcal *Haemophilus influnzae* protein-D conjugate vaccine (Synflorix, PHiD-CV10) was introduced into the national paediatric vaccination program.
 The vaccine program entailed two primary doses given at three and five months of age, and a booster dose at 12 months.
 No catch-up program was undertaken.
 Prior to the introduction, no systematic vaccination effort had been undertaken in Iceland.
 As the other Nordic countries, Iceland has a rich legacy of national health-related registers.
-Detailed individual-level information on vaccine status, outpatient primary care visits, antimicrobial consumption, tympanic tube procedures and hospitalizations are accessible, and linked between registries using national identification numbers.
+Detailed individual-level information on vaccine status, outpatient primary care visits, antimicrobial consumption, tympanic tube procedures and hospitalizations are accessible, and can be linked between the registries using national identification numbers.
 All healthcare costs are available on the individual-level from Icelandic Health Insurance, which is the insurer of all permanent Icelandic residents.
 This wealth of medical documentation enabled a unique whole-population ecological study examining the impact of systematic pneumococcal vaccination. 
 
@@ -182,7 +184,7 @@ Because pneumococcus is carried in the nasopharynx, this overgrowth results in i
 The pathogenesis of pneumococcal pneumonia is thought to occur through micro-aspiration of upper respiratory secretions, provoking a subsequent rapid proliferation of pneumococcus in the lower respiratory tract [@Cilloniz2016]
 Invasive disease occurs when pneumococcus penetrates the host's immunological defenses and proliferates in normally sterile tissue [@Song2013].
 This can occur as a primary event, or can be secondary to infections of the upper or lower respiratory tract.
-Generally, IPD is considered to encompass meningitis, bacteraemia and septic arthritis.
+Generally, IPD is considered to encompass bacteremic pneumonia, septicemia and meningitis [@Song2013]. 
 While some may argue that the middle ear is normally sterile, AOM is not considered invasive disease.
 
 ### Acute otitis media {#acuteotitismediaintroduction}
@@ -197,27 +199,23 @@ This is the classical acute otitis media with which most parents are familiar.
 AOM can be recurrent, which is defined as AOM occurring three times over a six month period, or four or more times over a 12 month period [@Pichichero2008; @Venekamp2018].
 Conversely, it can take the form of a chronic low-grade process.
 The later phenotype includes otitis media with effusion and chronic suppurative otitis media [@Chen2013; @Rosenfeld2016]
-Otitis media with effusion is defined as the protracted collection of serous fluid in the middle ear.
-By convention, it is considered to be present if middle ear effusion has been documented to have lasted for three months or longer.
-It may follow AOM, or be detected without an obvious inciting event.
-Chronic suppurative otitis media may be thought of as a protracted case of AOM. 
-The child remains sickly and the middle ear is filled with puss.
-The tympanic membrane often ruptures as a result. 
 
 #### Pathogens implicated in acute otitis media
 
 Any pathogen that is able to gain access to the middle ear, disrupt the normal function of the Eustachian tube and replicate within the resulting fluid, has the potential to cause otitis media.
-In upwards of 90% of otitis media cases, the bacteria aspirated from the middle ear fluid will also be found in the nasopharynx [@Casey2010].
-The most common bacterial causes of otitis media are *Haemophilus influenzae*, *Streptococcus pneumoniae* and *Moraxella catarrhalis* [@Bluestone1992; @Casey2004; @Casey2010; @Ngo2016; @Pumarola2013].
-The relative contribution of these three pathogens is remarkably stable between countries and over time.
+Though most studies focus on bacterial pathogens, the most common cause of AOM is Eustachian tube dysfunction caused by viral infection [@Heikkinen2003a].
+Even when bacteria are cultured from middle ear fluid of children experiencing AOM, the causative agent may still be a virus, and the bacteria an innocent bystander that was trapped in the middle ear following acute closure of the Eustachian tube [@Chonmaitree2016].
+In upwards of 90% of otitis media cases with a positive bacterial culture, the bacteria aspirated from the middle ear fluid will also be found in the nasopharynx [@Casey2010].
+The most common bacterial causes of otitis media are non-typable *Haemophilus influenzae* (NTHi), *Streptococcus pneumoniae* and *Moraxella catarrhalis* [@Bluestone1992; @Casey2004; @Casey2010; @Ngo2016; @Pumarola2013].
+The relative contribution of these three pathogens is remarkably stable between countries and over time [@Ngo2016].
 This is likely a consequence of how common they are in the nasopharyngeal flora of children.
 
 A systematic review of studies from 1970-2014 which reported the etiology of otitis media, found that *Streptococcus pneumoniae* caused 30% of acute otitis media in Europe [@Ngo2016].
-In countries that have introduced systematic pneumococcal vaccination, there is evidence to suggest that the microbiology of otitis media has shifted from being predominantly due to pneumococcus to predominantly *Haemophilus influenzae* [@Block2004; @VanDyke2017].
+In countries that have introduced systematic pneumococcal vaccination, there is evidence to suggest that the microbiology of otitis media has shifted from being predominantly due to pneumococcus to predominantly NTHi [@Block2004; @VanDyke2017].
 Of the pneumococcal AOM, the prevalence of vaccine serotypes has decreased and non-vaccine serotypes now predominate.
 Children with otitis media who experience spontaneous rupture of the tympanic membrane have a slightly different distribution of pathogens, with a higher proportion of *Streptococcus pyogenes* and *Staphylococcus aureus* [@Chen2013; @Sonsuwan2016].
 This could be explained by these pathogens causing a more aggressive infection, or possibly by contamination by bacteria located in the external ear canal.
-Similarly, coagulase negative staphylococci and *Staphylococcus aureus* are more common in otitis media with effusion [@Kim2013]. Pneumococcal otitis media is slightly more likely to lead to recurrent otitis media and chronic suppurative otitis media, but is otherwise clinically indistinguishable from otitis media caused by other otopathogens.
+Similarly, coagulase negative staphylococci and *Staphylococcus aureus* are more common in otitis media with effusion [@Kim2013].
 
 #### Healthcare burden of otitis media
 
@@ -314,10 +312,11 @@ In addition, the inability of children to produce a quality sputum sample exacer
 
 The relative contribution of pathogens varies greatly with the age and risk factor profile.
 Only a few studies in developed countries have evaluated the distribution of pathogens which cause pneumonia in children, but they consistently demonstrate the importance of viruses in paediatric pneumonia [@Berg2016; @Jain2015; @Rudan2013a].
-These results may either indicate that viruses are the primary etiological factor, or that viruses weaken the respiratory defenses and allow bacterial disease to develop. 
+These results may either indicate that viruses are the primary etiological factor, or that viruses weaken the respiratory defenses and allow bacterial disease to develop [@Feikin2017].
 The considerable heterogeneity in the proportion of pneumonias found to be caused by various pathogens, underscores the importance of study population, time-period and, most importantly, the methods used in determining the causative pathogen [@Feikin2017].
 A large multicenter study, The Pneumonia Etiology Research for Child Health (PERCH), is underway to clarify the etiology of paediatric pneumonia [@Levine2012].
 Its results have not yet been published.
+
 One of the first prospective studies of paediatric pneumonia was undertaken in Chapel Hill, North Carolina, from 1963 to 1971.
 The study investigated all lower respiratory infections in children, and found most to be caused by respiratory syncytial virus (RSV), parainfluenza virus and *Mycoplasma pneumoniae* [@Glezen1973].
 The predominance of causative viruses is likely due to the methods, current at the time, used to detect etiology.
@@ -328,28 +327,32 @@ In that study, however, antibody testing for pneumococcus was only performed on 
 A few years later, in 1989, a prospective study of paediatric pneumonia in Turku, Finland demonstrated pneumococcus to be a causative pathogen in 38% of cases [@Ruuskanen1992].
 Another etiological study in Paris in 1992-1994, enrolled 104 consecutive children who presented with pneumonia to a single hospital.
 Of those, 14% were found to have pneumococcal pneumonia [@Gendrel1997].
+
 In populations where pneumococcal vaccination is universal, two studies on the etiology of paediatric pneumonia have been published.
 One of these, conducted in the United Kingdom in 2009-2011, found pneumococcus to be causative in 17.4% of cases [@Elemraid2013].
 Another is a large prospective study of 2,358 children conducted in 2011-2012 in the United states, which utilized a variety of sampling methods, and detected pneumococcus in only 4% of cases, a result considerably different than all other etiological studies of paediatric pneumonia [@Jain2015].
 The authors' discussion of possible reasons for this included speculation that low proportion of pneumococcal pneumonia might be due to universal pneumococcal vaccination.
+
 All of the above studies identified respiratory syncytial virus to be the most common causative pathogen.
 Of the bacterial pneumonias, all but one found pneumococcus to be the most common.
 Their interpretation in complicated by the lack of direct sampling from the lungs.
-In studies that used strict radiological inclusion criteria and used lung aspiration to determine the etiology, pneumococcal pneumonia was by far the most common pathogen [@Gilani2012; @WorldHealthOrganization2001].
+In studies that used strict radiological inclusion criteria and lung aspiration to determine the etiology, pneumococcus was found to cause from 20% to 40% of pneumonias [@Gilani2012; @WorldHealthOrganization2001].
     
 While the etiology of adult pneumonia has been more extensively studied, the same challenges are encountered as in the study of children.
 The estimated proportion of pneumonia cases caused by different pathogens varies between studies.
 This may represent a true difference in the underlying study populations or may be a result of different study design and methodology.
-A recent meta-analysis evaluated all published studies of pneumonia etiology in Europe from 1990-2011, and estimated the crude proportion caused by pneumococcus to be 19.3% [@Rozenbaum2013].
+A recent meta-analysis evaluated all published studies of pneumonia etiology in Europe from 1990-2011 [@Rozenbaum2013].
 Seventy-seven studies were included, and inclusion criteria were strict, considering only radiologically confirmed pneumonia.
 The crude estimate of the proportion of pneumonia caused by *Streptococcus pneumoniae* was 19.3%.
 After adjusting for several variables using a fixed-effects meta-regression model, the estimated proportion of pneumococcal pneumonia in the average Northern European country was 15%.
 Another meta-analysis estimated pneumococcus to be the etiology of 24.8% of community acquired pneumonia [@Said2013].
+In a prospective population based study in Iceland, 373 consecutive patients admitted to Landspitali University Hospital for pneumonia were recruited and systematically test for etiology [@Bjarnason2015]. 
+Pneumococcus was found to be the causative agent in 28% of community acquired pneumonias, and 41% of healthcare-associated pneumonias. 
 
 #### Healthcare burden of pneumonia
 
 Lower respiratory infections were, in 2016, estimated to cause 2,38 million deaths worldwide and were the sixth leading cause of death [@Troeger2018].
-Of those deaths, 652,572 (95%CI 586,475-720,612) were estimated to occur among children under five years of age, making lower respiratory infections the leading cause of death in this age-group.
+Of those deaths, 652,572 (95%CI 586,475 to 720,612) were estimated to occur among children under five years of age, making lower respiratory infections the leading cause of death in this age-group.
 Large variations exist in the incidence, morbidity and mortality of pneumonia between countries.
 Pneumonia disproportionately affects developing countries, which experience over half of the pneumonia associated mortality.
 Yet pneumonia is still a large healthcare burden in developed countries, and accounts for 3%-18% of all childhood hospital admissions [@Madhi2013].
@@ -384,17 +387,17 @@ The effect of these conditions on health-related quality of life is devastating 
 
 ## Pneumococcal vaccines
 
-In this chapter we will review the history of pneumococcal vaccination to better understand the current vaccine climate.
-Special attention will be paid to the scientific discourse that led to the recognition of the need for conjugating pneumococcal polysaccharides to a protein carrier.
-The scientific literature on the impact of pneumococcal conjugate vaccines on acute otitis media, pneumonia and invasive pneumococcal disease will be reviewed and discussed.
+In this chapter the history of pneumococcal vaccination is reviewed to better understand the current vaccine climate.
+Special attention is paid to the scientific discourse that led to the recognition of the need for conjugating pneumococcal polysaccharides to a protein carrier.
+The scientific literature on the impact of pneumococcal conjugate vaccines on acute otitis media, pneumonia and invasive pneumococcal disease is reviewed and discussed.
 
 ### A brief history of pneumococcal vaccination
 
 The history of pneumococcal vaccination can be roughly divided into three phases; the inactivated (killed) whole-cell vaccines; the polysaccharide vaccines and the conjugated vaccines.
-It begins in 1911 when Wright and colleagues attempted to use an inoculation of heat-killed pneumococcus to vaccinate South African miners against pneumococcal pneumonia [@Wright1914].
-It should be noted however, that in George Sternberg's original description of pneumococcus in 1881, he observed that rabbits who were injected with saliva mixed with alcohol and quinine died less frequently than those injected with saliva alone, and were later resistant to re-injection with saliva [@Austrian1999a; @Sternberg1881].
-Sternberg had inadvertently immunized the laboratory animals against subsequent infection by injecting killed pneumococci, thus proving the concept 30 years before it was first attempted.
-The 1911 trial by Wright failed to demonstrate efficacy because the significance of serotypes and serotype specific immunogenicity was not known.
+In George Sternberg's original description of pneumococcus in 1881, he observed that rabbits who were injected with saliva mixed with alcohol and quinine died less frequently than those injected with saliva alone, and were later resistant to re-injection with saliva [@Austrian1999a; @Sternberg1881].
+Sternberg had inadvertently immunized the laboratory animals against subsequent infection by injecting killed pneumococci, thus proving the concept of pneumococcal vaccination 30 years before it was first attempted in 1911. 
+In 1911, Wright and colleagues attempted to use an inoculation of heat-killed pneumococcus to vaccinate South African miners against pneumococcal pneumonia [@Wright1914].
+The trial failed to demonstrate efficacy because the significance of serotypes and serotype specific immunogenicity was not known.
 In the following two decades, several trials using inactivated whole-cell pneumococcal vaccines were published [@Cecil1918; @Lister1916; @Lister1936; @Maynard1913]
 Due to inconsistencies in study design, the efficacy of whole bacteria pneumococcal vaccines remained fiercely debated at the time, despite some evidence of benefit [@Austrian1999a].
 
@@ -431,7 +434,7 @@ They have however been shown to be effective in several cluster randomized trial
 
 ### The impact of pneumococcal conjugate vaccines on otitis media
 
-Acute otitis media is still most often caused by *Streptococcus pneumoniae* and *Haemophilus influenzae* despite changes in otopathogens.
+Acute otitis media is still most often caused by *Streptococcus pneumoniae* and *Haemophilus influenzae* despite changes in otopathogens [@Ngo2016].
 Prevention of invasive pneumococcal disease in children and the associated morbidity and mortality was the driving force in the development of pneumococcal conjugate vaccines.
 However, the public often associates pneumococcal conjugate vaccines with AOM.
 Most children experience AOM and the dramatic decrease in incidence following pneumococcal conjugate vaccination is what families noticed.
@@ -459,24 +462,21 @@ The studies are summarized in Table \@ref(tab:table-rct-aom).
 The first published randomized controlled trial of a pneumococcal conjugate vaccine reported, among other outcomes, the efficacy against AOM [@Black2000].
 The study recruited 37,868 children between October 1995 and August 1998 and randomized them to the either PCV7~CRM197~ or the meningococcus C CRM197 conjugate vaccine.
 A separate publication from the same trial was published in 2003, and examined the effect of PCV7~CRM197~ on AOM in more detail using the full data until study completion in April 1999 [@Fireman2003].
-A visit was considered to be due to the same episode of AOM if the child presented within 21 days of a previous AOM associated visit.
-Frequent otitis media was then defined as either three episodes within a six month period, or four episodes within a 12 month period. 
-Both the Andersen-Gill extension of the Cox proportional hazards model with robust variance estimation and the binomial test with Klopper-Pearson confidence intervals were used and efficacy was reported as $(1 - ratio\ measure) *100\%$.
-The estimated vaccine efficacy against otitis media visits was 7.8% (95%CI 5.4%-10.2%).
+Both the Andersen-Gill extension of the Cox proportional hazards model with robust variance estimation and the binomial test with Klopper-Pearson confidence intervals were used.
+The estimated vaccine efficacy against otitis media visits was 7.8% (95%CI 5.4% to 10.2%).
 Slightly higher point estimates were found for otitis media episodes, frequent otitis media and ventilatory tube placements [@Black2000; @Fireman2003]
 
 The following year the results of two more randomized controlled trials were published [@Dagan2001; @Eskola2001].
 @Dagan2001 enrolled 264 children ages 12-35 months of age attending eight daycare centers in Beer-Sheva, Isreal.
 The study employed a block randomized design which stratified the children according to daycare center and age-group.
-Within each stratified group, children were randomized in blocks of six.
-The study examined a nine valent pneumococcal CRM197 conjugate vaccine produced by Wyeth-Lederle Vaccines and used the same meningococcal C CRM197 conjugate vaccine as the @Black2000 study as a control.
+The study examined a nine-valent pneumococcal CRM197 conjugate vaccine produced by Wyeth-Lederle Vaccines.
 The study's primary endpoint was vaccine-type nasopharyngeal carriage and the secondary endpoint was parent reported respiratory infections.
 Monthly questionnaires were submitted to parents for one year starting one month after the last per-protocol vaccine dose, and bimonthly thereafter for a total of 18 encounters.
 Respiratory infections were split into four different categories (Upper respiratory infections, lower respiratory problems, otitis media and other illnesses) and the results were measured in two different ways; episodes per 100 child-months and the proportion of antimicrobial days during the study period.
 Finally, each category and measurement was compared in children <36 months of age, 36 months of age and older, and overall, resulting in $4\ *\ 2\ *\ 3=16$ comparisons between the intervention and control. 
 The statistical analysis used $\chi^2$ and Fischer's exact contingency table methods but did not account for multiple testing.
-The study reported an efficacy of 17% (95%CI -2%-33%) for otitis media episodes and 20% (95%CI 14%-26%) antimicrobial treated otitis media, as measured by days spent on antimicrobial.
-The later does remain statistically significant when the result has been corrected for multiple testing using any standard method.
+The study reported an efficacy of 17% (95%CI -2% to 33%) for otitis media episodes and 20% (95%CI 14% to 26%) for antimicrobial treated otitis media, as measured by days spent on antimicrobials.
+This remains statistically significant when the result has been corrected for multiple testing using any standard method.
 
 ```{r, include=FALSE}
 # Adjustment of P-value in Dagan et. al
@@ -503,7 +503,6 @@ The study methodology was identical between the two publications as they report 
 The study was specifically designed to address the difficulties associated with estimating the effect of pneumococcal vaccination on AOM.
 A total of 2,497 children were enrolled between December 1995 and April 1997, of which 835 received the PCV7~MOMPC~ vaccine and were therefore not reported in the @Eskola2001 paper.
 Children were followed until their last visit at 24 months of age.
-Of the enrolled children, 95.1% completed full follow-up time and there was no evidence of differential dropout. 
 The study defined beforehand the criteria for what constituted AOM and employed a trained study nurse and physician at each study site.
 Children were seen at enrollment at two months of age, and periodically assessed thereafter at four, six, seven, 12, 13 and 24 months of age.
 If AOM was diagnosed as defined by the study criteria, myringotomy and aspiration of middle-ear fluid were performed and samples sent for culture.
@@ -513,19 +512,19 @@ The statistical analysis was again conducted using the Andersen-Gill extension o
 The results were most consistent with a 6% efficacy against all-cause AOM with 95% confidence limits of -4% and 16%.
 In this case the negative lower confidence limit indicates the data could be consistent with the possibility of a 4% increase in all-cause AOM, given the specified model.
 
-The PCV~CRM197~ efficacy against culture-confirmed pneumococcal AOM was 35% (95%CI 21%-45%) and was 57% (95%CI 44%-67%) for the seven serotypes included in the vaccine.
-Similarly, the study demonstrated 57% (95%CI 27%-76%) efficacy against AOM caused by serotype 6A, which is considered a cross-reactive pneumococcal serotype.
+The PCV~CRM197~ efficacy against culture-confirmed pneumococcal AOM was 35% (95%CI 21% to 45%) and was 57% (95%CI 44% to 67%) for the seven serotypes included in the vaccine.
+Similarly, the study demonstrated 57% (95%CI 27% to 76%) efficacy against AOM caused by serotype 6A, which is considered a cross-reactive pneumococcal serotype.
 The study was also one of the first to demonstrate clinically relevant serotype replacement, showing a 33% (95%CI -1%-80%) increase in pneumococcal AOM caused by serotypes not included in the vaccine.
 
 Children who completed the @Eskola2001 trial and were still living in the study area were invited for a follow-up interview when they were four to five years of age [@Palmu2004].
-In the extended follow-up trial, the vaccine effectiveness against all tympanostomy tube placements was estimated to be 39% (95%CI 4%-61%).
-However, this was unblinded study following the unmasking of the original study and there was differential recruitment between the placebo and PCV7~CRM197~ arms.
-There was therefore a substantial risk of bias in the study.    
+In the extended follow-up trial, the vaccine effectiveness against all tympanostomy tube placements was estimated to be 39% (95%CI 4% to 61%).
+However, this study was unblinded following unmasking and there was differential recruitment between the placebo and PCV7~CRM197~ arms.
+There was therefore a substantial risk of bias in the study, and its results are therefore not included in Table \@ref(tab:table-rct-aom).
 
 The effect estimates for the PCV7~MOMPC~ against culture-confirmed pneumococcal AOM was 25% (95%CI 11%-37%) and was 56% (95%CI 44%-66%) for the seven serotypes included in the vaccine [@Kilpi2003].
 However, unlike PCV~CRM197~, it did not seem to confer protection against cross-reactive serotypes.
 Interestingly, virtually no effect was seen on all-cause AOM with this vaccine preparation. 
-The effect estimate was -1% (95%CI -12%-10%).
+The effect estimate was -1% (95%CI -12% to 10%).
 These surprising results were not presented in the main text and no explanation was given in the discussion chapter of the paper.
 
 ```{r table-rct-aom}

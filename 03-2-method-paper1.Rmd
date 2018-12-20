@@ -4,11 +4,11 @@ The objective of Paper I was to evaluate whether the introduction of PHiD-CV10 w
 Treatment of otitis media with ceftriaxone was used as a proxy for treatment failure.
 Ceftriaxone use for other diagnoses and in older children was used as a comparator.
 
-All children under eighteen years of age who visited Children's Hospital Iceland between January 1, 2008 and December 31, 2015 were included.
-Children's Hospital Iceland's referral area was defined as a 100km driving distance from the hospital.
-Population demographic data for the referral area was obtained from Statistics Iceland (www.statice.is), as previously described in \@ref(statisticsiceland).
+All children under 18 years of age who visited Children's Hospital Iceland between 1 January 2008 and 31 December 2015 were included.
+Children's Hospital Iceland's referral area was defined as a 100 kilometer driving distance from the hospital.
+Population demographic data for the referral area were obtained from Statistics Iceland (www.statice.is), as previously described in \@ref(statisticsiceland).
 
-Data was extracted from Landspitali University Hospital's [patient registry](#patientregistry).
+Data were extracted from Landspitali University Hospital's [patient registry](#patientregistry).
 A visit was included in the study if an ICD-10 code of Nonsuppurative otitis media (H65) or Suppurative and unspecified otitis media (H66) was documented in the medical record, or if a child received one or more doses of ceftriaxone.
 All administered doses of ceftriaxone were systematically extracted from the hospital's medication administration system using the ATC code J01DD04.
 The ICD-10 diagnoses associated with the ceftriaxone administrations were then obtained from the patient registry.
@@ -22,7 +22,7 @@ It was considered due to pneumonia if ICD-10 codes Bacterial pneumonia, not else
 Visits associated with ceftriaxone administration that did not fall into either of the above categories were classified together as "Other".
 
 The number of ceftriaxone treatment episodes per diagnostic group was aggregated by calendar month.
-An episode was considered distinct if no ceftriaxone administration was documented in the previous fourteen days.
+An episode was considered distinct if no ceftriaxone administration was documented in the previous 14 days.
 Incidence rates (IR) per 1,000 person-years were calculated by dividing the monthly number of ceftriaxone episodes per diagnostic group by the number of person-years accrued by children in the referral area.
 The IR of OM visits were similarly defined and calculated.
 If a decrease were to be observed in the number of ceftriaxone treated OM episodes, it could be due to either a decrease in the number of OM visits or a decrease in the use of ceftriaxone.
