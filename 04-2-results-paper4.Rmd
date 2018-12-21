@@ -13,12 +13,12 @@ library(survminer)
 load("_analyses/paper_4/2018-11-28-04-2-results-paper4.RData")
 ```
 
-Demographic data regarding the study birth-cohorts are summarized in Chapter \@ref(datasourcesresults).
+Demographic data regarding the study birth-cohorts are summarized in chapter \@ref(datasourcesresults).
 In total, during the study period, 14,351 children underwent 20,373 tympanostomy tube placements, 57% of whom were male. 
 The median age of children undergoing their first tympanostomy procedure was 17 months (IQR 13-24). 
-In the subset of children who underwent a tympanostomy tube placement during the study period, 10,248 (71%) underwent only one procedure, 2,902 (20%) underwent two, and 1201 (8%) underwent three or more. 
+In the subset of children who underwent a TTP during the study period, 10,248 (71%) underwent only one procedure, 2,902 (20%) underwent two, and 1201 (8%) underwent three or more. 
 Almost all (98%) of the procedures were performed in private outpatient clinics. 
-The number of otolaryngologists performing outpatient tympanostomy tube placements increased from 15 in 2005 to 23 in 2016.
+The number of otolaryngologists performing outpatient TTP increased from 15 in 2005 to 23 in 2016.
 Each surgeon performed a median of 123 (IQR: 56.5-196) procedures each year.
 The study's population is summarized in Table \@ref(tab:table-paper4-demographics).
 
@@ -78,21 +78,23 @@ kable(
         ) %>%
         select(-child_proc),
     col.names = c("Birth-cohort", "Number of children", "Person-years", "Number of procedures (n children)", "Median age (months)"),
-    caption = "Demographic information regarding the study's birth-cohorts",
+    caption = "An overview of the birth-cohorts included in paper IV. The number of observed tympanostomy tube placements (TTP) in each cohort is presented, with the number of children undergoing the procedures within parentheses. The median age in months at the time of a childs first procedure is shown. The observational period is 1 January 2005 to 31 December 2016. Birth-cohorts 2012-2015 do not attain full follow-up time, as indicated by fewer person-years included in the study. Thus, the decrease in the number of procedures and and median age is not indicative of a true decrease.",
     format.args = list(big.mark = ",")
 )
 ```
 
-The crude incidence rate of tympanostomy tube placements in the vaccine eligible cohorts was 10.6 procedures per 100 person-years.
-This was significantly higher than the crude incidence rate in the vaccine non-eligible cohorts, 8.7 procedures per 100 person-years (IRR 1.20, 95%CI 1.17-1.24).
-When stratified by age-groups, the crude incidence rate was highest among 12-17 month old children (Figure \@ref(fig:figure-results-paper4-incidence)). 
+The crude incidence rate of TTP in the vaccine eligible cohorts was 10.6 procedures per 100 person-years.
+This was significantly higher than the crude incidence rate in the vaccine non-eligible cohorts, 8.7 procedures per 100 person-years (IRR 1.20, 95%CI 1.17 to 1.24).
+When stratified by age-groups, the crude incidence rate was highest among 12-17 month old children, ranging from 19 to 27 procedures per 100 person-years (Figure \@ref(fig:figure-results-paper4-incidence)).
 
-```{r figure-results-paper4-incidence, fig.cap = "Incidence of tympanostomy tube procedures by age-group and birth-cohort"}
+(ref:figure18) The incidence rate (IR) of tympanostomy tube placements (TTP) is shown stratified by birth-cohort and six-month age-groups. The estimated IR is represented with a point, and 95% confidence intervals are illustrated with horizontal error-bars. The vaccine non-eligible cohorts (VNEC) are depicted in red, and the vaccine eligible cohorts (VEC) in blue. The incidence rate ratio (IRR) between the VEC and VNEC is shown for each age-group and 95% confidence intervals are presented within parentheses.
+
+```{r figure-results-paper4-incidence, fig.cap = "(ref:figure18)"}
 include_graphics(path = "_figures/paper_4/2018-11-28-incidence.png")
 ```
 
-The cumulative incidence of children who had undergone at least one tympanostomy tube placement by five years of age was highest in birth-cohort 2010 (31.7%) and lowest in birth-cohort 2006 (28.6%), Table \@ref(tab:table-paper4-proportion).
-The cumulative incidence of tympanostomy procedures was significantly higher in the vaccine eligible birth-cohorts compared to vaccine non-eligible cohorts regardless of age (Figure \@ref(fig:figure-results-paper4-cumulative-event)).
+The cumulative incidence of children who had undergone at least one TTP by five years of age was highest in birth-cohort 2010 (31.7%) and lowest in birth-cohort 2006 (28.6%), Table \@ref(tab:table-paper4-proportion).
+The cumulative incidence of tympanostomy procedures was significantly higher in the VEC compared to VNEC regardless of age (Figure \@ref(fig:figure-results-paper4-cumulative-event)).
 
 ```{r table-paper4-proportion}
 options(knitr.kable.NA = '-')
@@ -105,11 +107,13 @@ kable(
         mutate(birth_y = as.character(birth_y), surv = round((1 - surv) * 100, 1)) %>%
         spread(key = birth_y, value = surv),
     col.names = c("Age (months)", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015"),
-    caption = "Demographic information regarding the study's birth-cohorts"
+    caption = "The cumulative incidence of having undergone at least one tympanostomy tube placement (TTP) at six-month age intervals is presented for each birth-cohort. The cumulative incidence is presented as a percentage (%) of all children in the respective cohort. Birth-cohorts 2012-2015 do not attain full follow-up time. Lack of information due to censoring is indicated with a hyphen (-)."
 )
 ```
 
-```{r figure-results-paper4-cumulative-event, fig.cap = "Cumulative proportion of children who underwent at least one tympanostomy tube placement for the vaccine eligible (VEC) and vaccine non-eligible (VNEC) cohorts"}
+(ref:figure19) The cumulative incidence of tympanostomy tube placements (TTP) is shown for the vaccine eligible (VEC) and vaccine non-eligible cohorts (VNEC) as a continueous function of age. Cumulative incidence is presented as a proportion of all children in the respecive vaccine eligibility cohort. The estimated cumulative incidence is illustrated with a solid red line for the VNEC, and a solid blue line for the VEC, and 95% confidence intervals are depicted with a shaded area.
+
+```{r figure-results-paper4-cumulative-event, fig.cap = "(ref:figure19)"}
 include_graphics(path = "_figures/paper_4/2018-11-28-cumulative-event.png")
 ```
 

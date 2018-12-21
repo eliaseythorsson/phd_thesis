@@ -11,7 +11,7 @@ load("_analyses/results/2018-11-25-04-1-results.RData")
 
 ## Data collection and sources {#datasourcesresults}
 
-The data presented in this thesis was collected and analysed over a four year period from 2013-2017.
+The data presented in this thesis were collected and analysed over a four year period from 2013-2017.
 Consequently, the papers that form this thesis were written and published at different times.
 Therefore, the study period and the populations described in each paper varies slightly.
 They differ however only marginally from the final data summary described below.
@@ -57,7 +57,7 @@ kable(
 
 ### Statistics Iceland
 
-Statistics Iceland (www.statice.is) provided data on immigration and emigration of all Icelandic children zero to four years of age from 2005-2017.
+Statistics Iceland (www.statice.is) provided data on the immigration and emigration of all Icelandic children zero to four years of age from 2005-2017.
 Of the 57,695 Icelandic children born 2005 or later, 5,577 moved to or from the country 6,847 times.
 The proportion of children in each birth-cohort who moved at least once before five years of age, was consistently 9%-12% of those birth-cohorts with full follow-up time (birth-cohorts 2005-2012).
 
@@ -249,7 +249,7 @@ kable(
     ) %>%
     mutate(n = if_else(is.na(n), 0L, n)),
     col.names = c("NCSP code", "Description", "Number of procedures"),
-    caption = "The number of NOMESCO Classification of Surgical Procedures (NCSP) performed at Landspitali University Hospital between 1 January 2005 and 31 December 2017. The presented data is for all age-groups",
+    caption = "The number of NOMESCO Classification of Surgical Procedures (NCSP) performed at Landspitali University Hospital between 1 January 2005 and 31 December 2017. The data is presented for all age-groups",
     format.args = list(big.mark = ",")
     )
 ```
@@ -257,10 +257,18 @@ kable(
 The age distribution of visits and hospital admissions are shown in Figure \@ref(fig:density-age).
 Though children and young adults comprise most of the visits due to study diagnoses, older adults make up the largest number of hospitalizations. 
 
-(ref:figure1) The total number of contacts to Landspitali University Hospital and Primary Care Centers in Iceland associated with International Classification of Diseases, 10th revision (ICD-10) codes compatible with respiratory infections. Data on hospital contacts were extracted from Landspitali University Hospital's patient registry from 1 January 2005 to 31 December 2017. Primary care contacts were obtained from the Primary Care Registry of the Icelandic Directorate of Health from 1 January 2005 to 31 December 2015. The number of contacts are shown as a function of age. Different Y-axis scales are used for each category. The figure demonstrates disproportionate hospitalizations among older adults, compared to primary care contacts and hospital visits. 
+(ref:figure1) The total number of contacts to Landspitali University Hospital and Primary Care Centers in Iceland associated with International Classification of Diseases, 10th revision (ICD-10) codes compatible with respiratory infections. Data on hospital contacts were extracted from Landspitali University Hospital's patient registry from 1 January 2005 to 31 December 2017. Primary care contacts were obtained from the Primary Care Registry of the Icelandic Directorate of Health from 1 January 2005 to 31 December 2015. The number of contacts are shown as a function of age. Different Y-axis scales are used for each category. The figure demonstrates disproportionate hospitalizations among older adults, compared to primary care contacts and hospital visits.
 
 ```{r density-age, fig.cap = "(ref:figure1)"}
 include_graphics(path = "_figures/results/2018-11-16-density-age.png")
+```
+
+In addition to the increased frequency of hospitalization among older adults, the cost associated with each visit and hospitalization is higher (Figure \@ref(fig:cost-density)).
+
+(ref:figure2) The distribution in the cost associated with contacts to Landspitali University Hospital was extracted from the patient registry for the period of 1 January 2005 to 31 December 2017. Costs are presented in Icelandic Krona (ISK) at the value of the calendar year in which they occurred. Distributions are presented seperately for visits and hospitalizations, and are further divided into age-groups. The X-asis has been logarithmically scaled. The figure shows that costs associated with visits range from 1,000 ISK to 100,000 ISK, while hospitalizations range from 100,000 ISK to 10,000,000 ISK. As age increases, the distribution is shifted towards higher costs.
+
+```{r cost-density, fig.cap = "(ref:figure2)"}
+include_graphics(path = "_figures/results/2018-12-20-cost-density.png")
 ```
 
 ### The Primary Care Registry 
@@ -278,10 +286,10 @@ All recorded pneumococcal vaccine doses were extracted using ATC code J07 and su
 A total of 110,712 doses of pneumococcal vaccines were administered to 51,601 individuals during the study period.
 The monthly number of administered doses per age-group and vaccine is shown in Figure \@ref(fig:vaccine-time).
 
-(ref:figure2) The monthly number of administered doses of pneumococcal vaccines in Iceland from 1 January 2005 to 31 December 2017. Data were extracted from the National Vaccine Registry of the Icelandic Directorate of Health using Anatomical Therapeutic Chemical code J07. Records were available for four different pneumococcal vaccines; the 23-valent pneumococcal polysaccharide vaccine (23-PPV, purple), seven-valent pneumococcal conjugate vaccine (PCV7, red), the 10-valent pneumococcal conjugate vaccine (PCV10, blue) and the 13-valent pneumococcal conjugate vaccine (PCV13, green). The introduction of PCV10 into the Icelandic pediatric vaccination program on 1 April 2011, is shown with a dotted line.
-Different Y-axis scales are used for each category of age. The figure demonstrates the abrupt and sustained increase in the number of administered doses of PCV10 following introduction into the vaccine program. Adult vaccination with 23-PPV does not appear to have increased during the study period. 
+(ref:figure3) The monthly number of administered doses of pneumococcal vaccines in Iceland from 1 January 2005 to 31 December 2017. Data were extracted from the National Vaccine Registry of the Icelandic Directorate of Health using Anatomical Therapeutic Chemical code J07. Records were available for four different pneumococcal vaccines; the 23-valent pneumococcal polysaccharide vaccine (23-PPV, purple), seven-valent pneumococcal conjugate vaccine (PCV7, red), the 10-valent pneumococcal conjugate vaccine (PCV10, blue) and the 13-valent pneumococcal conjugate vaccine (PCV13, green). The introduction of PCV10 into the Icelandic pediatric vaccination program on 1 April 2011, is shown with a dotted line.
+Different Y-axis scales are used for each category of age. The figure demonstrates the abrupt and sustained increase in the number of administered doses of PCV10 following introduction into the vaccine program. Adult vaccination with 23-PPV does not appear to have increased during the study period.
 
-```{r vaccine-time, fig.cap = "(ref:figure2)"}
+```{r vaccine-time, fig.cap = "(ref:figure3)"}
 include_graphics(path = "_figures/results/2018-11-25-vaccine-time.png")
 ```
 
@@ -322,9 +330,9 @@ knitr::kable(
 
 Some children in vaccine non-eligible cohorts received one, two or three doses of pneumococcal conjugate vaccines before four years of age. This generally occurred at an older age than children in the vaccine eligible cohorts Figure \@ref(fig:vaccine-age).
 
-(ref:figure3) The age at which children receive their first, second and third dose of a pneumococcal conjugate vaccine (PCV) is shown as a function of birth-date. All administered doses of PCV were extracted from the National Vaccine Registry of the Icelandic Directorate of Health from 1 January 2005 to 31 December 2017, using Anatomical Therapeutic Chemical code J07. The age at which each individual child receives a dose of PCV is illustrated with a point. The child's first documented dose is indicated in red color, their second dose in blue and their third dose in green. The introduction of PCV10 into the Icelandic pediatric vaccination program on 1 April 2011, is shown with a dotted line. Though some children received PCV prior to the vaccine introduction, they did so sporadically and few achieved two or more doses. Those who did were almost invariably born in the later half of 2010. An obvious change occurs after vaccine introduction. The apparent oblique cut-off in points starting for children born in 2014 is explained by censored follow-up time. 
+(ref:figure4) The age at which children receive their first, second and third dose of a pneumococcal conjugate vaccine (PCV) is shown as a function of birth-date. All administered doses of PCV were extracted from the National Vaccine Registry of the Icelandic Directorate of Health from 1 January 2005 to 31 December 2017, using Anatomical Therapeutic Chemical code J07. The age at which each individual child receives a dose of PCV is illustrated with a point. The child's first documented dose is indicated in red color, their second dose in blue and their third dose in green. The introduction of PCV10 into the Icelandic pediatric vaccination program on 1 April 2011, is shown with a dotted line. Though some children received PCV prior to the vaccine introduction, they did so sporadically and few achieved two or more doses. Those who did were almost invariably born in the later half of 2010. An obvious change occurs after vaccine introduction. The apparent oblique cut-off in points starting for children born in 2014 is explained by censored follow-up time.
 
-```{r vaccine-age, fig.cap = "(ref:figure3)"}
+```{r vaccine-age, fig.cap = "(ref:figure4)"}
 include_graphics(path = "_figures/results/2018-11-25-vaccine-age.png")
 ```
 
@@ -396,9 +404,9 @@ kable(
 
 The distribution in the number of prescriptions for selected chemical sub-levels of the ATC classification system are shown as a function of age in Figure \@ref(fig:prescriptions-age).
 
-(ref:figure4) The number of filled antimicrobial prescriptions are shown as a function of age for selected chemical sub-levels of the Anatomical Therapeutic Chemical (ATC) classification system. Data were extracted from the National Drug Prescription Registry of the Icelandic Directorate of Health for the period of 1 January 2005 to 31 December 2017. Different Y-axis scales are used for each category. The figure demonstrates a similar age-distribution for beta-lactam antibacterials, sulfonamides and macrolides, with most prescriptions being filled by young children. Tetracyclines and quinolones are more commonly filled by adults. 
+(ref:figure5) The number of filled antimicrobial prescriptions are shown as a function of age for selected chemical sub-levels of the Anatomical Therapeutic Chemical (ATC) classification system. Data were extracted from the National Drug Prescription Registry of the Icelandic Directorate of Health for the period of 1 January 2005 to 31 December 2017. Different Y-axis scales are used for each category. The figure demonstrates a similar age-distribution for beta-lactam antibacterials, sulfonamides and macrolides, with most prescriptions being filled by young children. Tetracyclines and quinolones are more commonly filled by adults. 
 
-```{r prescriptions-age, fig.cap = "Antimicrobial prescriptions by age"}
+```{r prescriptions-age, fig.cap = "(ref:figure5)"}
 include_graphics(path = "_figures/results/2018-11-18-prescriptions-age.png")
 ```
 

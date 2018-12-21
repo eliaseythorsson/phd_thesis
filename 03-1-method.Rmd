@@ -30,7 +30,7 @@ For each calendar-year 2005-2017, the number of individuals living in Iceland wa
 These data were used for the denominator in incidence calculations in all papers.
 The deciles of salary from 2005-2017 were obtained from Statistics Iceland and used to inform a sensitivity analysis on the cost-effectiveness of PHiD-CV10 ( [Paper VI](#paper6)).
 Costs were adjusted for inflation using the Medical Care Consumer Price Index of Statistics Iceland, and wages adjusted using the National Wage Index. 
-In addition to the aggregate data presented above, individual level information on the immigration and emigration of children zero to four years of age was obtained, anonymized and linked to the other study data.  
+In addition to the aggregate data presented above, individual-level information on the immigration and emigration of children zero to four years of age was obtained, anonymized and linked to the other study data.  
 
 ### Landspitali University Hospital patient registry {#patientregistry}
 
@@ -184,8 +184,12 @@ kable(
 ```
 
 
-The data included the date of visit or hospital admission, date of hospital discharge, hospital length of stay, the departments involved (including the intensive care unit), and a detailed breakdown of costs associated with the visit.
-A separate and unique identification number was provided for each individual visit or hospital admission. 
+The data included the date of visit or hospital admission, date of hospital discharge, hospital length of stay, the departments involved (including the intensive care unit), and a detailed breakdown of costs associated with each contact.
+A separate and unique identification number was provided for each individual visit or hospital admission.
+All costs were recorded in Icelandic kronas (ISK) and was broken down into specific subsets.
+Costs associated with diagnostic testing were provided and broken down into costs associated with chemical blood testing; diagnostic radiological testing; anatomical pathology; virological testing; bacteriological cultures; antibody and other immunological testing; and specific tests performed by the blood bank in preparation for the administration of blood products.
+Costs associated with departmental upkeep, such as heat, electricity, and wages were divided between patients based on hospital length of stay.
+The costs associated with treatment were broken down into the cost of drugs, surgery and procedures and intensive care unit treatment. 
 
 Several smaller independent data-sets pertaining to specific papers were extracted from the patient registry.
 These data-sets were not linked to the main study data. 

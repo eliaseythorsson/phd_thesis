@@ -56,7 +56,8 @@ data_frame(
     "Probabilistic sensitivity analysis", 
     "Meningococcal outer membrane protein complex",
     "Case-fatality ratio",
-    "non-typable Haemophilus influenzae"
+    "non-typable Haemophilus influenzae",
+    "Icelandic krona"
     ),
     Abbreviation = c(
     "AOM",
@@ -99,7 +100,8 @@ data_frame(
     "PSA", 
     "MOMPC",
     "CFR",
-    "NTHi"
+    "NTHi",
+    "ISK"
     )
     ) %>%
     arrange(Term) %>% # i.e. alphabetical order by Term

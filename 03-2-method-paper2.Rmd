@@ -1,13 +1,14 @@
-## Impact on primary care visits for otitis media (Paper II){#paper2}
+## Impact on primary care visits for acute otitis media (Paper II){#paper2}
 
-The objective of Paper II was to evaluate the impact of PHiD-CV10 on the incidence of otitis media in Icelandic children.
+The objective of Paper II was to evaluate the impact of PHiD-CV10 on the incidence of acute otitis media in Icelandic children.
 Paper II is a population based observational cohort study that followed all children born in Iceland between 1 January 2005 and 31 December 2015, from birth until three years of age, death or end of the study period.
 All primary care visits in which an ICD-10 diagnostic code of suppurative otitis media (H66) was recorded were included.
 Any visits occurring within 30 days of a previously documented visit by the same child were excluded from the main analysis.
+The study therefore represented AOM episodes, rather than AOM visits. 
 
 Data were obtained from the [Primary Care Registry](primarycareregistry) of the Icelandic Directorate of Health.
-In addition to the diagnosis of otitis media, the data included all ICD-10 codes associated with the visit, as well as the date of the visit, age and gender of the child, and physician identification number.
-The study identification number used to identify unique individuals is derived from the national identification numbers issued individuals by the government. 
+In addition to the diagnosis of acute otitis media, the data included all ICD-10 codes associated with the visit, as well as the date of the visit, age and gender of the child, and physician identification number.
+The study identification number used to identify unique individuals is derived from the national identification numbers issued to individuals by the government. 
 Those who had immigrated to Iceland after birth were excluded.
 Demographic population data was obtained from Statistics Iceland.
 

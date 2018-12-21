@@ -226,4 +226,55 @@ ggsave(
     plot = prescriptions_age,
     width = 12, height = 12, units = "cm", dpi = 600)
 
+cost_density <- ids %>%
+    left_join(lsh) %>%
+    mutate(age_y = floor(as.numeric(abs(
+        difftime(birth_date, date_in, units = "day")
+    ) / 365.25)),
+    dataset = factor(
+        if_else(
+            lotu_teg == "Ferlilota",
+            "Visits",
+            "Hospitalizations"
+        ),
+        levels = c(
+            "Visits",
+            "Hospitalizations"
+        )
+    )) %>%
+    mutate(age_group = factor(
+        case_when(
+            age_y >= 0 & age_y <= 4 ~ "<4 years of age",
+            age_y >= 5 & age_y <= 17 ~ "4-17 years of age",
+            age_y >= 18 & age_y <= 64 ~ "18-64 years of age",
+            age_y >= 65 ~ "65 and older"
+        ),
+        levels = c(
+            "<4 years of age",
+            "4-17 years of age",
+            "18-64 years of age",
+            "65 and older"
+        )
+    )) %>%
+    filter(!is.na(dataset),!is.na(age_group)) %>%
+    ggplot(aes(x = cost_total, y = ..count..)) +
+    geom_density() +
+    labs(x = "Total cost in ISK", y = "Number of contacts") +
+    scale_y_continuous(labels = scales::comma) +
+    scale_x_log10(breaks = scales::log_breaks(n = 8, base = 10),
+                  labels = scales::comma) +
+    facet_grid(age_group ~ dataset) +
+    theme(strip.text = element_text(size = 10),
+          legend.position = "none")
+
+ggsave(
+    filename = paste0("_figures/results/", Sys.Date(), "-cost-density.pdf"), 
+    plot = cost_density,
+    width = 12, height = 15, units = "cm", dpi = 600)
+
+ggsave(
+    filename = paste0("_figures/results/", Sys.Date(), "-cost-density.png"), 
+    plot = cost_density,
+    width = 12, height = 15, units = "cm", dpi = 600)
+
 save.image(file = paste0("_analyses/results/", Sys.Date(), "-04-1-results", ".RData"))
