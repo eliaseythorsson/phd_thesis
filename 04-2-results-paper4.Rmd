@@ -111,13 +111,13 @@ kable(
 )
 ```
 
-(ref:figure19) The cumulative incidence of tympanostomy tube placements (TTP) is shown for the vaccine eligible (VEC) and vaccine non-eligible cohorts (VNEC) as a continueous function of age. Cumulative incidence is presented as a proportion of all children in the respecive vaccine eligibility cohort. The estimated cumulative incidence is illustrated with a solid red line for the VNEC, and a solid blue line for the VEC, and 95% confidence intervals are depicted with a shaded area.
+(ref:figure19) The cumulative incidence of tympanostomy tube placements (TTP) is shown for the vaccine eligible (VEC) and vaccine non-eligible cohorts (VNEC) as a continuous function of age. Cumulative incidence is presented as a proportion of all children in the respective vaccine eligibility cohort. The estimated cumulative incidence is illustrated with a solid red line for the VNEC, and a solid blue line for the VEC, and 95% confidence intervals are depicted with a shaded area.
 
 ```{r figure-results-paper4-cumulative-event, fig.cap = "(ref:figure19)"}
 include_graphics(path = "_figures/paper_4/2018-11-28-cumulative-event.png")
 ```
 
-In the subset of children who underwent tympanostomy tube placement, the mean (median) number of otitis media associated visits to primary care or to the pediatric emergency department was 2.05 (2) visits in the vaccine non-eligible cohorts, compared to 1.72 (1) visits in the vaccine eligible cohorts. 
+In the subset of children who underwent TTP, the mean (median) number of otitis media associated visits to primary care or to the pediatric emergency department was 2.05 (2) visits in the vaccine non-eligible cohorts, compared to 1.72 (1) visits in the vaccine eligible cohorts. 
 The distribution in the number of previous visits was significantly different between the VNEC and VEC (Chi-Squared test statistic 63.8, P<.001).
 The proportion of children who did not have a single recorded visit prior to undergoing the procedure increased from 20.6% in the VNEC to 28.9% in the VEC, RR 1.40 (95%CI 1.28-1.54).
 Children in the vaccine eligible cohorts had received significantly fewer antimicrobial prescriptions prior to undergoing the procedure (Chi-Squared test statistic 53.6, P<.001). 
@@ -133,16 +133,18 @@ kable(
         select(cumulative, starts_with("presc"), starts_with("visit")),
     col.names = c("Cumulative number", "VNEC % (n)", "VEC % (n)", "RR (95%CI)", "ARD (95%CI", 
                   "VNEC % (n)", "VEC % (n)", "RR (95%CI)", "ARD (95%CI"),
-    caption = "Incidence rate and number of outpatient antimicrobial prescriptions by birth-cohort and gender"
+    caption = "The cumulative number of previous antimicrobial prescriptions and otitis media visits are shown for those children in the vaccine non-eligible (VNEC) and vaccine eligible cohorts (VEC) who underwent at least one tympanostomy tube placement. The proportion of each cohort who had the corresponding number of prior visits or prescriptions is shown with the absolute number of children within parentheses. The relative risk (RR) and absolute risk difference (ARD) of having each number of previous visits or prescriptions between the VEC and VNEC is shown with 95% confidence intervals."
 )
 ```
 
-A diagnostic plot of Schoenfeld residuals was used to visually assess the proportional hazard assumption for all covariates in each Cox model and no systematic deviations were detected.
-The hazard of undergoing a tympanostomy tube procedure was considerably higher in children who had previously visited a physician for otitis media or received an antimicrobial prescription.
-Children who had one prior documented visit were considerably more likely to undergo the procedure than children who had no documented visits, HR of 3.12 (95%CI 2.93-3.32).
-Likewise, children who had previously filled one antimicrobial prescription were more likely to receive a tympanostomy tube than children who had received no prescription, 6.98 (95%CI 6.13-7.95). 
+A diagnostic plot of Schoenfeld residuals did not reveal deviations from the proportional hazards assumption.
+The hazard of undergoing TTP was considerably higher in children who had previously visited a physician for otitis media or received an antimicrobial prescription.
+Children who had one prior documented visit were considerably more likely to undergo the procedure than children who had no documented visits, HR of 3.12 (95%CI 2.93 to 3.32).
+Likewise, children who had previously filled one antimicrobial prescription were more likely to receive a tympanostomy tube than children who had received no prescription, 6.98 (95%CI 6.13 to 7.95). 
 The hazard of tympanostomy tube placement increased gradually from birth-cohort 2005 to 2015 (Figure \@ref(fig:figure-results-paper4-combined-hazard)).
 
-```{r figure-results-paper4-combined-hazard, fig.cap = "The hazard ratio of undergoing a tympanostomy tube placement between each of the study's birth-cohorts and the last vaccine non-eligible birth-cohort"}
+(ref:figure20) The hazard ratio (HR) of tympanostomy tube placements (TTP) is depicted between each birth-cohort and the last vaccine non-eligible birth-cohort are depicted, as estimated by three Cox regression models. In panel A, the unadjusted HR estimates are shown. Panel B shows HR estimates adjusted for antimicrobial prescriptions, and panel C illustrates the HR estimates adjusted for otitis media associated visits. Primary care visits are obtained from the Primary Care Registry of the Directorate of Health, and the observation period is restricted to December 2015. Because of this the data presented in panel C is restricted to birth-cohorts 2005-2014. The figure demonstrates an increasing hazard of TTP with each successive birth-cohort. The effect is more pronounced when adjustment is made for antimicrobial prescriptions and visits.
+
+```{r figure-results-paper4-combined-hazard, fig.cap = "(ref:figure20)"}
 include_graphics(path = "_figures/paper_4/2018-11-28-combined-hazard.png")
 ```

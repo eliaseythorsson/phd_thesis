@@ -404,7 +404,7 @@ kable(
 
 The distribution in the number of prescriptions for selected chemical sub-levels of the ATC classification system are shown as a function of age in Figure \@ref(fig:prescriptions-age).
 
-(ref:figure5) The number of filled antimicrobial prescriptions are shown as a function of age for selected chemical sub-levels of the Anatomical Therapeutic Chemical (ATC) classification system. Data were extracted from the National Drug Prescription Registry of the Icelandic Directorate of Health for the period of 1 January 2005 to 31 December 2017. Different Y-axis scales are used for each category. The figure demonstrates a similar age-distribution for beta-lactam antibacterials, sulfonamides and macrolides, with most prescriptions being filled by young children. Tetracyclines and quinolones are more commonly filled by adults. 
+(ref:figure5) The number of filled antimicrobial prescriptions are shown as a function of age for selected chemical sub-levels of the Anatomical Therapeutic Chemical (ATC) classification system. Data were extracted from the National Drug Prescription Registry of the Icelandic Directorate of Health for the period of 1 January 2005 to 31 December 2017. Different Y-axis scales are used for each category. The figure demonstrates a similar age-distribution for beta-lactam antibacterials, sulfonamides and macrolides, with most prescriptions being filled by young children. Tetracyclines and quinolones are more commonly filled by adults.
 
 ```{r prescriptions-age, fig.cap = "(ref:figure5)"}
 include_graphics(path = "_figures/results/2018-11-18-prescriptions-age.png")

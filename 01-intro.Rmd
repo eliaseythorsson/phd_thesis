@@ -725,12 +725,12 @@ The average time until a 50% reduction in vaccine-type IPD was observed was 2.3 
 ## Cost-effectiveness in the context of pneumococcal conjugate vaccination {#cea-introduction}
 
 Healthcare operates under resource constraints.
-In this setting of scarcity, the decision to fund one project invariably results in another project remaining unfunded.
-Economic analyses are one of many tools that may aid decision-makers in allocating resources optimally.
-Interventions are contrasted with two or more alternatives, and costs and benefits are systematically compared.
-Economic analyses require data on the efficacy of the interventions being compared, the burden of disease and subgroups of the population which are affected [@Gray2011].
+In this setting of scarcity, the decision to fund one project inevitably results in another project remaining unfunded.
+Economic analyses are one of many tools to aid decision-makers in allocating resources optimally.
+Interventions are compared to two or more alternatives, and costs and benefits are systematically scrutinzed.
+Economic analyses require data on the efficacy of the interventions being evaluated, the burden of disease and the subgroups of the population which are affected [@Gray2011].
 
-All methods of economic analyses measure the monetary costs associated with the interventions being evaluated, but differ in how they measure the resultant benefits.
+All methods of economic analysis measure the monetary costs associated with the relevant interventions, but differ in how they measure the resultant benefits.
 Cost-benefit analysis translates the effect of an intervention into a monetary value, and calculates the total cost associated with the intervention once any potential savings have been accounted.
 In cost-effectiveness analysis, the effect of the intervention is measured in units of the condition being intervened upon, e.g. deaths prevented, life-years gained.
 The results of such an analysis are commonly presented as an incremental cost-effectiveness ratio, which represents the cost associated with one unit change in the effect measure.
