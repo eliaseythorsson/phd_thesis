@@ -13,104 +13,6 @@ library(tidyverse)
 # )
 ```
 
-```{r table-abbreviations}
-data_frame(
-    Term = c(
-    "Acute otitis media",
-    "Community-acquired pneumonia",
-    "Hospital-aquired pneumonia",
-    "Respiratory syncytial virus",
-    "Enzyme-linked immunosorbent assay",
-    "International Classification of Diseases, 10th revision",
-    "NOMESCO Classification of Surgical Procedures",
-    "Anatomical-Therapeutic-Chemical",
-    "National Drug Prescription Registry",
-    "Incidence rate",
-    "Incidence rate ratio",
-    "National Vaccine Registry",
-    "Vaccine non-eligible cohorts",
-    "Vaccine eligible cohorts",
-    "Confidence intervals",
-    "Hazard ratio",
-    "Tympanostomy tube placement",
-    "Upper respiratory tract infection",
-    "Lower respiratory tract infection",
-    "Invasive pneumococcal disease",
-    "Intensive care unit",
-    "Principal component analysis",
-    "Seasonal and trend decompisition using LOESS",
-    "Leave-one-out cross-validation",
-    "Organisation for Economic Co-operation and Development",
-    "Quality-adjusted life-years",
-    "International Society for Pharmacoeconomics and Outcome Research",
-    "Cost-benefit analysis",
-    "Cost-effectiveness analysis",
-    "Cost-utility analysis",
-    "23-valent pneumococcal polysaccharide vaccine",
-    "Pneumococcal conjugate vaccine",
-    "7-valent pneumococcal conjugate vaccine",
-    "10-valent pneumococcal conjugate vaccine",
-    "11-valent pneumococcal conjugate vaccine",
-    "13-valent pneumococcal conjugate vaccine",
-    "Cost-effectiveness acceptability curve",
-    "Probabilistic sensitivity analysis", 
-    "Meningococcal outer membrane protein complex",
-    "Case-fatality ratio",
-    "non-typable Haemophilus influenzae",
-    "Icelandic krona",
-    "10-valent pneumococcal *Haemophilus influnzae* protein-D conjugate vaccine "
-    ),
-    Abbreviation = c(
-    "AOM",
-    "CAP",
-    "HAP",
-    "RSV",
-    "ELISA",
-    "ICD-10",
-    "NCSP",
-    "ATC",
-    "NDPR",
-    "IR",
-    "IRR",
-    "NVR",
-    "VNEC",
-    "VEC",
-    "CI",
-    "HR",
-    "TTP",
-    "URTI",
-    "LRTI",
-    "IPD",
-    "ICU",
-    "PCA",
-    "STL",
-    "LOOCV",
-    "OECD",
-    "QALY",
-    "ISPOR",
-    "CBA",
-    "CEA",
-    "CUA",
-    "PPV-23",
-    "PCV",
-    "PCV7",
-    "PCV10",
-    "PCV11",
-    "PCV13",
-    "CEAC",
-    "PSA", 
-    "MOMPC",
-    "CFR",
-    "NTHi",
-    "ISK",
-    "PHiD-CV10"
-    )
-    ) %>%
-    arrange(Abbreviation) %>% # i.e. alphabetical order by Term
-    kable(booktab = T, caption = "List of abbreviations")
-```
-
-
 *Streptococcus pneumoniae* is a commensal bacterium found in the nasopharynx of humans [@Hussain2005].
 It is also a common pathogen, and one of the most common bacterial causes of lower respiratory disease in humans [@OBrien2009; @Troeger2018].
 In classical medical texts, pneumococcus is described as a Gram-positive lancet-shaped coccus, usually found in pairs.
@@ -417,7 +319,7 @@ The licenses for the polysaccharide vaccines were withdrawn by the manufacturer 
 Interest in pneumococcal vaccination re-emerged in the 1950s when it was noted that the mortality benefit of penicillin was not ubiquitous.
 The elderly and those who had underlying disease did not experience a decrease in their case fatality ratio [@Austrian1964].
 This led to a redoubled effort to create a new polysaccharide vaccine.
-Several large randomized controlled trials were conducted in South Africa in the 1970s [@Austrian1976, @Smit1977] and, on the basis of these, a 14-valent pneumococcal vaccine was licensed in the United States in 1977.
+Several large randomized controlled trials were conducted in South Africa in the 1970s [@Austrian1976; @Smit1977] and, on the basis of these, a 14-valent pneumococcal vaccine was licensed in the United States in 1977.
 Its valency was increased to 23 polysaccharides in 1983 [@Austrian1999a].
 
 Early in the development of pneumococcal vaccines, there was an interested in vaccinating children.
@@ -480,8 +382,6 @@ The effect estimate was -1% (95%CI -12% to 10%).
 knitr::kable(
     data.frame(
         study = c("@Black2000; @Fireman2003", "@Dagan2001", "@Eskola2001", "@Kilpi2003", "@Prymula2006", "@OBrien2008", "@Tregnaghi2014", "@Palmu2015; @Vesikari2016"),
-        vaccine = c("PCV7 (CRM197)", "PCV9 (CRM197)", "PCV7 (CRM197)", "PCV7 (MOMPC)", "PCV11 (HiD)", "PCV7 (CRM197)", "PHiD-CV10", "PHiD-CV10"),
-        country = c("United States", "Israel", "Finland", "Finland", "Czech Republic & Slovakia", "United States", "Argentina, Panama and Colombia", "Finland"),
         no_child = c("37,868", "264", "1,662", "1,666", "4,968", "856", "23,821", "6,178"),
         efficacy_vt = c("65% (not specified)", "-", "54% (41% to 64%)", "56% (44% to 66%)*", "53% (35% to 66%)", "64% (-34% to 90%)*", "69.9% (29.8% to 87.1%", "-"),
         efficacy_pnc = c("-", "-", "34% (21% to 45%)", "25% (11% to 37%)", "52% (37% to 63%)", "-", "55.7% (21.5% to 75%)", "-"),
@@ -489,9 +389,9 @@ knitr::kable(
         efficacy_raom = c("9% (3% to 15%", "-", "16% (-6% to 35%)", "-", "56% (-2% to 81%)", "5% (-52% to 41%)", "-", "-"),
         efficacy_tymp = c("20% (2% to 35%", "-", "4% (-19% to 23%)", "-", "60% (-27% to %88)", "28% (-225% to 84%)", "-", "13% (-2% to 26%)")
     ),
-    col.names = c("Study", "Vaccine", "Country", "No. of children", "Vaccine-type AOM", "Pneumococcal AOM", "All-cause AOM", "Recurrent AOM", "Tympanostomy tube placement"),
+    col.names = c("Study", "No. of children", "Vaccine-type AOM", "Pneumococcal AOM", "All-cause AOM", "Recurrent AOM", "Tympanostomy tube placement"),
     booktab = TRUE,
-    caption = "Randomized controlled trials evaluating the efficacy of pneumococcal conjugate vaccines for acute otitis media (AOM) and tympanostomy procedures. The specific pneumococcal conjugate vaccine used in the study is presented. The seven-valent pneumococcal conjugate vaccine (PCV7) was conjugate to either meningococcal outer membrane protein complex (MOMPC) or CRM197. The 10- and 11-valent vaccines were conjugated to Haemophilus influenzae protein D (HiD). @Dagan2001 did not present sufficient information to ascertain the exact enrollment period. Vaccine efficacy is presented along with 95% confidence intervals. Information that was not reported in a particular trial is indicated with a hyphen (-). Some studies did not present intention to treat estimates. In those cases, per-protocol efficacy estimates are presented and indicated with an asterix (*)"
+    caption = "Randomized controlled trials evaluating the efficacy of pneumococcal conjugate vaccines for acute otitis media (AOM) and tympanostomy procedures. @Dagan2001 did not present sufficient information to ascertain the exact enrollment period. Vaccine efficacy is presented along with 95% confidence intervals. Information that was not reported in a particular trial is indicated with a hyphen (-). Some studies did not present intention to treat estimates. In those cases, per-protocol efficacy estimates are presented and indicated with an asterix (*)"
 )
 ```
 

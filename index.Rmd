@@ -11,12 +11,11 @@ github-repo: eliaseythorsson/phd_thesis
 description: "This is a PhD thesis written in real-time in Rstudio"
 ---
 
-# Preamble
-
-I am currently writing my PhD thesis on the impact of pneumococcal vaccination in Iceland. I am writing the thesis in Rstudio using the [bookdown](https://bookdown.org/yihui/bookdown/) package and hosting the thesis on Github. Writing the thesis in Rstudio confers many advantages. Tables and Figures can be created directly within Rstudio, which minimizes additional work associated with manually moving them into a separate writing program -- a process both error-prone and labor intensive. All aspects of the writing, typesetting and data analysis are documented and version controlled. The bookdown packages automates the process of exporting the thesis to word, pdf and html formats. The thesis will be open access during the writing process. I believe I will be more motivated if my productiveness -- or lack thereof, is held accountable to anyone who wishes to check. I would be grateful for any and all comments on any aspect of the thesis under construction.
-
 ```{r include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, error = FALSE, message = FALSE, warning = FALSE)
+library(knitr)
+library(tidyverse)
+
 # automatically create a bib database for R packages
 knitr::write_bib(
     c(
@@ -34,4 +33,101 @@ knitr::write_bib(
     ),
     'packages.bib'
     )
+```
+
+```{r table-abbreviations}
+data_frame(
+    Term = c(
+    "Acute otitis media",
+    "Community-acquired pneumonia",
+    "Hospital-aquired pneumonia",
+    "Respiratory syncytial virus",
+    "Enzyme-linked immunosorbent assay",
+    "International Classification of Diseases, 10th revision",
+    "NOMESCO Classification of Surgical Procedures",
+    "Anatomical-Therapeutic-Chemical",
+    "National Drug Prescription Registry",
+    "Incidence rate",
+    "Incidence rate ratio",
+    "National Vaccine Registry",
+    "Vaccine non-eligible cohorts",
+    "Vaccine eligible cohorts",
+    "Confidence intervals",
+    "Hazard ratio",
+    "Tympanostomy tube placement",
+    "Upper respiratory tract infection",
+    "Lower respiratory tract infection",
+    "Invasive pneumococcal disease",
+    "Intensive care unit",
+    "Principal component analysis",
+    "Seasonal and trend decompisition using LOESS",
+    "Leave-one-out cross-validation",
+    "Organisation for Economic Co-operation and Development",
+    "Quality-adjusted life-years",
+    "International Society for Pharmacoeconomics and Outcome Research",
+    "Cost-benefit analysis",
+    "Cost-effectiveness analysis",
+    "Cost-utility analysis",
+    "23-valent pneumococcal polysaccharide vaccine",
+    "Pneumococcal conjugate vaccine",
+    "7-valent pneumococcal conjugate vaccine",
+    "10-valent pneumococcal conjugate vaccine",
+    "11-valent pneumococcal conjugate vaccine",
+    "13-valent pneumococcal conjugate vaccine",
+    "Cost-effectiveness acceptability curve",
+    "Probabilistic sensitivity analysis", 
+    "Meningococcal outer membrane protein complex",
+    "Case-fatality ratio",
+    "non-typable Haemophilus influenzae",
+    "Icelandic krona",
+    "10-valent pneumococcal *Haemophilus influnzae* protein-D conjugate vaccine "
+    ),
+    Abbreviation = c(
+    "AOM",
+    "CAP",
+    "HAP",
+    "RSV",
+    "ELISA",
+    "ICD-10",
+    "NCSP",
+    "ATC",
+    "NDPR",
+    "IR",
+    "IRR",
+    "NVR",
+    "VNEC",
+    "VEC",
+    "CI",
+    "HR",
+    "TTP",
+    "URTI",
+    "LRTI",
+    "IPD",
+    "ICU",
+    "PCA",
+    "STL",
+    "LOOCV",
+    "OECD",
+    "QALY",
+    "ISPOR",
+    "CBA",
+    "CEA",
+    "CUA",
+    "PPV-23",
+    "PCV",
+    "PCV7",
+    "PCV10",
+    "PCV11",
+    "PCV13",
+    "CEAC",
+    "PSA", 
+    "MOMPC",
+    "CFR",
+    "NTHi",
+    "ISK",
+    "PHiD-CV10"
+    )
+    ) %>%
+    arrange(Abbreviation) %>% # i.e. alphabetical order by Term
+    kable(booktab = T, caption = "List of abbreviations")
 ```
