@@ -57,7 +57,8 @@ data_frame(
     "Meningococcal outer membrane protein complex",
     "Case-fatality ratio",
     "non-typable Haemophilus influenzae",
-    "Icelandic krona"
+    "Icelandic krona",
+    "10-valent pneumococcal *Haemophilus influnzae* protein-D conjugate vaccine "
     ),
     Abbreviation = c(
     "AOM",
@@ -101,20 +102,21 @@ data_frame(
     "MOMPC",
     "CFR",
     "NTHi",
-    "ISK"
+    "ISK",
+    "PHiD-CV10"
     )
     ) %>%
-    arrange(Term) %>% # i.e. alphabetical order by Term
+    arrange(Abbreviation) %>% # i.e. alphabetical order by Term
     kable(booktab = T, caption = "List of abbreviations")
 ```
 
 
-*Streptococcus pneumoniae* is a commensal bacterium found in the nasopharynx of humans where it plays an integral role in normal upper respiratory flora.
-It is also a common pathogen, and one of the most common bacterial causes of disease in humans.
+*Streptococcus pneumoniae* is a commensal bacterium found in the nasopharynx of humans [@Hussain2005].
+It is also a common pathogen, and one of the most common bacterial causes of lower respiratory disease in humans [@OBrien2009; @Troeger2018].
 In classical medical texts, pneumococcus is described as a Gram-positive lancet-shaped coccus, usually found in pairs.
-In fact, pneumococcus is *the* Gram-positive coccus, being the first bacteria noted by Christian Gram that retained the dark aniline-gentian violet stain that now bears his name [@Gram1884].
+In fact, pneumococcus is *the* Gram-positive coccus, being the first bacteria noted by the Danish scientist Christian Gram that retained the dark aniline-gentian violet stain that now bears his name [@Gram1884].
 Pneumococcus was first isolated in 1881 by two microbiologist, George M. Sternberg in the United States and Louis Pasteur in France [@Pasteur1881; @Sternberg1881; @Watson1993].
-The causal association between this newly discovered bacterium and pneumonia was firmly established only five years later [@Weichselbaum1886], and in the following decade, all clinical presentations of pneumococcal infection had been described [@Austrian1981].
+The causal association between this newly discovered bacterium and pneumonia was firmly established only five years later [@Weichselbaum1886], and in the following decade, all clinical presentations of pneumococcal infections had been described [@Austrian1981].
 
 The infectious manifestations of pneumococcal disease are, broadly speaking, local infections of the respiratory tract and infections of previously sterile tissue.
 They range from common to uncommon, and from benign to serious.
@@ -124,13 +126,14 @@ On the other hand, AOM is the most common reason for physician visit and for ant
 Antimicrobial consumption is causally related to antimicrobial resistance, a major threat to public health [@Arason1996; @Austin1999].  
 Recurrent or persistent otitis media is sometimes treated with the surgical placement of tympanic tubes, rendering it the most common surgical procedure requiring general anesthesia in children [@Cullen2009].
 Thus, while AOM is a benign disease, it is associated with a large healthcare burden [@Arguedas2010; @Monasta2012].
-A potentially more serious manifestation of penumococcal disease is pneumonia, the disease from which pneumococcus gets its name.
+
+A potentially more serious manifestation of pneumococcal disease is pneumonia, the disease from which pneumococcus gets its name.
 Pneumonia often requires hospitalization and intravenous antimicrobial treatment, and can lead to permanent disability and death [@Troeger2017].
 Pneumococcus can cause invasive infections if it gains access to normally sterile tissue.
 These includes bacteremia, an infection of the blood, and meningitis, an infection of the meninges.
 These infectious manifestations are grouped together as invasive pneumococcal disease (IPD).
 Whilst IPD is extremely uncommon, the consequences can be disastrous [@Feikin2000; @Ricketson2013; @Tsigrelis2008].
-The case-fatality ratio (CFR) from pneumococcal meningitis in Icelandic children and adults is estimated at 13% and 8% respectively [@Pordardottir2014; @Snaebjarnardottir2013].
+The case-fatality ratio (CFR) from pneumococcal meningitis in Icelandic children and adults is estimated at 13% and 8% respectively [@Snaebjarnardottir2013; @Pordardottir2014].
 Pneumococcal infections are responsible for a large healthcare burden that spans the range from outpatient to inpatient treatment [@Backhaus2016; @Pulido2010].
 
 For over a century, scientists have attempted to prevent pneumococcal disease using vaccines with varying results.
@@ -138,13 +141,14 @@ Pneumococcal vaccine development is complicated by the polysaccharide coating th
 The polysaccharide capsule acts as an "invisibility cloak" to the human immune system, rendering it unable to detect pneumococcus except through defined patterns in the oligosaccharides contained within the capsule [@Epstein1995].
 Based on these patterns, pneumococcus has been classified into over 97 different serotypes to date [@Habib2014a].
 As the capsule contains only polysaccharides and not proteins, the immune response is T-cell independent and therefore poorly immunogenic, especially in children, even after being identified by the immune system [@Geno2015b].
+
 The epidemiology of pneumococcus is dominated by person-to-person transmission of asymptomatic carriage [@Beutels2006].
-Because children have no previous immunity to any serotype, they are colonized by pneumococcus more frequently, and each colonization lasts longer [@Melegaro2004].
+Because young children do not have previous immunity to any serotype, they are colonized by pneumococcus more frequently, and each colonization lasts longer [@Melegaro2004].
 This phenomenon is further augmented when multiple immune-naive children congregate, such as in daycare centers and pre-schools [@Yagupsky1998]. 
-Thus children act as a pneumococcal reservoir for the population, often without having any clinical disease [@Hoshino2002; @LePolaindeWaroux2014; @Mosser2014].
+Thus children act as a pneumococcal reservoir for the population, often without having any clinical disease [@Hoshino2002; @LePolaindeWaroux2014; @Mosser2014; @Quirk2018].
 Vaccinating children against certain serotypes may therefore lead to a decrease in pneumococcal disease caused by those serotypes in adults.
 In vaccine epidemiology, this is referred to as herd-effect and is an important consideration for pneumococcal vaccine development [@Halloran2010; @Tsaban2017].
-Serotype replacement can also occur, where previously rare serotypes appear and fill the ecological niche vacated by the vaccine serotypes [@Weinberger2011a]. 
+Serotype replacement can also occur, where previously rare serotypes appear and fill the ecological niche vacated by the vaccine serotypes [@Weinberger2011a; @Quirk2018]. 
 
 Health systems operate under constraints on budgets and resources.
 Demonstrating vaccine benefit for individuals is essential, but not the only factor to consider when making health policy decisions.
@@ -152,13 +156,14 @@ Cost and resource allocation are also of great importance.
 The diseases prevented by an intervention have associated expenses which must be accounted for when the expenditures for the intervention are evaluated. 
 This is especially complicated in the case of vaccines, because benefits are not seen immediately but rather over time and occur in both vaccinated and unvaccinated members of the population [@Isaacman2008; @Kim2008].
 Cost-effectiveness analysis and cost-benefit analysis are methods developed to measure the ratio between expenditure and benefit, and are used as a tool in making health policy decisions [@Gray2011].
-To adequately perform such an analyses, detailed data on disease incidence and associated costs for the whole population must be available.
+To adequately perform such analyses, detailed data on disease incidence and associated costs for the whole population must be available.
 
 Iceland is an independent island nation, isolated in the mid-Atlantic, with a relatively homogeneous population of roughly 350,000 individuals.
 The first systematic program of vaccination against pneumococcus in Iceland began in April 2011, when the 10-valent pneumococcal *Haemophilus influnzae* protein-D conjugate vaccine (Synflorix, PHiD-CV10) was introduced into the national paediatric vaccination program.
 The vaccine program entailed two primary doses given at three and five months of age, and a booster dose at 12 months.
 No catch-up program was undertaken.
 Prior to the introduction, no systematic vaccination effort had been undertaken in Iceland.
+
 As the other Nordic countries, Iceland has a rich legacy of national health-related registers.
 Detailed individual-level information on vaccine status, outpatient primary care visits, antimicrobial consumption, tympanic tube procedures and hospitalizations are accessible, and can be linked between the registries using national identification numbers.
 All healthcare costs are available on the individual-level from Icelandic Health Insurance, which is the insurer of all permanent Icelandic residents.
@@ -173,20 +178,22 @@ Throughout this thesis, attention will be focused on three common clinical prese
 Pneumococcus has gone by many names since it was first isolated in 1881.
 It was originally named *Micrococcus pasteuri* by Sternberg [@Sternberg1881], but by 1920, a scientific consensus was reached that the official name should be *Diplococcus pneumoniae* [@Winslow1920].
 It was not until 1974 that pneumococcus received its current name, *Streptococcus pneumoniae* [@Deibel1974].
+
 Because pneumococcus is both a commensal bacterium and a pathogen, its relationship with humans is complex.
 Most children are colonized by pneumococcus within the first months of life [@Leino2001a]. 
-Over the course of the their lifetime, a child will be colonized by many different serotypes [@Hussain2005; @LePolaindeWaroux2014].
-Their immune system will learn to recognize newly acquired serotypes and will either clear the colonization or maintain an equilibrium in which the serotype is kept within a certain limit of reproduction [@Dowling1971; @Melegaro2004].
+Over the course of their lifetime, a child will be colonized by many different serotypes [@Hussain2005; @LePolaindeWaroux2014].
+Their immune system will learn to recognize newly acquired serotypes, and will either clear the colonization or maintain an equilibrium in which the serotype is kept within a certain limit of reproduction [@Dowling1971; @Melegaro2004].
 In this manner, the contribution of pneumococcus to the human upper respiratory flora is in a state of constant flux [@Devine2015].
-New serotypes enter while the old exit, and the relative density of serotypes changes.
+New serotypes enter and are carried for a variable period of time, and the relative density of serotypes changes [@Rodrigues2016; @Thors2018].
 
-In some cases, the equilibrium between pneumococcus and the host is destabilized, triggering a rapid growth of pneumococcus and resulting in clinical manifestations [@Bergenfelz2017].
-It is thought that this is most likely to occur directly following the acquisition of new serotype into the nasopharyngeal flora [@Casey2010].
-Because pneumococcus is carried in the nasopharynx, this overgrowth results in infections of adjacent tissue; the sinuses, middle ear and conjunctiva [@Syrjanen2005].
-The pathogenesis of pneumococcal pneumonia is thought to occur through micro-aspiration of upper respiratory secretions, provoking a subsequent rapid proliferation of pneumococcus in the lower respiratory tract [@Cilloniz2016]
+In some cases, the equilibrium between pneumococcus and the host is destabilized resulting in clinical manifestations [@Bergenfelz2017].
+It is thought that this is most likely to occur directly following the acquisition of new serotype into the nasopharyngeal flora, though it may occur at any time [@Casey2010].
+Because pneumococcus is carried in the nasopharynx, this disequilibrium results in infections of adjacent tissue; the sinuses, middle ear and conjunctiva [@Syrjanen2005].
+The pathogenesis of pneumococcal pneumonia is thought to occur through micro-aspiration of upper respiratory secretions, provoking a subsequent rapid proliferation of pneumococcus in the lower respiratory tract [@Cilloniz2016].
+
 Invasive disease occurs when pneumococcus penetrates the host's immunological defenses and proliferates in normally sterile tissue [@Song2013].
 This can occur as a primary event, or can be secondary to infections of the upper or lower respiratory tract.
-Generally, IPD is considered to encompass bacteremic pneumonia, septicemia and meningitis [@Song2013]. 
+Generally, IPD is considered to encompass bacteremic pneumonia, empyemia, septicemia and meningitis [@Song2013]. 
 While some may argue that the middle ear is normally sterile, AOM is not considered invasive disease.
 
 ### Acute otitis media {#acuteotitismediaintroduction}
@@ -196,7 +203,7 @@ The clinical presentation of otitis media is variable.
 Its onset ranges from abrupt to gradual, and its duration from short to protracted [@Thornton2011].
 Several categories have been defined to facilitate communication concerning this variability.
 They are not mutually exclusive, but rather represent a continuum of the disease process.
-Otitis media can manifest as a acute inflammatory event.
+Otitis media can manifest as an acute inflammatory event.
 This is the classical acute otitis media with which most parents are familiar.
 AOM can be recurrent, which is defined as AOM occurring three times over a six month period, or four or more times over a 12 month period [@Pichichero2008; @Venekamp2018].
 Conversely, it can take the form of a chronic low-grade process.
@@ -213,7 +220,7 @@ The relative contribution of these three pathogens is remarkably stable between 
 This is likely a consequence of how common they are in the nasopharyngeal flora of children.
 
 A systematic review of studies from 1970-2014 which reported the etiology of otitis media, found that *Streptococcus pneumoniae* caused 30% of acute otitis media in Europe [@Ngo2016].
-In countries that have introduced systematic pneumococcal vaccination, there is evidence to suggest that the microbiology of otitis media has shifted from being predominantly due to pneumococcus to predominantly NTHi [@Block2004; @VanDyke2017].
+In countries that have introduced systematic pneumococcal vaccination, there is evidence to suggest that the microbiology of otitis media has shifted from being predominantly due to pneumococcus to predominantly due to NTHi [@Block2004; @VanDyke2017].
 Of the pneumococcal AOM, the prevalence of vaccine serotypes has decreased and non-vaccine serotypes now predominate.
 Children with otitis media who experience spontaneous rupture of the tympanic membrane have a slightly different distribution of pathogens, with a higher proportion of *Streptococcus pyogenes* and *Staphylococcus aureus* [@Chen2013; @Sonsuwan2016].
 This could be explained by these pathogens causing a more aggressive infection, or possibly by contamination by bacteria located in the external ear canal.
@@ -221,7 +228,7 @@ Similarly, coagulase negative staphylococci and *Staphylococcus aureus* are more
 
 #### Healthcare burden of otitis media
 
-The healthcare burden caused by otitis media is disproportionate to its severity [@Ahmed2014].
+The healthcare burden caused by otitis media is disproportionate to the severity of the disease [@Ahmed2014].
 Acute otitis media is the most common reason for physician visit among children, a fact which has been frequently documented in multiple countries [@Arguedas2010; @Marchisio2012; @Monasta2012].
 Only focusing on physician visits underestimates the impact of AOM, as some episodes are not reported to physicians but still result in distressing symptoms in children and parental missed days of work [@Blank2014].
 A Dutch study which surveyed parents of children younger than one year of age repeatedly for 12 consecutive months found that the incidence of parentally reported acute otitis media episodes was 624 per 1,000 person-years, and that only half resulted in physician visits [@Fortanier2015].
@@ -231,7 +238,7 @@ The incidence of outpatient AOM in children is reviewed in Table \@ref(tab:table
 ```{r table-intro-aom-incidence}
 kable(
     x = data.frame(
-    study = c("[@Gisselsson-Solen2017]", "[@Gribben2012]", "[@Todberg2014]", "[@Lau2015]", "[@Marchisio2012]", "[@Usonis2016]", "[@Usonis2016]", "[@Usonis2016]", "[@Usonis2016]", "[@Usonis2016]", "[@Liese2014]", "[@Liese2014]", "[@Liese2014]", "[@Liese2014]", "[@Liese2014]", "[@Esposito2007]", "[@Adam2008]", "[@Poehling2004]", "[@Grijalva2006]", "[@Zhou2008]", "[@Grijalva2009]", "[@DeWals2009]"),
+    study = c("@Gisselsson-Solen2017", "@Gribben2012", "@Todberg2014", "@Lau2015", "@Marchisio2012", "@Usonis2016", "@Usonis2016", "@Usonis2016", "@Usonis2016", "@Usonis2016", "@Liese2014", "@Liese2014", "@Liese2014", "@Liese2014", "@Liese2014", "@Esposito2007", "@Adam2008", "@Poehling2004", "@Grijalva2006", "@Zhou2008", "@Grijalva2009", "@DeWals2009"),
     country = c("Sweden", "New Zealand", "Denmark", "United Kingdom", "Italy", "Estonia", "Lithuania", "Poland", "Romania", "Slovenia", "Germany", "Italy", "Spain", "Sweden", "United Kingdom", "Italy", "Germany", "United States", "United States", "United States", "United States", "Canada"),
     year = c("2009", "2009", "2010", "2005", "2004", "2013", "2013", "2013", "2013", "2013", "2010", "2010", "2010", "2010", "2010", "2002", "2007", "2000", "1999", "1999", "1996", "2000"),
     age = c("0-4", "0-4", "0-7", "0-10", "0-6", "0-5", "0-5", "0-5", "0-5", "0-5", "0-5", "0-5", "0-5", "0-5", "0-5", "0-2.5", "0-2", "0-2", "0-2", "0-2", "0-5", "0-5"),
@@ -252,13 +259,13 @@ Mastoiditis is a rare but serious complication of AOM that invariably requires h
 
 For various reasons, parents and clinicians may opt to treat recurrent or chronic otitis media with the placement of a tympanic tube.
 Tympanic tube procedures are consequently the most common surgical procedure requiring general anesthesia in the paediatric population [@Black1984; @Cullen2009].
-Despite their popularity, there is little evidence for the use of tympanostomy tubes for their two most common indications; recurrent otitis media and hearing loss associated with otitis media with effusion [@Venekamp2018; @Browning2010].
+Despite their popularity, there is little evidence for the use of tympanostomy tubes for their two most common indications; recurrent otitis media and hearing loss associated with otitis media with effusion [@Browning2010; @Paradise2001; @Paradise2007; @Venekamp2018].
 Inconsistent evidence regarding the efficacy of tympanostomy tube procedures is mirrored in the large variation in incidence that is seen both within and between different countries (Table \@ref(tab:table-intro-tympanostomy-incidence)).
 
 ```{r table-intro-tympanostomy-incidence}
 kable(
     x = data.frame(
-    study = c("[@Howitz2017]", "[@Falster2013]", "[@Djurhuus2014]", "[@Groth2015]", "[@Florentzson2012]", "[@Pedersen2016]", "[@Arason2005]", "[@Palmu2017]", "[@Palmu2015]", "[@Bright1993]", "[@Kogan2000]", "[@Sarasoja2013]", "[@Desai2002]", "[@Arason2002]", "[@Gisselsson-Solen2017]", "[@Black1984]", "[@Coyte2001]", "[@Kvaerner2002]", "[@Haapkyla2008]", "[@Haapkyla2008]", "[@Cullen2009]", "[@Spilsbury2006]"),
+    study = c("@Howitz2017", "@Falster2013", "@Djurhuus2014", "@Groth2015", "@Florentzson2012", "@Pedersen2016", "@Arason2005", "@Palmu2017", "@Palmu2015", "@Bright1993", "@Kogan2000", "@Sarasoja2013", "@Desai2002", "@Arason2002", "@Gisselsson-Solen2017", "@Black1984", "@Coyte2001", "@Kvaerner2002", "@Haapkyla2008", "@Haapkyla2008", "@Cullen2009", "@Spilsbury2006"),
     country = c("Denmark", "Australia", "Denmark", "Denmark", "Sweden", "Denmark", "Iceland", "Finland", "Finland", "United States", "United States", "Finland", "Canada", "Iceland", "Sweden", "United Kingdom", "Canada", "Norway", "Finland", "Norway", "United States", "Australia"),
     year = c("2007", "2007", "2007", "2007", "2006", "2007", "2003", "2009", "2010", "1988", "1991", "2008", "2000", "1998", "2007", "1982", "1999", "1996", "2005", "2005", "2006", "2005"),
     age = c("0-15", "0-8", "0-15", "0-2", "0-10", "0-3", "0-5", "0-5", "0-2", "0-17", "0-3", "2-13", "0-15", "0-5", "0-4", "0-9", "0-14", "0-4", "0-7", "0-7", "0-14", "0-14"),
@@ -267,7 +274,7 @@ kable(
     ) %>% arrange(country, year),
     col.names = c("Study", "Country", "Observation year", "Age (years)", "Incidence (per 100 person-years)", "Cumulative incidence"),
     booktab = TRUE,
-    caption = "A review of observed incidence rates of tympanostomy tube placements in high-income countries prior to the introduction of paediatric of pneumococcal conjugate vaccination. Countries are displayed in alphabetical order. The studies report incidence for different age-groups. The incidence is provided per 100 person-years. When applicable, the cumulative incidence of children who had undergone at least one procedure by a certain age are displayed. Missing information is indicated with a hyphen (-)"
+    caption = "A review of observed incidence rates of tympanostomy tube placements in high-income countries prior to the introduction of paediatric pneumococcal conjugate vaccination. Countries are displayed in alphabetical order. The studies report incidence for different age-groups. The incidence is provided per 100 person-years. When applicable, the cumulative incidence of children who had undergone at least one procedure by a certain age are displayed. Missing information is indicated with a hyphen (-)"
 )
 ```
 
@@ -292,29 +299,23 @@ Surprisingly, the cumulative incidence of tympanostomy tube placement had slight
 ### Pneumonia
 
 Pneumonia is defined as the infectious infiltration of the lung parenchyma.
-Several different classification systems have been proposed to aid in the treatment of pneumonia.
-Some are based on the anatomical distribution of infectious infiltrates on radiographs, others on the symptomotology and still others on the distribution of risk factors in those being diagnosed with the disease [@Mackenzie2016]. 
-Each attempts to utilize readily available information to assist in selecting among treatment options and in predicting prognosis. 
-While the ideal classification system would be based on the antimicrobial susceptibility of the causative pathogen, this information is rarely available when treatment decisions are being made.
-Most commonly, pneumonia is classified by assigning cases based upon the circumstances under which it was diagnosed.
-Pneumonia is classified as community acquired pneumonia if it is detected in people with limited contact with the healthcare system in the weeks prior to diagnosis.
-This is the most common type of pneumonia. 
+It is classified as community acquired pneumonia if it is detected in people with limited contact with the healthcare system in the weeks prior to diagnosis.
 Remaining pneumonia cases are classified as healthcare associated pneumonia, or hospital-acquired pneumonia if diagnosed during a hospital admission.
 This simple classification system is remarkably good at predicting antimicrobial resistance in the causative pathogen, and informs the choice of antimicrobial agents [@Mackenzie2016]. 
 
 #### Pathogens causing pneumonia
 
 Any pathogen that is able to gain access to the lung and replicate there, has the potential to cause pneumonia.
-As is the case of otitis media, the most common bacterial pathogens causing community acquired pneumonia are *Streptococcus pneumoniae*, *Haemophilus influnzae* and *Moraxella catarrhalis* [@Rodrigues2017].
+As is the case of otitis media, the most common bacterial pathogens causing community acquired pneumonia in children are *Streptococcus pneumoniae* and *Haemophilus influnzae* [@Rodrigues2017].
 Here again, this is most likely to be a function of how common these pathogens are in the upper respiratory flora.
 Unlike otitis media however, it is exceedingly difficult to determine the causative pathogen in the case of pneumonia [@Cilloniz2016; @Feikin2017].
-Ideally, a sample would be taken from the lung itself, but the dangers of such procedures which moreover require highly trained personnel and technical resources, render this option unfeasible.
+Ideally, a sample would be taken from the lung itself, but the dangers of such procedures render this option unfeasible.
 Most studies, therefore, use proxy measures such as sputum, blood cultures and nasopharyngeal swabs.
-In addition, the inability of children to produce a quality sputum sample exacerbates the difficulties of elucidating the causative pathogen [@Rodrigues2017].
+In addition, the inability of children to produce a quality sputum sample exacerbates the difficulties of determine the causative pathogen in this age group [@Rodrigues2017].
 
 The relative contribution of pathogens varies greatly with the age and risk factor profile.
-Only a few studies in developed countries have evaluated the distribution of pathogens which cause pneumonia in children, but they consistently demonstrate the importance of viruses in paediatric pneumonia [@Berg2016; @Jain2015; @Rudan2013a].
-These results may either indicate that viruses are the primary etiological factor, or that viruses weaken the respiratory defenses and allow bacterial disease to develop [@Feikin2017].
+Only a few studies in developed countries have evaluated the distribution of pathogens which cause pneumonia in children, but they have consistently demonstrated the importance of viruses in paediatric pneumonia [@Berg2016; @Jain2015; @Rudan2013a].
+Results have either indicated that viruses are the primary etiological factor, or that viruses weaken the respiratory defenses and allow bacterial disease to develop [@Feikin2017].
 The considerable heterogeneity in the proportion of pneumonias found to be caused by various pathogens, underscores the importance of study population, time-period and, most importantly, the methods used in determining the causative pathogen [@Feikin2017].
 A large multicenter study, The Pneumonia Etiology Research for Child Health (PERCH), is underway to clarify the etiology of paediatric pneumonia [@Levine2012].
 Its results have not yet been published.
@@ -323,7 +324,7 @@ One of the first prospective studies of paediatric pneumonia was undertaken in C
 The study investigated all lower respiratory infections in children, and found most to be caused by respiratory syncytial virus (RSV), parainfluenza virus and *Mycoplasma pneumoniae* [@Glezen1973].
 The predominance of causative viruses is likely due to the methods, current at the time, used to detect etiology.
 Following the advent of pneumococcal antibody testing, the recognition of pneumococcus as an important pathogen increased.
-Using pneumococcal antigens, @PAISLEY1984. found pneumococcus to be a contributor to 19% of paediatric pneumonias from 1978-1979.
+Using pneumococcal antigens, @PAISLEY1984 found pneumococcus to be a contributor in 19% of paediatric pneumonias from 1978-1979.
 In a study conducted in Göteborg, Sweden from 1982-1983, a primitive enzyme-linked immunosorbent assay was used to determine etiology, and found that 13% of paediatric pneumonias were due to *Streptococcus pneumoniae* [@CLAESSON1989].
 In that study, however, antibody testing for pneumococcus was only performed on those who were found to be pneumococcal carriers by nasopharyngeal swap.
 A few years later, in 1989, a prospective study of paediatric pneumonia in Turku, Finland demonstrated pneumococcus to be a causative pathogen in 38% of cases [@Ruuskanen1992].
@@ -332,15 +333,15 @@ Of those, 14% were found to have pneumococcal pneumonia [@Gendrel1997].
 
 In populations where pneumococcal vaccination is universal, two studies on the etiology of paediatric pneumonia have been published.
 One of these, conducted in the United Kingdom in 2009-2011, found pneumococcus to be causative in 17.4% of cases [@Elemraid2013].
-Another is a large prospective study of 2,358 children conducted in 2011-2012 in the United states, which utilized a variety of sampling methods, and detected pneumococcus in only 4% of cases, a result considerably different than all other etiological studies of paediatric pneumonia [@Jain2015].
+The other is a large prospective study of 2,358 children conducted in 2011-2012 in the United States, which utilized a variety of sampling methods, and detected pneumococcus in only 4% of cases, a result considerably different than all other etiological studies of paediatric pneumonia [@Jain2015].
 The authors' discussion of possible reasons for this included speculation that low proportion of pneumococcal pneumonia might be due to universal pneumococcal vaccination.
 
 All of the above studies identified respiratory syncytial virus to be the most common causative pathogen.
 Of the bacterial pneumonias, all but one found pneumococcus to be the most common.
-Their interpretation in complicated by the lack of direct sampling from the lungs.
+Their interpretation is complicated by the lack of direct sampling from the lungs.
 In studies that used strict radiological inclusion criteria and lung aspiration to determine the etiology, pneumococcus was found to cause from 20% to 40% of pneumonias [@Gilani2012; @WorldHealthOrganization2001].
     
-While the etiology of adult pneumonia has been more extensively studied, the same challenges are encountered as in the study of children.
+While the etiology of adult pneumonia has been more extensively studied, the same challenges are encountered as in studies of children.
 The estimated proportion of pneumonia cases caused by different pathogens varies between studies.
 This may represent a true difference in the underlying study populations or may be a result of different study design and methodology.
 A recent meta-analysis evaluated all published studies of pneumonia etiology in Europe from 1990-2011 [@Rozenbaum2013].
@@ -348,40 +349,40 @@ Seventy-seven studies were included, and inclusion criteria were strict, conside
 The crude estimate of the proportion of pneumonia caused by *Streptococcus pneumoniae* was 19.3%.
 After adjusting for several variables using a fixed-effects meta-regression model, the estimated proportion of pneumococcal pneumonia in the average Northern European country was 15%.
 Another meta-analysis estimated pneumococcus to be the etiology of 24.8% of community acquired pneumonia [@Said2013].
-In a prospective population based study in Iceland, 373 consecutive patients admitted to Landspitali University Hospital for pneumonia were recruited and systematically test for etiology [@Bjarnason2015]. 
+In a prospective population based study in Iceland, 373 consecutive patients admitted to Landspitali University Hospital for pneumonia were recruited and systematically tested for etiology [@Bjarnason2015].
 Pneumococcus was found to be the causative agent in 28% of community acquired pneumonias, and 41% of healthcare-associated pneumonias. 
 
 #### Healthcare burden of pneumonia
 
 Lower respiratory infections were, in 2016, estimated to cause 2,38 million deaths worldwide and were the sixth leading cause of death [@Troeger2018].
-Of those deaths, 652,572 (95%CI 586,475 to 720,612) were estimated to occur among children under five years of age, making lower respiratory infections the leading cause of death in this age-group.
-Large variations exist in the incidence, morbidity and mortality of pneumonia between countries.
-Pneumonia disproportionately affects developing countries, which experience over half of the pneumonia associated mortality.
+Of those deaths, 652,572 (95%CI 586,475 to 720,612) were estimated to occur among children under five years of age, making lower respiratory infections the leading cause of death in this age-group [@Troeger2018].
+Large variations exist in the incidence, morbidity and mortality of pneumonia between countries [@Troeger2018].
+Pneumonia disproportionately affects developing countries, which experience over half of the pneumonia associated mortality [@Troeger2018].
 Yet pneumonia is still a large healthcare burden in developed countries, and accounts for 3%-18% of all childhood hospital admissions [@Madhi2013].
-In developed countries, the incidence of pneumonia in children under five years of age is 34-40 cases per 1,000 person-years.
+In developed countries, the incidence of pneumonia in children under five years of age is 34-40 cases per 1,000 person-years [@Madhi2013].
 
 The burden of pneumonia is not isolated to mortality.
-Studies have shown a large impact on health-related quality of life that lasts for months after hospitalization for pneumonia [@Andrade2018; @Mangen2017], and in detailed cost analyses, hospitalized cases of pneumonia are associated with large direct and indirect monetary costs [@Birnbaum2002; @Keitel2014].
+Studies have shown a large impact on health-related quality of life that lasts for months after hospitalization for pneumonia [@Andrade2018; @Mangen2017], and in detailed cost analyses, hospitalized cases of pneumonia are associated with large direct and indirect monetary expenditure [@Birnbaum2002; @Keitel2014].
 
 ### Invasive pneumococcal disease
 
 Invasive pneumococcal disease represents the most serious infectious presentation of *Streptococcus pneumoniae*.
-It occurs when pneumococcus gains access to normally sterile tissue.
-@Austrian1964 reported the case-fatality ratio (CFR) of hospitalized pneumococcal bacteremia to be 24.8% between 1952 and 1962.
+It occurs when pneumococcus gains access to normally sterile tissue. 
+IPD is an umbrella term that compromises empyema, septic arthritis, bacteremia and meningitis.
+
+The case-fatality ratio (CFR) of hospitalized pneumococcal bacteremia was reported to be 24.8% between 1952 and 1962 [@Austrian1964].
 Most patients died within five days of hospital admission despite antimicrobial treatment.
-Though the CFR has improved in the modern era, most patients still die within five days of hospitalization [@Drijkoningen2014; @Harboe2010; @Mufson1999; @Ladhani2013; @Ricketson2013; @Tsigrelis2008].
-The improvement in case-fatality is best demonstrated by a Swedish study which reports the incidence, case-fatality and mortality of hospitalized IPD from 1964 to 2008 [@Backhaus2016].
+Though the CFR has improved in the modern era, most patients who die, still do so within five days of hospitalization [@Drijkoningen2014; @Harboe2010; @Mufson1999; @Ladhani2013; @Ricketson2013; @Tsigrelis2008].
+The improvement in case-fatality is best demonstrated by a Swedish study which reported the incidence, case-fatality and mortality of hospitalized IPD from 1964 to 2008 [@Backhaus2016].
 The overall CFR was 20% from 1964-1980, 15% from 1981-1995 and 9% from 1996-2008 [@Backhaus2016].
 A report from an enhanced surveillance database of IPD in 26 European countries, documented CFR of 2.4% in children under five years of age, 9.1% in individuals 5-64 years of age, and 18.6% in adults 65 years of age and older [@Torne2014].
 Pneumococcal serotypes have a variable propensity to cause death [@Harboe2009; @VanHoek2012a; @Weinberger2010], and interactions between IPD CFR and seasonal influenza epidemics have been reported [@Weinberger2013].
 However, a review of this is beyond the scope of this thesis. 
 
-Even with invasive pneumococcal disease, there are large variations in case-fatality.
-IPD is an umbrella term that compromises empyema, septic arthritis, bacteremia and meningitis.
-Of those, meningitis is associated with the highest CFR.
+Of the different manifestations of invasive disease, meningitis is associated with the highest CFR.
 The CFR of paediatric pneumococcal meningitis in Europe and the United States is estimated to be 38% and 8.4% respectively [@OBrien2009; @Hsu2009]
 From 1995-2005, the CFR of adult pneumococcal meningitis in Iceland was 8% [@Pordardottir2014], and a CFR of 13% was documented for pediatric meningitis between 1975-2010 [@Snaebjarnardottir2013].
-Of those that survive, morbidity is common. 
+Of those who survive, morbidity is common. 
 In a single-center case series of pneumococcal meningitis, only 48% of patients were discharged from hospital with good neurological outcome [@Kastenbauer2003].
 Another such study demonstrated long-term neurological sequelae in 30% of survivors [@Weisfelt2006].
 The proportion of surviving children experiencing morbidity is even higher, with 49% having one or more long-term sequelae [@Chandran2011].
@@ -390,25 +391,25 @@ The effect of these conditions on health-related quality of life is devastating 
 ## Pneumococcal vaccines
 
 In this chapter the history of pneumococcal vaccination is reviewed to better understand the current vaccine climate.
-Special attention is paid to the scientific discourse that led to the recognition of the need for conjugating pneumococcal polysaccharides to a protein carrier.
+Special attention is paid to the scientific discourse that led to conjugating pneumococcal polysaccharides to a protein carrier.
 The scientific literature on the impact of pneumococcal conjugate vaccines on acute otitis media, pneumonia and invasive pneumococcal disease is reviewed and discussed.
 
 ### A brief history of pneumococcal vaccination
 
-The history of pneumococcal vaccination can be roughly divided into three phases; the inactivated (killed) whole-cell vaccines; the polysaccharide vaccines and the conjugated vaccines.
+The history of pneumococcal vaccination can roughly be divided into three phases; the inactivated (killed) whole-cell vaccines; the polysaccharide vaccines and the conjugated vaccines.
 In George Sternberg's original description of pneumococcus in 1881, he observed that rabbits who were injected with saliva mixed with alcohol and quinine died less frequently than those injected with saliva alone, and were later resistant to re-injection with saliva [@Austrian1999a; @Sternberg1881].
-Sternberg had inadvertently immunized the laboratory animals against subsequent infection by injecting killed pneumococci, thus proving the concept of pneumococcal vaccination 30 years before it was first attempted in 1911. 
-In 1911, Wright and colleagues attempted to use an inoculation of heat-killed pneumococcus to vaccinate South African miners against pneumococcal pneumonia [@Wright1914].
-The trial failed to demonstrate efficacy because the significance of serotypes and serotype specific immunogenicity was not known.
+Sternberg had inadvertently immunized the laboratory animals against subsequent infection by injecting killed pneumococci, thereby foreshadowing the concept of pneumococcal vaccination 30 years before it was first attempted in 1911 [@Austrian1999a].
+In 1911, Wright and colleagues tested an inoculation of heat-killed pneumococcus to vaccinate South African miners against pneumococcal pneumonia [@Wright1914].
+The trial failed to demonstrate efficacy because the significance of serotypes and serotype specific immunogenicity was not known at the time [@Austrian1999a].
 In the following two decades, several trials using inactivated whole-cell pneumococcal vaccines were published [@Cecil1918; @Lister1916; @Lister1936; @Maynard1913]
 Due to inconsistencies in study design, the efficacy of whole bacteria pneumococcal vaccines remained fiercely debated at the time, despite some evidence of benefit [@Austrian1999a].
 
-Following discoveries of the immunogenicity of the polysaccharide capsule in the 1920s and 1930 [@Dochez1917; @Finland1931; @Francis1930; @Heidelberger1923; @Schiemann1927], inactivated whole-cell pneumococcal vaccines were soon replaced with polysaccharide vaccines.
+Following discoveries of the immunogenicity of the polysaccharide capsule in the 1920s and 1930s [@Dochez1917; @Finland1931; @Francis1930; @Heidelberger1923; @Schiemann1927], inactivated whole-cell pneumococcal vaccines were soon replaced with polysaccharide vaccines.
 The first clinical trial of a pneumococcal polysaccharide vaccine was conducted in the 1930s on 29,000 adult males in the American Civilian Conservation Corps using a bivalent vaccine [@Ekwurzel1938].
 With similar methodological problems of previous trials of the inactivated vaccines, the results were debated.
 A second large trial was conducted in the late 1930s, using a tetravalent polysaccharide vaccine [@Macleod1945].
-This trial built upon the experience of the previous trials, and was able to show convincing efficacy against pneumococcal pneumonia, leading to the licensure of two hexavalent polysaccharide pneumococcal vaccines in the 1940s.
-One was formulated for adults and the other for children, each optimized to the serotype distribution within the respective age-group.
+This trial built upon the experience of previous trials, and was able to show convincing efficacy against pneumococcal pneumonia, leading to the licensure of two hexavalent polysaccharide pneumococcal vaccines in the 1940s [@Austrian1999a].
+One was formulated for adults and the other for children, each optimized to the serotype distribution within the respective age-group [@Austrian1999a].
 Unfortunately, these early vaccines fell victim to unfavorable timing; in 1944, Tillet and colleagues showed that bacteraemic pneumococcal pneumonia could be cured by parenteral administration of benzylpenicillin [@Tillett1943].
 With this discovery, the medical community became complacent.
 The mortality rate of pneumococcal disease decreased sufficiently that there was no longer a perceived need for preventative vaccination.
@@ -420,122 +421,67 @@ Several large randomized controlled trials were conducted in South Africa in the
 Its valency was increased to 23 polysaccharides in 1983 [@Austrian1999a].
 
 Early in the development of pneumococcal vaccines, there was an interested in vaccinating children.
-Two trials were conducted in the early 1980s which tested the use of polysaccharide vaccines in young children. 
+Two trials were conducted in the early 1980s which tested the use of polysaccharide vaccines on young children. 
 Neither showed benefit [@Makela1981; @Sloyer1981].
 This result was not entirely unexpected.
 In 1937, The first polysaccharide trial conducted in children failed to detect any immunological response [@Davies1937].
-Laboratory studies in the 1930s and 1940s revealed that the reason for this lack of efficacy was due to the thymus independent immune response to purely sacharide antigens.
-These same studies showed that this could be remedied by adding a protein adjuvant, thus inducing a T-cell response.
-The strategy of protein conjugation saw its first success in the development of the *Haemophilus influenzae* type b vaccine.
-Subsequently, several different pneumococcal conjugate vaccines entered phase II and phase III clinical trials in the late 1990s [@Austrian1999a].
-The first of these to receive licensure was the seven valent pneumococcal conjugate vaccine, licensed in 2000 in the United States.
+Laboratory studies in the 1930s and 1940s revealed that a response could be induced by adding a protein adjuvant [@Austrian1999a].
+Several different pneumococcal conjugate vaccines entered phase II and phase III clinical trials in the late 1990s [@Austrian1999a].
+The first of these to receive licensure was the seven valent pneumococcal conjugate vaccine, licensed in 2000 in the United States [@Austrian1999a].
 It included the purified polysaccharides of seven serotypes of pneumococcus (4, 9V, 14, 19F, 23F, 18C and 6B) conjugated to CRM197 (PCV7~CRM197~), a nontoxic variant of the diphtheria toxin.
 It was shown to be efficacious for IPD, pneumococcal pneumonia and AOM in several randomized trials [@Black2000; @Black2002c;  @Eskola2001; @Fireman2003; @OBrien2003; @OBrien2008].
 In the 2000s, higher valency conjugated vaccines were developed and received licensure, based on the randomized trials conducted for the heptavalent conjugated vaccine.
-They have however been shown to be effective in several cluster randomized trials and observational studies. 
+They have been shown to be effective in several cluster randomized trials and observational studies. 
 
 ### The impact of pneumococcal conjugate vaccines on otitis media
 
 Acute otitis media is still most often caused by *Streptococcus pneumoniae* and *Haemophilus influenzae* despite changes in otopathogens [@Ngo2016].
-Prevention of invasive pneumococcal disease in children and the associated morbidity and mortality was the driving force in the development of pneumococcal conjugate vaccines.
-However, the public often associates pneumococcal conjugate vaccines with AOM.
-Most children experience AOM and the dramatic decrease in incidence following pneumococcal conjugate vaccination is what families noticed.
-
-Despite this, AOM is a difficult outcome for trialist as it exists on a continuum.
-It does not have universally adhered to diagnostic criteria and its signs and symptoms greatly overlap with those of other common diseases [@Lieberthal2013]. 
-Because AOM is benign and most often self-limited, the probability that a child with AOM is even seen by a physician varies greatly with parental health seeking behavior [@Fortanier2015].
-Even when AOM is accurately diagnosed it is not possible to ascertain the causative pathogen without invasive sampling, which is not warranted given the benign nature of the disease [@Coker2010].
-This precludes measuring the serotype specific effect of vaccination for most studies - and more importantly, it precludes measuring the effect on pneumococcal AOM.
-Thus any estimation of an effect of pneumococcal vaccination will necessarily by diluted by the subjectiveness of AOM diagnosis and the continued lack of protection against other otopathogens.
-
-Despite these difficulties, AOM has been associated with pneumococcal vaccination in children from the beginning.
-It was used as an outcome measure in the earliest trials of the pneumococcal polysaccharide vaccines [@Makela1981; @Sloyer1981].
-In the following sub-chapters, the evidence regarding the efficacy and impact of PCV on the otitis media will be reviewed.
-Randomized controlled trials will be reviewed in greater depth, as they represented the highest quality of evidence of true efficacy.
+It was used as an outcome measure in the earliest trials of pneumococcal polysaccharide vaccines [@Makela1981; @Sloyer1981].
+In the following sub-chapters, evidence regarding the efficacy and impact of PCV on otitis media will be reviewed.
+Randomized controlled trials will be reviewed in greater depth, as they represent the highest quality of evidence of true efficacy.
 Observational studies will be reviewed more generally. 
 
-#### Randomized controlled trials evaluting the efficacy of pneumococcal conjugate vaccines for otitis media {#intro-aom-rct}
+#### Randomized controlled trials evaluating the efficacy of pneumococcal conjugate vaccines for otitis media {#intro-aom-rct}
 
 Eight randomized controlled trials have examined the efficacy of pneumococcal conjugate vaccines on acute otitis media [@Black2000; @Dagan2001; @Eskola2001; @Fireman2003; @Kilpi2003; @OBrien2008; @Palmu2015; @Prymula2006; @Tregnaghi2014; @Vesikari2016].
-All those that report efficacy against vaccine-type pneumococcal AOM and pneumococcal AOM show large vaccine efficacies.
-All but two demonstrated a moderate efficacy against all-cause AOM, but only three reach statistical significance.
+Six trials reported the efficacy for vaccine-type pneumococcal AOM and pneumococcal AOM regardless of serotype revealing large and statistically significant effects. 
+Six trials demonstrated a moderate efficacy against all-cause AOM, but only three reached statistical significance.
 The studies are summarized in Table \@ref(tab:table-rct-aom).
 
 The first published randomized controlled trial of a pneumococcal conjugate vaccine reported, among other outcomes, the efficacy against AOM [@Black2000].
-The study recruited 37,868 children between October 1995 and August 1998 and randomized them to the either PCV7~CRM197~ or the meningococcus C CRM197 conjugate vaccine.
-A separate publication from the same trial was published in 2003, and examined the effect of PCV7~CRM197~ on AOM in more detail using the full data until study completion in April 1999 [@Fireman2003].
-Both the Andersen-Gill extension of the Cox proportional hazards model with robust variance estimation and the binomial test with Klopper-Pearson confidence intervals were used.
+The study recruited 37,868 children and randomized them to the either PCV7~CRM197~ or the meningococcus C CRM197 conjugate vaccine.
+A separate publication from the same trial examined the effect of PCV7~CRM197~ on AOM in more detail using the full data [@Fireman2003].
 The estimated vaccine efficacy against otitis media visits was 7.8% (95%CI 5.4% to 10.2%).
 Slightly higher point estimates were found for otitis media episodes, frequent otitis media and ventilatory tube placements [@Black2000; @Fireman2003]
 
 The following year the results of two more randomized controlled trials were published [@Dagan2001; @Eskola2001].
 @Dagan2001 enrolled 264 children ages 12-35 months of age attending eight daycare centers in Beer-Sheva, Isreal.
-The study employed a block randomized design which stratified the children according to daycare center and age-group.
-The study examined a nine-valent pneumococcal CRM197 conjugate vaccine produced by Wyeth-Lederle Vaccines.
-The study's primary endpoint was vaccine-type nasopharyngeal carriage and the secondary endpoint was parent reported respiratory infections.
-Monthly questionnaires were submitted to parents for one year starting one month after the last per-protocol vaccine dose, and bimonthly thereafter for a total of 18 encounters.
-Respiratory infections were split into four different categories (Upper respiratory infections, lower respiratory problems, otitis media and other illnesses) and the results were measured in two different ways; episodes per 100 child-months and the proportion of antimicrobial days during the study period.
-Finally, each category and measurement was compared in children <36 months of age, 36 months of age and older, and overall, resulting in $4\ *\ 2\ *\ 3=16$ comparisons between the intervention and control. 
-The statistical analysis used $\chi^2$ and Fischer's exact contingency table methods but did not account for multiple testing.
+The study's primary endpoint was vaccine-type nasopharyngeal carriage and the secondary endpoint was parent-reported respiratory infections.
 The study reported an efficacy of 17% (95%CI -2% to 33%) for otitis media episodes and 20% (95%CI 14% to 26%) for antimicrobial treated otitis media, as measured by days spent on antimicrobials.
-This remains statistically significant when the result has been corrected for multiple testing using any standard method.
 
-```{r, include=FALSE}
-# Adjustment of P-value in Dagan et. al
-p.adjust(p = c(
-    #URI,  LR,    OM,    Other
-    0.036, 0.015, 0.075, 0.224, #Table 2, < 36
-    0.082, 0.371, 0.425, 0.784, #≥ 36
-    0.009, 0.024, 0.078, 0.570, #Overall
-    0.999, 0.001, 0.001, 0.025, #Table 3
-    0.001, 0.001, 0.059, 0.500, #≥ 36
-    0.005, 0.001, 0.001, 0.918),#Overall
-    method = p.adjust.methods[4] #4 = bonferroni
-)
-```
-
-The later study published in 2001 compared two heptavalent pneumococcal vaccines to a hepatitis B vaccine control [@Eskola2001].
+The later study published in 2001 compared two heptavalent pneumococcal conjugate vaccine to a hepatitis B vaccine control [@Eskola2001; @Kilpi2003].
 The two heptavalent pneumococcal vaccines differed in their use of carrier protein. 
 One was the same vaccine as in the @Black2000 study (PCV7~CRM197~), and the other was a conjugated to meningococcal outer membrane protein complex (PCV7~MOMPC~).
 The @Eskola2001 paper reported comparison of the PCV7~CRM197~ to the hepatitis B vaccine.
 The analogous comparison of the PCV7~MOMPC~ was reported in a separate publication [@Kilpi2003].
 No head-to-head comparison of the two heptavalent vaccines was ever reported.
-The study methodology was identical between the two publications as they report different arms of the same study [@Eskola2001; @Kilpi2003].
 
-The study was specifically designed to address the difficulties associated with estimating the effect of pneumococcal vaccination on AOM.
-A total of 2,497 children were enrolled between December 1995 and April 1997, of which 835 received the PCV7~MOMPC~ vaccine and were therefore not reported in the @Eskola2001 paper.
-Children were followed until their last visit at 24 months of age.
-The study defined beforehand the criteria for what constituted AOM and employed a trained study nurse and physician at each study site.
-Children were seen at enrollment at two months of age, and periodically assessed thereafter at four, six, seven, 12, 13 and 24 months of age.
+A total of 2,497 children were enrolled, of which 835 received the PCV7~MOMPC~ vaccine and were therefore not reported in the @Eskola2001 paper.
 If AOM was diagnosed as defined by the study criteria, myringotomy and aspiration of middle-ear fluid were performed and samples sent for culture.
-In this way, the study was able to deduce the causative otopathogen.
-Episodes of AOM were classified as all-cause AOM; culture-confirmed and otopathogen specific AOM; and AOM due to serotypes included in the vaccine.
-The statistical analysis was again conducted using the Andersen-Gill extension of the Cox proportional hazards model with robust variance estimates and efficacy was reported as $(1 - hazard\ ratio) *100\%$.
 The results were most consistent with a 6% efficacy against all-cause AOM with 95% confidence limits of -4% and 16%.
-In this case the negative lower confidence limit indicates the data could be consistent with the possibility of a 4% increase in all-cause AOM, given the specified model.
-
-The PCV~CRM197~ efficacy against culture-confirmed pneumococcal AOM was 35% (95%CI 21% to 45%) and was 57% (95%CI 44% to 67%) for the seven serotypes included in the vaccine.
-Similarly, the study demonstrated 57% (95%CI 27% to 76%) efficacy against AOM caused by serotype 6A, which is considered a cross-reactive pneumococcal serotype.
 The study was also one of the first to demonstrate clinically relevant serotype replacement, showing a 33% (95%CI -1%-80%) increase in pneumococcal AOM caused by serotypes not included in the vaccine.
-
-Children who completed the @Eskola2001 trial and were still living in the study area were invited for a follow-up interview when they were four to five years of age [@Palmu2004].
-In the extended follow-up trial, the vaccine effectiveness against all tympanostomy tube placements was estimated to be 39% (95%CI 4% to 61%).
-However, this study was unblinded following unmasking and there was differential recruitment between the placebo and PCV7~CRM197~ arms.
-There was therefore a substantial risk of bias in the study, and its results are therefore not included in Table \@ref(tab:table-rct-aom).
 
 The effect estimates for the PCV7~MOMPC~ against culture-confirmed pneumococcal AOM was 25% (95%CI 11%-37%) and was 56% (95%CI 44%-66%) for the seven serotypes included in the vaccine [@Kilpi2003].
 However, unlike PCV~CRM197~, it did not seem to confer protection against cross-reactive serotypes.
 Interestingly, virtually no effect was seen on all-cause AOM with this vaccine preparation. 
 The effect estimate was -1% (95%CI -12% to 10%).
-These surprising results were not presented in the main text and no explanation was given in the discussion chapter of the paper.
 
 ```{r table-rct-aom}
 knitr::kable(
     data.frame(
-        study = c("[@Black2000; @Fireman2003]", "[@Dagan2001]", "[@Eskola2001]", "[@Kilpi2003]", "[@Prymula2006]", "[@OBrien2008]", "[@Tregnaghi2014]", "[@Palmu2015; @Vesikari2016]"),
+        study = c("@Black2000; @Fireman2003", "@Dagan2001", "@Eskola2001", "@Kilpi2003", "@Prymula2006", "@OBrien2008", "@Tregnaghi2014", "@Palmu2015; @Vesikari2016"),
         vaccine = c("PCV7 (CRM197)", "PCV9 (CRM197)", "PCV7 (CRM197)", "PCV7 (MOMPC)", "PCV11 (HiD)", "PCV7 (CRM197)", "PHiD-CV10", "PHiD-CV10"),
-        study_ascertain = c("Oct 1995-Aug 1998", "Unclear", "Dec 1995-Apr 1997", "Dec 1995-Apr 1997", "Oct 2000-Sep 2002", "Apr 1997-Aug 2000", "Jun 2007-July 2011", "Feb 2009-Dec 2011"),
-        country = c("United States", "Isreal", "Finland", "Finland", "Czech Republic & Slovakia", "United States", "Argentina, Panama and Colombia", "Finland"),
+        country = c("United States", "Israel", "Finland", "Finland", "Czech Republic & Slovakia", "United States", "Argentina, Panama and Colombia", "Finland"),
         no_child = c("37,868", "264", "1,662", "1,666", "4,968", "856", "23,821", "6,178"),
         efficacy_vt = c("65% (not specified)", "-", "54% (41% to 64%)", "56% (44% to 66%)*", "53% (35% to 66%)", "64% (-34% to 90%)*", "69.9% (29.8% to 87.1%", "-"),
         efficacy_pnc = c("-", "-", "34% (21% to 45%)", "25% (11% to 37%)", "52% (37% to 63%)", "-", "55.7% (21.5% to 75%)", "-"),
@@ -543,72 +489,49 @@ knitr::kable(
         efficacy_raom = c("9% (3% to 15%", "-", "16% (-6% to 35%)", "-", "56% (-2% to 81%)", "5% (-52% to 41%)", "-", "-"),
         efficacy_tymp = c("20% (2% to 35%", "-", "4% (-19% to 23%)", "-", "60% (-27% to %88)", "28% (-225% to 84%)", "-", "13% (-2% to 26%)")
     ),
-    col.names = c("Study", "Vaccine", "Enrollment period", "Country", "No. of children", "Vaccine-type AOM", "Pneumococcal AOM", "All-cause AOM", "Recurrent AOM", "Tympanostomy tube placement"),
+    col.names = c("Study", "Vaccine", "Country", "No. of children", "Vaccine-type AOM", "Pneumococcal AOM", "All-cause AOM", "Recurrent AOM", "Tympanostomy tube placement"),
     booktab = TRUE,
-    caption = "Randomized controlled trials evaluating the efficacy of pneumococcal conjugate vaccines for acute otitis media (AOM) and tympanostomy procedures. The specific pneumococcal conjugate vaccine used in the study is presented. The seven-valent pneumococcal conjugate vaccine (PCV7) was conjugate to either meningococcal outer membrane protein complex (MOMPC) or CRM197. The 10- and 11-valent vaccines were conjugated to Haemophilus influenzae protein D (HiD). The enrollment period may be considered the start of the study. @Dagan2001 did not present sufficient information to ascertain the exact enrollment period. Vaccine efficacy is presented along with 95% confidence intervals. Information that was not reported in a particular trial is indicated with a hyphen (-). Some studies did not present intention to treat estimates. In those cases, per-protocol efficacy estimates are presented and indicated with an asterix (*)"
+    caption = "Randomized controlled trials evaluating the efficacy of pneumococcal conjugate vaccines for acute otitis media (AOM) and tympanostomy procedures. The specific pneumococcal conjugate vaccine used in the study is presented. The seven-valent pneumococcal conjugate vaccine (PCV7) was conjugate to either meningococcal outer membrane protein complex (MOMPC) or CRM197. The 10- and 11-valent vaccines were conjugated to Haemophilus influenzae protein D (HiD). @Dagan2001 did not present sufficient information to ascertain the exact enrollment period. Vaccine efficacy is presented along with 95% confidence intervals. Information that was not reported in a particular trial is indicated with a hyphen (-). Some studies did not present intention to treat estimates. In those cases, per-protocol efficacy estimates are presented and indicated with an asterix (*)"
 )
 ```
 
 In 2006, @Prymula2006 reported a randomized study of an 11-valent pneumococcal conjugate vaccine in 4,968 children recruited from paediatric centers in the Czech Republic and Slovakia [@Prymula2006].
 The 11-valent vaccine was conjugated to *Haemophilus influenzae* protein D, and of the study aims was to estimate the efficacy against AOM caused by non-typable *Haemophilus influenzae*. 
-A strict case definition of otitis media was used and all cases were reviewed by an otolaryngologist.
-If confirmed, a middle ear fluid sample was obtained by aspiration and sent for culturing.
-Statistical analysis was completed using Cox proportional hazards models and the Anderson-Gill extension for repeated events.
-An interim-analysis was done and the alpha for subsequent statistical comparisons was appropriately adjusted.
-In the intention to treat analysis, the vaccine efficacy for the first occurrence of AOM caused by pneumococcus was 52.6% (95%CI 36.1% to 65.5%) and was 32.7% (95%CI 0.77% to 54.3%) for the first occurrence of AOM caused by non-typable *Haemophilus influenzae*.
+In the intention to treat analysis, the vaccine efficacy for the first occurrence of AOM caused by pneumococcus was 52.6% (95%CI 36.1% to 65.5%) and was 32.7% (95%CI 0.77% to 54.3%) for the first occurrence of AOM caused by NTHi.
 Only per-protocol efficacy was presented for all-cause AOM, which was estimated to be 33.6% (20.8% to 44.3%).
-It is unclear why the intention to treat estimates were not presented.
 
-In 2003, the first paper from a cluster randomized controlled trial of PCV7~CRM197~ among the Navajo and White Mountain Apache infants was published [@OBrien2003].
-In 2008, a retrospective chart review of AOM visits among the participating children was published [@OBrien2008].
+In 2003, the first paper from a cluster randomized controlled trial of PCV7~CRM197~ among the Navajo and White Mountain Apache infants was published [@OBrien2003], and in 2008, a retrospective chart review of AOM visits among the participating children was published [@OBrien2008].
 The study population was defined as children who had adhered to the study protocol, i.e. a per-protocol analysis.
 From this population, 944 of the 4,476 eligible children were randomly sampled for chart review.
-The sample size was restricted for logistical reasons.
-A rough power analysis which assumed 1.5 years of follow-up time per chart and a baseline incidence of one AOM visit per person-year suggested that a sample of 1,000 children would give 80% power to detect a 15% reduction in the incidence of AOM visits.
-It is unclear why only 944 children were sampled, given that the power calculation assumed 1,000. 
-Furthermore, it should be noted that the investigators performing the chart review were not blinded to vaccine allocation.
-This becomes significant when considering that the reviewers had significant leeway in deciding what constituted an AOM visit, and how to categorize the multitude of subjective subgroups considered in the study.
-Of the 944 children reviewed, only 803 were included for various reasons further limiting the study's sample.
-A Poisson regression model was used to estimate the incidence rate ratio between the study arms, and sandwich variance estimates were used to account for the block-randomized design.
 No difference was found between the PCV7~CRM197~ arm and the control, with an estimated vaccine efficacy of -0.4% (95%CI -19.4%-15.6%).
-It is debatable whether this should be considered a randomized controlled trial in light of the methodological flaws discussed above.
-Even if the study were to be considered randomized, it is unclear how to interpret a study that does not even have 80% power to detect a difference twice as large as the the estimates presented by previous randomized controlled trials.
 
 @Tregnaghi2014 reported a randomized controlled trial of PHiD-CV10 conducted in Argentina, Panama and Colombia with an enrollment period from 2007-2011.
-The study design is complex, and considers a multitude of secondary outcomes.
 The primary outcome was bacterial community acquired pneumonia in the per-protocol cohort, and the first secondary outcome was clinically diagnosed AOM. 
-An interim-analysis was conducted in which the primary endpoint was considered to be met, but following this, an error was discovered in the randomization process of children in Panama. 
-The publications indicates that this error did not effect the secondary outcomes, however, it is unclear why this is the case as the secondary outcome of clinically diagnosed AOM is only evaluated in Panamese children.
-AOM by physicians who were trained in the beginning of the study to standardize the assessment.
-In the beginning of the study, cases were only brought to the attention of the study physicians at the discretion of the child's parents.
-This was changed to active surveillance approximately two years into the study's progression due to a lower than expected rate of AOM. 
-It is unclear if and how this could affect the study's results.
 All clinically suspected cases of AOM were subsequently referred to otolaryngologists associated with the study, who confirmed the diagnosis and performed tympanocentesis if middle ear fluid was present.
 The study reported a 19% (95%CI 4.4% to 31.4%) vaccine efficacy for clinically diagnosed AOM in the intention to treat analysis. 
 The estimated efficacy for pneumococcal AOM was 55.7% (95%CI 21.5% to 75%) and the estimated efficacy for vaccine-type AOM was 69.9% (95%CI 29.8% to 87.1%). 
-Unlike @Prymula2006, the study did not find a statistically significant efficacy against AOM caused by non-typable *Haemophilus influenzae*, though the point estimate was similar 21.5% (95%CI -43.4% to 57.0%) [@Tregnaghi2014].
+Unlike @Prymula2006, the study did not find a statistically significant efficacy against AOM caused by NTHi, though the point estimate was similar 21.5% (95%CI -43.4% to 57.0%) [@Tregnaghi2014].
 
-Finally, the results of a cluster-randomized controlled trial on AOM and tympanostomy tube placements conducted in Finland in 2009 was reported in two publications [@Palmu2015; @Vesikari2016].
-The details of the trial are reviewed in Chapter \@ref(intro-ipd-impact), in which the efficacy of PCV for invasive pneumococcal disease is reviewed. 
+Finally, the results of a cluster-randomized controlled trial on AOM and tympanostomy tube placements conducted in Finland in 2009 were reported in two publications [@Palmu2015; @Vesikari2016].
+The details of the trial are outlined in Chapter \@ref(intro-ipd-impact).
 Tympanic tube placements were evaluated in the main trial, while the efficacy against AOM was evaluated in a smaller trial, nested within the main trial.
-The vaccine efficacy for tympanic tube placements was 13% (955CI -2% to 26%) [@Palmu2015].
-The efficacy of parental reported, physician diagnosed AOM was assessed with active surveillance through means of text messaging, and was estimated as 6.4% (95%CI -5.5% to 17.2%) [@Vesikari2016].
+Vaccine efficacy for tympanic tube placements was 13% (955CI -2% to 26%) [@Palmu2015].
+The efficacy of parent-reported, physician diagnosed AOM was assessed with active surveillance through means of text messaging, and was estimated as 6.4% (95%CI -5.5% to 17.2%) [@Vesikari2016].
 
+#### Observational studies evaluating the impact of pneumococcal conjugate vaccines for otitis media. 
 
-#### Observational studies evaluting the impact of pneumococcal conjugate vaccines for otitis media. 
+The observational studies discussed in this chapter were obtained from two systematic reviews of the impact of pneumococcal conjugate vaccines on otitis media [@Taylor2012a; @Vojtek2017].
+The discussion will focus on if and how the studies accounted for secular trends in the incidence of AOM prior to the introduction of PCV, and whether population based data were used.
 
-The observational studies reviewed in this chapter are obtained from two systematic reviews of the impact of pneumococcal conjugate vaccines on otitis media [@Taylor2012a; @Vojtek2017].
-The review focuses on if and how the studies accounted for secular trends in the incidence of AOM prior to the introduction of PCV, and whether population based data were used.
-
-Eight of nine included studies acknowledged an observed decreasing trend of AOM prior to vaccine introduction [@Grijalva2006; @Grijalva2009; @Poehling2004; @Poehling2007; @Lau2015; @Magnus2012; @Marom2014; @Singleton2009].
+Eight of the nine studies included acknowledged an observed decreasing trend of AOM prior to vaccine introduction [@Grijalva2006; @Grijalva2009; @Poehling2004; @Poehling2007; @Lau2015; @Magnus2012; @Marom2014; @Singleton2009].
 Only three studies attempted to correct for the observed secular trend.
 @Grijalva2006 employed a crude difference-in-differences approach, in which the relative risk ratio between young vaccine eligible children and older vaccine non-eligible children in the pre- and post-vaccine periods were compared. 
 This approach assumes that secular trends in AOM are identical in children under the age of three, and between three and six years of age and that no other changes than vaccination occurred that could upset this balance.
 This resulted in an estimated impact of 0.80 (95%CI 0.66 to 0.96).
 
-@Lau2015 and @Marom2014 used a variations of linear interrupted time-series analysis.
-Interrupted time-series analysis is a segmented regression, which fits a linear trend in a defined pre-intervention period and compares this to a linear trend in a defined post-intervention period [@Penfold2013; @Wagner2002].
-The major threats to validity of such analyses are few pre- and post-intervention observations, the existence of other possible changes that correlate with the intervention and inappropriate use of linear trends [@Jandoc2015].
+@Lau2015 and @Marom2014 used a variation of linear interrupted time-series analysis.
+Interrupted time-series analysis is a segmented regression, which fits a linear trend in a defined pre-intervention period, and compares this to a linear trend in a defined post-intervention period [@Penfold2013; @Wagner2002].
+The major threats to the validity of such analyses are few pre- and post-intervention observations, the existence of other possible changes that correlate with the intervention and inappropriate use of linear trends [@Jandoc2015].
 @Lau2015 demonstrated a roughly 20% sequential decrease in the incidence of otitis media among children younger than 10 years of age following the introduction of PCV7 and PCV13.
 There do not seem to be obvious threats to the validity of this study. 
 In @Marom2014, a version of segmented linear regression was performed on 11 annual incidence estimates of otitis media to estimate the added benefit of PCV13 over PCV7.
@@ -618,9 +541,9 @@ Projected trends are subject to uncertainty and should not be used as a baseline
 Furthermore, the number of observations used in the regression was extremely few, rendering segmented regression inappropriate [@Jandoc2015].
 
 @Ben-Shimol2014 did not specifically discuss whether a trend was occurring in the pre-vaccine period.
-They report a detailed prospective population based study of pathogen specific otitis media. which included a four year period prior to vaccine introduction.
+They report a detailed prospective population based study of pathogen specific otitis media, which included a four year period prior to vaccine introduction.
 Visual inspection of the included figures seems to reveal an abrupt decrease in pneumococcal AOM one year prior to the introduction of PCV7.
-This is said to be due to the private market availability one year prior to the general introduction into the pediatric vaccination program.
+This is said to be due to the private market availability of the vaccine one year before general introduction into the pediatric vaccination program.
 However, only 18% of children younger than one year of age had received two or more vaccine doses when the decrease was visually underway.
 It is also not clear from the publication whether the rate of tympanocentesis among children presenting with AOM decreased disproportionately following vaccine introduction.
 This could independently explain the observed decrease in pneumococcal AOM, but would not confound the substantial decrease in vaccine-type pneumococcal AOM.
@@ -628,12 +551,8 @@ Of the included studies, only @Ben-Shimol2014 used population based data.
 
 ### The impact of pneumococcal conjugate vaccines on pneumonia {#intro-pneumonia-impact}
 
-Like acute otitis media, pneumonia can be a tricky end-point for trailists.
-Clinically diagnosed pneumonia is a subjective diagnosis, which spans a range of likelihood and severity.
-Though radiographically confirmed pneumonia is less subjective, radiological interpretations still vary. 
-In 2005, the World Health Organization published a consensus statement defining WHO criteria for pneumonia [@Cherian2004].
-
 Four randomized controlled trials have evaluated the efficacy of pneumococcal conjugate vaccines for pneumonia [@Black2002c; @Cutts2005; @Kilpi2018; @Tregnaghi2014].
+In 2005, the World Health Organization published a consensus statement defining WHO criteria for pneumonia [@Cherian2004].
 @Black2002c, @Tregnaghi2014 and @Kilpi2018 are publications from randomized controlled trials that are extensively reviewed in Chapters \@ref(intro-aom-rct) and \@ref(intro-ipd-impact).
 @Black2002c reported the intention to treat efficacy estimate of the secondary end-point of clinically diagnosed pneumonia to be 6% (95%CI -1.5% to 11%).
 Following the development of the WHO-criteria [@Cherian2004], the data was re-analyzed and the efficacy against WHO-criteria radiographically confirmed pneumonia was 25.5% (95%CI 6.5% to 40.7%) [@Hansen2006].
@@ -641,38 +560,33 @@ Following the development of the WHO-criteria [@Cherian2004], the data was re-an
 Finally, @Kilpi2018 reported efficacy estimates for hospital-diagnosed pneumonia to be 27% (95%CI 14% to 38%) and radiographically confirmed pneumonia as 28% (95%CI 5% to 46%).
 
 @Cutts2005 reported the results of a randomized controlled trial of 17,437 children recruited in the Gambia from 2000 to 2003, who received either a nine-valent pneumococcal vaccine conjugated to CRM197, or the diphtheria-pertussis-tetanus vaccine.
-The randomization procedure was provided in detail. 
-The primary outcome was originally all-cause mortality, but was changed to radiographically confirmed pneumonia in February 2002.
-Several secondary end-points were evaluated, and only invasive pneumococcal disease and mortality were specified a priori.
 At the time of publication, the WHO consensus statement on radiographically confirmed pneumonia had not yet been published. 
 However, the study did employ WHO trained radiologists.
-The study only published the per protocol analysis for any of the end-points. 
 The efficacy for clinically and radiographically diagnosed pneumonia was 7% (95%CI 1% to 12%) and 37% (95%CI 25% to 48%) respectively.
 The results of the randomized controlled trials are summarized in Table \@ref(tab:table-rct-pneumonia).
 
 ```{r table-rct-pneumonia}
 knitr::kable(
     data.frame(
-        study = c("[@Black2002c; @Hansen2006]", "[@Cutts2005]", "[@Tregnaghi2014]", "[@Kilpi2018]"),
+        study = c("@Black2002c; @Hansen2006", "@Cutts2005", "@Tregnaghi2014", "@Kilpi2018"),
         vaccine = c("PCV7 (CRM197)", "PCV9 (CRM197)", "PHiD-CV10", "PHiD-CV10"),
-        study_ascertain = c("Oct 1995-Aug 1998", "Aug 2000-Feb 2003", "Jun 2007-July 2011", "Feb 2009-Dec 2011"),
         country = c("United States", "The Gambia", "Argentina, Panama and Colombia", "Finland"),
         no_child = c("37,868", "17,437", "23,821", "6,178"),
         efficacy_clinical = c("6 (-1.5 to 11)", "7% (1% to 12%)*", "7.3% (2.1% to 12.3%)", "27% (14% to 38%)**"),
         efficacy_who = c("25.5% (6.5% to 40.7%)", "37% (25% to 48%)*", "18.2% (5.5% to 29.1%)", "28% (5% to 46%)")
     ),
-    col.names = c("Study", "Vaccine", "Enrollment period", "Country", "No. of children", "Clinically suspected pneumonia", "Radiographically confirmed pneumonia"),
+    col.names = c("Study", "Vaccine", "Country", "No. of children", "Clinically suspected pneumonia", "Radiographically confirmed pneumonia"),
     booktab = TRUE,
-    caption = "Randomized controlled trials evaluating the efficacy of pneumococcal conjugate vaccines for pneumonia. The specific pneumococcal conjugate vaccine used in the study is presented. The seven and nine-valent pneumococcal conjugate vaccine (PCV7, PCV9) were conjugate to CRM197. The 10-valent vaccine was conjugated to Haemophilus influenzae protein D (PHiD-CV10). The enrollment period may be considered the start of the study. Vaccine efficacy is presented along with 95% confidence intervals. Radiographically confirmed pneumonia is based on WHO-criteria [@Cherian2004]. @Cutts2005 did not report intention to treat estimates and did not report WHO-criteria radiographically confirmed pneumonia. The per-protocol radiographically confirmed pneumonia estimates using the study's criteria are presented. These are indicated with an asterix (*). @Kilpi2018 only reported hospital-diagnosed pneumonia, not clinically suspected pneumonia (**)"
+    caption = "Randomized controlled trials evaluating the efficacy of pneumococcal conjugate vaccines for pneumonia. The specific pneumococcal conjugate vaccine used in the study is presented. The seven and nine-valent pneumococcal conjugate vaccine (PCV7, PCV9) were conjugate to CRM197. The 10-valent vaccine was conjugated to Haemophilus influenzae protein D (PHiD-CV10). Vaccine efficacy is presented along with 95% confidence intervals. Radiographically confirmed pneumonia is based on WHO-criteria [@Cherian2004]. @Cutts2005 did not report intention to treat estimates and did not report WHO-criteria radiographically confirmed pneumonia. The per-protocol radiographically confirmed pneumonia estimates using the study's criteria are presented. These are indicated with an asterix (*). @Kilpi2018 only reported hospital-diagnosed pneumonia, not clinically suspected pneumonia (**)"
 )
 ```
 
-Over a multitude of observational studies evaluating the effect of the introduction of pneumococcal conjugate vaccines on pneumonia have been published. 
-They use different case definitions and design and their review is beyond the scope of this thesis.
+A multitude of observational studies evaluating the effect of the introduction of pneumococcal conjugate vaccines on pneumonia have been published. 
+They use different case definitions and design, and reviewing each study individually is beyond the scope of this thesis.
 A systematic review of pneumonia impact studies identified 60 publications and found robust evidence, with 60% of studies finding significant reductions in clinically diagnosed pneumonia and 55% showing reductions in radiographically confirmed pneumonia [@Loo2014a].
 Most of the included studies did not use controls or correct for pre-vaccine time-trends, however no attempt was made to summarize the studies with regards to methodological factors.
-Another systematic review and meta-analysis of the impact of PCV10 and PCV13 on pneumonia systematically reviewed the studies quality and used a random-effect model to summarize the results [@Alicino2017].
-The review included 12 studies, of which only six corrected for secular trends and five used some form of control -- most often total hospital admissions.
+In another systematic review and meta-analysis of the impact of PCV10 and PCV13 on pneumonia, the quality of the studies was analysed and a random-effect model was used to summarize the results [@Alicino2017].
+This review included 12 studies, of which only six corrected for secular trends and five used some form of control -- most often total hospital admissions.
 The meta-analysis concluded that in children aged 24 months and younger, the introduction of the higher valency conjugate vaccines resulted in a 17% (95%CI 11% to 22%) reduction in clinical pneumonia and a 31% (95%CI 26% to 35%) in radiographically confirmed pneumonia [@Alicino2017].
 
 ### The impact of pneumococcal conjugate vaccines on invasive pneumococcal disease {#intro-ipd-impact}
@@ -684,16 +598,13 @@ Five randomized controlled trials evaluated the efficacy of PCV for IPD, of whic
 One fully vaccinated child was diagnosed with IPD caused by 19F. 
 The vaccine-efficacy against IPD regardless of serotype was 89.1% (73.7% to 95.85%).
 @Cutts2005 only reported the per-protocol estimates of vaccine efficacy, which were 77% (95%CI 51% to 90%) and 50% (95%CI 21% to 69%) for vaccine-type and all-cause IPD respectively. 
-The only randomized controlled trial to report statistically non-significant results of PCV on all-cause IPD was @OBrien2003, 46.3% (95%CI -16.5% to 75.3%) in the intention to treat analysis.
+The only randomized controlled trial to report statistically non-significant results of PCV on all-cause IPD was @OBrien2003, with 46.3% (95%CI -16.5% to 75.3%) in the intention to treat analysis.
 The efficacy against vaccine-type IPD was 86.4% (95%CI 40.3% to 96.9%).
 @Tregnaghi2014 did not include IPD as the primary or first secondary outcome measure. 
 They reported a 100% (95%CI 77.3% to 100%) efficacy for vaccine-type IPD and a 66.7% (95%CI 21.8% to 85.9%) efficacy for all-cause IPD.
 
 @Palmu2013 reports a cluster-randomized controlled trial in Finland, in which 47,366 children were randomized to either PHiD-CV10 or Hepatitis A vaccine from February 2009.
-The trial was pre-registered, and the randomization procedure was provided in detail and extensive power calculations were undertaken prior to the randomization. 
 The primary outcome was vaccine-type IPD among children who received at least one dose of PHiD-CV10 before seven months of age, in the three primary dose + one booster dose schedule.
-A statistical analysis plan was specified a priori.
-A negative binomial model was used to estimate the vaccine efficacy accounting for the cluster-randomization procedure. 
 The efficacy for vaccine-type IPD among children who were randomized to the 3+1 schedule and received at least one dose before seven months of age, was 100% (95%CI 83% to 100%).
 The efficacy for children randomized to the 2+1 schedule was 92% (95%CI 58% to 100%).
 The intention to treat estimate of the vaccine efficacy for the combined 2+1 and 3+1 group was not reported -- the per-protocol estimate was 100% (95%CI 91% to 100%)
@@ -703,17 +614,16 @@ The results of the randomized controlled trials are summarized in Table \@ref(ta
 ```{r table-rct-ipd}
 knitr::kable(
     data.frame(
-        study = c("[@Black2000]", "[@Cutts2005]", "[@OBrien2003]", "[@Tregnaghi2014]", "[@Palmu2013]"),
+        study = c("@Black2000", "@Cutts2005", "@OBrien2003", "@Tregnaghi2014", "@Palmu2013"),
         vaccine = c("PCV7 (CRM197)", "PCV9 (CRM197)", "PCV7 (CRM197)", "PHiD-CV10", "PHiD-CV10"),
-        study_ascertain = c("Oct 1995-Aug 1998", "Aug 2000-Feb 2003", "Apr 1997-Aug 2000", "Jun 2007-July 2011", "Feb 2009-Dec 2011"),
         country = c("United States", "The Gambia", "United States", "Argentina, Panama and Colombia", "Finland"),
         no_child = c("37,868", "17,437", "856", "23,821", "47,366"),
         ipd_vt = c("93.9% (79.6% to 98.5%)", "77% (51% to 90%)*", "86.4% (40.3% to 96.9%)", "100% (77.3% to 100%)", "100% (91% to 100%)*"),
         ipd_all = c("89.1% (73.7% to 95.85%)", "50% (21% to 69%)*", "46.3% (-16.5% to 75.3%)", "66.7% (21.8% to 85.9%)", "93% (77% to 99%)")
     ),
-    col.names = c("Study", "Vaccine", "Enrollment period", "Country", "No. of children", "Vaccine-type IPD", "IPD regardless of serotype"),
+    col.names = c("Study", "Vaccine", "Country", "No. of children", "Vaccine-type IPD", "IPD regardless of serotype"),
     booktab = TRUE,
-    caption = "Randomized controlled trials evaluating the efficacy of pneumococcal conjugate vaccines for invasive pneumococcal disease (IPD). The specific pneumococcal conjugate vaccine used in the study is presented. The seven and nine-valent pneumococcal conjugate vaccine (PCV7, PCV9) were conjugate to CRM197. The 10-valent vaccine was conjugated to Haemophilus influenzae protein D (PHiD-CV10). The enrollment period may be considered the start of the study. Vaccine efficacy for vaccine-type IPD, and IPD regardless of serotype are presented along with 95% confidence intervals. Some studies did not present intention to treat estimates. In those cases, per-protocol efficacy estimates are presented and indicated with an asterix (*)"
+    caption = "Randomized controlled trials evaluating the efficacy of pneumococcal conjugate vaccines for invasive pneumococcal disease (IPD). The specific pneumococcal conjugate vaccine used in the study is presented. The seven and nine-valent pneumococcal conjugate vaccine (PCV7, PCV9) were conjugate to CRM197. The 10-valent vaccine was conjugated to Haemophilus influenzae protein D (PHiD-CV10). Vaccine efficacy for vaccine-type IPD, and IPD regardless of serotype are presented along with 95% confidence intervals. Some studies did not present intention to treat estimates. In those cases, per-protocol efficacy estimates are presented and indicated with an asterix (*)"
 )
 ```
 
@@ -727,79 +637,78 @@ The average time until a 50% reduction in vaccine-type IPD was observed was 2.3 
 Healthcare operates under resource constraints.
 In this setting of scarcity, the decision to fund one project inevitably results in another project remaining unfunded.
 Economic analyses are one of many tools to aid decision-makers in allocating resources optimally.
-Interventions are compared to two or more alternatives, and costs and benefits are systematically scrutinzed.
-Economic analyses require data on the efficacy of the interventions being evaluated, the burden of disease and the subgroups of the population which are affected [@Gray2011].
+Interventions are compared with two or more alternatives, and costs and benefits are systematically scrutinized.
+Economic analyses require data on the efficacy of the interventions being evaluated, the burden of disease, and the subgroups of the population which are affected [@Gray2011].
 
 All methods of economic analysis measure the monetary costs associated with the relevant interventions, but differ in how they measure the resultant benefits.
-Cost-benefit analysis translates the effect of an intervention into a monetary value, and calculates the total cost associated with the intervention once any potential savings have been accounted.
-In cost-effectiveness analysis, the effect of the intervention is measured in units of the condition being intervened upon, e.g. deaths prevented, life-years gained.
+Cost-benefit analysis translates the effect of an intervention into a monetary value, and calculates the total cost associated with the intervention once any potential savings have been applied.
+In cost-effectiveness analysis, the effect of the intervention is measured in units of the condition being intervened upon, e.g. number of deaths prevented, years of life gained.
 The results of such an analysis are commonly presented as an incremental cost-effectiveness ratio, which represents the cost associated with one unit change in the effect measure.
 Cost-effectiveness analyses are preferred over cost-benefit analyses in the healthcare context, as placing a monetary value on a health-effect is both controversial and impractical. 
-One drawback however, is difficulty in comparing cost-effectiveness ratios between studies that use different measurements of effect.
-Cost-utility analyses remedy this by standardizing a combined effect that measures the quality and quantity of life gained.
+One drawback however, is the difficulty of comparing cost-effectiveness ratios between studies that use different measurements of effect.
+Cost-utility analyses remedy this by standardizing a combined effect that measures both the quality and quantity of life gained.
 This combined effect is most often measured in units of quality-adjusted life-years (QALY) [@Gray2011].
 
-Quality-adjusted life-years are constructed by dividing each persons life into units of time.
+Quality-adjusted life-years are determined by dividing each persons life into units of time.
 A unit of time lived in perfect health is assigned a value of one, while death is assigned a value of zero.
 Each disease is assigned a utility, which represents the health-related quality of life an individual is expected to have while suffering from the disease.
 Three methods are generally used to obtain utility values for a given health state.
-These are the rating scale method, time trade-off and standard gamble.
-Each method is intended to capture the preferences of the population in which the economic analysis is meant to inform, and they are not meant to be generalized to other populations except with extreme caution [@Petrou2009].
-Even then, some external criteria must be used for the results to be interpretable.
-Decision-makers must specify the threshold incremental cost-effectiveness ratio, below which an intervention is deemed cost-effective. 
+These are termed the rating scale method, the time trade-off and the standard gamble.
+Each method is intended to capture the preferences of the population to which the economic analysis pertains, and they are not meant to be generalized to other populations except with extreme caution [@Petrou2009].
 
 Measuring costs associated with an intervention is deceptively simple.
-The costs associated with an intervention depend on from what perspective the intervention is evaluated [@Byford1998].
-When examined from the societal perspective, an expensive medication may be cost-saving, if it allows individuals who would have otherwise required disability benefits to participate in the workforce .
+They depend on from which perspective the intervention is evaluated [@Byford1998].
+When examined from the societal perspective, an expensive medication may be cost-saving if it allows individuals who would have otherwise required disability benefits to participate in the workforce .
 The same medication may be considered prohibitively costly when examined from the healthcare sector perspective.
-The choice of perspective should reflect the purpose of the analysis and the intended audience.
-For the health-economic analysis of vaccines, the general consensus is to choose the societal perspective but also include an analysis from the perspective of the healthcare sector [@Sanders2016].
+The choice of perspectives should reflect the purpose of the analysis and the intended audience.
+In health-economic analysis of vaccines, the general consensus is to choose the societal perspective, but also include an analysis from the perspective of the healthcare sector [@Sanders2016].
 
 Interventions are compared at a single point in time but accrue costs and benefits over a variably long time period.
-The time horizon is the term used for the time period over which an intervention is evaluated.
-In general, the time horizon should be chosen to reflect the duration of the effect of the intervention.
+Time horizon is the term used for the period of time over which an intervention is evaluated.
+In general, the time horizon should be chosen to reflect the duration of the intervention's effect.
 In the context of cost-effectiveness analyses of vaccines, the consensus is to use a lifetime horizon, unless there are compelling reasons otherwise [@Mauskopf2018; @Wilkinson2016].
 To accurately compare interventions with differential distributions in the timing of costs and benefits, it has become standard practice to discount future cost and benefit.
-The rationale is grounded in both the psychology of human behavior and economic principles [@Severens2004].
+The rationale is grounded in both the psychology of human behavior and in economic principles [@Severens2004].
 Society tends to value current costs and benefits higher than those that occur in the future.
-The exact discount rate, whether it should be constant and whether costs and benefits should be discounted at the same rate are debated [@Claxton2011].
+The exact discount rate, whether it should be a constant rate, and whether costs and benefits should be discounted at the same rate, are all debated [@Claxton2011].
 However, the general consensus is to use a constant 3% discount rate for both costs and benefits [@Mauskopf2018; @Sanders2016; @Wilkinson2016].
 
 Economic analyses are built upon a set of assumptions that may influence the outcome.
 In the case of pneumococcal conjugate vaccines, the assumptions include the incidence of disease in the target population, the proportion caused by *Streptococcus pneumoniae*, the serotype distribution, the degree of vaccine uptake, the vaccine efficacy in vaccinated and unvaccinated members of the population, costs and utilities associated with disease states, cost of the vaccine, perspective, time horizon and discounting [@Wasserman2018].
-These assumptions are combined together in mathematical model which describes the result, given the input parameters.
-Decision analysis models are static scenario based models in which individuals are independently assumed to progress through a decision tree.
+These assumptions are combined together in a mathematical model which generates an outcome, given the input parameters.
+Decision analysis models are static scenario-based models in which individuals are assumed to progress independently through a decision tree.
 The tree has one branch for each intervention being evaluated, and each branch contains an identical set of nodes that represent the health outcomes being considered. 
-However, the nodes on each branch are associated with a different set of costs, consequences and probabilities of occurring,
-The model is run and the number of individuals in each node are tallied along with the associated cost and consequence to produce the final result.
-This generally means that the model cannot incorporate different probabilities depending on age or time from the start of the intervention [@Gray2011].
-For example, a decision analysis model would assume that the difference in invasive pneumococcal disease with and without the vaccine were constant, regardless of how many years had passed since the vaccine introduction. 
-Markov models expand upon this framework, by removing the tree structure and allowing individuals to transition between nodes (which are termed health states in Markov models) in any direction.
-The transitions between health states occur in Markov cycles. 
-At the end of each cycle, the costs and consequences associated with the current health state are recorded, before the next cycle begins. 
-Thus an individual accumulates cost and benefit over time and may transition in and out of health states -- an improvement over the static once-only decision analysis models.
-The transition probabilities may be either constant or time-dependent.
-However, the Markovian assumption requires that all individuals within a given health state should be homogeneous, regardless of their previous health states or the length of time that they have been in their current state.
-Thus the transition between health states may depend on the time that has elapsed from the start of the model but cannot depend on what has happened in a prior cycle [@Gray2011].
-A Markov model would assume that an individual who has previously been hospitalized twice for pneumonia, has the same probability of being hospitalized again as someone who has never been hospitalized. 
-Transmission dynamic models expand upon the Markov process by using a set of differential equations to remove the need for the Markovian assumption [@Pitman2012].
+However, the nodes on each branch are defined by a different set of costs, consequences and probabilities of occurring,
+The model is run and the number of individuals in each node are tallied, along with the associated costs and consequences, producing a final result.
+Generally, this model requires the assumption that probabilities are fixed, and do not vary depending on age or elapsed time [@Gray2011].
+For example, a decision analysis model would assume that the difference in the probability of contracting pneumonia with and without the vaccine was constant, regardless of the years elapsed since vaccine introduction.
 
-Because of the subjective nature of many of the modeling assumptions, a sensitivity analysis that explores the cost-effectiveness outcome over a plausible range of each of the assumptions is necessary.
-Consensus statements from the World Health Organization and the International Society for Pharmacoeconomics and Outcome Research (ISPOR) require at minimum, a one-way sensitivity analysis of each of the assumptions [@Mauskopf2018; @Walker2010].
-One-way sensitivity analysis imply that each parameter is individually varied across its probability distribution, while other parameters are held constant.
+Markov models expand upon this framework by removing the tree structure and allowing individuals to transition in any direction between nodes, which are termed "health states" in Markov models.
+In these models, the transitions between health states occur in cycles.
+At the end of each cycle, the costs and consequences associated with the current health state are recorded, before the next cycle begins. 
+Thus an individual accumulates costs and benefits over time and may transition in and out of health states -- an improvement over the static decision analysis models.
+The transition probabilities may either be constant or time-dependent.
+However, the Markovian assumption dictates that all individuals within a given health state are homogeneous, regardless of their previous health states or the length of time that they have been in their current state.
+Thus the transition between health states may depend on the time that has elapsed from the start of the model, but cannot depend on what has happened in a prior cycle [@Gray2011].
+A Markov model would assume that an individual who has previously been hospitalized twice for pneumonia, has the same probability of being hospitalized again as someone who has never been hospitalized. 
+Transmission dynamic models expand upon the Markov process by using a set of differential equations to annul the Markovian assumption [@Pitman2012].
+
+Because of the subjective nature of many of the modeling assumptions, a sensitivity analysis is necessary to explore the cost-effectiveness outcomes over a range of plausible input parameters.
+Consensus statements from the World Health Organization and the International Society for Pharmacoeconomics and Outcome Research (ISPOR) require, at minimum, a one-way sensitivity analysis of each of the assumptions [@Mauskopf2018; @Walker2010].
+One-way sensitivity analysis implies that each parameter is individually varied across its probability distribution, while other parameters are held at a constant value.
 The results are often presented as a tornado plot.
-Scenario analyses show the result of specific combinations of parameter values, which are often based on common situations that 
-Both consensus statements strongly recommend the inclusion of a probabilistic sensitivity analysis, in which the analysis is repeatedly run and the assumptions simultaneously varied across their respective probability distributions [@Gray2011].
+Scenario analyses show the result of specific combinations of parameter values, which are often based on common situations that decision-makers may find useful. 
+Both consensus statements strongly recommend the inclusion of a probabilistic sensitivity analysis (PSA), in which the analysis is repeatedly run and all parameters are simultaneously varied across their respective probability distributions [@Gray2011].
 The resulting spread of cost-effectiveness estimates reflects the uncertainty of the analysis.
-This can be paired with threshold analysis, which shows the proportion of the resulting spread that is above a stated cost-effectiveness threshold, or a generalization of a threshold analysis called the cost-effectiveness acceptability curve (CEAC) [@Gray2011].
+This can be paired with threshold analysis, which shows the proportion of the resulting spread above a stated cost-effectiveness threshold, or a generalization of a threshold analysis called the cost-effectiveness acceptability curve (CEAC) [@Gray2011].
 
 A large number of cost-effectiveness analyses of pneumococcal conjugate vaccines have been published [@Saokaew2016; @VandeVooren2014a; @Wu2015]. 
 They display great variation in their results, underlying assumptions and modeling choices.
 In this thesis, cost-effectiveness analyses of pneumococcal conjugate vaccines in high-income countries will be reviewed.
 The studies included in this review are summarized in Table \@ref(tab:table-cea-summary).
 This review focuses on studies published in 2009 and later, after the introduction of the higher-valent pneumococcal conjugate vaccines.
-Other published reviews have examined cost-effectiveness studies prior to 2006 [@Beutels2007] and studies in low- and middle income countries [@Saokaew2016].
-All of the included studies found pneumococcal conjugate vaccines to be cost-effective compared to no vaccine, but varied as to whether PCV7, PCV10 or PCV13 dominated as compared to the others.
+Other published reviews have examined cost-effectiveness studies prior to 2006 [@Beutels2007], and studies in low- and middle income countries [@Saokaew2016].
+All of the included studies found pneumococcal conjugate vaccines to be cost-effective compared to no vaccine, but varied as to whether PCV7, PCV10 or PCV13 was the dominant strategy.
 The aim of this review is to explore the studies' design and underlying assumptions, rather than the results.
 
 (ref:Wu2015) @Wu2015
@@ -808,27 +717,27 @@ The aim of this review is to explore the studies' design and underlying assumpti
 kable(
     x = data.frame(
     study = c(
-    "[@OBrien2009a]",
-    "[@Chuck2010]",
-    "[@Rozenbaum2010]",
-    "[@Rubin2010]",
-    "[@Talbird2010]",
-    "[@Robberstad2011]",
-    "[@Newall2011]",
-    "[@Diez-Domingo2011]",
-    "[@Knerer2012]",
-    "[@Earnshaw2012b]",
-    "[@By2012]",
-    "[@Strutton2012]",
-    "[@Blank2012]",
-    "[@VanHoek2012]",
-    "[@Klok2013]",
-    "[@Zhou2014]",
-    "[@Delgleize2016]",
-    "[@Newall2016]",
-    "[@Castiglia2017]",
-    "[@Gouveia2017]",
-    "[@Kuhlmann2017]"
+    "@OBrien2009a",
+    "@Chuck2010",
+    "@Rozenbaum2010",
+    "@Rubin2010",
+    "@Talbird2010",
+    "@Robberstad2011",
+    "@Newall2011",
+    "@Diez-Domingo2011",
+    "@Knerer2012",
+    "@Earnshaw2012b",
+    "@By2012",
+    "@Strutton2012",
+    "@Blank2012",
+    "@VanHoek2012",
+    "@Klok2013",
+    "@Zhou2014",
+    "@Delgleize2016",
+    "@Newall2016",
+    "@Castiglia2017",
+    "@Gouveia2017",
+    "@Kuhlmann2017"
     ),
     country = c(
     "United States",
@@ -883,62 +792,65 @@ kable(
     ),
     col.names = c("Study", "Country", "Study type", "Perspective", "Time horizon (years)", "Discount rate of costs (%)", "Discount rate of benefits (%)"),
     booktab = TRUE,
-    caption = "A summary of the economic analyses of pneumococcal conjugate vaccines in high-income countries from 2009-2018. All analyses are either a cost-effectiveness analysis (CEA) or cost-utility analysis (CUA). Costs and benefit are either considered from the societal or health sector perspective, depending on whether indirect costs such as productivity loss are included in the analyses, The time horizon of the studies er presented in years. A lifetime horizon is based on the life-expectancy of the population, and is most commonly assumed to be 100 years. Discount rates are presented separately for costs and benefits. When the time horizon is one year or less, discount rates are not applicable and are presented with a hyphen (-). @Earnshaw2012b did not publish sufficent information to know what discount rate was used. The table is partially adapted from (ref:Wu2015). "
+    caption = "A summary of the economic analyses of pneumococcal conjugate vaccines in high-income countries from 2009-2018. All analyses are either a cost-effectiveness analysis (CEA) or cost-utility analysis (CUA). Costs and benefits are considered either from the societal or health sector perspective, depending on whether indirect costs such as productivity loss are included in the analyses. The time horizon of the studies is presented in years. A lifetime horizon is based on the life-expectancy of the population, and is most commonly assumed to be 100 years. Discount rates are presented separately for costs and benefits. When the time horizon is one year or less, discount rates are not applicable, and are presented with a hyphen (-). @Earnshaw2012b did not publish sufficent information to determine what discount rate was used. The table is partially adapted from (ref:Wu2015). "
     )
 ```
 
 ### Vaccine efficacy assumptions in economic analyses of pneumococcal conjugate vaccines
 
-Because *Streptococcus pneumoniae* causes a wide range of clinical infections, economic analyses that study the cost-effectiveness of pneumococcal conjugate vaccines must make choices regarding which health outcomes to include in the analysis.
+Because *Streptococcus pneumoniae* causes a wide range of clinical infections, economic analyses of the cost-effectiveness of pneumococcal conjugate vaccines must choose which health outcomes to include in the analysis.
 Most, but not all, include acute otitis media, pneumonia and invasive pneumococcal disease.
-The way in which each study measures these health outcomes differs, and the studies assume divergent vaccine efficacies for outcomes. 
+The studies include variable definitions of what constitutes each health outcome, assume differing baseline probabilities of the outcome occurring, and assume divergent vaccine efficacies for the included outcomes.
 Each of the health outcomes considered may or may not be associated with further healthcare consumption and disease burden.
-Repeated acute otitis media may lead to a tympanostomy tube procedure, and invasive pneumococcal disease may cause death or long term disability. 
+Repeated AOM may lead to a tympanostomy tube procedure, and IPD may cause death or long term disability. 
 If and how disease sequlae are taken into account is variable between studies.
 Finally, the studies differ in whether they consider health outcomes in unvaccinated members of the population [@Holubar2017; @Isaacman2008].
 
-Most of the cost-effectiveness analyses that were reviewed based their vaccine efficacy estimates for acute otitis media on the results of the Northern California Kaiser Permente trial [@Black2000; @Fireman2003].
-Others, [@Castiglia2017; @Delgleize2016; @Klok2013; @Knerer2012; @Robberstad2011; @Strutton2012; @Talbird2010] based the efficacy of PCV7 and PCV13 on @Eskola2001, and justified a higher vaccine efficacy estimate for PHiD-CV10 based on @Prymula2006 or @Tregnaghi2014, by also assuming efficacy against otitis media caused by non-typable *Haemophilus influenzae*.
+Most of the reviewed cost-effectiveness analyses based their vaccine efficacy estimates for AOM on the results of the Northern California Kaiser Permente trial [@Black2000; @Fireman2003].
+A large proportion of the remaining studies [@Castiglia2017; @Delgleize2016; @Klok2013; @Knerer2012; @Robberstad2011; @Strutton2012; @Talbird2010] based their efficacy of PCV7 and PCV13 on @Eskola2001.
+These studies often justified a higher vaccine efficacy estimate for PHiD-CV10 based on @Prymula2006 or @Tregnaghi2014, by also assuming efficacy for AOM caused by non-typable *Haemophilus influenzae*.
 The validity of this assumption has been called into question [@Wasserman2018].
-Few studies did not base their efficacy estimates on data from randomized clinical trials.
-@Gouveia2017 based their otitis media efficacy estimates on observational data from the United Kingdom, which used a crude interrupted time series analysis to ascertain impact [@Lau2015].
-@VanHoek2012 assumed the otitis media efficacy to be a linear ratio of their estimated efficacy for invasive pneumococcal disease, which they based on a complex transmission dynamic model.
-@Chuck2010 also based the efficacy for otitis media on invasive pneumococcal disease, but used the observed change in invasive disease before and after vaccine introduction without any adjustments for secular trends in the pre-vaccine period.
-Similarly, @Zhou2014 did not use any efficacy estimates, but instead directly compared published incidence rates of otitis media before and after vaccine introduction and assumed any difference was due to the vaccine.
+Few studies did not base their efficacy estimates for AOM on data from randomized clinical trials.
+@Gouveia2017, for example, based their AOM efficacy estimates on observational data from the United Kingdom, which used a crude interrupted time series analysis to ascertain impact [@Lau2015].
+@VanHoek2012 assumed AOM efficacy to be a linear ratio of their estimated efficacy for IPD, based on a complex transmission dynamic model.
+@Chuck2010 also based the efficacy for AOM on IPD, but used the observed change in invasive disease before and after vaccine introduction without any adjustments for secular trends in the pre-vaccine period.
+Similarly, @Zhou2014 did not use any efficacy estimates, but instead directly compared published incidence rates of AOM before and after vaccine introduction, and assumed any observed difference was due to the vaccine.
 
 The vaccine efficacy estimates for hospitalized and non-hospitalized pneumonia were generally based on @Black2002.
-As with otitis media, @Delgleize2016 and @Castiglia2017 based their estimates on @Tregnaghi2014.
-@Newall2016 based the efficacy against outpatient pneumonia on @Black2002, as did other studies. 
-However, the efficacy estimates for inpatient pneumonia and invasive disease was estimated using a novel time-series methodology. 
-They projected the rate of disease in the pre-vaccine period to the post-vaccine period using a Poisson regression, and corrected for changes in population demographics using an offset term.
-Because they only had access to three years of annual pre-vaccine incidence rates, they were unfortunately only able to correct for an intercept term and they acknowledge this in their discussion section [@Newall2016]. 
-Nevertheless, the methodology is interesting. 
-In the case of pneumonia, a larger proportion of studies based their estimates on either unadjusted observational studies from other populations or did not provide sufficient information to ascertain what estimates was used.
-@Chuck2010 and @VanHoek2012 again assumed the efficacy for pneumonia to be a fixed ratio of their invasive pneumococcal disease efficacy estimate.
-@Talbird2010 and @Gouveia2017 never explicitly state what their assumed vaccine efficacy is, and no rationale is provided.
-The estimate cannot be deduced from tables and references.
+As was the case for AOM, @Delgleize2016 and @Castiglia2017 based their pneumonia efficacy estimates on @Tregnaghi2014.
+In the case of pneumonia, a larger proportion of studies based their estimates on either unadjusted observational studies or did not provide sufficient information to ascertain what estimates were used.
+@Chuck2010 and @VanHoek2012 again assumed the efficacy for pneumonia to be a fixed ratio of their IPD efficacy estimate.
+@Talbird2010 and @Gouveia2017 never explicitly stated their assumed vaccine efficacy, and no rationale was provided.
 @Diez-Domingo2011 assumed a 42% efficacy against hospitalized pneumonia cases but did not provide any rationale or reference for this assumption. 
-@Zhou2014 directly compared published incidence rates for pneumonia in the pre- and post-vaccine periods, and assumed any difference to be a direct result of vaccination. 
+@Zhou2014 directly compared published incidence rates for pneumonia in the pre- and post-vaccine periods, and assumed any difference to be a direct result of vaccination.
+@Newall2016 based the efficacy against outpatient pneumonia on @Black2002, as did most other studies. 
+However, the efficacy estimates for inpatient pneumonia and IPD were determined using a novel time-series methodology. 
+They projected the rate of disease in the pre-vaccine period to the post-vaccine period using a Poisson regression model, and corrected for changes in population demographics using an offset term.
+With access to only three years of annual pre-vaccine incidence rates, they were unfortunately only able to correct for an intercept term, and acknowledge this in their discussion section [@Newall2016]. 
+Nevertheless, the methodology is interesting. 
 Finally, @OBrien2009a did not consider pneumonia or invasive pneumococcal disease as health outcomes.
 
-Invasive pneumococcal disease vaccine efficacy estimates were most often based on @Black2000, and @Kuhlmann2017 based their estimate on @Palmu2013.
+Vaccine efficacy estimates for IPD were most often based on @Black2000.
+One other randomized controlled trial [@Palmu2013] was used by @Kuhlmann2017.
+The remaining studies based their efficacy estimates on non-randomized or observational studies.
 @Newall2016 used a novel regression methodology as previously described, and @Chuck2010 used simple unadjusted pre- and post-vaccine observational data.
-The remaining studies based their efficacy estimates on non-randomized studies observational studies in different populations.
 @VanHoek2012 utilized a complex transmission dynamic model on meticulously collected prospective surveillance data to estimate the effect of PCV13, but did not provide any reference or rationale for the efficacy parameters used in the model.  
-@Castiglia2017 assumed that the vaccine efficacy of PCV10 and PCV13 were the average of two observational studies [@Palmu2015; @Waight2015].
+@Castiglia2017 assumed that the vaccine efficacy of PCV10 and PCV13 were the average of two observational studies [@Palmu2015a; @Waight2015].
 @By2012, @Delgleize2016, @Knerer2012, @Newall2011 and @Robberstad2011 based their efficacy estimate on a matched case-control study of PCV7, conducted in the United States in 2001-2002 [@Whitney2006].
 @Talbird2010 failed to provide any reference or rationale for their efficacy estimates.
 
-Critical appraisals of cost-effectiveness assumptions have shown that they can have large effects on the study's outcomes [@Wasserman2018].
-The included cost-effectiveness and cost-utility analyses base their efficacy estimates on many different studies.
-An alarmingly large proportion of studies cite observational data from other time-periods and study populations that used a different formulation of pneumococcal conjugate vaccine.
-In most cases were randomized controlled trials are utilized, the most commonly referenced studies were conducted ten years prior in a completely vaccine naive population using PCV7.
-@Newall2016 introduced a thoughtful time-series approach were local pre-vaccine trends in disease were statistically extrapolated to the post-vaccine period to simulate what would have occurred, had the vaccine not been introduced. 
-This was ten subtracted from the observed rates of disease to estimate the true vaccine impact. 
+Critical appraisals of cost-effectiveness assumptions have shown they can profoundly affect a study's outcome [@Wasserman2018].
+The cost-effectiveness and cost-utility analyses included in this discussion based their efficacy estimates on many different studies.
+An alarmingly large proportion cited observational data from other time-periods and study populations, which often used a different formulation of pneumococcal conjugate vaccine.
+In most cases where randomized controlled trials were utilized, the most commonly referenced studies were conducted 10 years prior, in a completely vaccine naive population using PCV7.
+@Newall2016 introduced a thoughtful time-series approach where local pre-vaccine trends in disease were statistically extrapolated to the post-vaccine period, simulating what would have occurred had the vaccine not been introduced. 
+This was then subtracted from the observed rates of disease to estimate the true vaccine impact. 
 However, as the authors concede in their discussion, they did not have access to adequate pre-vaccine data and were thus unable to conduct a robust statistical extrapolation [@Newall2016].
-The care with which these data are incorporated also varies between studies, with only some considering vaccine coverage, waning vaccine protection and adjusting for local serotype distribution and herd effect \@ref(tab:table-cea-assumptions).
-Additionally, a large variation existed in how the pre-vaccine incidence of disease was defined, with some studies borrowing incidence estimates from other countries. 
-A review of the epidemiological rationale used in each of the studies is beyond the scope of this thesis. 
+
+The care with which the referenced efficacy data were incorporated also varied between studies.
+Only some considered vaccine coverage and waning vaccine protection, and few adjusted for local serotype distribution and herd effect (Table \@ref(tab:table-cea-assumptions)).
+Additionally, there was great variability in how the included studies defined the pre-vaccine incidence of disease, with some studies borrowing incidence estimates from other countries. 
+A review of the epidemiological rationale used in each of the studies is beyond the scope of this thesis.
 
 (ref:modeling-types) \@ref(cea-introduction).
 
@@ -946,27 +858,27 @@ A review of the epidemiological rationale used in each of the studies is beyond 
 kable(
     x = data.frame(
     study = c(
-    "[@OBrien2009a]",
-    "[@Chuck2010]",
-    "[@Rozenbaum2010]",
-    "[@Rubin2010]",
-    "[@Talbird2010]",
-    "[@Robberstad2011]",
-    "[@Newall2011]",
-    "[@Diez-Domingo2011]",
-    "[@Knerer2012]",
-    "[@Earnshaw2012b]",
-    "[@By2012]",
-    "[@Strutton2012]",
-    "[@Blank2012]",
-    "[@VanHoek2012]",
-    "[@Klok2013]",
-    "[@Zhou2014]",
-    "[@Delgleize2016]",
-    "[@Newall2016]",
-    "[@Castiglia2017]",
-    "[@Gouveia2017]",
-    "[@Kuhlmann2017]"
+    "@OBrien2009a",
+    "@Chuck2010",
+    "@Rozenbaum2010",
+    "@Rubin2010",
+    "@Talbird2010",
+    "@Robberstad2011",
+    "@Newall2011",
+    "@Diez-Domingo2011",
+    "@Knerer2012",
+    "@Earnshaw2012b",
+    "@By2012",
+    "@Strutton2012",
+    "@Blank2012",
+    "@VanHoek2012",
+    "@Klok2013",
+    "@Zhou2014",
+    "@Delgleize2016",
+    "@Newall2016",
+    "@Castiglia2017",
+    "@Gouveia2017",
+    "@Kuhlmann2017"
     ),
     model = c(
         "Markov",
@@ -1109,56 +1021,57 @@ kable(
     ),
     col.names = c("Study", "Model structure", "Vaccine protection (years)", "Vaccine uptake (%)", "Herd effect", "Serotype replacement", "Sensitivity analyses"),
     booktab = TRUE,
-    caption = "A summary of modeling assumptions used in economic analyses of pneumococcal conjugate vaccines in high-income countries from 2009-2018. Several different modeling strategies were used, which are discussed in more detail in chapter (ref:modeling-types). Vaccine protection is known to wane over an unknown length of time. The assumed length of protection is presented with a hyphen (-) if the study assumed infinite protection or did not provide sufficient data to ascertain over which period the protection waned. Similarly, a hyphen indicates that assumed vaccine coverage was not specified. When herd effect was included in the model, it was often only included for invasive pneumococcal disease (IPD). Serotype replacement was often only incorporated for indirect effects (herd immunity, herd effect). When models are based on ecological data, they implicitly includ both herd effects and serotype replacement. Only @VanHoek2012 directly modelled the serotype replacement. Sensitivity analyses are can be either deterministic, such as 1-Way, 2-Way and scenario analyses, or stochastic, such as proabilistic sensitivity analyses (PSA) and cost-effectiveness acceptability curves (CEAC). Sensitivity analyses are discussed in more detail in chapter (ref:modeling-types). The table is partially adapted from (ref:Wu2015)."
+    caption = "A summary of modeling assumptions used in economic analyses of pneumococcal conjugate vaccines in high-income countries from 2009-2018. Several different modeling strategies were used, which are discussed in more detail in chapter (ref:modeling-types). Vaccine protection is known to wane over an unknown length of time. If a study assumed infinite protection, or did not provide sufficient data to ascertain the waning period, then the length of protection is presented wih a hyphen (-). Similarly, a hyphen indicates that vaccine uptake was not specified. When herd effect was included in the model, it was often only included for invasive pneumococcal disease (IPD). Serotype replacement was often only incorporated for indirect effects (herd effect). When models are based on ecological data, they implicitly include both herd effects and serotype replacement. Only @VanHoek2012 directly modeled the serotype replacement. Sensitivity analyses can be either deterministic, such as 1-Way, 2-Way and scenario analyses, or stochastic, such as probabilistic sensitivity analyses (PSA) and cost-effectiveness acceptability curves (CEAC). Sensitivity analyses are discussed in more detail in chapter (ref:modeling-types). The table is partially adapted from (ref:Wu2015)."
     )
 ```
 
 ### Assumptions regarding costs and utilities in economic analyses of pneumococcal vaccines
 
-Cost-utility analyses present their results as the cost of an intervention per additional quality-adjusted life-year gained.
-QALYs are a good universal measure of benefit, provided that the quality adjustments for the included health outcomes accurately reflect the true preferences of the population for which the cost-utility analysis is supposed to inform decision making.
-Otherwise, the resulting cost-utility ratio is at best externally valid in comparison to other studies which use the same utility weights, but has no intrinsic meaning in informing decision-makers.
-Similarly, the costs associated with each vaccine and health outcome must necessarily be derived from accurate estimates from the population under study.
-If costs are measured imprecisely or obtained from other countries or time-periods, it becomes difficult to imagine what relevance the economic analysis has to the decision that needs to be made. 
+Cost-utility analyses present results as the cost of an intervention per additional quality-adjusted life-years gained.
+QALYs are a good universal measure of benefit, provided that the quality adjustments for the included health outcomes accurately reflect the true preferences of the population for which the cost-utility analysis is informing decision making.
+Without this correlation, the resulting cost-utility ratio is at best externally valid in comparison to other studies which use the same utility weights, but has no intrinsic validity to inform decision-makers.
+Similarly, the costs associated with each vaccine and health outcome must necessarily be derived from accurate estimates of the population under study.
+If costs are measured imprecisely or obtained from other countries or time-periods, it is difficult to imagine what relevance the economic analysis has to the decisions at hand.
 
-To date, only three studies have been published that estimate utility values for pneumococcal diseases in high-income countries by interviewing children or parents of children who have experienced the disease. 
+To date, only three studies have been published that estimate utility values for pneumococcal diseases  by interviewing children, or parents of children, who have experienced the disease. 
 One study in the United States in 2001 used time trade-off and willingness-to-pay methods to estimate the utility values associated with simple and complex acute otitis media, moderate and severe pneumonia, meningitis and bacteremia [@Prosser2004].
 Another study from the United Kingdom used the health utility index to estimate utility values for pneumococcal meningitis [@Legood2009].
-It is unclear from the publication over which time period the study was conducted.
-Finally, the utility values for adult pneumococcal pneumonia were estimated using the EuroQoL five dimensional questionnaire in France [@Andrade2018].
-Additionally, @Bennett2000 estimated utility values for meningitis sequlae; deafness and moderate and severe brain damage by interviewing parents of toddlers presenting to urgent care for unrelated illnesses. 
-@Oostenbrink2002 surveyed 28 pediatricians in the Netherlands using the health utility index and EuroQoL five dimensional questionnaires to ascertain utility weights for long term sequlae of bacterial meningitis. 
+In a French study [@Andrade2018], the utility values for adult pneumococcal pneumonia were estimated using the EuroQoL five dimensional questionnaire.
+Two additional studies examined utility values in populations that had not experienced pneumococcal disease. 
+@Bennett2000 estimated utility values for meningitis sequelae; deafness and moderate and severe brain damage by interviewing parents of mildly sick toddlers presenting to urgent care for unrelated illnesses.
+@Oostenbrink2002 surveyed 28 pediatricians in the Netherlands using the health utility index and EuroQoL five dimensional questionnaires to ascertain utility weights for long term sequelae of bacterial meningitis. 
 
 With few exceptions, all of the reviewed cost-utility analyses used the same two references for utilities [@Bennett2000; @Herdman2016; @Oostenbrink2002].
-Most [@Kuhlmann2017; @Newall2011; @Newall2016; @Rozenbaum2010; @Rubin2010; @Talbird2010] did so indirectly, and instead cited a cost-utility analysis by @Melegaro2004a, which itself based it's estimates on the two studies. 
-This is important as @Melegaro2004a incorrectly translated the utility values to QALYs [@Herdman2016].
+Most of the studies did so indirectly [@Kuhlmann2017; @Newall2011; @Newall2016; @Rozenbaum2010; @Rubin2010; @Talbird2010], and instead cited a cost-utility analysis by @Melegaro2004a, which itself based its estimates on the two studies.
 @Earnshaw2012b, @Knerer2012 and @By2012 took the extra step of citing @Morrow2007, which itself cites @Melegaro2004a.
-@OBrien2009a base their utility values on @Prosser2004. 
-@Klok2013 uses utilities based on a @Maddigan2005 which is a study of the quality of life of diabetic adults in Canada, and provides no rationale for the how this could be relevant to pneumococcal disease in Danish and Swedish children. 
-@Strutton2012 claim to use country specific utilities for Germany, Greece and the Netherlands, but provide no reference for the utility values, which are the same for each country and identical to those in @Maddigan2005. 
-@Chuck2010 references the Canadian National advisory committee on immunization statement on recommended use of pneumococcal conjugate vaccine, which is not available online.
+This is significant, as the method @Melegaro2004a used to aggregate and translate utility values to QALYs is controversial [@Herdman2016].
+@OBrien2009a based their utility values on @Prosser2004. 
+@Klok2013 used utilities based on a @Maddigan2005, which is a study of the quality of life of diabetic adults in Canada, and provided no rationale for its relevance to pneumococcal disease in Danish and Swedish children. 
+@Strutton2012 claimed to use country specific utilities for Germany, Greece and the Netherlands, but provided no reference for the utility values, which are the same for each country and identical to those in @Maddigan2005. 
+@Chuck2010 references the Canadian National Advisory Committee on Immunization statement on the recommended use of pneumococcal conjugate vaccine, which is not available online.
 Despite the considerable uncertainty associated with utilities, they were often not examined with sensitivity analyses [@Blank2012; @Chuck2010; @Earnshaw2012b; @Gouveia2017; @Klok2013; @Newall2016; @Strutton2012; @Talbird2010].
 
-The costs that are included in the economic analyses are divided into direct and indirect costs.
-Direct costs include the cost of each vaccine dose, cost of hospitalized and outpatient health outcomes, and the cost of long-term sequelae.
-The reviewed studies invariably used the list price of pneumococcal conjugate vaccines currently available in the respective country during the time the cost-effectiveness analysis was undertaken.
-This would be considered a conservative estimate, as healthcare systems generally negotiate the purchase price of the vaccine considerably lower than the list price.
-Studies comparing two higher-valency pneumococcal conjugate vaccines most commonly used the list price of the available vaccine and assumed price parity, which negates the possibility of competition between the two vaccine manufacturers and seems like an unreasonable assumption.
-Ideally, such an assumption would be examined in sensitivity analyses.
-Some of the reviewed studies did not perform such an analysis for any of the cost components [@Chuck2010; @Earnshaw2012b; @Gouveia2017; @Klok2013; @Newall2016; @Strutton2012; @Talbird2010].
+Costs included in economic analyses are divided into direct and indirect costs.
+Direct costs include the cost of each vaccine dose, the cost of hospitalized and outpatient health outcomes, and the cost of long-term sequelae.
+The reviewed studies invariably used the list price of pneumococcal conjugate vaccines which were available in their respective countries at the time the cost-effectiveness analysis was undertaken.
+These valuations must be considered conservative estimates, as healthcare systems generally negotiate the purchase price of vaccines at a considerably lower prices than listed.
+Studies comparing two higher-valency pneumococcal conjugate vaccines most commonly used the list price of the available vaccine and assumed price parity.
+By negating the possibility of competition between the two vaccine manufacturers, the studies make an unreasonable assumption.
+At the very least, such assumptions call for a sensitivity analysis, which some of the reviewed studies failed to perform for any of the cost components [@Chuck2010; @Earnshaw2012b; @Gouveia2017; @Klok2013; @Newall2016; @Strutton2012; @Talbird2010].
 
-The most common method employed to estimate the direct costs associated with hospitalized health outcomes, was to use official statistics of costs associated with diagnostic related groupings and unit costs from national tariffs.
-Expert opinion was then used to decide which resources would be used on average for each health outcome, to construct a hypothetical reference case used to calculate the direct cost.
-Outpatient health outcomes were often solely based on the assumptions of expert opinion, except for the studies conducted in the Netherlands, Germany and the United Kingdom, were official statistics on outpatient unit costs are available. 
-Rationale as to what was considered expert opinion was only stated in one case [@Knerer2012].
-Sometimes this resulted in suspect estimates, e.g. that each case of outpatient acute otitis media in Greece cost 3861 euros -- 30-300 times higher than the estimate for the two other countries included in the study [@Strutton2012].
-This is particularly unfortunate because costs were not included in the sensitivity analysis.
+The included studies most commonly estimated direct costs associated with hospitalized health outcomes, by utilizing official statistics of resources associated with diagnostic related groupings, and unit costs derived from national tariffs.
+Expert opinion was then sought to decide which resources on average, would be used for each health outcome. 
+With this input, a hypothetical reference case was constructed and used to calculate the direct cost.
+Outpatient health outcomes were often solely based on the assumptions of expert opinion, with the exception of studies conducted in the Netherlands, Germany and the United Kingdom, where official statistics on outpatient unit costs are available. 
+The basis of what was considered expert opinion was stated in only one case [@Knerer2012].
+This practice sometimes resulted in suspect estimates, for example, that in Greece, each case of outpatient AOM cost 3,861 euros which was 30-300 times higher than for the two other countries included in the study [@Strutton2012].
+This is particularly unfortunate as costs were not included in the sensitivity analysis in that study.
 @Diez-Domingo2011 and @VanHoek2012 obtained average costs and hospital length of stay for each health condition directly from medical records. 
-The direct cost of long-term sequale was with few exceptions based on assumptions and expert opinion.
+The direct cost of long-term sequelae was, with few exceptions, based on assumptions and expert opinion.
 
 Indirect costs mainly compromises lost workdays, and were only included in few of the reviewed studies [@By2012; @Delgleize2016; @Gouveia2017; @Kuhlmann2017; @Robberstad2011; @Rozenbaum2010].
 @OBrien2009a included parental time spent for outpatient visit, but not lost workdays. 
-Generally, average wage and unemployment rates were extracted from official statistics and multiplied by the days of work lost to estimate the indirect cost. 
-The days of work lost were assumed to be equal to the hospital length of stay for hospitalized cases for both adults and parents of admitted children.
+Generally, average wage and unemployment rates were extracted from official statistics, and multiplied by the days of work lost, to estimate the indirect cost. 
+The days of work lost were assumed to be equal to the length of hospital stay in hospitalized cases, for both adults and parents of admitted children.
 The days of work lost for outpatient cases were assumed to be half of that of hospitalized cases. 
-In the case of outpatient acute otitis media, parents were assumed to lose from zero to three days depending on the study, and no rationale was provided in most studies.
+In the case of outpatient AOM, parents were assumed to lose from zero to three days depending on the study, with no rationale provided in most studies.

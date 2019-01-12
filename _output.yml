@@ -16,6 +16,7 @@ bookdown::pdf_book:
   citation_package: natbib
   keep_tex: yes
 bookdown::word_document2:
+  fig_caption: yes
   toc: true
   toc_depth: 4
   reference_docx: style.docx
