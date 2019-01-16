@@ -1624,6 +1624,8 @@ km_aom <-
         break.x.by = 12,
         fun = function(y)
             (1 - y) * 1000,
+        size = 0.3, 
+        censor = F, 
         conf.int = T,
         legend = "none",
         title = "A    Otitis Media and Complications",
@@ -1644,6 +1646,8 @@ km_urti <-
         break.x.by = 12,
         fun = function(y)
             (1 - y) * 1000,
+        size = 0.3, 
+        censor = F, 
         conf.int = T,
         legend = "none",
         title = "B    Acute Upper Respiratory Tract Infections",
@@ -1664,6 +1668,8 @@ km_pneum <-
         break.x.by = 12,
         fun = function(y)
             (1 - y) * 1000,
+        size = 0.3, 
+        censor = F, 
         conf.int = T,
         legend = "none",
         title = "C    Pneumonia",
@@ -1684,6 +1690,8 @@ km_bronch <-
         break.x.by = 12,
         fun = function(y)
             (1 - y) * 1000,
+        size = 0.3, 
+        censor = F, 
         conf.int = T,
         legend = "none",
         title = "D    Acute Lower Respiratory Tract Infections",
@@ -1704,6 +1712,8 @@ km_ipd <-
         break.x.by = 12,
         fun = function(y)
             (1 - y) * 1000,
+        size = 0.3, 
+        censor = F, 
         conf.int = T,
         legend = "none",
         title = "E    Invasive Pneumococcal Disease",
@@ -1724,6 +1734,8 @@ km_sepsis <-
         break.x.by = 12,
         fun = function(y)
             (1 - y) * 1000,
+        size = 0.3, 
+        censor = F, 
         conf.int = T,
         legend = "none",
         title = "F    Sepsis",

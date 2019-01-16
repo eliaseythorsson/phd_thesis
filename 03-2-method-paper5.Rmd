@@ -4,10 +4,10 @@ The objective of Paper V was to estimate the impact of PHiD-CV10 on the incidenc
 Paper V is a single-center, individual-level, observational cohort study of pediatric hospitalizations.
 Eleven consecutive Icelandic birth-cohorts 2005-2015 were followed from birth until three years of age.
 Immigration and emigration data obtained from Statistics Iceland was used to exclude children who had immigrated to Iceland after birth. 
-Included were all hospital admissions to the Children’s Hospital Iceland January 1st, 2005 to December 31st, 2016.
+Included were all hospital admissions to the Children’s Hospital Iceland 1 January 2005 to 31 December 2016.
 The Children’s Hospital Iceland is the primary pediatric hospital for approximately 90% of Iceland's population (www.statice.is), and serves as a secondary and tertiary pediatric hospital for the entire country.
-Data on admissions was collected from Landspitali University Hospital's patient registry.
-Microbiological data was extracted from a database maintained by the Department of Clinical Microbiology at Landspitali University Hospital.
+Data on admissions were collected from Landspitali University Hospital's patient registry.
+Microbiological data were extracted from a database maintained by the Department of Clinical Microbiology at Landspitali University Hospital.
 
 Seven diagnostic groups were defined in this paper.
 Five of these represent diseases commonly caused by *Streptococcus pneumoniae*; Invasive pneumococcal disease (IPD), meningitis, sepsis, pneumonia and otitis media. 
@@ -70,4 +70,4 @@ Follow-up time was censored upon emigration or death.
 Cox regression was used to estimate the hazard ratio of admission between the VNEC and VEC.
 To clarify whether potential differences between VNEC and VEC were likely to be due to direct effects of the vaccine, the Cox regression was repeated for two restricted age-ranges; 0-90 days of age and 90 days and older.
 A sensitivity analysis of potential unmeasured confounding of the hazard ratio was calculated using E-values [@VanderWeele2017].
-An E-value represents the minimum association an unmeasured confounder would need to have with both the exposure and the outcome, to completely explain away the observed association.
+An E-value represents the minimum association which an unmeasured confounder would need to have with both the exposure and the outcome, to completely explain away the observed association.

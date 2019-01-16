@@ -25,7 +25,7 @@ They range from common to uncommon, and from benign to serious.
 The most common infectious manifestation of pneumococcus is acute otitis media (AOM) – an infection of the middle ear [@Coker2010; @Ngo2016].
 The disease course is benign and rarely results in permanent disability [@Vergison2010].
 On the other hand, AOM is the most common reason for physician visit and for antimicrobial prescription in the paediatric population [@Grijalva2009; @Todberg2014].
-Antimicrobial consumption is causally related to antimicrobial resistance, a major threat to public health [@Arason1996; @Austin1999].  
+Antimicrobial consumption is causally related to antimicrobial resistance, a major threat to public health [@Arason1996; @Austin1999].
 Recurrent or persistent otitis media is sometimes treated with the surgical placement of tympanic tubes, rendering it the most common surgical procedure requiring general anesthesia in children [@Cullen2009].
 Thus, while AOM is a benign disease, it is associated with a large healthcare burden [@Arguedas2010; @Monasta2012].
 

@@ -16,9 +16,9 @@ The total number of visits per calendar year and month regardless of diagnosis w
 
 Pre-vaccine (2008-2011) and post-vaccine (2012-2015) periods were defined based on the year of vaccine introduction.
 Because hospital visits for otitis media (OM) are uncommon in older children, the primary analysis was restricted to children under four years of age. 
-Ceftriaxone use was analysed in three separate diagnostic groups; otitis media, pneumonia and other , based on the associated ICD-10 diagnostic codes. 
-Ceftriaxone was considered to be due to OM, if an ICD-10 code of Nonsuppurative otitis media (H65) or Suppurative and unspecified otitis media (H66) were recorded.
-It was considered due to pneumonia if ICD-10 codes Bacterial pneumonia, not elsewhere classified (J15) or Pneumonia, unspecified organism (J18) were recorded.
+Ceftriaxone use was analysed in three separate diagnostic groups; otitis media, pneumonia, and other, based on the associated ICD-10 diagnostic codes. 
+Ceftriaxone was considered to be due to OM, if an ICD-10 code of Nonsuppurative otitis media (H65) or Suppurative and unspecified otitis media (H66) was recorded.
+It was considered due to pneumonia if ICD-10 codes Bacterial pneumonia, not elsewhere classified (J15) or Pneumonia, unspecified organism (J18) was recorded.
 Visits associated with ceftriaxone administration that did not fall into either of the above categories were classified together as "Other".
 
 The number of ceftriaxone treatment episodes per diagnostic group was aggregated by calendar month.

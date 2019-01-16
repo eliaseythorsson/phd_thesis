@@ -110,5 +110,5 @@ The mean number of AOM episodes by age is shown in Figure \@ref(fig:figure-resul
 (ref:figure12) The mean number of acute otitis media (AOM) episodes is shown as a function of age. The estimated mean is presented as a solid red line for the vaccine non-eligible cohorts and a blue line is used for the vaccine eligible cohorts. The 95% confidence intervals are illustrated as shaded areas. The figure demonstrates an early divergence in the mean number of episodes between the two cohorts.
 
 ```{r figure-results-paper2-nelsonaalen, fig.cap = "(ref:figure12)"}
-include_graphics(path = "_figures/paper_2/2018-11-26-nelsonaalen.png")
+include_graphics(path = "_figures/paper_2/2019-01-16-nelsonaalen.png")
 ```

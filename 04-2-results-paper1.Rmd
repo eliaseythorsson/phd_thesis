@@ -133,7 +133,7 @@ x = data.frame(
     caption = "The incidence rate ratios (IRR) of ceftriaxone treatment episodes of acute otitis media (AOM) between the pre- and post-vaccine periods are presented for each age with 95% confidence intervals within parentheses. The chi-squared statistic and P-value are also presented.")
 ```
 
-The risk of receiving ceftriaxone treatment if presenting to Children's Hospital Iceland with AOM was calculated to correct for the possibility that observed decreases in ceftriaxone treatment episodes were due only to a decrease in the number of AOM associated visits.
+The risk of receiving ceftriaxone treatment if presenting to Children's Hospital Iceland with AOM was calculated in order to correct for the possibility that observed decreases in ceftriaxone treatment episodes were due only to a decrease in the number of AOM associated visits.
 The risk decrease was not homogeneous across age-strata ($\chi^2$ = 33.8, *P*<0.001) and the overall relative risk ratio was 0.58 (95% CI 0.48 to 0.69).
 The stratum specific effects are shown in Table \@ref(tab:table-paper1-AOMcefrisk-results).
 

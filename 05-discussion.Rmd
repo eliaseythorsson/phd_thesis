@@ -37,6 +37,12 @@ Registries record information about an event that occurred, e.g. an antimicrobia
 Because of this, they generally lack information about those individuals who did not experience the event.
 Epidemiological studies are therefore often forced to either restrict their scope to individuals who experienced one or more events, or infer the number of individuals who did not experience an event and the denominator for the total number of individuals at-risk -- individual level data on those who did not experience the event is missing. 
 
+The data underlying this study were observational in nature, and their quality was enhanced by several factors.
+Not only were all medical records in Iceland stored electronically, but the same software, *Saga*, was used by all health care providers and institutions throughout the study period.
+Likewise, the International Classification of Diseases, 10th revision (ICD-10), was the only diagnostic coding system in use in Iceland during the study period.
+Furthermore, all medical procedures were coded with the NOMESCO Classification of Surgical Procedures (NCSP), and drugs were classified using the Anatomical-Therapeutic-Chemical (ATC) classification system of the World Health Organization.
+Continuity between data systems enhanced the quality of results. 
+
 Our data included the date of birth, date of death, as well as data on immigration and emigration of Icelandic children.
 Through linkage of the registries, individual level information of those who did not experience an event became available, and accurate time-based at-risk denominators could be constructed.
 This allowed the study data to be analysed using survival methods, and repeated events within the same individual taken into account.

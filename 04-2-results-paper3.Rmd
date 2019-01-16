@@ -17,7 +17,7 @@ Demographic data regarding the study birth-cohorts are summarized in chapter \@r
 From 2005-2012, first-line penicillins were the most commonly prescribed antimicrobials and represented between 41% and 47% of all antimicrobial prescriptions in children younger than three years of age.
 Their use decreased suddenly to 32% in 2013, and represented only 18% of all antimicrobial prescriptions in 2014 and 2015.
 During this same period, the use of second-line penicillins increased from 35%-40% from 2005-2012, to 48%, 55% and 54% in 2013, 2014 and 2015. 
-Use of cephalosporins followed a similar trend -- there use represented between 5.2% and 7.8% of all prescriptions 2005–2012, and increased to 10–15% between 2013–2016.
+Use of cephalosporins followed a similar trend -- their use represented between 5.2% and 7.8% of all prescriptions 2005–2012, and increased to 10–15% between 2013–2016.
 Antimicrobial prescriptions by calendar year are shown in Table \@ref(tab:table-paper3-antimicrobials-results).
 
 ```{r table-paper3-antimicrobials-results}
@@ -55,7 +55,7 @@ The incidence of otitis media associated prescriptions decreased from a high of 
 (ref:figure13) The proportion of visits resulting in antimicrobial prescription and the incidence of prescriptions are depicted for each diagnostic group for the period from 2005 to 2015. The diagnostic groups and their corresponding color are presented in the figure legend. The figure demonstrates that the proportion of visits resulting in antimicrobial prescriptions remains fairly stable for most diagnostic groups, while the incidence is decreasing.
 
 ```{r figure-results-paper3-prop-incidence, fig.cap = "(ref:figure13)"}
-include_graphics(path = "_figures/paper_3/2018-11-26-prop-incidence.png")
+include_graphics(path = "_figures/paper_3/2019-01-16-prop-incidence.png")
 ```
 
 During the study period, a total of 226,084 outpatient antimicrobial prescriptions were recorded among birth-cohorts 2005-2015. 
@@ -143,10 +143,11 @@ kable(
 Discrimination indices for the Andersen-Gill multiple event model were adequate, Nagelkerke's $R^2$ = 0.212 and Somer's $D_{xy}$ = 0.295, and no significant deviations from the model assumptions were visible on diagnostic plots. 
 The model was used to estimate the hazard ratio of outpatient antimicrobial prescriptions between each of the study's birth-cohorts and the last vaccine non-eligible cohort, 2010.
 Visually, there seemed to be a decreasing trend in hazard of prescription among the vaccine non-eligible birth-cohorts (Figure \@ref(fig:figure-results-paper3-hazard)).
-The hazard did not change significantly between the last vaccine non-eligible birth-cohort and the preceding two cohorts, but did decrease significantly thereafter, with each vaccine eligible cohort having a significantly lower hazard of outpatient antimicrobial prescription.
+The hazard did not change significantly between the last vaccine non-eligible birth-cohort and the preceding two cohorts.
+It did decrease significantly thereafter, with each vaccine eligible cohort having a significantly lower hazard of outpatient antimicrobial prescription.
 The estimated impact of PHiD-CV10 on outpatient antimicrobial prescriptions among children younger than three years of age was 8% (95%CI 4% to 12%). 
 
-(ref:figure15) The hazard ratio (HR) of outpatient antimicrobial prescription between each birth-cohort and the last vaccine non-eligible birth-cohort is shown. The estimated HR is depicted as a point, and 95% confidence intervals are illustrated with horizontal error-bars. The 2010 birth-cohort is used as a reference and by definition, no uncertainty is present. Therefore, no confidence intervals are presented. A dashed vertical line is placed on the ratio value of one to assist in visually estimating significance. The X-axis is on the logarithmic scale. The figure demonstrates a decreasing trend in the hazard of outpatient antimicrobial prescription in the vaccine non-eligible cohorts. An abrupt decrease in the hazard is observed in the first vaccine eligible birth-cohort.
+(ref:figure15) The hazard ratio (HR) of outpatient antimicrobial prescription between each birth-cohort and the last vaccine non-eligible birth-cohort is shown. The estimated HR is depicted as a point, and 95% confidence intervals are illustrated with horizontal error-bars. The 2010 birth-cohort is used as a reference and by definition, no uncertainty is present. Therefore, no confidence intervals are presented. A dashed vertical line is placed on the ratio value of one to assist in visually estimating significance. The X-axis is on a logarithmic scale. The figure demonstrates a decreasing trend in the hazard of outpatient antimicrobial prescription in the vaccine non-eligible cohorts. An abrupt decrease in the hazard is observed in the first vaccine eligible birth-cohort.
 
 ```{r figure-results-paper3-hazard, fig.cap = "(ref:figure15)"}
 include_graphics(path = "_figures/paper_3/2018-11-26-hazardratio.png")
@@ -155,7 +156,7 @@ include_graphics(path = "_figures/paper_3/2018-11-26-hazardratio.png")
 When stratified by the number of previous prescriptions, an independent vaccine impact on subsequent prescriptions was still discernible in children who had received up to three prior antimicrobial prescriptions.
 Among children who had received more than three prior prescriptions, no effect was found (Figure \@ref(fig:figure-results-paper3-previous)).
 
-(ref:figure16) The hazard ratio (HR) of outpatient antimicrobial prescriptions between the vaccine eligible (VEC) and vaccine non-eligible cohorts (VNEC) is shown stratified by the number of previous prescriptions. The estimated HR is depicted as a solid black line, and 95% confidence intervals are illustrated as a shaded area. A dashed horizontal line is placed on the ratio value of one to assist in visually assessing significance. The Y-axis is truncated at a HR of 0.5 and is presented on the logarithmic scale. The figure demonstrates a significantly lower hazard of filling additional outpatient antimicrobial prescriptions among vaccine eligible children who had previously filled fewer than four prescriptions.
+(ref:figure16) The hazard ratio (HR) of outpatient antimicrobial prescriptions between the vaccine eligible (VEC) and vaccine non-eligible cohorts (VNEC) is shown stratified by the number of previous prescriptions. The estimated HR is depicted as a solid black line, and 95% confidence intervals are illustrated as a shaded area. A dashed horizontal line is placed on the ratio value of one to assist in visually assessing significance. The Y-axis is truncated at a HR of 0.5 and is presented on a logarithmic scale. The figure demonstrates a significantly lower hazard of filling additional outpatient antimicrobial prescriptions among vaccine eligible children who had previously filled fewer than four prescriptions.
 
 ```{r figure-results-paper3-previous, fig.cap = "(ref:figure16)"}
 include_graphics(path = "_figures/paper_3/2018-11-26-hr-previous.png")
@@ -169,5 +170,5 @@ The mean number of antimicrobial prescriptions by age and gender is shown in Fig
 (ref:figure17) The mean number of outpatient antimicrobial prescriptions are shown as a function of age, and stratified by vaccine eligibility cohort and gender. The figure deviates from the color schema used in other figures that compromise this thesis. Here, the estimates for females are illustrated in red and males in blue. Vaccine non-eligible cohorts are represented with solid lines and vaccine eligible cohorts with dashed lines. The 95% confidence intervals are illustrated as shaded areas. The figure demonstrates an early divergence in the mean number of prescriptions, and a consistent difference between genders.
 
 ```{r figure-results-paper3-nelsonaalen, fig.cap = "(ref:figure17)"}
-include_graphics(path = "_figures/paper_3/2018-11-26-nelsonaalen.png")
+include_graphics(path = "_figures/paper_3/2019-01-16-nelsonaalen.png")
 ```

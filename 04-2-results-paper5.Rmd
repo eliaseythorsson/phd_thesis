@@ -100,10 +100,10 @@ When restricted to children younger than 90 days of age, the hazard ratio was 0.
 The hazard ratio for hospital admission for acute upper respiratory tract infections was 1.56 (95%CI:1.11-2.19), with an E-value of 2.49 and a lower bound of 1.46. 
 Among children younger than 90 days, and 90 days and older respectively, the hazard ratio was 3.4 (95%CI 1.72-6.90) and 1.13 (95%CI 0.75-1.71).
 
-(ref:figure22) Kaplan-Meier cumulative event curves per 1,000 person-years for each of the diagnostic groups are displayed in panels A-F. The vaccine non-eligible cohorts (VNEC) are illustrated in red and the vaccine eligible cohorts (VEC) in blue. The presence of censored observations is indicated with a cross and the 95% confidence intervals are represented with a shaded area. The Y-axis is scaled independently for each pair of diagnostic groups (A-B, C-D and E-F).
+(ref:figure22) Kaplan-Meier cumulative event curves per 1,000 person-years for each of the diagnostic groups are displayed in panels A-F. The vaccine non-eligible cohorts (VNEC) are illustrated in red and the vaccine eligible cohorts (VEC) in blue. The 95% confidence intervals are represented with a shaded area. The Y-axis is scaled independently for each pair of diagnostic groups (A-B, C-D and E-F).
 
 ```{r figure-results-paper5-kmplot, fig.cap = "(ref:figure22)"}
-include_graphics(path = "_figures/paper_5/2018-11-29-kmplot.png")
+include_graphics(path = "_figures/paper_5/2019-01-16-kmplot.png")
 ```
 
 

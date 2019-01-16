@@ -556,6 +556,8 @@ cumulative_event <- ggsurvplot(
     ),
     palette = c("#E41A1C", "#377EB8"),
     conf.int = TRUE,
+    size = 0.3,
+    censor = F,
     ylim = c(0, 0.35),
     break.x.by = 6,
     fun = "event",
@@ -702,7 +704,8 @@ combined_plot1 <- cbind.data.frame(
     geom_errorbar(aes(ymin = `Lower 0.95`, ymax = `Upper 0.95`), width = 0.2) +
     coord_flip(ylim = c(0.65,1.55)) +
     scale_y_log10(breaks = c(0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5)) +
-    labs(title = "     Unadjusted hazard ratio", x = NULL, y = NULL)
+    labs(title = "     Unadjusted hazard ratio", x = NULL, y = NULL) +
+    theme(text = element_text(size = 8))
 
 combined_plot2 <- cbind.data.frame(
     fctbirth_y = c(as.character(2005:2009), as.character(2011:2015)),
@@ -716,7 +719,8 @@ combined_plot2 <- cbind.data.frame(
     geom_errorbar(aes(ymin = `Lower 0.95`, ymax = `Upper 0.95`), width = 0.2) +
     coord_flip(ylim = c(0.65,1.55)) +
     scale_y_log10(breaks = c(0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5)) +
-    labs(title = "     Hazard ratio adjusted for antimicrobial prescriptions", x = NULL, y = NULL)
+    labs(title = "     Hazard ratio adjusted for antimicrobial prescriptions", x = NULL, y = NULL) +
+    theme(text = element_text(size = 8))
 
 combined_plot3  <- cbind.data.frame(
     fctbirth_y = c(as.character(2005:2009), as.character(2011:2014)),
@@ -730,12 +734,14 @@ combined_plot3  <- cbind.data.frame(
     geom_errorbar(aes(ymin = `Lower 0.95`, ymax = `Upper 0.95`), width = 0.2) +
     coord_flip(ylim = c(0.65,1.55)) +
     scale_y_log10(breaks = c(0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5)) +
-    labs(title = "     Hazard ratio adjusted for otitis media associated visits", x = NULL, y = "Hazard ratio")
+    labs(title = "     Hazard ratio adjusted for otitis media associated visits", x = NULL, y = "Hazard ratio") +
+    theme(text = element_text(size = 8))
 
 combined_hazard <- 
     ggarrange(
         labels = c("A", "B", "C"),
         plotlist = list(combined_plot1, combined_plot2, combined_plot3),
+        font.label = list(size = 8, family = "sans"),
         nrow = 3)
 
 ggsave(

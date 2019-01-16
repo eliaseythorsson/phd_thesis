@@ -279,6 +279,7 @@ nelsonaalen_fig <- ggsurvplot(
     survfit(cox_lg),
     data = lg_ag,
     break.x.by = 6,
+    size = 0.3,
     conf.int = T,
     censor = FALSE,
     xlab = "Age (months)",
@@ -290,7 +291,7 @@ nelsonaalen_fig <- ggsurvplot(
     xlim = c(0, 36),
     ylim = c(0, 7),
     palette = c("#E41A1C", "#377EB8", "#E41A1C", "#377EB8"),
-    linetype = c(1, 1, 2, 2),
+    linetype = c(1, 1, 3, 3),
     ggtheme = theme_bw() %+replace% theme(
         text =
             element_text(
@@ -328,24 +329,29 @@ ggsave(
 ### Proportion of diagnosis resulting in antimicrobial prescription ###
 
 p_prop_ant <- hg_sum %>%
+    # gather(key = diagnosis, value = n_contact, -year, -total_yr, -presc) %>%
+    # filter(presc == "yes") %>%
+    # left_join(
+    #     hg_sum %>%
+    #         gather(key = diagnosis, value = n_contact, -year, -total_yr, -presc) %>%
+    #         filter(presc == "yes") %>%
+    #         group_by(year) %>%
+    #         summarise(total_n = sum(n_contact)) %>%
+    #         ungroup()
+    # ) %>%
     gather(key = diagnosis, value = n_contact, -year, -total_yr, -presc) %>%
-    filter(presc == "yes") %>%
-    left_join(
-        hg_sum %>%
-            gather(key = diagnosis, value = n_contact, -year, -total_yr, -presc) %>%
-            filter(presc == "yes") %>%
-            group_by(year) %>%
-            summarise(total_n = sum(n_contact)) %>%
-            ungroup()
-    ) %>%
-    ggplot(aes(x = year, y = n_contact/total_n, color = diagnosis)) +
+    spread(key = presc, value = n_contact) %>%
+    group_by(year, diagnosis) %>%
+    summarise(prop = yes/(yes + no)) %>%
+    ungroup() %>%
+    ggplot(aes(x = year, y = prop, color = diagnosis)) +
     geom_line(alpha = 0.3) +
     geom_point() +
-    scale_y_continuous(breaks = seq(0, 0.7, 0.1), labels = scales::percent) +
+    scale_y_continuous(breaks = seq(0, 0.8, 0.1), limits = c(0, 0.80), labels = scales::percent) +
     scale_x_continuous(breaks = c(2005, 2007, 2009, 2011, 2013, 2015, 2017)) +
     scale_color_brewer(palette = "Set1") +
-    labs(x = NULL, y = "Proportion (%)", title = "Proportion of total antimicrobial prescriptions \nassociated with diagnostic group") +
-    theme(legend.position = "bottom", legend.title = element_blank()) +
+    labs(x = NULL, y = "Proportion (%)", title = "Proportion of visits resulting in antimicrobial prescription by diagnostic group") +
+    theme(legend.position = "bottom", legend.title = element_blank(), text =  element_text(size = 7)) +
     guides(color=guide_legend(nrow=3))
 
 p_inc <- hg_sum %>%
@@ -367,10 +373,11 @@ p_inc <- hg_sum %>%
     scale_y_continuous(breaks = c(0, 20, 40, 60), minor_breaks = c(10, 30, 50), limits = c(0, 60))+
     scale_x_continuous(breaks = c(2005, 2007, 2009, 2011, 2013, 2015, 2017)) +
     scale_color_brewer(palette = "Set1") +
-    labs(x = "Calendar year", y = "Incidence \n(per 100 person-years)", title = "Incidence of antimicrobial prescriptions \nby diagnostic group")
+    labs(x = "Calendar year", y = "Incidence \n(per 100 person-years)", title = "Incidence of antimicrobial prescriptions by diagnostic group") +
+    theme(text = element_text(size = 7))
 
 
-arranged_plot <- ggarrange(p_prop_ant, p_inc, nrow = 2, labels = c("A", "B"), common.legend = T, legend = "bottom")
+arranged_plot <- ggarrange(p_prop_ant, p_inc, nrow = 2, labels = c("A", "B"), common.legend = T, legend = "bottom", font.label = list(size = 8, family = "sans"))
 
 ggsave(
     filename = paste0("_figures/paper_3/", Sys.Date(), "-prop-incidence.pdf"), 

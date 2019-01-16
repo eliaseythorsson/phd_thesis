@@ -93,7 +93,7 @@ When stratified by age-groups, the crude incidence rate was highest among 12-17 
 include_graphics(path = "_figures/paper_4/2018-11-28-incidence.png")
 ```
 
-The cumulative incidence of children who had undergone at least one TTP by five years of age was highest in birth-cohort 2010 (31.7%) and lowest in birth-cohort 2006 (28.6%), Table \@ref(tab:table-paper4-proportion).
+The cumulative incidence of children who had undergone at least one TTP by five years of age was highest in birth-cohort 2010 (31.7%), and lowest in birth-cohort 2006 (28.6%), Table \@ref(tab:table-paper4-proportion).
 The cumulative incidence of tympanostomy procedures was significantly higher in the VEC compared to VNEC regardless of age (Figure \@ref(fig:figure-results-paper4-cumulative-event)).
 
 ```{r table-paper4-proportion}
@@ -114,7 +114,7 @@ kable(
 (ref:figure19) The cumulative incidence of tympanostomy tube placements (TTP) is shown for the vaccine eligible (VEC) and vaccine non-eligible cohorts (VNEC) as a continuous function of age. Cumulative incidence is presented as a proportion of all children in the respective vaccine eligibility cohort. The estimated cumulative incidence is illustrated with a solid red line for the VNEC, and a solid blue line for the VEC, and 95% confidence intervals are depicted with a shaded area.
 
 ```{r figure-results-paper4-cumulative-event, fig.cap = "(ref:figure19)"}
-include_graphics(path = "_figures/paper_4/2018-11-28-cumulative-event.png")
+include_graphics(path = "_figures/paper_4/2019-01-16-cumulative-event.png")
 ```
 
 In the subset of children who underwent TTP, the mean (median) number of otitis media associated visits to primary care or to the pediatric emergency department was 2.05 (2) visits in the vaccine non-eligible cohorts, compared to 1.72 (1) visits in the vaccine eligible cohorts. 
@@ -133,7 +133,7 @@ kable(
         select(cumulative, starts_with("presc"), starts_with("visit")),
     col.names = c("Cumulative number", "VNEC % (n)", "VEC % (n)", "RR (95%CI)", "ARD (95%CI", 
                   "VNEC % (n)", "VEC % (n)", "RR (95%CI)", "ARD (95%CI"),
-    caption = "The cumulative number of previous antimicrobial prescriptions and otitis media visits are shown for those children in the vaccine non-eligible (VNEC) and vaccine eligible cohorts (VEC) who underwent at least one tympanostomy tube placement. The proportion of each cohort who had the corresponding number of prior visits or prescriptions is shown with the absolute number of children within parentheses. The relative risk (RR) and absolute risk difference (ARD) of having each number of previous visits or prescriptions between the VEC and VNEC is shown with 95% confidence intervals."
+    caption = "The cumulative number of previous antimicrobial prescriptions and otitis media visits are shown for those children in the vaccine non-eligible (VNEC) and vaccine eligible cohorts (VEC) who underwent at least one tympanostomy tube placement. The proportion of each cohort who had the corresponding number of prior visits or prescriptions is shown with the absolute number of children within parentheses. The relative risk (RR) and absolute risk difference (ARD) between the VEC and VNEC is shown with 95% confidence intervals."
 )
 ```
 
@@ -146,5 +146,5 @@ The hazard of tympanostomy tube placement increased gradually from birth-cohort 
 (ref:figure20) The hazard ratio (HR) of tympanostomy tube placements (TTP) is depicted between each birth-cohort and the last vaccine non-eligible birth-cohort are depicted, as estimated by three Cox regression models. In panel A, the unadjusted HR estimates are shown. Panel B shows HR estimates adjusted for antimicrobial prescriptions, and panel C illustrates the HR estimates adjusted for otitis media associated visits. Primary care visits are obtained from the Primary Care Registry of the Directorate of Health, and the observation period is restricted to December 2015. Because of this the data presented in panel C is restricted to birth-cohorts 2005-2014. The figure demonstrates an increasing hazard of TTP with each successive birth-cohort. The effect is more pronounced when adjustment is made for antimicrobial prescriptions and visits.
 
 ```{r figure-results-paper4-combined-hazard, fig.cap = "(ref:figure20)"}
-include_graphics(path = "_figures/paper_4/2018-11-28-combined-hazard.png")
+include_graphics(path = "_figures/paper_4/2019-01-16-combined-hazard.png")
 ```

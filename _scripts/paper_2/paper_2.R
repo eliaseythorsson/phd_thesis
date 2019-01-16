@@ -157,6 +157,7 @@ nelsonaalen_fig <- ggsurvplot(
     survfit(cox_hg),
     data = hg_ag,
     break.x.by = 6,
+    size = 0.3,
     conf.int = T,
     censor = FALSE,
     xlab = "Age (months)",
