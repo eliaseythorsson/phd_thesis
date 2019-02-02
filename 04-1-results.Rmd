@@ -11,7 +11,8 @@ load("_analyses/results/2018-11-25-04-1-results.RData")
 
 ## Data collection and sources {#datasourcesresults}
 
-The data presented in this thesis were collected and analysed over a four year period from 2013-2017, and consequently, the papers that form this thesis were written and published at different times.
+The data presented in this thesis span a period from 2005-2017 and were collected and analysed over a four year period from 2013-2017.
+Consequently, the papers that form this thesis were written and published at different times.
 For this reason, the study period and the populations described in each paper varies slightly.
 However, they differ only marginally from the final data summary described below.
 The results of papers I-VI are summarized in their respective sub-chapters. 
@@ -20,10 +21,10 @@ When data from all registries were taken together, individual-level information 
 Gender was not registered for 10,523 individuals. 
 The exact date of birth was available for 366,188, and birth-year for the rest.
 The median birth-year for the whole study population was 1979 (IQR 1958-1997).
-Death was registered for 12,308 individuals during the study period.
+Death was registered for 12,308 individuals.
 
 The study often examined data stratified by birth-cohort.
-The number of children in each birth-cohort who contributed data to the present study are shown in Table \@ref(tab:table-cohort-results).
+The number of children in each birth-cohort who contributed data to the present study is shown in Table \@ref(tab:table-cohort-results).
 
 ```{r table-cohort-results}
 kable(
@@ -58,12 +59,12 @@ kable(
 
 Statistics Iceland (www.statice.is) provided data on the immigration and emigration of all Icelandic children zero to four years of age from 2005-2017.
 Of the 57,695 Icelandic children born 2005 or later, 5,577 moved to or from the country 6,847 times.
-The proportion of children in each birth-cohort who moved at least once before five years of age, was consistently 9%-12% of those birth-cohorts with full follow-up time (birth-cohorts 2005-2012).
+The proportion of children in each birth-cohort who moved at least once before five years of age, was consistently 9%-12% of those birth-cohorts who had full five year follow-up time with regards to immigration and emigration (birth-cohorts 2005-2012).
 
 ### Landspitali University Hospital patient registry
 
 All visits and hospitalizations with ICD-10 diagnostic codes compatible with respiratory infections (Table \@ref(tab:table-icd)), and procedural codes compatible with tympanostomy tube procedures (Table \@ref(tab:table-ncsp)), were extracted from Landspitali's patient registry. 
-The number of visits and hospitalizations corresponding to each of the study's ICD-10 codes recorded as the primary diagnosis, are shown in Table \@ref(tab:table-icd10-results).
+The number of visits and hospitalizations of all age-groups corresponding to each of the study's ICD-10 codes recorded as the primary diagnosis, are shown in Table \@ref(tab:table-icd10-results).
 
 ```{r table-icd10-results}
 kable(
@@ -194,7 +195,7 @@ kable(
     )
 ```
 
-A total of 169,585 records (of 74,740 individuals) were available, of which 135,841 (64,090) were visits to outpatient clinics or emergency departments and 33,744 (20,318) were hospital admissions.
+In total, 169,585 contacts (of 74,740 individuals) with the study's ICD-10 codes were recorded, of which 135,841 (64,090) were visits to outpatient clinics or emergency departments and 33,744 (20,318) were hospital admissions.
 The highest recorded number of visits of a single individual was 170 and the most admissions was 31. 
 The number of procedures performed at Landspitali University Hospital is shown in Table \@ref(tab:table-ncsp-results).
 
@@ -253,7 +254,7 @@ kable(
     )
 ```
 
-The age distribution of visits and hospital admissions are shown in Figure \@ref(fig:density-age).
+The age distribution of visits and hospital admissions is shown in Figure \@ref(fig:density-age).
 Though children and young adults comprised most of the visits due to study diagnoses, older adults made up the largest number of hospitalizations. 
 
 (ref:figure1) The total number of contacts to Landspitali University Hospital and Primary Care Centers in Iceland associated with International Classification of Diseases, 10th revision (ICD-10) codes compatible with respiratory infections. Data on hospital contacts were extracted from Landspitali University Hospital's patient registry from 1 January 2005 to 31 December 2017. Primary care contacts were obtained from the Primary Care Registry of the Icelandic Directorate of Health from 1 January 2005 to 31 December 2015. The number of contacts are shown as a function of age. Different Y-axis scales are used for each category. The figure demonstrates disproportionate hospitalizations among older adults, compared to primary care contacts and hospital visits.
@@ -318,10 +319,23 @@ knitr::kable(
     filter(dose == max(dose)) %>%
     ungroup() %>%
     count(birth_y, dose) %>%
+    group_by(birth_y) %>%
+    mutate(
+        sum = sum(n),
+        prop = round(n/sum * 100, 1),
+        n = paste0(
+            format(n, trim = T, big.mark = ","),
+            " (",
+            format(prop, trim = T, digits = 2),
+            ")"
+        )
+    ) %>%
+    select(-sum, -prop) %>%
+    ungroup() %>%
     spread(key = dose, value = n) %>%
     mutate(birth_y = factor(birth_y)),
     col.names = c("Birth-cohort", "Zero doses", "One dose", "Two doses", "Three doses"),
-    caption = "The number of children in each birth-cohort who received zero to three doses of a pneumococcal conjugate vaccine before four years of age are shown. Children who were documented to have immigrated or emigrated from Iceland before four years of where excluded. For the remaining children, data were obtained from the National Vaccine Registry of the Icelandic Directorate of Health using Anatomical Therapeutic Chemical code J07. Seven-, 10- and 13- valent pneumococcal conjugate vaccines were included.",
+    caption = "The number of children in each birth-cohort who received zero to three doses of a pneumococcal conjugate vaccine before four years of age are shown, with the percentage given within parentheses. Children who were documented to have immigrated or emigrated from Iceland before four years of where excluded. For the remaining children, data were obtained from the National Vaccine Registry of the Icelandic Directorate of Health using Anatomical Therapeutic Chemical code J07 for the period from 1 January 2005 to 31 December 2017. Seven-, 10- and 13- valent pneumococcal conjugate vaccines were included. At the end of the observational period, some children in the 2016 birth-cohort had not yet reached the age during which it is common to receive the third vaccine dose.",
     format.args = list(big.mark = ",")
 )
 ```
@@ -412,4 +426,40 @@ include_graphics(path = "_figures/results/2018-11-18-prescriptions-age.png")
 
 All interactions with independent health care practitioners were recorded in Icelandic Health Insurance's reimbursement database. 
 From this database, all records of otolaryngological procedures were extracted.
-A total of 51,814 procedures were recorded among 34,084 individuals.
+A total of 51,814 procedures were recorded among 34,084 individuals (Table \@ref(tab:table-reimb-results)).
+In total, 16,096 tonsillectomies and 29,689 tympanostomy tube placements were performed.
+The absolute number of adenoidectomies performed in Iceland cannot be deduced from the reimbursement database as the reimbursement codes for tonsillectomies are the same whether or not an adenoidectomy was performed concurrently. 
+
+
+```{r table-reimb-results}
+kable(
+    x = si %>% 
+    count(id, year, month, proc_name) %>%
+    count(proc_name) %>%
+    bind_cols(
+        data.frame(
+            english = c(
+                "Tonsillectomy (+/- adenoidectomy)",
+                "Tonsillectomy (+/- adenoidectomy) and TTP",
+                "Tonsillectomy performed with laser (+/- adenoidectomy) and TTP",
+                "Tonsillectomy performed with laser (+/- adenoidectomy)",
+                "Myringotomy under local anesthetic",
+                "Myringoplasty",
+                "Adenoidectomy",
+                "Adenoidectomy and TTP",
+                "Tympanostomy tube removal",
+                "Tympanostomy tube removal",
+                "TTP under general anesthesia",
+                "TTP under general anesthesia",
+                "TTP without mention of anesthetic"
+            )
+        )
+    ) %>%
+    group_by(english) %>%
+    summarise(n = sum(nn)),
+    col.names = c("Procedure", "No of procedures"),
+    caption = "The number of procedures reimbursed to independently practicing otolaryngologists from 1 January 2005 to 31 December 2016. Data were extracted from the reimbursement database of Icelandic Health Insurance. Tympanostomy tube placements for which an anesthesiologist also received reimbursement were performed under general anesthesia. Others were categorized as TTP without mention of anesthetic. The total number of adenoidectomies performed in Iceland cannot be deduced from the reimbursement data, because the same reimbursement code is used for tonsillectomies with or without adenoidectomies. However, a seperate reimbursement code always exists for procedures including TTP.",
+    format.args = list(big.mark = ",")
+    )
+```
+

@@ -31,16 +31,16 @@ The unemployment rate and the deciles of regular total wage for the calendar-yea
 The cost-effectiveness analysis was completed in two separate steps. 
 First, the impact of PHiD-CV10 introduction into the pediatric vaccination program in Iceland was estimated.
 This was accomplished using a previously published Bayesian time-series methodology [@Bruhn2017; @Shioda2018a].
-The pre-vaccine period was defined as 1 January 2005 to 31 December 2010, and the post-vaccine period as 1 April 2013 to 31 December 2017. 
+The pre-vaccine period was defined as 1 January 2005 to 31 December 2010, and the post-vaccine period as 1 January 2011 to 31 December 2017. 
 For each disease category and age-group, four models of PHiD-CV10 impact were estimated.
 All were Bayesian Poisson models with observation specific random intercepts to account for over-dispersion [@R-pogit]. 
 Each model utilized the pre-vaccine period to predict the monthly occurrence of the outcome of interest in the post-vaccine period, had the vaccination not occurred. 
 
-The simplest model was a time-series without an offset term.
+The simplest model was an interrupted time-series (ITS) model without an offset term.
 Calender-month effects were accounted for using dummy variables.
-The time-series model used the pre-vaccine period to estimate the trend.
+The ITS model was used the pre-vaccine period to estimate the trend.
 It predicted the monthly number of cases of the disease category, assuming the pre-vaccine trend would have continued if the vaccination had not occurred. 
-A second, similar time-series model was also estimated, but included an offset term of all non-respiratory visits.
+A second, similar ITS model was also estimated, but included an offset term of all non-respiratory visits.
 This model used the pre-vaccine period to estimate the relationship between the outcome of interest and all non-respiratory visits.
 It also predicted the occurrence in the post-vaccine period by incorporating the observed number of non-respiratory visits, and assuming the relationship between the disease category and non-respiratory visits would not have changed, had the vaccination not occurred. 
 The third model included synthetic controls as covariates and used Bayesian variable selection to choose which of them to include [@Bruhn2017].
@@ -55,9 +55,11 @@ Leave-one-out cross-validation (LOOCV) was used to calibrate the models, using d
 The LOOCV was also used to calculate the average point-wise likelihood for each model, diagnostic category and age-group. 
 The average point-wise likelihoods were used as weights in a Bayesian model stacking procedure, which produced the final stacked model used in the analysis.
 The stacked model was used to generate a posterior distribution of the number of cases which would have occurred, had the vaccine not been introduced. 
-From this posterior distribution, 10,000 estimates of the number of cases per calendar-month in post-vaccine period were drawn, of which the first 2,000 were discarded for optimal burn-in. 
-The observed number of cases were subtracted from the remaining 8,000 draws, which produced 8,000 draws of the total number of cases prevented by the vaccine introduction. 
-For each draw, the cumulative sum of the number of prevented cases was calculated, and the median and 95% credible intervals extracted.
+From this posterior distribution, 10,000 Markov chain Monte Carlo (MCMC) estimates of the number of cases per calendar-month in post-vaccine period were drawn, of which the first 2,000 were discarded for optimal burn-in. 
+For each draw, the rate ratio between the observed and predicted number of cases during the post-vaccine period was calculated, and the median and 95% credible intervals extracted.
+To estimate the onset of vaccine impact, a rolling 12-month rate ratio was calculated, starting with the period that included 11-months of pre-vaccine data and one month of post-vaccine data.
+The number of cases prevented by the vaccine was caclulated for each calendar-month, by subtracting the observed number of cases from each of the 8,000 MCMC predictions.
+The cumulative sum of prevented cases were calculated, and the median and 95% credible intervals were extracted.
 
 ### Cost-effectiveness analysis
 

@@ -67,14 +67,14 @@ kable(
 ```
 
 Of the children in the study birth-cohorts, 550 were hospitalized 660 times with ICD-10 discharge diagnoses consistent with pneumonia. 
-In the same cohorts, 508 children were admitted 550 times with diagnoses consistent with acute lower respiratory tract infections.
+In the same cohorts, 508 children were admitted 550 times with diagnoses consistent with other acute lower respiratory tract infections.
 In the vaccine non-eligible cohorts, the crude incidence rate of pneumonia requiring hospital admission was 4.94 per 1,000 person-years, which decreased to 4.18 per 1,000 in the vaccine eligible cohorts. 
-The analogous crude incidence rate of hospitalizations for acute lower respiratory tract infections was 2.94 and 5.23 per 1,00 person-years.
+The analogous crude incidence rate of hospitalizations for other acute lower respiratory tract infections was 2.94 and 5.23 per 1,000 person-years.
 Though the absolute number of admissions was similar between these two groups, the distribution of cases was different. 
-The crude incidence rate of hospital admissions for pneumonia was highest in children 12-17 months of age, while the incidence rate of hospitalizations for lower respiratory tract infections was highest in children <6 months of age (Figure \@ref(fig:figure-results-paper5-incidence-arranged)).
-Children admitted for acute lower respiratory tract infections were significantly younger than children admitted for pneumonia (mean age 8.0 months and 13.6 months respectively, P<.001).
+The crude incidence rate of hospital admissions for pneumonia was highest in children 12-17 months of age, while the incidence rate of hospitalizations for other lower respiratory tract infections was highest in children <6 months of age (Figure \@ref(fig:figure-results-paper5-incidence-arranged)).
+Children admitted for other acute lower respiratory tract infections were significantly younger than children admitted for pneumonia (mean age 8.0 months and 13.6 months respectively, P<.001).
 Using crude age-group stratified incidence rate ratios between the vaccine eligible and non-eligible cohorts, the incidence rate of pneumonia hospitalizations was found to have decreased significantly only among children 12-17 months of age, crude incidence rate ratio 0.52 (95%CI: 0.35-0.77).
-Using the same method, the incidence rate of hospital admissions for acute lower respiratory tract infections admissions was found to have increased significantly among children 0-5 months of age, crude incidence rate ratio 1.50 (95%CI 1.23-1.84). 
+Using the same method, the incidence rate of hospital admissions for other acute lower respiratory tract infections admissions was found to have increased significantly among children 0-5 months of age, crude incidence rate ratio 1.50 (95%CI 1.23-1.84). 
 
 (ref:figure21) Crude incidence rates (IR) of the six diagnostic groups (A-F) per 1,000 person-years for each of the birth-cohorts. Panels A-D and F depict the IR of admissions based on the International Classification of Diseases, 10th revision (ICD-10) discharge diagnoses, while panel E depicts the IR of admissions with culture confirmed invasive pneumococcal disease (IPD), regardless of ICD-10 diagnosis. Birth-cohorts are compared in six-month age-groups which are illustrated on the Y-axis. The vaccine non-eligible cohorts (VNEC) are illustrated in red and the vaccine eligible cohorts (VEC) in blue.
 
@@ -153,6 +153,11 @@ kable(
             summary(lsh_cph_ipd)[2, 7]
         )
     ) %>%
+        mutate(
+        HR = round(HR, 2),
+        lowerci = round(lowerci, 2),
+        upperci = round(upperci, 2)
+    ) %>%
         transmute(
             condition = condition,
             hr = paste0(
@@ -165,7 +170,7 @@ kable(
             )
         ),
     col.names = c("Disease group", "Hazard ratio (95%CI)"),
-    caption = "Hazard ratios between the vaccine eligible and vaccine non-eligible birth-cohorts for each disease-group"
+    caption = "Hazard ratios (HR) between the vaccine eligible (VEC) and vaccine non-eligible birth-cohorts (VNEC) for each disease-group. A HR lower than one indicates a relative decrease in disease-group in the VEC compared to the VNEC, while a HR higher than one indicates an increase. A HR was not calculated for vaccine-type invasive pneumococcal disease as not cases were diagnosed and the VEC."
 )
 ```
 

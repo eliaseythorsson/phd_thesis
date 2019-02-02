@@ -13,8 +13,8 @@ load("_analyses/paper_3/2018-11-27-04-2-results-paper3.RData")
 ```
 
 Demographic data regarding the study birth-cohorts are summarized in chapter \@ref(datasourcesresults) and Table \@ref(tab:table-cohort-results).
-
-From 2005-2012, first-line penicillins were the most commonly prescribed antimicrobials and represented between 41% and 47% of all antimicrobial prescriptions in children younger than three years of age.
+During the study period from 1 January 2005 to 31 December 2016, a total of 276,109 prescriptions were filled for 55,599 Icelandic children under three years of age.
+From 2005-2012, first-line penicillins were the most commonly prescribed antimicrobials and represented between 41% and 47% of all antimicrobial prescriptions in this age-group.
 Their use decreased suddenly to 32% in 2013, and represented only 18% of all antimicrobial prescriptions in 2014 and 2015.
 During this same period, the use of second-line penicillins increased from 35%-40% from 2005-2012, to 48%, 55% and 54% in 2013, 2014 and 2015. 
 Use of cephalosporins followed a similar trend -- their use represented between 5.2% and 7.8% of all prescriptions 2005–2012, and increased to 10–15% between 2013–2016.
@@ -33,18 +33,23 @@ kable(
         ) %>%
         ungroup() %>%
         left_join(pop %>% mutate(year = as.integer(year)), by = "year") %>%
-        mutate(year = as.character(year), prop = round(n_class/n_presc * 100, 2), inc_100 = n_presc/n * 100) %>%
+        mutate(year = as.character(year), prop = round(n_class/n_presc * 100, 1), inc_100 = round(n_presc/n * 100, 0)) %>%
         select(-n_class) %>%
         spread(key = class, value = prop, fill = 0) %>%
-        select(year, n_presc, inc_100,
+        mutate(inc_100 = paste0(
+            inc_100,
+            " (",
+            format(n, big.mark = ","),
+            ")")
+        ) %>%
+        select(year, inc_100,
                `First-line penecillin`, `Second-line penecillin`,
                `First-generation macrolide`, `Second-generation macrolide`, `Cephalosporin`,
-               `Other`) %>% 
+               `Other`) %>%
         arrange(year),
-    col.names = c("Calendar year", "No. prescriptions", "Incidence per 100 person-years",
-                  "First-line penecillin", "Second-line penecillin", "First-generation macrolide",
-                  "Second-generation macrolide", "Cephalosporin", "Other"),
-    caption = "The incidence rate (IR) and number of outpatient antimicrobial prescriptions among children younger than three years of age are presented by calendar-year from 2005 to 2016. Antimicrobials were grouped based on a previously published classification system [@Youngster2017].",
+    col.names = c("Calendar year", "IR (n)",
+                  "1st-line penicillin", "2nd-line penicillin", "1st-gen macrolide", "2nd-gen macrolide", "Cephalosporin", "Other"),
+    caption = "The incidence rate (IR) of outpatient antimicrobial prescriptions among children younger than three years of age is shown by calendar-year. Antimicrobials were grouped based on a previously published classification system [@Youngster2017]. First-line penicillins include amoxicillin, dicloxacillin and phenoxymethylpenicillin. Amoxicillin-clavulanate is the only antimicrobial included in the second-line penicillin category and erythromycin is the only first-generation macrolide. Second-generation macrolides include azythromycin and clarithromycin. Cefuroxime and cephalexine are the most common cephalosporins and the category Other includes mostly trimethoprim and trimethoprim and sulfamethoxazole.",
     format.args = list(big.mark = ","))
 ```
 

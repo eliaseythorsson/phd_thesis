@@ -280,6 +280,43 @@ cumsum_cost_func <- function(group, quantiles, direct_cost, indirect_cost_vector
         ))
 }
 
+cumsum_absent_days_func <- function(group, quantiles, dist_absent_days){
+    
+    is_post_period <- which(time_points >= post_period[1])
+    is_pre_period <- which(time_points < post_period[1])
+    cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
+
+    #Indirect costs
+    absent_days <- matrix(mapply(
+        FUN = function(cases_prevented, dist_absent_days){
+            sum(sample(
+                x = dist_absent_days,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        dist_absent_days = dist_absent_days), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    cumsum_absent_days_post <- apply(absent_days[is_post_period,], 2, cumsum)
+    cumsum_absent_days_pre <- matrix(0,
+                                             nrow = nrow(absent_days[is_pre_period,]),
+                                             ncol = ncol(absent_days[is_pre_period,])
+    )
+    
+    cumsum_absent_days <- rbind(cumsum_absent_days_pre, cumsum_absent_days_post)
+
+    cumsum_absent_days <-
+        t(apply(
+            cumsum_absent_days,
+            1,
+            quantile,
+            probs = c(0.025, 0.5, 0.975),
+            na.rm = TRUE
+        ))
+}
+
+
 cumsum_cost_saved <-
     sapply(groups,
            FUN = cumsum_cost_func,

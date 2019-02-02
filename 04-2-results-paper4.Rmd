@@ -14,8 +14,9 @@ load("_analyses/paper_4/2018-11-28-04-2-results-paper4.RData")
 ```
 
 Demographic data regarding the study birth-cohorts are summarized in chapter \@ref(datasourcesresults).
-In total, during the study period, 14,351 children underwent 20,373 tympanostomy tube placements, 57% of whom were male. 
-The median age of children undergoing their first tympanostomy procedure was 17 months (IQR 13-24). 
+In total, during the study period from 1 January 2005 to 31 December 2016, 14,351 children underwent 20,373 tympanostomy tube placements, 57% of whom were male.
+
+The median age of children undergoing their first tympanostomy procedure was 17 months (IQR 13-24, 18% younger than one year of age). 
 In the subset of children who underwent a TTP during the study period, 10,248 (71%) underwent only one procedure, 2,902 (20%) underwent two, and 1201 (8%) underwent three or more. 
 Almost all (98%) of the procedures were performed in private outpatient clinics. 
 The number of otolaryngologists performing outpatient TTP increased from 15 in 2005 to 23 in 2016.
@@ -78,7 +79,7 @@ kable(
         ) %>%
         select(-child_proc),
     col.names = c("Birth-cohort", "Number of children", "Person-years", "Number of procedures (n children)", "Median age (months)"),
-    caption = "An overview of the birth-cohorts included in paper IV. The number of observed tympanostomy tube placements (TTP) in each cohort is presented, with the number of children undergoing the procedures within parentheses. The median age in months at the time of a childs first procedure is shown. The observational period is 1 January 2005 to 31 December 2016. Birth-cohorts 2012-2015 do not attain full follow-up time, as indicated by fewer person-years included in the study. Thus, the decrease in the number of procedures and and median age is not indicative of a true decrease.",
+    caption = "An overview of the birth-cohorts included in paper IV. The number of observed tympanostomy tube placements (TTP) in each cohort is presented, with the number of children undergoing the procedures within parentheses. The median age in months at the time of a childs first procedure is shown along with the interquartile range. The observational period is 1 January 2005 to 31 December 2016. Birth-cohorts 2012-2015 do not attain full follow-up time, as indicated by fewer person-years included in the study. Thus, the decrease in the number of procedures and and median age is not indicative of a true decrease.",
     format.args = list(big.mark = ",")
 )
 ```

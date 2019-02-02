@@ -13,7 +13,7 @@ load("_analyses/paper_2/2018-11-26-04-2-results-paper2.RData")
 ```
 
 The demographics of the study birth-cohorts are described in chapter \@ref(datasourcesresults) and Table \@ref(tab:table-cohort-results).
-A total of 92,935 primary care visits for acute otitis media were recorded among birth-cohorts 2005-2015 during the study period. 
+A total of 92,935 primary care visits for acute otitis media were recorded among birth-cohorts 2005-2015 during the study period from 1 January 2005 to 31 December 2015.
 The crude incidence rate of AOM visits to primary care per 100 person-years in the VNEC and VEC was 45.3 and 39.8 respectively. 
 The IR and number of AOM visits by birth-cohort and gender are shown in Table \@ref(tab:table-paper2-incidence-results).
 

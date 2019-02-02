@@ -10,14 +10,13 @@ library(epiR)
 load("_analyses/paper_I/2018-11-23-04-2-results-paper1.RData")
 ```
 
-The total number of children under 18 years of age who lived within Children’s Hospital Iceland's referral region remained stable during the study period, decreasing from 62,067 in 2008 to 61,798 in 2015.
+The total number of children under 18 years of age who lived within Children’s Hospital Iceland's referral region remained stable during the study period from 1 January 2008 to 31 December 2015, decreasing from 62,067 in to 61,798.
 The variation in the number of children under four years of age in the same region was more pronounced, increasing from 13,562 in 2008 to 14,644 in 2011, and then decreasing again to 13,272 in 2015.
 
-During the period 1 January 2008 to 31 December 2015, 103,220 visits were recorded to the emergency department of Children’s Hospital Iceland. 
-The visits varied over the calendar year, spiking in the winter months and troughing in the summer months. 
-The total number of visits increased steadily during the study period, from 12,229 in 2008 to 14,502 in 2015 (Figure \@ref(fig:figure-paper1-monthly-visits)).
+During the study period, 103,220 visits were recorded to the emergency department of Children’s Hospital Iceland. 
+The visits varied over the calendar year, spiking in the winter months and troughing in the summer months. The total number of visits increased steadily during the study period, from 12,229 in 2008 to 14,502 in 2015 (Figure \@ref(fig:figure-paper1-monthly-visits)).
 
-(ref:figure6) The monthly number of visits of children zero to 18 years of age to Children's Hospital Iceland's emergency department for the period from January 2002 to December 2016. All visits are included regardless of International Classification of Diseases, 10th revision (ICD-10) diagnostic codes. The study period was from January 2008 to December 2015, and is delineated with two vertical dashed lines.
+(ref:figure6) The monthly number of visits of children zero to 18 years of age to Children's Hospital Iceland's emergency department during the period from January 2002 to December 2016. All visits are included regardless of International Classification of Diseases, 10th revision (ICD-10) diagnostic codes. The study period was from January 2008 to December 2015, and is delineated with two vertical dashed lines.
 
 ```{r figure-paper1-monthly-visits, fig.cap = "(ref:figure6)"}
 include_graphics(path = "_figures/paper_I/2018-11-03-monthly-visits.png")
@@ -81,7 +80,9 @@ knitr::kable(
                 ir_cef = paste0(ir_cef, " (", format(total_cef, trim = T, big.mark = ","), ")"),
                 ir_cef_aom = paste0(ir_cef_aom, " (", format(aom_cef, trim = T, big.mark = ","), ")")),
     col.names = c("Year", "Total (n)", "AOM (n)", "Total (n)", "AOM (n)", "Total (n)", "AOM (n)"),
-    caption = "The incidence of visits and parenteral ceftriaxone administrations at Children's Hospital Iceland by calendar-year. The incidence is both presented for all visits regardless of diagnosis (Total) and visits associated with acute otitis media (AOM). When presented for total visits or administrations, the denominator is children 18 and younger who live within Children's Hospital Iceland's referral region and is expressed per 1,000 visits or person-years. The denominator of AOM associated visits are children younger than four years of age in the same region. The incidence rate and incidence risk are shown with the number of events within parentheses") #%>%
+    caption = "The incidence of visits and ceftriaxone treatment episodes at Children's Hospital Iceland by calendar-year. The incidence is both presented for all visits regardless of diagnosis (Total) and visits associated with acute otitis media (AOM). When presented for total visits or treatment episodes regardless of diagnosis, the denominator is children 18 and younger who live within Children's Hospital Iceland's referral region and is expressed per 1,000 visits or person-years. The denominator of AOM associated visits or treatment episodes are children younger than four years of age in the same region. The incidence rate and incidence risk are shown with the number of events within parentheses") 
+
+#%>%
     #add_header_above(c("", "Incidence rate of visits" = 2, "per 1000 visits" = 2, "per 1000 person-years" = 2)) %>%
     #add_header_above(c("", "", "", "Incidence rate of parenteral ceftriaxone" = 4))
 ```
