@@ -52,6 +52,24 @@ consumer_price_index <- bind_cols( #consumer price index
     cpi_jan2011 = rep(198.3, 156)
 )
 
+### Parameters from lognormal distribution found by fitting decils of wage from www.statice.is ... ###
+### ... to lognormal distribution using the get.lnorm.par() function from the rriskDistributions package ###
+dist_wage <- rlnorm(n = 8000, meanlog = 12.85443, sdlog = 0.35430) 
+
+# OECD (2019), Employment rate by age group (indicator). doi: 10.1787/084f32c7-en (Accessed on 03 February 2019)
+unemployment <- c(0.62, 0.65, 0.69, 0.70, 0.73, 0.77, 0.75,
+                  0.83, 0.84, 0.84, 0.86, 0.88, 0.90, 0.90,
+                  0.79, 0.79, 0.81, 0.84, 0.84, 0.84, 0.83)
+
+unemployment <- rbinom(n = 8000, size = 1, prob = unemployment) 
+
+# Midian daily conversion rate betwee ISK and USD from 2011 to 2017 ccording to the Icelandic Central Bank
+exchange_rates <- read_csv2("_data/paper_6/paper_6_pneumonia/ISK-USD-conversion.csv", trim_ws = TRUE)
+exchange_rates <- exchange_rates$MED
+exchange_rates <- sample(x = exchange_rates, size = 8000, replace = T)
+
+wage_per_day <- 0.010385 #standard devision of wage to get wage/day
+
 ### Cost of vaccine found in personal communication with Sóttvarnalæknir ### 
 
 cost_vaccine <- bind_cols(
@@ -59,13 +77,7 @@ cost_vaccine <- bind_cols(
     number_doses = c(rep(0, 72), rep(7447/12, 12), rep(12557/12, 12), rep(12887/12, 12), rep(12953/12, 12), rep(12569/12, 12), rep(12209/12, 12), rep(11957/12, 12)),
     consumer_price_index) %>%
     mutate(price = price * number_doses * cpi_jan2011/cpi) %>%
-    .$price
-
-### Parameters from lognormal distribution found by fitting decils of wage from www.statice.is ... ###
-### ... to lognormal distribution using the get.lnorm.par() function from the rriskDistributions package ###
-dist_wage <- rlnorm(n = 1000, meanlog = 12.85443, sdlog = 0.35430) 
-
-wage_per_day <- 0.010385 #standard devision of wage to get wage/day
+    .$price / mean(exchange_rates)
 
 ### Packages ###
 
@@ -172,19 +184,19 @@ cumsum_prevented_all <-
         na.rm = TRUE
     ))
 
-ggplot(data = cbind.data.frame(
-    date = seq.Date(
-        from = as.Date("2005-01-01"),
-        to = as.Date("2017-12-01"),
-        by = "months"
-    ),
-    cumsum_prevented_all
-),
-aes(x = date, y = `50%`)) +
-    geom_vline(aes(xintercept = as.Date("2011-01-01")), lty = 2) +
-    geom_line() +
-    geom_ribbon(aes(ymin = `2.5%`, ymax = `97.5%`), alpha = 0.3) +
-    scale_y_continuous(labels = scales::comma)
+# ggplot(data = cbind.data.frame(
+#     date = seq.Date(
+#         from = as.Date("2005-01-01"),
+#         to = as.Date("2017-12-01"),
+#         by = "months"
+#     ),
+#     cumsum_prevented_all
+# ),
+# aes(x = date, y = `50%`)) +
+#     geom_vline(aes(xintercept = as.Date("2011-01-01")), lty = 2) +
+#     geom_line() +
+#     geom_ribbon(aes(ymin = `2.5%`, ymax = `97.5%`), alpha = 0.3) +
+#     scale_y_continuous(labels = scales::comma)
 
 lsh <- 
     lsh %>%
@@ -210,12 +222,23 @@ lsh <-
 
 lsh <- data.frame(lsh)
 
+dist_hospital_days <- setNames(lapply(
+    groups,
+    FUN = function(group, lsh) {
+        lsh <- lsh[lsh$age_group == group, "dur_stay_hours"]
+        sample(
+            x = ceiling(lsh/24),
+            size = 8000,
+            replace = T
+        )},
+    lsh = lsh), groups)
+
 dist_absent_days <- setNames(lapply(
     groups,
     FUN = function(group, lsh) {
         lsh <- lsh[lsh$age_group == group, "dur_stay_hours"]
         sample(
-            x = ceiling(lsh/24 + rpois(n = length(lsh), lambda = 1)),
+            x = ceiling(lsh/24 + rpois(n = length(lsh), lambda = lsh/24/2)),
             size = 8000,
             replace = T
         )},
@@ -223,19 +246,270 @@ dist_absent_days <- setNames(lapply(
 
 indirect_cost_vector <- setNames(lapply(
     groups,
-    FUN = function(group, dist_absent_days, dist_wage, wage_per_day) {
-        dist_absent_days[[group]] * dist_wage * wage_per_day
+    FUN = function(group, dist_absent_days, dist_wage, wage_per_day, unemployment, exchange_rates) {
+        (dist_absent_days[[group]] * dist_wage * wage_per_day * unemployment)/exchange_rates
     },
     dist_absent_days = dist_absent_days,
     dist_wage = dist_wage,
-    wage_per_day = wage_per_day), groups)
+    wage_per_day = wage_per_day,
+    unemployment = unemployment,
+    exchange_rates = exchange_rates), groups)
+
+lsh <- 
+    lsh %>%
+    sample_n(size = 8000, replace = T) %>%
+    mutate_at(
+        .vars =  vars(starts_with("cost")),
+        .funs = function(x) {x/exchange_rates}
+    )
+
+### Cumulative sum of direct costs ### 
+
+cumsum_direct_cost_func <- function(group, quantiles, direct_cost){
+    
+    is_post_period <- which(time_points >= post_period[1])
+    is_pre_period <- which(time_points < post_period[1])
+    direct_cost <- direct_cost[direct_cost$age_group == group, "cost_total"]
+    cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
+    
+    #Direct costs
+    direct_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, direct_cost){
+            sum(sample(
+                x = direct_cost,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        direct_cost = direct_cost), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    cumsum_direct_cost_saved_post <- apply(direct_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_direct_cost_saved_pre <- matrix(0,
+                                           nrow = nrow(direct_cost_saved[is_pre_period,]),
+                                           ncol = ncol(direct_cost_saved[is_pre_period,])
+    )
+    cumsum_direct_cost_saved <- rbind(cumsum_direct_cost_saved_pre, cumsum_direct_cost_saved_post)
+    cumsum_direct_cost_saved <-
+        t(apply(
+            cumsum_direct_cost_saved,
+            1,
+            quantile,
+            probs = c(0.025, 0.5, 0.975),
+            na.rm = TRUE
+        ))
+}
+
+cumsum_direct_cost_saved <-
+    sapply(groups,
+           FUN = cumsum_direct_cost_func,
+           quantiles = quantiles_full,
+           direct_cost = lsh,
+           simplify = 'array')
+
+### Cumulative sum of total costs including vaccine cost, assuming only direct cost savings ### 
+
+cumsum_vaccine_direct_func <- function(group, quantiles, direct_cost, cost_vaccine){
+    
+    is_post_period <- which(time_points >= post_period[1])
+    is_pre_period <- which(time_points < post_period[1])
+    direct_cost <- direct_cost[direct_cost$age_group == group, "cost_total"]
+    cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
+    
+    #Direct costs
+    direct_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, direct_cost){
+            sum(sample(
+                x = direct_cost,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        direct_cost = direct_cost), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    direct_cost_saved <- direct_cost_saved - cost_vaccine
+    
+    cumsum_direct_cost_saved_post <- apply(direct_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_direct_cost_saved_pre <- matrix(0,
+                                           nrow = nrow(direct_cost_saved[is_pre_period,]),
+                                           ncol = ncol(direct_cost_saved[is_pre_period,])
+    )
+    cumsum_direct_cost_saved <- rbind(cumsum_direct_cost_saved_pre, cumsum_direct_cost_saved_post)
+    cumsum_direct_cost_saved <-
+        t(apply(
+            cumsum_direct_cost_saved,
+            1,
+            quantile,
+            probs = c(0.025, 0.5, 0.975),
+            na.rm = TRUE
+        ))
+}
+
+cumsum_vaccine_direct <-
+    sapply(groups,
+           FUN = cumsum_vaccine_direct_func,
+           quantiles = quantiles_full,
+           direct_cost = lsh,
+           cost_vaccine = cost_vaccine,
+           simplify = 'array')
+
+### ICER for direct costs only; health sector perspective ###
+
+ICER_direct_cost_func <- function(group, quantiles, direct_cost, cost_vaccine){
+    
+    is_post_period <- which(time_points >= post_period[1])
+    is_pre_period <- which(time_points < post_period[1])
+    direct_cost <- direct_cost[direct_cost$age_group == group, "cost_total"]
+    cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
+    
+    #Direct costs
+    direct_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, direct_cost){
+            sum(sample(
+                x = direct_cost,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        direct_cost = direct_cost), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    direct_cost_saved <- direct_cost_saved - cost_vaccine
+    
+    cumsum_direct_cost_saved_post <- apply(direct_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_direct_cost_saved_pre <- matrix(0,
+                                           nrow = nrow(direct_cost_saved[is_pre_period,]),
+                                           ncol = ncol(direct_cost_saved[is_pre_period,])
+    )
+    cumsum_direct_cost_saved <- rbind(cumsum_direct_cost_saved_pre, cumsum_direct_cost_saved_post)
+    cumsum_direct_cost_total <- cumsum_direct_cost_saved
+    
+    #Cases prevented
+    cumsum_cases_prevented_post <- apply(cases_prevented[is_post_period,], 2, cumsum)
+    cumsum_cases_prevented_pre <- matrix(1,
+                                         nrow = nrow(cases_prevented[is_pre_period,]),
+                                         ncol = ncol(cases_prevented[is_pre_period,])
+    )
+    cumsum_cases_prevented <- rbind(cumsum_cases_prevented_pre, cumsum_cases_prevented_post)
+    
+    ICER_direct_cost <- cumsum_direct_cost_total/cumsum_cases_prevented
+    
+    ICER_direct_cost <-
+        t(apply(
+            ICER_direct_cost,
+            1,
+            quantile,
+            probs = c(0.025, 0.5, 0.975),
+            na.rm = TRUE
+        ))
+}
+
+ICER_direct_cost <-
+    sapply(groups,
+           FUN = ICER_direct_cost_func,
+           quantiles = quantiles_full,
+           direct_cost = lsh,
+           cost_vaccine = cost_vaccine,
+           simplify = 'array')
+
+
+### Cumulative sum of absent days averted ###
+
+cumsum_absent_days_func <- function(group, quantiles, dist_absent_days){
+    
+    is_post_period <- which(time_points >= post_period[1])
+    is_pre_period <- which(time_points < post_period[1])
+    cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
+    
+    absent_days <- matrix(mapply(
+        FUN = function(cases_prevented, dist_absent_days){
+            sum(sample(
+                x = dist_absent_days,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        dist_absent_days = dist_absent_days), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    cumsum_absent_days_post <- apply(absent_days[is_post_period,], 2, cumsum)
+    cumsum_absent_days_pre <- matrix(0,
+                                     nrow = nrow(absent_days[is_pre_period,]),
+                                     ncol = ncol(absent_days[is_pre_period,])
+    )
+    
+    cumsum_absent_days <- rbind(cumsum_absent_days_pre, cumsum_absent_days_post)
+    
+    cumsum_absent_days <-
+        t(apply(
+            cumsum_absent_days,
+            1,
+            quantile,
+            probs = c(0.025, 0.5, 0.975),
+            na.rm = TRUE
+        ))
+}
+
+cumsum_absent_days <-
+    sapply(groups,
+           FUN = cumsum_absent_days_func,
+           quantiles = quantiles_full,
+           dist_absent_days = dist_absent_days,
+           simplify = 'array')
+
+### Cumulative sum of indirect costs ###
+
+cumsum_indirect_cost_func <- function(group, quantiles, indirect_cost_vector){
+    
+    is_post_period <- which(time_points >= post_period[1])
+    is_pre_period <- which(time_points < post_period[1])
+    cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
+    
+    #Indirect costs
+    indirect_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, indirect_cost_vector){
+            sum(sample(
+                x = indirect_cost_vector,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        indirect_cost_vector = indirect_cost_vector), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    cumsum_indirect_cost_saved_post <- apply(indirect_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_indirect_cost_saved_pre <- matrix(0,
+                                             nrow = nrow(indirect_cost_saved[is_pre_period,]),
+                                             ncol = ncol(indirect_cost_saved[is_pre_period,])
+    )
+    
+    cumsum_indirect_cost_saved <- rbind(cumsum_indirect_cost_saved_pre, cumsum_indirect_cost_saved_post)
+    
+    cumsum_indirect_cost_saved <-
+        t(apply(
+            cumsum_indirect_cost_saved,
+            1,
+            quantile,
+            probs = c(0.025, 0.5, 0.975),
+            na.rm = TRUE
+        ))
+}
+
+cumsum_indirect_cost_saved <-
+    sapply(groups,
+           FUN = cumsum_indirect_cost_func,
+           quantiles = quantiles_full,
+           indirect_cost_vector = indirect_cost_vector,
+           simplify = 'array')
+
+### Cumulative sum of direct and indirect costs ###
 
 cumsum_cost_func <- function(group, quantiles, direct_cost, indirect_cost_vector){
     
     is_post_period <- which(time_points >= post_period[1])
     is_pre_period <- which(time_points < post_period[1])
     direct_cost <- direct_cost[direct_cost$age_group == group, "cost_total"]
-    indirect_cost_vector <- indirect_cost_vector[[group]]
     cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
     
     #Direct costs
@@ -297,12 +571,392 @@ cumsum_cost_saved <-
            indirect_cost_vector = indirect_cost_vector,
            simplify = 'array')
 
+### Cumulative sum of total costs including vaccine cost, assuming only direct cost savings ### 
+
+cumsum_vaccine_cost_func <- function(group, quantiles, direct_cost, indirect_cost_vector, cost_vaccine){
+    
+    is_post_period <- which(time_points >= post_period[1])
+    is_pre_period <- which(time_points < post_period[1])
+    direct_cost <- direct_cost[direct_cost$age_group == group, "cost_total"]
+    cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
+    
+    #Direct costs
+    direct_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, direct_cost){
+            sum(sample(
+                x = direct_cost,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        direct_cost = direct_cost), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    direct_cost_saved <- direct_cost_saved - cost_vaccine
+    
+    cumsum_direct_cost_saved_post <- apply(direct_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_direct_cost_saved_pre <- matrix(0,
+                                           nrow = nrow(direct_cost_saved[is_pre_period,]),
+                                           ncol = ncol(direct_cost_saved[is_pre_period,])
+    )
+    
+    cumsum_direct_cost_saved <- rbind(cumsum_direct_cost_saved_pre, cumsum_direct_cost_saved_post)
+    
+    #Indirect costs
+    indirect_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, indirect_cost_vector){
+            sum(sample(
+                x = indirect_cost_vector,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        indirect_cost_vector = indirect_cost_vector), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    cumsum_indirect_cost_saved_post <- apply(indirect_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_indirect_cost_saved_pre <- matrix(0,
+                                             nrow = nrow(indirect_cost_saved[is_pre_period,]),
+                                             ncol = ncol(indirect_cost_saved[is_pre_period,])
+    )
+    
+    cumsum_indirect_cost_saved <- rbind(cumsum_indirect_cost_saved_pre, cumsum_indirect_cost_saved_post)
+    cumsum_direct_cost_saved <- cumsum_direct_cost_saved + cumsum_indirect_cost_saved
+    
+    cumsum_direct_cost_saved <-
+        t(apply(
+            cumsum_direct_cost_saved,
+            1,
+            quantile,
+            probs = c(0.025, 0.5, 0.975),
+            na.rm = TRUE
+        ))
+}
+
+cumsum_vaccine_cost <-
+    sapply(groups,
+           FUN = cumsum_vaccine_cost_func,
+           quantiles = quantiles_full,
+           direct_cost = lsh, 
+           indirect_cost_vector = indirect_cost_vector,
+           cost_vaccine = cost_vaccine,
+           simplify = 'array')
+
+### ICER for direct and indirect costs; societal perspective ###
+
+ICER_total_cost_func <- function(group, quantiles, direct_cost, indirect_cost_vector, cost_vaccine){
+    
+    is_post_period <- which(time_points >= post_period[1])
+    is_pre_period <- which(time_points < post_period[1])
+    direct_cost <- direct_cost[direct_cost$age_group == group, "cost_total"]
+    cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
+    
+    #Direct costs
+    direct_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, direct_cost){
+            sum(sample(
+                x = direct_cost,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        direct_cost = direct_cost), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    direct_cost_saved <- direct_cost_saved - cost_vaccine
+    
+    cumsum_direct_cost_saved_post <- apply(direct_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_direct_cost_saved_pre <- matrix(0,
+                                           nrow = nrow(direct_cost_saved[is_pre_period,]),
+                                           ncol = ncol(direct_cost_saved[is_pre_period,])
+    )
+    cumsum_direct_cost_saved <- rbind(cumsum_direct_cost_saved_pre, cumsum_direct_cost_saved_post)
+    
+    #Indirect costs
+    indirect_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, indirect_cost_vector){
+            sum(sample(
+                x = indirect_cost_vector,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        indirect_cost_vector = indirect_cost_vector), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    cumsum_indirect_cost_saved_post <- apply(indirect_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_indirect_cost_saved_pre <- matrix(0,
+                                             nrow = nrow(indirect_cost_saved[is_pre_period,]),
+                                             ncol = ncol(indirect_cost_saved[is_pre_period,])
+    )
+    cumsum_indirect_cost_saved <- rbind(cumsum_indirect_cost_saved_pre, cumsum_indirect_cost_saved_post)
+    
+    #Total costs
+    cumsum_direct_cost_saved <- cumsum_direct_cost_saved + cumsum_indirect_cost_saved
+    cumsum_direct_cost_total <- cumsum_direct_cost_saved
+    
+    #Cases prevented
+    cumsum_cases_prevented_post <- apply(cases_prevented[is_post_period,], 2, cumsum)
+    cumsum_cases_prevented_pre <- matrix(1,
+                                         nrow = nrow(cases_prevented[is_pre_period,]),
+                                         ncol = ncol(cases_prevented[is_pre_period,])
+    )
+    cumsum_cases_prevented <- rbind(cumsum_cases_prevented_pre, cumsum_cases_prevented_post)
+    
+    ICER_total_cost <- cumsum_direct_cost_total/cumsum_cases_prevented
+    
+    ICER_total_cost <-
+        t(apply(
+            ICER_total_cost,
+            1,
+            quantile,
+            probs = c(0.025, 0.5, 0.975),
+            na.rm = TRUE
+        ))
+}
+
+ICER_total_cost <-
+    sapply(groups,
+           FUN = ICER_total_cost_func,
+           quantiles = quantiles_full,
+           direct_cost = lsh,
+           indirect_cost_vector = indirect_cost_vector,
+           cost_vaccine = cost_vaccine,
+           simplify = 'array')
+
+### Cumulative sum of direct costs only regardless of age-group ###
+
+cumsum_direct_cost_all_func <- function(group, quantiles, direct_cost){
+    is_post_period <- which(time_points >= post_period[1])
+    is_pre_period <- which(time_points < post_period[1])
+    direct_cost <- direct_cost[direct_cost$age_group == group, "cost_total"]
+    cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
+    
+    #Direct costs
+    direct_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, direct_cost){
+            sum(sample(
+                x = direct_cost,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        direct_cost = direct_cost), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    cumsum_direct_cost_saved_post <- apply(direct_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_direct_cost_saved_pre <- matrix(0,
+                                           nrow = nrow(direct_cost_saved[is_pre_period,]),
+                                           ncol = ncol(direct_cost_saved[is_pre_period,])
+    )
+    
+    cumsum_direct_cost_saved <- rbind(cumsum_direct_cost_saved_pre, cumsum_direct_cost_saved_post)
+}
+
+cumsum_direct_cost_all_draws <-
+    setNames(lapply(groups,
+                    FUN = cumsum_direct_cost_all_func,
+                    quantiles = quantiles_full,
+                    direct_cost = lsh), groups)
+
+cumsum_direct_cost_all_saved <- Reduce("+", cumsum_direct_cost_all_draws)
+
+cumsum_direct_cost_all_saved <-
+    t(apply(
+        cumsum_direct_cost_all_saved,
+        1,
+        quantile,
+        probs = c(0.025, 0.5, 0.975),
+        na.rm = TRUE
+    ))
+
+### Cumulative sum of direct costs minus the vaccine costs, used only for the following ICER calculations ###
+
+cumsum_vaccine_direct_all_func <- function(group, quantiles, direct_cost, cost_vaccine){
+    is_post_period <- which(time_points >= post_period[1])
+    is_pre_period <- which(time_points < post_period[1])
+    direct_cost <- direct_cost[direct_cost$age_group == group, "cost_total"]
+    cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
+    
+    #Direct costs
+    direct_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, direct_cost){
+            sum(sample(
+                x = direct_cost,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        direct_cost = direct_cost), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    direct_cost_saved <- direct_cost_saved - cost_vaccine
+    
+    cumsum_direct_cost_saved_post <- apply(direct_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_direct_cost_saved_pre <- matrix(0,
+                                           nrow = nrow(direct_cost_saved[is_pre_period,]),
+                                           ncol = ncol(direct_cost_saved[is_pre_period,])
+    )
+    
+    cumsum_direct_cost_saved <- rbind(cumsum_direct_cost_saved_pre, cumsum_direct_cost_saved_post)
+}
+
+### ICER for direct costs only regardless of age-group; health sector perspective ###
+
+ICER_direct_cost_all <-
+    setNames(lapply(groups[1:length(groups)-1],
+                    FUN = cumsum_direct_cost_all_func,
+                    quantiles = quantiles_full,
+                    direct_cost = lsh), groups[1:length(groups)-1])
+
+ICER_direct_cost_last_with_vaccine <-
+    setNames(lapply(groups[length(groups)],
+                    FUN = cumsum_vaccine_direct_all_func,
+                    quantiles = quantiles_full,
+                    direct_cost = lsh,
+                    cost_vaccine = cost_vaccine), groups[length(groups)])
+
+ICER_direct_cost_all <- c(ICER_direct_cost_all, ICER_direct_cost_last_with_vaccine)
+ICER_direct_cost_all <- Reduce("+", ICER_direct_cost_all)
+
+ICER_direct_cost_all_func <- function(group, quantiles){
+    is_post_period <- which(time_points >= post_period[1])
+    is_pre_period <- which(time_points < post_period[1])
+    cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
+    
+    #Cases prevented
+    cumsum_cases_prevented_post <- apply(cases_prevented[is_post_period,], 2, cumsum)
+    cumsum_cases_prevented_pre <- matrix(1,
+                                         nrow = nrow(cases_prevented[is_pre_period,]),
+                                         ncol = ncol(cases_prevented[is_pre_period,])
+    )
+    cumsum_cases_prevented <- rbind(cumsum_cases_prevented_pre, cumsum_cases_prevented_post)
+}
+
+ICER_prevented_cases_all <-
+    setNames(lapply(groups,
+                    FUN = ICER_direct_cost_all_func,
+                    quantiles = quantiles_full), groups)
+
+ICER_prevented_cases_all <- Reduce("+", ICER_prevented_cases_all)
+
+ICER_direct_cost_all <- ICER_direct_cost_all/ICER_prevented_cases_all
+
+ICER_direct_cost_all <-
+    t(apply(
+        ICER_direct_cost_all,
+        1,
+        quantile,
+        probs = c(0.025, 0.5, 0.975),
+        na.rm = TRUE
+    ))
+
+### Cumulative sum of absent days averted regardless of age-group ###
+
+cumsum_absent_days_all_func <- function(group, quantiles, dist_absent_days){
+    
+    is_post_period <- which(time_points >= post_period[1])
+    is_pre_period <- which(time_points < post_period[1])
+    cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
+    
+    absent_days <- matrix(mapply(
+        FUN = function(cases_prevented, dist_absent_days){
+            sum(sample(
+                x = dist_absent_days,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        dist_absent_days = dist_absent_days), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    cumsum_absent_days_post <- apply(absent_days[is_post_period,], 2, cumsum)
+    cumsum_absent_days_pre <- matrix(0,
+                                     nrow = nrow(absent_days[is_pre_period,]),
+                                     ncol = ncol(absent_days[is_pre_period,])
+    )
+    
+    cumsum_absent_days <- rbind(cumsum_absent_days_pre, cumsum_absent_days_post)
+}
+
+cumsum_absent_days_all <-
+    setNames(
+        lapply(
+            groups,
+            FUN = cumsum_absent_days_all_func,
+            quantiles = quantiles_full,
+            dist_absent_days = dist_absent_days
+        ),
+        groups
+    )
+
+cumsum_absent_days_all <- Reduce("+", cumsum_absent_days_all)
+
+cumsum_absent_days_all <-
+    t(apply(
+        cumsum_absent_days_all,
+        1,
+        quantile,
+        probs = c(0.025, 0.5, 0.975),
+        na.rm = TRUE
+    ))
+
+### Cumulative sum of indirect costs regardless of age-group ###
+
+cumsum_indirect_cost_all_func <- function(group, quantiles, indirect_cost_vector){
+    
+    is_post_period <- which(time_points >= post_period[1])
+    is_pre_period <- which(time_points < post_period[1])
+    cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
+    
+    #Indirect costs
+    indirect_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, indirect_cost_vector){
+            sum(sample(
+                x = indirect_cost_vector,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        indirect_cost_vector = indirect_cost_vector), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    cumsum_indirect_cost_saved_post <- apply(indirect_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_indirect_cost_saved_pre <- matrix(0,
+                                             nrow = nrow(indirect_cost_saved[is_pre_period,]),
+                                             ncol = ncol(indirect_cost_saved[is_pre_period,])
+    )
+    
+    cumsum_indirect_cost_saved <- rbind(cumsum_indirect_cost_saved_pre, cumsum_indirect_cost_saved_post)
+}
+
+cumsum_indirect_cost_all_saved <-
+    setNames(lapply(
+        groups,
+        FUN = cumsum_indirect_cost_all_func,
+        quantiles = quantiles_full,
+        indirect_cost_vector = indirect_cost_vector
+    ),
+    groups
+    )
+
+cumsum_indirect_cost_all_saved <- Reduce("+", cumsum_indirect_cost_all_saved)
+
+cumsum_indirect_cost_all_saved <-
+    t(apply(
+        cumsum_indirect_cost_all_saved,
+        1,
+        quantile,
+        probs = c(0.025, 0.5, 0.975),
+        na.rm = TRUE
+    ))
+
+### Cumulative sum of direct and indirect costs regardless of age-group ###
+
 cumsum_cost_all_func <- function(group, quantiles, direct_cost, indirect_cost_vector){
     is_post_period <- which(time_points >= post_period[1])
     is_pre_period <- which(time_points < post_period[1])
     
     direct_cost <- direct_cost[direct_cost$age_group == group, "cost_total"]
-    indirect_cost_vector <- indirect_cost_vector[[group]]
     cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
     
     #Direct costs
@@ -347,34 +1001,118 @@ cumsum_cost_all_func <- function(group, quantiles, direct_cost, indirect_cost_ve
     cumsum_direct_cost_saved <- cumsum_direct_cost_saved + cumsum_indirect_cost_saved
 }
 
-cumsum_cost_all_saved <-
+cumsum_cost_all_draws <-
     setNames(lapply(groups,
-           FUN = cumsum_cost_all_func,
-           quantiles = quantiles_full,
-           direct_cost = lsh,
-           indirect_cost_vector = indirect_cost_vector), groups)
+                    FUN = cumsum_cost_all_func,
+                    quantiles = quantiles_full,
+                    direct_cost = lsh,
+                    indirect_cost_vector = indirect_cost_vector), groups)
 
-cumsum_cost_all_saved <- Reduce("+", cumsum_cost_all_saved)
+cumsum_cost_all_saved <- Reduce("+", cumsum_cost_all_draws)
 
 cumsum_cost_all_saved <-
-        t(apply(
-            cumsum_cost_all_saved,
-            1,
-            quantile,
-            probs = c(0.025, 0.5, 0.975),
-            na.rm = TRUE
-        ))
+    t(apply(
+        cumsum_cost_all_saved,
+        1,
+        quantile,
+        probs = c(0.025, 0.5, 0.975),
+        na.rm = TRUE
+    ))
 
-ggplot(data = cbind.data.frame(
-    date = seq.Date(
-        from = as.Date("2005-01-01"),
-        to = as.Date("2017-12-01"),
-        by = "months"
-    ),
-    cumsum_cost_all_saved - cost_vaccine
-),
-aes(x = date, y = `50%`)) +
-    geom_vline(aes(xintercept = as.Date("2011-01-01")), lty = 2) +
-    geom_line() +
-    geom_ribbon(aes(ymin = `2.5%`, ymax = `97.5%`), alpha = 0.3) +
-    scale_y_continuous(labels = scales::comma)
+### Cumulative sum of direct costs minus the vaccine costs, used only for the following ICER calculations ###
+
+cumsum_vaccine_cost_all_func <- function(group, quantiles, direct_cost, indirect_cost_vector, cost_vaccine){
+    is_post_period <- which(time_points >= post_period[1])
+    is_pre_period <- which(time_points < post_period[1])
+    direct_cost <- direct_cost[direct_cost$age_group == group, "cost_total"]
+    cases_prevented <- quantiles[[group]]$pred_samples - outcome[, group]
+    
+    #Direct costs
+    direct_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, direct_cost){
+            sum(sample(
+                x = direct_cost,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        direct_cost = direct_cost), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    direct_cost_saved <- direct_cost_saved - cost_vaccine
+    
+    cumsum_direct_cost_saved_post <- apply(direct_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_direct_cost_saved_pre <- matrix(0,
+                                           nrow = nrow(direct_cost_saved[is_pre_period,]),
+                                           ncol = ncol(direct_cost_saved[is_pre_period,])
+    )
+    
+    cumsum_direct_cost_saved <- rbind(cumsum_direct_cost_saved_pre, cumsum_direct_cost_saved_post)
+    
+    #Indirect costs
+    indirect_cost_saved <- matrix(mapply(
+        FUN = function(cases_prevented, indirect_cost_vector){
+            sum(sample(
+                x = indirect_cost_vector,
+                size = abs(cases_prevented),
+                replace = T)) * sign(cases_prevented)
+        },
+        cases_prevented = cases_prevented,
+        indirect_cost_vector = indirect_cost_vector), 
+        nrow = dim(cases_prevented)[1], ncol = dim(cases_prevented)[2])
+    
+    cumsum_indirect_cost_saved_post <- apply(indirect_cost_saved[is_post_period,], 2, cumsum)
+    cumsum_indirect_cost_saved_pre <- matrix(0,
+                                             nrow = nrow(indirect_cost_saved[is_pre_period,]),
+                                             ncol = ncol(indirect_cost_saved[is_pre_period,])
+    )
+    
+    cumsum_indirect_cost_saved <- rbind(cumsum_indirect_cost_saved_pre, cumsum_indirect_cost_saved_post)
+    cumsum_direct_cost_saved <- cumsum_direct_cost_saved + cumsum_indirect_cost_saved
+}
+
+### ICER for direct and indirect costs regardless of age-group; societal perspective ###
+
+ICER_total_cost_all <-
+    setNames(lapply(groups[1:length(groups)-1],
+                    FUN = cumsum_cost_all_func,
+                    quantiles = quantiles_full,
+                    indirect_cost_vector,
+                    direct_cost = lsh), groups[1:length(groups)-1])
+
+ICER_total_cost_last_with_vaccine <-
+    setNames(lapply(groups[length(groups)],
+                    FUN = cumsum_vaccine_cost_all_func,
+                    quantiles = quantiles_full,
+                    direct_cost = lsh,
+                    indirect_cost_vector,
+                    cost_vaccine = cost_vaccine), groups[length(groups)])
+
+ICER_total_cost_all <- c(ICER_total_cost_all, ICER_total_cost_last_with_vaccine)
+ICER_total_cost_all <- Reduce("+", ICER_total_cost_all)
+ICER_total_cost_all <- ICER_total_cost_all/ICER_prevented_cases_all
+
+ICER_total_cost_all <-
+    t(apply(
+        ICER_total_cost_all,
+        1,
+        quantile,
+        probs = c(0.025, 0.5, 0.975),
+        na.rm = TRUE
+    ))
+
+# ggplot(data = cbind.data.frame(
+#     date = seq.Date(
+#         from = as.Date("2005-01-01"),
+#         to = as.Date("2015-12-01"),
+#         by = "months"
+#     ),
+#     cumsum_cost_all_saved - cost_vaccine
+# ),
+# aes(x = date, y = `50%`)) +
+#     geom_vline(aes(xintercept = as.Date("2011-01-01")), lty = 2) +
+#     geom_line() +
+#     geom_ribbon(aes(ymin = `2.5%`, ymax = `97.5%`), alpha = 0.3) +
+#     scale_y_continuous(labels = scales::comma)
+
+#saveRDS(object = cumsum_cost_all_draws, file = '_analyses/paper_6/paper_6_pneumonia/cum_sum_cost_saved')
+#saveRDS(object = cumsum_direct_cost_all_draws, file = '_analyses/paper_6/paper_6_pneumonia/cum_sum_cost_saved')

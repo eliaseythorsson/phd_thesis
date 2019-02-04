@@ -1,7 +1,7 @@
 ## Impact and cost-effectiveness analysis (Paper VI){#paper6}
 
 The objective of Paper VI was estimate the population impact of PHiD-CV10 on several aspects of pneumococcal disease and calculate the cost-effectiveness of PHiD-CV10 introduction. 
-Considered were otitis media visits to primary care among children 0-19 years of age, and hospitalizations due to pneumonia and invasive pneumococcal disease among the whole population. 
+Considered were otitis media visits to primary care among children zero to 19 years of age, and hospitalizations due to pneumonia and invasive pneumococcal disease among the whole population. 
 The study period was from 1 January 2005 to 31 December 2017 and the study population included all Icelandic citizens.
 The data were analysed as a time-series, and incorporated synthetic controls. 
 
@@ -21,10 +21,10 @@ For each hospitalization or emergency department visit, a detailed breakdown of 
 No cost data was available for primary care visits.
 Because Children's Hospital Iceland's pediatric emergency department serves as a walk-in clinic for the greater capital area, the distribution of costs for otitis media visits to the emergency department was assumed to mirror that of primary care visits, and was used in its stead.
 The cost of otitis media visits to Children's Hospital Iceland was extracted from the patient registry.
-The number of PHiD-CV10 doses purchased by the government and the unit price for each dose per calendar year were obtained directly from Directorate of Health.
-The consumer price index for medical care obtained from Statistics Iceland was used to convert all direct healthcare costs to 2011 price levels in ISK.
-
-The unemployment rate and the deciles of regular total wage for the calendar-year 2011, were obtained from Statistics Iceland.
+The number of PHiD-CV10 doses purchased by the government and the unit price for each dose per calendar year were obtained directly from the Icelandic Directorate of Health.
+The consumer price index for medical care obtained from Statistics Iceland was used to convert all direct healthcare costs to 2011 price levels in Icelandic kronas (ISK).
+The yearly employment rate of individuals 15 to 24 years of age, 25 to 54 years of age and 55 to 64 years of age from 2011-2017 was extracted from Organization for Economic Cooperation and Development (OECD) Labour Force Statistics [@OECD2018], and the deciles of regular total wage for working Icelanders from 2011-2017 were obtained from Statistics Iceland.
+All costs were converted to United States Dollars (USD) using the offical daily exchange rates of the Icelandic Central Bank from 2011-2017.
 
 ### Statistical analysis
 
@@ -64,10 +64,10 @@ The cumulative sum of prevented cases were calculated, and the median and 95% cr
 ### Cost-effectiveness analysis
 
 The cost-effectiveness was estimated both from the healtcare sector and societal perspectives.
-The societal perspective included both direct costs and indirect costs associated with productivity loss, while the analysis conducted from the healthcare sector perspective only included direct costs.
+The societal perspective included both direct costs and indirect costs associated with productivity loss, while the analysis conducted from the health sector perspective only included direct costs.
 Neither analysis included estimates of long-term sequelae or their associated costs.
 
-The direct cumulative savings associated with the vaccination were calculated by multiplying the estimated number of prevented cases. with the expected cost of each case. 
+The direct cumulative savings associated with the vaccination were calculated by multiplying the estimated number of prevented cases with the expected cost of each case. 
 The expected cost was obtained by sampling with replacement from the observed costs extracted from Landspitali University Hospital's patient registry, after they had been adjusted to constant 2011 ISK.
 The sampling was stratified by disease category and age-group.
 The direct costs associated with the introduction of PHiD-CV10 into the pediatric vaccination program was calculated for each calendar-year by multiplying the number of purchased doses by the purchase price.
@@ -83,4 +83,5 @@ For each case of otitis media in primary care, the days of work lost by a parent
 For each pneumonia or invasive pneumococcal disease hospitalization, the days of work lost were assumed to equal the sum of the hospital length of stay and a variable time following discharge.
 For each prevented case, the associated hospital length of stay was sampled with replacement from the observed length of stay obtained from the patient registry.
 This variable time was assumed to by Poisson distributed with mean equal to half the hospital length of stay.
-The indirect costs were calculated by multiplying the days of work lost with wages sampled from the lognormal wage distribution, accounting for unemployment. 
+The indirect costs were calculated by multiplying the days of work lost with wages sampled from the lognormal wage distribution, accounting for unemployment.
+Cost-effectiveness was summarized with incremental cost-effectiveness ratios (ICER) with 95% credible intervals. 
