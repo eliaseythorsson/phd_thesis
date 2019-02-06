@@ -136,8 +136,12 @@ Given the observed distribution of costs associated with each AOM visit, the dir
 If the vaccine is assumed to have no other benefits other than preventing AOM, and only direct costs are considered, the incremental cost-effectiveness ratio was 73\$ (95% credible interval 13\$ to 220\$) per prevented AOM case from the health sector perspective.
 The societal perspective also considers productivity loss of the population.
 The vaccine introduction prevented 10,911 days of work lost (95% credible interval 5,116 to 18,801), which translated to 187,226\$ (95% credible interval 74,655\$ to 357,155\$) in productivity gains.
-The ICER from the societal perspective was 59\$ (95% credible interval -1\$ to 207\$) per prevented AOM case, assuming the vaccine was not associated with benefit in other age-groups or disease categories.
-The data is consistent with a 2.5% probability that society gained 1\$ per prevented AOM case.
+The ICER from the societal perspective was 59\$ (95% credible interval -1\$ to 207\$) per prevented AOM case, assuming the vaccine did not result in any benefit in other manifestations of pneumococcal infections.
+When cost-savings due to reductions in hospital admissions for pneumonia and invasive pneumococcal disease were also included, the direct cost of the PHiD-CV10 introduction was -6,722,048\$ (95% credible intervals -14,263,736\$ to -528,526\$) as of 31 December 2015.
+From the health sector perspective, the vaccination program was already cost-saving 6,722,048\$ in the first five years of the program.
+The corresponding ICER was -488\$ (95% credible interval -1,307\$ to -41\$) per prevented AOM case.
+When days of work lost due to hospitalized pneumonia and IPD cases were also included, the total cost of including PHiD-CV10 in the pediatric vaccination program was -7,404,352\$ (95% credible interval -15,315,132\$ to 981,925\$) as of 31 December 2015.
+The corresponding ICER was -541\$ (95% credible interval -1,404\$ to 79\$) per AOM case prevented. 
 
 ### Population impact on pneumonia hospitalizations
 
@@ -235,10 +239,11 @@ include_graphics(path = "_figures/paper_6/paper_6_pneumonia/2019-02-01-cum-arran
 The total cost of introducing PHiD-CV10 into the Icelandic pediatric vaccination program from 1 January 2011 to 31 December 2017 was 3,046,205\$ at constant 2011 USD.
 In total, the introduction of PHiD-CV10 resulted in 1,844 (589 to 3,239) prevented pneumonia hospitalizations in the Icelandic population by 1 December 2017 (Panel C of Figure \@ref(fig:figure-results-paper6-pneumonia-cum-arranged)).
 Given the observed distribution of costs associated with each pneumonia hospitalization, the direct savings resulting from vaccine-prevented hospitalizations was 11,662,823\$ (95% credible interval 2,395,576\$ to 22,959,772\$).
-If the vaccine is assumed to have no other benefits than preventing pneumonia hospitalizations, and only the direct costs are considered, the ICER was -4,654\$ (95% credible interval -7,722\$ to 711\$) per prevented pneumonia hospitalization, indicating a net savings of 4,654\$ for each prevented hospitalization.
-The societal perspective also considers productivity loss of the population.
-The vaccine introduction prevented 29,969 days of work lost (95% credible interval 9,964 to 52,900), which translated to 838,952\$ (95% credible interval 273,559\$ to 1,493,478\$) in productivity gains.
-The ICER from the societal perspective was -5,085\$ (95% credible interval -8,186\$ to 191\$) per prevented pneumonia hospitalization, which implies that the society gains 5,085\$ for every pneumonia hospitalization prevented by investing in PHiD-CV10.
+If the vaccine is assumed to have no other benefits than preventing pneumonia hospitalizations, and only the direct costs are considered, the ICER was -4,654\$ (95% credible interval -7,722\$ to 711\$) per prevented pneumonia hospitalization, indicating a net savings of 4,654\$ for each prevented hospitalization from the health sector perspective.
+The vaccination program prevented 29,969 days of work lost (95% credible interval 9,964 to 52,900), which translated to 838,952\$ (95% credible interval 273,559\$ to 1,493,478\$) in productivity gains.
+From the societal perspective, the ICER was -5,085\$ (95% credible interval -8,186\$ to 191\$) per prevented pneumonia hospitalization, assuming no other vaccine benefit, which implies that the society gains 5,085\$ for every pneumonia hospitalization prevented by investing in PHiD-CV10.
+If the vaccination program's effects on the other manifestations of pneumococcal disease were also included, then the ICER was -5,640\$ (95% credible interval -10,336\$ to -1,032\$) from the health sector perspective as of 31 December 2015.
+Including also loss of work resulted in an ICER of -6,309\$ (95% credible interval -11,055\$ to -1,809\$). 
 
 ### Population impact on hospital admissions for invasive pneumococcal disease
 
@@ -330,10 +335,8 @@ include_graphics(path = "_figures/paper_6/paper_6_ipd/2019-02-02-cum-arranged.pn
 In total, the introduction of PHiD-CV10 prevented 57 (10 to 127) cases of IPD serious enough to warrant hospital admission by December 2016 (Panel C of Figure \@ref(fig:figure-results-paper6-ipd-cum-arranged)).
 The total cost of introducing PHiD-CV10 into the Icelandic pediatric vaccination program from 1 January 2011 to 31 December 2016 was 2,735,045$ in constant 2011 USD.
 Given the observed distribution of costs associated with each IPD hospitalization, the direct savings resulting from vaccine-prevented hospitalizations was 617,546\$ (95% credible intervals -171,311\$ to 1,888,016\$).
-If the vaccine is assumed to have no other benefits than preventing IPD hospitalizations, and only the direct costs are considered, the ICER was 26,424\$ (95% credible interval 7,289\$ to 71,025\$) per prevented IPD hospitalization.
+If the vaccine was assumed to have no other benefits than preventing IPD hospitalizations, and only the direct costs are considered, the ICER was 26,424\$ (95% credible interval 7,289\$ to 71,025\$) per prevented IPD hospitalization.
 The vaccine introduction prevented 1,280 days of work lost (444 to 2,410) due to IPD, which translated to 36,520\$ (95% credible intervals 10,064\$ to 71,151\$) in productivity gains.
-If the vaccine is assumed to have no other benefits than preventing IPD hospitalizations, the ICER from the societal perspective was 25,911\$ (95% credible intervals 7,263\$ to 69,974\$) per prevented IPD hospitalization.
-
-
-
-
+If the vaccine was assumed to have no other benefits than preventing IPD hospitalizations, the ICER from the societal perspective was 25,911\$ (95% credible intervals 7,263\$ to 69,974\$) per prevented IPD hospitalization.
+When cost-savings due to reductions in AOM visits or hospital admissions for pneumonia were also included, the ICER was -105,548\$ (95% credible interval -340,574\$ to -7,793\$) per prevented IPD hospitalization from the health sector perspective.
+When days of work lost were also considered, the ICER was -116,809 (95% credible interval -367,085\$ to -14,438\$) per prevented IPD hospitalization. 

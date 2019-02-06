@@ -1,6 +1,5 @@
 # Cost bootstrap
 
-library(readxl)
 library(tidyverse)
 library(zoo)
 
@@ -10,15 +9,13 @@ library(zoo)
 
 ids <- read_rds("_data/results/ids.rds")
 lsh <- read_rds("_data/results/lsh.rds")
-sykl <- read_excel("_data/paper_6/paper_6_ipd/Ífarandi pneumo_1995_2016_Elias.xls")
-impact_full <- read_rds("_analyses/paper_6/paper_6_ipd/Results_paper_6_ipd_2018-12-02-152110/paper_6_ipd_synthetic_control_model.rds")
-#impact_stack <- read_rds("_analyses/paper_6/paper_6_ipd/Results_paper_6_ipd_2018-12-02-152110/paper_6_ipd_stacked_model.rds")
+impact_full <- read_rds("_analyses/paper_6/paper_6_pneumonia/Results_paper_6_pneumonia_2018-12-02-141443/paper_6_pneumonia_synthetic_control_model.rds")
+impact_stack <- read_rds("_analyses/paper_6/paper_6_pneumonia/Results_paper_6_pneumonia_2018-12-02-141443/paper_6_pneumonia_stacked_model.rds")
 
-source("_scripts/paper_6/paper_6_ipd/paper_6_ipd_synthetic_control_functions.R", local = T)
+source("_scripts/paper_6/paper_6_pneumonia/paper_6_pneumonia_synthetic_control_functions.R", local = T)
 
-# Assign variable values
-country       <- 'paper_6_ipd' # Country or region name.
-n_seasons     <- 4       # Number of months (seasons) per year. 12 for monthly, 4 for quarterly, 3 for trimester data.
+country       <- 'paper_6_pneumonia' # Country or region name.
+n_seasons     <- 12       # Number of months (seasons) per year. 12 for monthly, 4 for quarterly, 3 for trimester data.
 exclude_covar <- c() # User-defined list of covariate columns to exclude from all analyses.
 exclude_group <- c()      # User-defined list of groups to exclude from analyses.
 if(country=="Brazil"){code_change   <- TRUE     # Used for Brazil data. Set to TRUE to adjust for year 2008 coding changes; otherwise, set to FALSE.
@@ -26,35 +23,34 @@ if(country=="Brazil"){code_change   <- TRUE     # Used for Brazil data. Set to T
     code_change   <- FALSE
 }
 
-input_directory  <- "_data/paper_6/paper_6_ipd/" # Directory (or URL) containing input data file.
+input_directory  <- "_data/paper_6/paper_6_pneumonia/" # Directory (or URL) containing input data file.
 file_name <- "input-data.csv"
-output_directory <- '_analyses/paper_6/paper_6_ipd/Results'   # Directory where results will be saved.
+output_directory <- '_analyses/paper_6/paper_6_pneumonia/Results'    # Directory where results will be saved.
 output_directory <- paste(output_directory, '_', country,'_', format(Sys.time(), '%Y-%m-%d-%H%M%S'), '/', sep = '')                     #Adds a subfolder to output directory to organize results by date and time run.
 data_file <- paste0(input_directory, file_name)
 prelog_data <- read.csv(data_file, check.names = FALSE) # IF IMPORTING FROM LOCAL
 
 group_name   <- 'age_group' # Name of column containing group labels.
 date_name    <- 'date'      # Name of column containing dates.
-outcome_name <- 'IPD'    # Name of column containing outcome.
+outcome_name <- 'J12_18'    # Name of column containing outcome.
 denom_name   <- "ach_noj"   # Name of column containing denominator to be used in offset.
 
 #MOST DATES MUST BE IN FORMAT "YYYY-MM-01", exception is end of pre period, which is 1 day before end of post period
 start_date        <- as.Date('2005-01-01') # Indicates the date of the first data point.
 intervention_date <- as.Date('2010-12-31') # Indicates the date of intervention in the data.
-end_date          <- as.Date('2016-10-01') # Indicates the date of the last data point.
+end_date          <- as.Date('2017-12-01') # Indicates the date of the last data point.
 pre_period        <- as.Date(c('2005-01-01', '2010-12-31')) # Range over which the data is trained for the CausalImpact model.
-post_period       <- as.Date(c('2011-01-01', '2016-10-01')) # Range from the intervention date to the end date.
-eval_period       <- as.Date(c('2013-01-01', '2016-10-01')) # Range over which rate ratio calculation will be performed.
+post_period       <- as.Date(c('2011-01-01', '2017-12-01')) # Range from the intervention date to the end date.
+eval_period       <- as.Date(c('2013-01-01', '2017-12-01')) # Range over which rate ratio calculation will be performed.
 year_def   <- 'cal_year'  #Can be cal_year to aggregate results by Jan-Dec; 'epi_year' to aggregate July-June
 
 ### Consumer Price Index found at www.statice.is ### 
 
 consumer_price_index <- bind_cols( #consumer price index
-    date = as.character(seq.Date(from = as.Date("2005-01-01"), to = as.Date("2016-12-01"), by = "3 months")),
-    cpi = c(140.3, 142.9, 143.3, 144.6, 145, 146.7, 150.1, 149.7, 151.3, 152.1, 153.8, 154.7, 158, 162.6, 164.4, 167.2, 183.3, 180.4, 186.1, 189.5, 193.2, 196.4, 197.5, 197, 198.3, 197.2, 200.4, 199.5, 203.8, 204.8, 205, 205.3, 210.7, 213.7, 211.4, 210.2, 217.2, 221.4, 223.6, 224.1, 224.9, 227.5, 227.6, 228, 229.8, 232.7, 233.4, 232.2),
-    cpi_jan2011 = rep(198.3, 48)
+    date = as.character(seq.Date(from = as.Date("2005-01-01"), to = as.Date("2017-12-01"), by = "months")),
+    cpi =c(140.3, 141.9, 142.5, 142.9, 142.8, 142.5, 143.3, 143.6, 143.8, 144.6, 144.7, 144.4, 145, 145.1, 145.9, 146.7, 147.3, 148.5, 150.1, 150.2, 150, 149.7, 149.6, 150.4, 151.3, 151.7, 151.9, 152.1, 151.8, 152.3, 153.8, 154.2, 154.8, 154.7, 155.4, 155.6, 158, 158.2, 158.4, 162.6, 162.9, 164, 164.4, 163.3, 164.1, 167.2, 172.3, 178.6, 183.3, 183.2, 182.3, 180.4, 182.4, 184.2, 186.1, 186.5, 187.7, 189.5, 190.1, 190.4, 193.2, 193.5, 196.1, 196.4, 197, 198, 197.5, 197.4, 197.7, 197, 197.1, 197.1, 198.3, 196.3, 196.6, 197.2, 197, 199.9, 200.4, 198.2, 199.3, 199.5, 199.8, 200.9, 203.8, 204.5, 203.9, 204.8, 204.9, 205.6, 205, 204.4, 202.7, 205.3, 206.7, 207.6, 210.7, 213.3, 213.9, 213.7, 209.9, 210.4, 211.4, 212, 208.6, 210.2, 211.3, 211.8, 217.2, 217.9, 218.8, 221.4, 222.1, 222.1, 223.6, 223.6, 223.7, 224.1, 224.2, 224.5, 224.9, 225.6, 226.5, 227.5, 227, 226.7, 227.6, 227.9, 227.5, 228, 228.6, 228.7, 229.8, 230.4, 232.3, 232.7, 232.3, 233.1, 233.4, 233.3, 232.1, 232.2, 231.5, 232.2, 231, 230.7, 232.3, 232, 234, 232.2, 232.8, 233.9, 233.3, 234.6, 235.6, 235.6),
+    cpi_jan2011 = rep(198.3, 156)
 )
-
 
 ### Parameters from lognormal distribution found by fitting decils of wage from www.statice.is ... ###
 ### ... to lognormal distribution using the get.lnorm.par() function from the rriskDistributions package ###
@@ -68,7 +64,7 @@ unemployment <- c(0.62, 0.65, 0.69, 0.70, 0.73, 0.77, 0.75,
 unemployment <- rbinom(n = 8000, size = 1, prob = unemployment) 
 
 # Midian daily conversion rate betwee ISK and USD from 2011 to 2017 ccording to the Icelandic Central Bank
-exchange_rates <- read_csv2("_data/paper_6/paper_6_ipd/ISK-USD-conversion.csv", trim_ws = TRUE)
+exchange_rates <- read_csv2("_data/paper_6/paper_6_pneumonia/ISK-USD-conversion.csv", trim_ws = TRUE)
 exchange_rates <- exchange_rates$MED
 exchange_rates <- sample(x = exchange_rates, size = 8000, replace = T)
 
@@ -77,8 +73,8 @@ wage_per_day <- 0.010385 #standard devision of wage to get wage/day
 ### Cost of vaccine found in personal communication with Sóttvarnalæknir ### 
 
 cost_vaccine <- bind_cols(
-    price = c(rep(0, 24), rep(5505, 4), rep(5153, 4), rep(5064, 4), rep(5050, 4), rep(5202, 4), rep(4517, 4)),
-    number_doses = c(rep(0, 24), rep(7447/4, 4), rep(12557/4, 4), rep(12887/4, 4), rep(12953/4, 4), rep(12569/4, 4), rep(12209/4, 4)),
+    price = c(rep(0, 72), rep(5505, 12), rep(5153, 12), rep(5064, 12), rep(5050, 12), rep(5202, 12), rep(4517, 12), rep(3739, 12)),
+    number_doses = c(rep(0, 72), rep(7447/12, 12), rep(12557/12, 12), rep(12887/12, 12), rep(12953/12, 12), rep(12569/12, 12), rep(12209/12, 12), rep(11957/12, 12)),
     consumer_price_index) %>%
     mutate(price = price * number_doses * cpi_jan2011/cpi) %>%
     .$price / mean(exchange_rates)
@@ -105,8 +101,8 @@ sapply(packages,
        quietly = TRUE,
        character.only = TRUE)
 
-groups <- c("0-4y", "5-64y", "65y+")
-time_points <- as.character(seq.Date(from = as.Date("2005-01-01"), to = as.Date("2016-10-01"), by = "3 month"))
+groups <- c("0-4y", "5-19y", "20-39y", "40-64y", "65-79y", "80+")
+time_points <- as.character(seq.Date(from = as.Date("2005-01-01"), to = as.Date("2017-12-01"), by = "month"))
 
 prelog_data[, date_name] <-
     as.Date(as.character(prelog_data[, date_name]),
@@ -143,7 +139,7 @@ quantiles_full <-
         groups,
         FUN = function(group) {
             rrPredQuantiles(
-                impact = impact_full[[group]],
+                impact = impact_stack[[group]],
                 denom_data = ds[[group]][, denom_name],
                 eval_period = eval_period,
                 post_period = post_period
@@ -187,12 +183,12 @@ cumsum_prevented_all <-
         probs = c(0.025, 0.5, 0.975),
         na.rm = TRUE
     ))
-# 
+
 # ggplot(data = cbind.data.frame(
 #     date = seq.Date(
 #         from = as.Date("2005-01-01"),
-#         to = as.Date("2016-12-01"),
-#         by = "3 months"
+#         to = as.Date("2017-12-01"),
+#         by = "months"
 #     ),
 #     cumsum_prevented_all
 # ),
@@ -202,76 +198,23 @@ cumsum_prevented_all <-
 #     geom_ribbon(aes(ymin = `2.5%`, ymax = `97.5%`), alpha = 0.3) +
 #     scale_y_continuous(labels = scales::comma)
 
-
-sykl <- 
-    sykl %>%
-    dplyr::select(
-        date = dagsetn.,
-        kt = kennitala, 
-        death = látinn,
-        death_date = dánardagur,
-        blood = blóð,
-        spine = mænuv.,
-        joint = liðv.,
-        serot = hjúpg.,
-        vac_t = `VT (Synflorix)`
-    )
-
-sykl <- 
-    sykl %>%
-    mutate(
-        kt = str_replace_all(kt, "-", ""),
-        death = if_else(is.na(death), 0, 1),
-        blood = if_else(blood == "Nei"|is.na(blood), 0, 1),
-        spine = if_else(spine == "Nei"|is.na(spine), 0, 1),
-        joint = if_else(joint == "Nei"|is.na(joint), 0, 1),
-        serot = str_replace_all(serot, "\\?| |útl|\\.|", ""),
-        vac_t = as.numeric(case_when(
-            vac_t == "NA" ~ NA,
-            vac_t == "No" ~ FALSE,
-            vac_t == "Y" ~ TRUE,
-            is.na(vac_t) ~ NA
-        ))
-    )
-
-sykl <- sykl %>% mutate(kt = str_replace_all(kt, "\n", ""))
-
-sykl <-
-    sykl %>% 
-    mutate(
-        serot = case_when(
-            str_detect(serot, pattern = "NA|óþekkt|óhjúpgr") ~ as.character(NA), 
-            TRUE ~ as.character(serot)),
-        birth_d = str_sub(.$kt, 1, 2), 
-        birth_m =  str_sub(.$kt, 3, 4),
-        birth_y = case_when(
-            str_sub(.$kt, 10, 10) == 0 ~ paste0(20, str_sub(.$kt, 5, 6)),
-            str_sub(.$kt, 10, 10) == 9 ~ paste0(19, str_sub(.$kt, 5, 6)),
-            str_sub(.$kt, 10, 10) == 8 ~ paste0(18, str_sub(.$kt, 5, 6))
-        )
-    )  %>%
-    mutate(birth_date = as.Date(paste(.$birth_y, .$birth_m, .$birth_d, sep = "-"))) %>%
-    mutate(age_y = floor(as.numeric(difftime(date, birth_date, units = "days"))/365.25))
-
 lsh <- 
-    sykl %>%
-    dplyr::select(date, kt) %>%
-    left_join(ids %>% dplyr::select(id, kt)) %>%
-    left_join(lsh) %>%
-    mutate(difftime1 = as.numeric(difftime(date, date_in, units = "day"))) %>%
+    lsh %>%
     filter(
-        !is.na(id),
-        difftime1 <= 60, difftime1 >= -7,
+        str_detect(string = icd10_code, pattern = "J12|J13|J14|J15|J16|J17|J18"),
         lotu_teg == "Legulota" | dur_stay_hours >= 24,
-        year >= 2005, year <= 2016) %>%
+        year >= 2005, year <= 2017) %>%
     left_join(ids) %>%
     mutate(
-        date = as.character(as.Date(as.yearqtr(date_in))),
+        date = as.character(as.Date(as.yearmon(date_in))),
         age_y = floor(difftime(date_in, birth_date, unit = "days")/365.25),
         age_group = case_when(
             age_y >= 0 & age_y <= 4 ~ "0-4y",
-            age_y >= 5 & age_y <= 64 ~ "5-64y",
-            age_y >= 65 ~ "65y+",
+            age_y >= 5 & age_y <= 19 ~ "5-19y",
+            age_y >= 20 & age_y <= 39 ~ "20-39y",
+            age_y >= 40 & age_y <= 64 ~ "40-64y",
+            age_y >= 65 & age_y <= 79 ~"65-79y",
+            age_y >= 80 ~ "80+",
             TRUE ~ "remove")
     ) %>%
     left_join(consumer_price_index) %>%
@@ -402,16 +345,14 @@ ICER_direct_cost_last_with_vaccine <-
 ## The cumulative sum is then added together into one list
 ICER_direct_cost_all <- c(ICER_direct_cost_all, ICER_direct_cost_last_with_vaccine)
 
-## Because the IPD data is year-quarterly, the cumulative sum needs to be lengthend to its monthly equivalent
+## Because the pneumonia data runs to 2017, while the shortest series (AOM) runs only to 2015, it must be shortened
 
-add_length <- rep(1:nrow(ICER_direct_cost_all[[groups[1]]]), each = 3)
 ICER_direct_cost_all <- setNames(lapply(groups,
-                               FUN = function(group, ICER, add_length){
-                                   ICER <- ICER[[group]][add_length, ][1:132, ] #1:132 reduces to the shortest series, the AOM series
-                               },
-                               ICER = ICER_direct_cost_all,
-                               add_length = add_length),
-                               groups
+                FUN = function(group, ICER){
+                    ICER <- ICER[[group]][1:132, ]
+                },
+                ICER = ICER_direct_cost_all),
+         groups
 )
 
 ## Now we calculate the number of prevented cases ... 
@@ -434,39 +375,39 @@ ICER_prevented_cases_all <-
                     FUN = prevented_cases_func,
                     quantiles = quantiles_full), groups)
 
-## ... and lengthen as we did above
+## ... and shorten as we did above
 
 ICER_prevented_cases_all <- setNames(lapply(groups,
-                                        FUN = function(group, ICER, add_length){
-                                            ICER <- ICER[[group]][add_length, ][1:132, ]
+                                        FUN = function(group, ICER){
+                                            ICER <- ICER[[group]][1:132, ]
                                         },
-                                        ICER = ICER_prevented_cases_all,
-                                        add_length = add_length),
+                                        ICER = ICER_prevented_cases_all),
                                  groups
 )
-
 ICER_prevented_cases_all <- Reduce("+", ICER_prevented_cases_all)
 
-## Now we read in the cumulative sum for the pneumonia cases
-cumsum_direct_cost_all_pneumonia <- readRDS(file = '_analyses/paper_6/paper_6_pneumonia/cumsum_direct_cost_saved')
+## Now we read in the cumulative sum for the IPD cases
+cumsum_direct_cost_all_ipd <- readRDS(file = '_analyses/paper_6/paper_6_ipd/cumsum_direct_cost_saved')
 
-groups_pneumonia <- c("0-4y", "5-19y",  "20-39y", "40-64y", "65-79y","80+")   
+## The IPD data is year-quarterly, it must be lengthened to monthly data, then shortened to the length of the shortest series (AOM)
 
-## ... and shorten to the length of the shortest series (AOM series)
-cumsum_direct_cost_all_pneumonia <- setNames(lapply(groups_pneumonia,
-                                                    FUN = function(group, ICER){
-                                                        ICER <- ICER[[group]][1:132, ]
-                                                    },
-                                                    ICER = cumsum_direct_cost_all_pneumonia),
-                                             groups_pneumonia
+groups_ipd <- c("0-4y", "5-64y", "65y+" )
+add_length <- rep(1:nrow(cumsum_direct_cost_all_ipd[[groups_ipd[1]]]), each = 3)
+
+cumsum_direct_cost_all_ipd <- setNames(lapply(groups_ipd,
+                                              FUN = function(group, ICER, add_length){
+                                                  ICER <- ICER[[group]][add_length, ][1:132, ] #1:132 reduces to the shortest series, the AOM series
+                                              },
+                                              ICER = cumsum_direct_cost_all_ipd,
+                                              add_length = add_length),
+                                       groups_ipd
 )
-
 
 ## Now we reat the cumulatvie sum of the AOM cases
 cumsum_direct_cost_all_aom <- readRDS(file = '_analyses/paper_6/paper_6_otitis_media/cumsum_direct_cost_saved')
 
 ## Combine all of the above into one list
-ICER_direct <- c(ICER_direct_cost_all, cumsum_direct_cost_all_aom, cumsum_direct_cost_all_pneumonia)
+ICER_direct <- c(ICER_direct_cost_all, cumsum_direct_cost_all_aom, cumsum_direct_cost_all_ipd)
 
 ## And reduce this list
 ICER_direct <- Reduce("+", ICER_direct)
@@ -480,7 +421,6 @@ total_prevented_direct_costs <-
         probs = c(0.025, 0.5, 0.975),
         na.rm = TRUE
     ))
-
 
 ## And now calculate the ICER for all series
 ICER_direct <- ICER_direct/ICER_prevented_cases_all
@@ -603,8 +543,8 @@ ICER_cost_all <-
     setNames(lapply(groups[1:length(groups)-1],
                     FUN = cumsum_cost_all_func,
                     quantiles = quantiles_full,
-                    indirect_cost_vector = indirect_cost_vector,
-                    direct_cost = lsh), groups[1:length(groups)-1])
+                    direct_cost = lsh,
+                    indirect_cost_vector = indirect_cost_vector), groups[1:length(groups)-1])
 
 ## Then the cumulative sum with the vaccine cost included is caclulated for the nth age-group
 ## This ensures that vaccine-costs are only included once
@@ -620,39 +560,38 @@ ICER_cost_last_with_vaccine <-
 ## The cumulative sum is then added together into one list
 ICER_cost_all <- c(ICER_cost_all, ICER_cost_last_with_vaccine)
 
-## Because the IPD data is year-quarterly, the cumulative sum needs to be lengthend to its monthly equivalent
+## Because the pneumonia data runs to 2017, while the shortest series (AOM) runs only to 2015, it must be shortened
 
 ICER_cost_all <- setNames(lapply(groups,
-                                        FUN = function(group, ICER, add_length){
-                                            ICER <- ICER[[group]][add_length, ][1:132, ] #1:132 reduces to the shortest series, the AOM series
+                                        FUN = function(group, ICER){
+                                            ICER <- ICER[[group]][1:132, ]
                                         },
-                                        ICER = ICER_cost_all,
-                                        add_length = add_length),
+                                        ICER = ICER_cost_all),
                                  groups
 )
 
+## Now we read in the cumulative sum for the IPD cases
+cumsum_cost_all_ipd <- readRDS(file = '_analyses/paper_6/paper_6_ipd/cumsum_cost_saved')
 
-## Now we read in the cumulative sum for the pneumonia cases
-cumsum_cost_all_pneumonia <- readRDS(file = '_analyses/paper_6/paper_6_pneumonia/cumsum_cost_saved')
+## The IPD data is year-quarterly, it must be lengthened to monthly data, then shortened to the length of the shortest series (AOM)
 
-## ... and shorten to the length of the shortest series (AOM series)
-cumsum_cost_all_pneumonia <- setNames(lapply(groups_pneumonia,
-                                                    FUN = function(group, ICER){
-                                                        ICER <- ICER[[group]][1:132, ]
-                                                    },
-                                                    ICER = cumsum_cost_all_pneumonia),
-                                             groups_pneumonia
+cumsum_cost_all_ipd <- setNames(lapply(groups_ipd,
+                                              FUN = function(group, ICER, add_length){
+                                                  ICER <- ICER[[group]][add_length, ][1:132, ] #1:132 reduces to the shortest series, the AOM series
+                                              },
+                                              ICER = cumsum_cost_all_ipd,
+                                              add_length = add_length),
+                                       groups_ipd
 )
-
 
 ## Now we reat the cumulatvie sum of the AOM cases
 cumsum_cost_all_aom <- readRDS(file = '_analyses/paper_6/paper_6_otitis_media/cumsum_cost_saved')
 
 ## Combine all of the above into one list
-ICER_total <- c(ICER_cost_all, cumsum_cost_all_aom, cumsum_cost_all_pneumonia)
+ICER_total <- c(ICER_cost_all, cumsum_cost_all_aom, cumsum_cost_all_ipd)
 
 ## And reduce this list
-ICER_total <- Reduce("+", ICER_total)
+ICER_total<- Reduce("+", ICER_total)
 
 ## The total prevented direct costs of all series 
 total_prevented_costs <-
@@ -663,7 +602,6 @@ total_prevented_costs <-
         probs = c(0.025, 0.5, 0.975),
         na.rm = TRUE
     ))
-
 
 ## And now calculate the ICER for all series
 ICER_total <- ICER_total/ICER_prevented_cases_all
@@ -677,7 +615,8 @@ ICER_total <-
         na.rm = TRUE
     ))
 
-saveRDS(object = total_prevented_direct_costs, file = '_analyses/paper_6/paper_6_ipd/total_prevented_direct_costs')
-saveRDS(object = total_prevented_costs, file = '_analyses/paper_6/paper_6_ipd/total_prevented_costs')
-saveRDS(object = ICER_direct, file = '_analyses/paper_6/paper_6_ipd/ICER_direct')
-saveRDS(object = ICER_total, file = '_analyses/paper_6/paper_6_ipd/ICER_total')
+saveRDS(object = total_prevented_direct_costs, file = '_analyses/paper_6/paper_6_pneumonia/total_prevented_direct_costs')
+saveRDS(object = total_prevented_costs, file = '_analyses/paper_6/paper_6_pneumonia/total_prevented_costs')
+saveRDS(object = ICER_direct, file = '_analyses/paper_6/paper_6_pneumonia/ICER_direct')
+saveRDS(object = ICER_total, file = '_analyses/paper_6/paper_6_pneumonia/ICER_total')
+

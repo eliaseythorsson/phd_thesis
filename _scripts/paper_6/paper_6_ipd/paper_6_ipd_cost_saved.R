@@ -1158,5 +1158,5 @@ ICER_total_cost_all <-
         na.rm = TRUE
     ))
 
-#saveRDS(object = cumsum_cost_all_draws, file = '_analyses/paper_6/paper_6_ipd/cum_sum_cost_saved')
-#saveRDS(object = cumsum_direct_cost_all_draws, file = '_analyses/paper_6/paper_6_ipd/cum_sum_cost_saved')
+saveRDS(object = cumsum_cost_all_draws, file = '_analyses/paper_6/paper_6_ipd/cumsum_cost_saved')
+saveRDS(object = cumsum_direct_cost_all_draws, file = '_analyses/paper_6/paper_6_ipd/cumsum_direct_cost_saved')

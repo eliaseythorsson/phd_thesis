@@ -1091,5 +1091,5 @@ ICER_total_cost_all <-
 #     geom_ribbon(aes(ymin = `2.5%`, ymax = `97.5%`), alpha = 0.3) +
 #     scale_y_continuous(labels = scales::comma)
 
-#saveRDS(object = cumsum_cost_all_draws, file = '_analyses/paper_6/paper_6_otitis_media/cum_sum_cost_saved')
-#saveRDS(object = cumsum_direct_cost_all_draws, file = '_analyses/paper_6/paper_6_otitis_media/cum_sum_cost_saved')
+saveRDS(object = cumsum_cost_all_draws, file = '_analyses/paper_6/paper_6_otitis_media/cumsum_cost_saved')
+saveRDS(object = cumsum_direct_cost_all_draws, file = '_analyses/paper_6/paper_6_otitis_media/cumsum_direct_cost_saved')
