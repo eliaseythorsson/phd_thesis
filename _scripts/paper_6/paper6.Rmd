@@ -1,0 +1,857 @@
+
+```{r echo = F, error = F, message = F, warning = F}
+knitr::opts_chunk$set(echo = FALSE, error = FALSE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(lubridate)
+library(zoo)
+library(knitr)
+
+
+```
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, error = FALSE, message = FALSE, warning = FALSE)
+library(knitr)
+library(tidyverse)
+
+# automatically create a bib database for R packages
+knitr::write_bib(
+    c(
+    .packages(),
+    'tidyverse',
+    'bookdown',
+    'knitr',
+    'rmarkdown',
+    'epiR',
+    'survival',
+    'rms',
+    'survminer',
+    'pogit',
+    'loo',
+    'rriskDistributions'
+    ),
+    'packages.bib'
+    )
+```
+
+# Introduction
+
+Pneumococcal conjugate vaccines (PCV) have been shown to provide direct protection against acute otitis media (AOM), pneumonia and invasive pneumococcal disease (IPD) in vaccinated individuals [@Black2000; @Cutts2005; @Prymula2006; @Tregnaghi2014].
+PCV can also provide indirect protection to unvaccinated members of the population, a process known as herd effect.
+The introduction of PCV into national paediatric immunization programmes has consistently been shown to result in indirect protection against IPD in unvaccinated children and adults [@Shiri2017], and several observational studies have demonstrated indirect protection against pneumonia [@Bruhn2017; @Tsaban2017]. 
+However, indirect protection against AOM has been less well established [@Ben-Shimol2014; @Sigurdsson2018].
+
+A plethora of cost-effectiveness analyses has been published examining the inclusion of PCV into national immunization programmes [@VandeVooren2014a].
+They have generally shown PCV to be a cost-effective intervention.
+However, most of the studies were conducted before the vaccine was implemented and their results were heavily dependent on assumptions regarding indirect protection [@Holubar2017].
+
+In 2011, the 10-valent pneumococcal *Haemophilus influenzae* Protein D conjugate vaccine (PHiD-CV, Syn- florix) was included into the Icelandic paediatric immunization programme, with a two + one schedule given at three, five and 12 months of age.
+Children born in 2011 and later were eligible.
+Vaccine uptake was immediately high with over 97% of vaccine eligible children receiving the primary vaccination by their first birthday [@Eythorsson2017].
+
+The aim of the study was to evaluate the direct and indirect impact of introducing PHiD-CV10 on AOM, pneumonia and IPD in Iceland, and to perform a post-implementation cost-effectiveness analysis using directly observed data. 
+
+# Methods
+
+## Data sources 
+
+The study was a population-based time series analysis.
+Data were obtained from the Primary Care Registry and National Drug Prescription Registry of the Icelandic Directorate of Health, and Landspítali University Hospital's patient registry.
+The Primary Care Registry contains information on all primary care visits in Iceland.
+Visits associated with International Classification of Diseases, 10th revision (ICD-10) diagnostic codes compatible with AOM and visits associated with chapters of the ICD-10 diagnostic coding system were extracted as synthetic controls (Table 1).
+The observation period was restricted to 1 January 2005 to 31 December 2015, as the Primary Care Registry was not updated for 2016 and 2017.
+All outpatient antimicrobial prescriptions were extracted from the National Drug Prescription Registry using Anatomical Therapeutic Chemical code J01 and linked to AOM visits through personal identification numbers.
+AOM visits associated with antimicrobial prescriptions were used as an alternate case-definition in sensitivity analyses. 
+
+Data regarding hospitalized pneumonia and IPD were obtained from Landspitali University Hospital's patient registry for the period 2005-2017.
+Hospitalized pneumonia was defined as any hospital admission associated with ICD-10 diagnostic codes compatible with pneumonia (Table 1).
+Hospitalized IPD was defined based on microbiological data, were extracted from a database maintained by the Department of Clinical Microbiology at Landspitali University Hospital and linked to the patient registry.
+Hospitalized IPD was defined as any hospital admission associated with culture or PCR-confirmed *Streptococcus pneumoniae* sampled from joint fluid, bone, cerebrospinal fluid or blood, regardless of ICD-10 discharge diagnosis.
+Hospitalizations associated with chapters of the ICD-10 diagnostic coding system were extracted as synthetic controls (Table 1).
+
+```{r table-icd-synthetic}
+kable(
+    x = data.frame(
+    stringsAsFactors = FALSE,
+    group = c(
+        "Outcomes and alternatives", "", "", "", "", "", "", "", "",
+        "ICD-10 chapters", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+        "Other grouped and specific outcomes", "", "", "", "", "", "", "", "", ""
+    ),
+    icd.code = c(
+        "H65, H66, H70, H72",
+        "H65, H66, H70, H72, and antimicrobial prescription",
+        "H66",
+        "J12, J13, J14, J15, J16, J17, J18",
+        "J13, J15.8, J15.9, J18.1, J18.8, J18.9",
+        "J13, J15.8, J15.9, J18.1, J18.8, J18.9, and microbiological and radiographical testing",
+        "Any or none",
+        "Any or none",
+        "N10, N30.0, N39.0",
+    "A10-B99",
+    "C00-D48",
+    "D50-89",
+    "E00-99",
+    "G00-G99",
+    "H00-99",
+    "I00-99",
+    "K00-99",
+    "L00-99",
+    "M00-99",
+    "N00-99",
+    "P00-99",
+    "Q00-99",
+    "R00-99",
+    "S00-T99",
+    "U00-99",
+    "V00-Y99",
+    "Z00-99",
+    "J20-22",
+    "B20-24",
+    "E10-14",
+    "I60-64",
+    "A09, K52.9, K59.1, R19.7",
+    "P05-07",
+    "K35",
+    "K80",
+    "E86",
+    "A00-Z99"
+    ),
+    Description = c(
+        "Acute otitis media",
+        "Acute otitis media (alternate)",
+        "Acute otitis media (alternate)",
+        "Pneumonia",
+        "Pneumonia (alterante)",
+        "Pneumonia (alterante)",
+        "Positive pneumococcal culture or PCR from normally sterile site",
+        "Positive vaccine-type culture or PCR from normally sterile site (alterante)",
+        "Urinary tract infections (alterante)",
+    "Certain infectious and parasitic diseases",
+    "Neoplasms",
+    "Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism",
+    "Endocrine, nutritional and metabolic diseases",
+    "Diseases of the nervous system",
+    "Diseases of the eye and adnexa, Diseases of the ear and mastoid process",
+    "Diseases of the circulatory system",
+    "Diseases of the digestive system",
+    "Diseases of the skin and subcutaneous tissue",
+    "Diseases of the musculoskeletal system and connective tissue",
+    "Diseases of the genitourinary system",
+    "Certain conditions originating in the perinatal period",
+    "Congenital malformations, deformations and chromosomal abnormalities",
+    "Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",
+    "Provisional assignment of new diseases of uncertain etiology",
+    "Injury, poisoning and certain other consequences of external causes",
+    "External causes of morbidity",
+    "Factors influencing health status and contact with health services",
+    "Bronchitis, bronchiolitis and unspecified acute lower respiratory infection",
+    "HIV",
+    "Diabetes",
+    "Stroke",
+    "Gastroenteritis and Diarrhea",
+    "Premature delivery and low birth weight",
+    "Appendicitis",
+    "Cholelithiasis",
+    "Dehydration",
+    "All non-respiratory visits or hospitalizations"
+    ),
+    exclusions = c(
+        "-", "-", "-", "-", "-", "-", "-", "-", "-",
+        "A40.3, B95", "-", "-", "-", "G00-G04", "H10, H65, H66", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-",
+        "-", "-", "-", "-", "-", "-", "-", "-", "-", "J00-J99, F and O chapters"
+    )
+    ),
+    col.names = c("Group", "ICD-10", "Description", "Exclusions"),
+    caption = "The International Classification of Diseases, 10th revision (ICD-10) codes used to define disease states and synthetic controls used in the time series analyses. Acute otitis media (AOM) and pneumonia were used as outcome measures and each given two alternate case-definitions that were used in sensitivity analyses along with urinary tract infections. Outpatient antimicrobial prescriptions were obtained from the National Drug Prescription Registry and linked to visits using national identification numbers. Inpatient microbiological and radiographical testing was ascertained through cost data. All other codes were used as synthetic controls. When applicable, codes associated with pneumococcal infections were excluded from control groupings."
+    )
+```
+
+For each hospitalization or emergency department visit, a detailed breakdown of cost was available, which was extracted for each of the disease categories included in the study.
+No cost data was available for primary care visits.
+Because Children's Hospital Iceland's paediatric emergency department serves as a walk-in clinic for the greater capital area, the distribution of costs for otitis media visits to the emergency department was assumed to mirror that of primary care visits, and was used in its stead.
+The number of PHiD-CV10 doses purchased by the government and the unit price for each dose per calendar year were obtained directly from the Icelandic Directorate of Health.
+The yearly employment rate of individuals 15 to 24 years of age, 25 to 54 years of age and 55 to 64 years of age from 2011-2017 was extracted from Organization for Economic Cooperation and Development (OECD) Labour Force Statistics [@OECD2018], and the deciles of regular total wage for working Icelanders from 2011-2017 were obtained from Statistics Iceland.
+The consumer price index for medical care obtained from Statistics Iceland was used to convert all direct health care costs to 2015 price levels in Icelandic kronas.
+All costs were converted to United States Dollars (USD) using the official exchange rates of the Icelandic Central Bank.
+
+## Impact of PHiD-CV10
+
+The impact of PHiD-CV10 introduction on the incidence of pneumococcal disease was estimated using time series methods and the result used as an input for a cost-effectiveness analysis.
+This was accomplished using a previously published Bayesian time series methodology [@Bruhn2017; @Shioda2018a].
+The pre-vaccine period was defined as 1 January 2005 to 31 December 2010, and the post-vaccine period as 1 January 2013 to 31 December 2017.
+A transition period was included from 2011 to 2012.
+For each disease category and age-group, four models of PHiD-CV10 impact were estimated; an interrupted time series (ITS) with all non-respiratory visits or hospitalizations as an offset, ITS without offset, principal component analysis [@Shioda2018a], and a synthetic control model [@Bruhn2017].
+All were Bayesian Poisson models with observation specific random intercepts to account for over-dispersion.
+Each model utilized the pre-vaccine period to predict the monthly occurrence of the outcome of interest in the post-vaccine period, had the vaccination not occurred.
+These models were then combined using a Bayesian model-stacking procedure [@R-loo]. 
+The methods are described in more detail in the supplementary appendix.
+
+From the posterior predictive distribution of the stacked model, a total of 10,000 Markov chain Monte Carlo (MCMC) samples were drawn, representing the number of cases that would have occurred in the post-vaccine period, had the vaccine not been introduced.
+The first 2,000 MCMC draws were discarded for optimal burn-in. 
+For each of the remaining 8,000 draws, the rate ratio between the observed and predicted number of cases during the post-vaccine period was calculated, and the median and 95% credible intervals extracted from the resulting distribution of rate ratios.
+To estimate the onset of vaccine impact, the rate ratio was calculated over a rolling 12-month period, the first of which included 11-months of pre-vaccine data and one month of post-vaccine data.
+The number of cases prevented by the vaccine was calculated for each calendar-month, by subtracting the observed number of cases from each of the 8,000 MCMC draws.
+The cumulative sum of prevented cases was calculated, and the median and 95% credible intervals were extracted.
+
+## Cost-effectiveness analysis
+
+The cost-effectiveness of PHiD-CV10 introduction compared to no intervention was estimated from both the healthcare and societal perspectives using ecological post-implementation data.
+The societal perspective included both direct costs and indirect costs associated with productivity loss, while analysis from the health care perspective included only direct costs.
+Neither analysis included estimates of long-term sequelae or their associated costs.
+The time horizon was five years and both costs and cost-savings were discounted at a 3% discount rate.
+All costs were presented in constant 2015 USD.
+A summary of the cost-effectiveness parameters and assumptions are presented in Table 2. 
+
+```{r assumnptions}
+kable(
+    x = data.frame(
+    stringsAsFactors = FALSE,
+    parameter = c("Perspective", "Comparators", "Model", "Time horizon", "Price date", "Discount rate", "Cost of vaccine", "Cost of visit or hospitalization", "Wage", "Employment", "Days of work lost", "Vaccine uptake", "Vaccine coverage", "Serotype replacement", "Herd-effect"),
+    description = c("Healthcare, Societal", "PHiD-CV10 vs no vaccine", "Ecological time series", "5 years", "2015", "3%", "Directly observed", "Directly observed", "Observed", "Observed", "Estimated from observed hospital length of stay", "Implicitly included", "Implicitly included", "Implicitly included", "Implicitly included"),
+    distribution = c("-", "-", "-", "-", "-", "~ Triangle(0, 6)", "~ N(observed, 5 USD)", "Resampling with replacement", "~ logN(12.85, 0.35)", "~ Binomial(observed)", "Resampling with replacement from hospital length of stay + ~Pois(1/2 hospital length of stay)", "-", "-", "-", "-"
+    ) 
+    ),
+    col.names = c("Parameter or Assumption", "Description", "Distribution"),
+    caption = "A summary of the parameters and assumptions of the cost-effectiveness analysis. All costs were first adjusted to constant 2015 values and converted to United States Dollars (USD). The cost of the vaccine, visits and hospitalizations were directly observed. The possible vaccine costs were assumed to follow a normal distribution with mean equal to the observed costs, and the standard deviation equal to 5 USD. The distribution of costs associated with visits and hospitalizations was empirically estimated using resampling with replacement. Wage and employment rates were obtained from Statistics Iceland. Wage was optimally fitted using a lognormal distribution as shown. "
+    )
+```
+
+
+The direct cumulative savings associated with PHiD-CV10 introduction were calculated by multiplying the predicted number of prevented cases from the Bayesian time series analysis with the expected cost of each case. 
+The expected cost was obtained through sampling with replacement from the observed costs extracted from Landspitali University Hospital's patient registry.
+The sampling was stratified by disease category and age-group.
+The direct costs associated with the introduction of PHiD-CV10 into the paediatric immunization programme were calculated for each calendar-year by multiplying the number of purchased doses by the price of each purchased dose.
+Wastage was taken into account, as this formula included doses that were for whatever reason never administered.
+Additional administration costs were however not assumed, as each dose was administered by nurses during the same visits that other established vaccines were being given.
+The direct costs associated with the vaccine were subtracted from the direct cumulative savings to obtain the final estimate of the total cost.
+This resulted in 8,000 posterior draws of the total cost, from which the median and 95% credible intervals were extracted.
+
+Indirect costs due to productivity loss were accounted for in the analysis from the societal perspective. 
+The deciles of wage that were extracted from Statistics Iceland were optimally fitted to a lognormal distribution to obtain a continuous distribution of wage [@R-rriskDistributions].
+The number of days of work lost were assumed.
+For each case of otitis media in primary care, the days of work lost by a parent or guardian were assumed to follow a Poisson distribution with mean equaling one.
+For each pneumonia or invasive pneumococcal disease hospitalization, the days of work lost were assumed to equal the sum of the hospital length of stay and a variable time following discharge.
+For each prevented case, the associated hospital length of stay was sampled with replacement from the observed length of stay obtained from the patient registry.
+This variable time was assumed to be Poisson distributed with mean equal to half the observed hospital length of stay.
+The indirect costs were calculated by multiplying the days of work lost with wages sampled from the lognormal wage distribution, accounting for unemployment.
+Cost-effectiveness was summarized with incremental cost-effectiveness ratios (ICER) with 95% credible intervals.
+
+## Sensitivity analysis
+
+Sensitivity analyses were conducted for both the PHiD-CV10 impact models and the cost-effectiveness analysis.
+The Bayesian approach used to estimate the cost-effectiveness produces a posterior predictive distribution that includes the uncertainty associated with the input parameters.
+Four sensitivity analyses were performed to validate the robustness of the impact models.
+
+Firstly, the sensitivity of the impact models to the choice of pre-vaccine period was evaluated by iteratively choosing three year pre-vaccine periods (2005-2007, 2006-2008, 2007-2009, and 2008-2010) and refitting the models for each disease category and age-group.
+Secondly, the robustness of the synthetic control models with regards to the included covariates was evaluated by removing the top covariate and re-estimating the rate ratio.
+This was done iteratively three times and the resulting three rate ratios were compared to the one obtained in the main analysis.
+Thirdly, several different case-definitions for each disease category were explored in separate sensitivity analyses. 
+The models were refitted with two additional definitions of otitis media (visits with ICD-10 code H66 only, and visits with ICD-10 codes H65, H66, H70, H72, associated with a filled antimicrobial prescription), and two additional definitions of pneumonia (hospitalizations with ICD-10 codes J13, J15.8, J15.9, J18.1, J18.8 and J18.9; and hospitalizations with ICD-10 codes J13, J15.8, J15.9, J18.1, J18.8 and J18.9 in which microbiological and radiological examinations had been performed).
+The impact of PHiD-CV10 on vaccine-type IPD was also evaluated.
+Finally, the models were re-fitted with urinary tract infections as the outcome variable to evaluate the specificity of the results with regard to infections likely to be caused by pneumococcus.
+
+# Results
+
+### Population impact on acute otitis media among children younger than 20 years of age
+
+From 1 January 2005 to 31 December 2015, children younger than 20 years of age visited primary care physicians 164,453 times for AOM and its complications.
+The monthly number of AOM visits during the post-vaccine period was lower than average in all age-groups.
+Overall visits also decreased during the post-vaccine period, but the degree by which visits for AOM decreased was larger in magnitude (Supplementary Figure 1).
+
+The posterior predicted AOM visits and 95% credible intervals are shown in Figure 1.
+With few exceptions, the observed number of AOM visits were fewer than predicted in the post-vaccine period, indicating that the vaccine prevented visits from occurring.
+The posterior predictions of each component model are shown in Supplementary Figure 2, and the weights used to produce the final stacked model are presented in Supplementary Table 1.
+
+(ref:figure25) The observed and predicted number of AOM visits from 1 January 2005 to 31 December 2015 for each age-group. Observed visits are illustrated as black points, the posterior predicted visits are presented as lines and 95% credible intervals as a shaded area. The start of the vaccine period is delineated with a vertical black dotted line. The distance between the observed and predicted visits for each calendar-month is depicted with a thin black line. Assuming that the model is correct and that no intervention had taken place, the black points would have an equal probability of occurring above and below the prediction line. Points below the lower bound of the shaded area would then represent observations that would have had less than a 2.5% probability of occurring. Given that the majority of points are located below the prediction line, and many located below the lower bound of the shaded area, the figure suggests that the vaccine resulted in fewer AOM visits. Note that the scale of the Y-axis differ between age-groups.
+
+```{r aom-stacked-predictions, fig.cap = "(ref:figure25)"}
+include_graphics(path = "_figures/paper_6/paper_6_otitis_media/2019-02-01-stacked-models.png")
+```
+
+
+The 95% credible interval of the rate ratio between the observed and predicted number of AOM visits was lower than one in all age-groups, indicating that there was a 97.5% or greater probability that the rate of AOM decreased due to the introduction of PHiD-CV10 in all age-groups (Table 3).
+The decrease was largest among young children; 16% (12%-36%) in children younger than one year of age and 18% (5%-42%) in children one year of age.
+A 12-month rolling rate ratio between the observed and predicted number of AOM cases is presented in Panel A of Figure 2.
+Visually, the rate of AOM cases among children younger than one seems to begin to decline in January 2012, and cases among children one year of age seems to decline in July 2012.
+
+```{r table-paper6-aom-results-summary}
+kable(
+    x = data.frame(
+    age_groups = fct_relevel(
+    c("0y", "1y", "2y", "3-4y", "5-9y", "10-14y", "15-19y"),
+    "0y",
+    "1y",
+    "2y",
+    "3-4y",
+    "5-9y",
+    "10-14y",
+    "15-19y"
+    ),
+    stacking_estimate = c(
+    "0.74 (0.64-0.88)",
+    "0.72 (0.58-0.95)",
+    "0.88 (0.66-0.98)",
+    "0.86 (0.69-0.97)",
+    "0.88 (0.73-0.96)",
+    "0.83 (0.75-0.92)",
+    "0.89 (0.56-0.98)"
+    ),
+    cumulative_prevented = c(
+    "3,234 (1,008 to 5,195)",
+    "5,802 (817 to 11,526)",
+    "900 (-185 to 3,817)",
+    "1,702 (21 to 3,576)",
+    "979 (229 to 2,521)",
+    "720 (411 to 1,086)",
+    "430 (210 to 1,689)"
+    ),
+    direct_savings = c(
+    "305,330\\$ (90,933\\$ to 514,848\\$)",
+    "530,468\\$ (57,564\\$ to 1,150,759\\$)",
+    "92,117\\$ (-52,649\\$ to 407,227\\$)",
+    "135,274\\$ (-16,985\\$ to 357,905\\$)",
+    "134,548\\$ (-38,612\\$ to 430,729\\$)",
+    "113,333\\$ (4,669\\$ to 285,816\\$)",
+    "55,819\\$ (-8,278\\$ to 227,493\\$"
+    ),
+    indirect_savings = c(
+    "45,386\\$ (11,143\\$ to 84,654\\$)",
+    "74,298\\$ (3,778\\$ to 193,180\\$)",
+    "14,377\\$ (-11,004\\$ to 64,562\\$)",
+    "23,880\\$ (-4,324\\$ to 62,811\\$)",
+    "14,242\\$ (-1,030\\$ to 40,961\\$)",
+    "10,313\\$ (-3,098\\$ to 20,035\\$)",
+    "6,169\\$ (698\\$ to 25,248\\$)"
+    )
+    ),
+    col.names = c(
+    "Age-group",
+    "Rate ratio (95% CI)",
+    "Cumulative cases prevented (95% CI)",
+    "Direct savings (95% CI)",
+    "Indirect savings (95% CI)"
+    ),
+    caption = "The rate ratio between observed and predicted number of primary care visits due acute otitis media and complications (AOM) during the post-vaccine period (2013-2015), is presented with 95% credible intervals (95% CI) for the seven age-groups included in the study. The predicted cumulative number of prevented cases as of 1 December 2015 is also presented. A negative number indicates that there is a non-zero probability that the vaccine caused more AOM visits to occur. Direct and indirect savings are presented in 2015 USD."
+    )
+```
+
+The cumulative number of prevented AOM cases reflect both the rate of AOM cases in each age-group, and the consistency and magnitude of the vaccine effect.
+The cumulative prevented cases per age-group as of December 2015 are presented in Table 3.
+The largest effects are seen in the youngest age-groups, who both had the highest baseline rates and experienced the largest relative declines following vaccine introduction.
+The cumulative number of prevented cases as a function of time during the post-vaccine period is shown in Panel B of Figure 2.
+
+(ref:figure26) The impact of the 10-valent *Haemophilus influenzae* protein D pneumococcal conjugate vaccine (PHiD-CV10) on acute otitis media and complications (AOM) among children younger than 20 years of age is summarized. In Panel A, the estimated 12-month rolling rate ratio between observed and predicted AOM cases is shown per age-group, and the 95% credible intervals (CI) are illustrated as a shaded area. Panel B depicts the cumulative number of prevented AOM cases during the post-vaccine period (2011-2015) for each age-group, along with 95% CI. The total cumulative prevented AOM cases regardless of age-group is shown in Panel C.
+
+```{r aom-summary, fig.cap = "(ref:figure26)"}
+include_graphics(path = "_figures/paper_6/paper_6_otitis_media/2019-02-01-cum-arranged.png")
+```
+
+Sensitivity analyses did not reveal important inconsistencies regarding the underlying modeling assumptions.
+The result was invariant to different case-definitions, the inclusion of different controls and different pre-vaccine periods.
+Additionally, the time series framework did not predict a decrease in urinary tract infections (Supplementary appendix).
+
+### Population impact on pneumonia hospitalizations
+
+From 1 January 2005 to 31 December 2017, 13,373 hospitalizations for pneumonia were recorded.
+Monthly pneumonia hospitalizations displayed complex trends over the study period.
+Pneumonia hospitalizations increased fairly rapidly during the pre-vaccine period among adults 40 years and older, and subsequently decreased at variable times in the post-vaccine period.
+Similarly, hospitalizations regardless of diagnosis increased among adults 20 years and older during the pre-vaccine period (Supplementary Figure 3).
+
+The predicted number of cases and 95% credible intervals are are shown in Figure 3.
+During most of the post-vaccine period, the observed number of hospitalizations were equal to or below the prediction line among children zero to four years of age, and among adults 20 to 39, 65-79 and 80 years of age and older.
+The posterior predictions of the component models are shown in Supplementary Figure 4 and the weights used to produce the final stacked model are presented in Supplementary Table 1.
+
+(ref:figure29) The observed and predicted number of pneumonia hospitalizations from 1 January 2005 to 31 December 2017 for each age-group. Observed cases are illustrated as black points. The predicted number of hospitalizations are presented as lines and 95% credible intervals as a shaded area. The start of the vaccine period is delineated with a vertical black dotted line. The distance between the observed and predicted cases for each calendar-month is depicted with a thin black line. Assuming that the model is correct and that no intervention had occurred, the black points would have an equal probability of appearing above and below the prediction line. Given that the majority of points are located below the prediction line, the figure suggests that the vaccine resulted in fewer pneumonia hospitalizations. Note that the scale of the Y-axis differ between age-groups.
+
+```{r pneumonia-stacked-predictions, fig.cap = "(ref:figure29)"}
+include_graphics(path = "_figures/paper_6/paper_6_pneumonia/2019-02-02-stacked-models.png")
+```
+
+The rate ratios between the observed and predicted number of pneumonia hospitalizations are shown in Table 4.
+Among children zero to four years of age, the posterior median of the rate ratio was 0.67, and the 2.5% credible limit was 0.51.
+This was consistent with a 2.5% probability that the rate ratio was lower than 0.51 and a 47.5% probability that the rate ratio laid between 0.51 and 0.67.
+Though the 97.5% credible limit was above the threshold value of one, there was a 94% probability that the rate ratio was lower than one, and a 90% probability that it was lower than 0.83.
+Similarly the posterior median of the rate ratio was 0.74 among children five to 19 years of age, and there was a 90% probability that the rate ratio was lower than one.
+Among adults 65 to 79 years of age, and 80 years of age and older, the posterior median of the rate ratio was 0.75 and 0.76 respectively, and both had a 97% probability of being lower than one. 
+
+A 12-month rolling rate ratio between the observed and predicted number pneumonia hospitalizations is presented in Panel A of Figure 4.
+Visually, the rate of pneumonia hospitalizations among children zero to four years of age seems to begin to decline in January 2012 (the first rolling 12-month period to include only post-vaccine months), and hospitalizations among adults 65 years of age and older seems to begin to decline in January 2014.
+
+```{r table-paper6-pneumonia-results-summary}
+kable(
+    x = data.frame(
+    age_groups = fct_relevel(
+    c("0-4y", "5-19y", "20-39y", "40-64y", "65-79y", "80+"),
+    "0-4y",
+    "5-19y",
+    "20-39y",
+    "40-64y",
+    "65-79y",
+    "80+"
+    ),
+    stacking_estimate = c(
+    "0.67 (0.51-1.39)", #94
+    "0.74 (0.54-1.35)", #90
+    "0.68 (0.51-0.95)", #98.5
+    "0.92 (0.79-1.22)", #77.5
+    "0.75 (0.55-1.02)", #96.5
+    "0.76 (0.56-1.02)" #96.5
+    ),
+    cumulative_prevented = c(
+    "142 (-115 to 307)",
+    "52 (-27 to 113)",
+    "182 (14 to 384)",
+    "141 (-270 to 445)",
+    "666 (-49 to 1,648)",
+    "631 (-76 to 1,615)"
+    ),
+    direct_savings = c(
+    "444,533\\$ (-44,181\\$ to 1,309,917\\$)",
+    "234,848\\$ (-236,236\\$ to 748,522\\$)",
+    "968,662\\$ (-203,048\\$ to 2,567,059\\$)",
+    "933,290\\$ (-2,748,49\\$ to 4,848,557\\$)",
+    "5,476,585\\$ (-910,021\\$ to 15,590,280\\$)",
+    "4,664,256\\$ (-817,266\\$ to 13,013,699\\$)"
+    ),
+    indirect_savings = c(
+    "52,535\\$ (-59,043\\$ to 136,715\\$)",
+    "20,472\\$ (-18,876\\$ to 61,481\\$)",
+    "70,071\\$ (-9,442\\$ to 164,747\\$)",
+    "71,953\\$ (-113,414\\$ to 223,171\\$)",
+    "323,964\\$ (-4,745\\$ to 786,252\\$)",
+    "287,270\\$ (-37,961\\$ to 742,168\\$)"
+    )
+    ),
+    col.names = c(
+    "Age-group",
+    "Rate ratio (95% CI)",
+    "Cumulative cases prevented (95% CI)",
+    "Direct savings (95% CI)",
+    "Indirect savings (95% CI)"
+    ),
+    caption = "The posterior median of the rate ratio between observed and predicted number pneumonia hospitalizations during the post-vaccine period (2013-2017) is presented with 95% credible intervals (95% CI) for the six age-groups included in the study. The predicted cumulative number of prevented cases as of 1 December 2017 is also presented. A negative number indicates that there is a non-zero probability that the vaccine caused more pneumonia hospitalizations to occur. Direct and indirect savings are presented in 2015 USD."
+    )
+```
+
+The cumulative prevented pneumonia hospitalizations per age-group as of December 2017 are presented in Table 4.
+The largest effects were seen in adults 65 years of age and older, which reflects the baseline number of cases.
+The predicted cumulative number of prevented hospitalizations as a function of time during the post-vaccine period is shown in Panel B of Figure 4.
+
+(ref:figure30) The population impact of the 10-valent *Haemophilus influenzae* protein D pneumococcal conjugate vaccine (PHiD-CV10) on pneumonia hospitalizations is summarized. In Panel A, the estimated 12-month rolling rate ratio between observed and predicted pneumonia hospitalizations is shown per age-group, and the 95% credible intervals (CI) are illustrated as a shaded area. Panel B depicts the cumulative number of prevented pneumonia hospitalizations during the post-vaccine period (2011-2017) for each age-group along with 95% CI. The total cumulative prevented pneumonia hospitalizations regardless of age-group is shown in Panel C.
+
+```{r pneumonia-summary, fig.cap = "(ref:figure30)"}
+include_graphics(path = "_figures/paper_6/paper_6_pneumonia/2019-02-01-cum-arranged.png")
+```
+
+Sensitivity analysis revealed that stricter definitions of pneumonia resulted in more significant declines than the base-case analysis.
+Some component models became unstable when only three years (2005-2007) of pre-vaccine data were used to fit them. 
+The time series methodology did not predict a decrease in urinary tract infections (Supplementary appendix).
+
+### Population impact on hospital admissions for invasive pneumococcal disease
+
+From 1 January 2005 to 31 December 2016, 338 hospitalizations for culture confirmed invasive pneumococcal disease were recorded.
+Of those, 206 occurred before the introduction of PHiD-CV10 into the paediatric immunization programme in Iceland.
+Standardized hospitalizations for IPD decreased among children zero to four years of age, while standardized hospital admissions regardless of cause did not decrease to the same extent (Supplementary Figure 5).
+Discrepancies between hospital admissions for IPD and all-cause hospitalizations were also noted in the other age-groups.
+Hospitalizations for IPD among individuals five to 64 years of age decreased while all-cause hospitalizations remained stable.
+While hospital admissions for IPD among adults 65 years of age and older did not change visibly, the standardized all-cause hospitalizations increased, suggesting a relative decline in IPD admissions (Supplementary Figure 5).
+
+The posterior prediction of IPD hospitalizations and 95% credible intervals are are shown in Figure 5.
+Among children zero to four years of age, observed IPD hospitalizations were equal to or fewer than the predicted hospitalizations in all but two quarters.
+Similarly, observed hospitalizations among individuals five to 64 years of age were fewer than predicted more often than expected.
+Both suggest that the vaccine prevented cases from occurring.
+The posterior predictions of the component models are shown in Supplementary Figure 5 and the stacking weights are shown in Supplementary Table 1.
+
+(ref:figure33) The observed and predicted number of IPD hospitalizations from 1 January 2005 to 31 December 2016 for each age-group. Observed cases are illustrated as black points, and the predicted number of cases are presented as lines with 95% credible intervals as a shaded area. The start of the vaccine period is delineated with a vertical black dotted line. The distance between the observed and predicted cases for each year-quarter is depicted with a thin black line. Assuming that the model is correct and no intervention had taken place, the black points would have an equal probability of occurring above and below the prediction line. Given that the majority of points are located below the prediction line, the figure suggests that the vaccine resulted in fewer IPD hospitalizations.
+
+```{r ipd-stacked-predictions, fig.cap = "(ref:figure33)"}
+include_graphics(path = "_figures/paper_6/paper_6_ipd/2019-02-02-stacked-models.png")
+```
+
+The rate ratios between the observed and predicted number of IPD hospitalizations in the post-vaccine period are shown in Table 5.
+The posterior median of the rate ratio for children younger than five years of age was 0.27, corresponding to a 50% probability that the vaccine impact was greater than or equal to 73%. 
+The 95% credible intervals of the rate ratio were wide, reflecting the uncertainty due to the few number of IPD hospitalizations. 
+However, 90% of the MCMC draws of the rate ratio were below 0.75 and 93% were under the threshold value of one. 
+The 95% credible interval of the rate ratio among individuals five to 64 years of age was lower than one, indicating a 97.5% or greater probability that the rate of IPD hospitalization decreased in this age-group following the introduction of PHiD-CV10. 
+
+The 12-month rolling rate ratio is presented in Panel A of Figure 6.
+The rolling rate ratio for children zero to four years of age was unstable due to numerical issues with both the numerator and the denominator.
+In some 12-month periods, no IPD hospitalizations were observed and the resulting rate ratio was zero regardless of the denominator.
+In other periods, 2.5% or more of the MCMC draws predicted zero IPD hospitalizations, which resulted in a 95% credible intervals of the rate ratio that extended towards infinity.
+These issues do not change the overall interpretation of the prediction line presented in Panel A of Figure 6.
+
+```{r table-paper6-ipd-results-summary}
+kable(
+    x = data.frame(
+    age_groups = fct_relevel(
+    c("0-4y", "5-64y", "65y+"),
+    "0-4y", "5-64y", "65y+"),
+    stacking_estimate = c(
+    "0.27 (0.05-3.00)",
+    "0.44 (0.31-0.68)",
+    "0.94 (0.62-1.53)"),
+    cumulative_prevented = c(
+    "14 (-2 to 67)",
+    "29 (1 to 65)",
+    "10 (-16 to 45)"),
+    direct_savings = c(
+    "227,087\\$ (71,363\\$ to 618,919\\$)",
+    "321,424\\$ (-455,573\\$ to 1,649,171\\$)",
+    "73,395\\$ (-256,856\\$ to 516,864\\$)"
+    ),
+    indirect_savings = c(
+    "16,882\\$ (6,893\\$ to 38,718\\$)",
+    "12,983\\$ (-3,606\\$ to 33,498\\$)",
+    "4,340\\$ (-10,903\\$ to 23,543\\$)"
+    )
+    ),
+    col.names = c(
+    "Age-group",
+    "Rate ratio (95% CI)",
+    "Cumulative cases prevented (95% CI)",
+    "Direct savings (95% CI)",
+    "Indirect savings (95% CI)"
+    ),
+    caption = "The rate ratio between observed and predicted number of hospital admissions for invasive pneumococcal disease (IPD) during the post-vaccine period (2013-2016) is presented along with 95% credible intervals (95% CI) for the three age-groups. The predicted cumulative number of prevented cases as of 1 December 2016 is also presented. A negative number indicates that there is a non-zero probability that the vaccine caused more IPD hospitalizations to occur. Direct and indirect savings are presented in 2015 USD."
+    )
+```
+
+The cumulative prevented IPD hospitalizations per age-group as of December 2016 are presented Table 5, and are shown as a function of time in Panel B of Figure 6.
+The posterior median of the cumulative prevented cases increases from the beginning of the post-vaccine period among children zero to four years of age.
+
+(ref:figure34) The population impact of the 10-valent *Haemophilus influenzae* protein D pneumococcal conjugate vaccine (PHiD-CV10) on hospital admissions for invasive pneumococcal disease is summarized. In Panel A, the estimated 12-month rolling rate ratio between the observed and predicted number of IPD hospitalizations in the post-vaccine period (2011-2016) is shown per age-group. Panel B depicts the cumulative number of prevented IPD hospitalizations during the post-vaccine period (2011-2015) for each age-group along with 95% credible intervals. The total cumulative prevented IPD hospitalizations regardless of age-group is shown in Panel C.
+
+```{r ipd-summary, fig.cap = "(ref:figure34)"}
+include_graphics(path = "_figures/paper_6/paper_6_ipd/2019-02-02-cum-arranged.png")
+```
+
+Sensitivity analyses using restricted pre-vaccine periods were not possible as the models did not fit with such small amount of data.
+The results did not change with the inclusion of different controls (supplementary appendix).
+
+## Cost-effectiveness of PHiD-CV10
+
+The total cost of introducing PHiD-CV10 into the Icelandic paediatric immunization programme from 1 January 2011 to 31 December 2017 was 3,451,805\$ in constant 2015 USD.
+When direct cost-savings due to reductions in primary acre visits for AOM, and hospital admissions for pneumonia and invasive pneumococcal disease were included, the cost of the PHiD-CV10 introduction was -7,463,176\$ (95% credible intervals -16,159,551\$ to -582,135\$) from the healthcare perspective as of 31 December 2015.
+This means that the immunization programme was cost-saving by 7,463,176\$.
+Including days of work lost, the total cost of including PHiD-CV10 in the paediatric immunization programme from the societal perspective was -8,164,894\$ (95% credible interval -17,197,959\$ to -1,004,553\$) as of 31 December 2015.
+
+Given the observed distribution of costs associated with each AOM visit, the direct savings resulting from vaccine-prevented AOM visits was 1,389,900\$ (95% credible interval 704,319\$ to 2,201,925\$).
+The vaccine introduction prevented 10,911 days of work lost due to AOM (95% credible interval 5,116 to 18,801), which translated to 194,152\$ (95% credible interval 78,200\$ to 364,155\$) in productivity gains.
+The direct and indirect savings resulting from prevented AOM visits are shown in Table 3.
+Including only direct costs from averted visits and hospitalizations, the ICER was -543\$ (95% credible interval -1,508\$ to -48\$) per prevented AOM case from the healthcare perspective. 
+The corresponding ICER including indirect costs was -594\$ (95% credible interval -1,597\$ to -76\$) per AOM case prevented.
+
+The direct savings resulting from vaccine-prevented pneumonia hospitalizations was 13,330,902\$ (95% credible interval 2,933,955\$ to 26,270,332\$), given the observed distribution of costs associated with each hospitalization, 
+If the vaccine is assumed to have no other benefits than preventing pneumonia hospitalizations, and only the direct costs are considered, the ICER was -5,315\$ (95% credible interval -8,877\$ to 711\$) per prevented pneumonia hospitalization, indicating a net savings of 5,315\$ for each prevented hospitalization from the healthcare perspective.
+The immunization programme prevented 29,969 days of work lost (95% credible interval 9,964 to 52,900), which translated to 838,952\$ (95% credible interval 273,559\$ to 1,493,478\$) in productivity gains.
+The direct and indirect savings resulting from prevented pneumonia hospitalizations are shown in Table 4.
+When cost-savings due to reductions in AOM visits or hospital admissions for IPD were also included,The ICER per prevented pneumonia hospitalization -5,640\$ (95% credible interval -10,336\$ to -1,032\$) from the healthcare perspective as of 31 December 2015.
+Additionally including loss of work resulted in an ICER of -7,440\$ (95% credible interval -13,701\$ to -1,175\$).
+
+The direct savings resulting from vaccine-prevented hospitalizations of IPD was 673,008\$ (95% credible intervals -189,654\$ to 2,081,594\$).
+The vaccine introduction prevented 1,280 days of work lost (444 to 2,410) due to IPD, which translated to 35,280\$ (95% credible intervals 9,437\$ to 70,609\$) in productivity gains.
+The direct and indirect savings resulting from prevented hospitalizations for IPD are shown in Table 4.
+When cost-savings due to reductions in AOM visits or hospital admissions for pneumonia were also included, the ICER was -119,992\$ (95% credible interval -387,183\$ to -9,542\$) per prevented IPD hospitalization from the health care perspective.
+When days of work lost were also considered, the ICER was -130,791\$ (95% credible interval -416,004\$ to -15,860\$) per prevented IPD hospitalization. 
+
+# Discussion
+
+This population-based time series analysis demonstrated a direct and indirect impact of PHiD-CV10 introduction on AOM, pneumonia and IPD in Iceland.
+The results were robust to sensitivity analyses, which did not reveal evidence of significant confounding, and some scenarios showing a larger effect than the base analysis.
+After considering savings due to prevented episodes of pneumococcal infections, the PHiD-CV10 programme was shown to be cost-saving from both the healthcare and societal perspectives.
+
+The study is strengthened by its long observation period and the completeness of the underlying data.
+Six years of pre-vaccine data were available and were used to estimate secular trends occurring before the implementation of the vaccine.
+Between five and seven years of post-implementation data were included depending on the outcome being considered.
+Both periods are longer than most previous observational studies of PCV impact [@Bruhn2017; @Tsaban2017].
+
+The underlying population-based data is of high quality.
+All primary care centers use the same electronic medical record system and the same ICD-10 diagnostic coding system as Landspitali University Hospital and Children's Hospital Iceland, and both systems have been in exclusive use during the entire study period.
+The Primary Care Registry of the Icelandic Directorate of Health contains data on all primary care contacts in the country.
+Though Landspitali University Hospital is a single center, it is the sole tertiary hospital in Iceland, and includes Children's Hospital Iceland -- Iceland's only pediatric hospital.
+It provides primary and secondary care for the capital area, approximately 65% of the Icelandic population, and tertiary care for the whole population.
+In 2017, the total number of non-psychiatric curative care hospital beds in Iceland was 732 (www.statice.is).
+Of those, 669 (91%) were at Landspitali University Hospital.
+
+## Direct and indirect impact of PHiD-CV10 on acute otitis media
+
+We estimated the vaccine impact separately for children younger than one, one, two, three to four, five to nine, 10-14 and 15-19 years of age, and demonstrated a large direct and indirect impact.
+The direct impact was 26% among children younger than one year of age, 28% among one year olds, 12% among two year olds and 14% among children three to four years of age.
+The indirect impact was 12%, 17% and 11% in children five to nine, 10-14 and 15-19 years of age respectively. 
+For these estimates, the 95% credible intervals did not cross the ratio value of one, which translates to a 97.5% or higher probability that the impact was larger than or equal to 1%.
+
+Two systematic reviews of the impact of PCV on AOM have been published [@Taylor2012a; @Vojtek2017].
+Of the nine observational studies that evaluated the impact of PCV on otitis media, only three  adjusted for secular trends [@Grijalva2006; @Lau2015; @Marom2014].
+@Lau2015 used an interrupted time series approach to estimate the sequential impact of PCV7 and PCV13 on otitis media in general practice, and reported a 21.8% reduction in the rate of otitis media visits in children younger than 10 years of age.  
+@Marom2014 and @Grijalva2006 calculated rate ratios of otitis media visits between children younger than two years of age and children three to six years of age, and estimated the impact to be 20% and 27% respectively.
+Only two previous studies have suggested indirect protection of PCV against AOM [@Ben-Shimol2014; @Sigurdsson2018].
+Both reported fewer episodes among children younger than four months of age, who were too young to have received direct protection from PCV.
+@Ben-Shimol2014 described a decrease in positive pneumococcal cultures from samples taken from the middle ear of children in this age-group, and @Sigurdsson2018 noted fewer primary care diagnosed AOM episodes.
+
+Our study builds upon the literature by providing population-based estimates of direct and indirect PCV impact on AOM that is adjusted for several controls and for secular trends.
+Furthermore, extensive sensitivity analyses demonstrated that the result was robust to different case definitions of AOM, and that no spurious decline was observed in urinary tract infections.
+
+## Direct and indirect impact of PHiD-CV10 on pneumonia
+
+We demonstrated a 33% impact on hospitalized pneumonia among children zero to four years of age.
+Though the 97.5% credible limit was below the threshold value of 0%, the data was consistent with a 94% probability that the impact was larger than 1%, and a 90% probability that the impact was larger than 17%.
+The cumulative number of prevented hospital admissions for pneumonia in this age-group during the first seven years of the post-vaccine period was 142 (95% credible intervals -115 to 307) -- an impressive decline considering that the baseline rate of pneumonia hospitalization was 65-75 per year in this age-group.
+The indirect impact on pneumonia hospitalizations in children five to 19 years of age was 26%, and was 32% among adults 20-39 years of age, 25% among adults 65-79 years of age and 24% among adults 80 years of age and older.
+Additionally, our data was consistent with a 8% impact among adults 40-64 years of age with a 77.5% probability that the impact was equal to or larger than 1%.
+The posterior estimate of impact for children five to 19 years of age was compatible with a 90% probability that the impact was equal to or larger than 1%.
+
+According to a recent systematic review and meta-analysis, the average direct vaccine impact on clinical pneumonia was 17% (95%CI 11% to 22%) [@Alicino2017].
+Of the observational studies identified by the systematic review, three were population-based [@Berglund2014; @Nair2016; @Saxena2015]. 
+Only two of identified studies discussed or attempted to adjust for secular trends [@Sgambatti2016; @Simonsen2014].
+The methods used in our study are based on @Bruhn2017, who demonstrated their method using data on pneumonia hospitalizations in five countries; Brazil, Chile, Ecuador, Mexico and the United States, before and after the introduction of PCV7 and PHiD-CV10 and showed a 14% to 45% impact on pneumonia hospitalizations among children younger than 12 months of age.
+
+To our knowledge, only seven previous publications have examined the indirect impact of pneumococcal conjugate vaccines on pneumonia hospitalizations among the unvaccinated population [@Andrade2017; @Bruhn2017; @Griffin2013; @Grijalva2007; @Jardine2010; @Simonsen2011; @Simonsen2014], five of which were identified by a recent systematic review [@Tsaban2017].
+Two of the included studies, @Simonsen2011 and @Griffin2013, did not adjust for secular trends.
+The results of the remaining five publications generally showed a reduction in the incidence of pneumonia hospitalizations in children five to 17 years of age, and among adults 18-39 and 40-64 years of age, though the exact bounds of the age-groups and point-estimates varied between studies.
+Impact estimates ranged from 3% to 24% among children five to 17 years of age; 0% to 26% among adults 18-39 years of age; and 0% to 19% among adults 40-64 years of age [@Andrade2017; @Bruhn2017; @Griffin2013; @Grijalva2007; @Jardine2010; @Simonsen2011; @Simonsen2014].
+All but two of the studies suggested an impact among adults 65 years of age and older, with estimates ranging from 3% to 15%, though none reached significance at the pre-specified alpha of 0.05.
+@Bruhn2017 reported the impact of PCV on pneumonia hospitalizations in five countries and divided the oldest age-group into adults 65-79 years of age and adults 80 years of age and older, as do we.
+Using a sophisticated synthetic-control methodology, they did not find evidence of impact among these age-groups. 
+
+Our findings of herd-effect among adults older than 65 years of age are discordant with @Bruhn2017 -- a publication that describes the methods employed in our study. 
+There are several possible reasons for this disagreement. 
+Our study examined the impact of PHiD-CV10, while theirs was primarily a study of PCV7.
+In Iceland, the uptake of PHiD-CV10 was immediately high, achieving over 97% uptake of the primary doses among vaccine eligible children [@Eythorsson2017].
+Contrast this with the United States where uptake of two primary doses was initially 18% in 2002 and increased to 46% in 2004 [@Mclaughlin2016].
+For the other countries included in @Bruhn2017, uptake for three doses during the first year of PCV introduction was 9% in Mexico, 17% in Ecuador, 55% in Chile, and 82% in Brazil [@Toscano2016].
+We included seven years of data following vaccine introduction, compared to two to five years of post-vaccine data in @Bruhn2017, which may have been needed for the indirect impact to present itself.
+
+Our results were consistent with a large direct and indirect impact on pneumonia hospitalizations.
+Sensitivity analyses revealed the result to be robust with regards to different case definitions, controls and pre-vaccine periods.
+
+## Direct and indirect impact of PHiD-CV10 on invasive pneumococcal disease
+
+We demonstrated that among individuals five to 64 years of age, the introduction of PHiD-CV10 prevented 29 (95% credible interval 1 to 65) cases of IPD serious enough to warrant hospital admission in the first seven years of the immunization program.
+Before the vaccine introduction, this population experienced 16 IPD hospitalizations per year.
+The rate ratio between the observed and predicted number of IPD hospitalizations was 0.44 (95% credible intervals 0.31-0.68), which translates to a 56% vaccine impact in this age-group and is compatible with a 99% probability that the impact is equal to or larger than 1%. 
+Examination of the rolling rate ratio presented in Figure 6, shows that impact was first detectable in the latter half of 2013, and achieved a 50% reduction in the beginning of 2014.
+Conversely, the evidence of herd-effect among adults 65 years of age and older was less clear.
+The cumulative number of prevented cases were 10 (95% credible intervals -16 to 45) and rate ratio was 0.94 (95% credible intervals 0.62-1.53), which is consistent with a 50% probability that the vaccine impact was 6% or larger in this age-group, and a 62.5% probability that the impact was equal to or larger than 1%.
+The rolling rate ratio presented in Figure 6 did not suggest an evolving trend towards an observable impact. 
+
+Two systematic reviews identified 262 observational studies published between 1 January 1994 and 6 January 2016 that examined the direct and indirect impact of PCV on vaccine-type and all-cause IPD [@Davis2013; @Shiri2017].
+The publication by @Shiri2017 was also a meta-analysis, which used a Bayesian mixed-effects model to translate the included studies into a single estimate. 
+The study demonstrated a yearly post-vaccine risk ratio of vaccine-type IPD of 0.79 (95% credible intervals 0.75-0.81), translating to a mean period to attain a 50% population reduction of vaccine-type IPD of 2.3 years (95% credible interval 1.9-2.7), and 8.9 years (95% credible interval 7.8-10.3) to attain a 90% reduction [@Shiri2017].
+When stratified by age-group, the yearly risk ratio of vaccine-type IPD was 0.77 among adults 65 years of age and older, and the time until 50% and 90% reduction was 4.1 and 10.3 years respectively.
+Interestingly, the results for IPD regardless of serotype were different.
+The yearly risk ratio for all age-groups was 0.99 (95% credible intervals 0.96-0.99) and the time until 50% and 90% reduction were not estimated.
+When stratified by age-group, the mean predicted reduction of all-cause IPD among adults 65 years of age and older was only 30% [@Shiri2017].
+
+Our findings are largely congruent with previous studies examining the herd-effect of PCV on all-cause IPD.
+We show a robust indirect protection among individuals five to 64 years of age, after adjusting for any secular trends in the pre-vaccine period, and the result is consistent with visual examination of the raw data (Figure 6).
+This is an important finding for policy decisions, as this age-group represents the population of working adults in any given country.
+Though our findings are consistent with slight decrease in IPD hospitalizations among adults 65 and older, the effect is not as obvious.
+While surprising, this result is consistent with the body of literature which seems to suggest a large and robust impact on vaccine-type IPD in this age-group, but a marginal impact on all-cause IPD [@Davis2013; @Shiri2017].
+Sensitivity analyses with regards to the inclusion of different controls did change the overall results.
+
+## Cost-effectiveness of PHiD-CV10
+
+Our results showed that the introduction of PHiD-CV10 was cost-saving by 7,463,176\$ in constant 2015 USD from the health care perspective.
+The direct cost of introducing the vaccine was 2,652,364\$ as of 31 December 2015.
+However, this cost was offset by the cost-savings associated with averted otitis media visits, pneumonia admissions and hospitalized IPD, which totaled 10,115,540\$.
+When the societal perspective was considered, and averted lost workdays were also included, the vaccine introduction was cost-saving by 8,164,894\$.
+The direct savings resulting from vaccine-prevented cases of AOM was 1,389,900\$.
+The incremental cost-effectiveness ratio per prevented case of AOM was -543\$ (95% credible interval -1,508\$ to -48\$) -- that is, the health care system's monetary gains exceeded the initial expenditure, resulting in each additional case averted saving rather than costing money.
+Similar numbers were seen for hospitalized disease. 
+The ICER for each additional prevented pneumonia hospitalization was -5,640\$ (95% credible interval -10,336\$ to -1,032\$) and  -119,992\$ (95% credible interval -387,183\$ to -9,542\$) per prevented IPD hospitalization.
+
+A large number of cost-effectiveness analyses of pneumococcal conjugate vaccines have previously been published [@Saokaew2016; @VandeVooren2014a; @Wu2015]. 
+Of those, 21 studies examined the cost-effectiveness of PHiD-CV10 or PCV13 [@Blank2012; @By2012; @Castiglia2017; @Chuck2010; @Delgleize2016; @Diez-Domingo2011; @Earnshaw2012b; @Gouveia2017; @Klok2013; @Knerer2012; @Kuhlmann2017; @Newall2011; @Newall2016; @OBrien2009a; @Robberstad2011; @Rozenbaum2010; @Rubin2010; @Strutton2012; @Talbird2010; @VanHoek2012; @Zhou2014].
+Our results are quantitatively similar to the body of cost-effectiveness literature of PCV. 
+Most show that introducing PCV into national immunization programs is cost-effective when compared to no vaccination. 
+However, our study improves on prior studies in several important ways.
+
+We included more granular data than have previously been incorporated into a cost-effectiveness analysis of PCV. 
+Because they are in essence predictive models, cost-effectiveness analyses are particularly sensitive to the accuracy of the modelling assumptions [@Gray2011].
+Most of the prior studies did not collect detailed data on vaccine uptake, serotype coverage, incidence of disease in the population, disease sequelae, or direct and indirect costs [@VandeVooren2014a; @Wu2015].
+Efficacies were based on the results of randomized controlled trials, but the existence and magnitude of herd-effect and serotype-replacement were usually based on assumptions and expert opinion [@VandeVooren2014a; @Wu2015].
+Utilities were invariably based on studies conducted in other populations and time-periods [@Herdman2016].
+Contrast this with our study, in which all inputs were directly measured in the population.
+
+Costs associated with the administration of the vaccine were directly obtained from the Directorate of Health and not based on assumptions or list pricing.
+The direct costs associated with the outcome were sampled from individual-level otitis media visits, and hospital admissions for pneumonia and IPD.
+The distribution was empirically estimated through resampling of the observed costs, again allowing us to avoid assuming arbitrary uncertainty distributions. 
+Days of work lost due to hospitalized pneumonia and IPD were modeled as a function of the individually observed hospital lengths of stay and the distribution was estimated through direct resampling.
+All cost and outcome data were included in an overall Bayesian model, which propagated the uncertainty of each of the model parameters and produced a posterior distribution of the cost-effectiveness that includes an empirical probabilistic sensitivity analysis.
+
+In general, a sensitivity analysis is necessary to explore the cost-effectiveness outcomes over a range of plausible input parameters, due to the subjective nature of underlying assumptions.
+Consensus statements from the World Health Organization and the International Society for Pharmacoeconomics and Outcome Research (ISPOR) require, at minimum, a one-way sensitivity analysis of each of the modelling assumptions [@Mauskopf2018; @Walker2010].
+Despite the considerable uncertainty associated with utilities, they were often not examined with sensitivity analyses [@Blank2012; @Chuck2010; @Earnshaw2012b; @Gouveia2017; @Klok2013; @Newall2016; @Strutton2012; @Talbird2010].
+Similarly, cost inputs that were often purely assumed, based on expert opinion, or based on national tariffs given without any reference, were in many studies not included in a sensitivity analysis [@Chuck2010; @Earnshaw2012b; @Gouveia2017; @Klok2013; @Newall2016; @Strutton2012; @Talbird2010].
+
+Our study is inherently different than most previous studies, in that it examines the cost-effectiveness of an intervention that has already been introduced.
+The most obvious strength of a post-implementation ecological design, is that it absolves the need to rely on untestable assumptions regarding herd-effect and serotype-replacement, which are instead directly observed.
+To our knowledge, only two previous studies have reported the post-implementation cost-effectiveness of PCV [@Newall2016; @Ray2009].
+Neither study directly estimated the impact of PCV on AOM, pneumonia or IPD but instead relied on previously published estimates or efficacy data [@Newall2016; @Ray2009].
+
+# Conclusions 
+
+In this time series analysis of population-based data, we demonstrated a substantial direct impact on AOM in vaccinated children and provided the first published evidence of herd protection against AOM among older unvaccinated children.
+We showed a large decrease in pneumonia hospitalizations among both vaccinated and unvaccinated members of the population and confirmed previous papers showing an indirect impact.
+Our results demonstrate that initially expensive vaccine interventions can be shown to produce such a decrease in health care consumption, that the resulting cost-savings offset the initial cost -- all the while resulting in reduced suffering in the population.
+Our study highlights the importance of careful post-implementation studies; both as a tool to validate and calibrate the predictions made by pre-implementation cost-effectiveness studies, which rely heavily on unverifiable assumptions, and to provide evidence of vaccine benefit for policy makers. 
+
+# Supplementary files
+
+## Methods in detail
+
+Four independent models that described the secular trend of pneumococcal infections were fitted.
+The simplest model was an interrupted time series (ITS) model without an offset term.
+Calender-month effects were accounted for using dummy variables.
+The ITS model used the pre-vaccine period to estimate the trend.
+It predicted the monthly number of cases of the disease category, assuming the pre-vaccine trend would have continued if the vaccination had not occurred. 
+A second ITS model was estimated, which included an offset term of all non-respiratory visits.
+This model used the pre-vaccine period to estimate the relationship between the outcome of interest and all non-respiratory visits.
+It also predicted the occurrence of disease in the post-vaccine period by incorporating the observed number of non-respiratory visits, and assumed the relationship between the disease category and non-respiratory visits would not have changed, had the vaccination not occurred. 
+The third model included synthetic controls as covariates and used Bayesian variable selection to choose which of them to include [@Bruhn2017].
+The prior for each synthetic control was set as a Dirac spike with a point-mass at zero [@R-pogit]. 
+The pre-vaccine period was used to estimate the relationship between the synthetic controls and the outcome of interest, and to select the optimal controls.
+This relationship was used to predict the trend in the post-vaccine period, had the vaccination not occurred.
+Finally, a two-step model was fitted, using a seasonal and trend decomposition (STL) and principal component analysis (PCA) [@Shioda2018a].
+STL was used to extract a smoothed trend for each of the synthetic controls.
+PCA was then used to extract the first principal component, which was used as a covariate in the final prediction model.
+Using data from the pre-vaccine period, leave-one-out cross-validation (LOOCV) was used to calibrate the models and calculate the average point-wise likelihood for each model, diagnostic category and age-group.
+The average point-wise likelihoods were used as weights in a Bayesian model-stacking procedure, to produce the final stacked model used in the analysis.
+
+## Supplementary figures
+
+(ref:figure23) The figure presents the number of primary care visits among children younger than 20 years of age per calendar-month from 1 January 2005 to 31 December 2015. Children are divided into seven age-groups, listed in the figure legend. Panel A shows the monthly number of visits due to acute otitis media and its complications (AOM). Panels B and C, depict the standardized monthly number of AOM visits (Panel B) and all other visits (Panel C) per age-group. The Y-axis represents the number of standard deviations the observed visits are from from the mean of the entire period for each diagnosis and age-group. The horizontal dotted lines represent values that are zero standard deviations from the mean and the vertical dotted lines represent the beginning of the vaccine intervention. Locally estimated scatter-plot smoothing (LOESS) is used to produce an average trend. Panels B and C suggest that the number of both AOM visits and all other visits have decreased in the post-vaccine period, and that AOM visits have decreased to a larger degree.
+
+```{r aom-trend, fig.cap = "(ref:figure23)"}
+include_graphics(path = "_figures/paper_6/paper_6_otitis_media/2019-01-28-aom-arranged.png")
+```
+
+(ref:figure24) The observed and predicted number of visits for acute otitis media and its complications (AOM) from 1 January 2005 to 31 December 2015 for each age-group. Observed visits are illustrated as black points and the predicted number of visits are drawn as lines for each of the component models. The start of the vaccine period is delineated with a vertical black dotted line. Each component model was fitted to the observed visits in the pre-vaccine period, and then used to predict the number of visits in the post-vaccine period, had the vaccine not been introduced. The distance between the observed and predicted visits for each calendar-month is depicted with a thin black line. Longer distances suggest a larger discrepancy. Note that the scale of the Y-axis differ between age-groups.
+
+```{r aom-component-models, fig.cap = "(ref:figure24)"}
+include_graphics(path = "_figures/paper_6/paper_6_otitis_media/2019-02-01-predict-models.png")
+```
+
+(ref:figure27) The figure presents the monthly number of hospital admissions for pneumonia and hospitalizations regardless of diagnosis from 1 January 2005 to 31 December 2017. Panel A shows the monthly number of pneumonia hospitalizations. Panels B and C depict the standardized monthly number of pneumonia hospitalizations (Panel B) and all other hospitalizations (Panel C) per age-group. The Y-axis shows how many standard deviations from the mean the observed hospitalizations are by diagnosis and age-group. The horizontal dotted lines represents values that are zero standard deviations from the mean and the vertical dotted lines represent the start of the vaccine intervention. Locally estimated scatter-plot smoothing (LOESS) is used to produce an average trend.
+
+```{r pneumonia-trend, fig.cap = "(ref:figure27)"}
+include_graphics(path = "_figures/paper_6/paper_6_pneumonia/2019-02-01-pneumonia-arranged.png")
+```
+
+(ref:figure28) The observed and predicted number of pneumonia hospitalizations from 1 January 2005 to 31 December 2017 for each age-group. Observed cases are illustrated as black points and the predicted number of cases are drawn as lines for each of the component models. The start of the vaccine period is delineated with a vertical black dotted line. Each component model was fitted to the observed number of cases in the pre-vaccine period. They were then used to predict the number of cases that would have occurred in the post-vaccine period, had the vaccine not been introduced. The distance between the observed and predicted cases for each calendar-month is depicted with a thin black line. Longer distances suggest a larger discrepancy between observed and predicted cases. Note that the scale of the Y-axis differ between age-groups.
+
+```{r pneumonia-component-models, fig.cap = "(ref:figure28)"}
+include_graphics(path = "_figures/paper_6/paper_6_pneumonia/2019-02-02-predict-models.png")
+```
+
+(ref:figure31) The figure presents the number of hospitalizations per year-quarter from 1 January 2005 to 31 December 2016. The population is divided into three age-groups, listed in the figure legend. Panel A shows the absolute quarterly number of hospital admissions due to invasive pneumococcal disease (IPD) regardless of serotype. Panels B and C, depict the standardized quarterly number of IPD hospitalizations (Panel B) and all-cause hospitalizations (Panel C) per age-group. The Y-axis represents the number of standard deviations from the mean hospitalizations for each quarter and each age-group. The horizontal dotted lines represent values that are zero standard deviations from the mean and the vertical dotted lines represent the start of the vaccine intervention. Locally estimated scatter-plot smoothing (LOESS) is used to produce an average trend. Panels B and C have been magnified to emphasize the interpretation of the trend line. Panels B and C show that standardized hospitalizations for IPD decreased in all age-groups, relative to the standardized hospitalizations regardless of cause.
+
+```{r ipd-trend, fig.cap = "(ref:figure31)"}
+include_graphics(path = "_figures/paper_6/paper_6_ipd/2019-02-02-ipd-arranged.png")
+```
+
+(ref:figure32) The observed and predicted number of IPD hospitalizations from 1 January 2005 to 31 December 2016 for each age-group. Observed cases are illustrated as black points and the predicted number of cases are drawn as lines for each of the component models. The start of the vaccine period is delineated with a vertical black dotted line. Each component model was fitted to the observed number of cases in the pre-vaccine period. They were then used to predict the number of cases that would have occurred in the post-vaccine period, had the vaccine not been introduced. The distance between the observed and predicted cases for each year-quarter is depicted with a thin black line. Longer distances suggest a larger discrepancy between observed and predicted cases.
+
+```{r ipd-component-models, fig.cap = "(ref:figure32)"}
+include_graphics(path = "_figures/paper_6/paper_6_ipd/2019-02-02-predict-models.png")
+```
+
+## Supplementary tables
+
+```{r table-paper6-stacking-weights-results}
+kable(
+    x = data.frame(
+        disease_state = c(
+            rep("AOM visits", 7),
+            rep("Pneumonia hospitalizations", 6),
+            rep("IPD hospitalizations", 3)
+        ),
+        age_groups = c("0y", "1y", "2y", "3-4y", "5-9y", "10-14y", "15-19y", 
+                       "0-4y", "5-19y", "20-39y", "40-64y", "65-79y", "80+",
+                       "0-4y", "5-64y", "65y+"
+        ),
+        synthetic_controls = c(0.221, 0.149, 0, 0.661, 0.726, 1, 0.018, 0.912, 1, 0.246, 0.241, 0, 0, 0.001, 1, 1),
+        time_trend_offset = c(0, 0, 0, 0, 0, 0, 0, 0.001, 0, 0.124, 0, 0.934, 0.472, 0.999, 0, 0),
+        time_trend_no_offset = c(0.121, 0.610, 0.479, 0.339, 0.274, 0, 0.078, 0.087, 0, 0, 0, 0.066, 0.528, 0, 0, 0),
+        stl_pca = c(0.659, 0.241, 0.521, 0, 0, 0, 0.904, 0, 0, 0.629, 0.759, 0, 0, 0, 0, 0)
+    ),
+    col.names = c(
+    "Disease category",
+    "Age-group",
+    "Synthetic controls",
+    "ITS with offset",
+    "ITS without offset",
+    "STL + PCA"
+    ),
+    caption = "The weights used to produce the final stacked model from the component models are presented. The weights for each component model were obtained by minimizing the leave-one-out mean squared error."
+    )
+```
+
+## Sensitivity analyses
+
+### AOM
+
+(ref:sense-aom-pre) The figure illustrates the estimated rate ratio between the observed and predicted number of acute otitis media (AOM) visits in the post-vaccine period by model and the number of pre-vaccine years. Each age-group is shown separately on the X-axis. An additional pre-vaccine year is added from left to right, starting with the period 2005-2007 and ending with the full pre-vaccine period 2005-2010 that was used in the main analysis. The top frame shows the estimates for the final stacked model. The results are largely invariant to the number of pre-vaccine years, with a slight trend towards decreasing impact as more years are added.
+
+```{r aom-sense-pre, fig.cap = "(ref:sense-aom-pre)"}
+include_graphics(path = "_figures/paper_6/paper_6_otitis_media/2019-03-29-otitis_media-pre-period-sensitivity-analysis.png")
+```
+
+(ref:sense-aom-ctrl) The figure depicts the estimated rate ratio between the observed and predicted number of acute otitis media (AOM) visits in the post-vaccine period for the synthetic control model. The leftmost point and confidence interval represents the full synthetic model used in the analysis, and the same colored label shows the top control and its associated inclusion probability in the Bayesian variable selection process. From left to right, the top control is removed, the model is refitted on the remaining controls and the corresponding rate ratio illustrated with a point and interval. The results are largely invariant to the controls used.
+
+```{r aom-sense-ctrl, fig.cap = "(ref:sense-aom-ctrl)"}
+include_graphics(path = "_figures/paper_6/paper_6_otitis_media/2019-03-29-otitis_media-sensitivity-table.png")
+```
+
+(ref:sense-aom-case-def) The figure illustrates the estimated rate ratio between the observed and predicted number of acute otitis media (AOM) visits in the post-vaccine period for the final stacked model using different case-definitions. The case-definition used in the main analysis is shown with a red point and intervals. The green point represents the same International Classification of Diseases, 10th revision (ICD-10) codes but only those resulting in an antimicrobial prescription. Finally the blue point represents only H66: Suppurative otitis media only. The results are largely invariant to the case-definition with the exception of one year old children.
+
+```{r aom-sense-case-def, fig.cap = "(ref:sense-aom-case-def)"}
+include_graphics(path = "_figures/paper_6/paper_6_otitis_media/2019-03-30-otitis_media-case-def-sensitivity.png")
+```
+
+(ref:sense-aom-uti) The population impact of the 10-valent *Haemophilus influenzae* protein D pneumococcal conjugate vaccine (PHiD-CV10) on outpatient visits for urinary tract infections (UTI) is summarized. In Panel A, the estimated 12-month rolling rate ratio between the observed and predicted number of UTI visits in the post-vaccine period (2011-2015) is shown per age-group. Panel B depicts the cumulative number of prevented UTI visits during the post-vaccine period (2011-2015) for each age-group along with 95% credible intervals. The total cumulative prevented UTI visits regardless of age-group is shown in Panel C. As expected, there was no discernible impact.
+
+```{r aom-sense-uti, fig.cap = "(ref:sense-aom-uti)"}
+include_graphics(path = "_figures/paper_6/paper_6_uti_outpatient/2019-03-29-cum-arranged.png")
+```
+
+### Pneumonia
+
+(ref:sense-pneumonia-pre) The figure illustrates the estimated rate ratio between the observed and predicted number of pneumonia hospitalizations in the post-vaccine period by model and the number of pre-vaccine years. Each age-group is shown separately on the X-axis. An additional pre-vaccine year is added from left to right, starting with the period 2005-2007 and ending with the full pre-vaccine period 2005-2010 that was used in the main analysis. The top frame shows the estimates for the final stacked model. The results are largely invariant to the number of pre-vaccine years. However, when only 2005-2007 are included, the estimates are severely unstable in the principal component analysis (PCA) model. The PCA model was given undue weight in the model stacking procedure, resulting in the same instability in the final stacked model. Despite this, the figure does not suggest that the inclusion of 2009 has large effects on the results. The 2009 influenza pan-demic does therefore not seem to unduly influence the results.
+
+```{r pneumonia-sense-pre, fig.cap = "(ref:sense-pneumonia-pre)"}
+include_graphics(path = "_figures/paper_6/paper_6_pneumonia/2019-03-19-pneumonia-pre-period-sensitivity-analysis.png")
+```
+
+(ref:sense-pneumonia-ctrl) The figure depicts the estimated rate ratio between the observed and predicted number of pneumonia hospitalizations in the post-vaccine period for the synthetic control model. The leftmost point and confidence interval represents the full synthetic model used in the analysis, and the same colored label shows the top control and its associated inclusion probability in the Bayesian variable selection process. From left to right, the top control is removed, the model is refitted on the remaining controls and the corresponding rate ratio illustrated with a point and interval. The results are largely invariant to the controls used.
+
+```{r pneumonia-sense-ctrl, fig.cap = "(ref:sense-pneumonia-ctrl)"}
+include_graphics(path = "_figures/paper_6/paper_6_pneumonia/2019-03-19-pneumonia-sensitivity-table.png")
+```
+
+(ref:sense-pneumonia-case-def) The figure illustrates the estimated rate ratio between the observed and predicted number of pneumonia hospitalizations in the post-vaccine period for the final stacked model using different case-definitions. The case-definition used in the main analysis is shown with a red point and intervals. The green point represents International Classification of Diseases, 10th revision (ICD-10) codes more specific for bacterial pneumonia. Finally the blue point represents the more specific ICD-10 definition of bacterial pneumonia, but only includes those hospitalizations in which radiographical and microbiological testing was performed. Using the most specific definition of pneumonia (blue), the impact of the 10-valent pneumococcal Haemophilus influenzae Protein D conjugate vaccine (PHiD-CV) is significantly larger in all age-groups.
+
+```{r pneumonia-sense-case-def, fig.cap = "(ref:sense-pneumonia-case-def)"}
+include_graphics(path = "_figures/paper_6/paper_6_pneumonia/2019-03-30-pneumonia-case-def-sensitivity.png")
+```
+
+(ref:sense-pneumonia-uti) The population impact of the 10-valent *Haemophilus influenzae* protein D pneumococcal conjugate vaccine (PHiD-CV10) on hospitalizations for urinary tract infections (UTI) is summarized. In Panel A, the estimated 12-month rolling rate ratio between the observed and predicted number of UTI hospitalizations in the post-vaccine period (2011-2017) is shown per age-group. Panel B depicts the cumulative number of prevented UTI hospitalizations during the post-vaccine period (2011-2017) for each age-group along with 95% credible intervals. The total cumulative prevented UTI hospitalizations regardless of age-group is shown in Panel C. As expected, there was no discernible impact.
+
+```{r pneumonia-sense-uti, fig.cap = "(ref:sense-pneumonia-uti)"}
+include_graphics(path = "_figures/paper_6/paper_6_uti_inpatient/2019-03-29-cum-arranged.png")
+```
+
+### IPD
+
+(ref:sense-ipd-ctrl) The figure depicts the estimated rate ratio between the observed and predicted number of hospitalizations for invasive pneumococcal disease in the post-vaccine period for the synthetic control model. The leftmost point and confidence interval represents the full synthetic model used in the analysis, and the same colored label shows the top control and its associated inclusion probability in the Bayesian variable selection process. From left to right, the top control is removed, the model is refitted on the remaining controls and the corresponding rate ratio illustrated with a point and interval. The results are largely invariant to the controls used.
+
+```{r ipd-sense-ctrl, fig.cap = "(ref:sense-ipd-ctrl)"}
+include_graphics(path = "_figures/paper_6/paper_6_ipd/2019-03-30-ipd-sensitivity-table.png")
+```
+
+(ref:sense-ipd-case-def) The figure illustrates the estimated rate ratio between the observed and predicted number of hospitalizations for invasive pneumococcal disease (IPD) in the post-vaccine period for the final stacked model using different case-definitions. Culture or PCR confirmed IPD regardless of serotype, the case-definition used in the main analysis, is shown with a red point and intervals. The green point represents vaccine-type IPD. The number of nonvaccine-type IPD in the pre-vaccine period was not large enough to fit any of the time series models. The figure shows that the impact of the 10-valent pneumococcal Haemophilus influenzae Protein D conjugate vaccine (PHiD-CV) on vaccine-type is large in all age-groups.
+
+```{r ipd-sense-case-def, fig.cap = "(ref:sense-ipd-case-def)"}
+include_graphics(path = "_figures/paper_6/paper_6_ipd/2019-03-30-ipd-case-def-sensitivity.png")
+```

@@ -1,7 +1,7 @@
 ## Impact on outpatient antimicrobial prescriptions (Paper III){#paper3}
 
 The objective of Paper III was to estimate the impact of PHiD-CV10 on outpatient antimicrobial prescriptions among children in Iceland. 
-Paper III is a population based observational cohort study of antimicrobial prescriptions in children under three years of age in Iceland.
+Paper III is a population-based observational cohort study of antimicrobial prescriptions in children under three years of age in Iceland.
 Eleven consecutive Icelandic birth-cohorts 2005–2015 were followed from birth until three years of age. 
 Children who immigrated to Iceland after birth were excluded.
 Follow-up time was censored on death, emigration, or the end of the study period (31 December 2016).
@@ -32,7 +32,7 @@ The cumulative number of prescriptions by three years of age per child, was cate
 The ratio between VNEC and VEC was then calculated for each of these categories. 
 The 2014 and 2015-cohorts were excluded from the cumulative analyses, as they did not have the full three-year follow-up time.
 
-The Andersen-Gill time-to-event model was fitted to the individual level data [@Andersen1982].
+The Andersen-Gill time-to-event model was fitted to the individual-level data [@Andersen1982].
 It was used to estimate the hazard ratio (HR) of antimicrobial prescription between the study birth-cohorts, which were included in the model as a categorical variable. 
 Age was accounted for by defining it as the model's underlying measurement of time.
 The model was stratified by gender to allow for independent baseline hazards.

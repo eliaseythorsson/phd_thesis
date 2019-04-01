@@ -49,7 +49,7 @@ year_def   <- 'cal_year'  #Can be cal_year to aggregate results by Jan-Dec; 'epi
 consumer_price_index <- bind_cols( #consumer price index
     date = as.character(seq.Date(from = as.Date("2005-01-01"), to = as.Date("2017-12-01"), by = "months")),
     cpi =c(140.3, 141.9, 142.5, 142.9, 142.8, 142.5, 143.3, 143.6, 143.8, 144.6, 144.7, 144.4, 145, 145.1, 145.9, 146.7, 147.3, 148.5, 150.1, 150.2, 150, 149.7, 149.6, 150.4, 151.3, 151.7, 151.9, 152.1, 151.8, 152.3, 153.8, 154.2, 154.8, 154.7, 155.4, 155.6, 158, 158.2, 158.4, 162.6, 162.9, 164, 164.4, 163.3, 164.1, 167.2, 172.3, 178.6, 183.3, 183.2, 182.3, 180.4, 182.4, 184.2, 186.1, 186.5, 187.7, 189.5, 190.1, 190.4, 193.2, 193.5, 196.1, 196.4, 197, 198, 197.5, 197.4, 197.7, 197, 197.1, 197.1, 198.3, 196.3, 196.6, 197.2, 197, 199.9, 200.4, 198.2, 199.3, 199.5, 199.8, 200.9, 203.8, 204.5, 203.9, 204.8, 204.9, 205.6, 205, 204.4, 202.7, 205.3, 206.7, 207.6, 210.7, 213.3, 213.9, 213.7, 209.9, 210.4, 211.4, 212, 208.6, 210.2, 211.3, 211.8, 217.2, 217.9, 218.8, 221.4, 222.1, 222.1, 223.6, 223.6, 223.7, 224.1, 224.2, 224.5, 224.9, 225.6, 226.5, 227.5, 227, 226.7, 227.6, 227.9, 227.5, 228, 228.6, 228.7, 229.8, 230.4, 232.3, 232.7, 232.3, 233.1, 233.4, 233.3, 232.1, 232.2, 231.5, 232.2, 231, 230.7, 232.3, 232, 234, 232.2, 232.8, 233.9, 233.3, 234.6, 235.6, 235.6),
-    cpi_jan2011 = rep(198.3, 156)
+    cpi_jan2015 = rep(224.9, 156)
 )
 
 ### Parameters from lognormal distribution found by fitting decils of wage from www.statice.is ... ###
@@ -72,12 +72,16 @@ wage_per_day <- 0.010385 #standard devision of wage to get wage/day
 
 ### Cost of vaccine found in personal communication with Sóttvarnalæknir ### 
 
-cost_vaccine <- bind_cols(
+vaccine_price <- bind_cols(
     price = c(rep(0, 72), rep(5505, 12), rep(5153, 12), rep(5064, 12), rep(5050, 12), rep(5202, 12), rep(4517, 12), rep(3739, 12)),
-    number_doses = c(rep(0, 72), rep(7447/12, 12), rep(12557/12, 12), rep(12887/12, 12), rep(12953/12, 12), rep(12569/12, 12), rep(12209/12, 12), rep(11957/12, 12)),
     consumer_price_index) %>%
-    mutate(price = price * number_doses * cpi_jan2011/cpi) %>%
-    .$price / mean(exchange_rates)
+    mutate(price = (price * cpi_jan2015/cpi)/mean(exchange_rates))
+
+vaccine_price <- t(sapply(X = t(vaccine_price$price), FUN = function(x) rnorm(n = 8000, mean = x, sd = x/10)))
+
+number_doses = c(rep(0, 72), rep(7447/12, 12), rep(12557/12, 12), rep(12887/12, 12), rep(12953/12, 12), rep(12569/12, 12), rep(12209/12, 12), rep(11957/12, 12))
+
+cost_vaccine <- vaccine_price * number_doses
 
 ### Packages ###
 
@@ -218,7 +222,7 @@ lsh <-
             TRUE ~ "remove")
     ) %>%
     left_join(consumer_price_index) %>%
-    mutate(cost_total = cost_total * cpi_jan2011/cpi)
+    mutate(cost_total = cost_total * cpi_jan2015/cpi)
 
 lsh <- data.frame(lsh)
 
@@ -1114,5 +1118,5 @@ ICER_total_cost_all <-
 #     geom_ribbon(aes(ymin = `2.5%`, ymax = `97.5%`), alpha = 0.3) +
 #     scale_y_continuous(labels = scales::comma)
 
-saveRDS(object = cumsum_cost_all_draws, file = '_analyses/paper_6/paper_6_pneumonia/cumsum_cost_saved')
-saveRDS(object = cumsum_direct_cost_all_draws, file = '_analyses/paper_6/paper_6_pneumonia/cumsum_direct_cost_saved')
+#saveRDS(object = cumsum_cost_all_draws, file = '_analyses/paper_6/paper_6_pneumonia/cumsum_cost_saved')
+#saveRDS(object = cumsum_direct_cost_all_draws, file = '_analyses/paper_6/paper_6_pneumonia/cumsum_direct_cost_saved')

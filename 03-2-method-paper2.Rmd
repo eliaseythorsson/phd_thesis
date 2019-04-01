@@ -1,7 +1,7 @@
 ## Impact on primary care visits for acute otitis media (Paper II){#paper2}
 
 The objective of Paper II was to evaluate the impact of PHiD-CV10 on the incidence of acute otitis media in Icelandic children.
-Paper II is a population based observational cohort study that followed all children born in Iceland between 1 January 2005 and 31 December 2015, from birth until three years of age, death or end of the study period.
+Paper II is a population-based observational cohort study that followed all children born in Iceland between 1 January 2005 and 31 December 2015, from birth until three years of age, death or end of the study period.
 All primary care visits in which an ICD-10 diagnostic code of suppurative otitis media (H66) was recorded were included.
 Any visits occurring within 30 days of a previously documented visit by the same child were excluded from the main analysis.
 The study therefore represented AOM episodes, rather than AOM visits. 
@@ -24,7 +24,7 @@ Crude incidence rate ratio between VNEC and VEC were calculated and confidence i
 In the subset of children who had full follow-up time, the number of children who cumulatively experienced 0-12 episodes of AOM were tabulated, and the distribution between VNEC and VEC compared using the $\chi^2$ test of homogeneity,
 Additionally, the crude risk ratio between the VEC and VNEC of experiencing 0, 1–4, or >5 episodes of AOM before three years of age was calculated. 
 
-The Andersen-Gill extension of the Cox regression model for repeated events was used to model data on the individual level and to account for censoring of follow-up time [@Andersen1982].
+The Andersen-Gill extension of the Cox regression model for repeated events was used to model data on the individual-level and to account for censoring of follow-up time [@Andersen1982].
 To correct for successive visits by the same individual, @Lin1989 sandwich variance estimates were used.
 From this model, the hazard ratio (HR) of AOM visits between each birth-cohort and the last vaccine non-eligible cohort was calculated.
 The impact of PHiD-CV10 on AOM visits was defined as 1 – ($HR$ between the last vaccine-eligible birth cohort and the last vaccine non-eligible cohort) * 100%. 

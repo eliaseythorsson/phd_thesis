@@ -29,7 +29,8 @@ knitr::write_bib(
     'rms',
     'survminer',
     'pogit',
-    'kableExtra'
+    'kableExtra',
+    'rriskDistributions'
     ),
     'packages.bib'
     )

@@ -12,7 +12,7 @@ ids <- read_rds("_data/results/ids.rds")
 lsh <- read_rds("_data/results/lsh.rds")
 sykl <- read_excel("_data/paper_6/paper_6_ipd/Ífarandi pneumo_1995_2016_Elias.xls")
 impact_full <- read_rds("_analyses/paper_6/paper_6_ipd/Results_paper_6_ipd_2018-12-02-152110/paper_6_ipd_synthetic_control_model.rds")
-#impact_stack <- read_rds("_analyses/paper_6/paper_6_ipd/Results_paper_6_ipd_2018-12-02-152110/paper_6_ipd_stacked_model.rds")
+impact_stack <- read_rds("_analyses/paper_6/paper_6_ipd/Results_paper_6_ipd_2018-12-04-192314/paper_6_ipd_stacked_model.rds")
 
 source("_scripts/paper_6/paper_6_ipd/paper_6_ipd_synthetic_control_functions.R", local = T)
 
@@ -46,13 +46,14 @@ pre_period        <- as.Date(c('2005-01-01', '2010-12-31')) # Range over which t
 post_period       <- as.Date(c('2011-01-01', '2016-10-01')) # Range from the intervention date to the end date.
 eval_period       <- as.Date(c('2013-01-01', '2016-10-01')) # Range over which rate ratio calculation will be performed.
 year_def   <- 'cal_year'  #Can be cal_year to aggregate results by Jan-Dec; 'epi_year' to aggregate July-June
+is_post_period <-  which(time_points >= post_period[1])
 
 ### Consumer Price Index found at www.statice.is ### 
 
 consumer_price_index <- bind_cols( #consumer price index
     date = as.character(seq.Date(from = as.Date("2005-01-01"), to = as.Date("2016-12-01"), by = "3 months")),
     cpi = c(140.3, 142.9, 143.3, 144.6, 145, 146.7, 150.1, 149.7, 151.3, 152.1, 153.8, 154.7, 158, 162.6, 164.4, 167.2, 183.3, 180.4, 186.1, 189.5, 193.2, 196.4, 197.5, 197, 198.3, 197.2, 200.4, 199.5, 203.8, 204.8, 205, 205.3, 210.7, 213.7, 211.4, 210.2, 217.2, 221.4, 223.6, 224.1, 224.9, 227.5, 227.6, 228, 229.8, 232.7, 233.4, 232.2),
-    cpi_jan2011 = rep(198.3, 48)
+    cpi_jan2015 = rep(224.9, 48)
 )
 
 
@@ -76,12 +77,25 @@ wage_per_day <- 0.010385 #standard devision of wage to get wage/day
 
 ### Cost of vaccine found in personal communication with Sóttvarnalæknir ### 
 
-cost_vaccine <- bind_cols(
+vaccine_price <- bind_cols(
     price = c(rep(0, 24), rep(5505, 4), rep(5153, 4), rep(5064, 4), rep(5050, 4), rep(5202, 4), rep(4517, 4)),
-    number_doses = c(rep(0, 24), rep(7447/4, 4), rep(12557/4, 4), rep(12887/4, 4), rep(12953/4, 4), rep(12569/4, 4), rep(12209/4, 4)),
     consumer_price_index) %>%
-    mutate(price = price * number_doses * cpi_jan2011/cpi) %>%
-    .$price / mean(exchange_rates)
+    mutate(price = (price * cpi_jan2015/cpi)/mean(exchange_rates))
+
+vaccine_price <- t(sapply(X = t(vaccine_price$price), FUN = function(x) rnorm(n = 8000, mean = x, sd = x/10)))
+
+number_doses = c(rep(0, 24), rep(7447/4, 4), rep(12557/4, 4), rep(12887/4, 4), rep(12953/4, 4), rep(12569/4, 4), rep(12209/4, 4))
+
+cost_vaccine <- vaccine_price * number_doses
+
+#cost_vaccine_disc <- vaccine_price[is_post_period, ]/((1+0.007)^row(vaccine_price[is_post_period,]))
+
+# cost_vaccine <- bind_cols(
+#     price = c(rep(0, 24), rep(5505, 4), rep(5153, 4), rep(5064, 4), rep(5050, 4), rep(5202, 4), rep(4517, 4)),
+#     number_doses = c(rep(0, 24), rep(7447/4, 4), rep(12557/4, 4), rep(12887/4, 4), rep(12953/4, 4), rep(12569/4, 4), rep(12209/4, 4)),
+#     consumer_price_index) %>%
+#     mutate(price = price * number_doses * cpi_jan2015/cpi) %>%
+#     .$price / mean(exchange_rates)
 
 ### Packages ###
 
@@ -275,7 +289,7 @@ lsh <-
             TRUE ~ "remove")
     ) %>%
     left_join(consumer_price_index) %>%
-    mutate(cost_total = cost_total * cpi_jan2011/cpi)
+    mutate(cost_total = cost_total * cpi_jan2015/cpi)
 
 lsh <- data.frame(lsh)
 
@@ -1158,5 +1172,5 @@ ICER_total_cost_all <-
         na.rm = TRUE
     ))
 
-saveRDS(object = cumsum_cost_all_draws, file = '_analyses/paper_6/paper_6_ipd/cumsum_cost_saved')
-saveRDS(object = cumsum_direct_cost_all_draws, file = '_analyses/paper_6/paper_6_ipd/cumsum_direct_cost_saved')
+#saveRDS(object = cumsum_cost_all_draws, file = '_analyses/paper_6/paper_6_ipd/cumsum_cost_saved')
+#saveRDS(object = cumsum_direct_cost_all_draws, file = '_analyses/paper_6/paper_6_ipd/cumsum_direct_cost_saved')

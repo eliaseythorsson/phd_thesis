@@ -1,10 +1,13 @@
 # Aims
 
-The aims of the thesis were to estimate the impact of PHiD-CV10 on various facets of pneumococcal disease, associated healthcare burden, and cost:
+The aims of the thesis were to estimate the impact of PHiD-CV10 on
 
-i. The incidence of paediatric emergency department visits for otitis media with treatment failure (Paper I)
-ii. The incidence of otitis media visits to primary care (Paper II)
-iii. The incidence of outpatient antimicrobial prescriptions (Paper III)
-iv. The incidence of tymapnostomy tube procedures (Paper IV)
-v. The incidence of hospitalizations for respiratory and invasive infections commonly associated with *Streptococcus pneumoniae* (Paper V)
-vi. Incidence of pneumococcal disease in all age-groups and cost-effectiveness analysis (Paper VI)
+i. The incidence of pediatric emergency department visits for otitis media with treatment failure (Paper I)
+ii. The population-based incidence of otitis media visits in primary care (Papers II and VI)
+iii. The population-based herd-effect on otitis media among unvaccinated children (Papers II and VI)
+iv. The population-based incidence of outpatient antimicrobial prescriptions (Paper III)
+v. The population-based incidence of tymapnostomy tube procedures (Paper IV)
+vi. The population-based incidence of hospitalizations for respiratory and invasive infections commonly associated with *Streptococcus pneumoniae* (Paper V)
+vii. The population-based herd-effect on pneumonia hospitalizations among unvaccinated children and adults (Paper VI)
+viii. The population-based herd-effect on hospitalizations for invasive pneumococcal disease among unvaccinated children and adults (Paper VI)
+ix. The cost-effectiveness of introducing PHiD-CV10 into the pediatric vaccination program in Iceland (Paper VI)

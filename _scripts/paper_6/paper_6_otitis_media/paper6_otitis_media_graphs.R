@@ -84,12 +84,13 @@ aom_standard <- prelog_data %>%
     gather(key = diagnosis, value = n, -age_group, -date, -H65_H73) %>%
     ggplot(aes(x = date, y = H65_H73, group = interaction(age_group, diagnosis), color = age_group)) +
     geom_line(alpha = 0.3, size = 0.2) +
-    geom_smooth(aes(group = age_group, color = age_group), alpha = 0.5, method = "loess") +
+    geom_smooth(aes(group = age_group, color = age_group), alpha = 0.5, method = "loess", se = F) +
     geom_hline(aes(yintercept = 0), lty = 2) +
     geom_vline(aes(xintercept = as.Date("2011-01-01")), lty = 2) +
     scale_x_date(date_breaks = "2 years", date_labels = "%Y") +
     scale_y_continuous(breaks = -2:2, limits = c(-3,3)) +
     scale_color_brewer(palette = "Set1") +
+    coord_cartesian(ylim = c(-1.5, 1.5)) +
     labs(y = "Standardized visits", x = "Calendar-month") +
     guides(color = guide_legend(ncol = 7, override.aes = list(fill = NA))) +
     theme(legend.title = element_blank())
@@ -107,13 +108,14 @@ else_standard <- prelog_data %>%
     gather(key = diagnosis, value = n, -age_group, -date, -H65_H73) %>%
     ggplot(aes(x = date, y = n, group = interaction(age_group, diagnosis), color = age_group)) +
     geom_line(alpha = 0.3, size = 0.2) +
-    geom_smooth(aes(group = age_group, color = age_group), alpha = 0.5, method = "loess") +
+    geom_smooth(aes(group = age_group, color = age_group), alpha = 0.5, method = "loess", se = F) +
     geom_hline(aes(yintercept = 0), lty = 2) +
     geom_vline(aes(xintercept = as.Date("2011-01-01")), lty = 2) +
     scale_x_date(date_breaks = "2 years", date_labels = "%Y") +
     scale_y_continuous(breaks = -2:2, limits = c(-3,3)) +
     scale_color_brewer(palette = "Set1") +
-    labs(y = NULL, x = "Calendar-month") +
+    coord_cartesian(ylim = c(-1.5, 1.5)) +
+    labs(y = "Standardized visits", x = "Calendar-month") +
     guides(color = guide_legend(ncol = 7, override.aes = list(fill = NA))) +
     theme(legend.title = element_blank())
 

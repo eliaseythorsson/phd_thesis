@@ -456,7 +456,7 @@ kable(
         )
     ) %>%
     group_by(english) %>%
-    summarise(n = sum(nn)),
+    summarise(n = sum(n)),
     col.names = c("Procedure", "No of procedures"),
     caption = "The number of procedures reimbursed to independently practicing otolaryngologists from 1 January 2005 to 31 December 2016. Data were extracted from the reimbursement database of Icelandic Health Insurance. Tympanostomy tube placements for which an anesthesiologist also received reimbursement were performed under general anesthesia. Others were categorized as TTP without mention of anesthetic. The total number of adenoidectomies performed in Iceland cannot be deduced from the reimbursement data, because the same reimbursement code is used for tonsillectomies with or without adenoidectomies. However, a seperate reimbursement code always exists for procedures including TTP.",
     format.args = list(big.mark = ",")

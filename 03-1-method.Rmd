@@ -193,7 +193,7 @@ Any ICD-10 diagnostic code associated with a visit or hospital admission in whic
 Importantly, this included all ICD-10 codes, not only those in Table \@ref(tab:table-icd).
 Also obtained for [paper I](#paper1) was the aggregate number of yearly visits to the pediatric emergency department of Children's Hospital Iceland 2008-2015.
 
-[Paper VI](#paper6) -- a cost-effectiveness analysis of PHiD-CV10 introduction into the pediatric vaccination program, required control diseases used within a time-series analysis framework. 
+[Paper VI](#paper6) -- a cost-effectiveness analysis of PHiD-CV10 introduction into the pediatric vaccination program, required control diseases used within a time series analysis framework. 
 The aggregate monthly number of acute-care visits and hospital admissions for several sub-chapters of the ICD-10 diagnostic coding system (Table \@ref(tab:table-icd-synthetic)) was obtained for 22 different age-groups. 
 
 ```{r table-icd-synthetic}
@@ -242,7 +242,7 @@ kable(
     )
     ),
     col.names = c("ICD-10 code", "Description"),
-    caption = "The International Classification of Diseases, 10th revision subchapters used to define the synthetic controls used in time-series analyses."
+    caption = "The International Classification of Diseases, 10th revision subchapters used to define the synthetic controls used in time series analyses."
     )
     
 ```
@@ -252,9 +252,9 @@ Data from the patient registry were used in [paper I](#paper1), [paper IV](#pape
 
 ### The Primary Care Registry {#primarycareregistry}
 
-In the Icelandic healthcare system, primary care is provided by family medicine physicians at 69 neighborhood based centers (*Heilsugæsla*).
+In the Icelandic health care system, primary care is provided by family medicine physicians at 69 neighborhood based centers (*Heilsugæsla*).
 All primary care centers use the same electronic medical record system, and the same diagnostic coding systems (NCSP, ICD-10) as Landspitali University Hospital and Children's Hospital Iceland.
-The Directorate of Health maintains a registry on all primary care visits within the Icelandic healthcare system.
+The Directorate of Health maintains a registry on all primary care visits within the Icelandic health care system.
 From this registry, all physician visits with ICD-10 diagnostic codes compatible with respiratory tract infections were extracted for the period 1 January 2005 to 31 December 2015 (Table \@ref(tab:table-icd)).
 From early 2016, extensive maintenance and restructuring of the registry has been ongoing, and no new data have been added since 31 December 2015. 
 
@@ -263,8 +263,8 @@ Data from the Primary Care Registry were used in [paper II](#paper2), [paper III
 ### The National Vaccine Registry {#vaccineregistry}
 
 The Icelandic Directorate of Health also maintains the National Vaccine Registry (NVR). 
-All vaccine doses administered within the healthcare system are systematically recorded in an individual's electronic health record at the time they are administered.
-This record is reviewed and updated regularly, and vaccinations given in other healthcare facilities are included.
+All vaccine doses administered within the health care system are systematically recorded in an individual's electronic health record at the time they are administered.
+This record is reviewed and updated regularly, and vaccinations given in other health care facilities are included.
 The NVR collects this information from all electronic health records in the country.
 Vaccines are categorized using the Anatomical-Therapeutic-Chemical (ATC) classification system of the World Health Organization.
 All administered vaccine doses with ATC codes "J07AL" (Pneumococcal vaccines) were extracted for the period of 1 January 2005 to 31 December 2017.
@@ -336,10 +336,10 @@ Data from the NDPR were used in [paper II](#paper2), [paper III](#paper3) and [p
 
 ### Reimbursement database of Icelandic Health Insurance {#reimbursementdatabase}
 
-The healthcare system in Iceland is a single-payer system with one government-run health insurance provider, under which all permanent citizens are covered. 
-Most healthcare visits require a nominal out-of-pocket fee, with the rest of the visit covered by the insurance.
+The health care system in Iceland is a single-payer system with one government-run health insurance provider, under which all permanent citizens are covered. 
+Most health care visits require a nominal out-of-pocket fee, with the rest of the visit covered by the insurance.
 There are exceptions to this -- for example, visits by children under two years of age are completely covered by insurance. 
-Healthcare providers are either salaried governmental employees, or independent practitioners who are reimbursed on a per case basis, according to pre-determined negotiations with Icelandic Health Insurance.
+Health care providers are either salaried governmental employees, or independent practitioners who are reimbursed on a per case basis, according to pre-determined negotiations with Icelandic Health Insurance.
 To receive pay for services, physicians must submit a reimbursement form, detailing the nature of the visit and any procedures performed using pre-specified procedural codes.
 Icelandic Health Insurance maintains a reimbursement database which details the nature and number of procedures performed.
 Data on all otolaryngological procedures performed on the middle ear and tonsils were extracted from the reimbursement database for the period from 1 January 2005 to 31 December 2017 using the procedural codes in Table \@ref(tab:table-reimbursement)

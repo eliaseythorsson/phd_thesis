@@ -1,48 +1,46 @@
 ## Impact and cost-effectiveness analysis (Paper VI){#paper6}
 
-The objective of Paper VI was estimate the population impact of PHiD-CV10 on several aspects of pneumococcal disease and calculate the cost-effectiveness of PHiD-CV10 introduction. 
+The objective of Paper VI was to estimate the population impact of PHiD-CV10 on several aspects of pneumococcal disease, and to calculate the cost-effectiveness of PHiD-CV10 introduction. 
 Considered were otitis media visits to primary care among children zero to 19 years of age, and hospitalizations due to pneumonia and invasive pneumococcal disease among the whole population. 
 The study period was from 1 January 2005 to 31 December 2017 and the study population included all Icelandic citizens.
-The data were analysed as a time-series, and incorporated synthetic controls. 
+The data were analysed as a time series, and incorporated synthetic controls. 
 
 ### Data sources 
 
-Data were extracted from several population based registries.
+Data were extracted from several population-based registries.
 Primary care visits with ICD-10 diagnoses compatible with otitis media (H65, H66, H70, H72) were extracted from the Primary Care Registry. 
-The observation period was restricted to 2005-2015, as the Primary Care Registry has not been updated for 2016 and 2017.
+The observation period was restricted to 2005-2015, as the Primary Care Registry was not updated for 2016 and 2017.
 Data regarding hospitalized pneumonia and invasive pneumococcal disease were extracted from Landspitali University Hospital's patient registry.
 Microbiological data were extracted from a database maintained by the Department of Clinical Microbiology at Landspitali University Hospital and linked to the patient registry.
-A hospitalization was considered to be due to invasive pneumococcal disease if associated with culture or PCR confirmed *Streptococcus pneumoniae* sampled from joint fluid, bone, cerebrospinal fluid or blood, regardless of ICD-10 discharge diagnosis.
-Hospitalizations with ICD-10 diagnoses compatible with pneumonia (J09-J18) were obtained directly from the patient registry. 
+A hospitalization was considered to be due to invasive pneumococcal disease if associated with culture or PCR-confirmed *Streptococcus pneumoniae* sampled from joint fluid, bone, cerebrospinal fluid or blood, regardless of ICD-10 discharge diagnosis.
+Hospitalizations with ICD-10 diagnoses compatible with pneumonia (J12-J18) were obtained directly from the patient registry. 
 The aggregate number of visits and hospitalizations per calendar-month for diagnoses unrelated to *Streptococcus pneumoniae* infections were also extracted from both registries and used as synthetic controls (Table \@ref(tab:table-icd-synthetic)).
 
-Data regarding the cost of hospitalization were obtained directly from the patient registry.
+The direct costs of hospitalization were obtained from the patient registry.
 For each hospitalization or emergency department visit, a detailed breakdown of cost was available, which was extracted for each of the disease categories included in the study.
 No cost data was available for primary care visits.
 Because Children's Hospital Iceland's pediatric emergency department serves as a walk-in clinic for the greater capital area, the distribution of costs for otitis media visits to the emergency department was assumed to mirror that of primary care visits, and was used in its stead.
-The cost of otitis media visits to Children's Hospital Iceland was extracted from the patient registry.
 The number of PHiD-CV10 doses purchased by the government and the unit price for each dose per calendar year were obtained directly from the Icelandic Directorate of Health.
-The consumer price index for medical care obtained from Statistics Iceland was used to convert all direct healthcare costs to 2011 price levels in Icelandic kronas (ISK).
 The yearly employment rate of individuals 15 to 24 years of age, 25 to 54 years of age and 55 to 64 years of age from 2011-2017 was extracted from Organization for Economic Cooperation and Development (OECD) Labour Force Statistics [@OECD2018], and the deciles of regular total wage for working Icelanders from 2011-2017 were obtained from Statistics Iceland.
-All costs were converted to United States Dollars (USD) using the offical daily exchange rates of the Icelandic Central Bank from 2011-2017.
+The consumer price index for medical care obtained from Statistics Iceland was used to convert all direct health care costs to 2015 price levels in Icelandic kronas.
+All costs were converted to United States Dollars (USD) using the offical exchange rates of the Icelandic Central Bank.
 
-### Statistical analysis
+### Impact of PHiD-CV10
 
-The cost-effectiveness analysis was completed in two separate steps. 
-First, the impact of PHiD-CV10 introduction into the pediatric vaccination program in Iceland was estimated.
-This was accomplished using a previously published Bayesian time-series methodology [@Bruhn2017; @Shioda2018a].
-The pre-vaccine period was defined as 1 January 2005 to 31 December 2010, and the post-vaccine period as 1 January 2011 to 31 December 2017. 
+The impact of PHiD-CV10 introduction on the incidence of pneumococcal disease was estimated and the results then used as an input for a cost-effectiveness analysis. This was accomplished using a previously published Bayesian time series methodology [@Bruhn2017; @Shioda2018a].
+The pre-vaccine period was defined as 1 January 2005 to 31 December 2010, and the post-vaccine period as 1 January 2013 to 31 December 2017.
+A transition period was included from 2011 to 2012.
 For each disease category and age-group, four models of PHiD-CV10 impact were estimated.
 All were Bayesian Poisson models with observation specific random intercepts to account for over-dispersion [@R-pogit]. 
 Each model utilized the pre-vaccine period to predict the monthly occurrence of the outcome of interest in the post-vaccine period, had the vaccination not occurred. 
 
-The simplest model was an interrupted time-series (ITS) model without an offset term.
+The simplest model was an interrupted time series (ITS) model without an offset term.
 Calender-month effects were accounted for using dummy variables.
-The ITS model was used the pre-vaccine period to estimate the trend.
+The ITS model used the pre-vaccine period to estimate the trend.
 It predicted the monthly number of cases of the disease category, assuming the pre-vaccine trend would have continued if the vaccination had not occurred. 
-A second, similar ITS model was also estimated, but included an offset term of all non-respiratory visits.
+A second ITS model was estimated, which included an offset term of all non-respiratory visits.
 This model used the pre-vaccine period to estimate the relationship between the outcome of interest and all non-respiratory visits.
-It also predicted the occurrence in the post-vaccine period by incorporating the observed number of non-respiratory visits, and assuming the relationship between the disease category and non-respiratory visits would not have changed, had the vaccination not occurred. 
+It also predicted the occurrence of disease in the post-vaccine period by incorporating the observed number of non-respiratory visits, and assumed the relationship between the disease category and non-respiratory visits would not have changed, had the vaccination not occurred. 
 The third model included synthetic controls as covariates and used Bayesian variable selection to choose which of them to include [@Bruhn2017].
 The prior for each synthetic control was set as a Dirac spike with a point-mass at zero. 
 The pre-vaccine period was used to estimate the relationship between the synthetic controls and the outcome of interest, and to select the optimal controls.
@@ -51,37 +49,39 @@ Finally, a two-step model was fitted, using a seasonal and trend decomposition (
 STL was used to extract a smoothed trend for each of the synthetic controls.
 PCA was then used to extract the first principal component, which was used as a covariate in the final prediction model.
 
-Leave-one-out cross-validation (LOOCV) was used to calibrate the models, using data from the pre-vaccine period.
-The LOOCV was also used to calculate the average point-wise likelihood for each model, diagnostic category and age-group. 
-The average point-wise likelihoods were used as weights in a Bayesian model stacking procedure, which produced the final stacked model used in the analysis.
-The stacked model was used to generate a posterior distribution of the number of cases which would have occurred, had the vaccine not been introduced. 
-From this posterior distribution, 10,000 Markov chain Monte Carlo (MCMC) estimates of the number of cases per calendar-month in post-vaccine period were drawn, of which the first 2,000 were discarded for optimal burn-in. 
-For each draw, the rate ratio between the observed and predicted number of cases during the post-vaccine period was calculated, and the median and 95% credible intervals extracted.
-To estimate the onset of vaccine impact, a rolling 12-month rate ratio was calculated, starting with the period that included 11-months of pre-vaccine data and one month of post-vaccine data.
-The number of cases prevented by the vaccine was caclulated for each calendar-month, by subtracting the observed number of cases from each of the 8,000 MCMC predictions.
-The cumulative sum of prevented cases were calculated, and the median and 95% credible intervals were extracted.
+Using data from the pre-vaccine period, leave-one-out cross-validation (LOOCV) was used to calibrate the models and calculate the average point-wise likelihood for each model, diagnostic category and age-group.
+The average point-wise likelihoods were used as weights in a Bayesian model-stacking procedure, to produce the final stacked model used in the analysis.
+From the posterior predictive distribution of the stacked model, a total of 10,000 Markov chain Monte Carlo (MCMC) samples were drawn, representing the number of cases that would have occurred in the post-vaccine period, had the vaccine not been introduced.
+The first 2,000 MCMC draws were discarded for optimal burn-in. 
+For each of the remaining 8,000 draws, the rate ratio between the observed and predicted number of cases during the post-vaccine period was calculated, and the median and 95% credible intervals extracted from the resulting distribution of rate ratios.
+To estimate the onset of vaccine impact, the rate ratio was calculated over a rolling 12-month period, the first of which included 11-months of pre-vaccine data and one month of post-vaccine data.
+The number of cases prevented by the vaccine was caclulated for each calendar-month, by subtracting the observed number of cases from each of the 8,000 MCMC draws.
+The cumulative sum of prevented cases was calculated, and the median and 95% credible intervals were extracted.
 
 ### Cost-effectiveness analysis
 
-The cost-effectiveness was estimated both from the healtcare sector and societal perspectives.
-The societal perspective included both direct costs and indirect costs associated with productivity loss, while the analysis conducted from the health sector perspective only included direct costs.
+The cost-effectiveness of PHiD-CV10 introduction compared to no intervention was estimated from both the healtcare sector and societal perspectives using ecological post-implementation data.
+The societal perspective included both direct costs and indirect costs associated with productivity loss, while analysis from the health care perspective included only direct costs.
 Neither analysis included estimates of long-term sequelae or their associated costs.
+The time horizon was five years and both costs and cost-savings were discounted at a 3% discount rate.
+All costs were presented in constant 2015 USD.
 
-The direct cumulative savings associated with the vaccination were calculated by multiplying the estimated number of prevented cases with the expected cost of each case. 
-The expected cost was obtained by sampling with replacement from the observed costs extracted from Landspitali University Hospital's patient registry, after they had been adjusted to constant 2011 ISK.
+The direct cumulative savings associated with PHiD-CV10 introduction were calculated by multiplying the predicted number of prevented cases from the Bayesian time series analysis with the expected cost of each case. 
+The expected cost was obtained through sampling with replacement from the observed costs extracted from Landspitali University Hospital's patient registry, after adjusting to constant 2015 Icelandic kronas and converting to USD.
 The sampling was stratified by disease category and age-group.
-The direct costs associated with the introduction of PHiD-CV10 into the pediatric vaccination program was calculated for each calendar-year by multiplying the number of purchased doses by the purchase price.
-Wastage is taken into account as this definition also included doses that were for whatever reason never administered.
-Additional administration costs were however not assumed as each dose is administered by nurses during the same visits other establised vaccines were already being given.
+The direct costs associated with the introduction of PHiD-CV10 into the pediatric vaccination program were calculated for each calendar-year by multiplying the number of purchased doses by the price of each purchased dose.
+The prices were adjusted to constant 2015 Icelandic kronas and converted to USD.
+Wastage was taken into account, as this formula included doses that were for whatever reason never administered.
+Additional administration costs were however not assumed, as each dose was administered by nurses during the same visits that other establised vaccines were being given.
 The direct costs associated with the vaccine were subtracted from the direct cumulative savings to obtain the final estimate of the total cost.
-This resulted in 8,000 posterior draws of the estimated total vaccine cost, from which the median and 95% credible intervals were extracted.
+This resulted in 8,000 posterior draws of the total cost, from which the median and 95% credible intervals were extracted.
 
 Indirect costs due to productivity loss were accounted for in the analysis from the societal perspective. 
-The deciles of wage extracted from Statistics Iceland were optimally fitted to a lognormal distribution to obtain a continuous distribution of wage.
-The number of days of work lost were calculated using distributional assumptions. 
+The deciles of wage that were extracted from Statistics Iceland were optimally fitted to a lognormal distribution to obtain a continuous distribution of wage [@R-rriskDistributions].
+The number of days of work lost were assumed.
 For each case of otitis media in primary care, the days of work lost by a parent or guardian were assumed to follow a Poisson distribution with mean equalling one.
 For each pneumonia or invasive pneumococcal disease hospitalization, the days of work lost were assumed to equal the sum of the hospital length of stay and a variable time following discharge.
 For each prevented case, the associated hospital length of stay was sampled with replacement from the observed length of stay obtained from the patient registry.
-This variable time was assumed to by Poisson distributed with mean equal to half the hospital length of stay.
+This variable time was assumed to be Poisson distributed with mean equal to half the observed hospital length of stay.
 The indirect costs were calculated by multiplying the days of work lost with wages sampled from the lognormal wage distribution, accounting for unemployment.
-Cost-effectiveness was summarized with incremental cost-effectiveness ratios (ICER) with 95% credible intervals. 
+Cost-effectiveness was summarized with incremental cost-effectiveness ratios (ICER) with 95% credible intervals.

@@ -1,3 +1,163 @@
 # Conclusions {#conclusions}
 
-* Study the herd-effect of PHiD-CV10 introduction. 
+All the aims of the thesis proposal were met. The impact of PHiD-CV10 introduction into the pediatric vaccination program in Iceland was demonstrated on several facets of pneumococcal disease.
+
+## Direct and indirect impact on otitis media
+
+The introduction of PHiD-CV10 resulted in a decrease in rate of acute otitis media in primary care.  
+Among children younger than three years of age, the impact of PHiD-CV10 on AOM episodes was 21%.
+The mean number of AOM episodes per child deceased from 1.6 to 1.3 by their third birthday, and the relative proportion of children who never experienced an episode increased by 14%.
+The incidence rate of AOM decreased from 45 to 40 episodes per 100 person-years.
+The vaccine independently protected against a child's first (15%) and second (5%) episode of AOM, but in the subgroup of children who had already experienced two, no additional protection was evident.
+After secular trends in the rate of AOM visits to primary care had been taken into account, and trends in visits for other indications adjusted for, the impact among children younger than one, one, two, and three to four years of age was 26%, 28%, 12% and 14% respectively.
+In children younger than five years of age, PHiD-CV10 prevented 11,638 AOM visits during the first five years of the vaccination program.
+
+Herd-effect was demonstrated for AOM following the introduction of PHiD-CV10. 
+Among children younger than four months of age, who were too young to receive direct benefit from the vaccine, the impact on AOM was 40%.
+Among children five to nine, 10-14 and 15-19, the impact was 12%, 17% and 11% respectively during the first five years of the vaccination program, after adjusting for secular trends in both AOM visits and visits for other indications.
+None of the children in these age-groups were eligible for the PHiD-CV10 vaccination program and no catch-up program was implemented in Iceland.
+
+## Direct impact on antimicrobial consumption
+
+Antimicrobial consumption decreased following vaccine introduction.
+Among children younger than three years of age, the impact of PHiD-CV10 on all-cause outpatient antimicrobial consumption was 8%. 
+The incidence rate of antimicrobial prescriptions was 165 per 100 person-years before the vaccine introduction, which decreased to 150 per 100 person-years.
+The proportion of children in the vaccine non-eligible cohorts and vaccine eligible cohorts who filled at least one antimicrobial prescription by three years of age was 88.6% and 86.8% respectively. 
+The mean number of prescriptions per child by their third birthday decreased from 6.5 to 5.8 among boys, and from 6.1 to 5.4 among girls. 
+The relative proportion of children who never filled an antimicrobial prescription was 16%.
+An independent vaccine impact was still discernible in children who had filled up to three prior antimicrobial prescriptions.
+When only AOM-associated antimicrobial prescriptions were considered, the vaccine impact was 21%.
+The proportion of AOM visits resulting in antimicrobial prescription remained fairly stable between 57% and 64%, suggesting that the observed decrease in antimicrobial consumption is due to a decrease in disease frequency rather than changes in prescribing habits.
+
+The introduction of PHiD-CV10 resulted in a decrease in AOM requiring parenteral antimicrobial.
+The vaccine impact on AOM episodes treated with ceftriaxone was 52% among children zero to four years of age. 
+Some of the observed decrease was due to a 12% vaccine impact on overall AOM visits to the pediatric emergency department, which decreased from 47.4 visits to 41.8 per 1,000 person-years.
+However, among the subset of Icelandic children who presented to the pediatric emergency department with AOM, the vaccine decreased the proportion that required treatment with ceftriaxone by 42%.
+A decrease in ceftriaxone use for other causes was not observed, and overall ceftriaxone remained the same in other age-groups.
+
+## Direct impact on tympanostomy tube placements
+
+Tympanostomy tube placements increased despite the inclusion of PHiD-CV10 into the national pediatric vaccination program.
+The cumulative incidence of tympanostomy procedures by five years of age increased from 29% in the 2005 birth-cohort, to 31% in the 2012 cohort.
+The median age of children undergoing their first tympanostomy procedure was 17 months, and 18% were younger than one year of age.
+The proportion of children who did not have a single recorded otitis media associated primary care visit before the undergoing the procedure increased from 21% to 29%, and the proportion of children who had never filled an antimicrobial prescription increased from 3% to 5%.
+It remains unclear why the rate of tympanostomy procedures increased following PHiD-CV10 introduction, despite the lower incidence of acute otitis media, otitis media, and antimicrobial prescriptions. 
+
+## Direct and indirect impact on pneumonia hospitalizations
+
+The introduction of PHiD-CV10 resulted in a decrease in pneumonia hospitalizations.
+Among children zero to three years of age, the vaccine impact on pneumonia hospitalizations was 20%.
+The hazard of pneumonia among vaccine eligible and vaccine non-eligible children began to deviate at twelve months of age. 
+This occurred despite an increase in hospitalizations for other lower respiratory infections in the same children between zero to five months of age.
+Because pneumonia and other lower respiratory tract infecitons share common risk factors, the results do not suggest that the observed decrease in pneumonia hospitalizations was confounded by changes in unmeasured risk factors.
+After secular trends in the rate of pneumonia hospitalizations and hospital admissions for other indications had been adjusted for, the impact of PHiD-CV10 on pneumonia hospitalizations among children zero to four years of age was 33%.
+
+Herd-effect was demonstrated for pneumonia hospitalizations following the introduction of PHiD-CV10.
+Taking into account secular trends in hospitalizations regardless of indication, the impact of PHiD-CV10 on pneumonia hospitalizations was 26% among children five to 19 years of age, 32% among adults 20-39, 8% among adults 40-64, 25% among adults 65-79, and 24% among adults 80 years of age and older.
+To our knowledge, the methodology adequately adjusted for all possible confounders and sensitivity analyses supported the robustness of the results.
+
+## Direct and indirect impact on hospital admissions for invasive pneumococcal disease
+
+PHiD-CV10 introduction resulted in both direct and indirect impact on hospitalized invasive pneumococcal disease.
+No vaccine-type IPD was observed in the vaccine eligible cohorts following the introduction of the vaccine.
+The impact of PHiD-CV10 on IPD among children zero to three years of age regardless of serotype was 93%.
+After secular trends in the rate of IPD hospitalizations regardless of serotype had been taken into account, the impact among children zero to four years of age was 63%.
+The trend adjusted impact was heavily dependent on which method was used to adjust for trend, likely due to the small number of IPD hospitalizations. 
+If adjustments for hospitalizations for other indications were also included the impact was 90%.
+The impact on IPD hospitalizations among individuals five to 64 years of age was 56% and the results were not dependent on the method used to adjust for secular trends. 
+Conversely, the impact IPD regardless of serotype was consistently small (6%) among adults 65 years of age and older compared to other age-groups, regardless of the adjustment method used.
+This finding is consistent with prior studies, and in the case of Iceland, may be due to a long tradition of pneumococcal vaccination in this age-group.
+
+## Cost-effectiveness of PHiD-CV10 intoduction
+
+The introduction of PHiD-CV10 was not only cost-effective but cost-saving during the first five years of the program.
+From the health care perspective, the program was cost-saving by 6,722,048\$.
+The incremental cost-effectiveness ratio per prevented case of AOM was -488\$, which implies that after considering all costs associated with purchasing the vaccine, the total cost of preventing a case of AOM was negative -- 488\$ were saved rather than spent.
+The ICER for each prevented pneumonia hospitalization was -5,640\$ and was -105,548\$ per prevented IPD hospitalization.
+When work-loss was also considered, the program was cost-saving by 7,404,352\$ and the ICER for AOM, hospitalized pneumonia and hospitalized IPD were -541\$, -6,309\$ and -116,809\$ respectively.
+Mortality, disease sequelae, and quality of life were not considered in our study.
+These estimates include all the associated costs of the vaccine program, but not all the benefits, and are therefore likely underestimates of the true vaccine benefit.
+
+## Future research questions
+
+The findings of this work have raised further questions that may be answered with the data collected by our research group, and others that may require further data collection.
+Through careful study design these questions will in the future be answered by our research group.
+
+### What is the relationship between the age of a child at the time of their first episode of acute otitis media and their future risk of recurrent or protracted disease?
+
+Answering this question with population-based data requires a careful approach to untangle true increases in risk from confounded results.
+Health-seeking behavior would need to be adjusted for, as this could both independently increase the probability of being diagnosed with early AOM, and the probability of subsequently being diagnosed with repeated AOM and receiving tympanostomy tubes.
+Our interest in the question is both because we would like to provide evidence for or against the hypothesis that early insult to the middle ear mucosa increases risk of further disease, and subsequently whether delaying a child's first episode of AOM could decrease their risk of future disease.
+Several approaches would need to be used.
+To ascertain whether an early episode of AOM increased this risk, rather than an early episode of any infectious visit to primary care, we could use urinary tract infections as a control. The question could then be restated as: how much greater is the subsequent risk of recurrent AOM and tympanostomy tube procedures among children who experienced an early episode of AOM, compared to children who experienced an early urinary tract infection?
+The analysis could possibly leverage the month of birth as an instrumental variable to estimate the causal effect, however this would need to be examined further before implementation.
+Sensitivity analysis would explore varying definitions of the exposures and outcome.
+
+### To what degree, if any, did physicians change their prescribing habits for AOM following the introduction of a universal pneumococcal vaccination program?
+
+This question could be answered with the data that we have currently collected.
+Episodes of AOM would need to be scrutinized.
+Repeated visits for the same episode would need to be delineated from visits representing a new episode.
+A child presenting with AOM who then re-visits three days later only then receiving an antimicrobial prescription would need to be categorized differently than a child who received a prescription on the day of their first visit.
+Two approaches would be taken that would compliment each other.
+The first would ask whether the proportion of children who presented with AOM and did not receive an antimicrobial prescription increased overall, regardless of the identity of the physician.
+The proportion of children who received a watchful waiting approach would also be analysed.
+The second approach would examine the same indices, but from the perspective of individual physicians.
+Our data include the physician identification number of all primary care physicians who diagnosed AOM during an 11 year period.
+We could select all physicians who had diagnosed and treated AOM in primary care for at least three years before and after the introduction of PHiD-CV10, and within this group ask whether the prescribing habits changed.
+Urinary tract infections could be used as a control for both approaches, to better ascertain whether any observed effect were due to the vaccine.
+Time series methods would be used to adjust for secular trends.
+
+### What is the incidence of AOM with treatment failure and has it changed following vaccine introduction? 
+We have already presented evidence of impact on AOM with treatment failure, by using ceftriaxone treatment episodes as a proxy.
+This question could be answered more robustly by using our full population-based data.
+Time series methods would be used to adjust for secular trends.
+Because AOM with treatment failure is not strictly defined though intuitive to understand, several different definitions would be tested.
+This would include repeated visits and repeated antimicrobial prescriptions, repeated antimicrobial prescriptions only, a repeated visit with the diagnosis of tympanic membrane rupture, a repeated visits with a subsequent first prescription for otological antimicrobial ear drops in a child without a tympanostomy tube, a repeated visit to the pediatric emergency department with a AOM associated diagnosis, hospital-based treatment with parenteral antimicrobial, hospital admission with an AOM associated diagnosis, and a diagnosis of mastoiditis.
+These data can be linked to the microbiological database of the Department of Clinical Microbiology at Landspitali University Hospital to ascertain which pathogens were detected in the subset of children with treatment failure who underwent tympanocentesis.
+The database includes all clinical cultures taken in Iceland.
+
+### What is the incidence and cumulative incidence of tonsillectomies in young children in Iceland?
+
+Our results revealed that the incidence of tympanostomy tube placements among Icelandic children are the highest in the world.
+Some have suggested that the high cumulative incidence among Icelandic children may be due to genetically influenced traits in the middle ear that result in one third of children requiring this procedure.
+We disagree.
+Rather, we believe this to be a result of a system that bases reimbursement on the completion of procedures and does not require a referral from another physician to do so.
+If we are correct, we should see a similarly high incidence and cumulative incidence of tonsillectomies as tympanostomy placements.
+
+### Do children experience fewer episodes of AOM after undergoing a tympanostomy tube placement than they would otherwise have experienced?
+
+Based on our clinical experience and the discourse we observe both within the health care system and media in general, we believe that the great majority of tympanostomy tube procedures are performed on the premise that they will decrease the subsequent number of AOM episodes.
+This could be tested using an Andersen-Gill model with time-varying variables.
+This approach would reveal what impact undergoing a tympanostomy tube procedure has on subsequent episodes of AOM compared to children who did not undergo the procedure, after adjusting for age, gender and the previous number of AOM episodes.
+Several different case definitions could be used to explore whether this has an effect on the result. Children who have undergone a procedure may be more likely to consult the otolaryngologist for a subsequent acute symptomatic disease, rather than presenting to primary care.
+These visits would not be included in our data and and this possibility would need to be controlled for. One way would be to include examine the outcome of pharyngitis and tonsillitis.
+These infections represent acute symptomatic disease that an otolaryngologist may be consulted for, but would not be expected to be influenced by undergoing a tympanostomy tube placement.
+If the number of pharyngitis and tonsillitis cases decrease following the procedure, this would suggest children are increasingly consulting private practice otolaryngologist and any observed effect on AOM episodes must be interpreted accordingly.
+Another way of adjusting for this bias would be to examine the effect of the procedure on all-cause antimicrobial prescriptions, as the National Drug Prescription Registry contains all prescriptions, regardless of provider.
+
+### Would tympanostomy tube procedures have increased to a larger degree, had PHiD-CV10 not been introduced into the pediatric vaccination program?
+
+The increase in tympanostomy procedures seen in our study was surprising and unintuitive in the context of large decreases in AOM and antimicrobial prescriptions.
+Tonsillectomies represent a perfect control for tympanostomy procedures within a time series framework. Tonsillectomies are performed by the same specialist physicians, and are therefore subject to the same variables influencing access to the procedure; the number of practicing otolaryngologists, the ease of obtaining an appointment, the number of available operating room slots, and the individual threshold of the surgeon to operate.
+Parents would be expected to have similar reservations and expectations for both procedures.
+From their perspective, both are procedures that are meant to prevent repeated bouts of symptomatic infection, they both require general anesthesia and both are associated with a slight risk of complications.
+Furthermore, while PHiD-CV10 would be expected to influence the rate of tympanostomy tube procedures, it would not influence tonsillectomies.
+Therefore, a time series model which establishes the relationship between tonsillectomies and tympanostomy tube procedures in the pre-vaccine period, and adjusts for the trajectory of in the secular trends of each procedure, would add to our knowledge of how the incidence of tympanostomy tube placements would have developed, had the vaccine not been introduced.
+
+### What was the direct and indirect effect of PHiD-CV10 on individual and grouped serotypes of invasive pneumococcal disease, after adjustment for secular trends in both IPD and invasive disease caused by other pathogens?
+
+We have already examined the impact of PHiD-CV10 on all-cause IPD but have yet to examine specific serotypes.
+This would require more specific synthetic-controls then were used in our previous study and a longer pre-vaccine period.
+We have access to the microbiological database of the Department of Clinical Microbiology at Landspitali University Hospital, which has recorded all culture data in Iceland from 1985.
+With this data we could use invasive disease caused by other pathogens as a control, which represent perfect controls for impact studies on invasive disease.
+Invasive disease caused by other pathogens would not be expected to change due to pneumococcal vaccination, but shares the same risk factors as IPD, and the detection rate of both are concurrently influenced by the propensity to obtain cultures of sick individuals and the ability of the microbiology lab to detect a pathogen in the cultures it receives. 
+
+## Conclusion
+
+In conclusion, we have demonstrated large decreases in the incidence of acute otitis media, antimicrobial consumption, pneumonia hospitalizations and invasive pneumococcal disease in vaccine eligible children following the introduction of PHiD-CV10 into the pediatric vaccination program in Iceland.
+We have also shown a robust herd-effect in acute otitis media episodes among children too young and too old to have received direct benefit from the vaccine, and large decreases in pneumonia hospitalizations and hospitalizations for invasive pneumococcal disease among adults.
+A robust post-implementation cost-effectiveness study was conducted and found the vaccine program to be cost-saving from both the health care and societal perspectives, even before taking into account long-term sequelae, mortality and quality of life.
+Data were collected from several population-based registries and included long pre- and post-vaccine periods.
+The quality of the data, their scope and the analytical methods used allowed us to perform a ecological study that estimated the vaccine impact to previously unattainable degree.
+The collected data will continue to allow us to answer further questions regarding the impact of introducing PHiD-CV10 into national vaccine program in Iceland. 
