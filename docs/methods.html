@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>PhD thesis</title>
+  <title>3 Materials and methods | PhD thesis</title>
   <meta name="description" content="This is a PhD thesis written in real-time in Rstudio">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="PhD thesis" />
+  <meta property="og:title" content="3 Materials and methods | PhD thesis" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="eliaseythorsson/phd_thesis" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="PhD thesis" />
+  <meta name="twitter:title" content="3 Materials and methods | PhD thesis" />
   
   <meta name="twitter:description" content="This is a PhD thesis written in real-time in Rstudio" />
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Elías Sæbjörn Eyþórsson">
 
 
-<meta name="date" content="2019-01-12">
+<meta name="date" content="2019-04-01">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="results.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -50,7 +51,6 @@
 
 
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -63,14 +63,11 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">PhD Thesis Under Construction</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#clinical-manifestations-of-streptococcus-pneumoniae"><i class="fa fa-check"></i><b>1.1</b> Clinical manifestations of <em>Streptococcus pneumoniae</em></a><ul>
 <li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#acuteotitismediaintroduction"><i class="fa fa-check"></i><b>1.1.1</b> Acute otitis media</a></li>
 <li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#pneumonia"><i class="fa fa-check"></i><b>1.1.2</b> Pneumonia</a></li>
-<li class="chapter" data-level="1.1.3" data-path="intro.html"><a href="intro.html#invasive-pneumococcal-disease"><i class="fa fa-check"></i><b>1.1.3</b> Invasive pneumococcal disease</a></li>
+<li class="chapter" data-level="1.1.3" data-path="intro.html"><a href="intro.html#invasive-pneumococcal-disease-and-mortality"><i class="fa fa-check"></i><b>1.1.3</b> Invasive pneumococcal disease and mortality</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#pneumococcal-vaccines"><i class="fa fa-check"></i><b>1.2</b> Pneumococcal vaccines</a><ul>
 <li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#a-brief-history-of-pneumococcal-vaccination"><i class="fa fa-check"></i><b>1.2.1</b> A brief history of pneumococcal vaccination</a></li>
@@ -100,7 +97,8 @@
 <li class="chapter" data-level="3.6" data-path="methods.html"><a href="methods.html#paper5"><i class="fa fa-check"></i><b>3.6</b> Impact on respiratory associated hospitalizations (Paper V)</a></li>
 <li class="chapter" data-level="3.7" data-path="methods.html"><a href="methods.html#paper6"><i class="fa fa-check"></i><b>3.7</b> Impact and cost-effectiveness analysis (Paper VI)</a><ul>
 <li class="chapter" data-level="3.7.1" data-path="methods.html"><a href="methods.html#data-sources"><i class="fa fa-check"></i><b>3.7.1</b> Data sources</a></li>
-<li class="chapter" data-level="3.7.2" data-path="methods.html"><a href="methods.html#statistical-analysis"><i class="fa fa-check"></i><b>3.7.2</b> Statistical analysis</a></li>
+<li class="chapter" data-level="3.7.2" data-path="methods.html"><a href="methods.html#impact-of-phid-cv10"><i class="fa fa-check"></i><b>3.7.2</b> Impact of PHiD-CV10</a></li>
+<li class="chapter" data-level="3.7.3" data-path="methods.html"><a href="methods.html#cost-effectiveness-analysis"><i class="fa fa-check"></i><b>3.7.3</b> Cost-effectiveness analysis</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>4</b> Results</a><ul>
@@ -117,32 +115,51 @@
 <li class="chapter" data-level="4.4" data-path="results.html"><a href="results.html#paper3results"><i class="fa fa-check"></i><b>4.4</b> Impact on outpatient antimicrobial prescriptions (Paper III)</a></li>
 <li class="chapter" data-level="4.5" data-path="results.html"><a href="results.html#paper4results"><i class="fa fa-check"></i><b>4.5</b> Impact on tympanostomy tube procedures (Paper IV)</a></li>
 <li class="chapter" data-level="4.6" data-path="results.html"><a href="results.html#paper5results"><i class="fa fa-check"></i><b>4.6</b> Impact on respiratory associated hospitalizations (Paper V)</a></li>
+<li class="chapter" data-level="4.7" data-path="results.html"><a href="results.html#paper6results"><i class="fa fa-check"></i><b>4.7</b> Impact and cost-effectiveness analysis (Paper VI)</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="results.html"><a href="results.html#population-impact-on-acute-otitis-media-among-children-younger-than-20-years-of-age"><i class="fa fa-check"></i><b>4.7.1</b> Population impact on acute otitis media among children younger than 20 years of age</a></li>
+<li class="chapter" data-level="4.7.2" data-path="results.html"><a href="results.html#population-impact-on-pneumonia-hospitalizations"><i class="fa fa-check"></i><b>4.7.2</b> Population impact on pneumonia hospitalizations</a></li>
+<li class="chapter" data-level="4.7.3" data-path="results.html"><a href="results.html#population-impact-on-hospital-admissions-for-invasive-pneumococcal-disease"><i class="fa fa-check"></i><b>4.7.3</b> Population impact on hospital admissions for invasive pneumococcal disease</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>5</b> Discussion</a><ul>
 <li class="chapter" data-level="5.1" data-path="discussion.html"><a href="discussion.html#main-findings"><i class="fa fa-check"></i><b>5.1</b> Main findings</a></li>
-<li class="chapter" data-level="5.2" data-path="discussion.html"><a href="discussion.html#datasourcesdiscussion"><i class="fa fa-check"></i><b>5.2</b> Data collection and sources</a></li>
-<li class="chapter" data-level="5.3" data-path="discussion.html"><a href="discussion.html#epidemiology-and-impact-of-phid-cv10-on-otitis-media-in-iceland-papers-i-ii-iii-v-and-vi"><i class="fa fa-check"></i><b>5.3</b> Epidemiology and impact of PHiD-CV10 on otitis media in Iceland (Papers I, II, III, V and VI)</a><ul>
+<li class="chapter" data-level="5.2" data-path="discussion.html"><a href="discussion.html#datasourcesdiscussion"><i class="fa fa-check"></i><b>5.2</b> Data collection and sources (Papers I-VI)</a></li>
+<li class="chapter" data-level="5.3" data-path="discussion.html"><a href="discussion.html#epidemiology-and-management-of-otitis-media-in-iceland-and-the-impact-of-phid-cv10-introduction-papers-i-ii-iii-v-and-vi"><i class="fa fa-check"></i><b>5.3</b> Epidemiology and management of otitis media in Iceland and the impact of PHiD-CV10 introduction (Papers I, II, III, V and VI)</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="discussion.html"><a href="discussion.html#epidemiology-of-acute-otitis-media-in-iceland-papers-ii-and-v"><i class="fa fa-check"></i><b>5.3.1</b> Epidemiology of acute otitis media in Iceland (Papers II and V)</a></li>
-<li class="chapter" data-level="5.3.2" data-path="discussion.html"><a href="discussion.html#impact-on-primary-care-visits-for-otitis-media-papers-ii-and-vi"><i class="fa fa-check"></i><b>5.3.2</b> Impact on primary care visits for otitis media (Papers II and VI)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="discussion.html"><a href="discussion.html#impactaomdiscussion"><i class="fa fa-check"></i><b>5.3.2</b> Impact on primary care visits for otitis media (Papers II and VI)</a></li>
 <li class="chapter" data-level="5.3.3" data-path="discussion.html"><a href="discussion.html#impact-on-pediatric-emergency-department-visits-for-acute-otitis-media-paper-i"><i class="fa fa-check"></i><b>5.3.3</b> Impact on pediatric emergency department visits for acute otitis media (Paper I)</a></li>
 <li class="chapter" data-level="5.3.4" data-path="discussion.html"><a href="discussion.html#impact-on-outpatient-antimicrobial-prescriptions-for-otitis-media-paper-iii"><i class="fa fa-check"></i><b>5.3.4</b> Impact on outpatient antimicrobial prescriptions for otitis media (Paper III)</a></li>
 <li class="chapter" data-level="5.3.5" data-path="discussion.html"><a href="discussion.html#evidence-of-herd-effect-of-phid-cv10-on-the-incidence-of-otitis-media-in-the-unvaccinated-population-papers-ii-and-vi"><i class="fa fa-check"></i><b>5.3.5</b> Evidence of herd-effect of PHiD-CV10 on the incidence of otitis media in the unvaccinated population (Papers II and VI)</a></li>
 <li class="chapter" data-level="5.3.6" data-path="discussion.html"><a href="discussion.html#impact-on-acute-otitis-media-with-treatment-failure-paper-i"><i class="fa fa-check"></i><b>5.3.6</b> Impact on acute otitis media with treatment failure (Paper I)</a></li>
+<li class="chapter" data-level="5.3.7" data-path="discussion.html"><a href="discussion.html#impact-of-phid-cv10-on-tympanostomy-tube-placements-paper-iv"><i class="fa fa-check"></i><b>5.3.7</b> Impact of PHiD-CV10 on tympanostomy tube placements (Paper IV)</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="discussion.html"><a href="discussion.html#impact-of-phid-cv10-on-tympanostomy-tube-placements-paper-iv"><i class="fa fa-check"></i><b>5.4</b> Impact of PHiD-CV10 on tympanostomy tube placements (Paper IV)</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="discussion.html"><a href="discussion.html#impact-on-hospital-admissions-for-otitis-media-paper-v"><i class="fa fa-check"></i><b>5.4.1</b> Impact on hospital admissions for otitis media (Paper V)</a></li>
+<li class="chapter" data-level="5.4" data-path="discussion.html"><a href="discussion.html#impact-of-phid-cv10-on-hospital-admissions-for-respiratory-infections-and-invasive-pneumococcal-disease-papers-v-and-vi"><i class="fa fa-check"></i><b>5.4</b> Impact of PHiD-CV10 on hospital admissions for respiratory infections and invasive pneumococcal disease (Papers V and VI)</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="discussion.html"><a href="discussion.html#impact-on-hospital-admissions-for-otitis-media-and-its-complications-paper-v"><i class="fa fa-check"></i><b>5.4.1</b> Impact on hospital admissions for otitis media and its complications (Paper V)</a></li>
+<li class="chapter" data-level="5.4.2" data-path="discussion.html"><a href="discussion.html#impact-on-pediatric-pneumonia-hospitalizations-papers-v-and-vi"><i class="fa fa-check"></i><b>5.4.2</b> Impact on pediatric pneumonia hospitalizations (Papers V and VI)</a></li>
+<li class="chapter" data-level="5.4.3" data-path="discussion.html"><a href="discussion.html#impact-on-hospital-admissions-for-culture-confirmed-invasive-pneumococcal-disease"><i class="fa fa-check"></i><b>5.4.3</b> Impact on hospital admissions for culture confirmed invasive pneumococcal disease</a></li>
+<li class="chapter" data-level="5.4.4" data-path="discussion.html"><a href="discussion.html#evidence-of-herd-effect-of-phid-cv10-on-hospital-admissions-for-invasive-pneumococcal-disease-in-the-unvaccinated-population-paper-vi"><i class="fa fa-check"></i><b>5.4.4</b> Evidence of herd-effect of PHiD-CV10 on hospital admissions for invasive pneumococcal disease in the unvaccinated population (Paper VI)</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="discussion.html"><a href="discussion.html#impact-of-phid-cv10-on-pneumonia-hospitalizations-in-iceland-papers-v-and-vi"><i class="fa fa-check"></i><b>5.5</b> Impact of PHiD-CV10 on pneumonia hospitalizations in Iceland (Papers V and VI)</a><ul>
-<li class="chapter" data-level="5.5.1" data-path="discussion.html"><a href="discussion.html#evidence-of-herd-effect-of-phid-cv10-on-pneumonia-hospitalization-in-the-unvaccinated-population-papers-v-and-vi"><i class="fa fa-check"></i><b>5.5.1</b> Evidence of herd-effect of PHiD-CV10 on pneumonia hospitalization in the unvaccinated population (Papers V and VI)</a></li>
+<li class="chapter" data-level="5.5" data-path="discussion.html"><a href="discussion.html#cost-effectiveness-of-introducing-phid-cv10-into-the-icelandic-pediatric-vaccination-program-paper-vi"><i class="fa fa-check"></i><b>5.5</b> Cost-effectiveness of introducing PHiD-CV10 into the Icelandic pediatric vaccination program (Paper VI)</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="discussion.html"><a href="discussion.html#impact-of-phid-cv10-on-invasive-pneumococcal-disease-papers-v-and-vi"><i class="fa fa-check"></i><b>5.6</b> Impact of PHiD-CV10 on invasive pneumococcal disease (Papers V and VI)</a></li>
-<li class="chapter" data-level="5.7" data-path="discussion.html"><a href="discussion.html#cost-effectiveness-of-introduction-of-phid-cv10-into-the-icelandic-pediatric-vaccination-program-paper-vi"><i class="fa fa-check"></i><b>5.7</b> Cost-effectiveness of introduction of PHiD-CV10 into the Icelandic pediatric vaccination program (Paper VI)</a></li>
+<li class="chapter" data-level="6" data-path="conclusions.html"><a href="conclusions.html"><i class="fa fa-check"></i><b>6</b> Conclusions</a><ul>
+<li class="chapter" data-level="6.1" data-path="conclusions.html"><a href="conclusions.html#direct-and-indirect-impact-on-otitis-media"><i class="fa fa-check"></i><b>6.1</b> Direct and indirect impact on otitis media</a></li>
+<li class="chapter" data-level="6.2" data-path="conclusions.html"><a href="conclusions.html#direct-impact-on-antimicrobial-consumption"><i class="fa fa-check"></i><b>6.2</b> Direct impact on antimicrobial consumption</a></li>
+<li class="chapter" data-level="6.3" data-path="conclusions.html"><a href="conclusions.html#direct-impact-on-tympanostomy-tube-placements"><i class="fa fa-check"></i><b>6.3</b> Direct impact on tympanostomy tube placements</a></li>
+<li class="chapter" data-level="6.4" data-path="conclusions.html"><a href="conclusions.html#direct-and-indirect-impact-on-pneumonia-hospitalizations"><i class="fa fa-check"></i><b>6.4</b> Direct and indirect impact on pneumonia hospitalizations</a></li>
+<li class="chapter" data-level="6.5" data-path="conclusions.html"><a href="conclusions.html#direct-and-indirect-impact-on-hospital-admissions-for-invasive-pneumococcal-disease"><i class="fa fa-check"></i><b>6.5</b> Direct and indirect impact on hospital admissions for invasive pneumococcal disease</a></li>
+<li class="chapter" data-level="6.6" data-path="conclusions.html"><a href="conclusions.html#cost-effectiveness-of-phid-cv10-intoduction"><i class="fa fa-check"></i><b>6.6</b> Cost-effectiveness of PHiD-CV10 intoduction</a></li>
+<li class="chapter" data-level="6.7" data-path="conclusions.html"><a href="conclusions.html#future-research-questions"><i class="fa fa-check"></i><b>6.7</b> Future research questions</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="conclusions.html"><a href="conclusions.html#what-is-the-relationship-between-the-age-of-a-child-at-the-time-of-their-first-episode-of-acute-otitis-media-and-their-future-risk-of-recurrent-or-protracted-disease"><i class="fa fa-check"></i><b>6.7.1</b> What is the relationship between the age of a child at the time of their first episode of acute otitis media and their future risk of recurrent or protracted disease?</a></li>
+<li class="chapter" data-level="6.7.2" data-path="conclusions.html"><a href="conclusions.html#to-what-degree-if-any-did-physicians-change-their-prescribing-habits-for-aom-following-the-introduction-of-a-universal-pneumococcal-vaccination-program"><i class="fa fa-check"></i><b>6.7.2</b> To what degree, if any, did physicians change their prescribing habits for AOM following the introduction of a universal pneumococcal vaccination program?</a></li>
+<li class="chapter" data-level="6.7.3" data-path="conclusions.html"><a href="conclusions.html#what-is-the-incidence-of-aom-with-treatment-failure-and-has-it-changed-following-vaccine-introduction"><i class="fa fa-check"></i><b>6.7.3</b> What is the incidence of AOM with treatment failure and has it changed following vaccine introduction?</a></li>
+<li class="chapter" data-level="6.7.4" data-path="conclusions.html"><a href="conclusions.html#what-is-the-incidence-and-cumulative-incidence-of-tonsillectomies-in-young-children-in-iceland"><i class="fa fa-check"></i><b>6.7.4</b> What is the incidence and cumulative incidence of tonsillectomies in young children in Iceland?</a></li>
+<li class="chapter" data-level="6.7.5" data-path="conclusions.html"><a href="conclusions.html#do-children-experience-fewer-episodes-of-aom-after-undergoing-a-tympanostomy-tube-placement-than-they-would-otherwise-have-experienced"><i class="fa fa-check"></i><b>6.7.5</b> Do children experience fewer episodes of AOM after undergoing a tympanostomy tube placement than they would otherwise have experienced?</a></li>
+<li class="chapter" data-level="6.7.6" data-path="conclusions.html"><a href="conclusions.html#would-tympanostomy-tube-procedures-have-increased-to-a-larger-degree-had-phid-cv10-not-been-introduced-into-the-pediatric-vaccination-program"><i class="fa fa-check"></i><b>6.7.6</b> Would tympanostomy tube procedures have increased to a larger degree, had PHiD-CV10 not been introduced into the pediatric vaccination program?</a></li>
+<li class="chapter" data-level="6.7.7" data-path="conclusions.html"><a href="conclusions.html#what-was-the-direct-and-indirect-effect-of-phid-cv10-on-individual-and-grouped-serotypes-of-invasive-pneumococcal-disease-after-adjustment-for-secular-trends-in-both-ipd-and-invasive-disease-caused-by-other-pathogens"><i class="fa fa-check"></i><b>6.7.7</b> What was the direct and indirect effect of PHiD-CV10 on individual and grouped serotypes of invasive pneumococcal disease, after adjustment for secular trends in both IPD and invasive disease caused by other pathogens?</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="conclusions.html"><a href="conclusions.html"><i class="fa fa-check"></i><b>6</b> Conclusions</a></li>
+<li class="chapter" data-level="6.8" data-path="conclusions.html"><a href="conclusions.html#conclusion"><i class="fa fa-check"></i><b>6.8</b> Conclusion</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -164,16 +181,36 @@
 <h1><span class="header-section-number">3</span> Materials and methods</h1>
 <div id="datasources" class="section level2">
 <h2><span class="header-section-number">3.1</span> Data collection and sources</h2>
-<p>During the study period from 1 January 2005 to 31 December 2017, data were collected from multiple whole population registries, and from a single hospital registry. All data were identifiable to individuals by government issued national identification numbers. Each individual receives only one number over the course of their lifetime, and the identification number is permanently retired at the time of death. The Icelandic Directorate of Health processed and anonymized all data from the various registries before releasing it to the study group. A study identifier was created based on the national identification number, which was then removed from the data as part of the anonymization process. The mapping key was kept by the Directorate of Health, and was not accessible to the study group. The study group linked data from the various registries using both the study identifier and dates of events.</p>
-<p>The data underlying this study was observational in nature, and its quality was enhanced by several factors. Not only were all medical records in Iceland stored electronically, but the same software, <em>Saga</em>, was used by all health care providers and institutions throughout the study period. Likewise, the International Classification of Diseases, 10th revision (ICD-10), was the only diagnostic coding system in use in Iceland during the study period. Furthermore, all medical procedures were coded with the NOMESCO Classification of Surgical Procedures (NCSP), and drugs were classified using the Anatomical-Therapeutic-Chemical (ATC) classification system of the World Health Organization. Continuity between data systems enhanced the quality of results.</p>
-<p>In the following sub-chapters, each registry providing study data is reviewed. Statistics Iceland provided data on immigration and emigration, demographic indices and salaries. Diagnostic data were obtained from Landspitali University Hospital’s patient registry and the Primary Care Registry of the Directorate of Health. Pneumococcal vaccination status was collected from the National Vaccine Registry (NVR) and augmented with information on privately purchased vaccine doses obtained from the National Drug Prescription Registry (NDPR). Data regarding antimicrobial prescriptions were also extracted from the NDPR. Finally, reimbursement data for outpatient otolaryngological procedures were obtained from Icelandic Health Insurance.</p>
+<p>During the study period from 1 January 2005 to 31 December 2017, data were collected from multiple whole population registries, and from the patient registry of Landspitali University Hospital.
+Data were collected based on government issued national identification numbers.
+Each individual receives only one number over the course of their lifetime, and the identification number is permanently retired at the time of death.
+The Icelandic Directorate of Health processed and anonymized all data from the various registries before releasing it to the study group.
+A study identifier was created based on the national identification number, which was then removed from the data as part of the anonymization process.
+The mapping key was kept by the Directorate of Health, and was not accessible to the study group.
+The study group linked data from the various registries using both the study identifier and dates of events.</p>
+<p>In the following sub-chapters, each registry providing study data is reviewed.
+Statistics Iceland provided data on immigration and emigration, demographic indices and salaries.
+Diagnostic data were obtained from Landspitali University Hospital’s patient registry and the Primary Care Registry of the Directorate of Health.
+Pneumococcal vaccination status was collected from the National Vaccine Registry (NVR) and augmented with information on privately purchased vaccine doses obtained from the National Drug Prescription Registry (NDPR).
+Data regarding antimicrobial prescriptions were also extracted from the NDPR.
+Finally, reimbursement data for outpatient otolaryngological procedures were obtained from Icelandic Health Insurance.</p>
 <div id="statisticsiceland" class="section level3">
 <h3><span class="header-section-number">3.1.1</span> Statistics Iceland</h3>
-<p>Statistics Iceland collects and maintains a large array of economical, social and demographic indices, and provides aggregate data at www.statice.is. For each calendar-year 2005-2017, the number of individuals living in Iceland was collected from Statistics Iceland, stratified by postal-code, gender and age in years. These data were used for the denominator in incidence calculations in all papers. The deciles of salary from 2005-2017 were obtained from Statistics Iceland and used to inform a sensitivity analysis on the cost-effectiveness of PHiD-CV10 ( <a href="methods.html#paper6">Paper VI</a>). Costs were adjusted for inflation using the Medical Care Consumer Price Index of Statistics Iceland, and wages adjusted using the National Wage Index. In addition to the aggregate data presented above, individual-level information on the immigration and emigration of children zero to four years of age was obtained, anonymized and linked to the other study data.</p>
+<p>Statistics Iceland collects and maintains a large array of economic, social and demographic indices, and provides aggregate data at www.statice.is.
+For each calendar-year 2005-2017, the number of individuals living in Iceland was collected from Statistics Iceland, stratified by postal-code, gender and age in years.
+These data were used for the denominator in incidence calculations in all papers.
+The deciles of salary from 2005-2017 were obtained from Statistics Iceland and used to inform a sensitivity analysis on the cost-effectiveness of PHiD-CV10 ( <a href="methods.html#paper6">Paper VI</a>).
+Costs were adjusted for inflation using the Medical Care Consumer Price Index of Statistics Iceland, and wages adjusted using the National Wage Index.
+In addition to the aggregate data presented above, individual-level information on the immigration and emigration of children zero to four years of age was obtained, anonymized and linked to the other study data.</p>
 </div>
 <div id="patientregistry" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> Landspitali University Hospital patient registry</h3>
-<p>Landspitali University Hospital is the sole tertiary hospital in Iceland, and includes Children’s Hospital Iceland – Iceland’s only pediatric hospital. It provides primary and secondary care for the capital area, approximately 65% of the Icelandic population, and tertiary care for the whole population. In 2017, the total number of non-psychiatric curative care hospital beds in Iceland was 732 (www.statice.is). Of those, 669 (91%) were at Landspitali University Hospital. Landspitali’s patient registry records information on all emergency department and outpatient visits, and all hospital admissions to Landspitali University Hospital. For the period from 1 January 2005 to 31 December 2017, data were extracted on all unplanned acute-care visits and hospital admissions with ICD-10 discharge diagnoses compatible with respiratory infections (Table <a href="methods.html#tab:table-icd">3.1</a>).</p>
+<p>Landspitali University Hospital is the sole tertiary hospital in Iceland, and includes Children’s Hospital Iceland – Iceland’s only pediatric hospital.
+It provides primary and secondary care for the capital area, approximately 65% of the Icelandic population, and tertiary care for the whole population.
+In 2017, the total number of non-psychiatric curative care hospital beds in Iceland was 732 (www.statice.is).
+Of those, 669 (91%) were at Landspitali University Hospital.
+Landspitali’s patient registry records information on all emergency department and outpatient visits, and all hospital admissions to Landspitali University Hospital.
+For the period from 1 January 2005 to 31 December 2017, data were extracted on all unplanned acute-care visits and hospital admissions with International Classification of Diseases, 10th revision (ICD-10) discharge diagnoses compatible with respiratory infections (Table <a href="methods.html#tab:table-icd">3.1</a>).</p>
 <table>
 <caption><span id="tab:table-icd">Table 3.1: </span>The International Classification of Diseases, 10th revision (ICD-10) codes used for individual-level data collection from the Primary Care Registry and Landspitali University Hospital’s patient registry. All subgroups of the listed ICD-10 codes were also included.</caption>
 <thead>
@@ -369,7 +406,7 @@
 </tr>
 </tbody>
 </table>
-<p>Additionally, any visit or hospital admission associated with NCSP procedural codes in Table <a href="methods.html#tab:table-ncsp">3.2</a> were extracted the patient registry.</p>
+<p>Additionally, any visit or hospital admission associated with NOMESCO Classification of Surgical Procedures (NCSP) procedural codes in Table <a href="methods.html#tab:table-ncsp">3.2</a> were extracted the patient registry.</p>
 <table>
 <caption><span id="tab:table-ncsp">Table 3.2: </span>NOMESCO Classification of Surgical Procedures (NCSP) codes used for individual-level data collection from Landspitali University Hospital’s patient registry.</caption>
 <thead>
@@ -421,12 +458,22 @@
 </tr>
 </tbody>
 </table>
-<p>The data included the date of visit or hospital admission, date of hospital discharge, hospital length of stay, the departments involved (including the intensive care unit), and a detailed breakdown of costs associated with each contact. A separate and unique identification number was provided for each individual visit or hospital admission. All costs were recorded in Icelandic kronas (ISK) and was broken down into specific subsets. Costs associated with diagnostic testing were provided and broken down into costs associated with chemical blood testing; diagnostic radiological testing; anatomical pathology; virological testing; bacteriological cultures; antibody and other immunological testing; and specific tests performed by the blood bank in preparation for the administration of blood products. Costs associated with departmental upkeep, such as heat, electricity, and wages were divided between patients based on hospital length of stay. The costs associated with treatment were broken down into the cost of drugs, surgery and procedures and intensive care unit treatment.</p>
-<p>Several smaller independent data-sets pertaining to specific papers were extracted from the patient registry. These data-sets were not linked to the main study data.</p>
-<p>In <a href="methods.html#paper1">paper I</a>, describing the impact of PHiD-CV10 on acute otitis media with treatment failure, information on all doses of ceftriaxone administered at the Children’s Hospital Iceland between January 2009 and December 2015 was extracted from the hospital’s medication administration system using the ATC code J01DD0. Any ICD-10 diagnostic code associated with a visit or hospital admission in which ceftriaxone was administered, was extracted from the patient registry. Importantly, this included all ICD-10 codes, not only those in Table <a href="methods.html#tab:table-icd">3.1</a>. Also obtained for <a href="methods.html#paper1">paper I</a> was the aggregate number of yearly visits to the pediatric emergency department of Children’s Hospital Iceland 2008-2015.</p>
-<p><a href="methods.html#paper6">Paper VI</a> – a cost-benefit analysis of PHiD-CV10 introduction into the pediatric vaccination program, required synthetic controls used within a time-series analysis framework. The aggregate monthly number of acute-care visits and hospital admissions for several sub-chapters of the ICD-10 diagnostic coding system (Table <a href="methods.html#tab:table-icd-synthetic">3.3</a>) were obtained for 22 different age-groups.</p>
+<p>The data included the date of visit or hospital admission, date of hospital discharge, hospital length of stay, the departments involved (including the intensive care unit), and a detailed breakdown of costs associated with each contact.
+A separate and unique identification number was provided for each individual visit or hospital admission.
+All costs were recorded in Icelandic kronas (ISK) and were broken down into specific subsets.
+Costs associated with diagnostic testing were provided and categorized as costs associated with chemical blood testing; diagnostic radiological testing; anatomical pathology; virological testing; bacteriological cultures; antibody and other immunological testing; and specific tests performed by the blood bank in preparation for the administration of blood products.
+Costs associated with departmental upkeep, such as heat, electricity, and wages were divided between patients based on hospital length of stay.
+The costs associated with treatment were divided into the cost of drugs, surgery and procedures and intensive care unit treatment.</p>
+<p>Several smaller independent data-sets pertaining to specific papers were extracted from the patient registry.
+These data-sets were not linked to the main study data.</p>
+<p>In <a href="methods.html#paper1">paper I</a>, describing the impact of PHiD-CV10 on acute otitis media with treatment failure, information on all doses of ceftriaxone administered at the Children’s Hospital Iceland between January 2009 and December 2015 was extracted from the hospital’s medication administration system using the ATC code J01DD0.
+Any ICD-10 diagnostic code associated with a visit or hospital admission in which ceftriaxone was administered, was extracted from the patient registry.
+Importantly, this included all ICD-10 codes, not only those in Table <a href="methods.html#tab:table-icd">3.1</a>.
+Also obtained for <a href="methods.html#paper1">paper I</a> was the aggregate number of yearly visits to the pediatric emergency department of Children’s Hospital Iceland 2008-2015.</p>
+<p><a href="methods.html#paper6">Paper VI</a> – a cost-effectiveness analysis of PHiD-CV10 introduction into the pediatric vaccination program, required control diseases used within a time series analysis framework.
+The aggregate monthly number of acute-care visits and hospital admissions for several sub-chapters of the ICD-10 diagnostic coding system (Table <a href="methods.html#tab:table-icd-synthetic">3.3</a>) was obtained for 22 different age-groups.</p>
 <table>
-<caption><span id="tab:table-icd-synthetic">Table 3.3: </span>The International Classification of Diseases, 10th revision subchapters used to define synthetic conrtrols</caption>
+<caption><span id="tab:table-icd-synthetic">Table 3.3: </span>The International Classification of Diseases, 10th revision subchapters used to define the synthetic controls used in time series analyses.</caption>
 <thead>
 <tr class="header">
 <th align="left">ICD-10 code</th>
@@ -512,20 +559,38 @@
 </div>
 <div id="primarycareregistry" class="section level3">
 <h3><span class="header-section-number">3.1.3</span> The Primary Care Registry</h3>
-<p>In the Icelandic healthcare system, primary care is provided by family medicine physicians at 69 neighborhood based centers (<em>Heilsugæsla</em>). All primary care centers use the same electronic medical record system, and the same diagnostic coding systems (NCSP, ICD-10) as Landspitali University Hospital and Children’s Hospital Iceland. The Directorate of Health maintains a registry on all primary care visits within the Icelandic healthcare system. From this registry, all physician visits with ICD-10 diagnostic codes compatible with respiratory tract infections were extracted for the period 1 January 2005 to 31 December 2015 (Table <a href="methods.html#tab:table-icd">3.1</a>). From early 2016, extensive maintenance and restructuring of the registry has been ongoing, and no new data have been added since 31 December 2015.</p>
+<p>In the Icelandic health care system, primary care is provided by family medicine physicians at 69 neighborhood based centers (<em>Heilsugæsla</em>).
+All primary care centers use the same electronic medical record system, and the same diagnostic coding systems (NCSP, ICD-10) as Landspitali University Hospital and Children’s Hospital Iceland.
+The Directorate of Health maintains a registry on all primary care visits within the Icelandic health care system.
+From this registry, all physician visits with ICD-10 diagnostic codes compatible with respiratory tract infections were extracted for the period 1 January 2005 to 31 December 2015 (Table <a href="methods.html#tab:table-icd">3.1</a>).
+From early 2016, extensive maintenance and restructuring of the registry has been ongoing, and no new data have been added since 31 December 2015.</p>
 <p>Data from the Primary Care Registry were used in <a href="methods.html#paper2">paper II</a>, <a href="methods.html#paper3">paper III</a>, <a href="methods.html#paper4">paper IV</a> and <a href="methods.html#paper6">paper VI</a>.</p>
 </div>
 <div id="vaccineregistry" class="section level3">
 <h3><span class="header-section-number">3.1.4</span> The National Vaccine Registry</h3>
-<p>The Icelandic Directorate of Health also maintains the National Vaccine Registry (NVR). All vaccine doses administered within the healthcare system are systematically recorded in an individual’s electronic health record at the time they are administered. This record is reviewed and updated regularly, and vaccinations given in other healthcare facilities are included. The NVR collects this information from all electronic health records in the country. All administered vaccine doses with ATC codes “J07AL” (Pneumococcal vaccines) were extracted for the period of 1 January 2005 to 31 December 2017.</p>
+<p>The Icelandic Directorate of Health also maintains the National Vaccine Registry (NVR).
+All vaccine doses administered within the health care system are systematically recorded in an individual’s electronic health record at the time they are administered.
+This record is reviewed and updated regularly, and vaccinations given in other health care facilities are included.
+The NVR collects this information from all electronic health records in the country.
+Vaccines are categorized using the Anatomical-Therapeutic-Chemical (ATC) classification system of the World Health Organization.
+All administered vaccine doses with ATC codes “J07AL” (Pneumococcal vaccines) were extracted for the period of 1 January 2005 to 31 December 2017.</p>
 <p>Data from the NVR were used in all papers.</p>
 </div>
 <div id="prescriptionregistry" class="section level3">
 <h3><span class="header-section-number">3.1.5</span> The National Drug Prescription Registry</h3>
-<p>The national drug prescription registry (NDPR) is a whole-population registry, collected and maintained by the Icelandic Directorate of Health since 1 January 2005 It contains information on all filled drug prescriptions in Iceland. All pharmacies are required by law to collect data on each filled prescription and submit them to the NDPR. An important distinction must be made between a written prescription and a filled prescription. The NDPR receives information if and when a prescription is filled. It does not record information on written prescriptions that were never filled by the patient. Therefore, all prescriptions documented within the NDPR were paid for and received by the patient. Extensive validation and error testing have been performed by the Directorate of Health to ensure the robustness of the NDPR. Automated electronic submissions, coupled with tightly controlled processes by which pharmacies dispense drugs, has essentially excluded the possibility of any filled prescriptions escaping registration.</p>
-<p>All prescriptions within the ATC therapeutic subgroup “J01” (Antibacterials for Systemic Use), “J07” (Vaccines), “S01” (Opthalmologicals) and “S02” (Otologicals) were extracted for the period from 1 January 2005 to 31 December 2017. The chemical levels used in the study are shown in Table <a href="methods.html#tab:table-atc">3.4</a></p>
+<p>The national drug prescription registry (NDPR) is a whole-population registry, collected and maintained by the Icelandic Directorate of Health since 1 January 2005
+It contains information on all filled drug prescriptions in Iceland.
+All pharmacies are required by law to collect data on each filled prescription and submit them to the NDPR.
+An important distinction must be made between a written prescription and a filled prescription.
+The NDPR receives information if and when a prescription is filled.
+It does not record information on written prescriptions that were never filled by the patient.
+Therefore, all prescriptions documented within the NDPR were paid for and received by the patient.
+Extensive validation and error testing have been performed by the Directorate of Health to ensure the robustness of the NDPR.
+Automated electronic submissions, coupled with tightly controlled processes by which pharmacies dispense drugs, has essentially excluded the possibility of any filled prescriptions escaping registration.</p>
+<p>All prescriptions within the ATC therapeutic subgroup “J01” (Antibacterials for Systemic Use), “J07” (Vaccines), “S01” (Opthalmologicals) and “S02” (Otologicals) were extracted for the period from 1 January 2005 to 31 December 2017.
+The chemical levels used in the study are shown in Table <a href="methods.html#tab:table-atc">3.4</a></p>
 <table>
-<caption><span id="tab:table-atc">Table 3.4: </span>Anatomical Therapeutic Chemical (ATC) codes used for individual-level data collection from the National Drug Prescription Registry. The presents ATC codes down to the therapeutic level. All sublevels of the listed ATC codes were also included. ATC codes J07 and sublevels were used to extract data on pneumococcal vaccine doses from the National Vaccine Registry.</caption>
+<caption><span id="tab:table-atc">Table 3.4: </span>Anatomical Therapeutic Chemical (ATC) codes used for individual-level data collection from the National Drug Prescription Registry. ATC codes are presented down to the therapeutic level, and all sublevels of the listed ATC codes were also included. ATC codes J07 and sublevels were used to extract data on pneumococcal vaccine doses from the National Vaccine Registry.</caption>
 <thead>
 <tr class="header">
 <th align="left">ATC chemical subgroup code</th>
@@ -603,7 +668,13 @@
 </div>
 <div id="reimbursementdatabase" class="section level3">
 <h3><span class="header-section-number">3.1.6</span> Reimbursement database of Icelandic Health Insurance</h3>
-<p>The healthcare system in Iceland is a single-payer system with one government-run health insurance provider, under which all permanent citizens are covered. Most healthcare visits require a nominal out-of-pocket fee, with the rest of the visit covered by the insurance. There are exceptions to this – for example, visits by children under two years of age are completely covered by the insurance. Healthcare providers are either salaried governmental employees, or independent practitioners who are reimbursed on a per case basis, according to pre-determined negotiations with Icelandic Health Insurance. To receive pay for services, physicians must submit a reimbursement form, detailing the nature of the visit and any procedures performed using pre-specified procedural codes. Icelandic Health Insurance maintains a reimbursement database which details the nature and number of procedures performed. Data on all otolaryngological procedures performed on the middle ear and tonsils were extracted from the reimbursement database for the period from 1 January 2005 to 31 December 2017 using the procedural codes in Table <a href="methods.html#tab:table-reimbursement">3.5</a></p>
+<p>The health care system in Iceland is a single-payer system with one government-run health insurance provider, under which all permanent citizens are covered.
+Most health care visits require a nominal out-of-pocket fee, with the rest of the visit covered by the insurance.
+There are exceptions to this – for example, visits by children under two years of age are completely covered by insurance.
+Health care providers are either salaried governmental employees, or independent practitioners who are reimbursed on a per case basis, according to pre-determined negotiations with Icelandic Health Insurance.
+To receive pay for services, physicians must submit a reimbursement form, detailing the nature of the visit and any procedures performed using pre-specified procedural codes.
+Icelandic Health Insurance maintains a reimbursement database which details the nature and number of procedures performed.
+Data on all otolaryngological procedures performed on the middle ear and tonsils were extracted from the reimbursement database for the period from 1 January 2005 to 31 December 2017 using the procedural codes in Table <a href="methods.html#tab:table-reimbursement">3.5</a></p>
 <table>
 <caption><span id="tab:table-reimbursement">Table 3.5: </span>Reimbursement codes used for individual-level data collection from the Reimbursement database of Icelandic Health Insurance. The codes are specific to Icelandic Health Insurance and do not represent a universal classification system. With one exception (Myringotomy, one or both ears, under local anesthetic), each reimbursable procedure has three associated reimbursement codes. One general (without letters), one specifically for surgeons (Z) and one specifically for anesthesiologists (Q).</caption>
 <thead>
@@ -673,50 +744,172 @@
 </div>
 <div id="paper1" class="section level2">
 <h2><span class="header-section-number">3.2</span> Impact on otitis media with treatment failure (Paper I)</h2>
-<p>The objective of Paper I was to evaluate whether the introduction of PHiD-CV10 was associated with a reduction in the incidence of otitis media with treatment failure. Treatment of otitis media with ceftriaxone was used as a proxy for treatment failure. Ceftriaxone use for other diagnoses and in older children was used as a comparator.</p>
-<p>All children under 18 years of age who visited Children’s Hospital Iceland between 1 January 2008 and 31 December 2015 were included. Children’s Hospital Iceland’s referral area was defined as a 100 kilometer driving distance from the hospital. Population demographic data for the referral area were obtained from Statistics Iceland (www.statice.is), as previously described in <a href="methods.html#statisticsiceland">3.1.1</a>.</p>
-<p>Data were extracted from Landspitali University Hospital’s <a href="methods.html#patientregistry">patient registry</a>. A visit was included in the study if an ICD-10 code of Nonsuppurative otitis media (H65) or Suppurative and unspecified otitis media (H66) was documented in the medical record, or if a child received one or more doses of ceftriaxone. All administered doses of ceftriaxone were systematically extracted from the hospital’s medication administration system using the ATC code J01DD04. The ICD-10 diagnoses associated with the ceftriaxone administrations were then obtained from the patient registry. The total number of visits per calendar year and month regardless of diagnosis was provided by the hospital.</p>
-<p>Pre-vaccine (2008-2011) and post-vaccine (2012-2015) periods were defined based on the year of vaccine introduction. Because hospital visits for otitis media (OM) are uncommon in older children, the primary analysis was restricted to children under four years of age. Ceftriaxone use was analysed in three separate diagnostic groups; otitis media, pneumonia and other , based on the associated ICD-10 diagnostic codes. Ceftriaxone was considered to be due to OM, if an ICD-10 code of Nonsuppurative otitis media (H65) or Suppurative and unspecified otitis media (H66) were recorded. It was considered due to pneumonia if ICD-10 codes Bacterial pneumonia, not elsewhere classified (J15) or Pneumonia, unspecified organism (J18) were recorded. Visits associated with ceftriaxone administration that did not fall into either of the above categories were classified together as “Other”.</p>
-<p>The number of ceftriaxone treatment episodes per diagnostic group was aggregated by calendar month. An episode was considered distinct if no ceftriaxone administration was documented in the previous 14 days. Incidence rates (IR) per 1,000 person-years were calculated by dividing the monthly number of ceftriaxone episodes per diagnostic group by the number of person-years accrued by children in the referral area. The IR of OM visits were similarly defined and calculated. If a decrease were to be observed in the number of ceftriaxone treated OM episodes, it could be due to either a decrease in the number of OM visits or a decrease in the use of ceftriaxone. To evaluate this, the incidence risk of ceftriaxone treated OM episodes was calculated per 1,000 OM episodes presenting to Children’s Hospital Iceland for both the pre- and post-vaccine periods.</p>
-<p>Statistical analysis was performed in R version 3.4.4. <span class="citation">(R Core Team <a href="#ref-R-base">2018</a>)</span> using the epiR package <span class="citation">(Stevenson et al. <a href="#ref-R-epiR">2017</a>)</span>. Incidence rate ratios (<span class="math inline">\(IRR\)</span>) were calculated between the pre- and post-vaccine periods, and were estimated independently for each age-strata. The stratum-specific estimates were combined (when appropriate) using the Mantel-Haenszel method and 95% confidence intervals (CI) calculated using the delta procedure <span class="citation">(Kirkwood and Sterne <a href="#ref-Kirkwood2003">2003</a>)</span>. The Mantel-Haenszel estimate of the incidence rate ratio (<span class="math inline">\(IRR_{MH}\)</span>) is the weighted mean of the <span class="math inline">\(IRR\)</span> in each stratum. The null-hypothesis that <span class="math inline">\(IRR_{MH} = 1\)</span> was tested by calculating the Mantel-Haenszel <span class="math inline">\(\chi^2\)</span> test statistic, from which the <em>P</em>-value was derived.</p>
-<p>Combining stratum-specific estimates is appropriate when the exposure-outcome association is the same in each of the strata, i.e. <span class="math inline">\(IRR_{age} = IRR_{MH}\)</span> The <span class="math inline">\(\chi^2\)</span> test of heterogeneity assesses whether the data is congruent with the null hypothesis which predicts no effect modification of the exposure-outcome relationship by strata. The greater the differences is between <span class="math inline">\(IRR_{age}\)</span> and <span class="math inline">\(IRR_{MH}\)</span>, the larger the <span class="math inline">\(\chi^2\)</span> statistic. If the null hypothesis is rejected, the <span class="math inline">\(IRR_{MH}\)</span> is not calculated and only the stratum-specific <span class="math inline">\(IRR\)</span> are presented.</p>
+<p>The objective of Paper I was to evaluate whether the introduction of PHiD-CV10 was associated with a reduction in the incidence of otitis media with treatment failure.
+Treatment of otitis media with ceftriaxone was used as a proxy for treatment failure.
+Ceftriaxone use for other diagnoses and in older children was used as a comparator.</p>
+<p>All children under 18 years of age who visited Children’s Hospital Iceland between 1 January 2008 and 31 December 2015 were included.
+Children’s Hospital Iceland’s referral area was defined as a 100 kilometer driving distance from the hospital.
+Population demographic data for the referral area were obtained from Statistics Iceland (www.statice.is), as previously described in <a href="methods.html#statisticsiceland">3.1.1</a>.</p>
+<p>Data were extracted from Landspitali University Hospital’s <a href="methods.html#patientregistry">patient registry</a>.
+A visit was included in the study if an ICD-10 code of Nonsuppurative otitis media (H65) or Suppurative and unspecified otitis media (H66) was documented in the medical record, or if a child received one or more doses of ceftriaxone.
+All administered doses of ceftriaxone were systematically extracted from the hospital’s medication administration system using the ATC code J01DD04.
+The ICD-10 diagnoses associated with the ceftriaxone administrations were then obtained from the patient registry.
+The total number of visits per calendar year and month regardless of diagnosis was provided by the hospital.</p>
+<p>Pre-vaccine (2008-2011) and post-vaccine (2012-2015) periods were defined based on the year of vaccine introduction.
+Because hospital visits for otitis media (OM) are uncommon in older children, the primary analysis was restricted to children under four years of age.
+Ceftriaxone use was analysed in three separate diagnostic groups; otitis media, pneumonia, and other, based on the associated ICD-10 diagnostic codes.
+Ceftriaxone was considered to be due to OM, if an ICD-10 code of Nonsuppurative otitis media (H65) or Suppurative and unspecified otitis media (H66) was recorded.
+It was considered due to pneumonia if ICD-10 codes Bacterial pneumonia, not elsewhere classified (J15) or Pneumonia, unspecified organism (J18) was recorded.
+Visits associated with ceftriaxone administration that did not fall into either of the above categories were classified together as “Other”.</p>
+<p>The number of ceftriaxone treatment episodes per diagnostic group was aggregated by calendar month.
+An episode was considered distinct if no ceftriaxone administration was documented in the previous 14 days.
+Incidence rates (IR) per 1,000 person-years were calculated by dividing the monthly number of ceftriaxone episodes per diagnostic group by the number of person-years accrued by children in the referral area.
+The IR of OM visits were similarly defined and calculated.
+If a decrease were to be observed in the number of ceftriaxone treated OM episodes, it could be due to either a decrease in the number of OM visits or a decrease in the use of ceftriaxone.
+To evaluate this, the incidence risk of ceftriaxone treated OM episodes was calculated per 1,000 OM episodes presenting to Children’s Hospital Iceland for both the pre- and post-vaccine periods.</p>
+<p>Statistical analysis was performed in R version 3.4.4. <span class="citation">(R Core Team <a href="#ref-R-base" role="doc-biblioref">2019</a>)</span> using the epiR package <span class="citation">(Stevenson et al. <a href="#ref-R-epiR" role="doc-biblioref">2018</a>)</span>.
+Incidence rate ratios (<span class="math inline">\(IRR\)</span>) were calculated between the pre- and post-vaccine periods, and were estimated independently for each age-strata.
+The stratum-specific estimates were combined (when appropriate) using the Mantel-Haenszel method and 95% confidence intervals (CI) calculated using the delta procedure <span class="citation">(Kirkwood and Sterne <a href="#ref-Kirkwood2003" role="doc-biblioref">2003</a>)</span>.
+The Mantel-Haenszel estimate of the incidence rate ratio (<span class="math inline">\(IRR_{MH}\)</span>) is the weighted mean of the <span class="math inline">\(IRR\)</span> in each stratum.
+The null-hypothesis that <span class="math inline">\(IRR_{MH} = 1\)</span> was tested by calculating the Mantel-Haenszel <span class="math inline">\(\chi^2\)</span> test statistic, from which the <em>P</em>-value was derived.</p>
+<p>Combining stratum-specific estimates is appropriate when the exposure-outcome association is the same in each of the strata, i.e. <span class="math inline">\(IRR_{age} = IRR_{MH}\)</span>
+The <span class="math inline">\(\chi^2\)</span> test of heterogeneity assesses whether the data is congruent with the null hypothesis which predicts no effect modification of the exposure-outcome relationship by strata.
+The greater the differences is between <span class="math inline">\(IRR_{age}\)</span> and <span class="math inline">\(IRR_{MH}\)</span>, the larger the <span class="math inline">\(\chi^2\)</span> statistic.
+If the null hypothesis is rejected, the <span class="math inline">\(IRR_{MH}\)</span> is not calculated and only the stratum-specific <span class="math inline">\(IRR\)</span> are presented.</p>
 
 </div>
 <div id="paper2" class="section level2">
 <h2><span class="header-section-number">3.3</span> Impact on primary care visits for acute otitis media (Paper II)</h2>
-<p>The objective of Paper II was to evaluate the impact of PHiD-CV10 on the incidence of acute otitis media in Icelandic children. Paper II is a population based observational cohort study that followed all children born in Iceland between 1 January 2005 and 31 December 2015, from birth until three years of age, death or end of the study period. All primary care visits in which an ICD-10 diagnostic code of suppurative otitis media (H66) was recorded were included. Any visits occurring within 30 days of a previously documented visit by the same child were excluded from the main analysis. The study therefore represented AOM episodes, rather than AOM visits.</p>
-<p>Data were obtained from the <a href="primarycareregistry">Primary Care Registry</a> of the Icelandic Directorate of Health. In addition to the diagnosis of acute otitis media, the data included all ICD-10 codes associated with the visit, as well as the date of the visit, age and gender of the child, and physician identification number. The study identification number used to identify unique individuals is derived from the national identification numbers issued to individuals by the government. Those who had immigrated to Iceland after birth were excluded. Demographic population data was obtained from Statistics Iceland.</p>
-<p>Cohorts were defined based on year of birth or vaccine eligibility. Birth-cohorts 2005–2010 were grouped as vaccine non-eligible cohorts (VNEC) and birth-cohorts 2011–2015 as vaccine eligible cohorts (VEC). Statistical analyses were performed in R version 3.4.4. <span class="citation">(R Core Team <a href="#ref-R-base">2018</a>)</span> using the R packages; survival <span class="citation">(Therneau <a href="#ref-R-survival">2018</a>)</span>, RMS <span class="citation">(Harrell, Jr. <a href="#ref-R-rms">2018</a>)</span> and epiR <span class="citation">(Stevenson et al. <a href="#ref-R-epiR">2017</a>)</span>.</p>
-<p>Crude incidence rates of AOM visits were calculated per 100 person-years at risk for each birth cohort, stratified by four-month age brackets. Following each AOM visit, there was a 30 day period in which it was impossible for a visit to be recorded due to the study design. To avoid misclassifying this period, the individual time at-risk was carefully constructed to exclude the 30 days following each recorded otitis media visit. Crude incidence rate ratio between VNEC and VEC were calculated and confidence intervals estimated assuming Poisson variance.</p>
-<p>In the subset of children who had full follow-up time, the number of children who cumulatively experienced 0-12 episodes of AOM were tabulated, and the distribution between VNEC and VEC compared using the <span class="math inline">\(\chi^2\)</span> test of homogeneity, Additionally, the crude risk ratio between the VEC and VNEC of experiencing 0, 1–4, or &gt;5 episodes of AOM before three years of age was calculated.</p>
-<p>The Andersen-Gill extension of the Cox regression model for repeated events was used to model data on the individual level and to account for censoring of follow-up time <span class="citation">(Andersen and Gill <a href="#ref-Andersen1982">1982</a>)</span>. To correct for successive visits by the same individual, <span class="citation">Lin and Wei (<a href="#ref-Lin1989">1989</a>)</span> sandwich variance estimates were used. From this model, the hazard ratio (HR) of AOM visits between each birth-cohort and the last vaccine non-eligible cohort was calculated. The impact of PHiD-CV10 on AOM visits was defined as 1 – (<span class="math inline">\(HR\)</span> between the last vaccine-eligible birth cohort and the last vaccine non-eligible cohort) * 100%.</p>
-<p>The HR between VNEC and VEC was calculated for each number of previous AOM visits, and the mean number of episodes as a function of age was estimated from the model using the generalized Nelson-Aalen estimator <span class="citation">(Cook and Lawless <a href="#ref-Cook2007a">2007</a>)</span>. To determine the number of AOM episodes prevented in the first five years of the vaccination, each child’s follow-up time was multiplied by the Nelson-Aalen estimate of the mean number of episodes. The absolute reduction in the IR was then calculated by dividing the estimated number of prevented episodes with the total person-time of the VEC.</p>
+<p>The objective of Paper II was to evaluate the impact of PHiD-CV10 on the incidence of acute otitis media in Icelandic children.
+Paper II is a population-based observational cohort study that followed all children born in Iceland between 1 January 2005 and 31 December 2015, from birth until three years of age, death or end of the study period.
+All primary care visits in which an ICD-10 diagnostic code of suppurative otitis media (H66) was recorded were included.
+Any visits occurring within 30 days of a previously documented visit by the same child were excluded from the main analysis.
+The study therefore represented AOM episodes, rather than AOM visits.</p>
+<p>Data were obtained from the <a href="primarycareregistry">Primary Care Registry</a> of the Icelandic Directorate of Health.
+In addition to the diagnosis of acute otitis media, the data included all ICD-10 codes associated with the visit, as well as the date of the visit, age and gender of the child, and physician identification number.
+The study identification number used to identify unique individuals is derived from the national identification numbers issued to individuals by the government.
+Those who had immigrated to Iceland after birth were excluded.
+Demographic population data was obtained from Statistics Iceland.</p>
+<p>Cohorts were defined based on year of birth or vaccine eligibility.
+Birth-cohorts 2005–2010 were grouped as vaccine non-eligible cohorts (VNEC) and birth-cohorts 2011–2015 as vaccine eligible cohorts (VEC).
+Statistical analyses were performed in R version 3.4.4. <span class="citation">(R Core Team <a href="#ref-R-base" role="doc-biblioref">2019</a>)</span> using the R packages; survival <span class="citation">(Therneau <a href="#ref-R-survival" role="doc-biblioref">2018</a>)</span>, RMS <span class="citation">(Harrell, Jr. <a href="#ref-R-rms" role="doc-biblioref">2019</a>)</span> and epiR <span class="citation">(Stevenson et al. <a href="#ref-R-epiR" role="doc-biblioref">2018</a>)</span>.</p>
+<p>Crude incidence rates of AOM visits were calculated per 100 person-years at risk for each birth cohort, stratified by four-month age brackets.
+Following each AOM visit, there was a 30 day period in which it was impossible for a visit to be recorded due to the study design.
+To avoid misclassifying this period, the individual time at-risk was carefully constructed to exclude the 30 days following each recorded otitis media visit.
+Crude incidence rate ratio between VNEC and VEC were calculated and confidence intervals estimated assuming Poisson variance.</p>
+<p>In the subset of children who had full follow-up time, the number of children who cumulatively experienced 0-12 episodes of AOM were tabulated, and the distribution between VNEC and VEC compared using the <span class="math inline">\(\chi^2\)</span> test of homogeneity,
+Additionally, the crude risk ratio between the VEC and VNEC of experiencing 0, 1–4, or &gt;5 episodes of AOM before three years of age was calculated.</p>
+<p>The Andersen-Gill extension of the Cox regression model for repeated events was used to model data on the individual-level and to account for censoring of follow-up time <span class="citation">(Andersen and Gill <a href="#ref-Andersen1982" role="doc-biblioref">1982</a>)</span>.
+To correct for successive visits by the same individual, <span class="citation">Lin and Wei (<a href="#ref-Lin1989" role="doc-biblioref">1989</a>)</span> sandwich variance estimates were used.
+From this model, the hazard ratio (HR) of AOM visits between each birth-cohort and the last vaccine non-eligible cohort was calculated.
+The impact of PHiD-CV10 on AOM visits was defined as 1 – (<span class="math inline">\(HR\)</span> between the last vaccine-eligible birth cohort and the last vaccine non-eligible cohort) * 100%.</p>
+<p>The HR between VNEC and VEC was calculated for each number of previous AOM visits, and the mean number of episodes as a function of age was estimated from the model using the generalized Nelson-Aalen estimator <span class="citation">(Cook and Lawless <a href="#ref-Cook2007a" role="doc-biblioref">2007</a>)</span>.
+To determine the number of AOM episodes prevented in the first five years of the vaccination, each child’s follow-up time was multiplied by the Nelson-Aalen estimate of the mean number of episodes.
+The absolute reduction in the IR was then calculated by dividing the estimated number of prevented episodes with the total person-time of the VEC.</p>
 
 </div>
 <div id="paper3" class="section level2">
 <h2><span class="header-section-number">3.4</span> Impact on outpatient antimicrobial prescriptions (Paper III)</h2>
-<p>The objective of Paper III was to estimate the impact of PHiD-CV10 on outpatient antimicrobial prescriptions among children in Iceland. Paper III is a population based observational cohort study of antimicrobial prescriptions in children under three years of age in Iceland. Eleven consecutive Icelandic birth-cohorts 2005–2015 were followed from birth until three years of age. Children who immigrated to Iceland after birth were excluded. Follow-up time was censored on death, emigration, or the end of the study period (31 December 2016). Because of shortened follow-up time, the 2016 birth-cohort was not included in the analysis.</p>
-<p>Data regarding outpatient antimicrobial prescriptions were obtained from the National Drug Prescription Registry, as previously described in <a href="methods.html#prescriptionregistry">3.1.5</a>. Data on primary care visits for respiratory tract infections were collected from the Primary Care Registry using the ICD-10 codes in Table <a href="methods.html#tab:table-icd">3.1</a>. Prescriptions filled within three days of a documented physician visit by the same child were linked. Because data from the Primary Care Registry was only available through 31 December 2015, the portion of the analysis pertaining to the linked data was restricted to that date. Demographic population data were acquired from Statistics Iceland (<a href="https://www.statice.is/" class="uri">https://www.statice.is/</a>).</p>
-<p>Data was analysed both descriptively and from a cohort perspective. Descriptive analysis included all Icelandic children under three years of age during the study period. Statistical analyses were performed in R version 3.4.4. <span class="citation">(R Core Team <a href="#ref-R-base">2018</a>)</span> using the R packages survival <span class="citation">(Therneau <a href="#ref-R-survival">2018</a>)</span>, RMS <span class="citation">(Harrell, Jr. <a href="#ref-R-rms">2018</a>)</span> and epiR <span class="citation">(Stevenson et al. <a href="#ref-R-epiR">2017</a>)</span>. Based on a previously published study, all filled antimicrobial prescriptions were classified into one of six categories; first and second line penicillins, first and second generation macrolides, cephalosporins, and finally, others <span class="citation">(Youngster et al. <a href="#ref-Youngster2017">2017</a>)</span>. The proportion of prescriptions within each category was calculated by calendar-year. Five diagnostic-groups were defined, based on primary care ICD-10 diagnoses, and the proportion of cases resulting in an antimicrobial prescription was calculated per calendar-year. The five diagnostic-groups were; Acute upper respiratory infections (J00-J06), Influenza and pneumonia (J09-J18), Other acute lower respiratory infections (J20-J22), AOM (H65, H66 and H72) and Other viral infections (B34).</p>
-<p>Birth-cohorts were compared either individually, or grouped by vaccine eligibility. In the individual birth-cohort analysis, each birth-cohort was compared to the last vaccine non-eligible cohort, i.e. the 2010 birth-cohort. Birth-cohorts 2011–2015 were grouped as vaccine-eligible cohorts (VEC), and birth-cohorts 2005–2010 as vaccine non-eligible cohorts (VNEC). The incidence rate (<span class="math inline">\(IR\)</span>) of antimicrobial prescriptions per 100 person-years was calculated in six-month age-brackets for each birth-cohort. Ninety-five percent confidence intervals were estimated using the Wald method <span class="citation">(Kirkwood and Sterne <a href="#ref-Kirkwood2003">2003</a>)</span>. Incidence rate ratios (<span class="math inline">\(IRR\)</span>) between the VNEC and the VEC were estimated, and 95% confidence intervals calculated assuming Poisson variance. The cumulative proportion of children who had filled at least one antimicrobial prescription by three years of age, was calculated and compared between the VEC and VNEC using the <span class="math inline">\(\chi^2\)</span> test of homogeneity. The cumulative number of prescriptions by three years of age per child, was categorized as &lt;1, 1–4, 5–9, 10–14 and ≥ 15 prescriptions. The ratio between VNEC and VEC was then calculated for each of these categories. The 2014 and 2015-cohorts were excluded from the cumulative analyses, as they did not have the full three-year follow-up time.</p>
-<p>The Andersen-Gill time-to-event model was fitted to the individual level data <span class="citation">(Andersen and Gill <a href="#ref-Andersen1982">1982</a>)</span>. It was used to estimate the hazard ratio (HR) of antimicrobial prescription between the study birth-cohorts, which were included in the model as a categorical variable. Age was accounted for by defining it as the model’s underlying measurement of time. The model was stratified by gender to allow for independent baseline hazards. The number of previous antimicrobial prescriptions was included in the model, and its effect allowed to be non-linear by means of restricted cubic splines <span class="citation">(Cook and Lawless <a href="#ref-Cook2007a">2007</a>)</span>. <span class="citation">Lin and Wei (<a href="#ref-Lin1989">1989</a>)</span> robust sandwich variance estimates were applied to account for the correlation between successive prescriptions filled by the same child.</p>
-<p>The impact of PHiD-CV10 on outpatient antimicrobial prescriptions was estimated as 1 – (the hazard ratio between the last vaccine eligible and last vaccine non-eligible cohort) * 100%. The impact on each successive prescription was also estimated. Finally, the generalized Nelson-Aalen estimate of the mean number of antimicrobial prescriptions for each gender and vaccine-cohort was calculated <span class="citation">(Cook and Lawless <a href="#ref-Cook2007a">2007</a>)</span>. To estimate the absolute number of prevented antimicrobial prescriptions during the first seven years of the intervention, the following formula was utilized; first, the expected number of prescriptions per child was added together by multiplying each child’s follow-up time with the VNEC estimate of the mean number of prescriptions per child. Next, the expected number of prescriptions per child was estimated using the VEC estimate of the mean. Finally, the absolute number prevented was calculated by subtracting the VEC total from the VNEC total. The absolute rate reduction was then calculated by dividing the absolute number prevented, with the number of person-years at-risk in the VEC.</p>
-<p>A sub-analysis was performed to estimate the vaccine impact against OM-associated antimicrobial prescriptions. The above described regression methodology was applied to those antimicrobial prescriptions that were linked to a primary care physician visit resulting in a diagnosis of AOM.</p>
+<p>The objective of Paper III was to estimate the impact of PHiD-CV10 on outpatient antimicrobial prescriptions among children in Iceland.
+Paper III is a population-based observational cohort study of antimicrobial prescriptions in children under three years of age in Iceland.
+Eleven consecutive Icelandic birth-cohorts 2005–2015 were followed from birth until three years of age.
+Children who immigrated to Iceland after birth were excluded.
+Follow-up time was censored on death, emigration, or the end of the study period (31 December 2016).
+Because of shortened follow-up time, the 2016 birth-cohort was not included in the analysis.</p>
+<p>Data regarding outpatient antimicrobial prescriptions were obtained from the National Drug Prescription Registry, as previously described in <a href="methods.html#prescriptionregistry">3.1.5</a>.
+Data on primary care visits for respiratory tract infections were collected from the Primary Care Registry using the ICD-10 codes in Table <a href="methods.html#tab:table-icd">3.1</a>.
+Prescriptions filled within three days of a documented physician visit by the same child were linked.
+Because data from the Primary Care Registry was only available through 31 December 2015, the portion of the analysis pertaining to the linked data was restricted to that date.
+Demographic population data were acquired from Statistics Iceland (<a href="https://www.statice.is/" class="uri">https://www.statice.is/</a>).</p>
+<p>Data was analysed both descriptively and from a cohort perspective.
+Descriptive analysis included all Icelandic children under three years of age during the study period.
+Statistical analyses were performed in R version 3.4.4. <span class="citation">(R Core Team <a href="#ref-R-base" role="doc-biblioref">2019</a>)</span> using the R packages survival <span class="citation">(Therneau <a href="#ref-R-survival" role="doc-biblioref">2018</a>)</span>, RMS <span class="citation">(Harrell, Jr. <a href="#ref-R-rms" role="doc-biblioref">2019</a>)</span> and epiR <span class="citation">(Stevenson et al. <a href="#ref-R-epiR" role="doc-biblioref">2018</a>)</span>.
+Based on a previously published study, all filled antimicrobial prescriptions were classified into one of six categories; first and second line penicillins, first and second generation macrolides, cephalosporins, and finally, others <span class="citation">(Youngster et al. <a href="#ref-Youngster2017" role="doc-biblioref">2017</a>)</span>.
+The proportion of prescriptions within each category was calculated by calendar-year.
+Five diagnostic-groups were defined, based on primary care ICD-10 diagnoses, and the proportion of cases resulting in an antimicrobial prescription was calculated per calendar-year.
+The five diagnostic-groups were; Acute upper respiratory infections (J00-J06), Influenza and pneumonia (J09-J18), Other acute lower respiratory infections (J20-J22), AOM (H65, H66 and H72) and Other viral infections (B34).</p>
+<p>Birth-cohorts were compared either individually, or grouped by vaccine eligibility.
+In the individual birth-cohort analysis, each birth-cohort was compared to the last vaccine non-eligible cohort, i.e. the 2010 birth-cohort.
+Birth-cohorts 2011–2015 were grouped as vaccine-eligible cohorts (VEC), and birth-cohorts 2005–2010 as vaccine non-eligible cohorts (VNEC).
+The incidence rate (<span class="math inline">\(IR\)</span>) of antimicrobial prescriptions per 100 person-years was calculated in six-month age-brackets for each birth-cohort.
+Ninety-five percent confidence intervals were estimated using the Wald method <span class="citation">(Kirkwood and Sterne <a href="#ref-Kirkwood2003" role="doc-biblioref">2003</a>)</span>.
+Incidence rate ratios (<span class="math inline">\(IRR\)</span>) between the VNEC and the VEC were estimated, and 95% confidence intervals calculated assuming Poisson variance.
+The cumulative proportion of children who had filled at least one antimicrobial prescription by three years of age, was calculated and compared between the VEC and VNEC using the <span class="math inline">\(\chi^2\)</span> test of homogeneity.
+The cumulative number of prescriptions by three years of age per child, was categorized as &lt;1, 1–4, 5–9, 10–14 and ≥ 15 prescriptions.
+The ratio between VNEC and VEC was then calculated for each of these categories.
+The 2014 and 2015-cohorts were excluded from the cumulative analyses, as they did not have the full three-year follow-up time.</p>
+<p>The Andersen-Gill time-to-event model was fitted to the individual-level data <span class="citation">(Andersen and Gill <a href="#ref-Andersen1982" role="doc-biblioref">1982</a>)</span>.
+It was used to estimate the hazard ratio (HR) of antimicrobial prescription between the study birth-cohorts, which were included in the model as a categorical variable.
+Age was accounted for by defining it as the model’s underlying measurement of time.
+The model was stratified by gender to allow for independent baseline hazards.
+The number of previous antimicrobial prescriptions was included in the model, and its effect allowed to be non-linear by means of restricted cubic splines <span class="citation">(Cook and Lawless <a href="#ref-Cook2007a" role="doc-biblioref">2007</a>)</span>.
+<span class="citation">Lin and Wei (<a href="#ref-Lin1989" role="doc-biblioref">1989</a>)</span> robust sandwich variance estimates were applied to account for the correlation between successive prescriptions filled by the same child.</p>
+<p>The impact of PHiD-CV10 on outpatient antimicrobial prescriptions was estimated as 1 – (the hazard ratio between the last vaccine eligible and last vaccine non-eligible cohort) * 100%.
+The impact on each successive prescription was also estimated.
+Finally, the generalized Nelson-Aalen estimate of the mean number of antimicrobial prescriptions for each gender and vaccine-cohort was calculated <span class="citation">(Cook and Lawless <a href="#ref-Cook2007a" role="doc-biblioref">2007</a>)</span>.
+To estimate the absolute number of prevented antimicrobial prescriptions during the first seven years of the intervention, the following formula was utilized; first, the expected number of prescriptions per child was added together by multiplying each child’s follow-up time with the VNEC estimate of the mean number of prescriptions per child.
+Next, the expected number of prescriptions per child was estimated using the VEC estimate of the mean.
+Finally, the absolute number prevented was calculated by subtracting the VEC total from the VNEC total.
+The absolute rate reduction was then calculated by dividing the absolute number prevented, with the number of person-years at-risk in the VEC.</p>
+<p>A sub-analysis was performed to estimate the vaccine impact against OM-associated antimicrobial prescriptions.
+The above described regression methodology was applied to those antimicrobial prescriptions that were linked to a primary care physician visit resulting in a diagnosis of AOM.</p>
 
 </div>
 <div id="paper4" class="section level2">
 <h2><span class="header-section-number">3.5</span> Impact on tympanostomy tube procedures (Paper IV)</h2>
-<p>The objective of Paper IV was to estimate the impact of PHiD-CV10 on the incidence of tympanostomy tube placements (TTP) among children in Iceland. Paper IV is an individual level observational cohort study of all outpatient TTP procedures in Iceland. The study period is from January 1, 2005 to December 31, 2016. Eleven consecutive birth-cohorts 2005-2015, were followed from birth until five years of age, or end of the study period. Children who immigrated to Iceland after birth were excluded from the analysis. Those children who emigrated were censored from the study on the date of emigration. This allowed for accurate person-year at risk calculations.</p>
-<p>Data on outpatient TTP was obtained from the Icelandic Health Insurance reimbursement database, using reimbursement codes compatible with TTP (Table <a href="methods.html#tab:table-reimbursement">3.5</a>). Information regarding inpatient TTP was extracted from Landspitali University Hospital’s patient registry using NCSP codes (Table <a href="methods.html#tab:table-ncsp">3.2</a>). These data were linked with data on primary care and emergency department visits for otitis media (OM). Data on primary care visits was obtained from the Primary Care Registry, and information regarding emergency department visits was extracted from the hospital’s patient registry. Primary care data was only available until December 31, 2015. A visit was considered to be due to OM if an ICD-10 diagnostic code of Non-suppurative otitis media (H65), Suppurative otitis media (H66), Mastoiditis (H70) or Perforation of tympanic membrane (H72) was recorded. A repeat visit within 30 days was assumed to represent the same episode, and was excluded. Data regarding filled antimicrobial prescriptions was extracted from the National Drug Prescription Registry using ATC code J01 (antibacterials for systemic use).</p>
-<p>Cohorts were defined based on year of birth or vaccine eligibility. Birth-cohorts 2005-2010 were classified as vaccine non-eligible cohorts (VNEC) and birth-cohorts 2011-2015 as vaccine-eligible cohorts (VEC). Statistical analyses were performed in R version 3.4.4. <span class="citation">(R Core Team <a href="#ref-R-base">2018</a>)</span> using the R packages; survival <span class="citation">(Therneau <a href="#ref-R-survival">2018</a>)</span>, RMS <span class="citation">(Harrell, Jr. <a href="#ref-R-rms">2018</a>)</span> and epiR <span class="citation">(Stevenson et al. <a href="#ref-R-epiR">2017</a>)</span>. Crude incidence rates (IR) of TTP per 100 person-years were calculated for each birth-cohort in 6-month age-groups. Crude incidence rate ratios (IRR) between the VEC and VNEC were calculated, and 95% confidence intervals estimated assuming Poisson variance. The Kaplan-Meier product limit estimate was used to calculate the cumulative proportion of TTP procedures for each birth-cohort, and confidence intervals calculated using the log delta method.</p>
-<p>The comparison of the risk of TTP between birth-cohorts was adjusted for two confounders; the number of prior OM diagnoses and the number of prior antimicrobial prescriptions. Among children who had undergone TTP and had the full five year follow-up time, the distribution in the number of previous visits and prescriptions was compared between VNEC and VEC using the <span class="math inline">\(\chi^2\)</span> test of independence. When adjusting for the number of previous visits, four years was considered full follow-up time due to restricted data. If a significant difference was detected, the risk ratio and absolute risk difference between VEC and VNEC were calculated, stratified by the prior number of visits or antimicrobial prescriptions. Confidence intervals were estimated with the <span class="math inline">\(\chi^2\)</span> of independence.</p>
-<p>A Cox regression model was constructed to accurately account for the influence of age and censored follow-up time. Three separate models were estimated. The first did not adjust for prior OM visits or antimicrobial prescriptions, while the later two did. The Cox regression model using the number of previous OM visits was censored at December 31, 2015 due to restricted data. Each Cox model was stratified by gender. Correlation between repeated observations of the same child was adjusted, using <span class="citation">Lin and Wei (<a href="#ref-Lin1989">1989</a>)</span> sandwich variance estimates. The hazard ratio (HR) of TTP was estimated between each of the study’s birth-cohorts. The vaccine impact of PHiD-CV against TTP was estimated as 1 – (the hazard ratio between the last vaccine eligible cohort and the last vaccine non-eligible cohort) * 100%.</p>
+<p>The objective of Paper IV was to estimate the impact of PHiD-CV10 on the incidence of tympanostomy tube placements (TTP) among children in Iceland.
+Paper IV is an individual-level observational cohort study of all outpatient TTP procedures in Iceland.
+The study period is from 1 January 2005 to 31 December 2016.
+Eleven consecutive birth-cohorts 2005-2015, were followed from birth until five years of age, or end of the study period.
+Children who immigrated to Iceland after birth were excluded from the analysis.
+Those children who emigrated were censored from the study on the date of emigration.
+This allowed for accurate person-year at risk calculations.</p>
+<p>Data on outpatient TTP was obtained from the Icelandic Health Insurance reimbursement database, using reimbursement codes compatible with TTP (Table <a href="methods.html#tab:table-reimbursement">3.5</a>).
+Information regarding inpatient TTP was extracted from Landspitali University Hospital’s patient registry using NCSP codes (Table <a href="methods.html#tab:table-ncsp">3.2</a>).
+These data were linked with data on primary care and emergency department visits for otitis media (OM).
+Data on primary care visits were obtained from the Primary Care Registry, and information regarding emergency department visits was extracted from the hospital’s patient registry.
+Primary care data were only available until 31 December 2015.
+A visit was considered to be due to OM if an ICD-10 diagnostic code of Non-suppurative otitis media (H65), Suppurative otitis media (H66), Mastoiditis (H70) or Perforation of tympanic membrane (H72) was recorded.
+A repeat visit within 30 days was assumed to represent the same episode, and was excluded.
+Data regarding filled antimicrobial prescriptions were extracted from the National Drug Prescription Registry using ATC code J01 (antibacterials for systemic use).</p>
+<p>Cohorts were defined based on year of birth or vaccine eligibility.
+Birth-cohorts 2005-2010 were classified as vaccine non-eligible cohorts (VNEC) and birth-cohorts 2011-2015 as vaccine-eligible cohorts (VEC).
+Statistical analyses were performed in R version 3.4.4. <span class="citation">(R Core Team <a href="#ref-R-base" role="doc-biblioref">2019</a>)</span> using the R packages; survival <span class="citation">(Therneau <a href="#ref-R-survival" role="doc-biblioref">2018</a>)</span>, RMS <span class="citation">(Harrell, Jr. <a href="#ref-R-rms" role="doc-biblioref">2019</a>)</span> and epiR <span class="citation">(Stevenson et al. <a href="#ref-R-epiR" role="doc-biblioref">2018</a>)</span>.
+Crude incidence rates (IR) of TTP per 100 person-years were calculated for each birth-cohort in 6-month age-groups.
+Crude incidence rate ratios (IRR) between the VEC and VNEC were calculated, and 95% confidence intervals estimated assuming Poisson variance.
+The Kaplan-Meier product limit estimate was used to calculate the cumulative proportion of TTP procedures for each birth-cohort, and confidence intervals calculated using the log delta method.</p>
+<p>The comparison of the risk of TTP between birth-cohorts was adjusted for two confounders; the number of prior OM diagnoses and the number of prior antimicrobial prescriptions.
+Among children who had undergone TTP and had the full five year follow-up time, the distribution in the number of previous visits and prescriptions was compared between VNEC and VEC using the <span class="math inline">\(\chi^2\)</span> test of independence.
+When adjusting for the number of previous visits, four years was considered full follow-up time due to restricted data.
+If a significant difference was detected, the risk ratio and absolute risk difference between VEC and VNEC were calculated, stratified by the prior number of visits or antimicrobial prescriptions.
+Confidence intervals were estimated with the <span class="math inline">\(\chi^2\)</span> of independence.</p>
+<p>A Cox regression model was constructed to accurately account for the influence of age and censored follow-up time.
+Three separate models were estimated.
+The first did not adjust for prior OM visits or antimicrobial prescriptions, while the later two did.
+The Cox regression model using the number of previous OM visits was censored at 31 December 2015 due to restricted data.
+Each Cox model was stratified by gender.
+Correlation between repeated observations of the same child was adjusted using <span class="citation">Lin and Wei (<a href="#ref-Lin1989" role="doc-biblioref">1989</a>)</span> sandwich variance estimates.
+The hazard ratio (HR) of TTP was estimated between each of the study’s birth-cohorts.
+The vaccine impact of PHiD-CV against TTP was estimated as 1 – (the hazard ratio between the last vaccine eligible cohort and the last vaccine non-eligible cohort) * 100%.</p>
 
 </div>
 <div id="paper5" class="section level2">
 <h2><span class="header-section-number">3.6</span> Impact on respiratory associated hospitalizations (Paper V)</h2>
-<p>The objective of Paper V was to estimate the impact of PHiD-CV10 on the incidence of pediatric hospitalizations due to diseases commonly caused by <em>Streptococcus pneumonae</em>. Paper V is a single-center, individual-level, observational cohort study of pediatric hospitalizations. Eleven consecutive Icelandic birth-cohorts 2005-2015 were followed from birth until three years of age. Immigration and emigration data obtained from Statistics Iceland was used to exclude children who had immigrated to Iceland after birth. Included were all hospital admissions to the Children’s Hospital Iceland January 1st, 2005 to December 31st, 2016. The Children’s Hospital Iceland is the primary pediatric hospital for approximately 90% of Iceland’s population (www.statice.is), and serves as a secondary and tertiary pediatric hospital for the entire country. Data on admissions was collected from Landspitali University Hospital’s patient registry. Microbiological data was extracted from a database maintained by the Department of Clinical Microbiology at Landspitali University Hospital.</p>
-<p>Seven diagnostic groups were defined in this paper. Five of these represent diseases commonly caused by <em>Streptococcus pneumoniae</em>; Invasive pneumococcal disease (IPD), meningitis, sepsis, pneumonia and otitis media. The remaining two groups, upper respiratory tract infections (URTI) and other lower respiratory tract infections (LRTI), were included as comparators. Hospitalization was categorized in a diagnostic group, if the relevant ICD-10 diagnostic code was recorded on the discharge chart, or if the admission was associated with microbiologically-confirmed IPD. Admissions with ICD-10 discharge diagnoses compatible with meningitis (G00) were grouped as meningitis. Those with A40 or A41 diagnoses were grouped as sepsis; with J09-J18, as pneumonia; J20-J22 as LRTI; H65, H66, H70 and H72 as OM; and J01-J06 as URTI (Table <a href="methods.html#tab:table-paper5-diagnostic-groups">3.6</a>). A hospitalization was considered to be due to IPD if associated with culture or PCR confirmed <em>Streptococcus pneumoniae</em> sampled from joint fluid, bone, cerebrospinal fluid or blood, regardless of ICD-10 discharge diagnosis.</p>
+<p>The objective of Paper V was to estimate the impact of PHiD-CV10 on the incidence of pediatric hospitalizations due to diseases commonly caused by <em>Streptococcus pneumonae</em>.
+Paper V is a single-center, individual-level, observational cohort study of pediatric hospitalizations.
+Eleven consecutive Icelandic birth-cohorts 2005-2015 were followed from birth until three years of age.
+Immigration and emigration data obtained from Statistics Iceland was used to exclude children who had immigrated to Iceland after birth.
+Included were all hospital admissions to the Children’s Hospital Iceland 1 January 2005 to 31 December 2016.
+The Children’s Hospital Iceland is the primary pediatric hospital for approximately 90% of Iceland’s population (www.statice.is), and serves as a secondary and tertiary pediatric hospital for the entire country.
+Data on admissions were collected from Landspitali University Hospital’s patient registry.
+Microbiological data were extracted from a database maintained by the Department of Clinical Microbiology at Landspitali University Hospital.</p>
+<p>Seven diagnostic groups were defined in this paper.
+Five of these represent diseases commonly caused by <em>Streptococcus pneumoniae</em>; Invasive pneumococcal disease (IPD), meningitis, sepsis, pneumonia and otitis media.
+The remaining two groups, upper respiratory tract infections (URTI) and other lower respiratory tract infections (LRTI), were included as comparators.
+Hospitalization was categorized in a diagnostic group, if the relevant ICD-10 diagnostic code was recorded on the discharge chart, or if the admission was associated with microbiologically-confirmed IPD.
+Admissions with ICD-10 discharge diagnoses compatible with meningitis (G00) were grouped as meningitis.
+Those with A40 or A41 diagnoses were grouped as sepsis; with J09-J18, as pneumonia; J20-J22 as LRTI; H65, H66, H70 and H72 as OM; and J01-J06 as URTI (Table <a href="methods.html#tab:table-paper5-diagnostic-groups">3.6</a>).
+A hospitalization was considered to be due to IPD if associated with culture or PCR confirmed <em>Streptococcus pneumoniae</em> sampled from joint fluid, bone, cerebrospinal fluid or blood, regardless of ICD-10 discharge diagnosis.</p>
 <table>
 <caption><span id="tab:table-paper5-diagnostic-groups">Table 3.6: </span>Definitions of the Paper V’s diagnostic groupings</caption>
 <thead>
@@ -764,26 +957,106 @@
 </tr>
 </tbody>
 </table>
-<p>Birth-cohorts were compared either individually, or grouped by vaccine eligibility. In the individual birth-cohort analysis, each birth-cohort was compared to the last vaccine non-eligible cohort, i.e. the 2010 birth-cohort. Birth-cohorts 2011–2015 were grouped as vaccine-eligible cohorts (VEC), and birth-cohorts 2005–2010 as vaccine non-eligible cohorts (VNEC). Statistical analyses were performed in R version 3.4.4. <span class="citation">(R Core Team <a href="#ref-R-base">2018</a>)</span> using the R packages; survival <span class="citation">(Therneau <a href="#ref-R-survival">2018</a>)</span>, RMS <span class="citation">(Harrell, Jr. <a href="#ref-R-rms">2018</a>)</span> and epiR <span class="citation">(Stevenson et al. <a href="#ref-R-epiR">2017</a>)</span>.</p>
-<p>Mean age at hospitalization was calculated for each birth-cohort and diagnostic group. Analysis of variance was used to test whether significant difference existed between cohorts. If an overall difference was identified, the analysis was followed by Tukey’s honest significant difference procedure. The median hospital length of stay was calculated for each diagnostic group, and compared between cohorts using the Wilcoxon rank sum test. Crude incidence rates (<span class="math inline">\(IR\)</span>) of hospital admissions were calculated for each birth-cohort, diagnostic group and age group, and incidence rate ratios (<span class="math inline">\(IRR\)</span>) were calculated between the VNEC and VEC assuming Poisson variance. The proportion of hospitalizations which led to admission to the intensive care unit (ICU) was calculated by birth-cohort and diagnostic group.</p>
-<p>The Kaplan-Meier product limit estimator was used to calculate both event-free survival, as well as the event-free survival difference of the VNEC compared to the VEC for each of the diagnostic groups. Subsequent hospitalizations of the same child with the same discharge diagnosis were excluded from this portion of the analysis. Follow-up time was censored upon emigration or death. Cox regression was used to estimate the hazard ratio of admission between the VNEC and VEC. To clarify whether potential differences between VNEC and VEC were likely to be due to direct effects of the vaccine, the Cox regression was repeated for two restricted age-ranges; 0-90 days of age and 90 days and older. A sensitivity analysis of potential unmeasured confounding of the hazard ratio was calculated using E-values <span class="citation">(VanderWeele and Ding <a href="#ref-VanderWeele2017">2017</a>)</span>. An E-value represents the minimum association an unmeasured confounder would need to have with both the exposure and the outcome, to completely explain away the observed association.</p>
+<p>Birth-cohorts were compared either individually, or grouped by vaccine eligibility.
+In the individual birth-cohort analysis, each birth-cohort was compared to the last vaccine non-eligible cohort, i.e. the 2010 birth-cohort.
+Birth-cohorts 2011–2015 were grouped as vaccine-eligible cohorts (VEC), and birth-cohorts 2005–2010 as vaccine non-eligible cohorts (VNEC).
+Statistical analyses were performed in R version 3.4.4. <span class="citation">(R Core Team <a href="#ref-R-base" role="doc-biblioref">2019</a>)</span> using the R packages; survival <span class="citation">(Therneau <a href="#ref-R-survival" role="doc-biblioref">2018</a>)</span>, RMS <span class="citation">(Harrell, Jr. <a href="#ref-R-rms" role="doc-biblioref">2019</a>)</span> and epiR <span class="citation">(Stevenson et al. <a href="#ref-R-epiR" role="doc-biblioref">2018</a>)</span>.</p>
+<p>Mean age at hospitalization was calculated for each birth-cohort and diagnostic group.
+Analysis of variance was used to test whether significant difference existed between cohorts.
+If an overall difference was identified, the analysis was followed by Tukey’s honest significant difference procedure.
+The median hospital length of stay was calculated for each diagnostic group, and compared between cohorts using the Wilcoxon rank sum test.
+Crude incidence rates (<span class="math inline">\(IR\)</span>) of hospital admissions were calculated for each birth-cohort, diagnostic group and age group, and incidence rate ratios (<span class="math inline">\(IRR\)</span>) were calculated between the VNEC and VEC assuming Poisson variance.
+The proportion of hospitalizations which led to admission to the intensive care unit (ICU) was calculated by birth-cohort and diagnostic group.</p>
+<p>The Kaplan-Meier product limit estimator was used to calculate both event-free survival, as well as the event-free survival difference of the VNEC compared to the VEC for each of the diagnostic groups.
+Subsequent hospitalizations of the same child with the same discharge diagnosis were excluded from this portion of the analysis.
+Follow-up time was censored upon emigration or death.
+Cox regression was used to estimate the hazard ratio of admission between the VNEC and VEC.
+To clarify whether potential differences between VNEC and VEC were likely to be due to direct effects of the vaccine, the Cox regression was repeated for two restricted age-ranges; 0-90 days of age and 90 days and older.
+A sensitivity analysis of potential unmeasured confounding of the hazard ratio was calculated using E-values <span class="citation">(VanderWeele and Ding <a href="#ref-VanderWeele2017" role="doc-biblioref">2017</a>)</span>.
+An E-value represents the minimum association which an unmeasured confounder would need to have with both the exposure and the outcome, to completely explain away the observed association.</p>
 
 </div>
 <div id="paper6" class="section level2">
 <h2><span class="header-section-number">3.7</span> Impact and cost-effectiveness analysis (Paper VI)</h2>
-<p>The objective of Paper VI was estimate the population impact of PHiD-CV10 on several aspects of pneumococcal disease and calculate the cost-effectiveness of PHiD-CV10 introduction. Considered were otitis media visits to primary care among children 0-19 years of age, and hospitalizations due to pneumonia and invasive pneumococcal disease among the whole population. The study period was from 1 January 2005 to 31 December 2017 and the study population included all Icelandic citizens. The data was analysed as a time-series, and incorporated synthetic controls.</p>
+<p>The objective of Paper VI was to estimate the population impact of PHiD-CV10 on several aspects of pneumococcal disease, and to calculate the cost-effectiveness of PHiD-CV10 introduction.
+Considered were otitis media visits to primary care among children zero to 19 years of age, and hospitalizations due to pneumonia and invasive pneumococcal disease among the whole population.
+The study period was from 1 January 2005 to 31 December 2017 and the study population included all Icelandic citizens.
+The data were analysed as a time series, and incorporated synthetic controls.</p>
 <div id="data-sources" class="section level3">
 <h3><span class="header-section-number">3.7.1</span> Data sources</h3>
-<p>Data were extracted from several population based registries. Primary care visits with ICD-10 diagnoses compatible with otitis media (H65, H66, H70, H72) were extracted from the Primary Care Registry. The observation period was restricted to 2005-2015, as the Primary Care Registry has not been updated for 2016 and 2017. Data regarding hospitalized pneumonia and invasive pneumococcal disease were extracted from Landspitali University Hospital’s patient registry. Microbiological data were extracted from a database maintained by the Department of Clinical Microbiology at Landspitali University Hospital and linked to the patient registry. A hospitalization was considered to be due to invasive pneumococcal disease if associated with culture or PCR confirmed <em>Streptococcus pneumoniae</em> sampled from joint fluid, bone, cerebrospinal fluid or blood, regardless of ICD-10 discharge diagnosis. Hospitalizations with ICD-10 diagnoses compatible with pneumonia (J09-J18) were obtained directly from the patient registry. The aggregate number of visits and hospitalizations per calendar-month for diagnoses unrelated to <em>Streptococcus pneumoniae</em> infections were also extracted from both registries and used as synthetic controls (Table <a href="methods.html#tab:table-icd-synthetic">3.3</a>).</p>
-<p>Data regarding the cost of hospitalization were obtained directly from the patient registry. For each hospitalization, a detailed breakdown of cost was available, which was extracted for each of the hospitalizations included in the study. No cost data is available for primary care visits. Because Children’s Hospital Iceland’s pediatric emergency department serves as a walk-in clinic for the greater capital area, the distribution of costs for otitis media visits to the emergency department was assumed to mirror that of primary care visits. The cost of otitis media visits to Children’s Hospital Iceland was extracted from the patient registry. The consumer price index for medical care obtained from Statistics Iceland was used to convert all direct healthcare costs to constant 2011 ISK.</p>
-<p>The deciles of regular total wage for the calendar-year 2011, were obtained from Statistics Iceland. These were optimally fitted to a lognormal distribution to obtain a continoues distribution of wage. The number of days of work lost were calculated using distributional assumptions. For each case of otitis media in primary care, the days of work lost by a parent or guardian were assumed to follow a Poisson distribution with mean equalling one. For each pneumonia or invasive pneumococcal disease hospitalization, the days of work lost was assumed to equal the sum of the hospital length of stay, and a Poisson distribution with mean equalling one.</p>
+<p>Data were extracted from several population-based registries.
+Primary care visits with ICD-10 diagnoses compatible with otitis media (H65, H66, H70, H72) were extracted from the Primary Care Registry.
+The observation period was restricted to 2005-2015, as the Primary Care Registry was not updated for 2016 and 2017.
+Data regarding hospitalized pneumonia and invasive pneumococcal disease were extracted from Landspitali University Hospital’s patient registry.
+Microbiological data were extracted from a database maintained by the Department of Clinical Microbiology at Landspitali University Hospital and linked to the patient registry.
+A hospitalization was considered to be due to invasive pneumococcal disease if associated with culture or PCR-confirmed <em>Streptococcus pneumoniae</em> sampled from joint fluid, bone, cerebrospinal fluid or blood, regardless of ICD-10 discharge diagnosis.
+Hospitalizations with ICD-10 diagnoses compatible with pneumonia (J12-J18) were obtained directly from the patient registry.
+The aggregate number of visits and hospitalizations per calendar-month for diagnoses unrelated to <em>Streptococcus pneumoniae</em> infections were also extracted from both registries and used as synthetic controls (Table <a href="methods.html#tab:table-icd-synthetic">3.3</a>).</p>
+<p>The direct costs of hospitalization were obtained from the patient registry.
+For each hospitalization or emergency department visit, a detailed breakdown of cost was available, which was extracted for each of the disease categories included in the study.
+No cost data was available for primary care visits.
+Because Children’s Hospital Iceland’s pediatric emergency department serves as a walk-in clinic for the greater capital area, the distribution of costs for otitis media visits to the emergency department was assumed to mirror that of primary care visits, and was used in its stead.
+The number of PHiD-CV10 doses purchased by the government and the unit price for each dose per calendar year were obtained directly from the Icelandic Directorate of Health.
+The yearly employment rate of individuals 15 to 24 years of age, 25 to 54 years of age and 55 to 64 years of age from 2011-2017 was extracted from Organization for Economic Cooperation and Development (OECD) Labour Force Statistics <span class="citation">(<em>OECD Labour Force Statistics</em> <a href="#ref-OECD2018" role="doc-biblioref">2018</a>)</span>, and the deciles of regular total wage for working Icelanders from 2011-2017 were obtained from Statistics Iceland.
+The consumer price index for medical care obtained from Statistics Iceland was used to convert all direct health care costs to 2015 price levels in Icelandic kronas.
+All costs were converted to United States Dollars (USD) using the offical exchange rates of the Icelandic Central Bank.</p>
 </div>
-<div id="statistical-analysis" class="section level3">
-<h3><span class="header-section-number">3.7.2</span> Statistical analysis</h3>
-<p>The cost-effectiveness analysis was completed in two separate steps. First, the impact of PHiD-CV10 introduction into the pediatric vaccination program in Iceland was estimated. This was accomplished using a previously published Bayesian time-series methodology <span class="citation">(Bruhn et al. <a href="#ref-Bruhn2017">2017</a>; Shioda et al. <a href="#ref-Shioda2018a">2018</a>)</span>. The pre-vaccine period was defined as January 1, 2005 to December 31, 2010, and the post-vaccine period as April 1, 2013 to December 31, 2017. For each disease category and age-group, four models of PHiD-CV10 impact were estimated. All were Bayesian Poisson models with observation specific random intercepts to account for over-dispersion <span class="citation">(Dvorzak and Wagner <a href="#ref-R-pogit">2016</a>)</span>. Each model utilized the pre-vaccine period to predict the monthly occurrence of the outcome of interest in the post-vaccine period, had the vaccination not occurred.</p>
-<p>The simplest model was a time-series without an offset term. Calender-month effects were accounted for using dummy variables. The time-series model used the pre-vaccine period to estimate the trend. It predicted the monthly number of cases of the disease category, assuming the pre-vaccine trend would have continued if the vaccination had not occurred. A second, similar time-series model was also estimated, but included an offset term of all non-respiratory visits. This model used the pre-vaccine period to estimate the relationship between the outcome of interest and all non-respiratory visits. It also predicted the occurrence in the post-vaccine period assuming the relationship would not have changed, had the vaccination not occurred. The third model included synthetic controls as covariates and used Bayesian variable selection to choose which of them to include <span class="citation">(Bruhn et al. <a href="#ref-Bruhn2017">2017</a>)</span>. The prior for each synthetic control was set as a Dirac spike with a point-mass at zero. The pre-vaccine period was used to estimate the relationship between the synthetic controls and the outcome of interest, and to select the optimal controls. This relationship was used to predict the trend in the post-vaccine period, had the vaccination not occurred. Finally, a two-step model was fitted, using a seasonal and trend decomposition (STL) and principal component analysis (PCA) <span class="citation">(Shioda et al. <a href="#ref-Shioda2018a">2018</a>)</span>. STL was used to extract a smoothed trend for each of the synthetic controls. PCA was then used to extract the first principal component, which was used as a covariate in the final prediction model. Leave-one-out cross-validation (LOOCV) was used to calibrate the models, using data from the pre-vaccine period. The LOOCV was also used to calculate the average point-wise likelihood for each model, diagnostic category and age-group. The average point-wise likelihoods were used as weights in a Bayesian model stacking procedure, which produced the final stacked model used in the analysis.</p>
-<p>The stacked model was used to generate a posterior distribution of the number of cases which would have occurred, had the vaccine not been introduced. From this posterior distribution, 10,000 estimates of the number of cases per calendar-month in post-vaccine period were drawn, of which the first 2,000 were discarded for optimal burn-in. The observed number of cases were subtracted from the remaining 8,000 draws, which produced 8,000 draws of the total number of cases prevented by the vaccine introduction. For each draw, the cumulative sum of the number of prevented cases was calculated, and the median and 95% credible intervals extracted.</p>
-<p>The direct cumulative cost associated with the vaccination was calculated by bootstraping from the distribution of costs per case, and multiplying by the number of prevented cases. From this the cost of the vaccine was subtracted. This resulted in 8,000 posterior draws of the estimated vaccine cost, from which the median and 95% credible intervals were extracted.</p>
+<div id="impact-of-phid-cv10" class="section level3">
+<h3><span class="header-section-number">3.7.2</span> Impact of PHiD-CV10</h3>
+<p>The impact of PHiD-CV10 introduction on the incidence of pneumococcal disease was estimated and the results then used as an input for a cost-effectiveness analysis. This was accomplished using a previously published Bayesian time series methodology <span class="citation">(Bruhn et al. <a href="#ref-Bruhn2017" role="doc-biblioref">2017</a>; Shioda et al. <a href="#ref-Shioda2018a" role="doc-biblioref">2018</a>)</span>.
+The pre-vaccine period was defined as 1 January 2005 to 31 December 2010, and the post-vaccine period as 1 January 2013 to 31 December 2017.
+A transition period was included from 2011 to 2012.
+For each disease category and age-group, four models of PHiD-CV10 impact were estimated.
+All were Bayesian Poisson models with observation specific random intercepts to account for over-dispersion <span class="citation">(Dvorzak and Wagner <a href="#ref-R-pogit" role="doc-biblioref">2019</a>)</span>.
+Each model utilized the pre-vaccine period to predict the monthly occurrence of the outcome of interest in the post-vaccine period, had the vaccination not occurred.</p>
+<p>The simplest model was an interrupted time series (ITS) model without an offset term.
+Calender-month effects were accounted for using dummy variables.
+The ITS model used the pre-vaccine period to estimate the trend.
+It predicted the monthly number of cases of the disease category, assuming the pre-vaccine trend would have continued if the vaccination had not occurred.
+A second ITS model was estimated, which included an offset term of all non-respiratory visits.
+This model used the pre-vaccine period to estimate the relationship between the outcome of interest and all non-respiratory visits.
+It also predicted the occurrence of disease in the post-vaccine period by incorporating the observed number of non-respiratory visits, and assumed the relationship between the disease category and non-respiratory visits would not have changed, had the vaccination not occurred.
+The third model included synthetic controls as covariates and used Bayesian variable selection to choose which of them to include <span class="citation">(Bruhn et al. <a href="#ref-Bruhn2017" role="doc-biblioref">2017</a>)</span>.
+The prior for each synthetic control was set as a Dirac spike with a point-mass at zero.
+The pre-vaccine period was used to estimate the relationship between the synthetic controls and the outcome of interest, and to select the optimal controls.
+This relationship was used to predict the trend in the post-vaccine period, had the vaccination not occurred.
+Finally, a two-step model was fitted, using a seasonal and trend decomposition (STL) and principal component analysis (PCA) <span class="citation">(Shioda et al. <a href="#ref-Shioda2018a" role="doc-biblioref">2018</a>)</span>.
+STL was used to extract a smoothed trend for each of the synthetic controls.
+PCA was then used to extract the first principal component, which was used as a covariate in the final prediction model.</p>
+<p>Using data from the pre-vaccine period, leave-one-out cross-validation (LOOCV) was used to calibrate the models and calculate the average point-wise likelihood for each model, diagnostic category and age-group.
+The average point-wise likelihoods were used as weights in a Bayesian model-stacking procedure, to produce the final stacked model used in the analysis.
+From the posterior predictive distribution of the stacked model, a total of 10,000 Markov chain Monte Carlo (MCMC) samples were drawn, representing the number of cases that would have occurred in the post-vaccine period, had the vaccine not been introduced.
+The first 2,000 MCMC draws were discarded for optimal burn-in.
+For each of the remaining 8,000 draws, the rate ratio between the observed and predicted number of cases during the post-vaccine period was calculated, and the median and 95% credible intervals extracted from the resulting distribution of rate ratios.
+To estimate the onset of vaccine impact, the rate ratio was calculated over a rolling 12-month period, the first of which included 11-months of pre-vaccine data and one month of post-vaccine data.
+The number of cases prevented by the vaccine was caclulated for each calendar-month, by subtracting the observed number of cases from each of the 8,000 MCMC draws.
+The cumulative sum of prevented cases was calculated, and the median and 95% credible intervals were extracted.</p>
+</div>
+<div id="cost-effectiveness-analysis" class="section level3">
+<h3><span class="header-section-number">3.7.3</span> Cost-effectiveness analysis</h3>
+<p>The cost-effectiveness of PHiD-CV10 introduction compared to no intervention was estimated from both the healtcare sector and societal perspectives using ecological post-implementation data.
+The societal perspective included both direct costs and indirect costs associated with productivity loss, while analysis from the health care perspective included only direct costs.
+Neither analysis included estimates of long-term sequelae or their associated costs.
+The time horizon was five years and both costs and cost-savings were discounted at a 3% discount rate.
+All costs were presented in constant 2015 USD.</p>
+<p>The direct cumulative savings associated with PHiD-CV10 introduction were calculated by multiplying the predicted number of prevented cases from the Bayesian time series analysis with the expected cost of each case.
+The expected cost was obtained through sampling with replacement from the observed costs extracted from Landspitali University Hospital’s patient registry, after adjusting to constant 2015 Icelandic kronas and converting to USD.
+The sampling was stratified by disease category and age-group.
+The direct costs associated with the introduction of PHiD-CV10 into the pediatric vaccination program were calculated for each calendar-year by multiplying the number of purchased doses by the price of each purchased dose.
+The prices were adjusted to constant 2015 Icelandic kronas and converted to USD.
+Wastage was taken into account, as this formula included doses that were for whatever reason never administered.
+Additional administration costs were however not assumed, as each dose was administered by nurses during the same visits that other establised vaccines were being given.
+The direct costs associated with the vaccine were subtracted from the direct cumulative savings to obtain the final estimate of the total cost.
+This resulted in 8,000 posterior draws of the total cost, from which the median and 95% credible intervals were extracted.</p>
+<p>Indirect costs due to productivity loss were accounted for in the analysis from the societal perspective.
+The deciles of wage that were extracted from Statistics Iceland were optimally fitted to a lognormal distribution to obtain a continuous distribution of wage <span class="citation">(Belgorodski et al. <a href="#ref-R-rriskDistributions" role="doc-biblioref">2017</a>)</span>.
+The number of days of work lost were assumed.
+For each case of otitis media in primary care, the days of work lost by a parent or guardian were assumed to follow a Poisson distribution with mean equalling one.
+For each pneumonia or invasive pneumococcal disease hospitalization, the days of work lost were assumed to equal the sum of the hospital length of stay and a variable time following discharge.
+For each prevented case, the associated hospital length of stay was sampled with replacement from the observed length of stay obtained from the patient registry.
+This variable time was assumed to be Poisson distributed with mean equal to half the observed hospital length of stay.
+The indirect costs were calculated by multiplying the days of work lost with wages sampled from the lognormal wage distribution, accounting for unemployment.
+Cost-effectiveness was summarized with incremental cost-effectiveness ratios (ICER) with 95% credible intervals.</p>
 
 </div>
 </div>
@@ -791,43 +1064,49 @@
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-R-base">
-<p>R Core Team. 2018. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+<p>R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
 </div>
 <div id="ref-R-epiR">
-<p>Stevenson, Mark, Telmo Nunes, Cord Heuer, Jonathon Marshall, Javier Sanchez, Ron Thornton, Jeno Reiczigel, Jim Robison-Cox, Paola Sebastiani, and Peter Solymos. 2017. <em>EpiR: Tools for the Analysis of Epidemiological Data</em>. <a href="https://CRAN.R-project.org/package=epiR" class="uri">https://CRAN.R-project.org/package=epiR</a>.</p>
+<p>Stevenson, Mark, Telmo Nunes, Cord Heuer, Jonathon Marshall, Javier Sanchez, Ron Thornton, Jeno Reiczigel, Jim Robison-Cox, Paola Sebastiani, and Peter Solymos. 2018. <em>EpiR: Tools for the Analysis of Epidemiological Data</em>. <a href="https://CRAN.R-project.org/package=epiR">https://CRAN.R-project.org/package=epiR</a>.</p>
 </div>
 <div id="ref-Kirkwood2003">
-<p>Kirkwood, BR, and JAC Sterne. 2003. <em>Essential medical statistics</em>. Edited by Fiona Goodgame. 2nd ed. Oxford: Blackwell Science. doi:<a href="https://doi.org/10.1002/sim.1961">10.1002/sim.1961</a>.</p>
+<p>Kirkwood, BR, and JAC Sterne. 2003. <em>Essential medical statistics</em>. Edited by Fiona Goodgame. 2nd ed. Oxford: Blackwell Science. <a href="https://doi.org/10.1002/sim.1961">https://doi.org/10.1002/sim.1961</a>.</p>
 </div>
 <div id="ref-R-survival">
-<p>Therneau, Terry M. 2018. <em>Survival: Survival Analysis</em>. <a href="https://CRAN.R-project.org/package=survival" class="uri">https://CRAN.R-project.org/package=survival</a>.</p>
+<p>Therneau, Terry M. 2018. <em>Survival: Survival Analysis</em>. <a href="https://CRAN.R-project.org/package=survival">https://CRAN.R-project.org/package=survival</a>.</p>
 </div>
 <div id="ref-R-rms">
-<p>Harrell, Jr., Frank E. 2018. <em>Rms: Regression Modeling Strategies</em>. <a href="https://CRAN.R-project.org/package=rms" class="uri">https://CRAN.R-project.org/package=rms</a>.</p>
+<p>Harrell, Jr., Frank E. 2019. <em>Rms: Regression Modeling Strategies</em>. <a href="https://CRAN.R-project.org/package=rms">https://CRAN.R-project.org/package=rms</a>.</p>
 </div>
 <div id="ref-Andersen1982">
-<p>Andersen, P. K., and R. D. Gill. 1982. “Cox’s Regression Model for Counting Processes: A Large Sample Study.” <em>The Annals of Statistics</em> 10 (4): 1100–1120. doi:<a href="https://doi.org/10.1214/aos/1176345976">10.1214/aos/1176345976</a>.</p>
+<p>Andersen, P. K., and R. D. Gill. 1982. “Cox’s Regression Model for Counting Processes: A Large Sample Study.” <em>The Annals of Statistics</em> 10 (4): 1100–1120. <a href="https://doi.org/10.1214/aos/1176345976">https://doi.org/10.1214/aos/1176345976</a>.</p>
 </div>
 <div id="ref-Lin1989">
-<p>Lin, D. Y., and L. J. Wei. 1989. “The Robust Inference for the Cox Proportional Hazards Model.” <em>Journal of the American Statistical Association</em> 84 (408): 1074–8. doi:<a href="https://doi.org/10.1080/01621459.1989.10478874">10.1080/01621459.1989.10478874</a>.</p>
+<p>Lin, D. Y., and L. J. Wei. 1989. “The Robust Inference for the Cox Proportional Hazards Model.” <em>Journal of the American Statistical Association</em> 84 (408): 1074–8. <a href="https://doi.org/10.1080/01621459.1989.10478874">https://doi.org/10.1080/01621459.1989.10478874</a>.</p>
 </div>
 <div id="ref-Cook2007a">
 <p>Cook, Richard J. (Richard John), and Jerald F. Lawless. 2007. <em>The Statistical Analysis of Recurrent Events</em>. Edited by M Gail, K Krickeberg, J Sarmet, A Tsiatis, and W Wong. New York: Springer Science + Business Media.</p>
 </div>
 <div id="ref-Youngster2017">
-<p>Youngster, Ilan, Jerry Avorn, Valeria Belleudi, Anna Cantarutti, Javier Díez-Domingo, Ursula Kirchmayer, Byung-Joo Park, et al. 2017. “Antibiotic Use in Children – A Cross-National Analysis of 6 Countries.” <em>The Journal of Pediatrics</em> 182 (March). Elsevier Inc.: 239–244.e1. doi:<a href="https://doi.org/10.1016/j.jpeds.2016.11.027">10.1016/j.jpeds.2016.11.027</a>.</p>
+<p>Youngster, Ilan, Jerry Avorn, Valeria Belleudi, Anna Cantarutti, Javier Díez-Domingo, Ursula Kirchmayer, Byung-Joo Park, et al. 2017. “Antibiotic Use in Children – A Cross-National Analysis of 6 Countries.” <em>The Journal of Pediatrics</em> 182 (March): 239–244.e1. <a href="https://doi.org/10.1016/j.jpeds.2016.11.027">https://doi.org/10.1016/j.jpeds.2016.11.027</a>.</p>
 </div>
 <div id="ref-VanderWeele2017">
-<p>VanderWeele, Tyler J., and Peng Ding. 2017. “Sensitivity Analysis in Observational Research: Introducing the E-Value.” <em>Annals of Internal Medicine</em> 167 (4): 268–74. doi:<a href="https://doi.org/10.7326/M16-2607">10.7326/M16-2607</a>.</p>
+<p>VanderWeele, Tyler J., and Peng Ding. 2017. “Sensitivity Analysis in Observational Research: Introducing the E-Value.” <em>Annals of Internal Medicine</em> 167 (4): 268–74. <a href="https://doi.org/10.7326/M16-2607">https://doi.org/10.7326/M16-2607</a>.</p>
+</div>
+<div id="ref-OECD2018">
+<p><em>OECD Labour Force Statistics</em>. 2018. OECD Labour Force Statistics. OECD. <a href="https://doi.org/10.1787/oecd_lfs-2018-en">https://doi.org/10.1787/oecd_lfs-2018-en</a>.</p>
 </div>
 <div id="ref-Bruhn2017">
-<p>Bruhn, Christian A W, Stephen Hetterich, Cynthia Schuck-Paim, Esra Kürüm, Robert J Taylor, Roger Lustig, Eugene D Shapiro, Joshua L Warren, Lone Simonsen, and Daniel M Weinberger. 2017. “Estimating the population-level impact of vaccines using synthetic controls.” <em>Proceedings of the National Academy of Sciences</em> 114 (7): 1524–9. doi:<a href="https://doi.org/10.1073/pnas.1612833114">10.1073/pnas.1612833114</a>.</p>
+<p>Bruhn, Christian A W, Stephen Hetterich, Cynthia Schuck-Paim, Esra Kürüm, Robert J Taylor, Roger Lustig, Eugene D Shapiro, Joshua L Warren, Lone Simonsen, and Daniel M Weinberger. 2017. “Estimating the population-level impact of vaccines using synthetic controls.” <em>Proceedings of the National Academy of Sciences</em> 114 (7): 1524–9. <a href="https://doi.org/10.1073/pnas.1612833114">https://doi.org/10.1073/pnas.1612833114</a>.</p>
 </div>
 <div id="ref-Shioda2018a">
-<p>Shioda, Kayoko, Cynthia Schuck-Paim, Robert J. Taylor, Roger Lustig, Lone Simonsen, Joshua L Warren, and Daniel M Weinberger. 2018. “Challenges in estimating the impact of vaccination with sparse data.” <em>Epidemiology (Cambridge, Mass.)</em> 4 (5): 1. doi:<a href="https://doi.org/10.1097/EDE.0000000000000938">10.1097/EDE.0000000000000938</a>.</p>
+<p>Shioda, Kayoko, Cynthia Schuck-Paim, Robert J. Taylor, Roger Lustig, Lone Simonsen, Joshua L Warren, and Daniel M Weinberger. 2018. “Challenges in estimating the impact of vaccination with sparse data.” <em>Epidemiology (Cambridge, Mass.)</em> 4 (5): 1. <a href="https://doi.org/10.1097/EDE.0000000000000938">https://doi.org/10.1097/EDE.0000000000000938</a>.</p>
 </div>
 <div id="ref-R-pogit">
-<p>Dvorzak, Michaela, and Helga Wagner. 2016. <em>Pogit: Bayesian Variable Selection for a Poisson-Logistic Model</em>. <a href="https://CRAN.R-project.org/package=pogit" class="uri">https://CRAN.R-project.org/package=pogit</a>.</p>
+<p>Dvorzak, Michaela, and Helga Wagner. 2019. <em>Pogit: Bayesian Variable Selection for a Poisson-Logistic Model</em>. <a href="https://CRAN.R-project.org/package=pogit">https://CRAN.R-project.org/package=pogit</a>.</p>
+</div>
+<div id="ref-R-rriskDistributions">
+<p>Belgorodski, Natalia, Matthias Greiner, Kristin Tolksdorf, and Katharina Schueller. 2017. <em>RriskDistributions: Fitting Distributions to Given Data or Known Quantiles</em>. <a href="https://CRAN.R-project.org/package=rriskDistributions">https://CRAN.R-project.org/package=rriskDistributions</a>.</p>
 </div>
 </div>
             </section>
@@ -856,7 +1135,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -869,7 +1148,11 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["phd_thesis.pdf", "phd_thesis.epub"],
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
 "toc": {
 "collapse": "subsection"
 }
@@ -882,8 +1165,8 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;
